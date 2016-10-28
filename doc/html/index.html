@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.2</span>
+   &#160;<span id="projectnumber">0.5.3</span>
    </div>
   </td>
  </tr>
@@ -100,13 +100,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Status of master branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a></li>
 <li>Status of dev branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a></li>
 </ul>
-<p>Currently, the Travis-CI setup uses the following tools:</p>
-<ul>
-<li>Linux</li>
-<li>gcc-5</li>
-<li>GSL 1.15</li>
-</ul>
-<p>Currently, unit tests are not compiled/run on Travis. The boost versions available to Travis are too old.</p>
 <h1>Introduction</h1>
 <p>fwdpp is a C++ template library that abstracts the basic operations required to implement forward-time simulations of population- and quantitative-genetic models. The library allows the simulation of single populations or metapopulations evolving under the standard evolutionary forces of drift, recombination, migration, and natural selection. Arbitrary population size changes are also allowed. Different populations in a metapopulation may evolve under different fitness schemes.</p>
 <p>The library uses advanced C++ techniques to allow arbitrary models to be implemented via the implementation of simple policies (see Documentation section below). A programmer wishing to use the library will need a strong background in templates, function objects, and the Standard Template Library (STL). Web resources for these topics vary too much in quality to recommend any particular one. However, there are several classic books that are must-reads for C++ programmers (old school, I know):</p>
@@ -223,10 +216,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li><a href="http://www.boost.org">boost</a>.</li>
 </ol>
-<p>For OS X users, all of the above dependencies are available via <a href="http://brew.sh">homebrew</a>.</p>
-<h3>Why use Google's perftools?</h3>
-<p>Forward simulations are constantly allocating relativel small objects whose lifetimes are random variables. For example, mutations enter populations every generation and are typically rapidly lost. We can improve the performance of a simulation using various techniques, including replacing the C++ standard library's allocator with a custom allocator and/or replacing the C library's malloc function with a faster replacement. Google's perftools provide the tcmalloc library, which provides a faster malloc.</p>
-<p>Empirically, on my linux systems, I have found that the fastest combination appears to be the standard C++ allocator combined with linking to tcmalloc. However, this may not be the case on your system, and I provide the <a href="http://github.com/molpopgen/fwdpp_perf">fwdpp_perf</a> project to let you benchmark different methods on your system.</p>
+<p>For OS X users, all of the above dependencies are available via <a href="http://brew.sh">homebrew</a> or <a href="http://conda.pydata.org/docs/">conda</a>/<a href="https://bioconda.github.io">bioconda</a>.</p>
 <h2>Performance</h2>
 <p>Performance testing has been moved to the <a href="http://github.com/molpopgen/fwdpp_perf">fwdpp_perf</a> project.</p>
 <h2>Obtaining the source code</h2>

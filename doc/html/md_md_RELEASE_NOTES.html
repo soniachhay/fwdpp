@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.2</span>
+   &#160;<span id="projectnumber">0.5.3</span>
    </div>
   </td>
  </tr>
@@ -84,6 +84,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.5.3</h2>
+<ul>
+<li>Streamline internal details of crossing over</li>
+<li>Fix issue #43</li>
+<li><a class="el" href="de/d6e/group__sugar.html#ga1ecff0aaea92ec0ef0af5a541f63d822" title="Change the value of mutation_base::neutral. ">KTfwd::change_neutral</a> no longer tries to update extinct gametes.</li>
+<li>Single-argument constructors marked explicit for types inheriting from KTfwd::popbase</li>
+<li>Added an additional overload of KTfwd::infsites::operator()</li>
+<li>The integer type stored by a gamete and used to index mutations was changed from std::size_t to std::uint32_t. This change halves RAM use and has no other side-effects other than limiting the number of possible mutations in a simulation to 2^32, which is too many to store on a typical cluster node anyways.</li>
+</ul>
+<p>There are also several changes to the build setup and Travis CI:</p>
+<ul>
+<li>Travis CI is now based on miniconda, taking advantage of bioconda/libsequence.</li>
+<li>Travis CI now only tests GCC on OS X, as bioconda/libsequence is built with that compiler</li>
+<li>"make" now makes fwdppConfig, all examples, and all unit tests, provided that dependencies are present. The examples and unit tests are not installed.</li>
+<li>"make check" now runs the unit tests</li>
+</ul>
 <h2>0.5.2</h2>
 <ul>
 <li>Documentation updates, finally! The tutorials, etc., have been brought up to date.</li>
@@ -150,7 +166,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>0.4.5</h2>
 <ul>
 <li>Issues #31 and #32 fixed The file fwdpp/internal/gamete_lookup_table.hpp was removed and the library updated to stop using this method to check for gamete uniqueness. The result is a 20% reduction in run times and a slight reduction in peak memory use. This change was enabled by the changes introduced in 0.4.4, and comes with no change in output.</li>
-<li>Partial loop unrolling and branch removal from <a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3012205ca5b3e0cac5b9557a7533275e">KTfwd::fwdpp_internal::recombine_gametes</a></li>
+<li>Partial loop unrolling and branch removal from <a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a091b1da0e94464fc2b1d600f898ed914">KTfwd::fwdpp_internal::recombine_gametes</a></li>
 <li>Faster fitness calculations via the removal of if statements from a for loop in <a class="el" href="d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></li>
 <li><a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a111eed9535387f6341dab21bd39c2710">KTfwd::fwdpp_internal::add_new_mutation</a> was shortened for clarity</li>
 <li><a class="el" href="de/d6e/group__sugar.html#gaf66ce861e458d7e15f98bbbb9e87ad38" title="Single locus metapopulation simulation object. ">KTfwd::metapop</a> objects now copy- and move- constructible from <a class="el" href="de/d6e/group__sugar.html#ga618c1f80e050a17d765e89f784f6abdb" title="Single locus, single population object. ">KTfwd::singlepop</a> objects</li>

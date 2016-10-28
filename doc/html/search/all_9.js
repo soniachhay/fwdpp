@@ -1,8 +1,7 @@
 var searchData=
 [
   ['i',['i',['../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0',1,'sugar_add_mutationTest.cc']]],
-  ['ifndef',['ifndef',['../d2/d67/gamete__tags_8hpp.html#a410830563466400906cdfcea89558e0a',1,'gamete_tags.hpp']]],
-  ['index_5ft',['index_t',['../d6/d90/structKTfwd_1_1gamete__base.html#ae45b0df7d3aaa223558031131da04816',1,'KTfwd::gamete_base']]],
+  ['index_5ft',['index_t',['../d6/d90/structKTfwd_1_1gamete__base.html#a3806089875d0934a1463d2ea364c8fe8',1,'KTfwd::gamete_base']]],
   ['infsites',['infsites',['../df/d07/structKTfwd_1_1infsites.html',1,'KTfwd']]],
   ['infsites_2ehpp',['infsites.hpp',['../dc/d32/infsites_8hpp.html',1,'']]],
   ['insertion_5fpolicies_2ehpp',['insertion_policies.hpp',['../d0/d13/insertion__policies_8hpp.html',1,'']]],

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.2</span>
+   &#160;<span id="projectnumber">0.5.3</span>
    </div>
   </td>
  </tr>
@@ -418,18 +418,30 @@ Functions</h2></td></tr>
 <tr class="memitem:a01b2b78a9376f16bac5d03f84de03cfb"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a01b2b78a9376f16bac5d03f84de03cfb">admix_pops</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, mpoptype &amp;mpop, const size_t <a class="el" href="../../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>, const size_t j, const double pi, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> N_new, const bool replacement=false)</td></tr>
 <tr class="memdesc:a01b2b78a9376f16bac5d03f84de03cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an admixed population.  <a href="#a01b2b78a9376f16bac5d03f84de03cfb">More...</a><br /></td></tr>
 <tr class="separator:a01b2b78a9376f16bac5d03f84de03cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b91ef229d7fc89275c49e4e8d756d7c"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:a0b91ef229d7fc89275c49e4e8d756d7c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0b91ef229d7fc89275c49e4e8d756d7c">sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed) -&gt; decltype(<a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6">ms_sample</a>(<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, p.mutations, p.gametes, p.diploids, nsam, removeFixed))</td></tr>
-<tr class="separator:a0b91ef229d7fc89275c49e4e8d756d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02cd14fe73f03ad2c3cd54d5531bee22"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:a02cd14fe73f03ad2c3cd54d5531bee22"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a02cd14fe73f03ad2c3cd54d5531bee22">sample_separate</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed) -&gt; decltype(<a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, p.mutations, p.gametes, p.diploids, nsam, removeFixed))</td></tr>
-<tr class="separator:a02cd14fe73f03ad2c3cd54d5531bee22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9cb8400c824c6bcd0b2a69c8c21eb94"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:ae9cb8400c824c6bcd0b2a69c8c21eb94"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae9cb8400c824c6bcd0b2a69c8c21eb94">sample</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed) -&gt; decltype(sample_details(p, individuals, removeFixed, typename std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a> &gt;::type()))</td></tr>
-<tr class="separator:ae9cb8400c824c6bcd0b2a69c8c21eb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a112a60ed6c8f8e33fd9debd2a80dfc40"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:a112a60ed6c8f8e33fd9debd2a80dfc40"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a112a60ed6c8f8e33fd9debd2a80dfc40">sample_separate</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed) -&gt; decltype(<a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac39e782e7051529d343e240d89b697eb">fwdpp_internal::ms_sample_separate_single_deme</a>(p.mutations, p.gametes, p.diploids, individuals, 2 *individuals.size(), removeFixed))</td></tr>
-<tr class="separator:a112a60ed6c8f8e33fd9debd2a80dfc40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e00f8f2b385bada70e1119cb22f2e5"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a12e00f8f2b385bada70e1119cb22f2e5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a> &gt;::value, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a12e00f8f2b385bada70e1119cb22f2e5">sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed)</td></tr>
+<tr class="separator:a12e00f8f2b385bada70e1119cb22f2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea13ab5b06eb7e7a81dbfd999330aca"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a2ea13ab5b06eb7e7a81dbfd999330aca"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a> &gt;::value, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a2ea13ab5b06eb7e7a81dbfd999330aca">sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed, const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;locus_boundaries=std::vector&lt; std::pair&lt; double, double &gt;&gt;())</td></tr>
+<tr class="separator:a2ea13ab5b06eb7e7a81dbfd999330aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a8c288f0b67a7df4632546671a30e6"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a71a8c288f0b67a7df4632546671a30e6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a> &gt;::value, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a> &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a71a8c288f0b67a7df4632546671a30e6">sample_separate</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed, const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;locus_boundaries=std::vector&lt; std::pair&lt; double, double &gt;&gt;())</td></tr>
+<tr class="separator:a71a8c288f0b67a7df4632546671a30e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24661f18456b5a3f679a68aeb6e542a3"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a24661f18456b5a3f679a68aeb6e542a3"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a> &gt;::value, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a24661f18456b5a3f679a68aeb6e542a3">sample_separate</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned nsam, const bool removeFixed)</td></tr>
+<tr class="separator:a24661f18456b5a3f679a68aeb6e542a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4380e9f57d2fc8629c3d8d625059118d"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a4380e9f57d2fc8629c3d8d625059118d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a> &gt;::value, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a4380e9f57d2fc8629c3d8d625059118d">sample</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed)</td></tr>
+<tr class="separator:a4380e9f57d2fc8629c3d8d625059118d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e24181b25e0e9f2725b37794eb02e83"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a0e24181b25e0e9f2725b37794eb02e83"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a> &gt;::value, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a> &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a0e24181b25e0e9f2725b37794eb02e83">sample</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed, const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;locus_boundaries=std::vector&lt; std::pair&lt; double, double &gt;&gt;())</td></tr>
+<tr class="separator:a0e24181b25e0e9f2725b37794eb02e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7319492c416ff3d902810992654320c2"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a7319492c416ff3d902810992654320c2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a> &gt;::value, <a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a7319492c416ff3d902810992654320c2">sample_separate</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed)</td></tr>
+<tr class="separator:a7319492c416ff3d902810992654320c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac4f63e779ba455922dc238c60c99dae"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:aac4f63e779ba455922dc238c60c99dae"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; std::is_same&lt; typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a> &gt;::value, std::vector&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a> &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#aac4f63e779ba455922dc238c60c99dae">sample_separate</a> (const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const std::vector&lt; unsigned &gt; &amp;individuals, const bool removeFixed)</td></tr>
+<tr class="separator:aac4f63e779ba455922dc238c60c99dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade392950bd45b9f9699446c1e7f03ad5"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
 <tr class="memitem:ade392950bd45b9f9699446c1e7f03ad5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ade392950bd45b9f9699446c1e7f03ad5">sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;p, const unsigned deme, const unsigned nsam, const bool removeFixed)</td></tr>
 <tr class="separator:ade392950bd45b9f9699446c1e7f03ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -460,7 +472,7 @@ Functions</h2></td></tr>
 
 <p>Default gamete type. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00151">151</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00150">150</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -1602,14 +1614,14 @@ template&lt;typename gamete_type , typename allocator_t , template&lt; typename,
 
 </div>
 </div>
-<a class="anchor" id="a0b91ef229d7fc89275c49e4e8d756d7c"></a>
+<a class="anchor" id="a12e00f8f2b385bada70e1119cb22f2e5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename poptype &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto KTfwd::sample </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a>&gt;::value,<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a>&gt;::type KTfwd::sample </td>
           <td>(</td>
           <td class="paramtype">const gsl_rng *&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -1635,26 +1647,93 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6">ms_sample</a>(<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,p.mutations,p.gametes,p.diploids,nsam,removeFixed))
-  
-  </td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Take a random sample of size 'nsam' from a population </p>
+<p>Take a random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>A random-number generator </td></tr>
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae9cb8400c824c6bcd0b2a69c8c21eb94"></a>
+<a class="anchor" id="a2ea13ab5b06eb7e7a81dbfd999330aca"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename poptype &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto KTfwd::sample </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a>&gt;::value,std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a>&gt; &gt;::type KTfwd::sample </td>
+          <td>(</td>
+          <td class="paramtype">const gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned&#160;</td>
+          <td class="paramname"><em>nsam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>removeFixed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>locus_boundaries</em> = <code>std::vector&lt;std::pair&lt;double,double&gt;&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take a random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>A random-number generator </td></tr>
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
+
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4380e9f57d2fc8629c3d8d625059118d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a>&gt;::value,<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a>&gt;::type KTfwd::sample </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -1674,14 +1753,74 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(sample_details(p,individuals,removeFixed,typename std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>,<a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a>&gt;::type()))
-  
-  </td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Take a non-random sample of diploids from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of the diploids to sample </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00133">133</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0e24181b25e0e9f2725b37794eb02e83"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a>&gt;::value,std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#a6c7bd80e03e8abe59677d25a5c2cde09">sample_t</a>&gt; &gt;::type KTfwd::sample </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>removeFixed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>locus_boundaries</em> = <code>std::vector&lt;std::pair&lt;double,double&gt;&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take a non-random sample of diploids from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of the diploids to sample </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
+
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00163">163</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
@@ -1741,7 +1880,7 @@ template&lt;typename poptype &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00131">131</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00254">254</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
@@ -1794,7 +1933,7 @@ template&lt;typename poptype &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of both neutral and non-neutral variants </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00192">192</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00313">313</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
@@ -2529,14 +2668,73 @@ template&lt;typename diploid_geno_t , typename gamete_type , typename gamete_con
 
 </div>
 </div>
-<a class="anchor" id="a02cd14fe73f03ad2c3cd54d5531bee22"></a>
+<a class="anchor" id="a71a8c288f0b67a7df4632546671a30e6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename poptype &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto KTfwd::sample_separate </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a>&gt;::value,std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a>&gt; &gt;::type KTfwd::sample_separate </td>
+          <td>(</td>
+          <td class="paramtype">const gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned&#160;</td>
+          <td class="paramname"><em>nsam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>removeFixed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, double &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>locus_boundaries</em> = <code>std::vector&lt;std::pair&lt;double,double&gt;&gt;()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take a random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>A random-number generator </td></tr>
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24661f18456b5a3f679a68aeb6e542a3"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a>&gt;::value,<a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a>&gt;::type KTfwd::sample_separate </td>
           <td>(</td>
           <td class="paramtype">const gsl_rng *&#160;</td>
           <td class="paramname"><em>r</em>, </td>
@@ -2562,25 +2760,34 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9">ms_sample_separate</a>(<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>,p.mutations,p.gametes,p.diploids,nsam,removeFixed))
-  
-  </td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Take a random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>A random-number generator </td></tr>
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00108">108</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a112a60ed6c8f8e33fd9debd2a80dfc40"></a>
+<a class="anchor" id="a7319492c416ff3d902810992654320c2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename poptype &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">auto KTfwd::sample_separate </td>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#ga1d1b3a08c798b89fea7c36a7180d8a0b">sugar::SINGLEPOP_TAG</a>&gt;::value,<a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a>&gt;::type KTfwd::sample_separate </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
@@ -2600,14 +2807,70 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(<a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ac39e782e7051529d343e240d89b697eb">fwdpp_internal::ms_sample_separate_single_deme</a>(p.mutations,p.gametes,p.diploids,individuals,2*individuals.size(),removeFixed))
-  
-  </td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Take a non-random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of the diploids to 'view' from the population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00100">100</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00196">196</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aac4f63e779ba455922dc238c60c99dae"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if&lt;std::is_same&lt;typename <a class="el" href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a676d5e992448eea362d2acfe3096a333">poptype::popmodel_t</a>, <a class="el" href="../../de/d6e/group__sugar.html#gaf921d18379b491101cec5291b2e08432">sugar::MULTILOCPOP_TAG</a>&gt;::value,std::vector&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#a52b398fc158f9a8d28f32c5d2564267b">sep_sample_t</a>&gt; &gt;::type KTfwd::sample_separate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aa222338fad215f6f35c2f630479ddbf3">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; unsigned &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>removeFixed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Take a non-random sample of nsam chromosomes from a population</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of the diploids to 'view' from the population </td></tr>
+    <tr><td class="paramname">nsam</td><td>The sample size </td></tr>
+    <tr><td class="paramname">removeFixed</td><td>Whether or not to remove variants present in all nsam chromosomes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00226">226</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
@@ -2667,7 +2930,7 @@ template&lt;typename poptype &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00162">162</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00284">284</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>
@@ -2720,7 +2983,7 @@ template&lt;typename poptype &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pair of vectors. The first element contains neutral variants. The second contains non-neutral variants. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00229">229</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dc/dbd/sampling_8hpp_source.html#l00347">347</a> of file <a class="el" href="../../dc/dbd/sampling_8hpp_source.html">sampling.hpp</a>.</p>
 
 </div>
 </div>

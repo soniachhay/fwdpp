@@ -16,7 +16,7 @@ var searchData=
   ['recombination_2etcc',['recombination.tcc',['../df/d06/recombination_8tcc.html',1,'']]],
   ['recombination_5fcommon_2ehpp',['recombination_common.hpp',['../df/d26/recombination__common_8hpp.html',1,'']]],
   ['recombinationtest_2ecc',['recombinationTest.cc',['../d7/d99/recombinationTest_8cc.html',1,'']]],
-  ['recombine_5fgametes',['recombine_gametes',['../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1',1,'KTfwd::recombine_gametes()'],['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3012205ca5b3e0cac5b9557a7533275e',1,'KTfwd::fwdpp_internal::recombine_gametes()']]],
+  ['recombine_5fgametes',['recombine_gametes',['../da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1',1,'KTfwd::recombine_gametes()'],['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a091b1da0e94464fc2b1d600f898ed914',1,'KTfwd::fwdpp_internal::recombine_gametes()']]],
   ['recycle_5fgamete',['recycle_gamete',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6f2e7747d82681448efec3040fdffcb5',1,'KTfwd::fwdpp_internal']]],
   ['recycle_5fmutation_5fhelper',['recycle_mutation_helper',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#af1850c4fc61171778561104a79612e27',1,'KTfwd::fwdpp_internal']]],
   ['recycling_2ehpp',['recycling.hpp',['../d6/d3f/recycling_8hpp.html',1,'']]],

@@ -9,7 +9,7 @@ var indexSectionsWithContent =
   6: "acdfgilmprstuv",
   7: "fg",
   8: "mst",
-  9: "_bfhims",
+  9: "_bfhms",
   10: "dfmprsu",
   11: "adefit"
 };
