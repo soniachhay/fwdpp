@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['matrix_5fhelper',['matrix_helper',['../d9/dd8/structKTfwd_1_1data__matrix__details_1_1matrix__helper.html',1,'KTfwd::data_matrix_details']]],
   ['metapop',['metapop',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html',1,'KTfwd::sugar']]],
   ['metapop_3c_20ktfwd_3a_3apopgenmut_20_3e',['metapop&lt; KTfwd::popgenmut &gt;',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html',1,'KTfwd::sugar']]],
   ['metapop_3c_20ktfwd_3a_3apopgenmut_2c_20custom_5fdiploid_5ftesting_5ft_20_3e',['metapop&lt; KTfwd::popgenmut, custom_diploid_testing_t &gt;',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html',1,'KTfwd::sugar']]],

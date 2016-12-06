@@ -12,8 +12,10 @@ var searchData=
   ['generalmut',['generalmut',['../da/dde/structKTfwd_1_1generalmut.html#a4d74ee0212a952a7f14109accf800004',1,'KTfwd::generalmut']]],
   ['generalmut_5fvec',['generalmut_vec',['../d9/d9e/structKTfwd_1_1generalmut__vec.html#ab1d41ddef37fb5ee037deed671fd9ea5',1,'KTfwd::generalmut_vec']]],
   ['generate_5fmut_5fpos',['generate_mut_pos',['../df/d07/structKTfwd_1_1infsites.html#ac4da485bf04eb1bcde9f9145f16ab8fa',1,'KTfwd::infsites']]],
+  ['genotype_5fmatrix',['genotype_matrix',['../da/d8b/namespaceKTfwd.html#a0f29aa671a95ece48172e57a8accdfae',1,'KTfwd']]],
   ['get',['get',['../de/d55/classKTfwd_1_1GSLrng__t.html#a8cb4d8eee277fa7b2a48e384df7517dd',1,'KTfwd::GSLrng_t']]],
   ['get_5fmut_5findex',['get_mut_index',['../de/d6e/group__sugar.html#ga20e03e38a69ea6103541149318de36fa',1,'KTfwd::sugar']]],
+  ['gsl_5fset_5ferror_5fhandler',['gsl_set_error_handler',['../d0/d1a/sugar__matrixTest_8cc.html#aeb8d941eedeb5995909823ed391436a9',1,'sugar_matrixTest.cc']]],
   ['gslrng_5ft',['GSLrng_t',['../de/d55/classKTfwd_1_1GSLrng__t.html#aa1827c73e4a43d8d71af02bf0aaacd86',1,'KTfwd::GSLrng_t::GSLrng_t(const unsigned long seed) noexcept'],['../de/d55/classKTfwd_1_1GSLrng__t.html#ac95e02e07e23ed33d7d534a8b27dbcc1',1,'KTfwd::GSLrng_t::GSLrng_t(const GSLrng_t &amp;rng) noexcept'],['../de/d55/classKTfwd_1_1GSLrng__t.html#af93efefdaea0288117d9ea892ce037e3',1,'KTfwd::GSLrng_t::GSLrng_t(GSLrng_t &amp;&amp;)=default']]],
   ['gzclose',['gzclose',['../d6/d57/serializationTest_8cc.html#a93506ac8f40c641622b958eae68cb8c4',1,'serializationTest.cc']]]
 ];

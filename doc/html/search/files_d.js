@@ -24,6 +24,7 @@ var searchData=
   ['sugar_5fgeneralmuttest_2ecc',['sugar_generalmutTest.cc',['../d4/da1/sugar__generalmutTest_8cc.html',1,'']]],
   ['sugar_5fgslrngtest_2ecc',['sugar_GSLrngTest.cc',['../da/dc6/sugar__GSLrngTest_8cc.html',1,'']]],
   ['sugar_5fintegration_5ftests_2ecc',['sugar_integration_tests.cc',['../d4/d14/sugar__integration__tests_8cc.html',1,'']]],
+  ['sugar_5fmatrixtest_2ecc',['sugar_matrixTest.cc',['../d0/d1a/sugar__matrixTest_8cc.html',1,'']]],
   ['sugar_5fmetapop_5fcustom_5fdiploidtest_2ecc',['sugar_metapop_custom_diploidTest.cc',['../d5/d07/sugar__metapop__custom__diploidTest_8cc.html',1,'']]],
   ['sugar_5fmetapoptest_2ecc',['sugar_metapopTest.cc',['../d1/df7/sugar__metapopTest_8cc.html',1,'']]],
   ['sugar_5fmultilocustest_2ecc',['sugar_multilocusTest.cc',['../d5/d38/sugar__multilocusTest_8cc.html',1,'']]],
