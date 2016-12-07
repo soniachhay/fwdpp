@@ -1,6 +1,7 @@
 var searchData=
 [
   ['matrix_2ehpp',['matrix.hpp',['../df/dce/matrix_8hpp.html',1,'']]],
+  ['matrix_2emd',['matrix.md',['../d1/d07/matrix_8md.html',1,'']]],
   ['matrix_5fdetails_2ehpp',['matrix_details.hpp',['../d3/d2d/matrix__details_8hpp.html',1,'']]],
   ['metapop_2ehpp',['metapop.hpp',['../df/dae/metapop_8hpp.html',1,'']]],
   ['metapop_2ehpp',['metapop.hpp',['../d5/d5d/metapop_2metapop_8hpp.html',1,'']]],
