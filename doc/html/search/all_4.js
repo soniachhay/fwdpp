@@ -1,7 +1,7 @@
 var searchData=
 [
   ['data_5fmatrix',['data_matrix',['../dd/dc8/structKTfwd_1_1data__matrix.html',1,'KTfwd']]],
-  ['data_5fmatrix',['data_matrix',['../dd/dc8/structKTfwd_1_1data__matrix.html#a42cd0f6916c6b9fd7f2cf06dc3284fd4',1,'KTfwd::data_matrix']]],
+  ['data_5fmatrix',['data_matrix',['../dd/dc8/structKTfwd_1_1data__matrix.html#a7995f79602deb1f86cc31752499c44ee',1,'KTfwd::data_matrix']]],
   ['datatypes_2emd',['datatypes.md',['../d3/ded/datatypes_8md.html',1,'']]],
   ['debug_2ehpp',['debug.hpp',['../da/d7b/debug_8hpp.html',1,'']]],
   ['deleter_2ehpp',['deleter.hpp',['../da/d16/deleter_8hpp.html',1,'']]],

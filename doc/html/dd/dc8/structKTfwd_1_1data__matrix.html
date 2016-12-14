@@ -105,17 +105,17 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a42cd0f6916c6b9fd7f2cf06dc3284fd4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#a42cd0f6916c6b9fd7f2cf06dc3284fd4">data_matrix</a> (const std::size_t nrow_)</td></tr>
-<tr class="separator:a42cd0f6916c6b9fd7f2cf06dc3284fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7995f79602deb1f86cc31752499c44ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#a7995f79602deb1f86cc31752499c44ee">data_matrix</a> (const std::size_t nrow_=0)</td></tr>
+<tr class="separator:a7995f79602deb1f86cc31752499c44ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a254d979c61c26592f3bcd522e82e8d41"><td class="memItemLeft" align="right" valign="top">std::vector&lt; short &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#a254d979c61c26592f3bcd522e82e8d41">neutral</a></td></tr>
-<tr class="memdesc:a254d979c61c26592f3bcd522e82e8d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#a254d979c61c26592f3bcd522e82e8d41">More...</a><br /></td></tr>
-<tr class="separator:a254d979c61c26592f3bcd522e82e8d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac48dd1c74f1164c0e894a0213f83e12"><td class="memItemLeft" align="right" valign="top">std::vector&lt; short &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#aac48dd1c74f1164c0e894a0213f83e12">selected</a></td></tr>
-<tr class="memdesc:aac48dd1c74f1164c0e894a0213f83e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#aac48dd1c74f1164c0e894a0213f83e12">More...</a><br /></td></tr>
-<tr class="separator:aac48dd1c74f1164c0e894a0213f83e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb978c4a3b540d4996c66c8bceccdcbb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#abb978c4a3b540d4996c66c8bceccdcbb">neutral</a></td></tr>
+<tr class="memdesc:abb978c4a3b540d4996c66c8bceccdcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#abb978c4a3b540d4996c66c8bceccdcbb">More...</a><br /></td></tr>
+<tr class="separator:abb978c4a3b540d4996c66c8bceccdcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4635d22cddef4d5308390a5058db288"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#ab4635d22cddef4d5308390a5058db288">selected</a></td></tr>
+<tr class="memdesc:ab4635d22cddef4d5308390a5058db288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#ab4635d22cddef4d5308390a5058db288">More...</a><br /></td></tr>
+<tr class="separator:ab4635d22cddef4d5308390a5058db288"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#af8ddba25029b4fb79aefcf4e4c9ba1e9">neutral_positions</a></td></tr>
 <tr class="memdesc:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of neutral mutations. Same order as matrix column order.  <a href="#af8ddba25029b4fb79aefcf4e4c9ba1e9">More...</a><br /></td></tr>
 <tr class="separator:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +132,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Genotype or haplotype matrix. </p>
-<p>This type uses std::vector&lt;short&gt; to hold a matrix representing the genotypes for a set of diploids.</p>
+<p>This type uses std::vector&lt;char&gt; to hold a matrix representing the genotypes for a set of diploids.</p>
 <p>For a haplotype matrix of n individuals, the data represent 2n rows with a 0/1 encoding representing ancetral/derived.</p>
 <p>For a genotype matrix of n individuals, the data represent n rows with a 0/1/2 encoding for the number of copies of the derived mutation.</p>
 <p>The data layout is row-major (aka "C-style") ordering, facilitating compatibility with GSL matrix types, NumPy 2D arrays, etc. Note that GSL matrices may be constructed using gsl_matrix_view_array or gsl_matrix_const_view_array for cases where a matrix of only neutral or only selected mutations is needed.</p>
@@ -141,7 +141,7 @@ Data Fields</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a42cd0f6916c6b9fd7f2cf06dc3284fd4"></a>
+<a class="anchor" id="a7995f79602deb1f86cc31752499c44ee"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -152,7 +152,7 @@ Data Fields</h2></td></tr>
           <td class="memname">KTfwd::data_matrix::data_matrix </td>
           <td>(</td>
           <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>nrow_</em></td><td>)</td>
+          <td class="paramname"><em>nrow_</em> = <code>0</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -162,18 +162,26 @@ Data Fields</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Constructor</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nrow_</td><td>Number of rows in the matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The default value of nrow_ = 0 is so that instances of this type can be easily stack-allocated. Intended use cases are Cython, Rcpp, or other systems for "wrapping" C++. This type will rely on compiler-generated copy/move constructors, and therefore such systems should rely on copy elision to make sure that <a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#a12917482fe630b7d9b94bdbd704c3b4d" title="Number of rows in the matrix. ">data_matrix::nrow</a> is set correctly. </p>
 
 <p>Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a254d979c61c26592f3bcd522e82e8d41"></a>
+<a class="anchor" id="abb978c4a3b540d4996c66c8bceccdcbb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;short&gt; KTfwd::data_matrix::neutral</td>
+          <td class="memname">std::vector&lt;char&gt; KTfwd::data_matrix::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -231,12 +239,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aac48dd1c74f1164c0e894a0213f83e12"></a>
+<a class="anchor" id="ab4635d22cddef4d5308390a5058db288"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;short&gt; KTfwd::data_matrix::selected</td>
+          <td class="memname">std::vector&lt;char&gt; KTfwd::data_matrix::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">
