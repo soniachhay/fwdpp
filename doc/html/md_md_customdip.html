@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>This is a document covering advanced programming issues using <b>fwdpp</b>. Please see the introductory tutorials if you are new to programming with the library.</p>
 <h2>Rationale</h2>
 <p>A minimal diploid contains two integers representing the locations of the diploid's gametes. These types should be the same as the size_type corresponding to the gamete container. Typically, std::size_t suffices, and thus a minimal diploid may be defined as:</p>
-<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> = std::pair&lt;std::size_t,std::size_t&gt;;</div></div><!-- fragment --><p>It is often desirable to have diploid types with additional data, and <b>fwdpp</b> easily supports this in the form of "custom" diploid types. Such custom types must have the same public API as <a href="http://en.cppreference.com/w/cpp/utility/pair">std::pair</a>. Further, the type must inherit from <a class="el" href="d3/dea/namespaceKTfwd_1_1tags.html#a3739c412d360de296e85695d9488c6ac" title="For more complex models that require all of the data in a custom diploid type. ">KTfwd::tags::custom_diploid_t</a>. Once these requirements are fulfilled, the type will be compatible with the library. See <a class="el" href="d9/dfd/type__traitsTest_8cc.html" title="Testing fwdpp/type_traits.hpp. ">type_traitsTest.cc</a> for minimal examples. </p>
+<div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> = std::pair&lt;std::size_t,std::size_t&gt;;</div></div><!-- fragment --><p>It is often desirable to have diploid types with additional data, and <b>fwdpp</b> easily supports this in the form of "custom" diploid types. Such custom types must have the same public API as <a href="http://en.cppreference.com/w/cpp/utility/pair">std::pair</a>. Further, the type must inherit from <a class="el" href="d3/dea/namespaceKTfwd_1_1tags.html#a3739c412d360de296e85695d9488c6ac">KTfwd::tags::custom_diploid_t</a>. Once these requirements are fulfilled, the type will be compatible with the library. See <a class="el" href="d9/dfd/type__traitsTest_8cc.html" title="Testing fwdpp/type_traits.hpp. ">type_traitsTest.cc</a> for minimal examples. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

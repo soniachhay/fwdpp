@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -103,7 +103,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa049c7b1aab90734b178a1143cf8398"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#aaa049c7b1aab90734b178a1143cf8398">shmodel</a> ()=default</td></tr>
-<tr class="memdesc:aaa049c7b1aab90734b178a1143cf8398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor useful in extension situations that don't understand std::function.  <a href="#aaa049c7b1aab90734b178a1143cf8398">More...</a><br /></td></tr>
 <tr class="separator:aaa049c7b1aab90734b178a1143cf8398"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322431c3670c0c21044f70205c11747e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a322431c3670c0c21044f70205c11747e">shmodel</a> (std::function&lt; double(const gsl_rng *)&gt; sfxn, std::function&lt; double(const gsl_rng *)&gt; hfxn)</td></tr>
 <tr class="memdesc:a322431c3670c0c21044f70205c11747e"><td class="mdescLeft">&#160;</td><td class="mdescRight">More efficient constructor for c++11-aware situations.  <a href="#a322431c3670c0c21044f70205c11747e">More...</a><br /></td></tr>
@@ -111,15 +110,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aef562ae02253c49e89f4147211d3e184"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const gsl_rng *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#aef562ae02253c49e89f4147211d3e184">s</a></td></tr>
-<tr class="separator:aef562ae02253c49e89f4147211d3e184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82e4c0ae66c1eb5c8f8bae8b735e34ea"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const gsl_rng *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a82e4c0ae66c1eb5c8f8bae8b735e34ea">h</a></td></tr>
-<tr class="separator:a82e4c0ae66c1eb5c8f8bae8b735e34ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae551ad0e98ff8f1e442eda2dbf757416"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const gsl_rng *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#ae551ad0e98ff8f1e442eda2dbf757416">s</a></td></tr>
+<tr class="separator:ae551ad0e98ff8f1e442eda2dbf757416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70eca5faef7b27f56b197db9fbd715bb"><td class="memItemLeft" align="right" valign="top">std::function&lt; double(const gsl_rng *)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dbe/structKTfwd_1_1extensions_1_1shmodel.html#a70eca5faef7b27f56b197db9fbd715bb">h</a></td></tr>
+<tr class="separator:a70eca5faef7b27f56b197db9fbd715bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Callback wrapper. Used to model distributions on effect sizes/selection coefficients (s) and dominance (h) </p>
 
-<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aaa049c7b1aab90734b178a1143cf8398"></a>
 <div class="memitem">
@@ -141,8 +140,7 @@ Data Fields</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Default constructor useful in extension situations that don't understand std::function. </p>
+<p>Default constructor useful in extension situations that don't understand std::function </p>
 
 </div>
 </div>
@@ -180,36 +178,36 @@ Data Fields</h2></td></tr>
 
 <p>More efficient constructor for c++11-aware situations. </p>
 
-<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="a82e4c0ae66c1eb5c8f8bae8b735e34ea"></a>
+<a class="anchor" id="a70eca5faef7b27f56b197db9fbd715bb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;double(const gsl_rng*)&gt; KTfwd::extensions::shmodel::h</td>
+          <td class="memname">std::function&lt;double(const gsl_rng *)&gt; KTfwd::extensions::shmodel::h</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="aef562ae02253c49e89f4147211d3e184"></a>
+<a class="anchor" id="ae551ad0e98ff8f1e442eda2dbf757416"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;double(const gsl_rng*)&gt; KTfwd::extensions::shmodel::s</td>
+          <td class="memname">std::function&lt;double(const gsl_rng *)&gt; KTfwd::extensions::shmodel::s</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da7/callbacks_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../d3/da7/callbacks_8hpp_source.html">callbacks.hpp</a>.</p>
 
 </div>
 </div>

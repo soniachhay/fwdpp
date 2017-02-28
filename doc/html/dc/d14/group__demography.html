@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -213,7 +213,7 @@ template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename v
 <p>The behavior of this function depends on the value of <code>replacement</code>. When <code>replacement</code> is <code>false</code>, the size of the new deme cannot be so large that it requires all of demes <code>i</code> and/or <code>j</code>. When <code>replacement</code> is <code>true</code>, there is no limit on the value of <code>N_new</code>.</p>
 <dl class="section return"><dt>Returns</dt><dd>Error value -1 if <code>i</code> or <code>j</code> &gt;= <code>diploids.size()</code>, -1 if <code>replacement</code> is true and the new deme size is too large, 1 if <code>pi</code> &lt; 0. or <code>pi</code> &gt;= 1., 0 otherwise (meaning successful admixture). </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00232">232</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00254">254</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>
@@ -276,7 +276,7 @@ template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename v
 <dl class="section return"><dt>Returns</dt><dd>An error value -1 if i &gt;= diploids.size(), 0 otherwise (meaning copy successful).</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Updates gamete and mutation counts </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +325,7 @@ template&lt;typename vdipvector_t &gt; </div>
 <p>Deme max(i,j) is appended to the end of deme min(i,j). Deme max(i,j) is then removed from diploids.</p>
 <dl class="section return"><dt>Returns</dt><dd>Error value -1 if i or j &gt;= diploids.size(), Error value 1 if i==j, 0 otherwise (meaning merge successful). </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename v
 <dl class="section return"><dt>Returns</dt><dd>Error value -1 if i &gt;= diploids.size(), 0 otherwise (meaning successful delete).</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Gamete and mutation counts are updated. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00115">115</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00121">121</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>
@@ -474,7 +474,7 @@ template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename v
 <dl class="section return"><dt>Returns</dt><dd>Error code -1 if i&gt;=diploids.size(), 1 if (!replacement&amp;&amp;(N_new &gt;= diploids[i].size())), 0 otherwise (meaning successful split).</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Gamete and mutation counts are updated only when sampling with replacement. Counts cannot change if sampling without replacement. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00189">189</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00206">206</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>
@@ -523,7 +523,7 @@ template&lt;typename vdipvector_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Error value -1 if i or j &gt;= diploids.size(), 1 if i == j, 0 otherwise (meaning successful swap).</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Implemented as std::swap(diploids[i],diploids[j]). </dd></dl>
 
-<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00147">147</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../de/dc7/demography_8hpp_source.html#l00155">155</a> of file <a class="el" href="../../de/dc7/demography_8hpp_source.html">demography.hpp</a>.</p>
 
 </div>
 </div>

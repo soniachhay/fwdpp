@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -148,8 +148,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span>,<span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;                              \</div><div class="line">      struct has_##NAME: std::false_type                                \</div><div class="line">      {};                                                               \</div><div class="line">      template&lt;typename T&gt;                                              \</div><div class="line">      struct has_##NAME&lt;T,typename void_t&lt;typename T::NAME&gt;::type &gt;: std::true_type {};</div></div><!-- fragment -->
-<p>Definition at line <a class="el" href="../../d4/d26/internal_2type__traits_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../d4/d26/internal_2type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt; <span class="keyword">struct </span>has_##NAME : std::false_type  \</div><div class="line">    {                                                                         \</div><div class="line">    };                                                                        \</div><div class="line">    template &lt;typename T&gt;                                                     \</div><div class="line">    struct has_##NAME&lt;T, typename void_t&lt;typename T::NAME&gt;::type&gt;             \</div><div class="line">        : std::true_type                                                      \</div><div class="line">    {                                                                         \</div><div class="line">    };</div></div><!-- fragment -->
+<p>Definition at line <a class="el" href="../../d4/d26/internal_2type__traits_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d4/d26/internal_2type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>

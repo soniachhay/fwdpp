@@ -10,7 +10,7 @@ var searchData=
   ['multiloc',['multiloc',['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html',1,'KTfwd::sugar']]],
   ['multiloc_3c_20ktfwd_3a_3apopgenmut_20_3e',['multiloc&lt; KTfwd::popgenmut &gt;',['../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html',1,'KTfwd::sugar']]],
   ['multiloc_5fpopgenmut_5ffixture',['multiloc_popgenmut_fixture',['../de/d32/structmultiloc__popgenmut__fixture.html',1,'']]],
-  ['multilocus_5fadditive',['multilocus_additive',['../d8/d63/structmultilocus__additive.html',1,'']]],
+  ['multilocus_5fadditive',['multilocus_additive',['../d2/dea/structmultiloc__popgenmut__fixture_1_1multilocus__additive.html',1,'multiloc_popgenmut_fixture']]],
   ['multiplicative_5fdiploid',['multiplicative_diploid',['../dd/de5/structKTfwd_1_1multiplicative__diploid.html',1,'KTfwd']]],
   ['multiplicative_5fdiploid_5fminus',['multiplicative_diploid_minus',['../de/d9f/structmultiplicative__diploid__minus.html',1,'']]],
   ['mutation',['mutation',['../d1/d7f/structKTfwd_1_1mutation.html',1,'KTfwd']]],

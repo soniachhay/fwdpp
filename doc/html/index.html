@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -106,11 +106,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ol type="1">
 <li>Scott Meyer's "trilogy" of "Effective C++", "More Effective C++", and "Effective STL".</li>
 <li>Nicolai Josuttis' "The C++ Standard Template Library"</li>
-<li>David Vandevoorde and and Nicolai Josuttis, "C++ Templates"</li>
+<li>David Vandevoorde and Nicolai Josuttis, "C++ Templates"</li>
 </ol>
 <p>The first two are excellent books for people already familiar with C++ syntax but want to know more about effective software design using the language. Meyer's books are particularly good, espectially the first two. The C++ Templates book is a bible of how to get the most out of templates. It is a very advanced and detailed book, but I've found it helpful over the years.</p>
 <h2>A note about which version to use</h2>
-<p>This code is distributed via my gitub <a href="http://www.github.com/molpopgen">account</a>. The "master" and "dev" branches should be viewed as experimental. The <a href="https://github.com/molpopgen/fwdpp/releases">releases</a>, however, correspond to tested versions of the library fit for public consumption. This means that, while the version number in the configure script on master/dev may match that of a recent release, <em>that does not mean that the features/stability/bugs present in master/dev are identical to those of the release.</em> If you want to use fwdpp for research, use the latest <a href="https://github.com/molpopgen/fwdpp/releases">release</a>. If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch. If you want to look at the latest I believe to be stable, look at master. Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.</p>
+<p>This code is distributed via my GitHub <a href="http://www.github.com/molpopgen">account</a>. The "master" and "dev" branches should be viewed as experimental. The <a href="https://github.com/molpopgen/fwdpp/releases">releases</a>, however, correspond to tested versions of the library fit for public consumption. This means that, while the version number in the configure script on master/dev may match that of a recent release, <em>that does not mean that the features/stability/bugs present in master/dev are identical to those of the release.</em> If you want to use fwdpp for research, use the latest <a href="https://github.com/molpopgen/fwdpp/releases">release</a>. If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch. If you want to look at the latest I believe to be stable, look at master. Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.</p>
 <h3>Revision history</h3>
 <p><a class="el" href="md_md_RELEASE_NOTES.html">Release notes</a></p>
 <p>You should pay particular attention to any statements about backwards compatibility. If you are updating from a previous version of <b>fwdpp</b>, you may wish to read this document regarding how to reproduce results based on previous versions: md_md_preproc.</p>
@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The published version of fwdpp described a library with the following features:</p>
 <ul>
 <li>Objects (mutations and gametes) are stored only once in <em>doubly-linked lists</em>.</li>
-<li>Diploids are pairs of pointers to gamtes (technically, pairs of iterators derived from the list of gametes).</li>
+<li>Diploids are pairs of pointers to gametes (technically, pairs of iterators derived from the list of gametes).</li>
 <li>Gametes contain vectors of pointers (again, C++ iterators) to mutations.</li>
 <li>Each generation, extinct mutations and gametes are removed from the population. This removal is a constant-time operation due to the use of linked lists.</li>
 </ul>
@@ -134,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Several lookup operations were implemented using expensive linear-time searches.</li>
 <li>The linked lists plus the constant insertion and deletion of new and extinct objects, respectively, resulted in memory fragmentation or poor "cache locality".</li>
 </ul>
-<p>The 0.3.x releases of fwdpp solved most of the first problem, and sped the library up by over an order of magnitude. Further, I recommended that users link programs based on fwdpp to an external library replacing the built-in malloc (the main memory allocation function for the C family of languages, and C++'s "new" is a wrapper around malloc). I specifically recommended using Google's tcmalloc. This recommendation went a long way toward solving the second problem&ndash;simply using an industrial-strength memory allocator went a long way towards addressing the performance hit due to memory fragmentation.</p>
+<p>The 0.3.x releases of fwdpp solved most of the first problem, and sped the library up by over an order of magnitude. To address the second problem (poor cache locality), I recommended that users link programs based on fwdpp to an external library replacing the built-in malloc (the main memory allocation function for the C family of languages, and C++'s "new" is a wrapper around malloc). I specifically recommended using Google's tcmalloc. It turned out that simply using an industrial-strength memory allocator went a long way towards addressing the performance hit due to memory fragmentation.</p>
 <p>(These releases also introduced various sub-libraries aimed at making fwdpp easier to use.)</p>
 <p>At this point, intuition (backed up by extensive code profiling using tools like Google's profiling library and valgrind's cachegrind) told me that the main hurdle to improving performance was to address memory usage.</p>
 <p>Release 0.4.4 introduced a fundamental change in the library design:</p>

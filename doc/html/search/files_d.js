@@ -12,7 +12,7 @@ var searchData=
   ['serialization_2emd',['serialization.md',['../db/d67/serialization_8md.html',1,'']]],
   ['serializationtest_2ecc',['serializationTest.cc',['../d6/d57/serializationTest_8cc.html',1,'']]],
   ['singlepop_2ehpp',['singlepop.hpp',['../d5/dd9/singlepop_8hpp.html',1,'']]],
-  ['singlepop_2ehpp',['singlepop.hpp',['../d0/d82/singlepop_2singlepop_8hpp.html',1,'']]],
+  ['singlepop_2ehpp',['singlepop.hpp',['../d5/d4d/poptypes_2singlepop_8hpp.html',1,'']]],
   ['sitedepfitnesstest_2ecc',['siteDepFitnessTest.cc',['../db/d86/siteDepFitnessTest_8cc.html',1,'']]],
   ['sugar_2ehpp',['sugar.hpp',['../d7/d63/sugar_8hpp.html',1,'']]],
   ['sugar_2ehpp',['sugar.hpp',['../d0/d95/sugar_2sugar_8hpp.html',1,'']]],

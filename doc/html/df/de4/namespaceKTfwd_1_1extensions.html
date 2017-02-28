@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.4</span>
+   &#160;<span id="projectnumber">0.5.5</span>
    </div>
   </td>
  </tr>
@@ -172,14 +172,12 @@ template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(std::bind(&amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">discrete_mut_model::make_mut</a>&lt;<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;,lookup_t,<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;,
-							  &amp;dm,
-							  std::placeholders::_1,
-							  std::placeholders::_2,
-							  std::forward&lt;Args&gt;(args)...,
-							  std::ref(mut_lookup))
-						)
-    </td>
+          <td></td><td> -&gt; decltype(std::bind(
+                &amp;<a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">discrete_mut_model::make_mut</a>&lt;<a class="el" href="../../d0/d30/namespaceKTfwd_1_1traits.html#abb519ece58ebfa07b1fb27481d86852e">traits::recycling_bin_t</a>&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;,
+                                              lookup_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;,
+                &amp;dm, std::placeholders::_1, std::placeholders::_2,
+                std::forward&lt;Args&gt;(args)..., std::ref(mut_lookup)))
+        </td>
         </tr>
       </table>
   </td>
@@ -192,7 +190,7 @@ template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </div>
 <p>This simplifies life a lot!</p>
 <p>See unit test extensions.cc for an example of use. </p>
 
-<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00198">198</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00221">221</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>
@@ -232,14 +230,12 @@ template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt;typename gcont_t::value_type,<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;,
-							       &amp;drm,
-							       std::forward&lt;Args&gt;(args)...,
-							       std::placeholders::_1,
-							       std::placeholders::_2,
-							       std::placeholders::_3)
-						     )
-    </td>
+          <td></td><td> -&gt; decltype(std::bind(&amp;discrete_rec_model::operator() &lt;
+                                      typename gcont_t::value_type,
+                                  <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;, &amp;drm, std::forward&lt;Args&gt;(args)...,
+                                  std::placeholders::_1, std::placeholders::_2,
+                                  std::placeholders::_3))
+        </td>
         </tr>
       </table>
   </td>
@@ -251,7 +247,7 @@ template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </div>
 <p>Returns a function call bound to discrete_rec_model::operator().</p>
 <p>See unit test extensions.cc for example usage. </p>
 
-<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00280">280</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00306">306</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>

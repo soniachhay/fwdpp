@@ -12,6 +12,6 @@ var searchData=
   ['additive_5fover_5floci',['additive_over_loci',['../d4/dec/structadditive__over__loci.html',1,'']]],
   ['admix_5fdemes',['admix_demes',['../dc/d14/group__demography.html#gaabe2c648385d8d20e5c4165f4dc8f498',1,'KTfwd']]],
   ['admix_5fpops',['admix_pops',['../da/d8b/namespaceKTfwd.html#a01b2b78a9376f16bac5d03f84de03cfb',1,'KTfwd']]],
-  ['array_5ft',['array_t',['../da/dde/structKTfwd_1_1generalmut.html#ad81ec1e78631e6d2f7adcd51e6885871',1,'KTfwd::generalmut::array_t()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#afa956828e62a844bc6af3205bc90734c',1,'KTfwd::generalmut_vec::array_t()']]],
+  ['array_5ft',['array_t',['../da/dde/structKTfwd_1_1generalmut.html#af9b57fa96b5d9f574c885754d0a9d77d',1,'KTfwd::generalmut::array_t()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#afa956828e62a844bc6af3205bc90734c',1,'KTfwd::generalmut_vec::array_t()']]],
   ['advanced_20topics_3a_20custom_20diploid_20genotypes',['Advanced topics: custom diploid genotypes',['../md_md_customdip.html',1,'']]]
 ];
