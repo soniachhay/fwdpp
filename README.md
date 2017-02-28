@@ -47,13 +47,13 @@ The library uses advanced C++ techniques to allow arbitrary models to be impleme
 
 1.  Scott Meyer's "trilogy" of "Effective C++", "More Effective C++", and "Effective STL".
 2.  Nicolai Josuttis' "The C++ Standard Template Library"
-3.  David Vandevoorde and and Nicolai Josuttis, "C++ Templates"
+3.  David Vandevoorde and Nicolai Josuttis, "C++ Templates"
 
 The first two are excellent books for people already familiar with C++ syntax but want to know more about effective software design using the language. Meyer's books are particularly good, espectially the first two.  The C++ Templates book is a bible of how to get the most out of templates.  It is a very advanced and detailed book, but I've found it helpful over the years.
 
 ## A note about which version to use
 
-This code is distributed via my gitub [account](http://www.github.com/molpopgen).  The "master" and "dev" branches should be viewed as experimental.  The [releases](https://github.com/molpopgen/fwdpp/releases), however, correspond to tested versions of the library fit for public consumption.  This means that, while the version number in the configure script on master/dev may match that of a recent release, _that does not mean that the features/stability/bugs present in master/dev are identical to those of the release._  If you want to use fwdpp for research, use the latest [release](https://github.com/molpopgen/fwdpp/releases).  If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch.  If you want to look at the latest I believe to be stable, look at master.  Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.
+This code is distributed via my GitHub [account](http://www.github.com/molpopgen).  The "master" and "dev" branches should be viewed as experimental.  The [releases](https://github.com/molpopgen/fwdpp/releases), however, correspond to tested versions of the library fit for public consumption.  This means that, while the version number in the configure script on master/dev may match that of a recent release, _that does not mean that the features/stability/bugs present in master/dev are identical to those of the release._  If you want to use fwdpp for research, use the latest [release](https://github.com/molpopgen/fwdpp/releases).  If you want to play around with the latest and (occasionally not-so) greatest, look at the dev branch.  If you want to look at the latest I believe to be stable, look at master.  Also note that master may be ahead of dev, etc., depending on what I've committed from my development server to the repo stored at github.
 
 ### Revision history
 
@@ -95,7 +95,7 @@ The version of fwdpp used in that publication is 0.2.4.
 The published version of fwdpp described a library with the following features:
 
 * Objects (mutations and gametes) are stored only once in _doubly-linked lists_.
-* Diploids are pairs of pointers to gamtes (technically, pairs of iterators derived from the list of gametes).
+* Diploids are pairs of pointers to gametes (technically, pairs of iterators derived from the list of gametes).
 * Gametes contain vectors of pointers (again, C++ iterators) to mutations.
 * Each generation, extinct mutations and gametes are removed from the population.  This removal is a constant-time operation due to the use of linked lists.
 
@@ -106,7 +106,7 @@ The fwdpp publication showed that the library performs well in terms of speed co
 * Several lookup operations were implemented using expensive linear-time searches.
 * The linked lists plus the constant insertion and deletion of new and extinct objects, respectively, resulted in memory fragmentation or poor "cache locality".
 
-The 0.3.x releases of fwdpp solved most of the first problem, and sped the library up by over an order of magnitude.  Further, I recommended that users link programs based on fwdpp to an external library replacing the built-in malloc (the main memory allocation function for the C family of languages, and C++'s "new" is a wrapper around malloc).  I specifically recommended using Google's tcmalloc.  This recommendation went a long way toward solving the second problem--simply using an industrial-strength memory allocator went a long way towards addressing the performance hit due to memory fragmentation.
+The 0.3.x releases of fwdpp solved most of the first problem, and sped the library up by over an order of magnitude.  To address the second problem (poor cache locality), I recommended that users link programs based on fwdpp to an external library replacing the built-in malloc (the main memory allocation function for the C family of languages, and C++'s "new" is a wrapper around malloc).  I specifically recommended using Google's tcmalloc.  It turned out that simply using an industrial-strength memory allocator went a long way towards addressing the performance hit due to memory fragmentation.
 
 (These releases also introduced various sub-libraries aimed at making fwdpp easier to use.)
 
@@ -212,7 +212,7 @@ Performance testing has been moved to the [fwdpp_perf](http://github.com/molpopg
 You have a few options:
 
 1. Clone the repo (best option): git clone https://github.com/molpopgen/fwdpp.git
-2.  Click on "Download Zip" at https://github.com/molpopgen/fwdpp
+2. Click on "Download Zip" at https://github.com/molpopgen/fwdpp
 
 
 ###Obtaining a specific release
