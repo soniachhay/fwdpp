@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mutation_20and_20gamete_20data_20types',['Mutation and gamete data types',['../d2/d07/group__basicTypes.html',1,'']]]
+  ['functions_20related_20to_20taking_20samples_20from_20simulated',['Functions related to taking samples from simulated',['../df/d2f/group__samplingPops.html',1,'']]]
 ];

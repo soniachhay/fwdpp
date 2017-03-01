@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
 </div>
 <p><a href="../../d6/d3f/recycling_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,9 +114,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab36038d8e60a070a20914f3d01117e9e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ab36038d8e60a070a20914f3d01117e9e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">KTfwd::fwdpp_internal::recycling_bin_t</a> = std::queue&lt; T &gt;</td></tr>
-<tr class="separator:ab36038d8e60a070a20914f3d01117e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">KTfwd::fwdpp_internal::recycling_bin_t</a> = typename std::conditional&lt; std::is_unsigned&lt; T &gt;::value, std::queue&lt; T &gt;, void &gt;::type</td></tr>
+<tr class="separator:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

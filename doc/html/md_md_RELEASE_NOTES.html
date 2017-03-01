@@ -86,6 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
 <h2>0.5.5</h2>
 <ul>
+<li>Refactor namespace <a class="el" href="d0/d30/namespaceKTfwd_1_1traits.html" title="Nested namespace type traits. ">KTfwd::traits</a>, resovling #46.</li>
+<li>Streamline API for fitness functions, resolving #45.</li>
+<li>Resolving #45 allows us to simplify how custom diploid types are defined. See <a class="el" href="md_md_customdip.html">Advanced topics: custom diploid genotypes</a></li>
 <li>Test suite fixtures improved</li>
 <li>All source files reformatted using clang-format</li>
 <li>Build system generation of package version numbers improved</li>
@@ -232,7 +235,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Deprecated functions/objects removed from library</li>
 <li>Bug fixes:<ul>
 <li>Issue #30 fixed regarding serialization of <a class="el" href="da/dde/structKTfwd_1_1generalmut.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are fixed at compile time. ">KTfwd::generalmut</a> and <a class="el" href="d9/d9e/structKTfwd_1_1generalmut__vec.html" title="Mutation type allowing arbitray number of &quot;s,h&quot; pairs representing effect sizes,dominance.This type represents a mutation with a number of &#39;s&#39; and &#39;h&#39; parameters that are determined at run time. ">KTfwd::generalmut_vec</a></li>
-<li>A bug in <a class="el" href="d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="d7/de2/group__samplingPopsInd.html#ga0c8ef6cc18f22e0135ab0e9635bf63b6" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> separate was identified and fixed. The bug only applied to multilocus simulations. The bug was that the first 'n' chromosomes were sampled, rather than 'n' randomly-chosen chromosomes. The effect of the bug is that the first sample is truly random (as chromosomes are not sorted in any meaningful way), but a second sample would overlap with the first, etc.</li>
+<li>A bug in <a class="el" href="d7/de2/group__samplingPopsInd.html#ga23a769aa22e2b447859d99952b4a7744" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> and <a class="el" href="d7/de2/group__samplingPopsInd.html#ga23a769aa22e2b447859d99952b4a7744" title="Sampling from a population in an individual-based simulation. ">KTfwd::ms_sample</a> separate was identified and fixed. The bug only applied to multilocus simulations. The bug was that the first 'n' chromosomes were sampled, rather than 'n' randomly-chosen chromosomes. The effect of the bug is that the first sample is truly random (as chromosomes are not sorted in any meaningful way), but a second sample would overlap with the first, etc.</li>
 </ul>
 </li>
 </ul>
@@ -275,7 +278,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>An declaration of <a class="el" href="da/d8b/namespaceKTfwd.html#ab324772c17001eba12fc75f8e902a3b1">KTfwd::recombine_gametes</a> was fixed to match the implementation</li>
 <li>Minor re-organization of recombination code</li>
-<li>The details of <a class="el" href="d7/de2/group__samplingPopsInd.html#ga515d5785177f22ed1b9d307bd7b708f9" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
+<li>The details of <a class="el" href="d7/de2/group__samplingPopsInd.html#ga146131c0998fddaabe4dbd0670c82be7" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">KTfwd::ms_sample_separate</a> were moved into KTfwd::internal. This move allows access to functions that sample a specific set of diploids, which is handy in a lot of cases.</li>
 </ul>
 <h2>0.3.6</h2>
 <ul>

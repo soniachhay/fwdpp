@@ -128,9 +128,9 @@ Data Structures</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:a73b60f6a90c823d7128d4ce8b3e67676"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a73b60f6a90c823d7128d4ce8b3e67676">gsl_ran_discrete_t_ptr</a> = std::unique_ptr&lt; gsl_ran_discrete_t, <a class="el" href="../../dc/d4a/structKTfwd_1_1fwdpp__internal_1_1gsl__ran__discrete__t__deleter.html">gsl_ran_discrete_t_deleter</a> &gt;</td></tr>
 <tr class="separator:a73b60f6a90c823d7128d4ce8b3e67676"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab36038d8e60a070a20914f3d01117e9e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ab36038d8e60a070a20914f3d01117e9e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">recycling_bin_t</a> = std::queue&lt; T &gt;</td></tr>
-<tr class="separator:ab36038d8e60a070a20914f3d01117e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">recycling_bin_t</a> = typename std::conditional&lt; std::is_unsigned&lt; T &gt;::value, std::queue&lt; T &gt;, void &gt;::type</td></tr>
+<tr class="separator:a1fd1c3d4ea2cf344524efe7f1a444621"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -145,14 +145,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a3a57bffe0f73432ae388539c1d42cebe"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mcount_t , typename gcont_t , typename vdipvector_t &gt; </td></tr>
 <tr class="memitem:a3a57bffe0f73432ae388539c1d42cebe"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a3a57bffe0f73432ae388539c1d42cebe">split_deme_details</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, mcount_t &amp;mcounts, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, vdipvector_t &amp;diploids, const size_t <a class="el" href="../../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>, const <a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> N_new, const bool replacement=false)</td></tr>
 <tr class="separator:a3a57bffe0f73432ae388539c1d42cebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a0d83d51c4e6f2b6c64a90aa593d29e"><td class="memTemplParams" colspan="2">template&lt;typename fitness_policy_type , typename diploid_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a5a0d83d51c4e6f2b6c64a90aa593d29e"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5a0d83d51c4e6f2b6c64a90aa593d29e">diploid_fitness_dispatch</a> (const fitness_policy_type &amp;fp, const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;d, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, std::false_type)</td></tr>
-<tr class="memdesc:a5a0d83d51c4e6f2b6c64a90aa593d29e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard diploids.  <a href="#a5a0d83d51c4e6f2b6c64a90aa593d29e">More...</a><br /></td></tr>
-<tr class="separator:a5a0d83d51c4e6f2b6c64a90aa593d29e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9daa5cb31d37ac91dd5a1d38b6400dd9"><td class="memTemplParams" colspan="2">template&lt;typename fitness_policy_type , typename diploid_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a9daa5cb31d37ac91dd5a1d38b6400dd9"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a9daa5cb31d37ac91dd5a1d38b6400dd9">diploid_fitness_dispatch</a> (const fitness_policy_type &amp;fp, const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;d, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, std::true_type)</td></tr>
-<tr class="memdesc:a9daa5cb31d37ac91dd5a1d38b6400dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom diploids.  <a href="#a9daa5cb31d37ac91dd5a1d38b6400dd9">More...</a><br /></td></tr>
-<tr class="separator:a9daa5cb31d37ac91dd5a1d38b6400dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92065764b6bd601b3a54bca1e2b294b8"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t_iterator &gt; </td></tr>
 <tr class="memitem:a92065764b6bd601b3a54bca1e2b294b8"><td class="memTemplItemLeft" align="right" valign="top">gcont_t_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a92065764b6bd601b3a54bca1e2b294b8">next_extant_gamete</a> (gcont_t_iterator beg, gcont_t_iterator end) noexcept</td></tr>
 <tr class="memdesc:a92065764b6bd601b3a54bca1e2b294b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around std::find_if to find next gamete where n &gt; 0.  <a href="#a92065764b6bd601b3a54bca1e2b294b8">More...</a><br /></td></tr>
@@ -162,13 +154,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:a98a5563844a5d5d35cdfa64b27acce6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same&lt; mutation_removal_policy, <a class="el" href="../../db/dcf/structKTfwd_1_1remove__nothing.html">KTfwd::remove_nothing</a> &gt;::type is true. Called by <a class="el" href="../../da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a>.  <a href="#a98a5563844a5d5d35cdfa64b27acce6e">More...</a><br /></td></tr>
 <tr class="separator:a98a5563844a5d5d35cdfa64b27acce6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df5cf70b19fe56a50d78009d6c409df"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper &gt; </td></tr>
-<tr class="memitem:a5df5cf70b19fe56a50d78009d6c409df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5df5cf70b19fe56a50d78009d6c409df">gamete_cleaner_details</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;ff, const idiom_wrapper &amp;iw) noexcept</td></tr>
+<tr class="memitem:a5df5cf70b19fe56a50d78009d6c409df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a5df5cf70b19fe56a50d78009d6c409df">gamete_cleaner_details</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;<a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, const idiom_wrapper &amp;iw) noexcept</td></tr>
 <tr class="separator:a5df5cf70b19fe56a50d78009d6c409df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecac2d975f12e9e013447d91f01946ae"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder &gt; </td></tr>
-<tr class="memitem:aecac2d975f12e9e013447d91f01946ae"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aecac2d975f12e9e013447d91f01946ae">fixation_finder_search_all</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;ff) noexcept</td></tr>
+<tr class="memitem:aecac2d975f12e9e013447d91f01946ae"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#aecac2d975f12e9e013447d91f01946ae">fixation_finder_search_all</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;<a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>) noexcept</td></tr>
 <tr class="separator:aecac2d975f12e9e013447d91f01946ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper &gt; </td></tr>
-<tr class="memitem:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a88f81b742fe15dec6b0d8fe984b1d8c0">gamete_cleaner_details</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;ff, const idiom_wrapper &amp;iw, std::true_type) noexcept</td></tr>
+<tr class="memitem:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a88f81b742fe15dec6b0d8fe984b1d8c0">gamete_cleaner_details</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const fixation_finder &amp;<a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, const idiom_wrapper &amp;iw, std::true_type) noexcept</td></tr>
 <tr class="memdesc:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for case where a model must search all gametes to figure out if a fixation exists. Use case is the multi-locus API.  <a href="#a88f81b742fe15dec6b0d8fe984b1d8c0">More...</a><br /></td></tr>
 <tr class="separator:a88f81b742fe15dec6b0d8fe984b1d8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac83c335ed41d6a578674fed9eea35ad0"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_removal_policy &gt; </td></tr>
@@ -227,10 +219,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a091b1da0e94464fc2b1d600f898ed914"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a091b1da0e94464fc2b1d600f898ed914">recombine_gametes</a> (const double_vec_type &amp;pos, const std::size_t ibeg, const std::size_t jbeg, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected)</td></tr>
 <tr class="separator:a091b1da0e94464fc2b1d600f898ed914"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae289b9fd193c1a1f8b7be9ee625b7343"><td class="memTemplParams" colspan="2">template&lt;typename mcount_vec &gt; </td></tr>
-<tr class="memitem:ae289b9fd193c1a1f8b7be9ee625b7343"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">recycling_bin_t</a>&lt; typename mcount_vec::size_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ae289b9fd193c1a1f8b7be9ee625b7343">make_mut_queue</a> (const mcount_vec &amp;mcounts)</td></tr>
+<tr class="memitem:ae289b9fd193c1a1f8b7be9ee625b7343"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">recycling_bin_t</a>&lt; typename mcount_vec::size_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ae289b9fd193c1a1f8b7be9ee625b7343">make_mut_queue</a> (const mcount_vec &amp;mcounts)</td></tr>
 <tr class="separator:ae289b9fd193c1a1f8b7be9ee625b7343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b9864f99e52a7333a5d123e05d1253"><td class="memTemplParams" colspan="2">template&lt;typename gvec_t &gt; </td></tr>
-<tr class="memitem:a16b9864f99e52a7333a5d123e05d1253"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">recycling_bin_t</a>&lt; typename gvec_t::size_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a16b9864f99e52a7333a5d123e05d1253">make_gamete_queue</a> (const gvec_t &amp;gametes)</td></tr>
+<tr class="memitem:a16b9864f99e52a7333a5d123e05d1253"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">recycling_bin_t</a>&lt; typename gvec_t::size_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a16b9864f99e52a7333a5d123e05d1253">make_gamete_queue</a> (const gvec_t &amp;gametes)</td></tr>
 <tr class="separator:a16b9864f99e52a7333a5d123e05d1253"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2e7747d82681448efec3040fdffcb5"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename queue_t &gt; </td></tr>
 <tr class="memitem:a6f2e7747d82681448efec3040fdffcb5"><td class="memTemplItemLeft" align="right" valign="top">queue_t::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6f2e7747d82681448efec3040fdffcb5">recycle_gamete</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, queue_t &amp;gamete_recycling_bin, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected)</td></tr>
@@ -261,19 +253,19 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab36038d8e60a070a20914f3d01117e9e"></a>
+<a class="anchor" id="a1fd1c3d4ea2cf344524efe7f1a444621"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">KTfwd::fwdpp_internal::recycling_bin_t</a> = typedef std::queue&lt;T&gt;</td>
+          <td class="memname">using <a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">KTfwd::fwdpp_internal::recycling_bin_t</a> = typedef typename std::conditional&lt;std::is_unsigned&lt;T&gt;::value,std::queue&lt;T&gt;,void&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -363,122 +355,6 @@ template&lt;typename mcont_t , typename gamete_type &gt; </div>
 <p>The insertion position is found via a binary search, and the call to emplace will typically result in a call to memmove or memcopy, depending on the system/compiler. </p>
 
 <p>Definition at line <a class="el" href="../../d3/d80/mutation__internal_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d3/d80/mutation__internal_8hpp_source.html">mutation_internal.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5a0d83d51c4e6f2b6c64a90aa593d29e"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename fitness_policy_type , typename diploid_t , typename gcont_t , typename mcont_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
-          <td>(</td>
-          <td class="paramtype">const fitness_policy_type &amp;&#160;</td>
-          <td class="paramname"><em>fp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>mutations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::false_type&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Standard diploids. </p>
-
-<p>Definition at line <a class="el" href="../../de/d8d/diploid__fitness__dispatch_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../de/d8d/diploid__fitness__dispatch_8hpp_source.html">diploid_fitness_dispatch.hpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9daa5cb31d37ac91dd5a1d38b6400dd9"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename fitness_policy_type , typename diploid_t , typename gcont_t , typename mcont_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double KTfwd::fwdpp_internal::diploid_fitness_dispatch </td>
-          <td>(</td>
-          <td class="paramtype">const fitness_policy_type &amp;&#160;</td>
-          <td class="paramname"><em>fp</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>mutations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::true_type&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Custom diploids. </p>
-
-<p>Definition at line <a class="el" href="../../de/d8d/diploid__fitness__dispatch_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../de/d8d/diploid__fitness__dispatch_8hpp_source.html">diploid_fitness_dispatch.hpp</a>.</p>
 
 </div>
 </div>
@@ -930,7 +806,7 @@ template&lt;typename gcont_t , typename fixation_finder , typename idiom_wrapper
 template&lt;typename gvec_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">recycling_bin_t</a>&lt;typename gvec_t::size_type&gt; KTfwd::fwdpp_internal::make_gamete_queue </td>
+          <td class="memname"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">recycling_bin_t</a>&lt;typename gvec_t::size_type&gt; KTfwd::fwdpp_internal::make_gamete_queue </td>
           <td>(</td>
           <td class="paramtype">const gvec_t &amp;&#160;</td>
           <td class="paramname"><em>gametes</em></td><td>)</td>
@@ -939,7 +815,7 @@ template&lt;typename gvec_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -950,7 +826,7 @@ template&lt;typename gvec_t &gt; </div>
 template&lt;typename mcount_vec &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab36038d8e60a070a20914f3d01117e9e">recycling_bin_t</a>&lt;typename mcount_vec::size_type&gt; KTfwd::fwdpp_internal::make_mut_queue </td>
+          <td class="memname"><a class="el" href="../../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a1fd1c3d4ea2cf344524efe7f1a444621">recycling_bin_t</a>&lt;typename mcount_vec::size_type&gt; KTfwd::fwdpp_internal::make_mut_queue </td>
           <td>(</td>
           <td class="paramtype">const mcount_vec &amp;&#160;</td>
           <td class="paramname"><em>mcounts</em></td><td>)</td>
@@ -959,7 +835,7 @@ template&lt;typename mcount_vec &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -1586,7 +1462,7 @@ template&lt;typename gcont_t , typename queue_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -1633,7 +1509,7 @@ template&lt;typename queue_t , typename mcont_t , class... Args&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
