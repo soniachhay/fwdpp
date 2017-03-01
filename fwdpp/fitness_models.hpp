@@ -3,7 +3,6 @@
 
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
-#include <fwdpp/tags/diploid_tags.hpp>
 #include <fwdpp/type_traits.hpp>
 #include <cassert>
 #include <type_traits>
@@ -76,10 +75,10 @@ namespace KTfwd
         operator()(const gamete_type &, const gamete_type &,
                    const mcont_t &) const noexcept
         {
-            static_assert(traits::is_gamete_t<gamete_type>::value,
+            static_assert(traits::is_gamete<gamete_type>::value,
                           "gamete_type::value_type must be a gamete type");
             static_assert(
-                traits::is_mutation_t<typename mcont_t::value_type>::value,
+                traits::is_mutation<typename mcont_t::value_type>::value,
                 "mcont_t::value_type must be a mutation type");
             return 1.;
         }
@@ -139,7 +138,7 @@ namespace KTfwd
         */
         {
             static_assert(
-                traits::is_mutation_t<typename mcont_t::value_type>::value,
+                traits::is_mutation<typename mcont_t::value_type>::value,
                 "mcont_t::value_type must be a mutation type");
             static_assert(
                 std::is_convertible<fitness_updating_policy_hom,
@@ -231,7 +230,7 @@ namespace KTfwd
           \returns Fitness (double)
         */
         {
-            static_assert(traits::is_gamete_t<gamete_type>::value,
+            static_assert(traits::is_gamete<gamete_type>::value,
                           "gamete_type::value_type must be a gamete type");
             return this->operator()(
                 g1.smutations.cbegin(), g1.smutations.cend(),
@@ -299,10 +298,10 @@ namespace KTfwd
                    const mcont_t &mutations, const haplotype_policy &hpol,
                    const diploid_policy &dpol) const noexcept
         {
-            static_assert(typename traits::is_gamete_t<gamete_type>::type(),
+            static_assert(typename traits::is_gamete<gamete_type>::type(),
                           "gamete_type must be a gamete type");
             static_assert(
-                traits::is_mutation_t<typename mcont_t::value_type>::value,
+                traits::is_mutation<typename mcont_t::value_type>::value,
                 "mcont_t::value_type must be a mutation type");
             return dpol(hpol(g1, mutations), hpol(g2, mutations));
         }
@@ -313,7 +312,7 @@ namespace KTfwd
                    const mcont_t &mutations, const haplotype_policy &hpol,
                    const diploid_policy &dpol) const noexcept
         {
-            static_assert(traits::is_diploid_like<diploid_t>::value,
+            static_assert(traits::is_diploid<diploid_t>::value,
                           "diploid_t must represent a diploid");
             return this->operator()(gametes[diploid.first],
                                     gametes[diploid.second], mutations, hpol,

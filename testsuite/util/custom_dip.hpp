@@ -1,11 +1,12 @@
 #ifndef FWDPP_UNIT_TESTING_CUSTOM_DIP_HPP
 #define FWDPP_UNIT_TESTING_CUSTOM_DIP_HPP
 
-#include <fwdpp/tags/diploid_tags.hpp>
 #include <iosfwd>
+#include <limits>
+#include <fwdpp/type_traits.hpp>
 
 // Custom diploid type.
-struct custom_diploid_testing_t : public KTfwd::tags::custom_diploid_t
+struct custom_diploid_testing_t
 /*!
   Semantically identical to standard diploid type, which is
   pair<size_t,size_t>,
@@ -35,6 +36,9 @@ struct custom_diploid_testing_t : public KTfwd::tags::custom_diploid_t
                && this->i == rhs.i;
     }
 };
+
+static_assert(KTfwd::traits::is_custom_diploid_t<custom_diploid_testing_t>::value,
+		"custom_diploid_testing_t must pass as a custom diploid.");
 
 struct diploid_writer
 {

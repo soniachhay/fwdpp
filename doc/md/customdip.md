@@ -16,8 +16,27 @@ diploid may be defined as:
 using diploid_t = std::pair<std::size_t,std::size_t>;
 ~~~
 
-It is often desirable to have diploid types with additional data, and __fwdpp__ easily supports this in the form of
-"custom" diploid types.  Such custom types must have the same public API as
-[std::pair](http://en.cppreference.com/w/cpp/utility/pair). Further, the type must inherit from
-KTfwd::tags::custom_diploid_t.  Once these requirements are fulfilled, the type will be
-compatible with the library. See type_traitsTest.cc for minimal examples.
+It is often desirable to have diploid types with additional data, and __fwdpp__ easily supports this in the form of "custom" diploid types. At a minimum, a custom diploid must have the same public API as 
+[std::pair](http://en.cppreference.com/w/cpp/utility/pair). In other words, it must look like this at a minimum:
+
+~~~{.cpp}
+struct my_custom_diploid
+{
+    using first_type = std::size_t;
+    using second_type = std::size_t;
+    first_type first;
+    second_type second;
+};
+~~~
+
+To check that a custom diploid type is acceptable, you can use fwdpp's type traits library:
+
+~~~{.cpp}
+#include <fwdpp/traits.hpp>
+
+static_assert(KTfwd::traits::is_diploid<my_custom_diploid>::value,"Oops!");
+~~~
+
+An additional type trait function exists to detect custom diploids (KTfwd::traits::is_custom_diploid).  It checks that the minimum API requirements are met, but that the type is not identical to a std::pair.
+
+See testsuit/unit/type_traitsTest.cc for minimal examples.
