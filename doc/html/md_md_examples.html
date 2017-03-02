@@ -83,20 +83,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Example programs </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The best documentation of how to use the library are the example simulations in the examples/ subdirectory.</p>
-<p>The individual-based programs represent the best/most efficient way to use <b>fwdpp</b>. The others are here for legacy purposes.</p>
-<h3>Compiling the examples:</h3>
-<p>As of fwdpp 0.2.5, the examples are compiled by saying "make check" after the configure step.</p>
+<div class="textblock"><p>The best documentation of how to use the library are the example simulations in the examples/ subdirectory of the source code repo.</p>
 <h3>Running the examples:</h3>
-<p>This following list of parameters and their definitions is in common to all of the example programs:<br />
- N = the number of diploid individuals to simulate<br />
- theta = 4Nu, where u is the mutation rate per gamete per generation. For example, theta = 100 means that on average, 2Nu = 50 new mutations are entering the population each generation.<br />
- rho = 4Nr, where r is the recombination rate per diploid per generation<br />
- g = the number of generations to simulate. Often, this should be &gt;= 8N at a minimum<br />
- n = the sample size to draw at the end of the simulation. To match the typical modeling assumptions of population genetics, you should have n &lt;&lt; 2N.<br />
- nreps = the number of replicates to simulate<br />
- seed = a random number seed. I will use $RANDOM as a seed, referring to the bash shell method to return a random integer.<br />
-</p>
+<p>This following list of parameters and their definitions is in common to all of the example programs:</p>
+<ul>
+<li>N = the number of diploid individuals to simulate</li>
+<li>theta = 4Nu, where u is the mutation rate per gamete per generation. For example, theta = 100 means that on average, 2Nu = 50 new mutations are entering the population each generation.</li>
+<li>rho = 4Nr, where r is the recombination rate per diploid per generation</li>
+<li>g = the number of generations to simulate. Often, this should be &gt;= 8N at a minimum</li>
+<li>n = the sample size to draw at the end of the simulation. To match the typical modeling assumptions of population genetics, you should have n &lt;&lt; 2N.</li>
+<li>nreps = the number of replicates to simulate</li>
+<li>seed = a random number seed. I will use $RANDOM as a seed, referring to the bash shell method to return a random integer.</li>
+</ul>
 <p>Note: familiarity with Hudson's "[ms](http://home.uchicago.edu/~rhudson1)" program is helpful for some of what comes below.</p>
 <h4>diploid_ind (<a class="el" href="d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>)</h4>
 <p>The first program, diploid, simulates a Wright-Fisher population with mutation, recombination, and drift. To run it:</p>
@@ -122,7 +120,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Simulates 2 equal-sized populations of size N (N remains constant over time) diploids with selection at strength s and dominance h. Migration occurs between the two populations.</p>
 <p><em>Note that the two populations never share a common ancestor in this simulation! In other words, deme 1 is never founded by a sampling event from deme 0. This means that if you simulate for a short period of time, it is unlikely that there is a MRCA common to all individuals sampled. (See comment above about appropriateness of these examples for research...)</em></p>
 <p>Usage:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens n outfilename seed</div></div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate n = sample size to take from each deme @ end of simulation (must be even #) outfilename = name of output file seed = random number seed.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens n outfilename seed</div></div><!-- fragment --><p>where:</p>
+<ul>
+<li>N = population number for each deme.</li>
+<li>4Nu_neut = 4N times the neutral mutation rate per gamete</li>
+<li>4Nu_sel = 4N times the mutation rate per gamete to selected mutations</li>
+<li>4Nr = 4N times the recombination rate per diploid per region per generation</li>
+<li>4Nm = 4N times the probability of migration per diploid per generation</li>
+<li>s = the selection coefficient of newly-arising selected mutations</li>
+<li>h = dominance of newly-arising selected mutations</li>
+<li>f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively</li>
+<li>ngens = # of generations to simulate</li>
+<li>n = sample size to take from each deme @ end of simulation (must be even #)</li>
+<li>outfilename = name of output file</li>
+<li>seed = random number seed.</li>
+</ul>
 <p>Notes: s is taken to be s in deme 1 and -s in deme 2. This lets me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
 <p>The output file contains the following:</p>
 <ol type="1">
@@ -136,25 +148,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>These two programs also serialize their data, read the copied data back, and make sure that input equals output.</p>
 <p>These two examples are hints on how to code up "IM"-like models.</p>
 <p>Usage:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_split_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div></div><!-- fragment --><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_split_ind_list N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div></div><!-- fragment --><p>where: N = population number for each deme. 4Nu_neut = 4N times the neutral mutation rate per gamete 4Nu_sel = 4N times the mutation rate per gamete to selected mutations 4Nr = 4N times the recombination rate per diploid per region per generation 4Nm = 4N times the probability of migration per diploid per generation s = the selection coefficient of newly-arising selected mutations h = dominance of newly-arising selected mutations f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively ngens = # of generations to simulate ngens2 = # of generations to simulate after the split n = sample size to take from each deme @ end of simulation (must be even #) seed = random number seed.</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_split_ind N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div></div><!-- fragment --><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./migsel_split_ind_list N 4Nu_neut 4Nu_sel 4Nr 4Nm s h f1 f2 ngens ngens2 n seed</div></div><!-- fragment --><p>where:</p>
+<ul>
+<li>N = population number for each deme.</li>
+<li>4Nu_neut = 4N times the neutral mutation rate per gamete</li>
+<li>4Nu_sel = 4N times the mutation rate per gamete to selected mutations</li>
+<li>4Nr = 4N times the recombination rate per diploid per region per generation</li>
+<li>4Nm = 4N times the probability of migration per diploid per generation</li>
+<li>s = the selection coefficient of newly-arising selected mutations</li>
+<li>h = dominance of newly-arising selected mutations</li>
+<li>f1 and f2 are the probabilities of inbreeding in deme 1 and 2, respectively</li>
+<li>ngens = # of generations to simulate</li>
+<li>ngens2 = # of generations to simulate after the split</li>
+<li>n = sample size to take from each deme @ end of simulation (must be even #)</li>
+<li>seed = random number seed.</li>
+</ul>
 <p>Notes: s is taken to be s in deme 1 and -s in deme 2. This lets me illustrate how different fitness functions can be passed to different demes using fwdpp.</p>
 <h4>bneck_selection_ind (<a class="el" href="d3/d01/bneck__selection__ind_8cc.html">bneck_selection_ind.cc</a>)</h4>
 <p>This program simulates a population for g generations at size N. In generation g+1, N changes to N2 &lt;= N. The population then grows exponentially to size N3 &gt;= N2 in g2 generations. Selected and neutral mutations are allowed each generation. The output is in “ms” format&ndash;one block for neutral mutations followed by one block for selected mutations.</p>
 <p>Usage:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./bneck_selection_ind N theta_neutral theta_sel rho s h g1 N2 N3 g2 n nreps seed</div></div><!-- fragment --><p>Where:<br />
- N = starting population size<br />
- theta_neutral = 4N*(neutral mutation rate per gamete)<br />
- theta_sel = 4N*(mutation rate per gamete to selected mutations)<br />
- rho = 4Nr, where r is recombination rate per diploid per generation<br />
- s = selection coefficient. Can be negative or positive.<br />
- h = dominance of selected mutations<br />
- N2 = size of bottlenecked population<br />
- N3 = size of recovered population<br />
- g2 = generations taken to go from size N2 to size N3<br />
- n = sample size to take from the population.<br />
- nreps = # replicates to simulate<br />
- seed = random number seed.<br />
-</p>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;./bneck_selection_ind N theta_neutral theta_sel rho s h g1 N2 N3 g2 n nreps seed</div></div><!-- fragment --><p>Where:</p>
+<ul>
+<li>N = starting population size</li>
+<li>theta_neutral = 4N*(neutral mutation rate per gamete)</li>
+<li>theta_sel = 4N*(mutation rate per gamete to selected mutations)</li>
+<li>rho = 4Nr, where r is recombination rate per diploid per generation</li>
+<li>s = selection coefficient. Can be negative or positive.</li>
+<li>h = dominance of selected mutations</li>
+<li>N2 = size of bottlenecked population</li>
+<li>N3 = size of recovered population</li>
+<li>g2 = generations taken to go from size N2 to size N3</li>
+<li>n = sample size to take from the population.</li>
+<li>nreps = # replicates to simulate</li>
+<li>seed = random number seed.</li>
+</ul>
 <h4>diploid_ind_2locus (<a class="el" href="de/dce/diploid__ind__2locus_8cc.html">diploid_ind_2locus.cc</a>)</h4>
 <p>This program simulates a 2-locus neutral model. Mutations arise at rate <img class="formulaInl" alt="$\theta$" src="form_5.png"/> at each locus, and each locus recombines at rate <img class="formulaInl" alt="$\rho$" src="form_6.png"/>. The recombination rate between loci is <img class="formulaInl" alt="$r_{bw}$" src="form_7.png"/>, which corresponds to the probability a crossover is observed between loci. In other words, the genotypes at the two loci will switch from </p><p class="formulaDsp">
 <img class="formulaDsp" alt="\[\frac{AB}{ab}\]" src="form_8.png"/>
@@ -165,7 +192,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p> with probability <img class="formulaInl" alt="$r_{bw}$" src="form_7.png"/>.</p>
 <p>The output of the simulation is an "ms"-style block for each locus. Positions are uniform on the interval <img class="formulaInl" alt="$[0,1)$" src="form_10.png"/> at locus 1, and uniform on the interval <img class="formulaInl" alt="$[1,2)$" src="form_11.png"/> at locus 2.</p>
 <p>The usage is:</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Usage:</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;./diploid_ind_2locus N theta rho rbw ngens n nreps seed</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Where:</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;N = population size (number of diploids)</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;theta = 4Nu, the scaled neutral mutation rate</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;rho = 4Nr, the scale recombination rate</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;rbw = the probability that the two loci cross over, per generation</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;ngens = the number of generations to simulate</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;n = the sample size to pull from the population at the end of each simulated replicate</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;nreps = the number of replicates to simulated</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;seed = seed value for random number generations</div></div><!-- fragment --><h4>HOC_ind (<a class="el" href="d5/d77/HOC__ind_8cc.html">HOC_ind.cc</a>)</h4>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Usage:</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;./diploid_ind_2locus N theta rho rbw ngens n nreps seed</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Where:</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;N = population size (number of diploids)</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;theta = 4Nu, the scaled neutral mutation rate</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;rho = 4Nr, the scale recombination rate</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;rbw = the probability that the two loci cross over, per generation</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;ngens = the number of generations to simulate</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;n = the sample size to pull from the population at the end of each simulated replicate</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;nreps = the number of replicates to simulated</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;seed = seed value for random number generations</div></div><!-- fragment --><h4>HOC_ind (<a class="el" href="d5/d77/HOC__ind_8cc.html">HOC_ind.cc</a>)</h4>
 <p>This program simulates a little twist on Turelli's House-of-Cards (HOC) model. The main point of this model is to demonstrate how to use KTfwd::tags::gamete_dependent to implement mutation models that depend on the current gamete state.</p>
 <p>In a typical HOC model (Kingman), the effect size of a mutated allele is a new draw from a Gaussian distribution. In this simulation, the current effect size of an allele, before mutation, is additive over causative mutations, with sum <img class="formulaInl" alt="$y$" src="form_12.png"/>. After the addition of a single mutation, its new effect size will be <img class="formulaInl" alt="$x$" src="form_13.png"/>, and thus the effect size of the new mutation, <img class="formulaInl" alt="$e$" src="form_14.png"/>, is chosen such that <img class="formulaInl" alt="$x = y+e$" src="form_15.png"/>.</p>
 <p>The fitness model here is Gaussian stabilizing selection with a mean of 0 and a standard deviation of 1. With this fitness function and the additive model of Turelli, <img class="formulaInl" alt="$V(G) \approx 4\mu$" src="form_16.png"/> when the ratio of the variance in effect sizes over the variance in fitness falls within a certain range. That approximation seems to hold, at least roughly, for this odd method of generating the effect sizes of new variants. For example, these commands return a mean of approximately <img class="formulaInl" alt="$4 \times 10^{-4}$" src="form_17.png"/></p>
