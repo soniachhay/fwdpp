@@ -2,7 +2,6 @@ var searchData=
 [
   ['gamete_5fbase',['gamete_base',['../d6/d90/structKTfwd_1_1gamete__base.html',1,'KTfwd']]],
   ['gamete_5fcleaner_5ferase_5fremove_5fidiom_5fwrapper',['gamete_cleaner_erase_remove_idiom_wrapper',['../d9/d7a/structKTfwd_1_1fwdpp__internal_1_1gamete__cleaner__erase__remove__idiom__wrapper.html',1,'KTfwd::fwdpp_internal']]],
-  ['gamete_5ftype_5ftag',['gamete_type_tag',['../dd/dbf/structKTfwd_1_1tags_1_1gamete__type__tag.html',1,'KTfwd::tags']]],
   ['gamma',['gamma',['../dd/df9/structKTfwd_1_1extensions_1_1gamma.html',1,'KTfwd::extensions']]],
   ['gaussian',['gaussian',['../da/d13/structKTfwd_1_1extensions_1_1gaussian.html',1,'KTfwd::extensions']]],
   ['generalmut',['generalmut',['../da/dde/structKTfwd_1_1generalmut.html',1,'KTfwd']]],

@@ -14,6 +14,7 @@ var searchData=
   ['standard_5fempty_5fmetapop_5ffixture',['standard_empty_metapop_fixture',['../db/dfa/structstandard__empty__metapop__fixture.html',1,'']]],
   ['standard_5fempty_5fmultiloc_5ffixture',['standard_empty_multiloc_fixture',['../d7/dbe/structstandard__empty__multiloc__fixture.html',1,'']]],
   ['standard_5fempty_5fsingle_5fdeme_5ffixture',['standard_empty_single_deme_fixture',['../d4/d55/structstandard__empty__single__deme__fixture.html',1,'']]],
+  ['standard_5fgamete',['standard_gamete',['../df/d00/structKTfwd_1_1tags_1_1standard__gamete.html',1,'KTfwd::tags']]],
   ['standardwfrules',['standardWFrules',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html',1,'KTfwd::experimental']]],
   ['standardwfrules_5fmloc',['standardWFrules_mloc',['../d8/d1d/structKTfwd_1_1experimental_1_1standardWFrules__mloc.html',1,'KTfwd::experimental']]]
 ];

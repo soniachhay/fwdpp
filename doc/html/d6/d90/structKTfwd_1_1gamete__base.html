@@ -159,7 +159,7 @@ Data Fields</h2></td></tr>
 <tr class="separator:ac6fdbc5dfdb6950574f2c81557215d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename TAG = void&gt;<br />
+<div class="textblock"><h3>template&lt;typename TAG = tags::standard_gamete&gt;<br />
 struct KTfwd::gamete_base&lt; TAG &gt;</h3>
 
 <p>Base class for gametes. </p>
@@ -168,13 +168,13 @@ struct KTfwd::gamete_base&lt; TAG &gt;</h3>
 <dl class="section note"><dt>Note</dt><dd>The typical use of this class is simply to define your mutation type (see <a class="el" href="../../md_md_policies.html">Tutorial 1: Policies in fwdpp</a>) and then use a typedef to define your gamete type in the simulations: <div class="fragment"><div class="line"><span class="keyword">using</span> gamete_t = <a class="code" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base&lt;mutation_type&gt;</a></div></div><!-- fragment --> See <a class="el" href="../../md_md_policies.html">Tutorial 1: Policies in fwdpp</a> for examples of this. </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a5">diploid_binaryIO_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a2">migsel_ind.cc</a>.</dd>
 </dl>
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00107">107</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="ae423c715b62ae3badb9556a2e0f1b9a9"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ae423c715b62ae3badb9556a2e0f1b9a9">gamete_tag</a> =  TAG</td>
@@ -184,7 +184,7 @@ template&lt;typename TAG = void&gt; </div>
 
 <p>Dispatch tag type. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00112">112</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00111">111</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -192,10 +192,26 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a3806089875d0934a1463d2ea364c8fe8">index_t</a> =  std::uint32_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00112">112</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9d624b1845a66236a3687ab551bd28f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> =  std::vector&lt;<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a3806089875d0934a1463d2ea364c8fe8">index_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -204,28 +220,12 @@ template&lt;typename TAG = void&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ab9d624b1845a66236a3687ab551bd28f"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> =  std::vector&lt;<a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#a3806089875d0934a1463d2ea364c8fe8">index_t</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00114">114</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af0d12d80031b8b421923649b96704224"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -253,7 +253,7 @@ template&lt;typename TAG = void&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00126">126</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00125">125</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -261,7 +261,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
 <table class="mlabels">
@@ -309,7 +309,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00140">140</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00139">139</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -338,7 +338,7 @@ template&lt;typename TAG = void&gt; </div>
 
 <p>Destructor is virtual, so you may inherit from this type. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00147">147</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00146">146</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -346,7 +346,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -374,7 +374,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -402,7 +402,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -431,7 +431,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -459,7 +459,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -487,7 +487,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -515,7 +515,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -537,7 +537,7 @@ template&lt;typename TAG = void&gt; </div>
 
 <p>Equality operation. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00163">163</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -546,7 +546,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::mutations</td>
@@ -556,7 +556,7 @@ template&lt;typename TAG = void&gt; </div>
 <p>Container of mutations not affecting trait value/fitness ("neutral
 mutations") </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00117">117</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +564,7 @@ mutations") </p>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2">uint_t</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::n</td>
@@ -574,7 +574,7 @@ template&lt;typename TAG = void&gt; </div>
 
 <p>Count in population. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00110">110</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>
@@ -582,7 +582,7 @@ template&lt;typename TAG = void&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TAG = void&gt; </div>
+template&lt;typename TAG = tags::standard_gamete&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html#ab9d624b1845a66236a3687ab551bd28f">mutation_container</a> <a class="el" href="../../d6/d90/structKTfwd_1_1gamete__base.html">KTfwd::gamete_base</a>&lt; TAG &gt;::smutations</td>
@@ -591,7 +591,7 @@ template&lt;typename TAG = void&gt; </div>
 </div><div class="memdoc">
 <p>Container of mutations affecting trait value/fitness ("selected" mutations") </p>
 
-<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00120">120</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">forward_types.hpp</a>.</p>
 
 </div>
 </div>

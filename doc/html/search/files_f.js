@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['util_2ehpp',['util.hpp',['../d0/d3f/util_8hpp.html',1,'']]],
-  ['utiltest_2ecc',['utilTest.cc',['../d4/d92/utilTest_8cc.html',1,'']]]
+  ['tags_2ehpp',['tags.hpp',['../db/d97/tags_2tags_8hpp.html',1,'']]],
+  ['tags_2ehpp',['tags.hpp',['../d0/dd4/sugar_2poptypes_2tags_8hpp.html',1,'']]],
+  ['tags_2ehpp',['tags.hpp',['../d5/dd6/sugar_2gsl_2tags_8hpp.html',1,'']]],
+  ['todo_2emd',['todo.md',['../d9/df4/todo_8md.html',1,'']]],
+  ['type_5ftraits_2ehpp',['type_traits.hpp',['../dc/d54/type__traits_8hpp.html',1,'']]],
+  ['type_5ftraits_2ehpp',['type_traits.hpp',['../d4/d26/internal_2type__traits_8hpp.html',1,'']]],
+  ['type_5ftraitstest_2ecc',['type_traitsTest.cc',['../d9/dfd/type__traitsTest_8cc.html',1,'']]]
 ];
