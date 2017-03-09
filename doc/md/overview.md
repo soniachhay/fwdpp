@@ -234,7 +234,7 @@ The base mutation class is very simple.  It records a position and the "neutrali
 
 * `KTfwd::popgenmut` is a mutation with an effect size (`s`), dominance (`h`) and a record of when it appeared (`g`).  Note that __fwdpp__ does not care if `s` is an effect size on a phenotype or a "selection coefficient" in the way that population geneticists typically define the term.
 * `KTfwd::generalmut` where `s` and `h` are stored as `std::array<double,std::size_t>`, allowing for multiple `s/h` values to be associated with a variant.  Think of using this array to simulate pleiotropic effect sizes, for example. Or use a `std::array<double,2>` to have different effects in females vs males.  Etc.
-* `KTfwd::generalmut_vec` is largely equivalent to `KTfwd::generalmut`, but `std::vector<double>` replaces the `std::array`.  Possible use cases could involve different variants having different numbers of pleitropic effects.  Or, and perhaps more practically, this type can be used in other language environments that do not understand `std::array` (think [Cython](http://www.cython.org)).
+* `KTfwd::generalmut_vec` is largely equivalent to `KTfwd::generalmut`, but `std::vector<double>` replaces the `std::array`.  Possible use cases could involve different variants having different numbers of pleitropic effects.  Or, and perhaps more practically, this type can be used in other language environments that do not understand `std::array` (think [Cython](http://www.cython.org), which does not currently support non-type template parameters required to use `std::array`).
 
 The three types listed above are included via `#include <fwdpp/sugar/sugar.hpp>`.  See the [reference manual](http://molpopgen.github.io/fwdpp/doc/html/index.html) for more details about them.
 
@@ -342,14 +342,85 @@ The rest of the types are filled in automatically for you.  These types always u
 
 The `metapop` and `multiloc` template types work similarly.
 
-These containers are defined as C++11 template aliases.  The `singlepop`, `metapop`, and `multiloc` types are template aliases for `KTfwd::sugar::singlepop`, `KTfwd::sugar::metapop`, and `KTfwd::sugar::multiloc`, respectively.  The types in namespace `KTfwd::sugar` take more type names as template parameters.  These types are the various container types, etc.  Thus, if you wish to use a vector type other than `std::vector` (perhaps `std::vector` with a custom allocator, or `boost::vector`, then you may define a new template alias in terms of those container types and it will "just work", provided that the container type's API matches those of the C++ standard library types. 
+These containers are defined as C++11 template aliases.  The `singlepop`, `metapop`, and `multiloc` types are template aliases for `KTfwd::sugar::singlepop`, `KTfwd::sugar::metapop`, and `KTfwd::sugar::multiloc`, respectively.  The types in namespace `KTfwd::sugar` take more type names as template parameters.  These types are the various container types, etc.  Thus, if you wish to use a vector type other than `std::vector` (perhaps `std::vector` with a custom allocator, or `boost::vector`), then you may define a new template alias in terms of those container types and it will "just work", provided that the container type's API matches those of the C++ standard library types. 
 
 At this point, I'll refer you to the [reference manual](http://molpopgen.github.io/fwdpp/doc/html/index.html) for more detail on these types. We will see them in action below, though.
+
+## Recycling
+
+Mutations and gametes go extinct during the course of a simulation.  For a gamete, this means that its count (`KTfwd::gamete_base::n`) is zero.  For a mutation, this means that the vector tracking mutation occurences has a zero at a specific position.
+
+Internally, __fwdpp__ records where extinct mutations/gametes are and builds a FIFO queue of their indexes.  This queue is used so that these locations can be recycled with new objects.
+
+Recycling allows us to use cache-friendly containers like `std::vector`.  It also allows us to re-use space allocated by gametes for their mutation keys.  Overall, it is a big win in terms of performance.
 
 ## Modeling the biology
 
 ### Mutation
 
+Two types of mutation function are possible.  First,
+
+```cpp
+std::function<std::size_t(const recycling_bin_t &, mcont_t &)>
+```
+
+Or,
+
+```cpp
+std::function<std::size_t(const recycling_bin_t &, const gamete_t &,mcont_t &)>
+```
+
+The function must generate a new mutation and return its key.  The key must be the index of the new mutation in the mutations container.  Further, fwdpp's recycling rules must be obeyed.
+
+In order to assist writing mutation functions, the library provids KTfwd::fwdpp_internal::recycle_mutation_helper.  This function is a variadic template function with the following prototype:
+
+```cpp
+template <typename queue_t, typename mcont_t, class... Args>
+typename queue_t::value_type
+recycle_mutation_helper(queue_t &mutation_recycling_bin,
+                        mcont_t &mutations, Args &&... args)
+```
+
+The parameter pack Args represent the constructor calls for the mutation type, which are perfectly-forwarded into a new mutation object. If an existing location in the mutation container cannot be recycled, a new object is emplaced at the end using the parameter pack, minimizing the number of temporary objects created.  If a position can be recycled, a new object is most likely copy-constructed into place (but some compilers may implement a move construction at their discretion--most don't, though).
+
+For a real-world example, see the implementation of KTfwd::infsites.
+
+#### Possible future changes
+
+* Move recycle_mutation_helper out of the fwdpp_internal namespace, as the public API should not be there.
+* Consider additional valid function signatures where a diploid is passed in, which may help implement things like sex-specific mutation rates, etc.
+* Design an API that allows for reversible mutation.  I'm not sure fwdpp is quite there yet.
+
 ### Recombination
 
+A recombination function has the following signature:
+
+```cpp
+std::function<std::vector<double>(const gamete_t &, const gamete_t &, const mcont_t &)>
+```
+
+This function is responsible for returning a vector of breakpoints.  Any random number generators, etc., needed to generate such a vector must be bound/captured separately.
+
+An example of a recombination function is KTfwd::poisson_xover, which is implemented as a function object with a template call operator.
+
+This function signature is the same for a multilocus diploid.  Vectors of such functions are used for multi-locus/region simulations, and they are applied in turn to each locus.
+
+#### Possible future changes
+
+In order to model things like sex-limited recombination, etc., will require a signature like this:
+
+```cpp
+std::function<std::vector<double>(const diploid_t &, const gcont_t &, const mcont_t &)>
+```
+
+Passing in the diploid type itself would allow checking of any data present in custom diploid types (male, female, etc.).  It is likely that such a change will happen in a future release.
+
 ### Fitness
+
+A fitness function has the following signature:
+
+```cpp
+std::function<double(const diploid_t &, const gcont_t &, const mcont_t &)>
+```
+
+In other words, it take a diploid, a container of gametes, and a container of mutations as arguments.  Using that information, fitness is calculated and returned as a double.
