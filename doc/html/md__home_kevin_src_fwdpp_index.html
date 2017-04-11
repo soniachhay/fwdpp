@@ -91,6 +91,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>For more information, see the <a href="doc/md/overview">overview</a> of library features.</p>
 <h4>fwdpy</h4>
 <p>The combination of compile- and run-time polymorphism is used in our Python package, <a href="http://molpopgen.github.io/fwdpy">fwdpy</a>, which uses <b>fwdpp</b> as its back-end.</p>
+<h3>Using fwdpp to develop software.</h3>
+<p>You can use <b>fwdpp</b> to develop several different types of applications. The simplest type would be a command-line application. The examples in the GitHub repo for this project are all command-line applications. However, complex command-line programs quickly get unwieldy to implement and also to use. It is useful to be able to run simulations in an interpreted environment such as Python or R. Using Python, there are several possible options:</p>
+<ul>
+<li><a href="http://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/index.html">boost.python</a>. This is one of the oldest means of exposing C++ types to Python. The python_examples directory of the <b>fwdpp</b> GitHub repo contains two examples.</li>
+<li><a href="http://pybind11.readthedocs.io/">pybind11</a> is a relatively new project attempting to provide a modern (C++11) library to get C++ and Python to work together. It is a very nice project, and essentially replaces boost.python.</li>
+<li><a href="http://www.cython.org">Cython</a> is a static compiler for Python that allows C++ types to be exposed. This is what we use to develop <a href="http://molpopgen.github.io/fwdpy">fwdpy</a>, which exposes a lot of <b>fwdpp</b> to Cython. Those exposed types can be re-used in other projects, or <a href="http://molpopgen.github.io/fwdpy">fwdpy</a> itself can be used as a base for your project.</li>
+</ul>
+<p>The main difference between boost.python/pybind11 and Cython is that the former provide a "C++-first" perspective on writing Python extension modules. That is, you can write your Python module in idiomatic C++. However, that does not provide the most "Pythonic" experience for the folks using your package. Cython, on the other hand, is Python-first, which causes some frustrations when wrapping C++ code, but ultimately leads to a more extensible package and a Pythonic experience.</p>
+<p>It is also possible to use <b>fwdpp</b> from <a href="http://r-project.org">R</a> via the excellent <a href="http://www.rcpp.org">Rcpp</a> package. In fact, <a href="http://molpopgen.github.io/fwdpy">fwdpy</a> started out as an R package, but we migrated to Cython/Python because Cython's grammar makes it easier for users to write their own custom extensions.</p>
 <h3>Citation</h3>
 <p>If you use <b>fwdpp</b> for yor research, either to develop simulations or you use the example programs, please cite the following manuscript:</p>
 <ul>

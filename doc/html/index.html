@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre><h1>Preface</h1>
 <p>This README is the main page of the fwdpp documentation. It may display some things oddly when viewed on GitHub and/or links to other documentation pages may be broken. These issues are not bugs &ndash; please see the Reference Manual at the <a href="http://molpopgen.github.io/fwdpp/">fwdpp home page</a> for a fully-formatted version of this document.</p>
 <h1>Using simulations in Python</h1>
-<p>If you are reading this, I'm guessing that you are more interested in <em>running</em> forward simulations than you are in <em>developing</em> them. This package is about the latter. I'd recommend that you check out <a href="http://molpopgen.github.io/fwdpy">fwdpy</a>, which is a Python package for running forward simulations and processing the output. <a href="http://molpopgen.github.io/fwdpy">fwdpy</a> is developed using fwdpp (this package). <a href="http://molpopgen.github.io/fwdpy">fwdpy</a> is obtainable from GitHub, but many users may prefer to install it from <a href="http://pypi.python.org">PyPi</a> or via the <a href="https://bioconda.github.io/">bioconda</a> channel of <a href="https://www.continuum.io/downloads">Anaconda</a>.</p>
+<p>If you are reading this, I'm guessing that you are more interested in <em>running</em> forward simulations than you are in <em>developing</em> them. This package is about the latter. I'd recommend that you check out <a href="http://molpopgen.github.io/fwdpy11">fwdpy11</a>, which is a Python package for running forward simulations and processing the output. <a href="http://molpopgen.github.io/fwdpy11">fwdpy11</a> is developed using fwdpp (this package). <a href="http://molpopgen.github.io/fwdpy11">fwdpy11</a> is obtainable from GitHub and will soon be avalable from <a href="http://pypi.python.org">PyPi</a> or via the <a href="https://bioconda.github.io/">bioconda</a> channel of <a href="https://www.continuum.io/downloads">Anaconda</a>.</p>
+<p>fwdpy11 replaces <a href="http://molpopgen.github.io/fwdpy">fwdpy</a>, which was a Cython-based package for enabling fwdpp-based simulations in Python. We've end-of-life'd that project, but it is still on PyPi/Bioconda/GitHub for archival purposes, as a couple of publications used it. Trust us, though, <a href="http://molpopgen.github.io/fwdpy11">fwdpy11</a> does everything fwdpy did, but better.</p>
 <h1>fwdpp-users mailing list</h1>
 <p>There is a <a href="https://groups.google.com/forum/#!forum/fwdpp-users">Google Group</a> for fwdpp users. It is called fwdpp-users. I prefer that questions, etc., are raised there. Questions on that list that are determined to be real issues will result in issue tickets on the GitHub repo for this site. The group is also a good place for installation help, use questions, etc.</p>
 <h1>Build status</h1>
@@ -170,7 +171,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h1>Projects using fwdpp:</h1>
 <ul>
 <li><a href="https://github.com/molpopgen/fwdpp_perf">fwdpp_perf</a> is a collection of programs showing how to run independent simulations in a multi-core/many-core environment. Example programs use either C++11 threads or MPI to run simulations. I also use this package for performance testing/benchmarking/profiling/etc.</li>
-<li><a href="https://github.com/molpopgen/fwdpy">fwdpy</a> brings fwdpp-powered simulations to the Python programming language.</li>
+<li><a href="https://github.com/molpopgen/fwdpy11">fwdpy11</a> brings fwdpp-powered simulations to the Python programming language.</li>
 </ul>
 <h1>Dependencies</h1>
 <h2>System requirements</h2>

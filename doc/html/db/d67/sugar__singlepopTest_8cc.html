@@ -97,8 +97,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br />
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/da3/sugar__fixtures_8hpp_source.html">../fixtures/sugar_fixtures.hpp</a>&quot;</code><br />
 <code>#include &quot;../util/quick_evolve_sugar.hpp&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="../../db/d67/sugar__singlepopTest_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -110,6 +112,12 @@ Functions</h2></td></tr>
 <tr class="separator:a0cbcff09e56b5612d02fffa62ff95872"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25bbdd8dee6ace55506d1cdd70dfd9f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#a25bbdd8dee6ace55506d1cdd70dfd9f5">BOOST_AUTO_TEST_CASE</a> (singlepop_sugar_test4)</td></tr>
 <tr class="separator:a25bbdd8dee6ace55506d1cdd70dfd9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6346c8396356be2a3e7855ae73e49927"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#a6346c8396356be2a3e7855ae73e49927">BOOST_AUTO_TEST_CASE</a> (singlepop_serialize_smallN)</td></tr>
+<tr class="separator:a6346c8396356be2a3e7855ae73e49927"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac446f95f02c5c3afaf2c61611e2dc821"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#ac446f95f02c5c3afaf2c61611e2dc821">BOOST_AUTO_TEST_CASE</a> (singlepop_serialize_mediumN)</td></tr>
+<tr class="separator:ac446f95f02c5c3afaf2c61611e2dc821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32aca9163fec4eb06099f481ad19f5bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#a32aca9163fec4eb06099f481ad19f5bc">BOOST_AUTO_TEST_CASE</a> (singlepop_serialize_largeN)</td></tr>
+<tr class="separator:a32aca9163fec4eb06099f481ad19f5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a04c6af92e5d673c301193a5fec844c02"></a>
@@ -126,7 +134,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00013">13</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00015">15</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
 
 </div>
 </div>
@@ -144,7 +152,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00022">22</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00024">24</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
 
 </div>
 </div>
@@ -162,7 +170,61 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00032">32</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00034">34</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6346c8396356be2a3e7855ae73e49927"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">singlepop_serialize_smallN&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00046">46</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac446f95f02c5c3afaf2c61611e2dc821"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">singlepop_serialize_mediumN&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00057">57</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32aca9163fec4eb06099f481ad19f5bc"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">singlepop_serialize_largeN&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html#l00068">68</a> of file <a class="el" href="../../db/d67/sugar__singlepopTest_8cc_source.html">sugar_singlepopTest.cc</a>.</p>
 
 </div>
 </div>
