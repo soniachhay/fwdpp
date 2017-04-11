@@ -30,6 +30,11 @@ namespace KTfwd
                              ftvector, lookup_table_type>
         {
           public:
+            virtual ~singlepop() = default;
+            singlepop(singlepop &&) = default;
+            singlepop(const singlepop &) = default;
+            singlepop &operator=(singlepop &&) = default;
+            singlepop &operator=(const singlepop &) = default;
             //! Population size
             uint_t N;
 

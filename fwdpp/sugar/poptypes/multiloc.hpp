@@ -3,6 +3,7 @@
 
 #include <type_traits>
 #include <vector>
+#include <utility>
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/sugar/poptypes/tags.hpp>
 #include <fwdpp/sugar/poptypes/popbase.hpp>
@@ -28,6 +29,11 @@ namespace KTfwd
             : public popbase<mutation_type, mcont, gcont, dipvector, mvector,
                              ftvector, lookup_table_type>
         {
+            virtual ~multiloc() = default;
+            multiloc(multiloc &&) = default;
+            multiloc(const multiloc &) = default;
+            multiloc &operator=(multiloc &&) = default;
+            multiloc &operator=(const multiloc &) = default;
             //! Dispatch tags for other parts of sugar layer
             using popmodel_t = sugar::MULTILOCPOP_TAG;
             //! Typedef for base class
@@ -45,9 +51,20 @@ namespace KTfwd
             //! Container of individuals
             typename popbase_t::dipvector_t diploids;
 
-            //! Construct with population size and number of loci
+            /*! The positional boundaries of each locus/region,
+             *  expressed as half-open intervals [min,max).
+             *  If nothing is provided, the intervals are assigned
+             *  [0,i+1) for all 0 <= i < nloci.
+             */
+            std::vector<std::pair<double, double>> locus_boundaries;
+            /*! Construct with population size, number of loci,
+             *  and locus boundaries.  If no locus boundaries
+             *  are provided, default values are assigned.
+             */
             multiloc(
                 const uint_t &__N, const uint_t &__nloci,
+                const std::vector<std::pair<double, double>> &locus_boundaries_
+                = std::vector<std::pair<double, double>>(),
                 typename popbase_t::gamete_t::mutation_container::size_type
                     reserve_size
                 = 100)
@@ -55,14 +72,23 @@ namespace KTfwd
                   diploids(__N, typename popbase_t::diploid_t(
                                     __nloci,
                                     typename popbase_t::diploid_t::value_type(
-                                        0, 0)))
+                                        0, 0))),
+                  locus_boundaries(locus_boundaries_)
             {
+                if (locus_boundaries.empty())
+                    {
+                        for (uint_t i = 0; i < __nloci; ++i)
+                            {
+                                this->locus_boundaries.emplace_back(i, i + 1);
+                            }
+                    }
             }
 
             bool
             operator==(const multiloc &rhs) const
             {
                 return this->diploids == rhs.diploids
+                       && this->locus_boundaries == rhs.locus_boundaries
                        && popbase_t::is_equal(rhs);
             }
 
