@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Notes</h3>
 <ul>
 <li>Remember to <em>properly</em> initialize the base class from your derived mutation classes!</li>
-<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="form_4.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
+<li>All fitness models provided by the library require a mutation type to contain a double called <img class="formulaInl" alt="$s$" src="form_4.png"/> representing the selection coefficient (or effect size). For example, see <a class="el" href="dd/d09/structKTfwd_1_1site__dependent__genetic__value.html" title="Function object for fitness/trait value as a function of individual mutations in a diploid...">KTfwd::site_dependent_genetic_value</a>. Hoewever, if you write your own fitness models, then your mutations can contain whatever they want.</li>
 </ul>
 <h2>Mutation containers</h2>
 <p>Mutations must be stored in a container supporting random access via operator[]. Typically, this will be std::vector. For example:</p>

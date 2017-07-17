@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -92,67 +92,105 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::multiplicative_diploid Struct Reference<div class="ingroups"><a class="el" href="../../d7/d80/group__fitness.html">Policies for calculating fitnesses.</a></div></div>  </div>
+<div class="title">KTfwd::multiplicative_diploid Struct Reference<div class="ingroups"><a class="el" href="../../d7/d80/group__fitness.html">Policies for calculating fitnesses and trait values.</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Multiplicative fitness across sites.  
+<p>Multiplicative fitness or trait value across sites This function object calculate the genetic value of a diploid according to an multiplicative model with dominance effects per mutation.  
  <a href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a814a9c16b7569a427c71dafae09523be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">result_type</a> = <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">site_dependent_fitness::result_type</a></td></tr>
-<tr class="separator:a814a9c16b7569a427c71dafae09523be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2bddae3deea65f6619f66c98b817938"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">result_type</a> = <a class="el" href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html#a07054ca4291468f9ca39956cf530cd7e">site_dependent_genetic_value::result_type</a></td></tr>
+<tr class="separator:ad2bddae3deea65f6619f66c98b817938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a68d7abf03723736e71f01009b6a7979a"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a68d7abf03723736e71f01009b6a7979a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a68d7abf03723736e71f01009b6a7979a">operator()</a> (iterator_t first1, iterator_t last1, iterator_t first2, iterator_t last2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double &amp;scaling=1.) const noexcept</td></tr>
-<tr class="separator:a68d7abf03723736e71f01009b6a7979a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bcc19207f508e9f4d6aad4a8a16a894"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a0bcc19207f508e9f4d6aad4a8a16a894"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a0bcc19207f508e9f4d6aad4a8a16a894">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double &amp;scaling=1.) const noexcept</td></tr>
-<tr class="separator:a0bcc19207f508e9f4d6aad4a8a16a894"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a786f727bc5840dde5d14cbfad7fb32ba"><td class="memTemplParams" colspan="2">template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a786f727bc5840dde5d14cbfad7fb32ba"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a786f727bc5840dde5d14cbfad7fb32ba">operator()</a> (const diploid2dispatch &amp;dip, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double &amp;scaling=1.) const noexcept</td></tr>
-<tr class="memdesc:a786f727bc5840dde5d14cbfad7fb32ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for custom diploids. This is what a programmer's functions will call.  <a href="#a786f727bc5840dde5d14cbfad7fb32ba">More...</a><br /></td></tr>
-<tr class="separator:a786f727bc5840dde5d14cbfad7fb32ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaaf58c7b0e876d69563341183107aed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#aeaaf58c7b0e876d69563341183107aed">multiplicative_diploid</a> (std::function&lt; double(double)&gt; f_=<a class="el" href="../../dc/dd7/structKTfwd_1_1mw.html">KTfwd::mw</a>())</td></tr>
+<tr class="separator:aeaaf58c7b0e876d69563341183107aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebd8c0f5c3e0d5fe3754f60d46c8168"><td class="memTemplParams" colspan="2">template&lt;typename iterator_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a0ebd8c0f5c3e0d5fe3754f60d46c8168"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a0ebd8c0f5c3e0d5fe3754f60d46c8168">operator()</a> (iterator_t first1, iterator_t last1, iterator_t first2, iterator_t last2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double scaling=1.) const noexcept</td></tr>
+<tr class="memdesc:a0ebd8c0f5c3e0d5fe3754f60d46c8168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Range-based overload.  <a href="#a0ebd8c0f5c3e0d5fe3754f60d46c8168">More...</a><br /></td></tr>
+<tr class="separator:a0ebd8c0f5c3e0d5fe3754f60d46c8168"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a48fbe458b91c52a2381881b0c01b80"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a3a48fbe458b91c52a2381881b0c01b80"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a3a48fbe458b91c52a2381881b0c01b80">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double scaling=1.) const noexcept</td></tr>
+<tr class="separator:a3a48fbe458b91c52a2381881b0c01b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce077ebb2031abf50449c2d63ed49b2"><td class="memTemplParams" colspan="2">template&lt;typename diploid , typename gcont_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a5ce077ebb2031abf50449c2d63ed49b2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a5ce077ebb2031abf50449c2d63ed49b2">operator()</a> (const diploid &amp;dip, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double scaling=1.) const noexcept</td></tr>
+<tr class="memdesc:a5ce077ebb2031abf50449c2d63ed49b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for diploids. This is what a programmer's functions will call.  <a href="#a5ce077ebb2031abf50449c2d63ed49b2">More...</a><br /></td></tr>
+<tr class="separator:a5ce077ebb2031abf50449c2d63ed49b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a80d606f9864fe509c5e12eab1cca1c2b"><td class="memItemLeft" align="right" valign="top">const std::function&lt; double(double)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a80d606f9864fe509c5e12eab1cca1c2b">make_return_value</a></td></tr>
+<tr class="separator:a80d606f9864fe509c5e12eab1cca1c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Multiplicative fitness across sites. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
-    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
-    <tr><td class="paramname">scaling</td><td>Fitnesses are 1, 1+h*s, 1+scaling*s, for AA,Aa,aa, resp. This parameter lets you make sure your simulation is on the same scale as various formula in the literature </td></tr>
-  </table>
-  </dd>
+<div class="textblock"><p>Multiplicative fitness or trait value across sites This function object calculate the genetic value of a diploid according to an multiplicative model with dominance effects per mutation. </p>
+<p>The genetic value is calculated via <a class="el" href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html" title="Function object for fitness/trait value as a function of individual mutations in a diploid...">KTfwd::site_dependent_genetic_value</a>.</p>
+<p>The genetic value may be treated as a fitness or as a trait value based on arguments passed to the constructor. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a11">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a14">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a10">diploid_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a17">migsel_ind.cc</a>.</dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Multiplicative fitness across sites. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d78/bneck_selection_ind_8cc-example.html#_a11">bneck_selection_ind.cc</a>, <a class="el" href="../../d6/d0a/diploid_binaryIO_ind_8cc-example.html#_a14">diploid_binaryIO_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a10">diploid_ind.cc</a>, and <a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#_a18">migsel_ind.cc</a>.</dd>
-</dl>
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00333">333</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00397">397</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a814a9c16b7569a427c71dafae09523be"></a>
+<a class="anchor" id="ad2bddae3deea65f6619f66c98b817938"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">KTfwd::multiplicative_diploid::result_type</a> =  <a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#a0eeb4a26d85d44fefe0a2122c18413e9">site_dependent_fitness::result_type</a></td>
+          <td class="memname">using <a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">KTfwd::multiplicative_diploid::result_type</a> =  <a class="el" href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html#a07054ca4291468f9ca39956cf530cd7e">site_dependent_genetic_value::result_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00335">335</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00399">399</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aeaaf58c7b0e876d69563341183107aed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">KTfwd::multiplicative_diploid::multiplicative_diploid </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; double(double)&gt;&#160;</td>
+          <td class="paramname"><em>f_</em> = <code><a class="el" href="../../dc/dd7/structKTfwd_1_1mw.html">KTfwd::mw</a>()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f_</td><td>A function mapping genetic value to fitness or trait value.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The default for f_ is <a class="el" href="../../dc/dd7/structKTfwd_1_1mw.html" title="! A callable mapping multiplicative genetic values to fitness. ">KTfwd::mw</a>, which returns a closure mapping a genetic value to max(0,genetic_value), which is a mapping from genetic_value onto fitness.</p>
+<p>For simulations of traits, the genetic_value would be the genetic component of the trait value. To enable this, pass <a class="el" href="../../d3/df2/structKTfwd_1_1mtrait.html" title="A callable mapping multiplicative genetic values to trait value. ">KTfwd::mtrait()</a> to the constructor.</p>
+<p>Any valid mapping from double to double is allowed.</p>
+<dl class="section note"><dt>Note</dt><dd>For multiplicative models, the calculation begins from a starting value of 1.0. Thus, if you want to model a trait centered on 0, you need to subtract 1.0 in your mapping function. For example, see the test gss_multiplicative_trait in <a class="el" href="../../db/d86/siteDepFitnessTest_8cc.html">siteDepFitnessTest.cc</a>, which is part of fwdpp's testing suite. </dd></dl>
+
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00401">401</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a68d7abf03723736e71f01009b6a7979a"></a>
+<a class="anchor" id="a0ebd8c0f5c3e0d5fe3754f60d46c8168"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -162,7 +200,7 @@ template&lt;typename iterator_t , typename mcont_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">result_type</a> KTfwd::multiplicative_diploid::operator() </td>
+          <td class="memname"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">result_type</a> KTfwd::multiplicative_diploid::operator() </td>
           <td>(</td>
           <td class="paramtype">iterator_t&#160;</td>
           <td class="paramname"><em>first1</em>, </td>
@@ -194,7 +232,7 @@ template&lt;typename iterator_t , typename mcont_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>scaling</em> = <code>1.</code>&#160;</td>
         </tr>
         <tr>
@@ -210,11 +248,13 @@ template&lt;typename iterator_t , typename mcont_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00338">338</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Range-based overload. </p>
+
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00426">426</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0bcc19207f508e9f4d6aad4a8a16a894"></a>
+<a class="anchor" id="a3a48fbe458b91c52a2381881b0c01b80"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -244,7 +284,7 @@ template&lt;typename gamete_type , typename mcont_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>scaling</em> = <code>1.</code>&#160;</td>
         </tr>
         <tr>
@@ -259,24 +299,34 @@ template&lt;typename gamete_type , typename mcont_t &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
+    <tr><td class="paramname">scaling</td><td>Fitnesses are 1, 1+h*s, 1+scaling*s, for AA,Aa,aa, resp. This parameter lets you make sure your simulation is on the same scale as various formula in the literature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Multiplicative genetic value across sites. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00357">357</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00445">445</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a786f727bc5840dde5d14cbfad7fb32ba"></a>
+<a class="anchor" id="a5ce077ebb2031abf50449c2d63ed49b2"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt; </div>
+template&lt;typename diploid , typename gcont_t , typename mcont_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#a814a9c16b7569a427c71dafae09523be">result_type</a> KTfwd::multiplicative_diploid::operator() </td>
+          <td class="memname"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#ad2bddae3deea65f6619f66c98b817938">result_type</a> KTfwd::multiplicative_diploid::operator() </td>
           <td>(</td>
-          <td class="paramtype">const diploid2dispatch &amp;&#160;</td>
+          <td class="paramtype">const diploid &amp;&#160;</td>
           <td class="paramname"><em>dip</em>, </td>
         </tr>
         <tr>
@@ -294,7 +344,7 @@ template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt;
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>scaling</em> = <code>1.</code>&#160;</td>
         </tr>
         <tr>
@@ -310,10 +360,24 @@ template&lt;typename diploid2dispatch , typename gcont_t , typename mcont_t &gt;
 </table>
 </div><div class="memdoc">
 
-<p>Overload for custom diploids. This is what a programmer's functions will call. </p>
-<dl class="section note"><dt>Note</dt><dd>See <a class="el" href="../../md_md_customdip.html">Advanced topics: custom diploid genotypes</a> </dd></dl>
+<p>Overload for diploids. This is what a programmer's functions will call. </p>
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00381">381</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00472">472</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Field Documentation</h2>
+<a class="anchor" id="a80d606f9864fe509c5e12eab1cca1c2b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::function&lt;double(double)&gt; KTfwd::multiplicative_diploid::make_return_value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00400">400</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>

@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -84,6 +84,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.5.6</h2>
+<p>This release breaks API compatibility.</p>
+<ul>
+<li>Issue #51 resolved.</li>
+<li>API issue #50 resolved. The <a class="el" href="de/d55/classKTfwd_1_1GSLrng__t.html" title="A wrapper around gsl_rng * objects. ">KTfwd::GSLrng_t</a> is no longer copy-constructible.</li>
+<li>API issue #48 is addressed. This is an API change breaking backwards compatilibity for multi-locus/region simulations. The new API allows more flexibility in modeling interlocus/region crossovers. The API for <a class="el" href="da/d8b/namespaceKTfwd.html#a9fa8c6fd5d6b79550163c64a6cb0353a">KTfwd::sample_diploid</a> is changed for multi-locus/region sims. Two functions, <a class="el" href="d0/d69/group__mlocus.html#ga602969cb2ba279e78814a7ecf15d83e9" title="Create a vector of callbacks bound to model interlocus recombination. ">KTfwd::make_poisson_interlocus_rec</a> and <a class="el" href="d0/d69/group__mlocus.html#ga4bb57dd88043b0784e9285158a13b2d5" title="Create a vector of callbacks bound to model interlocus recombination. ">KTfwd::make_binomial_interlocus_rec</a>, return vectors of callbacks bound to the two new structs. <a href="https://github.com/molpopgen/fwdpp/commit/8ee950e7f315434284164e50c0f09b1e52a4c40c">commit</a></li>
+<li>API issue #49 is addressed. The changes maintain compile-time API compatibility with previous library versions.</li>
+<li>Refactored <a class="el" href="d2/d2f/classKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a> and <a class="el" href="d8/d66/classKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a> to use PIMPL idiom and be default-constructible. <a href="https://github.com/molpopgen/fwdpp/commit/9edcb8ca0da2dac5d04f066fbc0f26e3b7776c16">commit</a></li>
+<li>Extend concept of regions to multi-locus sims via extensions::bind_vec__drm and extensions::bind_vec::dmm. <a href="https://github.com/molpopgen/fwdpp/commit/da1b47b661679c80530b3ed477107f9fadf33e25">commit</a></li>
+<li>extensions::discrete_mut_model::make_mut now takes a pointer to the generation, allowing a single point of binding rather than binding each generation. <a href="https://github.com/molpopgen/fwdpp/commit/da1b47b661679c80530b3ed477107f9fadf33e25">commit</a></li>
+<li>Exceptions in namespace <a class="el" href="df/de4/namespaceKTfwd_1_1extensions.html">KTfwd::extensions</a> changed from std::runtime_error to std::invalid_argument where appropriate.</li>
+<li>Fix bug in <a class="el" href="d5/d77/HOC__ind_8cc.html">examples/HOC_ind.cc</a> affecting (improper) recycling of fixations during the simulation. <a href="https://github.com/molpopgen/fwdpp/commit/559e7db4cefe6c444584c4a51587bd315e35cbb9">commit</a></li>
+<li><a class="el" href="dd/dc8/structKTfwd_1_1data__matrix.html" title="Genotype or haplotype matrix. ">KTfwd::data_matrix</a> is now based on std:int8_t instead of char.</li>
+</ul>
 <h2>0.5.5</h2>
 <ul>
 <li>Added <a class="el" href="d3/d11/structKTfwd_1_1sugar_1_1multiloc.html#aa82a93d3ab6ad419ef390ae39a566400">KTfwd::sugar::multiloc::locus_boundaries</a> and simplified API in <a class="el" href="dc/dbd/sampling_8hpp.html">fwdpp/sugar/sampling.hpp</a>, resolving #47.</li>
@@ -136,7 +150,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>0.5.0</h2>
 <ul>
 <li>Example file <a class="el" href="d6/d42/K__linked__regions__multilocus_8cc.html">examples/K_linked_regions_multilocus.cc</a> added</li>
-<li>Streamlined <a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6f54f5505884ee9590bfde516ea34f44">KTfwd::fwdpp_internal::multilocus_rec_mut</a></li>
+<li>Streamlined <a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a8ad2ba23f1d5c3fe7e9fbb54d35fc59f">KTfwd::fwdpp_internal::multilocus_rec_mut</a></li>
 <li>The sugar types <a class="el" href="de/d6e/group__sugar.html#ga69ca8198e4f7132cc7505825883c7499" title="Single locus, single population object. ">KTfwd::singlepop</a>, <a class="el" href="de/d6e/group__sugar.html#gaaa20990d242152785d67f57c318e6fd3" title="Single locus metapopulation simulation object. ">KTfwd::metapop</a>, and <a class="el" href="de/d6e/group__sugar.html#ga86a72639c3c9887f5d4d159ec5539242" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a> were refactored to inerit from <a class="el" href="d7/d94/classKTfwd_1_1sugar_1_1popbase.html" title="Base class for population objects. ">KTfwd::sugar::popbase</a>.</li>
 <li>Fixed error in <a class="el" href="de/d6e/group__sugar.html#ga86a72639c3c9887f5d4d159ec5539242" title="Single population, multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for ratio...">KTfwd::multiloc</a> where gametes were initialized with the incorrect count</li>
 <li>KTfwd::gamete_data_sane_multiloc was added to <a class="el" href="da/d7b/debug_8hpp.html">fwdpp/debug.hpp</a></li>
@@ -151,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Single-deme version of sample_diploid is commented in detail.</li>
 <li>Added <a class="el" href="de/d6e/group__sugar.html#gabcf95af0822bbd57f0aa85408c026201" title="Add a mutation into a population at a given frequency. ">KTfwd::add_mutation</a>, <a class="el" href="de/d6e/group__sugar.html#ga34c0af3daeea9be414949bedf525f160" title="Add a set of mutations into a set of individuals in a population. ">KTfwd::add_mutations</a> and unit test unit/test_sugar_add_mutation.cc. These new functions allow the addition of mutations to diploids in a non-random way, which also means you can fill in a population from external data (e.g., something in a file). These features resolve Issue #28, albeit at a low level.</li>
 <li>Member <a class="el" href="d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82">KTfwd::mutation_base::xtra</a> squeezed into unused space in this type. No extra RAM used, and programs may assign values to that type to represent "stuff", whatever that is.</li>
-<li><a class="el" href="d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a> got a new constructor allowing <a class="el" href="d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html#aba01ce38f7f4b37277d9e3cd91951b3f">KTfwd::extensions::discrete_mut_model::make_mut</a> to assign values to <a class="el" href="d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82">KTfwd::mutation_base::xtra</a>.</li>
+<li><a class="el" href="d8/d66/classKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a> got a new constructor allowing <a class="el" href="d8/d66/classKTfwd_1_1extensions_1_1discrete__mut__model.html#a6750eb2371d3c2eaf37cff73bb3dc18e">KTfwd::extensions::discrete_mut_model::make_mut</a> to assign values to <a class="el" href="d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82">KTfwd::mutation_base::xtra</a>.</li>
 <li>Added <a class="el" href="de/d6e/group__sugar.html#ga1ecff0aaea92ec0ef0af5a541f63d822" title="Change the value of mutation_base::neutral. ">KTfwd::change_neutral</a>, which allows simulations to update the value of <a class="el" href="d1/da4/structKTfwd_1_1mutation__base.html#acfb3b4c94516cbbc5c28a12e1ad575b3" title="Is the mutation neutral or not? ">KTfwd::mutation_base::neutral</a> and correctly update storage of the affected mutation in all gametes.</li>
 <li>#39 fixed</li>
 <li>#40 fixed</li>
@@ -180,14 +194,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li>Issue #34 fixed</li>
 <li>Issue #35 fixed. Thanks to Alexander Nater for catching this.</li>
-<li><a class="el" href="dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a> no longer generates empty lookup tables when there are no regions</li>
-<li><a class="el" href="dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a> and KTfwd::discrete_mut_model may now throw exceptions from their constructors if input data are incorrect</li>
+<li><a class="el" href="d2/d2f/classKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a> no longer generates empty lookup tables when there are no regions</li>
+<li><a class="el" href="d2/d2f/classKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a> and KTfwd::discrete_mut_model may now throw exceptions from their constructors if input data are incorrect</li>
 </ul>
 <h2>0.4.5</h2>
 <ul>
 <li>Issues #31 and #32 fixed The file fwdpp/internal/gamete_lookup_table.hpp was removed and the library updated to stop using this method to check for gamete uniqueness. The result is a 20% reduction in run times and a slight reduction in peak memory use. This change was enabled by the changes introduced in 0.4.4, and comes with no change in output.</li>
 <li>Partial loop unrolling and branch removal from <a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a091b1da0e94464fc2b1d600f898ed914">KTfwd::fwdpp_internal::recombine_gametes</a></li>
-<li>Faster fitness calculations via the removal of if statements from a for loop in <a class="el" href="d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></li>
+<li>Faster fitness calculations via the removal of if statements from a for loop in <a class="el" href="da/d8b/namespaceKTfwd.html#a241207df301c04c7bebef80006987bb2" title="Typedef for API compatibility. ">KTfwd::site_dependent_fitness</a></li>
 <li><a class="el" href="de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a111eed9535387f6341dab21bd39c2710">KTfwd::fwdpp_internal::add_new_mutation</a> was shortened for clarity</li>
 <li><a class="el" href="de/d6e/group__sugar.html#gaaa20990d242152785d67f57c318e6fd3" title="Single locus metapopulation simulation object. ">KTfwd::metapop</a> objects now copy- and move- constructible from <a class="el" href="de/d6e/group__sugar.html#ga69ca8198e4f7132cc7505825883c7499" title="Single locus, single population object. ">KTfwd::singlepop</a> objects</li>
 <li>Support for demographic events via the low-level functions <a class="el" href="dc/d14/group__demography.html#ga53c40c73e3488232b7f4d7a48ebdfc86" title="Copy a deme. ">KTfwd::copy_deme</a>, <a class="el" href="dc/d14/group__demography.html#gaf709bc3b6f9adbbfae5c397aec2a20be" title="Merge demes. ">KTfwd::merge_demes</a>, <a class="el" href="dc/d14/group__demography.html#gab3c5a42603b8f59bd04efcdd5d32f347" title="Delete a deme. ">KTfwd::remove_deme</a>, <a class="el" href="dc/d14/group__demography.html#gaf0123b287b34e04d773d224ab021067d" title="Swap demes. ">KTfwd::swap_demes</a>, <a class="el" href="dc/d14/group__demography.html#ga9841929c1b170199d4dfc104392b9cb1" title="Split deme into two. ">KTfwd::split_deme</a>, and <a class="el" href="dc/d14/group__demography.html#gaabe2c648385d8d20e5c4165f4dc8f498" title="Create admixed population. ">KTfwd::admix_demes</a>.</li>
@@ -285,7 +299,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2>0.3.6</h2>
 <ul>
 <li>The internal lookup table has been further refined, resulting in much faster simulations with selection.</li>
-<li><a class="el" href="d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a> and <a class="el" href="dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a> now have checks to prevent returning fitnesses &lt; 0.</li>
+<li><a class="el" href="d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness or trait value across sites This function object calculate the genetic value of a di...">KTfwd::additive_diploid</a> and <a class="el" href="dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness or trait value across sites This function object calculate the genetic value o...">KTfwd::multiplicative_diploid</a> now have checks to prevent returning fitnesses &lt; 0.</li>
 </ul>
 <h2>0.3.5</h2>
 <ul>

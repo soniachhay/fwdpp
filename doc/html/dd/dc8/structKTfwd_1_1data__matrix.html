@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -110,12 +110,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:abb978c4a3b540d4996c66c8bceccdcbb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#abb978c4a3b540d4996c66c8bceccdcbb">neutral</a></td></tr>
-<tr class="memdesc:abb978c4a3b540d4996c66c8bceccdcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#abb978c4a3b540d4996c66c8bceccdcbb">More...</a><br /></td></tr>
-<tr class="separator:abb978c4a3b540d4996c66c8bceccdcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4635d22cddef4d5308390a5058db288"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#ab4635d22cddef4d5308390a5058db288">selected</a></td></tr>
-<tr class="memdesc:ab4635d22cddef4d5308390a5058db288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#ab4635d22cddef4d5308390a5058db288">More...</a><br /></td></tr>
-<tr class="separator:ab4635d22cddef4d5308390a5058db288"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69adf691403e34482d4afc3ea79be192"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#a69adf691403e34482d4afc3ea79be192">neutral</a></td></tr>
+<tr class="memdesc:a69adf691403e34482d4afc3ea79be192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#a69adf691403e34482d4afc3ea79be192">More...</a><br /></td></tr>
+<tr class="separator:a69adf691403e34482d4afc3ea79be192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bff78def50b5c488e287f03b37b8e5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#ae3bff78def50b5c488e287f03b37b8e5">selected</a></td></tr>
+<tr class="memdesc:ae3bff78def50b5c488e287f03b37b8e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#ae3bff78def50b5c488e287f03b37b8e5">More...</a><br /></td></tr>
+<tr class="separator:ae3bff78def50b5c488e287f03b37b8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dc8/structKTfwd_1_1data__matrix.html#af8ddba25029b4fb79aefcf4e4c9ba1e9">neutral_positions</a></td></tr>
 <tr class="memdesc:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of neutral mutations. Same order as matrix column order.  <a href="#af8ddba25029b4fb79aefcf4e4c9ba1e9">More...</a><br /></td></tr>
 <tr class="separator:af8ddba25029b4fb79aefcf4e4c9ba1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +132,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Genotype or haplotype matrix. </p>
-<p>This type uses std::vector&lt;char&gt; to hold a matrix representing the genotypes for a set of diploids.</p>
+<p>This type uses std::vector&lt;std::int8_t&gt; to hold a matrix representing the genotypes for a set of diploids.</p>
 <p>For a haplotype matrix of n individuals, the data represent 2n rows with a 0/1 encoding representing ancetral/derived.</p>
 <p>For a genotype matrix of n individuals, the data represent n rows with a 0/1/2 encoding for the number of copies of the derived mutation.</p>
 <p>The data layout is row-major (aka "C-style") ordering, facilitating compatibility with GSL matrix types, NumPy 2D arrays, etc. Note that GSL matrices may be constructed using gsl_matrix_view_array or gsl_matrix_const_view_array for cases where a matrix of only neutral or only selected mutations is needed.</p>
@@ -176,12 +176,12 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a class="anchor" id="abb978c4a3b540d4996c66c8bceccdcbb"></a>
+<a class="anchor" id="a69adf691403e34482d4afc3ea79be192"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;char&gt; KTfwd::data_matrix::neutral</td>
+          <td class="memname">std::vector&lt;std::int8_t&gt; KTfwd::data_matrix::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -239,12 +239,12 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab4635d22cddef4d5308390a5058db288"></a>
+<a class="anchor" id="ae3bff78def50b5c488e287f03b37b8e5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;char&gt; KTfwd::data_matrix::selected</td>
+          <td class="memname">std::vector&lt;std::int8_t&gt; KTfwd::data_matrix::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">

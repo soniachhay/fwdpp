@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>fwdpp: KTfwd::haplotype_dependent_fitness Struct Reference</title>
+<title>fwdpp: KTfwd::haplotype_dependent_trait_value Struct Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></li><li class="navelem"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html">haplotype_dependent_fitness</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></li><li class="navelem"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html">haplotype_dependent_trait_value</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -94,52 +94,41 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
-<div class="title">KTfwd::haplotype_dependent_fitness Struct Reference<div class="ingroups"><a class="el" href="../../d7/d80/group__fitness.html">Policies for calculating fitnesses.</a></div></div>  </div>
+<div class="title">KTfwd::haplotype_dependent_trait_value Struct Reference<div class="ingroups"><a class="el" href="../../d7/d80/group__fitness.html">Policies for calculating fitnesses and trait values.</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Function object for fitness as a function of the two haplotypes in a diploid.  
- <a href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#details">More...</a></p>
+<p>Function object for fitness/trait value as a function of the two haplotypes in a diploid.  
+ <a href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a3fa95acbaf554b5a3ae2fb6fef690f8e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a> = double</td></tr>
-<tr class="separator:a3fa95acbaf554b5a3ae2fb6fef690f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3581f8d212dfffb8b542b561fa8f2372"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">result_type</a> = double</td></tr>
+<tr class="separator:a3581f8d212dfffb8b542b561fa8f2372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
-<tr class="memitem:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a6a36cdd64f78c37b00ef7e46f40f6f72">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
-<tr class="separator:a6a36cdd64f78c37b00ef7e46f40f6f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdb18fc645a99d2f4951e32debf9784d"><td class="memTemplParams" colspan="2">template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
-<tr class="memitem:abdb18fc645a99d2f4951e32debf9784d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#abdb18fc645a99d2f4951e32debf9784d">operator()</a> (const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;diploid, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
-<tr class="separator:abdb18fc645a99d2f4951e32debf9784d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe94d48a78422e93a9c4f9d4fdad3cb"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
+<tr class="memitem:adbe94d48a78422e93a9c4f9d4fdad3cb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#adbe94d48a78422e93a9c4f9d4fdad3cb">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
+<tr class="separator:adbe94d48a78422e93a9c4f9d4fdad3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddea3aa09d2f4988e483297577a5ea0"><td class="memTemplParams" colspan="2">template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
+<tr class="memitem:a4ddea3aa09d2f4988e483297577a5ea0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a4ddea3aa09d2f4988e483297577a5ea0">operator()</a> (const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;diploid, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
+<tr class="separator:a4ddea3aa09d2f4988e483297577a5ea0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Function object for fitness as a function of the two haplotypes in a diploid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
-    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
-    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on fitness </td></tr>
-    <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the fitness of a diploid genotype g1/g2 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>dpol( hpol(g1,mutations), hpol(g2,mutations) ) </dd></dl>
+<div class="textblock"><p>Function object for fitness/trait value as a function of the two haplotypes in a diploid. </p>
 <dl class="section note"><dt>Note</dt><dd>This really is just a convenience function. Depending on the specifics of the model, this function may be totally unnecessary. </dd></dl>
 
 <p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00291">291</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a3fa95acbaf554b5a3ae2fb6fef690f8e"></a>
+<a class="anchor" id="a3581f8d212dfffb8b542b561fa8f2372"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">KTfwd::haplotype_dependent_fitness::result_type</a> =  double</td>
+          <td class="memname">using <a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">KTfwd::haplotype_dependent_trait_value::result_type</a> =  double</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -149,7 +138,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6a36cdd64f78c37b00ef7e46f40f6f72"></a>
+<a class="anchor" id="adbe94d48a78422e93a9c4f9d4fdad3cb"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -159,7 +148,7 @@ template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a> KTfwd::haplotype_dependent_fitness::operator() </td>
+          <td class="memname"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">result_type</a> KTfwd::haplotype_dependent_trait_value::operator() </td>
           <td>(</td>
           <td class="paramtype">const gamete_type &amp;&#160;</td>
           <td class="paramname"><em>g1</em>, </td>
@@ -200,12 +189,23 @@ template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy 
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
+    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
+    <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the genetic value of a diploid genotype g1/g2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>dpol( hpol(g1,mutations), hpol(g2,mutations) ) </dd></dl>
 
 <p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00297">297</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="abdb18fc645a99d2f4951e32debf9784d"></a>
+<a class="anchor" id="a4ddea3aa09d2f4988e483297577a5ea0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -215,7 +215,7 @@ template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#a3fa95acbaf554b5a3ae2fb6fef690f8e">result_type</a> KTfwd::haplotype_dependent_fitness::operator() </td>
+          <td class="memname"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#a3581f8d212dfffb8b542b561fa8f2372">result_type</a> KTfwd::haplotype_dependent_trait_value::operator() </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &amp;&#160;</td>
           <td class="paramname"><em>diploid</em>, </td>
@@ -256,8 +256,19 @@ template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename 
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">diploid</td><td>a diploid </td></tr>
+    <tr><td class="paramname">gametes</td><td>Container of gametes </td></tr>
+    <tr><td class="paramname">mutation</td><td>Container of mutations </td></tr>
+    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
+    <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the genetic value of a diploid genotype g1/g2 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>dpol( hpol(g1,mutations), hpol(g2,mutations) ) </dd></dl>
 
-<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00311">311</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00331">331</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>

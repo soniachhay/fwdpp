@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
@@ -115,9 +116,13 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d8d/structKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/de4/structKTfwd_1_1extensions_1_1discrete__mut__model__data.html">KTfwd::extensions::discrete_mut_model_data</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d61/structKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d66/classKTfwd_1_1extensions_1_1discrete__mut__model.html">KTfwd::extensions::discrete_mut_model</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d9c/structKTfwd_1_1extensions_1_1discrete__rec__model__data.html">KTfwd::extensions::discrete_rec_model_data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d2f/classKTfwd_1_1extensions_1_1discrete__rec__model.html">KTfwd::extensions::discrete_rec_model</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -133,9 +138,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </td></tr>
 <tr class="memitem:a141d6f5cba2149839fb2de428ffd555d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a141d6f5cba2149839fb2de428ffd555d">KTfwd::extensions::bind_dmm</a> (const discrete_mut_model &amp;dm, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;, lookup_t &amp;mut_lookup, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_mut_model::make_mut&lt; traits::recycling_bin_t&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;, lookup_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;,&amp;dm, std::placeholders::_1, std::placeholders::_2, std::forward&lt; Args &gt;(args)..., std::ref(mut_lookup)))</td></tr>
 <tr class="separator:a141d6f5cba2149839fb2de428ffd555d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , class... Args&gt; </td></tr>
-<tr class="memitem:ace526105a294ce3c39fc89bd534b7025"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#ace526105a294ce3c39fc89bd534b7025">KTfwd::extensions::bind_drm</a> (const discrete_rec_model &amp;drm, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;, Args &amp;&amp;...args) -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt; typename gcont_t::value_type, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;,&amp;drm, std::forward&lt; Args &gt;(args)..., std::placeholders::_1, std::placeholders::_2, std::placeholders::_3))</td></tr>
-<tr class="separator:ace526105a294ce3c39fc89bd534b7025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48049a6b151f0af4469ecdbef98d0cbf"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_t , class... Args&gt; </td></tr>
+<tr class="memitem:a48049a6b151f0af4469ecdbef98d0cbf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a48049a6b151f0af4469ecdbef98d0cbf">KTfwd::extensions::bind_vec_dmm</a> (const std::vector&lt; discrete_mut_model &gt; &amp;vdm, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, lookup_t &amp;mut_lookup, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const std::vector&lt; double &gt; &amp;<a class="el" href="../../d4/d11/extensions__regionsIntegrationTest_8cc.html#a509377447aa450972b68e40f2911b947">neutral_mutrates</a>, const std::vector&lt; double &gt; &amp;<a class="el" href="../../d4/d11/extensions__regionsIntegrationTest_8cc.html#a918a8ae6ccb57da8c827d3d8184fc6f1">selected_mutrates</a>, Args &amp;&amp;...args) -&gt; std::vector&lt; decltype(bind_dmm(vdm[0], mutations, mut_lookup, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="el" href="../../d4/d11/extensions__regionsIntegrationTest_8cc.html#a509377447aa450972b68e40f2911b947">neutral_mutrates</a>[0], <a class="el" href="../../d4/d11/extensions__regionsIntegrationTest_8cc.html#a918a8ae6ccb57da8c827d3d8184fc6f1">selected_mutrates</a>[0], std::forward&lt; Args &gt;(args)...))&gt;</td></tr>
+<tr class="separator:a48049a6b151f0af4469ecdbef98d0cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4b69e4118a45ecc6be87a939ec8c68"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a6d4b69e4118a45ecc6be87a939ec8c68"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a6d4b69e4118a45ecc6be87a939ec8c68">KTfwd::extensions::bind_drm</a> (const discrete_rec_model &amp;drm, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double recrate) -&gt; decltype(std::bind(&amp;discrete_rec_model::operator()&lt; typename gcont_t::value_type, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;,&amp;drm, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, recrate, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3))</td></tr>
+<tr class="separator:a6d4b69e4118a45ecc6be87a939ec8c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd87484c20fb1091cda95eac6dbbfad"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a1fd87484c20fb1091cda95eac6dbbfad"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/de4/namespaceKTfwd_1_1extensions.html#a1fd87484c20fb1091cda95eac6dbbfad">KTfwd::extensions::bind_vec_drm</a> (const std::vector&lt; discrete_rec_model &gt; &amp;vdrm, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const std::vector&lt; double &gt; &amp;recrates) -&gt; std::vector&lt; decltype(bind_drm(vdrm[0], gametes, mutations, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, recrates[0]))&gt;</td></tr>
+<tr class="separator:a1fd87484c20fb1091cda95eac6dbbfad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>! </p>

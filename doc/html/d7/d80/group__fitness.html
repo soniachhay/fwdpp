@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>fwdpp: Policies for calculating fitnesses.</title>
+<title>fwdpp: Policies for calculating fitnesses and trait values.</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div class="summary">
 <a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle">
-<div class="title">Policies for calculating fitnesses.</div>  </div>
+<div class="title">Policies for calculating fitnesses and trait values.</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -91,28 +91,28 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html">KTfwd::no_selection</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a fitness of 1.  <a href="../../dc/d0b/structKTfwd_1_1no__selection.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html">KTfwd::site_dependent_fitness</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness as a function of individual mutations in a diploid.  <a href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html">KTfwd::site_dependent_genetic_value</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness/trait value as a function of individual mutations in a diploid.  <a href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html">KTfwd::haplotype_dependent_fitness</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness as a function of the two haplotypes in a diploid.  <a href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html">KTfwd::haplotype_dependent_trait_value</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness/trait value as a function of the two haplotypes in a diploid.  <a href="../../d8/d90/structKTfwd_1_1haplotype__dependent__trait__value.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html">KTfwd::multiplicative_diploid</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplicative fitness across sites.  <a href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplicative fitness or trait value across sites This function object calculate the genetic value of a diploid according to an multiplicative model with dominance effects per mutation.  <a href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html">KTfwd::additive_diploid</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additive fitness across sites.  <a href="../../d6/d39/structKTfwd_1_1additive__diploid.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additive fitness or trait value across sites This function object calculate the genetic value of a diploid according to an additive model with dominance effects per mutation.  <a href="../../d6/d39/structKTfwd_1_1additive__diploid.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This group contains the following data structures to help you implement custom fitness policies:</p><ol type="1">
-<li><a class="el" href="../../d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a> for implementing typical population-genetic-like models where trait values are a function of the properties of individual mutations</li>
-<li><a class="el" href="../../de/d99/structKTfwd_1_1haplotype__dependent__fitness.html" title="Function object for fitness as a function of the two haplotypes in a diploid. ">KTfwd::haplotype_dependent_fitness</a> for implementing models where trait values are the functions properties of haplotypes.</li>
+<li><a class="el" href="../../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html" title="Function object for fitness/trait value as a function of individual mutations in a diploid...">KTfwd::site_dependent_genetic_value</a> for implementing typical population-genetic-like models where trait values are a function of the properties of individual mutations</li>
+<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#aaf60876c43b8a98f2baff7d211667591" title="Typedef for backwards API compatibility. ">KTfwd::haplotype_dependent_fitness</a> for implementing models where trait values are the functions properties of haplotypes.</li>
 </ol>
 <p>Truthfully, latter is so trivial that a library user may never see any need for it.</p>
-<p>The library also defines two site-dependent fitness models:</p><ol type="1">
-<li><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a></li>
-<li><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a></li>
+<p>The library also defines two site-dependent fitness models, which may also be used for trait value calculations:</p><ol type="1">
+<li><a class="el" href="../../dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness or trait value across sites This function object calculate the genetic value o...">KTfwd::multiplicative_diploid</a></li>
+<li><a class="el" href="../../d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness or trait value across sites This function object calculate the genetic value of a di...">KTfwd::additive_diploid</a></li>
 </ol>
 <p>These are arguably the "standard" models of the field as far as selection is concerned.</p>
 <p>Finally, <a class="el" href="../../dc/d0b/structKTfwd_1_1no__selection.html" title="Returns a fitness of 1. ">KTfwd::no_selection</a> is provided to force all diploid fitnesses to be equal to 1. </p>

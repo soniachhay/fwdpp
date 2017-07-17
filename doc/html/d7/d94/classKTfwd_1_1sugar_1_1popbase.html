@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -112,7 +112,9 @@ Inheritance diagram for KTfwd::sugar::popbase&lt; mutation_type, mcont, gcont, d
 <area href="../../d3/de0/classKTfwd_1_1sugar_1_1metapop.html" title="Abstraction of what is needed to simulate a metapopulation using an individual-based sampler from fwd..." alt="KTfwd::sugar::metapop&lt; mutation_type, mcont, gcont, dipvector, vdipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="0,56,669,80"/>
 <area href="../../d3/d11/structKTfwd_1_1sugar_1_1multiloc.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f..." alt="KTfwd::sugar::multiloc&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="679,56,1348,80"/>
 <area href="../../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html" title="Abstraction of what is needed to simulate a single population using an individual-based sampler from ..." alt="KTfwd::sugar::singlepop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="1358,56,2027,80"/>
-<area href="../../de/d68/structspop__derived.html" alt="spop_derived" shape="rect" coords="1358,112,2027,136"/>
+<area href="../../d1/da4/structmpop__derived.html" alt="mpop_derived" shape="rect" coords="679,112,1348,136"/>
+<area href="../../d1/da4/structmpop__derived.html" alt="mpop_derived" shape="rect" coords="1358,112,2027,136"/>
+<area href="../../de/d68/structspop__derived.html" alt="spop_derived" shape="rect" coords="2037,112,2706,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -270,7 +272,8 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>Gamete type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a4">migsel_ind.cc</a>.</dd>
+</dl>
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00038">38</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -288,7 +291,8 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>Gamete vec type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a5">migsel_ind.cc</a>.</dd>
+</dl>
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -324,7 +328,8 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>Mutation vec type. </p>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a2">migsel_ind.cc</a>.</dd>
+</dl>
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00044">44</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -625,8 +630,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>vector&lt;uint_t&gt; records times when mutation_ts were added to mut_lookup </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a31">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -644,8 +648,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>Vector of mutation_t to track fixations. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a30">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00102">102</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -663,8 +666,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 </div><div class="memdoc">
 
 <p>Container of gametes. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a21">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -684,8 +686,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 <p>Contains number of times each mutation exists. </p>
 <p>Used to keep track of mutation frequencies.</p>
 <p>Should have memory reserved externally, based on some good guess. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a23">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -704,8 +705,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 
 <p>Can be used to track positions of segregating mutations. </p>
 <dl class="section note"><dt>Note</dt><dd>Must have interface like std::map or std::unordered_set </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a25">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00100">100</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -721,7 +721,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a17">migsel_ind.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a16">migsel_ind.cc</a>.</dd>
 </dl>
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
@@ -744,8 +744,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
 <p>Now, we create the vector once per replicate. Further, we will reserve memory here, to minimize reallocs, etc., within fwdpp.</p>
 <p>Internally, fwdpp's job is to make sure that this vector is appropriately and efficiently cleared, but only when needed.</p>
 <dl class="section note"><dt>Note</dt><dd>: if not using the sugar features, you can create these vectors only once per simulation... </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a27">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
@@ -761,8 +760,7 @@ template&lt;typename mutation_type, typename mcont, typename gcont, typename dip
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/d2e/migsel_ind_8cc-example.html#a28">migsel_ind.cc</a>.</dd>
-</dl>
+
 <p>Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>

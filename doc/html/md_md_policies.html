@@ -24,7 +24,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.5</span>
+   &#160;<span id="projectnumber">0.5.6</span>
    </div>
   </td>
  </tr>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li class="level1"><a href="#TutGeneral">Policies in C++</a></li>
 <li class="level1"><a href="#fwdppPolicies">Policies in fwdpp</a><ul><li class="level2"><a href="#TutMut">Mutation policies</a></li>
 <li class="level2"><a href="#TutRec">Recombination policies</a></li>
-<li class="level2"><a href="#TutFitness">Fitness policies</a></li>
+<li class="level2"><a href="#TutFitness">Genetic value policies</a></li>
 <li class="level2"><a href="#TutRemoval">&quot;Removal policies&quot;</a></li>
 </ul>
 </li>
@@ -124,11 +124,11 @@ Recombination policies</h2>
 <li><a class="el" href="d2/df0/structKTfwd_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">KTfwd::poisson_xover</a></li>
 </ul>
 <h2><a class="anchor" id="TutFitness"></a>
-Fitness policies</h2>
+Genetic value policies</h2>
 <ul>
-<li><a class="el" href="d0/ddb/structKTfwd_1_1site__dependent__fitness.html" title="Function object for fitness as a function of individual mutations in a diploid. ">KTfwd::site_dependent_fitness</a></li>
-<li><a class="el" href="d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness across sites. ">KTfwd::additive_diploid</a></li>
-<li><a class="el" href="dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness across sites. ">KTfwd::multiplicative_diploid</a></li>
+<li><a class="el" href="dd/d09/structKTfwd_1_1site__dependent__genetic__value.html" title="Function object for fitness/trait value as a function of individual mutations in a diploid...">KTfwd::site_dependent_genetic_value</a></li>
+<li><a class="el" href="d6/d39/structKTfwd_1_1additive__diploid.html" title="Additive fitness or trait value across sites This function object calculate the genetic value of a di...">KTfwd::additive_diploid</a></li>
+<li><a class="el" href="dd/de5/structKTfwd_1_1multiplicative__diploid.html" title="Multiplicative fitness or trait value across sites This function object calculate the genetic value o...">KTfwd::multiplicative_diploid</a></li>
 </ul>
 <h2><a class="anchor" id="TutRemoval"></a>
 "Removal policies"</h2>

@@ -9,7 +9,7 @@ var searchData=
   ['singlepop_3c_20ktfwd_3a_3apopgenmut_2c_20custom_5fdiploid_5ftesting_5ft_20_3e',['singlepop&lt; KTfwd::popgenmut, custom_diploid_testing_t &gt;',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html',1,'KTfwd::sugar']]],
   ['singlepop_5fpopgenmut_5fcustom_5ffixture',['singlepop_popgenmut_custom_fixture',['../da/d9a/structsinglepop__popgenmut__custom__fixture.html',1,'']]],
   ['singlepop_5fpopgenmut_5ffixture',['singlepop_popgenmut_fixture',['../dc/d11/structsinglepop__popgenmut__fixture.html',1,'']]],
-  ['site_5fdependent_5ffitness',['site_dependent_fitness',['../d0/ddb/structKTfwd_1_1site__dependent__fitness.html',1,'KTfwd']]],
+  ['site_5fdependent_5fgenetic_5fvalue',['site_dependent_genetic_value',['../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html',1,'KTfwd']]],
   ['spop_5fderived',['spop_derived',['../de/d68/structspop__derived.html',1,'']]],
   ['standard_5fempty_5fmetapop_5ffixture',['standard_empty_metapop_fixture',['../db/dfa/structstandard__empty__metapop__fixture.html',1,'']]],
   ['standard_5fempty_5fmultiloc_5ffixture',['standard_empty_multiloc_fixture',['../d7/dbe/structstandard__empty__multiloc__fixture.html',1,'']]],

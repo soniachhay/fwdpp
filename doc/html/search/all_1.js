@@ -8,10 +8,14 @@ var searchData=
   ['add_5fn_5fmutations_5frecycle',['add_N_mutations_recycle',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#af59e836a86d4ecc79f9df557fdd93526',1,'KTfwd::fwdpp_internal']]],
   ['add_5fnew_5fmutation',['add_new_mutation',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a111eed9535387f6341dab21bd39c2710',1,'KTfwd::fwdpp_internal']]],
   ['addesizes',['addEsizes',['../d5/d77/HOC__ind_8cc.html#a1eaf1048b2a0b8e610742fbd8886d1d6',1,'HOC_ind.cc']]],
+  ['additive_5fdiploid',['additive_diploid',['../d6/d39/structKTfwd_1_1additive__diploid.html#a1ca49fd73a0f9af1e55025bb31512db3',1,'KTfwd::additive_diploid']]],
   ['additive_5fdiploid',['additive_diploid',['../d6/d39/structKTfwd_1_1additive__diploid.html',1,'KTfwd']]],
   ['additive_5fover_5floci',['additive_over_loci',['../d4/dec/structadditive__over__loci.html',1,'']]],
   ['admix_5fdemes',['admix_demes',['../dc/d14/group__demography.html#gaabe2c648385d8d20e5c4165f4dc8f498',1,'KTfwd']]],
   ['admix_5fpops',['admix_pops',['../da/d8b/namespaceKTfwd.html#a01b2b78a9376f16bac5d03f84de03cfb',1,'KTfwd']]],
+  ['always_5frecombine',['always_recombine',['../dc/d9e/structalways__recombine.html',1,'']]],
   ['array_5ft',['array_t',['../da/dde/structKTfwd_1_1generalmut.html#af9b57fa96b5d9f574c885754d0a9d77d',1,'KTfwd::generalmut::array_t()'],['../d9/d9e/structKTfwd_1_1generalmut__vec.html#afa956828e62a844bc6af3205bc90734c',1,'KTfwd::generalmut_vec::array_t()']]],
+  ['atrait',['atrait',['../dc/d44/structKTfwd_1_1atrait.html',1,'KTfwd']]],
+  ['aw',['aw',['../d0/d08/structKTfwd_1_1aw.html',1,'KTfwd']]],
   ['advanced_20topics_3a_20custom_20diploid_20genotypes',['Advanced topics: custom diploid genotypes',['../md_md_customdip.html',1,'']]]
 ];

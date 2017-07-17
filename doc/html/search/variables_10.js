@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['wbar',['wbar',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a1fb72d9245e2806c87878103aa7d1398',1,'KTfwd::experimental::standardWFrules::wbar()'],['../d8/d1d/structKTfwd_1_1experimental_1_1standardWFrules__mloc.html#ab593b5029ebded720eef9ac2de45f7b6',1,'KTfwd::experimental::standardWFrules_mloc::wbar()']]],
-  ['writer',['writer',['../d0/d8e/structKTfwd_1_1serialize.html#ab7624906c91c5a85d07dff9a0ce13c41',1,'KTfwd::serialize']]]
+  ['x',['x',['../d6/dd8/structKTfwd_1_1extensions_1_1constant.html#a901537500aa0f9a6dccb2c6dce80addb',1,'KTfwd::extensions::constant::x()'],['../d6/d57/serializationTest_8cc.html#af88b946fb90d5f08b5fb740c70e98c10',1,'x():&#160;serializationTest.cc']]],
+  ['xtra',['xtra',['../d1/da4/structKTfwd_1_1mutation__base.html#ae94d9d4e3cebc50a34b2239549356e82',1,'KTfwd::mutation_base']]]
 ];
