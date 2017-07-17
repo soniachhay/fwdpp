@@ -4,6 +4,8 @@
 #include <cmath>
 #include <limits>
 #include <functional>
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
 
 /*! \file fwd_functional.hpp
   Defines several function objects used both internally and by library users
