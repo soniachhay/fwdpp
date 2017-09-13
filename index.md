@@ -12,21 +12,22 @@ The compile-time polymorphism described in the preceding paragraph can be furthe
 
 For more information, see the [overview](doc/md/overview) of library features.
 
-#### fwdpy 
+#### fwdpy11
 
-The combination of compile- and run-time polymorphism is used in our Python package, [fwdpy](http://molpopgen.github.io/fwdpy), which uses __fwdpp__ as its back-end.
+The combination of compile- and run-time polymorphism is used in our Python package, [fwdpy11](http://molpopgen.github.io/fwdpy11), which uses __fwdpp__ as its back-end.
 
 ### Using fwdpp to develop software.
 
 You can use __fwdpp__ to develop several different types of applications.  The simplest type would be a command-line application.  The examples in the GitHub repo for this project are all command-line applications.  However, complex command-line programs quickly get unwieldy to implement and also to use.  It is useful to be able to run simulations in an interpreted environment such as Python or R.  Using Python, there are several possible options:
 
 * [boost.python](http://www.boost.org/doc/libs/1_63_0/libs/python/doc/html/index.html).  This is one of the oldest means of exposing C++ types to Python.  The python_examples directory of the __fwdpp__ GitHub repo contains two examples.
-* [pybind11](http://pybind11.readthedocs.io/) is a relatively new project attempting to provide a modern (C++11) library to get C++ and Python to work together.  It is a very nice project, and essentially replaces boost.python. 
-* [Cython](http://www.cython.org) is a static compiler for Python that allows C++ types to be exposed.  This is what we use to develop [fwdpy](http://molpopgen.github.io/fwdpy), which exposes a lot of __fwdpp__ to Cython.  Those exposed types can be re-used in other projects, or [fwdpy](http://molpopgen.github.io/fwdpy) itself can be used as a base for your project.
+* [Cython](http://www.cython.org) is a static compiler for Python that allows C++ types to be exposed.  This is what we use to develop [fwdpy](http://molpopgen.github.io/fwdpy), which exposes a lot of __fwdpp__ to Cython.  Those exposed types can be re-used in other projects, or [fwdpy](http://molpopgen.github.io/fwdpy) itself can be used as a base for your project. **This project is sunsetted and will not be maintained once a lingering paper using it gets submitted.**
+
+* [pybind11](http://pybind11.readthedocs.io/) is a new project attempting to provide a modern (C++11) library to get C++ and Python to work together.  It is a very nice project, and essentially replaces boost.python. Our [fwdpy11](http://molpopgen.github.io/fwdyp11) project is based on pybind11. **fwdpy11 completely replaced fwdpy**
 
 The main difference between boost.python/pybind11 and Cython is that the former provide a "C++-first" perspective on writing Python extension modules.  That is, you can write your Python module in idiomatic C++.  However, that does not provide the most "Pythonic" experience for the folks using your package.  Cython, on the other hand, is Python-first, which causes some frustrations when wrapping C++ code, but ultimately leads to a more extensible package and a Pythonic experience.
 
-It is also possible to use __fwdpp__ from [R](http://r-project.org) via the excellent [Rcpp](http://www.rcpp.org) package.  In fact, [fwdpy](http://molpopgen.github.io/fwdpy) started out as an R package, but we migrated to Cython/Python because Cython's grammar makes it easier for users to write their own custom extensions.
+It is also possible to use __fwdpp__ from [R](http://r-project.org) via the excellent [Rcpp](http://www.rcpp.org) package.  
 
 
 
@@ -69,7 +70,7 @@ Here it is in Bibtex format:
 
 The library has been used for the following software projects:
 
-* [fwdpy](https://github.com/molpopgen/fwdpy) uses __fwdpp__ to provide an environment for foward simulation in Python.  This is a very large-scale project, and is where a lot of our future forward-simulation-related tools will end up.
+* [fwdpy11](https://github.com/molpopgen/fwdpy11) uses __fwdpp__ to provide an environment for foward simulation in Python.  This is a very large-scale project, and is where a lot of our future forward-simulation-related tools will end up.
 
 ### Publications (that we are aware of...) using fwdpp
 
