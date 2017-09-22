@@ -7,6 +7,7 @@ var searchData=
   ['singlepop',['singlepop',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html',1,'KTfwd::sugar']]],
   ['singlepop_3c_20ktfwd_3a_3apopgenmut_20_3e',['singlepop&lt; KTfwd::popgenmut &gt;',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html',1,'KTfwd::sugar']]],
   ['singlepop_3c_20ktfwd_3a_3apopgenmut_2c_20custom_5fdiploid_5ftesting_5ft_20_3e',['singlepop&lt; KTfwd::popgenmut, custom_diploid_testing_t &gt;',['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html',1,'KTfwd::sugar']]],
+  ['singlepop_5fobjects',['singlepop_objects',['../d8/dbc/structsinglepop__objects.html',1,'']]],
   ['singlepop_5fpopgenmut_5fcustom_5ffixture',['singlepop_popgenmut_custom_fixture',['../da/d9a/structsinglepop__popgenmut__custom__fixture.html',1,'']]],
   ['singlepop_5fpopgenmut_5ffixture',['singlepop_popgenmut_fixture',['../dc/d11/structsinglepop__popgenmut__fixture.html',1,'']]],
   ['site_5fdependent_5fgenetic_5fvalue',['site_dependent_genetic_value',['../dd/d09/structKTfwd_1_1site__dependent__genetic__value.html',1,'KTfwd']]],

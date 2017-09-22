@@ -14,6 +14,6 @@ var searchData=
   ['is_5fmutation_5fmodel_5ft',['is_mutation_model_t',['../d0/d30/namespaceKTfwd_1_1traits.html#aa6902a7b5173b332753e0ff0bb3dbd84',1,'KTfwd::traits']]],
   ['is_5fmutation_5ft',['is_mutation_t',['../d0/d30/namespaceKTfwd_1_1traits.html#ab3b7ede6efff66f46b6b656c88b2d05a',1,'KTfwd::traits']]],
   ['is_5frec_5fmodel',['is_rec_model',['../d0/d30/namespaceKTfwd_1_1traits.html#a80ec19ab5ba80c5577f90bccff3ada69',1,'KTfwd::traits']]],
-  ['is_5frec_5fmodel_5fsfinae_5fbase',['is_rec_model_SFINAE_base',['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#a8b3d477a1066102cc0db101d4cc99fe6',1,'KTfwd::traits::internal']]],
+  ['is_5frec_5fmodel_5fsfinae_5fbase',['is_rec_model_SFINAE_base',['../d9/d91/namespaceKTfwd_1_1traits_1_1internal.html#add9e709e05342ae33cdcc93ab5ca0823',1,'KTfwd::traits::internal']]],
   ['is_5frec_5fmodel_5ft',['is_rec_model_t',['../d0/d30/namespaceKTfwd_1_1traits.html#aa10e38657e4f12222db10b39689cd287',1,'KTfwd::traits']]]
 ];
