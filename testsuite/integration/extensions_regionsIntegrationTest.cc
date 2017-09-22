@@ -1,4 +1,5 @@
 #include <config.h>
+#include <cmath>
 #include <boost/test/unit_test.hpp>
 #include <fwdpp/sugar/GSLrng_t.hpp>
 #include <fwdpp/extensions/regions.hpp>
@@ -13,7 +14,7 @@ using namespace KTfwd;
 
 BOOST_FIXTURE_TEST_SUITE(test_regions, singlepop_popgenmut_fixture)
 
-// Check that extensions::discrete_mut_model::make_mut can be bound
+// Check that extensions::discrete_mut_model::operator() can be bound
 // with placeholders, that the resulting type is a valid
 // mutation model, and can be passed to KTfwd::sample_diploid
 BOOST_AUTO_TEST_CASE(discrete_mut_model_test_4)
@@ -24,7 +25,7 @@ BOOST_AUTO_TEST_CASE(discrete_mut_model_test_4)
     KTfwd::GSLrng_t<KTfwd::GSL_RNG_TAUS2> rng(0u);
     auto mmodel = std::bind(
         &extensions::discrete_mut_model::
-            make_mut<KTfwd::traits::recycling_bin_t<decltype(pop.mutations)>,
+            operator()<KTfwd::traits::recycling_bin_t<decltype(pop.mutations)>,
                      decltype(pop.mut_lookup), decltype(pop.mutations)>,
         &dm, std::placeholders::_1, std::placeholders::_2, rng.get(), 0.001,
         0., &generation, std::ref(pop.mut_lookup));
@@ -41,6 +42,10 @@ BOOST_AUTO_TEST_CASE(discrete_mut_model_test_4)
         std::bind(KTfwd::multiplicative_diploid(), std::placeholders::_1,
                   std::placeholders::_2, std::placeholders::_3, 2.),
         pop.neutral, pop.selected);
+    if(!std::isfinite(wbar))
+    {
+        throw std::runtime_error("wbar not finite");
+    }
 }
 
 // Test the convenience fxn
@@ -61,6 +66,10 @@ BOOST_AUTO_TEST_CASE(discrete_mut_model_test_5)
         std::bind(KTfwd::multiplicative_diploid(), std::placeholders::_1,
                   std::placeholders::_2, std::placeholders::_3, 2.),
         pop.neutral, pop.selected);
+    if(!std::isfinite(wbar))
+    {
+        throw std::runtime_error("wbar not finite");
+    }
 }
 
 /*
@@ -89,7 +98,7 @@ BOOST_AUTO_TEST_CASE(discrete_mut_model_test_6)
     KTfwd::GSLrng_t<KTfwd::GSL_RNG_TAUS2> rng(0u);
     auto mmodel = std::bind(
         &extensions::discrete_mut_model::
-            make_mut<KTfwd::traits::recycling_bin_t<decltype(pop.mutations)>,
+            operator()<KTfwd::traits::recycling_bin_t<decltype(pop.mutations)>,
                      decltype(pop.mut_lookup), decltype(pop.mutations)>,
         &dm, std::placeholders::_1, std::placeholders::_2, rng.get(), 0.001,
         0., &generation, std::ref(pop.mut_lookup));
@@ -107,6 +116,10 @@ BOOST_AUTO_TEST_CASE(discrete_mut_model_test_6)
         std::bind(KTfwd::multiplicative_diploid(), std::placeholders::_1,
                   std::placeholders::_2, std::placeholders::_3, 2.),
         pop.neutral, pop.selected);
+    if(!std::isfinite(wbar))
+    {
+        throw std::runtime_error("wbar not finite");
+    }
     // Check that mutations in certain position intervals have the correct
     // label
     for (const auto& m : pop.mutations)
@@ -155,6 +168,10 @@ BOOST_AUTO_TEST_CASE(test_bind_vec_dmm_drm)
         std::bind(multilocus_additive(), std::placeholders::_1,
                   std::placeholders::_2, std::placeholders::_3),
         pop.neutral, pop.selected);
+    if(!std::isfinite(wbar))
+    {
+        throw std::runtime_error("wbar not finite");
+    }
 }
 
 BOOST_AUTO_TEST_SUITE_END()

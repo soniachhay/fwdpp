@@ -11,6 +11,7 @@
 
 #include <fwdpp/debug.hpp>
 #include <fwdpp/mutation.hpp>
+#include <fwdpp/mutate_recombine.hpp>
 #include <fwdpp/internal/recycling.hpp>
 #include <fwdpp/internal/gsl_discrete.hpp>
 #include <fwdpp/internal/gamete_cleaner.hpp>
@@ -28,8 +29,7 @@ namespace KTfwd
               template <typename, typename> class gamete_cont_type,
               template <typename, typename> class mutation_cont_type,
               template <typename, typename> class diploid_vector_type,
-              typename mutation_removal_policy,
-              typename gamete_insertion_policy>
+              typename mutation_removal_policy>
     double
     sample_diploid(
         const gsl_rng *r,
@@ -43,13 +43,12 @@ namespace KTfwd
         const diploid_fitness_function &ff,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double f,
-        const mutation_removal_policy mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy mp)
     {
         // run changing N version with N_next == N_curr
         return sample_diploid(r, gametes, diploids, mutations, mcounts, N_curr,
                               N_curr, mu, mmodel, rec_pol, ff, neutral,
-                              selected, f, mp, gpolicy_mut);
+                              selected, f, mp);
     }
 
     // single deme, N changing
@@ -61,8 +60,7 @@ namespace KTfwd
               template <typename, typename> class gamete_cont_type,
               template <typename, typename> class mutation_cont_type,
               template <typename, typename> class diploid_vector_type,
-              typename mutation_removal_policy,
-              typename gamete_insertion_policy>
+              typename mutation_removal_policy>
     double
     sample_diploid(
         const gsl_rng *r,
@@ -77,8 +75,7 @@ namespace KTfwd
         const diploid_fitness_function &ff,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double f,
-        const mutation_removal_policy mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy mp)
     {
         /*
           The main part of fwdpp does not throw exceptions.
@@ -171,8 +168,8 @@ namespace KTfwd
         fwdpp_internal::gsl_ran_discrete_t_ptr lookup(
             gsl_ran_discrete_preproc(N_curr, fitnesses.data()));
         const auto parents(diploids); // Copy the parents, which is trivally
-                                      // fast for the vast majority of use
-                                      // cases.
+        // fast for the vast majority of use
+        // cases.
 
         // Change the population size
         if (diploids.size() != N_next)
@@ -193,7 +190,6 @@ namespace KTfwd
                               : gsl_ran_discrete(r, lookup.get());
                 assert(p1 < parents.size());
                 assert(p2 < parents.size());
-
                 /*
                   These are the gametes from each parent.
                   This is a trivial assignment if keys.
@@ -213,68 +209,11 @@ namespace KTfwd
                 if (gsl_rng_uniform(r) < 0.5)
                     std::swap(p2g1, p2g2);
 
-                /*
-                  Recombination: the offspring's first gamete will be a
-                  recombinant of
-                  p1g1 and p1g2.  Likewise for the second gamete.
-
-                  Internally, the recombination function does the following:
-                  1. Use rec_pol, a programmer-defined policy, to determine the
-                  positions of breakpoints.
-                  2. Create new mixes of the parental gametes into the
-                  pre-allocated containers 'neutral' and 'selected'
-
-                  The implementation is in fwdpp/recombination.[hpp|tcc] and
-                  the gory details
-                  are in fwdpp/internal/recombination_common.hpp and
-                  fwdpp/internal/rec_gamete_updater.hpp.
-
-                  Briefly, recombination is implemented via a series of
-                  sequential updates to iterators using binary
-                  searches (std::upper_bound).
-                */
-                dip.first
-                    = recombination(gametes, gam_recycling_bin, neutral,
-                                    selected, rec_pol, p1g1, p1g2, mutations)
-                          .first;
-                dip.second
-                    = recombination(gametes, gam_recycling_bin, neutral,
-                                    selected, rec_pol, p2g1, p2g2, mutations)
-                          .first;
-
-                // update gamete counts
-                gametes[dip.first].n++;
-                gametes[dip.second].n++;
-
-                /*
-                  Now, add new mutations to the first and second gamete of the
-                  offspring.
-
-                  In fwdpp, mutation keys in gametes are "less-than" sorted
-                  according to mutation position.
-
-                  The keys to mutations are inserted into the correct place
-                  which is found by a binary search (std::upper_bound).
-
-                  I think that there are ways to improve the speed of this part
-                  of the code in order to reduce calls
-                  to memmove/memcpy, but profiling suggests that the payoff
-                  would be small.  (Note that memmove/memcyp is
-                  never called direclty.  Rather, they are called indirectly
-                  via the insert() member function of the relevant
-                  container type.)
-
-                  The implementation details are found in fwdpp/mutation.hpp
-                */
-                dip.first = mutate_gamete_recycle(
-                    mut_recycling_bin, gam_recycling_bin, r, mu, gametes,
-                    mutations, dip.first, mmodel, gpolicy_mut);
-                dip.second = mutate_gamete_recycle(
-                    mut_recycling_bin, gam_recycling_bin, r, mu, gametes,
-                    mutations, dip.second, mmodel, gpolicy_mut);
-
-                assert(gametes[dip.first].n);
-                assert(gametes[dip.second].n);
+                mutate_recombine_update(
+                    r, gametes, mutations,
+                    std::make_tuple(p1g1, p1g2, p2g1, p2g2), rec_pol, mmodel,
+                    mu, gam_recycling_bin, mut_recycling_bin, dip, neutral,
+                    selected);
             }
         assert(check_sum(gametes, 2 * N_next));
 #ifndef NDEBUG
@@ -365,7 +304,7 @@ namespace KTfwd
         template <typename, typename> class mutation_cont_type,
         template <typename, typename> class diploid_vector_type,
         template <typename, typename> class metapop_diploid_vector_type,
-        typename mutation_removal_policy, typename gamete_insertion_policy>
+        typename mutation_removal_policy>
     std::vector<double>
     sample_diploid(
         const gsl_rng *r,
@@ -382,13 +321,12 @@ namespace KTfwd
         const migration_policy &mig,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double *f,
-        const mutation_removal_policy &mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy &mp)
     {
         // run changing-N version with no change in N
         return sample_diploid(r, metapop, diploids, mutations, mcounts, N_curr,
                               N_curr, mu, mmodel, rec_pol, ffs, mig, neutral,
-                              selected, f, mp, gpolicy_mut);
+                              selected, f, mp);
     }
 
     // Metapopulation version of sample_diploid for individual-based
@@ -405,7 +343,7 @@ namespace KTfwd
         template <typename, typename> class mutation_cont_type,
         template <typename, typename> class diploid_vector_type,
         template <typename, typename> class metapop_diploid_vector_type,
-        typename mutation_removal_policy, typename gamete_insertion_policy>
+        typename mutation_removal_policy>
     std::vector<double>
     sample_diploid(
         const gsl_rng *r,
@@ -423,8 +361,7 @@ namespace KTfwd
         const migration_policy &mig,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double *f,
-        const mutation_removal_policy &mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy &mp)
     {
         // get the fitnesses for each diploid in each deme and make the lookup
         // table of parental fitnesses
@@ -497,7 +434,7 @@ namespace KTfwd
                                 || (*(f + popi) > 0.
                                     && gsl_rng_uniform(r)
                                            < *(f + popi)))) // individual is
-                                                            // inbred
+                            // inbred
                             {
                                 p2 = p1;
                             }
@@ -520,29 +457,11 @@ namespace KTfwd
                         if (gsl_rng_uniform(r) < 0.5)
                             std::swap(p2g1, p2g2);
 
-                        dip.first
-                            = recombination(gametes, gamete_recycling_bin,
-                                            neutral, selected, rec_pol, p1g1,
-                                            p1g2, mutations)
-                                  .first;
-                        dip.second
-                            = recombination(gametes, gamete_recycling_bin,
-                                            neutral, selected, rec_pol, p2g1,
-                                            p2g2, mutations)
-                                  .first;
-
-                        gametes[dip.first].n++;
-                        gametes[dip.second].n++;
-
-                        // now, add new mutations
-                        dip.first = mutate_gamete_recycle(
-                            mut_recycling_bin, gamete_recycling_bin, r, mu,
-                            gametes, mutations, dip.first, mmodel,
-                            gpolicy_mut);
-                        dip.second = mutate_gamete_recycle(
-                            mut_recycling_bin, gamete_recycling_bin, r, mu,
-                            gametes, mutations, dip.second, mmodel,
-                            gpolicy_mut);
+                        mutate_recombine_update(
+                            r, gametes, mutations,
+                            std::make_tuple(p1g1, p1g2, p2g1, p2g2), rec_pol,
+                            mmodel, mu, gamete_recycling_bin,
+                            mut_recycling_bin, dip, neutral, selected);
                     }
             }
         fwdpp_internal::process_gametes(gametes, mutations, mcounts);
@@ -571,7 +490,7 @@ namespace KTfwd
         template <typename, typename> class mutation_cont_type,
         template <typename, typename> class diploid_vector_type,
         template <typename, typename> class locus_vector_type,
-        typename mutation_removal_policy, typename gamete_insertion_policy>
+        typename mutation_removal_policy>
     double
     sample_diploid(
         const gsl_rng *r,
@@ -585,12 +504,11 @@ namespace KTfwd
         const uint_t &N_next, const double *mu,
         const mutation_model_container &mmodel,
         const recombination_policy_container &rec_policies,
-		const std::vector<std::function<unsigned(void)>> & interlocus_rec,
+        const std::vector<std::function<unsigned(void)>> &interlocus_rec,
         const diploid_fitness_function &ff,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double &f,
-        const mutation_removal_policy &mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy &mp)
     {
         assert(popdata_sane_multilocus(diploids, gametes, mutations, mcounts));
         assert(mcounts.size() == mutations.size());
@@ -632,7 +550,7 @@ namespace KTfwd
             gsl_ran_discrete_preproc(fitnesses.size(), fitnesses.data()));
 
         const auto parents(diploids); // Copy the parents.  Exact copy of
-                                      // diploids--same fitnesses, etc.
+        // diploids--same fitnesses, etc.
 
         // Change the population size and reset dptr to avoid iterator
         // invalidation
@@ -653,10 +571,10 @@ namespace KTfwd
                 assert(p2 < N_curr);
                 dip = fwdpp_internal::multilocus_rec_mut(
                     r, parents[p1], parents[p2], mut_recycling_bin,
-                    gamete_recycling_bin, rec_policies, interlocus_rec, 
+                    gamete_recycling_bin, rec_policies, interlocus_rec,
                     ((gsl_rng_uniform(r) < 0.5) ? 1 : 0),
                     ((gsl_rng_uniform(r) < 0.5) ? 1 : 0), gametes, mutations,
-                    neutral, selected, mu, mmodel, gpolicy_mut);
+                    neutral, selected, mu, mmodel);
             }
         fwdpp_internal::process_gametes(gametes, mutations, mcounts);
         fwdpp_internal::gamete_cleaner(gametes, mutations, mcounts, 2 * N_next,
@@ -678,7 +596,7 @@ namespace KTfwd
         template <typename, typename> class mutation_cont_type,
         template <typename, typename> class diploid_vector_type,
         template <typename, typename> class locus_vector_type,
-        typename mutation_removal_policy, typename gamete_insertion_policy>
+        typename mutation_removal_policy>
     double
     sample_diploid(
         const gsl_rng *r,
@@ -691,16 +609,15 @@ namespace KTfwd
         std::vector<uint_t> &mcounts, const uint_t &N, const double *mu,
         const mutation_model_container &mmodel,
         const recombination_policy_container &rec_policies,
-		const std::vector<std::function<unsigned(void)>> & interlocus_rec,
+        const std::vector<std::function<unsigned(void)>> &interlocus_rec,
         const diploid_fitness_function &ff,
         typename gamete_type::mutation_container &neutral,
         typename gamete_type::mutation_container &selected, const double &f,
-        const mutation_removal_policy &mp,
-        const gamete_insertion_policy &gpolicy_mut)
+        const mutation_removal_policy &mp)
     {
         return sample_diploid(r, gametes, diploids, mutations, mcounts, N, N,
-                              mu, mmodel, rec_policies, interlocus_rec, 
-                              ff, neutral, selected, f, mp, gpolicy_mut);
+                              mu, mmodel, rec_policies, interlocus_rec, ff,
+                              neutral, selected, f, mp);
     }
 }
 

@@ -110,8 +110,7 @@ namespace KTfwd
                   template <typename, typename> class mcont_t,
                   template <typename, typename> class diploid_vector_type,
                   typename popmodel_rules = standardWFrules,
-                  typename mutation_removal_policy = std::true_type,
-                  typename gamete_insertion_policy = KTfwd::emplace_back>
+                  typename mutation_removal_policy = std::true_type>
         double
         sample_diploid(
             const gsl_rng *r, gcont_t<gamete_type, gcont_t_allocator> &gametes,
@@ -125,17 +124,18 @@ namespace KTfwd
             typename gamete_type::mutation_container &neutral,
             typename gamete_type::mutation_container &selected,
             const double &f = 0., popmodel_rules &&pmr = popmodel_rules(),
-            const mutation_removal_policy &mp = mutation_removal_policy(),
-            const gamete_insertion_policy &gpolicy_mut
-            = gamete_insertion_policy())
+            const mutation_removal_policy &mp = mutation_removal_policy())
         {
-            assert(N_curr == diploids.size());
-
+            if(N_curr != diploids.size())
+            {
+                throw std::runtime_error("N_curr != diploids.size()");
+            }
             auto gamete_recycling_bin
                 = fwdpp_internal::make_gamete_queue(gametes);
             auto mutation_recycling_bin
                 = fwdpp_internal::make_mut_queue(mcounts);
 
+            
             dispatch_w(pmr, diploids, gametes, mutations, ff);
 
 #ifndef NDEBUG
@@ -170,28 +170,12 @@ namespace KTfwd
                     if (gsl_rng_uniform(r) < 0.5)
                         std::swap(p2g1, p2g2);
 
-                    dip.first = recombination(gametes, gamete_recycling_bin,
-                                              neutral, selected, rec_pol, p1g1,
-                                              p1g2, mutations)
-                                    .first;
-                    dip.second = recombination(gametes, gamete_recycling_bin,
-                                               neutral, selected, rec_pol,
-                                               p2g1, p2g2, mutations)
-                                     .first;
+                    mutate_recombine_update(
+                        r, gametes, mutations,
+                        std::make_tuple(p1g1, p1g2, p2g1, p2g2), rec_pol,
+                        mmodel, mu, gamete_recycling_bin,
+                        mutation_recycling_bin, dip, neutral, selected);
 
-                    gametes[dip.first].n++;
-                    gametes[dip.second].n++;
-
-                    // now, add new mutations
-                    dip.first = mutate_gamete_recycle(
-                        mutation_recycling_bin, gamete_recycling_bin, r, mu,
-                        gametes, mutations, dip.first, mmodel, gpolicy_mut);
-                    dip.second = mutate_gamete_recycle(
-                        mutation_recycling_bin, gamete_recycling_bin, r, mu,
-                        gametes, mutations, dip.second, mmodel, gpolicy_mut);
-
-                    assert(gametes[dip.first].n);
-                    assert(gametes[dip.second].n);
                     dispatch_update(pmr, r, dip, parents[p1], parents[p2],
                                     gametes, mutations, ff);
                 }
@@ -226,8 +210,7 @@ namespace KTfwd
                   template <typename, typename> class mcont_t,
                   template <typename, typename> class diploid_vector_type,
                   typename popmodel_rules = standardWFrules,
-                  typename mutation_removal_policy = std::true_type,
-                  typename gamete_insertion_policy = KTfwd::emplace_back>
+                  typename mutation_removal_policy = std::true_type>
         double
         sample_diploid(
             const gsl_rng *r, gcont_t<gamete_type, gcont_t_allocator> &gametes,
@@ -241,14 +224,11 @@ namespace KTfwd
             typename gamete_type::mutation_container &neutral,
             typename gamete_type::mutation_container &selected,
             const double &f = 0., popmodel_rules &&pmr = popmodel_rules(),
-            const mutation_removal_policy &mp = mutation_removal_policy(),
-            const gamete_insertion_policy &gpolicy_mut
-            = gamete_insertion_policy())
+            const mutation_removal_policy &mp = mutation_removal_policy())
         {
             return experimental::sample_diploid(
-                r, gametes, diploids, mutations, mcounts, N_curr, N_curr, mu,
-                mmodel, rec_pol, ff, neutral, selected, f, pmr, mp,
-                gpolicy_mut);
+                r, gametes, diploids, mutations, mcounts, N_curr, N_curr,mu, mmodel,
+                rec_pol, ff, neutral, selected, f, pmr, mp);
         }
     }
 }
