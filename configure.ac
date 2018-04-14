@@ -1,8 +1,8 @@
 AC_PREREQ(2.59)
 
 m4_define([FWDPP_MAJOR],0)
-m4_define([FWDPP_MINOR],5)
-m4_define([FWDPP_REVISION],7)
+m4_define([FWDPP_MINOR],6)
+m4_define([FWDPP_REVISION],0)
 AC_INIT([fwdpp], [FWDPP_MAJOR.FWDPP_MINOR.FWDPP_REVISION], [https://github.com/molpopgen/fwdpp])
 AC_DEFINE(FWDPP_MAJOR_VERSION,FWDPP_MAJOR,[Define major version number.])
 AC_DEFINE(FWDPP_MINOR_VERSION,FWDPP_MINOR,[Define major version number.])
@@ -14,7 +14,6 @@ AC_SUBST(FWDPP_REVISION_VERSION,[FWDPP_REVISION])
 AC_SUBST(FWDPP_VERSION_STRING,[FWDPP_MAJOR"."FWDPP_MINOR"."FWDPP_REVISION])
 AC_CONFIG_SRCDIR([fwdpp/diploid.hh])
 AC_CONFIG_SRCDIR([examples/diploid_ind.cc])
-AC_CONFIG_SRCDIR([experimental_examples/sex_limited_ind.cc])
 AC_CONFIG_SRCDIR([testsuite/unit/fwdpp_unit_tests.cc])
 AM_INIT_AUTOMAKE([subdir-objects])
 AC_CONFIG_HEADERS([config.h])
@@ -30,10 +29,10 @@ AM_MAINTAINER_MODE([disable])
 AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
 
 AC_LANG(C++)
-AC_CONFIG_FILES([Makefile fwdpp/version.hpp fwdpp/Makefile fwdpp/internal/Makefile fwdpp/tags/Makefile fwdpp/sugar/Makefile
-				 fwdpp/sugar/poptypes/Makefile fwdpp/sugar/gsl/Makefile fwdpp/sugar/sampling/Makefile
-				 fwdpp/experimental/Makefile fwdpp/extensions/Makefile examples/Makefile testsuite/Makefile
-				 experimental_examples/Makefile src/Makefile doc/fwdpp.doxygen])
+AC_CONFIG_FILES([Makefile fwdpp/version.hpp fwdpp/Makefile fwdpp/io/Makefile fwdpp/io/detail/Makefile
+                 fwdpp/internal/Makefile fwdpp/tags/Makefile fwdpp/sugar/Makefile fwdpp/sugar/poptypes/Makefile
+                 fwdpp/sugar/gsl/Makefile fwdpp/sugar/sampling/Makefile fwdpp/extensions/Makefile fwdpp/meta/Makefile
+                 examples/Makefile testsuite/Makefile src/Makefile doc/fwdpp.doxygen]) 
 
 AC_ARG_ENABLE([debug],AS_HELP_STRING([--enable-debug],[Compile examples with run-time assert macro enabled.]))
 AM_CONDITIONAL([DEBUG],test x$enable_debug = xyes)
@@ -46,7 +45,7 @@ dnl check for things that are required to compile all examples and/or use librar
 AC_CHECK_HEADER(Sequence/SimData.hpp, SIMDATAFOUND=1 , [AC_MSG_WARN([Sequence/SimData.hpp not found. Example programs will not be compiled.])])
 AC_CHECK_HEADER(gsl/gsl_rng.h,HAVE_GSL=1,[AC_MSG_ERROR([gsl/gsl_rng.h not found.  Please install the GNU Scientific Library])])
 AC_CHECK_HEADER(gsl/gsl_randist.h,HAVE_GSL=1,[AC_MSG_ERROR([gsl/gsl_rng.h not found.  Please install the GNU Scientific Library])])
-AC_CHECK_HEADER(zlib.h,,[AC_MSG_ERROR([zlib.h not found.  zlib >= 1.2.5 is requred])])
+dnl AC_CHECK_HEADER(zlib.h,,[AC_MSG_ERROR([zlib.h not found.  zlib >= 1.2.5 is requred])])
 
 AM_CONDITIONAL([HAVE_SIMDATA_HPP],test x$SIMDATAFOUND = x1)
 
@@ -67,7 +66,7 @@ AM_CONDITIONAL([BUNIT_TEST_PRESENT], test x$BUNITTEST = x1)
 
 
 dnl check for C run-time libraries
-AC_CHECK_LIB([z],gzungetc,,[AC_MSG_ERROR([zlib run time library not found])])
+dnl AC_CHECK_LIB([z],gzungetc,,[AC_MSG_ERROR([zlib run time library not found])])
 AC_CHECK_LIB([gslcblas],[cblas_dgemm],,[AC_MSG_ERROR([gslcblas run-time library not found])])
 AC_CHECK_LIB([gsl],[gsl_blas_dgemm],,[AC_MSG_ERROR([gsl run-time library not found])])
 dnl check for tcmalloc if desired

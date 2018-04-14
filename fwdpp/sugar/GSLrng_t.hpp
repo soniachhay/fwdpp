@@ -11,7 +11,7 @@
 #include <fwdpp/sugar/gsl/tags.hpp>
 #include <fwdpp/sugar/gsl/deleter.hpp>
 
-namespace KTfwd
+namespace fwdpp
 {
 
     //! Distpatch tag to signal GSLrng_t to instantiate in terms of
@@ -26,9 +26,9 @@ namespace KTfwd
       \brief A wrapper around gsl_rng * objects.
 
       The template instantiation type must be a model of
-      KTfwd::sugar::GSL_RNG_TYPE_TAG, which specifies the
+      fwdpp::sugar::GSL_RNG_TYPE_TAG, which specifies the
       gsl_rng type.
-      This type holds an object of type KTfwd::sugar::gsl_rng_ptr_t,
+      This type holds an object of type fwdpp::sugar::gsl_rng_ptr_t,
       which is a smart pointer that manages freeing the gsl_rng * upon
       destruction.
      */
@@ -37,24 +37,27 @@ namespace KTfwd
       private:
         sugar::gsl_rng_ptr_t setup(GSL_RNG_MT19937)
         {
-            return sugar::gsl_rng_ptr_t(gsl_rng_alloc(gsl_rng_mt19937));
+            return sugar::gsl_rng_ptr_t(gsl_rng_alloc(gsl_rng_mt19937),
+                                        [](gsl_rng *r) { gsl_rng_free(r); });
         }
 
         sugar::gsl_rng_ptr_t setup(GSL_RNG_TAUS2)
         {
-            return sugar::gsl_rng_ptr_t(gsl_rng_alloc(gsl_rng_taus2));
+            return sugar::gsl_rng_ptr_t(gsl_rng_alloc(gsl_rng_taus2),
+                                        [](gsl_rng *r) { gsl_rng_free(r); });
         }
 
         sugar::gsl_rng_ptr_t
         setup(const gsl_rng *r)
         {
-            return sugar::gsl_rng_ptr_t(gsl_rng_clone(r));
+            return sugar::gsl_rng_ptr_t(gsl_rng_clone(r),
+                                        [](gsl_rng *r) { gsl_rng_free(r); });
         }
 
-      public:
         //! Smart pointer wrapping the gsl_rng *
         sugar::gsl_rng_ptr_t r;
 
+      public:
         //! Typedef for RNG type, if needed
         using rngtype = T;
 
@@ -64,7 +67,7 @@ namespace KTfwd
             gsl_rng_set(r.get(), seed);
         }
 
-        GSLrng_t(const GSLrng_t &rng) = default; 
+        GSLrng_t(const GSLrng_t &rng) = delete;
 
         GSLrng_t(GSLrng_t &&) = default;
 

@@ -15,7 +15,7 @@
 #include <type_traits>
 #include <fwdpp/tags/tags.hpp>
 
-namespace KTfwd
+namespace fwdpp
 {
     //! The unsigned integer type is 32 bits
     using uint_t = std::uint32_t;
@@ -54,6 +54,13 @@ namespace KTfwd
         mutation_base &operator=(mutation_base &) = default;
         mutation_base &operator=(mutation_base const &) = default;
         mutation_base &operator=(mutation_base &&) = default;
+
+        inline bool
+        is_equal(const mutation_base &rhs) const
+        {
+            return this->pos == rhs.pos && this->xtra == rhs.xtra
+                   && this->neutral == rhs.neutral;
+        }
     };
 
     struct mutation : public mutation_base
@@ -76,9 +83,8 @@ namespace KTfwd
         bool
         operator==(const mutation &rhs) const
         {
-            return (std::fabs(this->pos - rhs.pos)
-                        <= std::numeric_limits<double>::epsilon()
-                    && this->s == rhs.s);
+            return std::tie(this->s, this->h) == std::tie(rhs.s, rhs.h)
+                   && is_equal(rhs);
         }
     };
 
@@ -97,7 +103,7 @@ namespace KTfwd
       type (see @ref md_md_policies)
       and then use a typedef to define your gamete type in the simulations:
       \code
-      using gamete_t = KTfwd::gamete_base<mutation_type>
+      using gamete_t = fwdpp::gamete_base<mutation_type>
       \endcode
       See @ref md_md_policies for examples of this.
       \ingroup basicTypes

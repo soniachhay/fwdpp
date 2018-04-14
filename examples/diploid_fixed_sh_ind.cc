@@ -6,6 +6,7 @@
  */
 
 #include <fwdpp/diploid.hh>
+#include <fwdpp/recbinder.hpp>
 #ifdef HAVE_LIBSEQUENCE
 #include <Sequence/SimData.hpp>
 #endif
@@ -13,13 +14,13 @@
 #include <functional>
 #include <cassert>
 #include <iomanip>
-#include <fwdpp/sugar/infsites.hpp>
+#include <fwdpp/sugar/popgenmut.hpp>
 #define SINGLEPOP_SIM
 // the type of mutation
-using mtype = KTfwd::mutation;
+using mtype = fwdpp::popgenmut;
 #include <common_ind.hpp>
-
-using namespace KTfwd;
+#include <gsl/gsl_randist.h>
+using namespace fwdpp;
 
 int
 main(int argc, char **argv)
@@ -55,7 +56,10 @@ main(int argc, char **argv)
     GSLrng r(seed);
 
     // recombination map is uniform[0,1)
-    std::function<double(void)> recmap = std::bind(gsl_rng_uniform, r.get());
+    const auto rec
+        = fwdpp::recbinder(fwdpp::poisson_xover(littler, 0., 1.), r.get());
+
+    const double pselected = mu_del / (mu_del + mu_neutral);
 
     while (nreps--)
         {
@@ -63,35 +67,31 @@ main(int argc, char **argv)
             pop.mutations.reserve(
                 size_t(std::ceil(std::log(2 * N) * (theta_neutral + theta_del)
                                  + 0.667 * (theta_neutral + theta_del))));
-            unsigned generation;
+            unsigned generation = 0;
+            const auto mmodel = [&pop, &r, &generation, s, h,
+                                 pselected](std::queue<std::size_t> &recbin,
+                                            singlepop_t::mcont_t &mutations) {
+                return fwdpp::infsites_popgenmut(
+                    recbin, mutations, r.get(), pop.mut_lookup, generation,
+                    pselected, [&r]() { return gsl_rng_uniform(r.get()); },
+                    [s]() { return s; }, [h]() { return h; });
+            };
 
             double wbar = 1;
             for (generation = 0; generation < ngens; ++generation)
                 {
-                    assert(KTfwd::check_sum(pop.gametes, 2 * N));
-                    wbar = KTfwd::sample_diploid(
+                    assert(fwdpp::check_sum(pop.gametes, 2 * N));
+                    wbar = fwdpp::sample_diploid(
                         r.get(), pop.gametes, pop.diploids, pop.mutations,
-                        pop.mcounts, N, mu_neutral + mu_del,
-                        std::bind(KTfwd::infsites(), std::placeholders::_1,
-                                  std::placeholders::_2, r.get(),
-                                  std::ref(pop.mut_lookup), mu_neutral, mu_del,
-                                  [&r]() { return gsl_rng_uniform(r.get()); },
-                                  [&s]() { return s; }, [&h]() { return h; }),
+                        pop.mcounts, N, mu_neutral + mu_del, mmodel,
                         // The function to generation recombination positions:
-                        std::bind(KTfwd::poisson_xover(), r.get(), littler, 0.,
-                                  1., std::placeholders::_1,
-                                  std::placeholders::_2,
-                                  std::placeholders::_3),
-                        std::bind(KTfwd::multiplicative_diploid(),
-                                  std::placeholders::_1, std::placeholders::_2,
-                                  std::placeholders::_3, 2.),
-                        pop.neutral, pop.selected);
-                    KTfwd::update_mutations(pop.mutations, pop.fixations,
+                        rec, fwdpp::multiplicative_diploid(1.), pop.neutral,
+                        pop.selected);
+                    fwdpp::update_mutations(pop.mutations, pop.fixations,
                                             pop.fixation_times, pop.mut_lookup,
                                             pop.mcounts, generation, 2 * N);
-                    assert(KTfwd::check_sum(pop.gametes, 2 * N));
+                    assert(fwdpp::check_sum(pop.gametes, 2 * N));
                 }
-
             // Take a sample of size samplesize1.  Two data blocks are
             // returned, one for neutral mutations, and one for selected
             std::pair<std::vector<std::pair<double, std::string>>,

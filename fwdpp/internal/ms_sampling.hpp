@@ -3,7 +3,7 @@
 
 #include <cassert>
 
-namespace KTfwd
+namespace fwdpp
 {
     namespace fwdpp_internal
     {
@@ -45,9 +45,11 @@ namespace KTfwd
             for (const auto &m : variants)
                 {
                     auto mutpos = mutations[m].pos;
-                    auto itr = std::find_if(
-                        block.begin(), block.end(),
-                        std::bind(pf, std::placeholders::_1, mutpos));
+                    auto itr
+                        = std::find_if(block.begin(), block.end(),
+                                       [&pf, mutpos](sample_t::value_type &v) {
+                                           return pf(v, mutpos);
+                                       });
                     if (itr == block.end())
                         {
                             block.push_back(
@@ -81,14 +83,13 @@ namespace KTfwd
         template <typename mcont_t, typename gcont_t, typename dipvector_t,
                   typename integer_type = std::size_t>
         sep_sample_t
-        ms_sample_separate_single_deme(
+        ms_sample_separate_single_locus_pop(
             const mcont_t &mutations, const gcont_t &gametes,
             const dipvector_t &diploids,
             const std::vector<integer_type> &diplist, const unsigned &n,
             const bool &remove_fixed)
         {
             sep_sample_t rv;
-            sample_t::iterator itr;
 
             std::function<bool(const sample_site_t &, const double &)>
                 sitefinder = [](const sample_site_t &site, const double &d) {
@@ -147,13 +148,15 @@ namespace KTfwd
                     trim_last(&rv.second);
                 }
             assert(std::is_sorted(
-                rv.first.begin(), rv.first.end(),
-                [](const sample_site_t &a, const sample_site_t &b) noexcept {
+                rv.first.begin(),
+                rv.first.end(), [](const sample_site_t &a,
+                                   const sample_site_t &b) noexcept {
                     return a.first < b.first;
                 }));
             assert(std::is_sorted(
-                rv.second.begin(), rv.second.end(),
-                [](const sample_site_t &a, const sample_site_t &b) noexcept {
+                rv.second.begin(),
+                rv.second.end(), [](const sample_site_t &a,
+                                    const sample_site_t &b) noexcept {
                     return a.first < b.first;
                 }));
             return rv;
@@ -241,16 +244,18 @@ namespace KTfwd
 #ifndef NDEBUG
             for (const auto &rvi : rv)
                 {
-                    assert(std::is_sorted(rvi.first.begin(), rvi.first.end(),
-                                          [](const sample_site_t &a,
+                    assert(std::is_sorted(
+                        rvi.first.begin(),
+                        rvi.first.end(), [](const sample_site_t &a,
+                                            const sample_site_t &b) noexcept {
+                            return a.first < b.first;
+                        }));
+                    assert(std::is_sorted(
+                        rvi.second.begin(),
+                        rvi.second.end(), [](const sample_site_t &a,
                                              const sample_site_t &b) noexcept {
-                                              return a.first < b.first;
-                                          }));
-                    assert(std::is_sorted(rvi.second.begin(), rvi.second.end(),
-                                          [](const sample_site_t &a,
-                                             const sample_site_t &b) noexcept {
-                                              return a.first < b.first;
-                                          }));
+                            return a.first < b.first;
+                        }));
                 }
 #endif
             return rv;

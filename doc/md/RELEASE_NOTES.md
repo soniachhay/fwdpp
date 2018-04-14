@@ -1,8 +1,73 @@
-# FWDPP RELEASE NOTES
-
+# FWDPP RELEASE NOTES 
 For a list of planned features, etc., see the issues list on [GitHub](https://github.com/molpopgen/fwdpp/issues).
 Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put
 milestones (target version numbers for these features to go live) because that is not realistic given how I work.
+
+## 0.6.0
+
+This is a major release, breaking API compatibility in many areas.  These changes were necessary to make the library
+even more flexible, but also to undo several poor design choices that we've been living with for far too long.  This
+release can be seen as a big push towards a 1.0 release.  
+
+The result of these changes is a much smaller library that is safer and can do more.
+
+The following bug fixes are included in this release.  None affected
+[fwdpy11's](http://fwdpy11.readthedocs.io/en/latest/) official releases, either because that
+package uses custom replacements of fwdpp functions and/or they were caught before a release was made or are in features
+so new that no one has affected by them:
+
+* A bug in which selected fixations were not recorded by fwdpp::update_mutations_n was fixed.
+  [PR119](https://github.com/molpopgen/fwdpp/pull/119)
+* A bug in repeatedly recording fixation data with removeFixed == false has been fixed. 
+  [PR71](https://github.com/molpopgen/fwdpp/pull/71)
+* API bugs in multilocus sampling routines have been fixed. 
+  [PR70](https://github.com/molpopgen/fwdpp/pull/70)
+* The "perfect-forwarding" constructor of fwdpp::popbase now is indeed perfectly-forwarding.[PR65](https://github.com/molpopgen/fwdpp/pull/65).
+  This fixes a bug introduced in [PR56](https://github.com/molpopgen/fwdpp/pull/56).
+
+In fwdpp 0.5.7, [PR56](https://github.com/molpopgen/fwdpp/pull/56) had a few issues resolved in this release:
+
+* Do not require mutation keys to be sorted by position in extinct gametes. [PR66](https://github.com/molpopgen/fwdpp/pull/66)  
+* Fixed an error in a "perfect forwarding" constructor introduced in 0.5.7. [PR65](https://github.com/molpopgen/fwdpp/pull/65) 
+* When creating populations based on user data, 0.5.7 failed to enforce
+  proper sorting of mutation keys in gametes.  This issue was fixed via [PR64](https://github.com/molpopgen/fwdpp/pull/64).
+    
+The following changes have been made to the library itself:
+
+* @ref custom_mutation.cc, @ref custom_diploid.cc and @ref juvenile_migration.cc were added to examples. [PR124](https://github.com/molpopgen/fwdpp/pull/124).
+* All use of std::bind is replaced with lambdas. [PR126](https://github.com/molpopgen/fwdpp/pull/126).
+* Some mutation types were removed from fwdpp/sugar. [PR125](https://github.com/molpopgen/fwdpp/pull/125).
+* The back end for specifying final values from fwdpp::additive_diploid and fwdpp::multiplicative_diploid have been
+  streamlined. [PR121](https://github.com/molpopgen/fwdpp/pull/121), which changes behavior introduced in fwdpp 0.5.6
+  in response to [Issue 49](https://github.com/molpopgen/fwdpp/issues/49)
+* The namespace has been changed from KTfwd to fwdpp. [PR88](https://github.com/molpopgen/fwdpp/pull/88)
+* Serialization code has been generalized to depend on template specializations. [PR90](https://github.com/molpopgen/fwdpp/pull/90) and [PR108](https://github.com/molpopgen/fwdpp/pull/108)
+* The struct KTfwd::infsites was removed.  For the mutation type fwdpp::popgenmut, fwdpp::infsites_popgenmut was added
+  as a mutation function.  [PR120](https://github.com/molpopgen/fwdpp/pull/120)
+* The storage of a gsl_rng pointer in fwdpp::poisson_xover and fwdpp::general_rec_variation was refactored out. [PR118](https://github.com/molpopgen/fwdpp/pull/118)
+* The types fwdpp::extensions::discrete_rec_model and fwdpp::extensions::discrete_mut_model were refactored to be much
+  more general, and independent of a particular mutation type. [PR116](https://github.com/molpopgen/fwdpp/pull/116) and [PR113](https://github.com/molpopgen/fwdpp/pull/113)
+* Metapopulation objects were removed, and single-/multi- locus population types are renamed fwdpp::slocuspop and  fwdpp::mlocuspop, respectively.  Code for demographic operations was also removed, as it is not needed. 
+  [PR110](https://github.com/molpopgen/fwdpp/pull/110)
+* The class fwdpp::popbase is no longer dependent on a particular ploidy. The diploid-ness was pushed into fwdpp::slocuspop and fwdpp::mlocuspop (as well as the more complex template classes fwdpp::sugar::slocuspop and fwdpp::sugar::mlocuspop). [PR114](https://github.com/molpopgen/fwdpp/pull/114)
+* Namespace KTfwd::experimental was removed.  [PR86](https://github.com/molpopgen/fwdpp/pull/86)
+* Diploid-dependent mutation models are now supported. [PR84](https://github.com/molpopgen/fwdpp/pull/84)
+* Removed API features deprecated in 0.5.7.  [PR83](https://github.com/molpopgen/fwdpp/pull/83)
+* Several parts of namespace fwdpp::traits were streamlined. [PR82](https://github.com/molpopgen/fwdpp/pull/82)
+* The "scaling" parameter of fwdpp::additive_diploid and fwdpp::multiplicative_diploid are now class data instead of
+  bound parameters.  [PR79](https://github.com/molpopgen/fwdpp/pull/79)
+* fwdpp::general_rec_variation added. [PR77](https://github.com/molpopgen/fwdpp/pull/77)
+* Recombination callbacks taking no arguments are supported. [PR75](https://github.com/molpopgen/fwdpp/pull/75)
+* fwdpp::mlocuspop::locus_boundaries is no longer populated with default values, which was dangerous!! 
+  [PR69](https://github.com/molpopgen/fwdpp/pull/69)
+* fwdpp::generalmut and fwdpp::generalmut_vec now take less memory.
+  [PR67](https://github.com/molpopgen/fwdpp/pull/67)
+* Sampling routines in fwdpp/sugar/sampling.hpp now guard against the possibility of having fixations repeated in
+  samples. For example, this change will affect simulations where selected fixations are retained because they affect trait values. [PR71](https://github.com/molpopgen/fwdpp/pull/71) 
+* Issue [PR69](https://github.com/molpopgen/fwdpp/issues/69) [PR70](https://github.com/molpopgen/fwdpp/pull/70) 
+* Fixed template errors when sampling from multilocus populations using functions in fwdpp/sugar/sampling.hpp.  These
+  errors resulted in failure to compile and thus did not affect anyone's results.  [PR70](https://github.com/molpopgen/fwdpp/pull/70) 
+
 
 ## 0.5.7
 

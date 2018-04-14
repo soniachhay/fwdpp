@@ -4,6 +4,7 @@
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
 #include <fwdpp/type_traits.hpp>
+#include <stdexcept>
 #include <cassert>
 #include <type_traits>
 #include <algorithm>
@@ -43,10 +44,10 @@
   \defgroup fitness Policies for calculating fitnesses and trait values.
   This group contains the following data structures to help you implement
   custom fitness policies:
-  1. KTfwd::site_dependent_genetic_value for implementing typical
+  1. fwdpp::site_dependent_genetic_value for implementing typical
   population-genetic-like models where trait values are a function of the
   properties of individual mutations
-  2. KTfwd::haplotype_dependent_fitness for implementing models where trait
+  2. fwdpp::haplotype_dependent_fitness for implementing models where trait
   values are the functions properties of haplotypes.
 
   Truthfully, latter is so trivial that a library user may never see any need
@@ -54,16 +55,16 @@
 
   The library also defines two site-dependent fitness models, which may also
   be used for trait value calculations:
-  1. KTfwd::multiplicative_diploid
-  2. KTfwd::additive_diploid
+  1. fwdpp::multiplicative_diploid
+  2. fwdpp::additive_diploid
 
   These are arguably the "standard" models of the field as far as selection is
   concerned.
 
-  Finally, KTfwd::no_selection is provided to force all diploid fitnesses to be
+  Finally, fwdpp::no_selection is provided to force all diploid fitnesses to be
   equal to 1.
 */
-namespace KTfwd
+namespace fwdpp
 {
     /*! \brief Returns a fitness of 1
       \return A fitness of 1
@@ -112,7 +113,7 @@ namespace KTfwd
     ///  mechanism
     ///  such as std::bind and a function object, or via a lambda expression.
     ///  See
-    ///  KTfwd::multiplicative_diploid for an example implementation.
+    ///  fwdpp::multiplicative_diploid for an example implementation.
     ///  \ingroup fitness
     struct site_dependent_genetic_value
     {
@@ -153,18 +154,18 @@ namespace KTfwd
                 traits::is_mutation<typename mcont_t::value_type>::value,
                 "mcont_t::value_type must be a mutation type");
             static_assert(
-                std::is_convertible<updating_policy_hom,
-                                    std::function<void(
-                                        double &, const typename mcont_t::
-                                                      value_type &)>>::value,
+                std::is_convertible<
+                    updating_policy_hom,
+                    std::function<void(double &, const typename mcont_t::
+                                                     value_type &)>>::value,
                 "decltype(fpol_hom) must be convertible to "
                 "std::function<void(double &,const typename "
                 "mcont_t::value_type");
             static_assert(
-                std::is_convertible<updating_policy_het,
-                                    std::function<void(
-                                        double &, const typename mcont_t::
-                                                      value_type &)>>::value,
+                std::is_convertible<
+                    updating_policy_het,
+                    std::function<void(double &, const typename mcont_t::
+                                                     value_type &)>>::value,
                 "decltype(fpol_het) must be convertible to "
                 "std::function<void(double &,const typename "
                 "mcont_t::value_type");
@@ -361,33 +362,13 @@ namespace KTfwd
     /// Typedef for backwards API compatibility.
     using haplotype_dependent_fitness = haplotype_dependent_trait_value;
 
-    struct mw
-    ///! A callable mapping multiplicative genetic values to fitness.
-    {
-        inline double
-        operator()(const double genetic_value) const noexcept
-        {
-            return std::max(0., genetic_value);
-        }
-    };
-
-    struct mtrait
-    //! A callable mapping multiplicative genetic values to trait value.
-    {
-        inline double
-        operator()(const double genetic_value) const noexcept
-        {
-            return genetic_value - 1.0;
-        }
-    };
-
     /// \brief Multiplicative fitness or trait value across sites
     /// This function object calculate the genetic
     /// value of a diploid according to an multiplicative model
     /// with dominance effects per mutation.
     ///
     /// The genetic value is calculated via
-    /// KTfwd::site_dependent_genetic_value.
+    /// fwdpp::site_dependent_genetic_value.
     ///
     /// The genetic value may be treated as a fitness
     /// or as a trait value based on arguments passed
@@ -396,20 +377,41 @@ namespace KTfwd
     /// \ingroup fitness
     struct multiplicative_diploid
     {
+        enum class policy : std::int8_t
+        {
+            mw,
+            mtrait
+        };
+        std::function<double(double)>
+        assign_f(policy p_)
+        {
+            if (p_ == policy::mtrait)
+                {
+                    return [](const double d) { return d - 1.0; };
+                }
+            return [](const double d) { return std::max(0.0, d); };
+        }
+        const double scaling;
+        const policy p;
         using result_type = site_dependent_genetic_value::result_type;
         const std::function<double(double)> make_return_value;
-        multiplicative_diploid(std::function<double(double)> f_ = KTfwd::mw())
-            : make_return_value{ std::move(f_) }
-        /// \param f_ A function mapping genetic value to fitness or trait
-        /// value.
+        multiplicative_diploid(const double scaling_ = 1.0,
+                               const policy p_
+                               = multiplicative_diploid::policy::mw)
+            : scaling{ scaling_ }, p{ p_ }, make_return_value{ assign_f(p) }
+        /// \param scaling Genetic values are 1, 1+hs, 1+scaling*s
+        /// \param p_ A fwdpp::multiplicative_diploid::policy. Either mw or
+        /// mtrait is allowed.
         ///
-        /// The default for f_ is KTfwd::mw, which returns a closure
-        /// mapping a genetic value to max(0,genetic_value), which
-        /// is a mapping from genetic_value onto fitness.
+        /// The default for p_ is fwdpp::multiplicative_diplod::policy::mw,
+        /// which returns a closure mapping a genetic value to
+        /// max(0,genetic_value), which is a mapping from genetic_value onto
+        /// fitness.
         ///
         /// For simulations of traits, the genetic_value would be
         /// the genetic component of the trait value.  To enable
-        /// this, pass KTfwd::mtrait() to the constructor.
+        /// this, pass fwdpp::multiplicative_diplod::policy::mtrait to the
+        /// constructor.
         ///
         /// Any valid mapping from double to double is allowed.
         ///
@@ -421,17 +423,17 @@ namespace KTfwd
         /// part of fwdpp's testing suite.
         {
         }
+
         template <typename iterator_t, typename mcont_t>
         inline result_type
         operator()(iterator_t first1, iterator_t last1, iterator_t first2,
-                   iterator_t last2, const mcont_t &mutations,
-                   const double scaling = 1.) const noexcept
+                   iterator_t last2, const mcont_t &mutations) const noexcept
         /// Range-based overload
         {
             using __mtype = typename mcont_t::value_type;
             return make_return_value(site_dependent_genetic_value()(
                 first1, last1, first2, last2, mutations,
-                [&](double &value, const __mtype &mut) noexcept {
+                [this](double &value, const __mtype &mut) noexcept {
                     value *= (1. + scaling * mut.s);
                 },
                 [](double &value, const __mtype &mut) noexcept {
@@ -443,22 +445,16 @@ namespace KTfwd
         template <typename gamete_type, typename mcont_t>
         inline double
         operator()(const gamete_type &g1, const gamete_type &g2,
-                   const mcont_t &mutations, const double scaling = 1.) const
-            noexcept
+                   const mcont_t &mutations) const noexcept
         ///  \param g1 A gamete
         ///  \param g2 A gamete
         ///  \param mutation Container of mutations
-        ///  \param scaling Fitnesses are 1, 1+h*s, 1+scaling*s, for AA,Aa,aa,
-        ///  resp.
-        ///  This parameter lets you make sure your
-        ///  simulation is on the same scale as various formula in the
-        ///  literature
         ///  \return Multiplicative genetic value across sites.
         {
             using __mtype = typename mcont_t::value_type;
             return make_return_value(site_dependent_genetic_value()(
                 g1, g2, mutations,
-                [&](double &value, const __mtype &mut) noexcept {
+                [this](double &value, const __mtype &mut) noexcept {
                     value *= (1. + scaling * mut.s);
                 },
                 [](double &value, const __mtype &mut) noexcept {
@@ -470,33 +466,12 @@ namespace KTfwd
         template <typename diploid, typename gcont_t, typename mcont_t>
         inline result_type
         operator()(const diploid &dip, const gcont_t &gametes,
-                   const mcont_t &mutations, const double scaling = 1.) const
-            noexcept
+                   const mcont_t &mutations) const noexcept
         ///  \brief Overload for diploids.  This is what a programmer's
         ///  functions will call.
         {
             return this->operator()(gametes[dip.first], gametes[dip.second],
-                                    mutations, scaling);
-        }
-    };
-
-    struct aw
-    {
-        inline double
-        operator()(const double genetic_value) const noexcept
-        //! Return a closure mapping additive genetic effects to fitness.
-        {
-            return std::max(0., 1. + genetic_value);
-        }
-    };
-
-    struct atrait
-    //! A callable mapping additive genetic effects to trait values.
-    {
-        inline double
-        operator()(const double genetic_value) const noexcept
-        {
-            return genetic_value;
+                                    mutations);
         }
     };
 
@@ -506,7 +481,7 @@ namespace KTfwd
     /// with dominance effects per mutation.
     ///
     /// The genetic value is calculated via
-    /// KTfwd::site_dependent_genetic_value.
+    /// fwdpp::site_dependent_genetic_value.
     ///
     /// The genetic value may be treated as a fitness
     /// or as a trait value based on arguments passed
@@ -515,58 +490,63 @@ namespace KTfwd
     /// \ingroup fitness
     struct additive_diploid
     {
-        using result_type = site_dependent_genetic_value::result_type;
+        /// Specifies final mapping of genetic value
+        enum class policy : std::int8_t
+        {
+            /// Fitness
+            aw,
+            /// Trait value
+            atrait
+        };
+        std::function<double(double)>
+        assign_f(policy p_)
+        {
+            if (p_ == policy::atrait)
+                {
+                    return [](const double d) { return d; };
+                }
+            return [](const double d) { return std::max(0.0, 1.0 + d); };
+        }
+        const double scaling;
+        const policy p;
         const std::function<double(double)> make_return_value;
-        additive_diploid(std::function<double(double)> f_ = KTfwd::aw())
-            : make_return_value{ std::move(f_) }
-        /// \param f_ A function mapping genetic value to fitness or
-        /// trait
-        /// value.
+        using result_type = site_dependent_genetic_value::result_type;
+        // const final_genetic_value make_return_value;
+        additive_diploid(const double scaling_ = 1.0,
+                         const policy p_ = policy::aw)
+            : scaling{ scaling_ }, p{ p_ }, make_return_value{ assign_f(p) }
+        /// \param scaling Genetic values are 1, 1+hs, 1+scaling*s
+        /// \param p_ An additive_diploid::policy.  Either policy::aw or
+        /// policy::atrait is allowed.
         ///
-        /// The default for f_ is KTfwd::aw, which returns a closure
-        /// mapping a genetic value to max(0,genetic_value), which
-        /// is a mapping from genetic_value onto fitness.
+        /// The default for p_ is fwdpp::additive_diploid::policy::aw, which
+        /// generates a closure mapping a genetic value to
+        /// max(0,1.+genetic_value), which is a mapping from genetic_value onto
+        /// fitness.
         ///
         /// For simulations of traits, the genetic_value would be
         /// the genetic component of the trait value.  To enable
-        /// this, pass KTfwd::atrait() to the constructor.
-        ///
-        /// Any mapping function is possible. For example, the
-        /// following lambda closure would map genetic value
-        /// to a fitness according to a Gaussian stabilizing
-        /// selection function.  Further, Gaussian noise is added
-        /// to the final trait value, resulting in a complete
-        /// mapping of genetic value -> trait value -> fitness.
-        /// \code
-        /// gsl_rng * r;
-        /// double optimum = 0.0;
-        /// double sigma = 0.1;
-        /// double VS = 1.0;
-        /// auto gss_closure = [&r,optimum,sigma](const double
-        /// genetic_value)
-        /// {
-        ///     double p = genetic_value + gsl_ran_gaussian(r,sigma);
-        ///     return exp(-std::pow(p-optimum,2.0)/(2.0*VS));
-        /// }
-        /// \endcode
+        /// this, pass fwdpp::additive_diploid::policy::atrait to the
+        /// constructor.
         ///
         /// Note that the calculation of genetic value starts with
         /// an initial value of 0, which has implications for treating
-        /// it as a fitness.  See implementation of KTfwd::aw for
-        /// details (which involving adding 1.0).
+        /// it as a fitness.  See implementation of
+        /// fwdpp::additive_diploid::policy::aw for details (which involving
+        /// adding 1.0).
         {
         }
+
         template <typename iterator_t, typename mcont_t>
         inline result_type
         operator()(iterator_t first1, iterator_t last1, iterator_t first2,
-                   iterator_t last2, const mcont_t &mutations,
-                   const double scaling = 1.) const noexcept
+                   iterator_t last2, const mcont_t &mutations) const noexcept
         /// Range-based overload
         {
             using __mtype = typename mcont_t::value_type;
             return make_return_value(site_dependent_genetic_value()(
                 first1, last1, first2, last2, mutations,
-                [&](double &value, const __mtype &mut) noexcept {
+                [this](double &value, const __mtype &mut) noexcept {
                     value += (scaling * mut.s);
                 },
                 [](double &value, const __mtype &mut) noexcept {
@@ -578,24 +558,17 @@ namespace KTfwd
         template <typename gamete_type, typename mcont_t>
         inline result_type
         operator()(const gamete_type &g1, const gamete_type &g2,
-                   const mcont_t &mutations, const double scaling = 1.) const
-            noexcept
+                   const mcont_t &mutations) const noexcept
         ///  \param g1 A gamete
         ///  \param g2 A gamete
         ///  \param mutations A container of mutations
-        ///  \param scaling Fitnesses are 1, 1+h*s, 1+scaling*s, for
-        ///  AA,Aa,aa,
-        ///  resp.
-        ///  This parameter lets you make sure your
-        ///  simulation is on the same scale as various formula in the
-        ///  literature
         ///  \return Additive genetic value across sites.
         ///  \note g1 and g2 must be part of the gamete_base hierarchy
         {
             using __mtype = typename mcont_t::value_type;
             return make_return_value(site_dependent_genetic_value()(
                 g1, g2, mutations,
-                [=](double &value, const __mtype &mut) noexcept {
+                [this](double &value, const __mtype &mut) noexcept {
                     value += (scaling * mut.s);
                 },
                 [](double &value, const __mtype &mut) noexcept {
@@ -609,11 +582,10 @@ namespace KTfwd
         template <typename diploid, typename gcont_t, typename mcont_t>
         inline result_type
         operator()(const diploid &dip, const gcont_t &gametes,
-                   const mcont_t &mutations, const double scaling = 1.) const
-            noexcept
+                   const mcont_t &mutations) const noexcept
         {
             return this->operator()(gametes[dip.first], gametes[dip.second],
-                                    mutations, scaling);
+                                    mutations);
         }
     };
 }

@@ -7,54 +7,53 @@
 #include <fwdpp/type_traits.hpp>
 #include <fwdpp/internal/sample_diploid_helpers.hpp>
 
-namespace KTfwd
+namespace fwdpp
 {
     namespace sugar
     {
         template <typename mutation_type, typename mcont, typename gcont,
-                  typename dipvector, typename mvector, typename ftvector,
+                  typename mvector, typename ftvector,
                   typename lookup_table_type>
         class popbase
         /*!
           \ingroup sugar
           \brief Base class for population objects
-          \note Added in fwdpp 0.5.0
+          \note Added in fwdpp 0.5.0.  Changed in 0.6.0 to be independent of ploidy.
          */
         {
-            static_assert(typename KTfwd::traits::is_gamete<
+            static_assert(typename fwdpp::traits::is_gamete<
                               typename gcont::value_type>::type(),
                           "gcont::value_type must be a gamete type");
-            static_assert(typename KTfwd::traits::is_mutation<
+            static_assert(typename fwdpp::traits::is_mutation<
                               typename mcont::value_type>::type(),
                           "mcont::value_type must be a mutation type");
             /// This function is used to validate input
             /// data.  It should be called from constructors
             /// allowing the initialization of populations
-            /// from pre-calculated diploids, gametes, and mutations.
+            /// from pre-calculated individuals, gametes, and mutations.
             /// \version
             /// Added in 0.5.7
-            virtual void process_diploid_input() = 0;
+            virtual void process_individual_input() = 0;
             void check_mutation_keys(
                 const typename gcont::value_type::mutation_container &m,
                 const mcont &mutations, const bool neutrality);
             void fill_internal_structures();
+
           protected:
             // Protected members introduced in 0.5.7 to help
             // derived classes implement constructors based
             // on user input of population data.
             void
-            validate_diploid_keys(const std::size_t first,
-                                  const std::size_t second)
+            validate_individual_keys(const std::size_t key)
             {
-                if (first >= this->gametes.size()
-                    || second >= this->gametes.size())
+                if (key >= this->gametes.size())
                     {
                         throw std::out_of_range(
-                            "diploid contains out of range keys");
+                            "individual contains out of range keys");
                     }
-                if (!this->gametes[first].n || !this->gametes[second].n)
+                if (!this->gametes[key].n)
                     {
-                        throw std::runtime_error("diploid refers to "
+                        throw std::runtime_error("key refers to "
                                                  "gamete marked as "
                                                  "extinct");
                     }
@@ -64,11 +63,11 @@ namespace KTfwd
             {
                 for (std::size_t i = 0; i < gcounts.size(); ++i)
                     {
-                        if (gcounts[i] != this->gametes[i].n)
+                        if (gcounts[i] != this->gametes.at(i).n)
                             {
                                 throw std::runtime_error(
                                     "gamete count does not match number of "
-                                    "diploids referring to it");
+                                    "individuals referring to it");
                             }
                     }
             }
@@ -83,10 +82,6 @@ namespace KTfwd
             using mutation_t = mutation_type;
             //! Gamete type
             using gamete_t = typename gcont::value_type;
-            //! Diploid vector type
-            using dipvector_t = dipvector;
-            //! Diploid type
-            using diploid_t = typename dipvector_t::value_type;
             //! Mutation vec type
             using mcont_t = mcont;
             //! Mutation count vector type
@@ -158,8 +153,7 @@ namespace KTfwd
                 typename gamete_t::mutation_container::size_type reserve_size
                 = 100)
                 : // No muts in the population
-                  mutations(mcont_t()),
-                  mcounts(mcount_t()),
+                  mutations(mcont_t()), mcounts(mcount_t()),
                   // The population contains a single gamete in 2N copies
                   gametes(gcont(1, gamete_t(2 * popsize))),
                   neutral(typename gamete_t::mutation_container()),
@@ -178,7 +172,7 @@ namespace KTfwd
 
             template <typename gametes_input, typename mutations_input>
             explicit popbase(
-                gametes_input &&g, mutations_input &m,
+                gametes_input &&g, mutations_input &&m,
                 typename gamete_t::mutation_container::size_type reserve_size)
                 : mutations(std::forward<mutations_input>(m)), mcounts{},
                   gametes(std::forward<gametes_input>(g)), neutral{},
@@ -213,15 +207,25 @@ namespace KTfwd
         };
 
         template <typename mutation_type, typename mcont, typename gcont,
-                  typename dipvector, typename mvector, typename ftvector,
+                  typename mvector, typename ftvector,
                   typename lookup_table_type>
         void
-        popbase<mutation_type, mcont, gcont, dipvector, mvector, ftvector,
+        popbase<mutation_type, mcont, gcont, mvector, ftvector,
                 lookup_table_type>::
             check_mutation_keys(
                 const typename gcont::value_type::mutation_container &m,
                 const mcont &mutations, const bool neutrality)
         {
+            if (!std::is_sorted(
+                    std::begin(m), std::end(m),
+                    [&mutations](const typename gcont::value_type::index_t a,
+                                 const typename gcont::value_type::index_t b) {
+                        return mutations[a].pos < mutations[b].pos;
+                    }))
+                {
+                    throw std::invalid_argument(
+                        "gamete contains unsorted keys");
+                }
             for (const auto &k : m)
                 {
                     mcounts.resize(mutations.size(), 0);
@@ -241,10 +245,10 @@ namespace KTfwd
         }
 
         template <typename mutation_type, typename mcont, typename gcont,
-                  typename dipvector, typename mvector, typename ftvector,
+                  typename mvector, typename ftvector,
                   typename lookup_table_type>
         void
-        popbase<mutation_type, mcont, gcont, dipvector, mvector, ftvector,
+        popbase<mutation_type, mcont, gcont, mvector, ftvector,
                 lookup_table_type>::fill_internal_structures()
         {
             mut_lookup.clear();
@@ -257,8 +261,14 @@ namespace KTfwd
                 }
             for (const auto &g : gametes)
                 {
-                    check_mutation_keys(g.mutations, mutations, true);
-                    check_mutation_keys(g.smutations, mutations, false);
+                    if (g.n)
+                        {
+                            // Fixed in 0.5.8: no need to check this for
+                            // extinct gametes.
+                            check_mutation_keys(g.mutations, mutations, true);
+                            check_mutation_keys(g.smutations, mutations,
+                                                false);
+                        }
                 }
             fwdpp_internal::process_gametes(gametes, mutations, mcounts);
         }

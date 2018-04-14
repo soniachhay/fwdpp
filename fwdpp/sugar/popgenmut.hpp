@@ -1,12 +1,16 @@
 #ifndef __FWDPP_SUGAR_MUTATION_POPGENMUT_HPP__
 #define __FWDPP_SUGAR_MUTATION_POPGENMUT_HPP__
 
+#include <gsl/gsl_rng.h>
+#include <gsl/gsl_randist.h>
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/tags/tags.hpp>
+#include <fwdpp/io/scalar_serialization.hpp>
+#include <fwdpp/io/mutation.hpp>
 #include <limits>
 #include <tuple>
 
-namespace KTfwd
+namespace fwdpp
 {
     /*!
       \brief Mutations with selection, dominance, and tracking age of origin
@@ -37,10 +41,8 @@ namespace KTfwd
         */
         popgenmut(const double &__pos, const double &__s, const double &__h,
                   const unsigned &__g, const std::uint16_t x = 0) noexcept
-            : mutation_base(__pos, (__s == 0.) ? true : false, x),
-              g(__g),
-              s(__s),
-              h(__h)
+            : mutation_base(__pos, (__s == 0.) ? true : false, x), g(__g),
+              s(__s), h(__h)
         {
         }
 
@@ -55,18 +57,104 @@ namespace KTfwd
             : mutation_base(std::get<0>(t),
                             (std::get<1>(t) == 0.) ? true : false,
                             std::get<4>(t)),
-              g(std::get<3>(t)),
-              s(std::get<1>(t)),
-              h(std::get<2>(t))
+              g(std::get<3>(t)), s(std::get<1>(t)), h(std::get<2>(t))
         {
         }
 
         bool
         operator==(const popgenmut &rhs) const
         {
-            return this->pos == rhs.pos && this->s == rhs.s && this->h == rhs.h
-                   && this->g == rhs.g && this->neutral == rhs.neutral;
+            return std::tie(this->g, this->s, this->h)
+                       == std::tie(rhs.g, rhs.s, rhs.h)
+                   && is_equal(rhs);
         }
     };
+
+    template <typename queue_t, typename mcont_t, typename lookup_table_t,
+              typename position_function, typename effect_size_function,
+              typename dominance_function>
+    std::size_t
+    infsites_popgenmut(queue_t &recycling_bin, mcont_t &mutations,
+                       const gsl_rng *r, lookup_table_t &lookup,
+                       const uint_t &generation, const double pselected,
+                       const position_function &posmaker,
+                       const effect_size_function &esize_maker,
+                       const dominance_function &hmaker, const decltype(popgenmut::xtra) x = 0)
+	/*!
+	 * Mutation function to add a fwdpp::popgenmut to a population.
+	 *
+	 * In order to use this function, it must be bound to a callable
+	 * that is a valid mutation function.  See examples for details.
+	 *
+	 * \param recycling_bin Recycling queue for mutations.
+	 * \param mutations Container of mutations
+	 * \param r A random-number generator
+	 * \param lookup Lookup table for mutation positions
+	 * \param generation The generation that is being mutated
+	 * \param pselected  The probability that a new mutation affects fitness
+	 * \param posmaker A function generating a mutation position.  Must be convertible to std::function<double()>.
+	 * \param esize_maker A function to generate an effect size, given that a mutation affects fitness. Must be convertible to std::function<double()>.
+	 * \param hmaker A function to generate a dominance value, given that a mutation affects fitness. Must be convertible to std::function<double()>.
+	 *
+	 * \note "Neutral" mutations get assigned a dominance of zero.  The xtra field is not written to.
+	 *
+	 * \version 0.6.0
+	 * Added to library
+	 */
+    {
+        auto pos = posmaker();
+        while (lookup.find(pos) != lookup.end())
+            {
+                pos = posmaker();
+            }
+        lookup.insert(pos);
+        bool selected = (gsl_rng_uniform(r) < pselected);
+        return fwdpp_internal::recycle_mutation_helper(
+            recycling_bin, mutations, pos, (selected) ? esize_maker() : 0.,
+            (selected) ? hmaker() : 0., generation, x);
+    }
+
+    namespace io
+    {
+        template <> struct serialize_mutation<popgenmut>
+        /// Specialization for fwdpp::popgenmut
+        {
+            io::scalar_writer writer;
+            serialize_mutation<popgenmut>() : writer{} {}
+            template <typename streamtype>
+            inline void
+            operator()(streamtype &buffer, const popgenmut &m) const
+            {
+                writer(buffer, &m.g);
+                writer(buffer, &m.pos);
+                writer(buffer, &m.s);
+                writer(buffer, &m.h);
+                writer(buffer, &m.xtra);
+            }
+        };
+
+        template <> struct deserialize_mutation<popgenmut>
+        /// Specialization for fwdpp::popgenmut
+        {
+            io::scalar_reader reader;
+            deserialize_mutation<popgenmut>() : reader{} {}
+            template <typename streamtype>
+            inline popgenmut
+            operator()(streamtype &buffer) const
+            {
+                uint_t g;
+                double pos, s, h;
+                decltype(popgenmut::xtra) xtra;
+                io::scalar_reader reader;
+                reader(buffer, &g);
+                reader(buffer, &pos);
+                reader(buffer, &s);
+                reader(buffer, &h);
+                reader(buffer, &xtra);
+
+                return popgenmut(pos, s, h, g, xtra);
+            }
+        };
+    }
 }
 #endif

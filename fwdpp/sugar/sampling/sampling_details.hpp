@@ -5,7 +5,7 @@
 #include <string>
 #include <algorithm>
 
-namespace KTfwd
+namespace fwdpp
 {
 
     namespace sugar
@@ -84,7 +84,13 @@ namespace KTfwd
                   [](const sample_site_t &a, const sample_site_t &b) noexcept {
                       return a.first < b.first;
                   });
+        if (!removeFixed)
+            {
+                sample.erase(std::unique(sample.begin(), sample.end()),
+                             sample.end());
+            }
     }
+
     template <typename vec_mutation_t>
     void
     finish_sample(sample_t &sample, const vec_mutation_t &fixations,
@@ -100,6 +106,11 @@ namespace KTfwd
                   [](const sample_site_t &a, const sample_site_t &b) noexcept {
                       return a.first < b.first;
                   });
+        if (!removeFixed)
+            {
+                sample.erase(std::unique(sample.begin(), sample.end()),
+                             sample.end());
+            }
     }
 
     template <typename vec_mutation_t>
@@ -126,7 +137,8 @@ namespace KTfwd
         for (std::size_t i = 0; i < sample.size(); ++i)
             {
                 finish_sample(sample[i], fixations, nsam, removeFixed,
-                              sugar::treat_neutral::ALL, locus_boundaries[i]);
+                              sugar::treat_neutral::ALL,
+                              locus_boundaries.at(i));
             }
     }
 
@@ -142,10 +154,10 @@ namespace KTfwd
             {
                 finish_sample(sample[i].first, fixations, nsam, removeFixed,
                               sugar::treat_neutral::NEUTRAL,
-                              locus_boundaries[i]);
+                              locus_boundaries.at(i));
                 finish_sample(sample[i].second, fixations, nsam, removeFixed,
                               sugar::treat_neutral::SELECTED,
-                              locus_boundaries[i]);
+                              locus_boundaries.at(i));
             }
     }
 
@@ -155,7 +167,7 @@ namespace KTfwd
                    const std::vector<integer_type> &individuals,
                    const bool removeFixed)
     {
-        sep_sample_t temp = fwdpp_internal::ms_sample_separate_single_deme(
+        sep_sample_t temp = fwdpp_internal::ms_sample_separate_single_locus_pop(
             p.mutations, p.gametes, p.diploids, individuals,
             2 * individuals.size(), removeFixed);
         auto rv = std::move(temp.first);
@@ -174,7 +186,7 @@ namespace KTfwd
         const std::vector<std::pair<double, double>> &locus_boundaries)
     {
         auto temp = fwdpp_internal::ms_sample_separate_mlocus(
-            p.mutations, p.gamtes, p.diploids, individuals,
+            p.mutations, p.gametes, p.diploids, individuals,
             2 * individuals.size(), removeFixed);
         if (!removeFixed && temp.size() != locus_boundaries.size())
             {
@@ -189,8 +201,12 @@ namespace KTfwd
                 std::move(i.second.begin(), i.second.end(),
                           std::back_inserter(rv[j]));
             }
-        finish_sample(rv, p.fixations, 2 * individuals.size(), removeFixed,
-                      sugar::treat_neutral::ALL);
+        for (std::size_t i = 0; i < locus_boundaries.size(); ++i)
+            {
+                finish_sample(rv.at(i), p.fixations, 2 * individuals.size(),
+                              removeFixed, sugar::treat_neutral::ALL,
+                              locus_boundaries.at(i));
+            }
         return rv;
     }
 }

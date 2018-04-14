@@ -14,25 +14,63 @@
 #include <tuple>
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
-#include <fwdpp/forward_types.hpp>
 #include <fwdpp/type_traits.hpp>
+#include <fwdpp/forward_types.hpp>
 #include <fwdpp/internal/mutation_internal.hpp>
 #include <fwdpp/internal/rec_gamete_updater.hpp>
 
-namespace KTfwd
+namespace fwdpp
 {
-    template <typename recombination_policy, typename gcont_t,
-              typename mcont_t>
+    template <typename recombination_policy, typename diploid_t,
+              typename gamete_t, typename mcont_t>
+    inline typename std::result_of<recombination_policy()>::type
+    dispatch_recombination_policy(const recombination_policy &rec_pol,
+                                  diploid_t &&, gamete_t &&, gamete_t &&,
+                                  mcont_t &&)
+    {
+        return rec_pol();
+    }
+
+    template <typename recombination_policy, typename diploid_t,
+              typename gamete_t, typename mcont_t>
+    inline
+        typename std::result_of<recombination_policy(gamete_t &&, gamete_t &&,
+                                                     mcont_t &&)>::type
+        dispatch_recombination_policy(const recombination_policy &rec_pol,
+                                      diploid_t &&, gamete_t &&g1,
+                                      gamete_t &&g2, mcont_t &&mutations)
+    {
+        return rec_pol(std::forward<gamete_t>(g1), std::forward<gamete_t>(g2),
+                       std::forward<mcont_t>(mutations));
+    }
+
+    template <typename recombination_policy, typename diploid_t,
+              typename gamete_t, typename mcont_t>
+    inline typename std::result_of<recombination_policy(
+        diploid_t &&, gamete_t &&, gamete_t &&, mcont_t &&)>::type
+    dispatch_recombination_policy(const recombination_policy &rec_pol,
+                                  diploid_t &&diploid, gamete_t &&g1,
+                                  gamete_t &&g2, mcont_t &&mutations)
+    {
+        return rec_pol(std::forward<diploid_t>(diploid),
+                       std::forward<gamete_t>(g1), std::forward<gamete_t>(g2),
+                       std::forward<mcont_t>(mutations));
+    }
+
+    template <typename recombination_policy, typename diploid_t,
+              typename gcont_t, typename mcont_t>
     std::vector<double>
-    generate_breakpoints(const std::size_t g1, const std::size_t g2,
-                         const gcont_t &gametes, const mcont_t &mutations,
+    generate_breakpoints(const diploid_t &diploid, const std::size_t g1,
+                         const std::size_t g2, const gcont_t &gametes,
+                         const mcont_t &mutations,
                          const recombination_policy &rec_pol)
     /// Generate vector of recombination breakpoints
     ///
+	/// \param diploid A single-locus diploid.
     /// \param g1 Index of gamete 1
     /// \param g2 Index of gamete 2
     /// \param gametes Vector of gametes
-    /// \param mutation Vector of mutations
+    /// \param mutations Vector of mutations
     /// \param rec_pol Function to generate breakpoints
     ///
     /// \return std::vector<double> containing sorted breakpoints
@@ -50,16 +88,18 @@ namespace KTfwd
             {
                 return {};
             }
-        return rec_pol(gametes[g1], gametes[g2], mutations);
+        return dispatch_recombination_policy(
+            std::cref(rec_pol), std::cref(diploid), std::cref(gametes[g1]),
+            std::cref(gametes[g2]), std::cref(mutations));
     }
 
-    template <typename queue_type, typename mutation_model, typename gcont_t,
-              typename mcont_t>
+    template <typename queue_type, typename mutation_model, typename diploid_t,
+              typename gcont_t, typename mcont_t>
     std::vector<uint_t>
     generate_new_mutations(queue_type &recycling_bin, const gsl_rng *r,
-                           const double &mu, gcont_t &gametes,
-                           mcont_t &mutations, const std::size_t g,
-                           const mutation_model &mmodel)
+                           const double &mu, const diploid_t &dip,
+                           gcont_t &gametes, mcont_t &mutations,
+                           const std::size_t g, const mutation_model &mmodel)
     ///
     /// Return a vector of keys to new mutations.  The keys
     /// will be sorted according to mutation postition.
@@ -67,6 +107,7 @@ namespace KTfwd
     /// \param recycling_bin The queue for recycling mutations
     /// \param r A random number generator
     /// \param mu The total mutation rate
+	/// \param dip A single-locus diploid
     /// \param gametes Vector of gametes
     /// \param mutations Vector of mutations
     /// \param g index of gamete to mutate
@@ -81,7 +122,7 @@ namespace KTfwd
         for (unsigned i = 0; i < nm; ++i)
             {
                 rv.emplace_back(fwdpp_internal::mmodel_dispatcher(
-                    mmodel, gametes[g], mutations, recycling_bin));
+                    mmodel, dip, gametes[g], mutations, recycling_bin));
             }
         std::sort(rv.begin(), rv.end(),
                   [&mutations](const uint_t a, const uint_t b) {
@@ -136,7 +177,7 @@ namespace KTfwd
         typename gcont_t::value_type::mutation_container &neutral,
         typename gcont_t::value_type::mutation_container &selected)
     ///
-    /// Update apply new mutations and recombination events to 
+    /// Update apply new mutations and recombination events to
     /// an offspring's gamete.
     ///
     /// \param new_mutations Keys to new mutations
@@ -144,7 +185,7 @@ namespace KTfwd
     /// \param g1 Parental gamete 1
     /// \param g2 Parental gamete 2
     /// \param gametes The vector of gametes in the population
-    /// \param mutation The vector of mutations in the population
+    /// \param mutations The vector of mutations in the population
     /// \param gamete_recycling_bin FIFO queue for gamete recycling
     /// \param neutral Temporary container for updating neutral mutations
     /// \param selected Temporary container for updatng selected positions
@@ -152,11 +193,12 @@ namespace KTfwd
     /// \return The index of the new offspring gamete in \a gametes.
     ///
     /// \note For efficiency, it is helpful if \a new_mutations is sorted
-    /// by mutation position.  KTfwd::generate_new_mutations exists to help in that
+    /// by mutation position.  fwdpp::generate_new_mutations exists to help in
+    /// that
     /// regard. Many of the evolve functions used in this library and other
-    /// packages by the author will use KTfwd::generate_breakpoints to 
+    /// packages by the author will use fwdpp::generate_breakpoints to
     /// generate \a breakpoints.  That is not, however, required.
-    /// 
+    ///
     /// \version
     /// This function was added in fwdpp 0.5.7.
     {
@@ -266,10 +308,10 @@ namespace KTfwd
         typename gcont_t::value_type::mutation_container &neutral,
         typename gcont_t::value_type::mutation_container &selected)
     ///
-    /// "Convenience" function for generating offspring gametes.  
-    /// 
-    /// This function calls KTfwd::generate_breakpoints, 
-    /// KTfwd::generate_new_mutations, and KTfwd::mutate_recombine,
+    /// "Convenience" function for generating offspring gametes.
+    ///
+    /// This function calls fwdpp::generate_breakpoints,
+    /// fwdpp::generate_new_mutations, and fwdpp::mutate_recombine,
     /// resulting in two offspring gametes.
     ///
     /// \param r A gsl_rng *
@@ -278,6 +320,7 @@ namespace KTfwd
     /// \param parental_gametes Tuple of gamete keys for each parent
     /// \param rec_pol Policy to generate recombination breakpoints
     /// \param mmodel Policy to generate new mutations
+	/// \param mu Total mutation rate (per gamete).
     /// \param gamete_recycling_bin FIFO queue for gamete recycling
     /// \param mutation_recycling_bin FIFO queue for mutation recycling
     /// \param dip The offspring
@@ -288,10 +331,10 @@ namespace KTfwd
     /// gamete.
     ///
     /// \note
-    /// \a parental_gametes should contain parent one/gamete one, 
-    /// parent one/gamete two, parent two/gamete one, 
+    /// \a parental_gametes should contain parent one/gamete one,
+    /// parent one/gamete two, parent two/gamete one,
     /// and parent two/gamete two, in that order.
-    /// 
+    ///
     /// \version
     /// Added in fwdpp 0.5.7.
     {
@@ -305,21 +348,23 @@ namespace KTfwd
         // is done to ensure the exact same output as fwdpp 0.5.6 and
         // earlier.
         // The breakpoints are of type std::vector<double>, and
-        // the new_mutations are std::vector<KTfwd::uint_t>, with
+        // the new_mutations are std::vector<fwdpp::uint_t>, with
         // the integers representing the locations of the new mutations
         // in "mutations".
 
-        auto breakpoints
-            = generate_breakpoints(p1g1, p1g2, gametes, mutations, rec_pol);
-        auto breakpoints2
-            = generate_breakpoints(p2g1, p2g2, gametes, mutations, rec_pol);
-        auto new_mutations = generate_new_mutations(
-            mutation_recycling_bin, r, mu, gametes, mutations, p1g1, mmodel);
-        auto new_mutations2 = generate_new_mutations(
-            mutation_recycling_bin, r, mu, gametes, mutations, p2g1, mmodel);
+        auto breakpoints = generate_breakpoints(dip, p1g1, p1g2, gametes,
+                                                mutations, rec_pol);
+        auto breakpoints2 = generate_breakpoints(dip, p2g1, p2g2, gametes,
+                                                 mutations, rec_pol);
+        auto new_mutations
+            = generate_new_mutations(mutation_recycling_bin, r, mu, dip,
+                                     gametes, mutations, p1g1, mmodel);
+        auto new_mutations2
+            = generate_new_mutations(mutation_recycling_bin, r, mu, dip,
+                                     gametes, mutations, p2g1, mmodel);
 
         // Pass the breakpoints and new mutation keys on to
-        // KTfwd::mutate_recombine (defined in
+        // fwdpp::mutate_recombine (defined in
         // fwdpp/mutate_recombine.hpp),
         // which splices together the offspring gamete and returns its
         // location in gametes.  The location of the offspring gamete

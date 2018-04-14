@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <fwdpp/diploid.hh>
+#include <fwdpp/recbinder.hpp>
 #ifdef HAVE_LIBSEQUENCE
 #include <Sequence/SimData.hpp>
 #endif
@@ -12,9 +13,9 @@
 #include <list>
 #include <sstream>
 // Use mutation model from sugar layer
-#include <fwdpp/sugar/infsites.hpp>
+#include <fwdpp/sugar/popgenmut.hpp>
 #include <fwdpp/sugar/sampling.hpp>
-using mtype = KTfwd::popgenmut;
+using mtype = fwdpp::popgenmut;
 #define MULTILOCUS_SIM
 #include <common_ind.hpp>
 
@@ -52,7 +53,7 @@ main(int argc, char **argv)
                       << "seed = seed value for random number generations\n";
             std::exit(0);
         }
-    const unsigned N = atoi(argv[argument++]); // Number of diploids
+    const unsigned N = atoi(argv[argument++]);   // Number of diploids
     const double theta = atof(argv[argument++]); // 4*n*mutation rate.  Note:
     // mutation rate is per
     // REGION, not SITE!!
@@ -76,49 +77,40 @@ main(int argc, char **argv)
     // Initiate random number generation system
     GSLrng r(seed);
 
-    unsigned twoN = 2 * N;
-
     multiloc_t pop(N, K);
     pop.mutations.reserve(
         size_t(2 * std::ceil(std::log(2 * N) * (theta) + 0.667 * (theta))));
     unsigned generation = 0;
     double wbar;
 
-    std::vector<std::function<std::vector<double>(
-        const multiloc_t::gamete_t &, const multiloc_t::gamete_t &,
-        const multiloc_t::mcont_t &)>>
-        recpols;
+    std::vector<std::function<std::vector<double>()>> recpols;
     std::vector<std::function<std::size_t(std::queue<std::size_t> &,
                                           multiloc_t::mcont_t &)>>
         mmodels;
     for (unsigned i = 0; i < K; ++i)
         {
-            recpols.push_back(
-                std::bind(KTfwd::poisson_xover(), r.get(), littler, double(i),
-                          double(i) + 1.0, std::placeholders::_1,
-                          std::placeholders::_2, std::placeholders::_3));
-            mmodels.push_back(std::bind(
-                KTfwd::infsites(), std::placeholders::_1,
-                std::placeholders::_2, r.get(), std::ref(pop.mut_lookup),
-                &generation, mu[i], 0.,
-                [&r, i]() {
-                    return gsl_ran_flat(r.get(), double(i), double(i) + 1.0);
-                },
-                []() { return 0.; }, []() { return 0.; }));
+            recpols.emplace_back(fwdpp::recbinder(
+                fwdpp::poisson_xover(littler, i, i + 1), r.get()));
+            mmodels.push_back(
+                [&pop, &r, &generation](std::queue<std::size_t> &recbin,
+                                        multiloc_t::mcont_t &mutations) {
+                    return fwdpp::infsites_popgenmut(
+                        recbin, mutations, r.get(), pop.mut_lookup, generation,
+                        0.0, [&r]() { return gsl_rng_uniform(r.get()); },
+                        []() { return 0.0; }, []() { return 0.0; });
+                });
         }
     std::vector<std::function<unsigned(void)>> interlocus_rec(
-        K - 1,std::bind(gsl_ran_binomial,r.get(),rbw,1)); 
+        K - 1, std::bind(gsl_ran_binomial, r.get(), rbw, 1));
     for (generation = 0; generation < ngens; ++generation)
         {
             // Iterate the population through 1 generation
-            KTfwd::sample_diploid(
+            fwdpp::sample_diploid(
                 r.get(), pop.gametes, pop.diploids, pop.mutations, pop.mcounts,
                 N, mu.data(), mmodels, recpols, interlocus_rec,
-                std::bind(no_selection_multi(), std::placeholders::_1,
-                          std::placeholders::_2, std::placeholders::_3),
-                pop.neutral, pop.selected);
+                no_selection_multi(), pop.neutral, pop.selected);
             assert(check_sum(pop.gametes, K * twoN));
-            KTfwd::update_mutations(pop.mutations, pop.fixations,
+            fwdpp::update_mutations(pop.mutations, pop.fixations,
                                     pop.fixation_times, pop.mut_lookup,
                                     pop.mcounts, generation, 2 * N);
             assert(popdata_sane_multilocus(pop.diploids, pop.gametes,
@@ -147,19 +139,10 @@ main(int argc, char **argv)
                 }
 #endif
         }
-    auto x = KTfwd::ms_sample(r.get(), pop.mutations, pop.gametes,
+    auto x = fwdpp::ms_sample(r.get(), pop.mutations, pop.gametes,
                               pop.diploids, 10, true);
-    for (auto &f : pop.fixations)
-        std::cout << f.pos << ' ';
-    std::cout << '\n';
 #ifdef HAVE_LIBSEQUENCE
     for (auto &i : x)
-        {
-            Sequence::SimData a(i.begin(), i.end());
-            std::cout << a << '\n';
-        }
-    auto y = KTfwd::sample(r.get(), pop, 10, false);
-    for (auto &&i : y)
         {
             Sequence::SimData a(i.begin(), i.end());
             std::cout << a << '\n';
