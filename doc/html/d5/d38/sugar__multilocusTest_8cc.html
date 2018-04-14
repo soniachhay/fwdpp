@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/testsuite/integration/sugar_multilocusTest.cc File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/testsuite/integration/sugar_multilocusTest.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -70,9 +70,11 @@ $(function() {
 <div class="title">sugar_multilocusTest.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Testing <a class="el" href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &lt;config.h&gt;</code><br />
-<code>#include &lt;zlib.h&gt;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
@@ -80,54 +82,54 @@ $(function() {
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d6/d10/multiloc_8hpp_source.html">fwdpp/sugar/multiloc.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d8/d21/serialization_8hpp_source.html">fwdpp/sugar/serialization.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/db2/mlocuspop_8hpp_source.html">fwdpp/sugar/mlocuspop.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d7/d74/forward__types__serialization_8hpp_source.html">fwdpp/forward_types_serialization.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/d59/serialize__population_8hpp_source.html">fwdpp/io/serialize_population.hpp</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d2/da3/sugar__fixtures_8hpp_source.html">../fixtures/sugar_fixtures.hpp</a>&quot;</code><br />
-<code>#include &quot;../util/quick_evolve_sugar.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/dcc/quick__evolve__sugar_8hpp_source.html">../util/quick_evolve_sugar.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d5/d38/sugar__multilocusTest_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a4fdef54631a9d0bc285ac4eb080538a5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a4fdef54631a9d0bc285ac4eb080538a5">poptype</a> = <a class="el" href="../../d6/dcc/classmultiloc__popgenmut__fixture.html#afb32d27b2f5451cb4ff110f1e69b0717">multiloc_popgenmut_fixture::poptype</a></td></tr>
-<tr class="separator:a4fdef54631a9d0bc285ac4eb080538a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f53f0b3e62323cfb5289c704a1c4db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> = <a class="el" href="../../d1/d88/classmlocuspop__popgenmut__fixture.html#a9bc566834dd663731e6339ecf08aaa53">mlocuspop_popgenmut_fixture::poptype</a></td></tr>
+<tr class="separator:ae1f53f0b3e62323cfb5289c704a1c4db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0eb3f4d550f3ed9a85c156a3f454e3a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a0eb3f4d550f3ed9a85c156a3f454e3a7">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test1)</td></tr>
-<tr class="separator:a0eb3f4d550f3ed9a85c156a3f454e3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1ee193f92ec80461c6c4a67f8744e33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#af1ee193f92ec80461c6c4a67f8744e33">BOOST_AUTO_TEST_CASE</a> (multiloc_experimental_sugar_api_test)</td></tr>
-<tr class="separator:af1ee193f92ec80461c6c4a67f8744e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5c4b8ee0ef75bb61dd419580a0b9bda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#af5c4b8ee0ef75bb61dd419580a0b9bda">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test2)</td></tr>
-<tr class="separator:af5c4b8ee0ef75bb61dd419580a0b9bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea1a06b756f55984b24b5627d1c2f051"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#aea1a06b756f55984b24b5627d1c2f051">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test2_gz)</td></tr>
-<tr class="separator:aea1a06b756f55984b24b5627d1c2f051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d94b11bb58e5962e4ffa38072f0ccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ad0d94b11bb58e5962e4ffa38072f0ccf">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test3)</td></tr>
-<tr class="separator:ad0d94b11bb58e5962e4ffa38072f0ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb2536eaa06fead392d69ac53ffe1814"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#abb2536eaa06fead392d69ac53ffe1814">BOOST_AUTO_TEST_CASE</a> (multiloc_sugar_test4)</td></tr>
-<tr class="separator:abb2536eaa06fead392d69ac53ffe1814"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34563bd52f15535beec469dd0f07da77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a34563bd52f15535beec469dd0f07da77">BOOST_AUTO_TEST_CASE</a> (mlocuspop_sugar_test1)</td></tr>
+<tr class="separator:a34563bd52f15535beec469dd0f07da77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42883cfdc5413bbfb96522886c4ce28d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a42883cfdc5413bbfb96522886c4ce28d">BOOST_AUTO_TEST_CASE</a> (mlocuspop_sugar_test2)</td></tr>
+<tr class="separator:a42883cfdc5413bbfb96522886c4ce28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37659cf9e980db2f96053a6f0f91d9d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a37659cf9e980db2f96053a6f0f91d9d2">BOOST_AUTO_TEST_CASE</a> (mlocuspop_sugar_test3)</td></tr>
+<tr class="separator:a37659cf9e980db2f96053a6f0f91d9d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c82f896d19257329bf312b351ddc20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#a13c82f896d19257329bf312b351ddc20">BOOST_AUTO_TEST_CASE</a> (mlocuspop_sugar_test4)</td></tr>
+<tr class="separator:a13c82f896d19257329bf312b351ddc20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a4fdef54631a9d0bc285ac4eb080538a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4fdef54631a9d0bc285ac4eb080538a5">&#9670;&nbsp;</a></span>poptype</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Testing <a class="el" href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae1f53f0b3e62323cfb5289c704a1c4db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1f53f0b3e62323cfb5289c704a1c4db">&#9670;&nbsp;</a></span>poptype</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/da3/extensions__regionsTest_8cc.html#aabb405244c52173760e95e747d2fb596">poptype</a> =  <a class="el" href="../../d6/dcc/classmultiloc__popgenmut__fixture.html#afb32d27b2f5451cb4ff110f1e69b0717">multiloc_popgenmut_fixture::poptype</a></td>
+          <td class="memname">using <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> =  <a class="el" href="../../d1/d88/classmlocuspop__popgenmut__fixture.html#a9bc566834dd663731e6339ecf08aaa53">mlocuspop_popgenmut_fixture::poptype</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00022">22</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00021">21</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0eb3f4d550f3ed9a85c156a3f454e3a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0eb3f4d550f3ed9a85c156a3f454e3a7">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/6]</span></h2>
+<a id="a34563bd52f15535beec469dd0f07da77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34563bd52f15535beec469dd0f07da77">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,19 +137,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_test1&#160;</td>
+          <td class="paramtype">mlocuspop_sugar_test1&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00024">24</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00023">23</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="af1ee193f92ec80461c6c4a67f8744e33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1ee193f92ec80461c6c4a67f8744e33">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/6]</span></h2>
+<a id="a42883cfdc5413bbfb96522886c4ce28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42883cfdc5413bbfb96522886c4ce28d">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,19 +157,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_experimental_sugar_api_test&#160;</td>
+          <td class="paramtype">mlocuspop_sugar_test2&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00034">34</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00033">33</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="af5c4b8ee0ef75bb61dd419580a0b9bda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5c4b8ee0ef75bb61dd419580a0b9bda">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/6]</span></h2>
+<a id="a37659cf9e980db2f96053a6f0f91d9d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37659cf9e980db2f96053a6f0f91d9d2">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,19 +177,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_test2&#160;</td>
+          <td class="paramtype">mlocuspop_sugar_test3&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00045">45</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00046">46</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="aea1a06b756f55984b24b5627d1c2f051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea1a06b756f55984b24b5627d1c2f051">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/6]</span></h2>
+<a id="a13c82f896d19257329bf312b351ddc20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c82f896d19257329bf312b351ddc20">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,54 +197,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">multiloc_sugar_test2_gz&#160;</td>
+          <td class="paramtype">mlocuspop_sugar_test4&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00059">59</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="ad0d94b11bb58e5962e4ffa38072f0ccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0d94b11bb58e5962e4ffa38072f0ccf">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">multiloc_sugar_test3&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00078">78</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="abb2536eaa06fead392d69ac53ffe1814"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb2536eaa06fead392d69ac53ffe1814">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">multiloc_sugar_test4&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00088">88</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html#l00056">56</a> of file <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc_source.html">sugar_multilocusTest.cc</a>.</p>
 
 </div>
 </div>

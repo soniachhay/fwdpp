@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['policies_20for_20calculating_20fitnesses_20and_20trait_20values_2e',['Policies for calculating fitnesses and trait values.',['../d7/d80/group__fitness.html',1,'']]]
+  ['randomly_2dsampling_20individual_20gametes_2e',['Randomly-sampling individual gametes.',['../d7/d86/group__samplingPopsGamete.html',1,'']]],
+  ['randomly_2dsampling_20diploids_2e',['Randomly-sampling diploids.',['../d7/de2/group__samplingPopsInd.html',1,'']]]
 ];

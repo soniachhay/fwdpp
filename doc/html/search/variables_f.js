@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vdmm',['vdmm',['../d6/dcc/classmultiloc__popgenmut__fixture.html#a6e9fba35610c17e5a1043ab5505f5b77',1,'multiloc_popgenmut_fixture']]],
-  ['vdrm',['vdrm',['../d6/dcc/classmultiloc__popgenmut__fixture.html#aad0a41334a95c4e209f2aa5d4ec77d48',1,'multiloc_popgenmut_fixture']]]
+  ['vdmm',['vdmm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a44d3ddcd4c7e307828b517e6b6cc595e',1,'mlocuspop_popgenmut_fixture']]],
+  ['vdrm',['vdrm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a657154c8bf033f40e3244010521a073f',1,'mlocuspop_popgenmut_fixture']]]
 ];

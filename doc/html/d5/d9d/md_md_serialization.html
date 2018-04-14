@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: Tutorial 3: Data serialization</title>
+<title>fwdpp: Writing data to binary formats</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -60,64 +60,50 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Tutorial 3: Data serialization </div>  </div>
+<div class="title">Writing data to binary formats </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>Intro</h2>
-<p>This tutorial covers the following topics:</p>
+<div class="textblock"><p>It is often useful to be able to serialize a population into a binary format and re-construct a serialized population. The namespace <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html" title="I/O types and functions. ">fwdpp::io</a> provides the following functions for these operations:</p>
 <ul>
-<li>Writing simulated populations to files, and reading them back in</li>
-<li>Copying simulated population in memory</li>
+<li><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">fwdpp::io::serialize_population</a></li>
+<li><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">fwdpp::io::deserialize_population</a></li>
 </ul>
-<h2>The basic functions</h2>
-<p>For single-deme simulations, the library provides the following functions:</p>
+<h2>Required specializations</h2>
+<p><b>Note</b> This section is only required if you use functions in namespace <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html" title="I/O types and functions. ">fwdpp::io</a>.</p>
+<p>The above functions are templates that require certain specializations to be visible at compile time in order to work properly. These specializations are of function objects to serialize/deserialize mutations, gametes, and diploids. Their names are:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#afa05ba9d97f7a5da001f6a0fdd5cc75c" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a></li>
+<li>fwdpp::io::serialize_mutation and fwdpp::io::deserialize_mutation</li>
+<li><a class="el" href="../../d1/dcf/structfwdpp_1_1io_1_1serialize__gamete.html" title="Serialize a gamete. ">fwdpp::io::serialize_gamete</a> and <a class="el" href="../../d2/db3/structfwdpp_1_1io_1_1deserialize__gamete.html" title="Deserialize a gamete. ">fwdpp::io::deserialize_gamete</a></li>
+<li>fwdpp::io::serialize_diploid and fwdpp::io::deserialize_diploid</li>
 </ul>
-<p>These functions write and read simulated populations in a binary (<em>e.g.</em> not human-readable) format.</p>
-<p>For multi-deme simulations, we have:</p>
+<p>The default definitions of these types have the following behaviors:</p>
 <ul>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#aedd168fa4972c3a581b44de38197abf8">KTfwd::write_binary_metapop</a></li>
-<li><a class="el" href="../../da/d8b/namespaceKTfwd.html#ad1076a590e2ed2e9b7501423a4b87942" title="Read the metapopulation back from a binary-format file for individual-based simulations Read the meta...">KTfwd::read_binary_metapop</a></li>
+<li>fwdpp::io::serialize_mutation and fwdpp::io::deserialize_mutation throw an exception. Therefore, you <em>must</em> specialize them for your mutation type. The built-in mutation types already have such specializations, which you may study if you develop your own mutation type. See fwdpp::io::serialize_mutation&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>&gt; and fwdpp::io::deserialize_mutation&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>&gt; for examples.</li>
+<li>The gamete serialization objects assume the gamete type is <a class="el" href="../../dd/d84/namespacefwdpp.html#a6778d8e78d8f7fbb77356e5fdb7fb832" title="Default gamete type. ">fwdpp::gamete</a>. If this is not true, code may fail to compile and you need a specialization.</li>
+<li>The diploid serialization code only deals with the <code>first</code> and <code>second</code> data fields. If your diploid type requires additional meta-data, then you need a specialization. See fwdpp::io::serialize_diploid&lt;<a class="el" href="../../d9/d88/structcustom__diploid__testing__t.html">custom_diploid_testing_t</a>&gt; and fwdpp::io::deserialize_diploid&lt;<a class="el" href="../../d9/d88/structcustom__diploid__testing__t.html">custom_diploid_testing_t</a>&gt;, which are part of the fwdpp unit test suite.</li>
 </ul>
-<p>As with the rest of the library, these functions are implemented using a combination of templates + function overloading.</p>
-<p>Currently, these functions support the following types of simulations:</p>
+<h2>Low-level functions</h2>
+<p>The functions <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">fwdpp::io::serialize_population</a> and <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">fwdpp::io::deserialize_population</a> discussed above are implemented in terms of the following low-level functions:</p>
 <ul>
-<li>single-locus, single-deme</li>
-<li>single-locus, multi-deme</li>
-<li>multi-locus, single-deme</li>
+<li><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546" title="Serialize a container of mutations. ">fwdpp::io::write_mutations</a> and <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c" title="Deserialize a container of mutations. ">fwdpp::io::read_mutations</a></li>
+<li><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a2657c88a649e18b756cc889998480733" title="Serialize a container of gametes. ">fwdpp::io::write_gametes</a> and <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e" title="Deserialize a container of gametes. ">fwdpp::io::read_gametes</a></li>
+<li><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a4dc2927eacb1ce7ad8c429db5839c287" title="Serialize a container of diploids. ">fwdpp::io::write_diploids</a> and <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661" title="Deserialize a container of diploids. ">fwdpp::io::read_diploids</a></li>
 </ul>
-<p>The type requirements for these functions are:</p>
+<p>You may find these functions useful for more nuanced approaches to serialization.</p>
+<h2>Streams</h2>
+<p>The stream template types all assume interfaces that are modeled after <a href="http://en.cppreference.com/w/cpp/io/basic_iostream">std::basic_iostream</a>. The boost <a href="http://www.boost.org/doc/libs/1_66_0/libs/iostreams/doc/index.html">iostreams</a> library will satisfy this criterion.</p>
+<h2>General guidelines</h2>
+<p>Working with streams is a C++ topic rather than a fwdpp topic. However, keep the following in mind:</p>
 <ul>
-<li>Containers of objects used in fwdpp-based simulations (containers of gametes, mutations, diploids, etc.)</li>
-<li>Output streams compatible with the public interface of <a href="http://www.cplusplus.com/reference/ostream/ostream/">std::ostream</a></li>
-<li>Input streams compatible with the public interfact of <a href="http://www.cplusplus.com/reference/istream/istream/">std::istream</a></li>
-<li>Input via the gzFile type defined by <a href="http://zlib.net">zlib</a></li>
+<li>The <a href="http://en.cppreference.com/w/cpp/header/sstream">sstream</a> header may be used to serialize in-memory.</li>
+<li>The objects in <a href="http://en.cppreference.com/w/cpp/header/sstream">sstream</a> return a <code>std::string</code> via the <code>str()</code> member function. Further, a <code>std::string</code>'s <code>c_str()</code> member function returns the underlying C-like <code>char *</code>.</li>
+<li>Most compression libraries (<a href="http://zlib.net">zlib</a>, <a href="http://bzip2.org">bzip2</a>) expect a <code>char *</code>.</li>
 </ul>
-<h2>Writing and reading mutations</h2>
-<p>You need to tell these functions how to read/write mutation objects. Specifically, you need to:</p>
-<ul>
-<li>Define a mutation write function, which takes a mutation object and an output stream type as an object.</li>
-<li>Define a mutation read function, taking an input stream type as an object</li>
-</ul>
-<p>For a concrete example of implementing "mutation readers" and "mutation writers", see the implementation of <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html" title="Facilitates serialization of mutation types supported by the fwdpp sugar library. ...">KTfwd::mutation_writer</a> and <a class="el" href="../../de/d25/structKTfwd_1_1mutation__writer.html" title="Facilitates serialization of mutation types supported by the fwdpp sugar library. ...">KTfwd::mutation_writer</a>.</p>
-<p>Below, you will see how to pass these to <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#afa05ba9d97f7a5da001f6a0fdd5cc75c" title="Read the population back from a binary-format file for individual-based simulations. ">KTfwd::read_binary_pop</a>.</p>
-<h2>Reading and writing diploids.</h2>
-<p>Version 0.3.1 allowed the use of custom diploid genotype objects (<a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a>). Such objects can be serialized with no additional effort. <em>However, doing so will result in custom data associated with these custom types not being serialized.</em></p>
-<p>In order to solve this, define your own custom structures for writing and reading:</p>
-<div class="fragment"><div class="line"><span class="keyword">struct </span>diploid_writer {</div><div class="line">        <span class="keyword">using</span> result_type = void;</div><div class="line">        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> dip_itr, <span class="keyword">typename</span> streamtype &gt;</div><div class="line">        <span class="keyword">inline</span> result_type( dip_itr <a class="code" href="../../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>, streamtype &amp; o )<span class="keyword"> const</span></div><div class="line"><span class="keyword">        </span>{</div><div class="line">                <span class="comment">//Do the right thing here.</span></div><div class="line">        }</div><div class="line">};</div></div><!-- fragment --><p>The arguments should be an iterator pointing to one of your custom diploids, and a reference to an output stream (including a gzFile!). A function object of the same form should also be written to read the data back in.</p>
-<p>These custom serialization objects may be passed as the last arguments to the functions discussed in the next section. By default, they are implicitly passed <a class="el" href="../../d5/d09/structKTfwd_1_1diploidIOplaceholder.html" title="placeholder IO policy for standard diploid types ">KTfwd::diploidIOplaceholder</a>, which is essentially an empty object.</p>
-<h2>In-memory copying</h2>
-<p>It may be desirable to be able to restore a population from a previous state. For example, you may wish to repeatedly introduce a mutation at a position, and then simulate until it is fixed. For replicates where it is lost, you will restore the population to the state it was in when you introduced the mutation. You may do this using <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> or <a class="el" href="../../da/d8b/namespaceKTfwd.html#aedd168fa4972c3a581b44de38197abf8">KTfwd::write_binary_metapop</a>, and write the population to an in-memory buffer such as <a href="http://www.cplusplus.com/reference/sstream/ostringstream/">std::ostringstream</a>. You may restore the population by reading the data from a <a href="http://www.cplusplus.com/reference/sstream/istringstream/">std::istringstream</a>.</p>
-<p>Here is some pseudocode for an single-deme simulation:</p>
-<div class="fragment"><div class="line"><span class="comment">//run a simulation...</span></div><div class="line"></div><div class="line"><span class="comment">//write it to a buffer:</span></div><div class="line">std::ostringstream buffer;</div><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6">KTfwd::write_binary_pop</a>(gametes,mutations,diploids,std::bind(<a class="code" href="../../d5/d07/sugar__metapop__custom__diploidTest_8cc.html#adc4cb78b331fc4385057a2f785457cae">mwriter</a>(),std::placeholders::_1,std::placeholders::_2),buffer);</div><div class="line"></div><div class="line"><span class="comment">//Now, if you want to restore it:</span></div><div class="line">std::istringstream inbuffer(buffer.str());</div><div class="line">decltype(mutations) mutations2;</div><div class="line">decltype(gametes) gametes2;</div><div class="line">decltype(diploids) diploids2;</div><div class="line"><a class="code" href="../../da/d8b/namespaceKTfwd.html#afa05ba9d97f7a5da001f6a0fdd5cc75c">KTfwd::read_binary_pop</a>(gametes2,</div><div class="line">                         mutations2,</div><div class="line">                         diploids2,</div><div class="line">                         std::bind(<a class="code" href="../../d5/d07/sugar__metapop__custom__diploidTest_8cc.html#aaebd18385ab3036c07b4bcbe6be0d305">mreader</a>(),std::placeholders::_1),</div><div class="line">                         inbuffer);</div></div><!-- fragment --><p>This approach works because <a class="el" href="../../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6" title="Write population to binary-format file for individual-based simulations. ">KTfwd::write_binary_pop</a> and <a class="el" href="../../da/d8b/namespaceKTfwd.html#aedd168fa4972c3a581b44de38197abf8">KTfwd::write_binary_metapop</a> perform "deep copies" of the data, allowing the complete restoration of all the pointers, etc., stored in the containers.</p>
-<h2>Writing to files</h2>
-<p>You may use the same functions to write/read to from files. You may use and sort of <a href="http://www.cplusplus.com/reference/ostream/ostream/">std::ostream</a>-compatible object for output. You may use either a <a href="http://www.cplusplus.com/reference/istream/istream/">std::istream</a>-compatible object for input or a gzFile object from <a href="http://zlib.net">zlib</a>.</p>
-<h2>Managing output from multiple independent processes</h2>
-<p>In practice, we often implement simulations with the idea that one replicate will be run per process, and that we will spread a large number of processes across our cluster. Typically, we collect the output of these simulations into a single file. To do this, we implement POSIX-style advisory file locking. See <a href="https://github.com/molpopgen/BigDataFormats">here</a> for a discussion of how to do that using the low-level C functions found in &lt;fcntl.h&gt;. A more modern C++-based approach would be to use the <a href="http://www.boost.org">boost</a> synchronization library. See <a href="https://gist.github.com/molpopgen/651e4ac81253f34364f7">here</a> for simple examples.</p>
-<h3>Why not use boost serialization?</h3>
-<p>Cliff's notes version: this approach would work well for a single process writing lots of replicates to one file. However, the archives that this library creates do not support appending on to an existing library. This limitation is unfortunate, as being able to use this library would simplify some of the implementation. </p>
+<p>Therefore, you may serialize in-memory and then write the results to a compressed file.</p>
+<h2>Limitations</h2>
+<h3>Large populations</h3>
+<p>When simulating very large populations, it is conceivalbe that you could run out of RAM if you attempt to serialize in-memory. One current workaround is to use the low-level object writing types (fwdpp::io::serialize_mutation <em>et al.</em>) to roll your own serialization code that flushes buffers more often. If you take a look at the current serialization code, you'll see that doing this would not be a difficult task. Another workaround may be to simply serialize to an uncompressed temporary file.</p>
+<p>Future library versions may provide built-in functions to facilitate serialization in "chunks". </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

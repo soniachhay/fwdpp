@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/testsuite/unit/type_traitsTest.cc File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/testsuite/unit/type_traitsTest.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -68,7 +68,7 @@ $(function() {
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">type_traitsTest.cc File Reference<div class="ingroups"><a class="el" href="../../dd/ddc/group__unit.html">Unit testing</a></div></div>  </div>
+<div class="title">type_traitsTest.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -77,7 +77,9 @@ $(function() {
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp_source.html">../fixtures/fwdpp_fixtures.hpp</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fwdpp/fitness_models.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../dc/d85/recombination_8hpp_source.html">fwdpp/recombination.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">fwdpp/mutate_recombine.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d03/poisson__xover_8hpp_source.html">fwdpp/poisson_xover.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/d51/recbinder_8hpp_source.html">fwdpp/recbinder.hpp</a>&gt;</code><br />
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
@@ -90,6 +92,8 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ddf/structtrivial__custom__diploid__valid.html">trivial_custom_diploid_valid</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dfa/structfake__dip.html">fake_dip</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -101,10 +105,20 @@ Functions</h2></td></tr>
 <tr class="separator:a9aa067c3098f6272625d8347915d0630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cd73f58a148d7e0a9307bd7fb0ec6ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a6cd73f58a148d7e0a9307bd7fb0ec6ee">BOOST_AUTO_TEST_CASE</a> (is_mmodel_test)</td></tr>
 <tr class="separator:a6cd73f58a148d7e0a9307bd7fb0ec6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9627ad8c7b139829d801da88edb2a71c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a9627ad8c7b139829d801da88edb2a71c">BOOST_AUTO_TEST_CASE</a> (is_mmodel_gamete_test)</td></tr>
+<tr class="separator:a9627ad8c7b139829d801da88edb2a71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005ae424888b404240041de619bb446d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a005ae424888b404240041de619bb446d">BOOST_AUTO_TEST_CASE</a> (is_mmodel_diploid_test)</td></tr>
+<tr class="separator:a005ae424888b404240041de619bb446d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdd21dee95abe3430724e39b17362608"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#abdd21dee95abe3430724e39b17362608">BOOST_AUTO_TEST_CASE</a> (is_standard_fitness_model_test)</td></tr>
 <tr class="separator:abdd21dee95abe3430724e39b17362608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04bb7d41ae5f30e97a970fb3ffb4aefb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a04bb7d41ae5f30e97a970fb3ffb4aefb">BOOST_AUTO_TEST_CASE</a> (is_recmodel_test)</td></tr>
-<tr class="separator:a04bb7d41ae5f30e97a970fb3ffb4aefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c8226264a6cf3f96f54f7e70b602246"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a0c8226264a6cf3f96f54f7e70b602246">BOOST_AUTO_TEST_CASE</a> (is_empty_recmodel_test)</td></tr>
+<tr class="separator:a0c8226264a6cf3f96f54f7e70b602246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f26fec6b62ff3ac31a5e109736960b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a4f26fec6b62ff3ac31a5e109736960b0">BOOST_AUTO_TEST_CASE</a> (is_gamete_recmodel_test)</td></tr>
+<tr class="separator:a4f26fec6b62ff3ac31a5e109736960b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cc81ebd9b82cbb455c4d27b46be7589"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#a5cc81ebd9b82cbb455c4d27b46be7589">BOOST_AUTO_TEST_CASE</a> (is_diploid_recmodel_test)</td></tr>
+<tr class="separator:a5cc81ebd9b82cbb455c4d27b46be7589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa3641b06557957ad158ea596a12fc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#abfa3641b06557957ad158ea596a12fc0">BOOST_AUTO_TEST_CASE</a> (is_not_recmodel_test)</td></tr>
+<tr class="separator:abfa3641b06557957ad158ea596a12fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -118,7 +132,7 @@ Variables</h2></td></tr>
 <p class="definition">Definition in file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a75be56afd57556e11036de1e18e2f94d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75be56afd57556e11036de1e18e2f94d">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a75be56afd57556e11036de1e18e2f94d">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,12 +147,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00038">38</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00040">40</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="a8434c7c98a2a7bcb79d3837ac6992fd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8434c7c98a2a7bcb79d3837ac6992fd9">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8434c7c98a2a7bcb79d3837ac6992fd9">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,12 +167,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00048">48</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00050">50</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="a9aa067c3098f6272625d8347915d0630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aa067c3098f6272625d8347915d0630">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aa067c3098f6272625d8347915d0630">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,12 +187,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00058">58</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00060">60</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="a6cd73f58a148d7e0a9307bd7fb0ec6ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cd73f58a148d7e0a9307bd7fb0ec6ee">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd73f58a148d7e0a9307bd7fb0ec6ee">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,12 +207,52 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00067">67</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00069">69</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a9627ad8c7b139829d801da88edb2a71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9627ad8c7b139829d801da88edb2a71c">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">is_mmodel_gamete_test&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00090">90</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a005ae424888b404240041de619bb446d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005ae424888b404240041de619bb446d">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">is_mmodel_diploid_test&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00113">113</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="abdd21dee95abe3430724e39b17362608"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdd21dee95abe3430724e39b17362608">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd21dee95abe3430724e39b17362608">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,12 +267,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00087">87</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00127">127</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="a04bb7d41ae5f30e97a970fb3ffb4aefb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04bb7d41ae5f30e97a970fb3ffb4aefb">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/6]</span></h2>
+<a id="a0c8226264a6cf3f96f54f7e70b602246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c8226264a6cf3f96f54f7e70b602246">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,14 +280,74 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">is_recmodel_test&#160;</td>
+          <td class="paramtype">is_empty_recmodel_test&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00114">114</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00152">152</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a4f26fec6b62ff3ac31a5e109736960b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f26fec6b62ff3ac31a5e109736960b0">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[9/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">is_gamete_recmodel_test&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00166">166</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a5cc81ebd9b82cbb455c4d27b46be7589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cc81ebd9b82cbb455c4d27b46be7589">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">is_diploid_recmodel_test&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00184">184</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="abfa3641b06557957ad158ea596a12fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa3641b06557957ad158ea596a12fc0">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">is_not_recmodel_test&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00202">202</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>
@@ -252,7 +366,7 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= [](<span class="keyword">const</span> <a class="code" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> &amp;, <span class="keyword">const</span> std::vector&lt;double&gt; &amp;,</div><div class="line">                 <span class="keyword">const</span> <a class="code" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;) {}</div><div class="ttc" id="fwdpp__fixtures_8hpp_html_a496ff751482685dbd64271e2939f92ac"><div class="ttname"><a href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a></div><div class="ttdeci">std::vector&lt; mtype &gt; mcont_t</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d44/fwdpp__fixtures_8hpp_source.html#l00026">fwdpp_fixtures.hpp:26</a></div></div>
 <div class="ttc" id="fwdpp__fixtures_8hpp_html_a5bed25155904fc07d1d8d01173d69f7e"><div class="ttname"><a href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; dipvector_t</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d44/fwdpp__fixtures_8hpp_source.html#l00028">fwdpp_fixtures.hpp:28</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00106">106</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html#l00144">144</a> of file <a class="el" href="../../d9/dfd/type__traitsTest_8cc_source.html">type_traitsTest.cc</a>.</p>
 
 </div>
 </div>

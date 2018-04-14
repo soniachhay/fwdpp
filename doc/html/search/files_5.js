@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['fitness_5fmodels_2ehpp',['fitness_models.hpp',['../db/dd7/fitness__models_8hpp.html',1,'']]],
-  ['forward_5ftypes_2ehpp',['forward_types.hpp',['../d5/d1d/forward__types_8hpp.html',1,'']]],
-  ['fwd_5ffunctional_2ehpp',['fwd_functional.hpp',['../d4/d62/fwd__functional_8hpp.html',1,'']]],
-  ['fwdpp_5ffixtures_2ehpp',['fwdpp_fixtures.hpp',['../de/d44/fwdpp__fixtures_8hpp.html',1,'']]],
-  ['fwdpp_5funit_5ftests_2ecc',['fwdpp_unit_tests.cc',['../da/d45/fwdpp__unit__tests_8cc.html',1,'']]]
+  ['gamete_2ehpp',['gamete.hpp',['../d8/d50/gamete_8hpp.html',1,'']]],
+  ['gamete_5fcleaner_2ehpp',['gamete_cleaner.hpp',['../de/d15/gamete__cleaner_8hpp.html',1,'']]],
+  ['gamete_5fcleanertest_2ecc',['gamete_cleanerTest.cc',['../d9/dc6/gamete__cleanerTest_8cc.html',1,'']]],
+  ['gametetest_2ecc',['gameteTest.cc',['../d0/dbc/gameteTest_8cc.html',1,'']]],
+  ['general_5frec_5fvariation_2ehpp',['general_rec_variation.hpp',['../d7/d87/general__rec__variation_8hpp.html',1,'']]],
+  ['gsl_5fdiscrete_2ehpp',['gsl_discrete.hpp',['../d5/dba/gsl__discrete_8hpp.html',1,'']]],
+  ['gslrng_5ft_2ehpp',['GSLrng_t.hpp',['../da/dd8/GSLrng__t_8hpp.html',1,'']]]
 ];

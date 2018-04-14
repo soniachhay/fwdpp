@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/fwdpp/mutation.hpp File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/fwdpp/io/mutation.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -59,7 +59,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_95c40379012e7d63e221456575a6f3b3.html">fwdpp</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_95c40379012e7d63e221456575a6f3b3.html">fwdpp</a></li><li class="navelem"><a class="el" href="../../dir_a2250fa92e5c21b41edeb6d54e88abc3.html">io</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,25 +70,34 @@ $(function() {
 <div class="title">mutation.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br />
-<code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d1/d83/mutation_8tcc_source.html">fwdpp/mutation.tcc</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;typeinfo&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
+<code>#include &lt;fwdpp/meta/always_false.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d2f/scalar__serialization_8hpp_source.html">scalar_serialization.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d9/d84/mutation_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:da/d8b/namespaceKTfwd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></td></tr>
-<tr class="memdesc:da/d8b/namespaceKTfwd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
+<tr class="memitem:dd/d82/namespacefwdpp_1_1io"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html">fwdpp::io</a></td></tr>
+<tr class="memdesc:dd/d82/namespacefwdpp_1_1io"><td class="mdescLeft">&#160;</td><td class="mdescRight">I/O types and functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dd/d84/namespacefwdpp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html">fwdpp</a></td></tr>
+<tr class="memdesc:dd/d84/namespacefwdpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a805a4aa5d130ca2ce4dc85a3a0e3a897"><td class="memTemplParams" colspan="2">template&lt;typename queue_type , typename queue_type2 , typename mutation_model , typename gamete_insertion_policy , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a805a4aa5d130ca2ce4dc85a3a0e3a897"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html#a805a4aa5d130ca2ce4dc85a3a0e3a897">KTfwd::mutate_gamete_recycle</a> (queue_type &amp;recycling_bin, queue_type2 &amp;gamete_recycling_bin, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const double &amp;mu, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a88913a7b48371a7d6ad257bef5930b3d">gcont_t</a> &amp;gametes, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const size_t g, const mutation_model &amp;<a class="el" href="../../d4/d11/extensions__regionsIntegrationTest_8cc.html#ab281a7cf5d229ecee9a30282f764d60a">mmodel</a>, const gamete_insertion_policy &amp;gpolicy) __attribute__((deprecated))</td></tr>
-<tr class="memdesc:a805a4aa5d130ca2ce4dc85a3a0e3a897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply mutation model to an individual gamete. Used for individual-based forward simulations.  <a href="../../da/d8b/namespaceKTfwd.html#a805a4aa5d130ca2ce4dc85a3a0e3a897">More...</a><br /></td></tr>
-<tr class="separator:a805a4aa5d130ca2ce4dc85a3a0e3a897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741cfcdc33d62551a2b74d15c4979546"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename ostreamtype &gt; </td></tr>
+<tr class="memitem:a741cfcdc33d62551a2b74d15c4979546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546">fwdpp::io::write_mutations</a> (ostreamtype &amp;buffer, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations)</td></tr>
+<tr class="memdesc:a741cfcdc33d62551a2b74d15c4979546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a container of mutations.  <a href="../../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546">More...</a><br /></td></tr>
+<tr class="separator:a741cfcdc33d62551a2b74d15c4979546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename istreamtype &gt; </td></tr>
+<tr class="memitem:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c">fwdpp::io::read_mutations</a> (istreamtype &amp;in, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations)</td></tr>
+<tr class="memdesc:af2a3faa34d92ae3f10147f519cc7d84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a container of mutations.  <a href="../../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c">More...</a><br /></td></tr>
+<tr class="separator:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

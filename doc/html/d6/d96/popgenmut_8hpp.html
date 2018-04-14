@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/fwdpp/sugar/popgenmut.hpp File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/fwdpp/sugar/popgenmut.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -65,13 +65,18 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">popgenmut.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
+<code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../db/d97/tags_2tags_8hpp_source.html">fwdpp/tags/tags.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/d2f/scalar__serialization_8hpp_source.html">fwdpp/io/scalar_serialization.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d9/d84/mutation_8hpp_source.html">fwdpp/io/mutation.hpp</a>&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 </div>
@@ -79,15 +84,30 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dcc/structKTfwd_1_1popgenmut.html">KTfwd::popgenmut</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutations with selection, dominance, and tracking age of origin The "standard" mutation type for population genetic simulation. A mutation has its own selection and dominance coefficients.  <a href="../../dc/dcc/structKTfwd_1_1popgenmut.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutations with selection, dominance, and tracking age of origin The "standard" mutation type for population genetic simulation. A mutation has its own selection and dominance coefficients.  <a href="../../d9/df7/structfwdpp_1_1popgenmut.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d85/structfwdpp_1_1io_1_1serialize__mutation_3_01popgenmut_01_4.html">fwdpp::io::serialize_mutation&lt; popgenmut &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization for <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>.  <a href="../../de/d85/structfwdpp_1_1io_1_1serialize__mutation_3_01popgenmut_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df6/structfwdpp_1_1io_1_1deserialize__mutation_3_01popgenmut_01_4.html">fwdpp::io::deserialize_mutation&lt; popgenmut &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization for <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>.  <a href="../../de/df6/structfwdpp_1_1io_1_1deserialize__mutation_3_01popgenmut_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:da/d8b/namespaceKTfwd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d8b/namespaceKTfwd.html">KTfwd</a></td></tr>
-<tr class="memdesc:da/d8b/namespaceKTfwd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
+<tr class="memitem:dd/d84/namespacefwdpp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html">fwdpp</a></td></tr>
+<tr class="memdesc:dd/d84/namespacefwdpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dd/d82/namespacefwdpp_1_1io"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html">fwdpp::io</a></td></tr>
+<tr class="memdesc:dd/d82/namespacefwdpp_1_1io"><td class="mdescLeft">&#160;</td><td class="mdescRight">I/O types and functions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1c6084401e5c608a70d7ad543837b4b0"><td class="memTemplParams" colspan="2">template&lt;typename queue_t , typename mcont_t , typename lookup_table_t , typename position_function , typename effect_size_function , typename dominance_function &gt; </td></tr>
+<tr class="memitem:a1c6084401e5c608a70d7ad543837b4b0"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a1c6084401e5c608a70d7ad543837b4b0">fwdpp::infsites_popgenmut</a> (queue_t &amp;recycling_bin, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a484a27535cab006d16f245d7acf43a7a">lookup_table_t</a> &amp;lookup, const uint_t &amp;generation, const double pselected, const position_function &amp;posmaker, const effect_size_function &amp;esize_maker, const dominance_function &amp;hmaker, const decltype(popgenmut::xtra) x=0)</td></tr>
+<tr class="separator:a1c6084401e5c608a70d7ad543837b4b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

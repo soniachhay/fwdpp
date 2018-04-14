@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['deprecated_20list',['Deprecated List',['../da/d58/deprecated.html',1,'']]]
+  ['example_20programs',['Example programs',['../df/dcb/md_md_examples.html',1,'']]]
 ];

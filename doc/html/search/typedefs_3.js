@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['first_5ftype',['first_type',['../d3/ddf/structtrivial__custom__diploid__valid.html#ac60ba847b780b19ba0d7dbc5d84487f0',1,'trivial_custom_diploid_valid']]],
-  ['fitness_5ffxn',['fitness_fxn',['../d0/d30/namespaceKTfwd_1_1traits.html#a6544bbb36b44b1a7760b47395f5c35c6',1,'KTfwd::traits']]],
-  ['fitness_5ffxn_5ft',['fitness_fxn_t',['../d0/d30/namespaceKTfwd_1_1traits.html#ac32df6b4a248d9a6385df515fc18894f',1,'KTfwd::traits']]],
-  ['fitness_5ft',['fitness_t',['../d3/de0/classKTfwd_1_1sugar_1_1metapop.html#ad4238fd6e0de0bfa60b7ba2486853aa8',1,'KTfwd::sugar::metapop::fitness_t()'],['../d5/d74/classKTfwd_1_1sugar_1_1singlepop.html#a75a4f41f80fca2ed0c637f9c2ce8dfe8',1,'KTfwd::sugar::singlepop::fitness_t()']]],
-  ['ftvector_5ft',['ftvector_t',['../d7/d94/classKTfwd_1_1sugar_1_1popbase.html#aa66f45bb3a918255562f4df1dcb7c53c',1,'KTfwd::sugar::popbase']]]
+  ['first_5ftype',['first_type',['../d3/ddf/structtrivial__custom__diploid__valid.html#ac60ba847b780b19ba0d7dbc5d84487f0',1,'trivial_custom_diploid_valid::first_type()'],['../d2/dfa/structfake__dip.html#acd03a248f984eb221889e45e24a0fd7e',1,'fake_dip::first_type()'],['../d9/d88/structcustom__diploid__testing__t.html#a28a418127eabd566c25c83adea9e3dea',1,'custom_diploid_testing_t::first_type()'],['../d0/d57/structdip__with__deme.html#a6bf12b4a7cded184c2223cc96566b17e',1,'dip_with_deme::first_type()']]],
+  ['fitness_5ffxn',['fitness_fxn',['../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc',1,'fwdpp::traits']]],
+  ['fitness_5ffxn_5ft',['fitness_fxn_t',['../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30',1,'fwdpp::traits']]],
+  ['fitness_5ft',['fitness_t',['../d2/d4e/classfwdpp_1_1sugar_1_1slocuspop.html#a07292a01932af008eba39bc08ce2ab90',1,'fwdpp::sugar::slocuspop']]],
+  ['ftvector_5ft',['ftvector_t',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a9565291a79d047edf169e38e309050a7',1,'fwdpp::sugar::popbase']]],
+  ['function_5ftype',['function_type',['../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784',1,'regions.hpp']]]
 ];

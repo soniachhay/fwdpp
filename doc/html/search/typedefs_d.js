@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uint_5ft',['uint_t',['../da/d8b/namespaceKTfwd.html#ae44efbad5ba480ceea8c79541daf48a2',1,'KTfwd']]]
+  ['uint_5ft',['uint_t',['../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3',1,'fwdpp']]]
 ];

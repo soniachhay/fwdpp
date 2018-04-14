@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['w',['w',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a29f8bda06f71c9a88d393699ebb7b94c',1,'KTfwd::experimental::standardWFrules::w()'],['../d8/d1d/structKTfwd_1_1experimental_1_1standardWFrules__mloc.html#a0a523f53c03272ebbd7a957d3b9e8841',1,'KTfwd::experimental::standardWFrules_mloc::w()']]],
-  ['wbar',['wbar',['../dc/d8a/structKTfwd_1_1experimental_1_1standardWFrules.html#a1fb72d9245e2806c87878103aa7d1398',1,'KTfwd::experimental::standardWFrules::wbar()'],['../d8/d1d/structKTfwd_1_1experimental_1_1standardWFrules__mloc.html#ab593b5029ebded720eef9ac2de45f7b6',1,'KTfwd::experimental::standardWFrules_mloc::wbar()'],['../d4/d11/extensions__regionsIntegrationTest_8cc.html#a2453b6e2593c7f6e5482b5a7090e6120',1,'wbar():&#160;extensions_regionsIntegrationTest.cc']]],
-  ['weight',['weight',['../d8/d9c/structKTfwd_1_1extensions_1_1discrete__rec__model__data.html#a79b0c37a4220aa2f479b47dededcd2ba',1,'KTfwd::extensions::discrete_rec_model_data']]],
-  ['write_5fbinary_5fmetapop',['write_binary_metapop',['../da/d8b/namespaceKTfwd.html#aedd168fa4972c3a581b44de38197abf8',1,'KTfwd']]],
-  ['write_5fbinary_5fpop',['write_binary_pop',['../da/d8b/namespaceKTfwd.html#a83d6054f49a862e56e817bd1916b6ff6',1,'KTfwd']]],
-  ['write_5fbinary_5fpop_5fmloc',['write_binary_pop_mloc',['../da/d8b/namespaceKTfwd.html#ab519bc48a356736de516f92d07586806',1,'KTfwd']]],
-  ['write_5fhaplotypes',['write_haplotypes',['../d2/d44/structKTfwd_1_1fwdpp__internal_1_1write__haplotypes.html',1,'KTfwd::fwdpp_internal']]],
-  ['write_5fmutations',['write_mutations',['../dd/d6a/structKTfwd_1_1fwdpp__internal_1_1write__mutations.html',1,'KTfwd::fwdpp_internal']]],
-  ['writer',['writer',['../d0/d8e/structKTfwd_1_1serialize.html#ab7624906c91c5a85d07dff9a0ce13c41',1,'KTfwd::serialize']]]
+  ['uint_5ft',['uint_t',['../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3',1,'fwdpp']]],
+  ['uniform',['uniform',['../dc/df9/structfwdpp_1_1extensions_1_1uniform.html',1,'fwdpp::extensions::uniform'],['../dc/df9/structfwdpp_1_1extensions_1_1uniform.html#a7f511ba12418025b1911a69d14d497d9',1,'fwdpp::extensions::uniform::uniform()']]],
+  ['update_5fmutation_5fkeys',['update_mutation_keys',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a798077c43caec79746f4fdadc96921fe',1,'fwdpp::data_matrix_details']]],
+  ['update_5fmutations',['update_mutations',['../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06',1,'fwdpp::update_mutations(mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)'],['../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b',1,'fwdpp::update_mutations(const mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)'],['../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d',1,'fwdpp::update_mutations(mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)']]],
+  ['update_5fmutations_5fn',['update_mutations_n',['../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42',1,'fwdpp']]],
+  ['update_5frow',['update_row',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a8c742eb63299412fedf8b7bf620e9ded',1,'fwdpp::data_matrix_details']]],
+  ['update_5frow_5fcommon',['update_row_common',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#afa68ccdc266450c5e0a1c576ad6d30e8',1,'fwdpp::data_matrix_details']]],
+  ['update_5fsample_5fblock',['update_sample_block',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a934ac352ea5da91395e77ec0be5d8735',1,'fwdpp::fwdpp_internal']]],
+  ['util_2ehpp',['util.hpp',['../d0/d3f/util_8hpp.html',1,'']]],
+  ['utiltest_2ecc',['utilTest.cc',['../d4/d92/utilTest_8cc.html',1,'']]]
 ];

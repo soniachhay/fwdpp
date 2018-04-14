@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/testsuite/unit/sugar_samplingTest.cc File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/testsuite/unit/sugar_samplingTest.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -70,12 +70,17 @@ $(function() {
 <div class="title">sugar_samplingTest.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Testing <a class="el" href="../../dd/d84/namespacefwdpp.html#a6525ec7f7183c758f5aed03f48e13964">fwdpp::sample</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#ad6264b39d2b499a18e9b89bbe6756ebd">fwdpp::sample_separate</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br />
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d2/da3/sugar__fixtures_8hpp_source.html">testsuite/fixtures/sugar_fixtures.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../df/dcc/quick__evolve__sugar_8hpp_source.html">testsuite/util/quick_evolve_sugar.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/dbd/sampling_8hpp_source.html">fwdpp/sugar/sampling.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">fwdpp/sugar/GSLrng_t.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div>
 <p><a href="../../dd/de3/sugar__samplingTest_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -89,43 +94,29 @@ Functions</h2></td></tr>
 <tr class="separator:aaabe5ee7e084736b4a38b57a4347e09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae90fd8c0effab6801d30e8f3c4b49c84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#ae90fd8c0effab6801d30e8f3c4b49c84">BOOST_AUTO_TEST_CASE</a> (singledeme_test_throw)</td></tr>
 <tr class="separator:ae90fd8c0effab6801d30e8f3c4b49c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37f8c93af353038f37aa366b7416b956"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a37f8c93af353038f37aa366b7416b956">BOOST_AUTO_TEST_CASE</a> (singlepop_1)</td></tr>
-<tr class="separator:a37f8c93af353038f37aa366b7416b956"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ded1d555a21215dd058707d03ee815a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a7ded1d555a21215dd058707d03ee815a">BOOST_FIXTURE_TEST_SUITE</a> (test_singlepop_custom_sampling, <a class="el" href="../../da/d9a/structsinglepop__popgenmut__custom__fixture.html">singlepop_popgenmut_custom_fixture</a>) <a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#a32aca9163fec4eb06099f481ad19f5bc">BOOST_AUTO_TEST_CASE</a>(singledeme_test_sep_empty)</td></tr>
-<tr class="separator:a7ded1d555a21215dd058707d03ee815a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95da72f1a6dd555478c98b9d40412c1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a95da72f1a6dd555478c98b9d40412c1b">BOOST_AUTO_TEST_CASE</a> (slocuspop_1)</td></tr>
+<tr class="separator:a95da72f1a6dd555478c98b9d40412c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae144faf7d43a273d2cd0626781b36b58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#ae144faf7d43a273d2cd0626781b36b58">BOOST_FIXTURE_TEST_SUITE</a> (test_slocuspop_custom_sampling, <a class="el" href="../../d3/d2f/structslocuspop__popgenmut__custom__fixture.html">slocuspop_popgenmut_custom_fixture</a>) <a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#add2fae7e0540e815d4f597ab0a426bbd">BOOST_AUTO_TEST_CASE</a>(singledeme_test_sep_empty)</td></tr>
+<tr class="separator:ae144faf7d43a273d2cd0626781b36b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74c4c555bf1c9f633268784f6bff049b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a74c4c555bf1c9f633268784f6bff049b">BOOST_AUTO_TEST_CASE</a> (multilocus_test_sep_empty)</td></tr>
 <tr class="separator:a74c4c555bf1c9f633268784f6bff049b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeffa2777a0a34dd7bd40a2059a1b8e12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#aeffa2777a0a34dd7bd40a2059a1b8e12">BOOST_AUTO_TEST_CASE</a> (multilocus_test_sampling)</td></tr>
+<tr class="separator:aeffa2777a0a34dd7bd40a2059a1b8e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a929a7739ce4cd65c28844d93967bc289"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a929a7739ce4cd65c28844d93967bc289">BOOST_AUTO_TEST_CASE</a> (multilocus_test_empty)</td></tr>
 <tr class="separator:a929a7739ce4cd65c28844d93967bc289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a1fccb8a867ee510d05c2ab018147b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a4a1fccb8a867ee510d05c2ab018147b7">BOOST_AUTO_TEST_CASE</a> (metapop_test_sep_deme_out_of_range_1)</td></tr>
-<tr class="separator:a4a1fccb8a867ee510d05c2ab018147b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad07983590ec8bcfc5ad89aeb5adbc42b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#ad07983590ec8bcfc5ad89aeb5adbc42b">BOOST_AUTO_TEST_CASE</a> (metapop_test_sep_deme_out_of_range_2)</td></tr>
-<tr class="separator:ad07983590ec8bcfc5ad89aeb5adbc42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad7abdb6270b927bd5c94c88d21a11d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#aad7abdb6270b927bd5c94c88d21a11d2">BOOST_AUTO_TEST_CASE</a> (metapop_test_sep_throw)</td></tr>
-<tr class="separator:aad7abdb6270b927bd5c94c88d21a11d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaad86f4f30c905a108b4d0e20a6afcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#acaad86f4f30c905a108b4d0e20a6afcc">BOOST_AUTO_TEST_CASE</a> (metapop_test_sep_empty)</td></tr>
-<tr class="separator:acaad86f4f30c905a108b4d0e20a6afcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae17337163be7d576bc31a0475d8074c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#ae17337163be7d576bc31a0475d8074c5">BOOST_AUTO_TEST_CASE</a> (metapop_test_sep_deme_and_ind_out_of_range)</td></tr>
-<tr class="separator:ae17337163be7d576bc31a0475d8074c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cfc4cd3b69b4becbfc34ea80a7e6f12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a8cfc4cd3b69b4becbfc34ea80a7e6f12">BOOST_AUTO_TEST_CASE</a> (metapop_test_deme_out_of_range)</td></tr>
-<tr class="separator:a8cfc4cd3b69b4becbfc34ea80a7e6f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5af49a07647a3fc29c305cbb02328c2f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a5af49a07647a3fc29c305cbb02328c2f">BOOST_AUTO_TEST_CASE</a> (metapop_test_empty)</td></tr>
-<tr class="separator:a5af49a07647a3fc29c305cbb02328c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12ddfba3abc0756aa6c2222bc161515a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a12ddfba3abc0756aa6c2222bc161515a">BOOST_AUTO_TEST_CASE</a> (metapop_test_ind_out_of_range)</td></tr>
-<tr class="separator:a12ddfba3abc0756aa6c2222bc161515a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae496b36a75991c31935755d6924a06d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#ae496b36a75991c31935755d6924a06d0">BOOST_AUTO_TEST_CASE</a> (metapop_1)</td></tr>
-<tr class="separator:ae496b36a75991c31935755d6924a06d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a690b5af7accd8de140781e400f3a7cb4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a690b5af7accd8de140781e400f3a7cb4">BOOST_FIXTURE_TEST_SUITE</a> (test_metapop_custom_sampling, <a class="el" href="../../de/d85/structmetapop__popgenmut__custom__fixture.html">metapop_popgenmut_custom_fixture</a>) <a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#a32aca9163fec4eb06099f481ad19f5bc">BOOST_AUTO_TEST_CASE</a>(metapop_test_sep_deme_out_of_range_1)</td></tr>
-<tr class="separator:a690b5af7accd8de140781e400f3a7cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a886705dc02755fd5f188a640b37b6c8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t</a>&lt; <a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e039b543c1f3b48db094631e2971549">KTfwd::GSL_RNG_TAUS2</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a886705dc02755fd5f188a640b37b6c8a">rng</a> (0u)</td></tr>
-<tr class="separator:a886705dc02755fd5f188a640b37b6c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c6d213b9da1e671027325d8e9052c47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">fwdpp::GSLrng_t</a>&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#a7138e56644dd2fbd4dc3f3e4713d0130">fwdpp::GSL_RNG_TAUS2</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a2c6d213b9da1e671027325d8e9052c47">rng</a> (0u)</td></tr>
+<tr class="separator:a2c6d213b9da1e671027325d8e9052c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Testing <a class="el" href="../../dd/d84/namespacefwdpp.html#a6525ec7f7183c758f5aed03f48e13964">fwdpp::sample</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#ad6264b39d2b499a18e9b89bbe6756ebd">fwdpp::sample_separate</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a5747c5ca115c88b150dc26cb942a6c03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5747c5ca115c88b150dc26cb942a6c03">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5747c5ca115c88b150dc26cb942a6c03">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,12 +131,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00017">17</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00020">20</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="ac5eddbd320a5518b385addc36c675885"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5eddbd320a5518b385addc36c675885">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5eddbd320a5518b385addc36c675885">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,12 +151,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00024">24</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00027">27</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="aaabe5ee7e084736b4a38b57a4347e09e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaabe5ee7e084736b4a38b57a4347e09e">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaabe5ee7e084736b4a38b57a4347e09e">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,12 +171,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00031">31</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00034">34</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="ae90fd8c0effab6801d30e8f3c4b49c84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae90fd8c0effab6801d30e8f3c4b49c84">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae90fd8c0effab6801d30e8f3c4b49c84">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,12 +191,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00037">37</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00040">40</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="a37f8c93af353038f37aa366b7416b956"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37f8c93af353038f37aa366b7416b956">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/16]</span></h2>
+<a id="a95da72f1a6dd555478c98b9d40412c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95da72f1a6dd555478c98b9d40412c1b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,19 +204,19 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">BOOST_AUTO_TEST_CASE </td>
           <td>(</td>
-          <td class="paramtype">singlepop_1&#160;</td>
+          <td class="paramtype">slocuspop_1&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00046">46</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00049">49</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="a74c4c555bf1c9f633268784f6bff049b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74c4c555bf1c9f633268784f6bff049b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c4c555bf1c9f633268784f6bff049b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,12 +231,32 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00230">230</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00233">233</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="aeffa2777a0a34dd7bd40a2059a1b8e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeffa2777a0a34dd7bd40a2059a1b8e12">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_AUTO_TEST_CASE </td>
+          <td>(</td>
+          <td class="paramtype">multilocus_test_sampling&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00244">244</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <a id="a929a7739ce4cd65c28844d93967bc289"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a929a7739ce4cd65c28844d93967bc289">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[7/16]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a929a7739ce4cd65c28844d93967bc289">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -260,192 +271,12 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00241">241</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00266">266</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
-<a id="a4a1fccb8a867ee510d05c2ab018147b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a1fccb8a867ee510d05c2ab018147b7">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[8/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_sep_deme_out_of_range_1&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00255">255</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="ad07983590ec8bcfc5ad89aeb5adbc42b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad07983590ec8bcfc5ad89aeb5adbc42b">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[9/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_sep_deme_out_of_range_2&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00262">262</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="aad7abdb6270b927bd5c94c88d21a11d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aad7abdb6270b927bd5c94c88d21a11d2">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[10/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_sep_throw&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00270">270</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="acaad86f4f30c905a108b4d0e20a6afcc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acaad86f4f30c905a108b4d0e20a6afcc">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[11/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_sep_empty&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00278">278</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="ae17337163be7d576bc31a0475d8074c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae17337163be7d576bc31a0475d8074c5">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[12/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_sep_deme_and_ind_out_of_range&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00285">285</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a8cfc4cd3b69b4becbfc34ea80a7e6f12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8cfc4cd3b69b4becbfc34ea80a7e6f12">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[13/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_deme_out_of_range&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00292">292</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a5af49a07647a3fc29c305cbb02328c2f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af49a07647a3fc29c305cbb02328c2f">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[14/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_empty&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00298">298</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a12ddfba3abc0756aa6c2222bc161515a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12ddfba3abc0756aa6c2222bc161515a">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[15/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_test_ind_out_of_range&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00304">304</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="ae496b36a75991c31935755d6924a06d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae496b36a75991c31935755d6924a06d0">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[16/16]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">metapop_1&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00312">312</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a7ded1d555a21215dd058707d03ee815a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ded1d555a21215dd058707d03ee815a">&#9670;&nbsp;</a></span>BOOST_FIXTURE_TEST_SUITE() <span class="overload">[1/2]</span></h2>
+<a id="ae144faf7d43a273d2cd0626781b36b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae144faf7d43a273d2cd0626781b36b58">&#9670;&nbsp;</a></span>BOOST_FIXTURE_TEST_SUITE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,13 +284,13 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">BOOST_FIXTURE_TEST_SUITE </td>
           <td>(</td>
-          <td class="paramtype">test_singlepop_custom_sampling&#160;</td>
+          <td class="paramtype">test_slocuspop_custom_sampling&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../da/d9a/structsinglepop__popgenmut__custom__fixture.html">singlepop_popgenmut_custom_fixture</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d3/d2f/structslocuspop__popgenmut__custom__fixture.html">slocuspop_popgenmut_custom_fixture</a>&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -470,49 +301,19 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00121">121</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a690b5af7accd8de140781e400f3a7cb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a690b5af7accd8de140781e400f3a7cb4">&#9670;&nbsp;</a></span>BOOST_FIXTURE_TEST_SUITE() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_FIXTURE_TEST_SUITE </td>
-          <td>(</td>
-          <td class="paramtype">test_metapop_custom_sampling&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d85/structmetapop__popgenmut__custom__fixture.html">metapop_popgenmut_custom_fixture</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00328">328</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html#l00124">124</a> of file <a class="el" href="../../dd/de3/sugar__samplingTest_8cc_source.html">sugar_samplingTest.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a886705dc02755fd5f188a640b37b6c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a886705dc02755fd5f188a640b37b6c8a">&#9670;&nbsp;</a></span>rng</h2>
+<a id="a2c6d213b9da1e671027325d8e9052c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c6d213b9da1e671027325d8e9052c47">&#9670;&nbsp;</a></span>rng</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../de/d55/classKTfwd_1_1GSLrng__t.html">KTfwd::GSLrng_t</a>&lt;<a class="el" href="../../da/d8b/namespaceKTfwd.html#a7e039b543c1f3b48db094631e2971549">KTfwd::GSL_RNG_TAUS2</a>&gt; rng(0u)</td>
+          <td class="memname"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">fwdpp::GSLrng_t</a>&lt;<a class="el" href="../../dd/d84/namespacefwdpp.html#a7138e56644dd2fbd4dc3f3e4713d0130">fwdpp::GSL_RNG_TAUS2</a>&gt; rng(0u)</td>
         </tr>
       </table>
 </div><div class="memdoc">

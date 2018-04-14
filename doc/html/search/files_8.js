@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['index_2emd',['index.md',['../df/dcf/index_8md.html',1,'']]],
-  ['infsites_2ehpp',['infsites.hpp',['../dc/d32/infsites_8hpp.html',1,'']]],
-  ['insertion_5fpolicies_2ehpp',['insertion_policies.hpp',['../d0/d13/insertion__policies_8hpp.html',1,'']]],
-  ['interlocus_5frecombination_2ehpp',['interlocus_recombination.hpp',['../df/db2/interlocus__recombination_8hpp.html',1,'']]],
-  ['io_2ehpp',['IO.hpp',['../df/d9f/IO_8hpp.html',1,'']]],
-  ['io_2etcc',['IO.tcc',['../d3/ddb/IO_8tcc.html',1,'']]],
-  ['iohelp_2ehpp',['IOhelp.hpp',['../d6/d27/IOhelp_8hpp.html',1,'']]]
+  ['k_5flinked_5fregions_5fextensions_2ecc',['K_linked_regions_extensions.cc',['../dc/dbd/K__linked__regions__extensions_8cc.html',1,'']]],
+  ['k_5flinked_5fregions_5fgeneralized_5frec_2ecc',['K_linked_regions_generalized_rec.cc',['../d3/db2/K__linked__regions__generalized__rec_8cc.html',1,'']]],
+  ['k_5flinked_5fregions_5fmultilocus_2ecc',['K_linked_regions_multilocus.cc',['../d6/d42/K__linked__regions__multilocus_8cc.html',1,'']]]
 ];

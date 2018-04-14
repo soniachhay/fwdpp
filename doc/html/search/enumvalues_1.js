@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['haplotype',['haplotype',['../d8/d0d/namespaceKTfwd_1_1data__matrix__details.html#ae63d3fe8c93c40afaa56584312538731a7e729578d9dbac58ef94d2d877088995',1,'KTfwd::data_matrix_details']]]
+  ['genotype',['genotype',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a88b4c3183ffd63f0648140abbbbded2eafdf93f985c4b8247c31014163005c4fe',1,'fwdpp::data_matrix_details']]]
 ];

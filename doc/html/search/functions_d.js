@@ -1,19 +1,17 @@
 var searchData=
 [
-  ['read_5fbinary_5fmetapop',['read_binary_metapop',['../da/d8b/namespaceKTfwd.html#ad1076a590e2ed2e9b7501423a4b87942',1,'KTfwd']]],
-  ['read_5fbinary_5fpop',['read_binary_pop',['../da/d8b/namespaceKTfwd.html#afa05ba9d97f7a5da001f6a0fdd5cc75c',1,'KTfwd']]],
-  ['read_5fbinary_5fpop_5fmloc',['read_binary_pop_mloc',['../da/d8b/namespaceKTfwd.html#a9b42ca41482e129f07fc25c944d35b37',1,'KTfwd']]],
-  ['rec_5fgam_5fupdater',['rec_gam_updater',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ab51a6b89ad892404a3b800e5e5094574',1,'KTfwd::fwdpp_internal']]],
-  ['rec_5fupdate_5fitr',['rec_update_itr',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a803f98881d73e7898f3337791597af66',1,'KTfwd::fwdpp_internal']]],
-  ['recombination',['recombination',['../da/d8b/namespaceKTfwd.html#a4359a1b7900bbc4ea6a71c2302e022b7',1,'KTfwd']]],
-  ['recombine_5fgametes',['recombine_gametes',['../da/d8b/namespaceKTfwd.html#a4053b66b65f76b9b3d54c1ccaa4e375d',1,'KTfwd::recombine_gametes()'],['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a091b1da0e94464fc2b1d600f898ed914',1,'KTfwd::fwdpp_internal::recombine_gametes()']]],
-  ['recycle_5fgamete',['recycle_gamete',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a6f2e7747d82681448efec3040fdffcb5',1,'KTfwd::fwdpp_internal']]],
-  ['recycle_5fmutation_5fhelper',['recycle_mutation_helper',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ae58b439d5e5c23eab350dcc9ab35a8e8',1,'KTfwd::fwdpp_internal']]],
-  ['remove_5fdeme',['remove_deme',['../dc/d14/group__demography.html#gab3c5a42603b8f59bd04efcdd5d32f347',1,'KTfwd']]],
-  ['remove_5ffixed_5fvariants_5ffrom_5fsample',['remove_fixed_variants_from_sample',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#ace2a60bf8fb1736cd5e6488b4225e0a8',1,'KTfwd::fwdpp_internal']]],
-  ['remove_5fno_5fderived',['remove_no_derived',['../de/dbd/namespaceKTfwd_1_1fwdpp__internal.html#a92825eeacf0f363fb9b49423dc4af024',1,'KTfwd::fwdpp_internal']]],
-  ['remove_5fpop',['remove_pop',['../da/d8b/namespaceKTfwd.html#a8f36b2f57bf6fd0284223ef0b9ecbff9',1,'KTfwd']]],
+  ['read_5fdiploids',['read_diploids',['../dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661',1,'fwdpp::io']]],
+  ['read_5fgametes',['read_gametes',['../dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e',1,'fwdpp::io']]],
+  ['read_5fmutations',['read_mutations',['../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c',1,'fwdpp::io']]],
+  ['rec_5fgam_5fupdater',['rec_gam_updater',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a652b0898d1de4da052bee36b7c70e4b3',1,'fwdpp::fwdpp_internal']]],
+  ['rec_5fupdate_5fitr',['rec_update_itr',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#aa8edec141323d869fef88d0d1a4730ee',1,'fwdpp::fwdpp_internal']]],
+  ['recbinder',['recbinder',['../dd/d84/namespacefwdpp.html#a4a660f56b5c6843e7732042757a650ee',1,'fwdpp']]],
+  ['recombine_5fgametes',['recombine_gametes',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a061d3081a365d6d2b4689193b5c18f39',1,'fwdpp::fwdpp_internal']]],
+  ['recycle_5fgamete',['recycle_gamete',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a966d2a159a694104bb9f6be399759c19',1,'fwdpp::fwdpp_internal']]],
+  ['recycle_5fmutation_5fhelper',['recycle_mutation_helper',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#af87d0d71c34aa25aee2fff7cc2ccae0a',1,'fwdpp::fwdpp_internal']]],
+  ['remove_5ffixed_5fvariants_5ffrom_5fsample',['remove_fixed_variants_from_sample',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a60d1739735ecda3ebf065220effaf772',1,'fwdpp::fwdpp_internal']]],
+  ['remove_5fno_5fderived',['remove_no_derived',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a602f19111b427456c91fdd574385ca67',1,'fwdpp::fwdpp_internal']]],
   ['resize',['resize',['../d5/daa/sugar__add__mutationTest_8cc.html#af58831344930bf5f80af1aab3f884499',1,'sugar_add_mutationTest.cc']]],
-  ['row_5fcol_5fsums_5fdetails',['row_col_sums_details',['../d8/d0d/namespaceKTfwd_1_1data__matrix__details.html#a0623ab4f6fd1e796db25de62c38d542e',1,'KTfwd::data_matrix_details']]],
-  ['row_5fsums',['row_sums',['../da/d8b/namespaceKTfwd.html#ac3525286fd6a54b84562e36bf2538873',1,'KTfwd']]]
+  ['row_5fcol_5fsums_5fdetails',['row_col_sums_details',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a07822e07c4e3a7d1ebc3ee78974e390f',1,'fwdpp::data_matrix_details']]],
+  ['row_5fsums',['row_sums',['../dd/d84/namespacefwdpp.html#a695173b205d784cddd350b2110000dfe',1,'fwdpp']]]
 ];

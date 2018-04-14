@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/kevin/src/fwdpp/examples/diploid_fixed_sh_ind.cc File Reference</title>
+<title>fwdpp: /Users/krthornt/src/fwdpp/examples/diploid_fixed_sh_ind.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.5.7</span>
+   &#160;<span id="projectnumber">0.6.0</span>
    </div>
   </td>
  </tr>
@@ -72,12 +72,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../dc/d51/recbinder_8hpp_source.html">fwdpp/recbinder.hpp</a>&gt;</code><br />
 <code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../dc/d32/infsites_8hpp_source.html">fwdpp/sugar/infsites.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d6/d96/popgenmut_8hpp_source.html">fwdpp/sugar/popgenmut.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
+<code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 </div>
 <p><a href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -88,8 +90,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab95d5809de5b32335213c961a4e895af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc.html#ab95d5809de5b32335213c961a4e895af">mtype</a> = <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td></tr>
-<tr class="separator:ab95d5809de5b32335213c961a4e895af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9831b8dacecc5a9e52ba36bd98cc3989"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc.html#a9831b8dacecc5a9e52ba36bd98cc3989">mtype</a> = <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a></td></tr>
+<tr class="separator:a9831b8dacecc5a9e52ba36bd98cc3989"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -109,24 +111,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00017">17</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00018">18</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ab95d5809de5b32335213c961a4e895af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab95d5809de5b32335213c961a4e895af">&#9670;&nbsp;</a></span>mtype</h2>
+<a id="a9831b8dacecc5a9e52ba36bd98cc3989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9831b8dacecc5a9e52ba36bd98cc3989">&#9670;&nbsp;</a></span>mtype</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a083a8b5227372e716d8614732edb6c0b">mtype</a> =  <a class="el" href="../../d1/d7f/structKTfwd_1_1mutation.html">KTfwd::mutation</a></td>
+          <td class="memname">using <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> =  <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00019">19</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00020">20</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>
@@ -156,8 +158,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00025">25</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a2">diploid_fixed_sh_ind.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00026">26</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>
