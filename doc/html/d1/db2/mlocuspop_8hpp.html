@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/krthornt/src/fwdpp/fwdpp/sugar/mlocuspop.hpp File Reference</title>
+<title>fwdpp: /home/molpopgen/src/fwdpp/fwdpp/sugar/mlocuspop.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
   </td>
  </tr>
@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d1/d15/poptypes_2mlocuspop_8hpp_source.html">fwdpp/sugar/poptypes/mlocuspop.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br />
 </div>
@@ -85,10 +85,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga247c5ddad51327ecec480d39fc9579b9"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;std::size_t, std::size_t&gt;&gt; </td></tr>
-<tr class="memitem:ga247c5ddad51327ecec480d39fc9579b9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9">fwdpp::mlocuspop</a> = sugar::mlocuspop&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>, std::vector&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> &gt;, std::vector&lt; gamete &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &gt; &gt;, std::vector&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../d1/df9/structfwdpp_1_1equal__eps.html">fwdpp::equal_eps</a> &gt; &gt;</td></tr>
-<tr class="memdesc:ga247c5ddad51327ecec480d39fc9579b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multilocus simulation. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9">More...</a><br /></td></tr>
-<tr class="separator:ga247c5ddad51327ecec480d39fc9579b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga613a2cd895af63bec9884a5bfeb6190b"><td class="memTemplParams" colspan="2">template&lt;typename mtype , typename diploid_t  = std::pair&lt;std::size_t, std::size_t&gt;&gt; </td></tr>
+<tr class="memitem:ga613a2cd895af63bec9884a5bfeb6190b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga613a2cd895af63bec9884a5bfeb6190b">fwdpp::mlocuspop</a> = sugar::mlocuspop&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>, std::vector&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> &gt;, std::vector&lt; gamete &gt;, std::vector&lt; std::vector&lt; <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> &gt; &gt;, std::vector&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> &gt;, std::vector&lt; uint_t &gt;, std::unordered_multimap&lt; double, uint_t &gt; &gt;</td></tr>
+<tr class="memdesc:ga613a2cd895af63bec9884a5bfeb6190b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multilocus simulation. See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for rationale, etc.  <a href="../../de/d6e/group__sugar.html#ga613a2cd895af63bec9884a5bfeb6190b">More...</a><br /></td></tr>
+<tr class="separator:ga613a2cd895af63bec9884a5bfeb6190b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

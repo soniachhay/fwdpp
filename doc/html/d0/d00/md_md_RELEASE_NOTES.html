@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.6.1</h2>
+<p>Maintenance release fixing the following two bugs:</p>
+<ul>
+<li>A bug that resulted in the failure to transmit a mutation if it was on parental gamete 2 AND its position equalled the left edge of a recombinant interval has been fixed. The bug was <a href="https://github.com/molpopgen/fwdpp/issues/134">issue 134</a> and it was fixed via <a href="https://github.com/molpopgen/fwdpp/pull/135">PR 135</a>.</li>
+<li>A <a href="https://github.com/molpopgen/fwdpp/issues/130">bug</a> in <code><a class="el" href="../../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06">fwdpp::update_mutations</a></code> was fixed via <a href="https://github.com/molpopgen/fwdpp/pull/132">PR 132</a>.</li>
+</ul>
+<p>The following features were added:</p>
+<ul>
+<li><a class="el" href="../../dd/d84/namespacefwdpp.html#afa738cb18b48fc1f5a2589d202aac3d2" title="Sort mutation positions in population. ">fwdpp::compact_mutations</a> was added, which reorganizes data structures for better memory access, thus improving performance. When used appropriately, significant run time improvements are possible.</li>
+</ul>
+<p>The following API issues were addressed:</p>
+<ul>
+<li>The initialization of gamete counts in fwdpp::popbase is now independent of ploidy. <a href="https://github.com/molpopgen/fwdpp/pull/136">PR 136</a>.</li>
+</ul>
 <h2>0.6.0</h2>
 <p>This is a major release, breaking API compatibility in many areas. These changes were necessary to make the library even more flexible, but also to undo several poor design choices that we've been living with for far too long. This release can be seen as a big push towards a 1.0 release.</p>
 <p>The result of these changes is a much smaller library that is safer and can do more.</p>
@@ -91,8 +105,8 @@ $(function() {
 <li>The struct KTfwd::infsites was removed. For the mutation type <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>, <a class="el" href="../../dd/d84/namespacefwdpp.html#a1c6084401e5c608a70d7ad543837b4b0">fwdpp::infsites_popgenmut</a> was added as a mutation function. <a href="https://github.com/molpopgen/fwdpp/pull/120">PR120</a></li>
 <li>The storage of a gsl_rng pointer in <a class="el" href="../../d5/d24/structfwdpp_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">fwdpp::poisson_xover</a> and fwdpp::general_rec_variation was refactored out. <a href="https://github.com/molpopgen/fwdpp/pull/118">PR118</a></li>
 <li>The types fwdpp::extensions::discrete_rec_model and fwdpp::extensions::discrete_mut_model were refactored to be much more general, and independent of a particular mutation type. <a href="https://github.com/molpopgen/fwdpp/pull/116">PR116</a> and <a href="https://github.com/molpopgen/fwdpp/pull/113">PR113</a></li>
-<li>Metapopulation objects were removed, and single-/multi- locus population types are renamed <a class="el" href="../../dd/d84/namespacefwdpp.html#a44077aa49776409a9b539b4ccde64b68">fwdpp::slocuspop</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a>, respectively. Code for demographic operations was also removed, as it is not needed. <a href="https://github.com/molpopgen/fwdpp/pull/110">PR110</a></li>
-<li>The class fwdpp::popbase is no longer dependent on a particular ploidy. The diploid-ness was pushed into <a class="el" href="../../dd/d84/namespacefwdpp.html#a44077aa49776409a9b539b4ccde64b68">fwdpp::slocuspop</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga247c5ddad51327ecec480d39fc9579b9" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a> (as well as the more complex template classes <a class="el" href="../../d2/d4e/classfwdpp_1_1sugar_1_1slocuspop.html" title="Abstraction of what is needed to simulate a single-locus population. ">fwdpp::sugar::slocuspop</a> and <a class="el" href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f...">fwdpp::sugar::mlocuspop</a>). <a href="https://github.com/molpopgen/fwdpp/pull/114">PR114</a></li>
+<li>Metapopulation objects were removed, and single-/multi- locus population types are renamed <a class="el" href="../../dd/d84/namespacefwdpp.html#a6ede292482b3dfbfc309e92cce949c65">fwdpp::slocuspop</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga613a2cd895af63bec9884a5bfeb6190b" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a>, respectively. Code for demographic operations was also removed, as it is not needed. <a href="https://github.com/molpopgen/fwdpp/pull/110">PR110</a></li>
+<li>The class fwdpp::popbase is no longer dependent on a particular ploidy. The diploid-ness was pushed into <a class="el" href="../../dd/d84/namespacefwdpp.html#a6ede292482b3dfbfc309e92cce949c65">fwdpp::slocuspop</a> and <a class="el" href="../../de/d6e/group__sugar.html#ga613a2cd895af63bec9884a5bfeb6190b" title="Multilocus simulation. See Tutorial 5: the &quot;sugar&quot; layer on top of fwdpp for rationale, etc. ">fwdpp::mlocuspop</a> (as well as the more complex template classes <a class="el" href="../../d2/d4e/classfwdpp_1_1sugar_1_1slocuspop.html" title="Abstraction of what is needed to simulate a single-locus population. ">fwdpp::sugar::slocuspop</a> and <a class="el" href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f...">fwdpp::sugar::mlocuspop</a>). <a href="https://github.com/molpopgen/fwdpp/pull/114">PR114</a></li>
 <li>Namespace KTfwd::experimental was removed. <a href="https://github.com/molpopgen/fwdpp/pull/86">PR86</a></li>
 <li>Diploid-dependent mutation models are now supported. <a href="https://github.com/molpopgen/fwdpp/pull/84">PR84</a></li>
 <li>Removed API features deprecated in 0.5.7. <a href="https://github.com/molpopgen/fwdpp/pull/83">PR83</a></li>

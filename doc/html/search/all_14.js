@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['the_20fwdpp_20home_20page',['The fwdpp home page',['../df/de4/md__Users_krthornt_src_fwdpp_index.html',1,'']]],
+  ['the_20fwdpp_20home_20page',['The fwdpp home page',['../dd/dee/md__home_molpopgen_src_fwdpp_index.html',1,'']]],
   ['tutorial_200_3a_20data_20types_20in_20fwdpp',['Tutorial 0: Data types in fwdpp',['../d5/d00/md_md_datatypes.html',1,'']]],
   ['tutorial_204_3a_20starting_20projects_20based_20on_20fwdpp',['Tutorial 4: Starting projects based on fwdpp',['../d9/d5d/md_md_devtools.html',1,'']]],
   ['tutorial_3a_20obtain_20a_20sample_20from_20a_20population_20as_20a_20matrix_20type_2e',['Tutorial: obtain a sample from a population as a matrix type.',['../d0/de2/md_md_matrix.html',1,'']]],
@@ -11,6 +11,7 @@ var searchData=
   ['tags_2ehpp',['tags.hpp',['../db/d97/tags_2tags_8hpp.html',1,'(Global Namespace)'],['../d5/dd6/sugar_2gsl_2tags_8hpp.html',1,'(Global Namespace)'],['../d0/dd4/sugar_2poptypes_2tags_8hpp.html',1,'(Global Namespace)']]],
   ['taus2',['TAUS2',['../de/d6e/group__sugar.html#gga262e136268bfcfb76f8b615708848d13a1c61b3e6e6203fecfb58277795ad23e0',1,'fwdpp::sugar']]],
   ['test_5fgeneral_5frec_5fvariation_2ecc',['test_general_rec_variation.cc',['../df/da0/test__general__rec__variation_8cc.html',1,'']]],
+  ['test_5fmutate_5frecombine_2ecc',['test_mutate_recombine.cc',['../d9/d73/test__mutate__recombine_8cc.html',1,'']]],
   ['todo_2emd',['todo.md',['../d9/df4/todo_8md.html',1,'']]],
   ['trim_5flast',['trim_last',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a50a30cec479e9eee930d0cd31c33a8d3',1,'fwdpp::fwdpp_internal']]],
   ['trivial_5fcustom_5fdiploid_5finvalid',['trivial_custom_diploid_invalid',['../df/dfe/structtrivial__custom__diploid__invalid.html',1,'']]],

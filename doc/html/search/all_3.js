@@ -13,6 +13,8 @@ var searchData=
   ['col_5fsums',['col_sums',['../dd/d84/namespacefwdpp.html#a5baf96ec9e341367fedd2cc01e1fae80',1,'fwdpp']]],
   ['collect_5fgametes',['collect_gametes',['../dd/d09/namespacefwdpp_1_1sugar.html#abd21a5dfa86b42c020845b4e73f9a77b',1,'fwdpp::sugar::collect_gametes(poptype &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)'],['../dd/d09/namespacefwdpp_1_1sugar.html#adb78d6cf0b5d8fa5e319350c5cf4b786',1,'fwdpp::sugar::collect_gametes(poptype &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)']]],
   ['common_5find_2ehpp',['common_ind.hpp',['../df/d10/common__ind_8hpp.html',1,'']]],
+  ['compact_5fmutations',['compact_mutations',['../dd/d84/namespacefwdpp.html#afa738cb18b48fc1f5a2589d202aac3d2',1,'fwdpp']]],
+  ['compact_5fmutations_2ehpp',['compact_mutations.hpp',['../d8/d2e/compact__mutations_8hpp.html',1,'']]],
   ['constant',['constant',['../d8/d80/structfwdpp_1_1extensions_1_1constant.html',1,'fwdpp::extensions::constant'],['../d8/d80/structfwdpp_1_1extensions_1_1constant.html#aa7c3c7ed36997ebb93cb2726f3bf32d0',1,'fwdpp::extensions::constant::constant()']]],
   ['constructor_5ftuple',['constructor_tuple',['../d5/dd3/structfwdpp_1_1gamete__base.html#a6b26ffde2064bcd4eb969ed531887513',1,'fwdpp::gamete_base::constructor_tuple()'],['../d9/df7/structfwdpp_1_1popgenmut.html#a9d49774e6a4386e48770a5bc134b3f18',1,'fwdpp::popgenmut::constructor_tuple()']]],
   ['c_2b_2b14_20features',['C++14 features',['../da/d77/group__Cpp14.html',1,'']]],

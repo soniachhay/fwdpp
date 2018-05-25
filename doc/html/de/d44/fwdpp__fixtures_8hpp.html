@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /Users/krthornt/src/fwdpp/testsuite/fixtures/fwdpp_fixtures.hpp File Reference</title>
+<title>fwdpp: /home/molpopgen/src/fwdpp/testsuite/fixtures/fwdpp_fixtures.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.0</span>
+   &#160;<span id="projectnumber">0.6.1</span>
    </div>
   </td>
  </tr>
@@ -75,7 +75,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
-<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
@@ -99,8 +99,8 @@ Typedefs</h2></td></tr>
 <tr class="separator:a0697ce8b91c4a0d949cef09d927d34b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bed25155904fc07d1d8d01173d69f7e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> = std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;</td></tr>
 <tr class="separator:a5bed25155904fc07d1d8d01173d69f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a484a27535cab006d16f245d7acf43a7a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a484a27535cab006d16f245d7acf43a7a">lookup_table_t</a> = std::unordered_set&lt; double, std::hash&lt; double &gt;, <a class="el" href="../../d1/df9/structfwdpp_1_1equal__eps.html">fwdpp::equal_eps</a> &gt;</td></tr>
-<tr class="separator:a484a27535cab006d16f245d7acf43a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b7bf5e6499f51048db25804246cafb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#ac3b7bf5e6499f51048db25804246cafb">lookup_table_t</a> = std::unordered_multimap&lt; double, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt;</td></tr>
+<tr class="separator:ac3b7bf5e6499f51048db25804246cafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0489fb61d024445a5f15b6bdb67bd540"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0489fb61d024445a5f15b6bdb67bd540">mcounts_t</a> = std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt;</td></tr>
 <tr class="separator:a0489fb61d024445a5f15b6bdb67bd540"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -142,14 +142,14 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="a484a27535cab006d16f245d7acf43a7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a484a27535cab006d16f245d7acf43a7a">&#9670;&nbsp;</a></span>lookup_table_t</h2>
+<a id="ac3b7bf5e6499f51048db25804246cafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b7bf5e6499f51048db25804246cafb">&#9670;&nbsp;</a></span>lookup_table_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a484a27535cab006d16f245d7acf43a7a">lookup_table_t</a> =  std::unordered_set&lt;double, std::hash&lt;double&gt;, <a class="el" href="../../d1/df9/structfwdpp_1_1equal__eps.html">fwdpp::equal_eps</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#ac3b7bf5e6499f51048db25804246cafb">lookup_table_t</a> =  std::unordered_multimap&lt;double, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">

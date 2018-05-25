@@ -6,5 +6,5 @@ var searchData=
   ['sep_5fsample_5ft',['sep_sample_t',['../dd/d84/namespacefwdpp.html#a85484d007b17eb59130a8dbe70d28c3d',1,'fwdpp']]],
   ['singleloc_5ftag',['SINGLELOC_TAG',['../de/d6e/group__sugar.html#gabb99e8bce874037b936e91130ad11fb3',1,'fwdpp::sugar']]],
   ['site_5fdependent_5ffitness',['site_dependent_fitness',['../dd/d84/namespacefwdpp.html#a27b8fc82ff91aa14979b505dac2a68d8',1,'fwdpp']]],
-  ['slocuspop',['slocuspop',['../dd/d84/namespacefwdpp.html#a44077aa49776409a9b539b4ccde64b68',1,'fwdpp']]]
+  ['slocuspop',['slocuspop',['../dd/d84/namespacefwdpp.html#a6ede292482b3dfbfc309e92cce949c65',1,'fwdpp']]]
 ];
