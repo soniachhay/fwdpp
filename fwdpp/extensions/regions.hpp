@@ -3,7 +3,6 @@
 #define __FWDPP_EXTENSIONS_REGIONS_HPP__
 
 #include <limits>
-#include <cassert>
 #include <stdexcept>
 #include <algorithm>
 #include <memory>
@@ -104,6 +103,13 @@ namespace fwdpp
                 auto region = gsl_ran_discrete(r, lookup.get());
                 return functions.at(region)(
                     std::forward<function_type_args>(args)...);
+            }
+
+            const std::vector<double> &
+            get_weights() const
+            /// Returns const reference to the weights.
+            {
+                return weights;
             }
         };
 
@@ -243,7 +249,20 @@ namespace fwdpp
                 rv.push_back(std::numeric_limits<double>::max());
                 return rv;
             }
+            const std::vector<double> &
+            get_weights() const
+            /// Returns const reference to the weights.
+            {
+                return weights;
+            }
+
+            double
+            get_recrate() const
+            /// Returns the recombination rate.
+            {
+                return recrate;
+            }
         };
-    }
-}
+    } // namespace extensions
+} // namespace fwdpp
 #endif

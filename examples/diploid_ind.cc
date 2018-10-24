@@ -13,7 +13,7 @@
 #include <type_traits>
 #include <vector>
 #ifdef HAVE_LIBSEQUENCE
-#include <Sequence/SimData.hpp>
+
 #endif
 #include <fwdpp/diploid.hh>
 #include <fwdpp/recbinder.hpp>
@@ -23,7 +23,6 @@
 using mtype = fwdpp::popgenmut;
 #define SINGLEPOP_SIM
 #include <common_ind.hpp>
-
 
 int
 main(int argc, char **argv)
@@ -139,9 +138,11 @@ main(int argc, char **argv)
                                             pop.mcounts, generation, twoN);
                     if (generation && generation % 100 == 0.0)
                         {
-							fwdpp::compact_mutations(pop);
+                            fwdpp::compact_mutations(pop);
                         }
-                    assert(fwdpp::check_sum(pop.gametes, twoN));
+                    fwdpp::debug::validate_pop_data(pop);
+                    fwdpp::debug::validate_sum_gamete_counts(pop.gametes,
+                                                             twoN);
                     //for(std::size_t i=0;i<pop.mcounts.size();++i)
                     //{
                     //	if(pop.mcounts[i])
@@ -155,23 +156,24 @@ main(int argc, char **argv)
                 }
 
             // Take a sample of size samplesize1 from the population
-            std::vector<std::pair<double, std::string>> mslike
-                = fwdpp::ms_sample(r.get(), pop.mutations, pop.gametes,
-                                   pop.diploids, samplesize1, true);
-
+            std::vector<std::size_t> random_dips;
+            for (unsigned i = 0; i < samplesize1; ++i)
+                {
+                    auto x = static_cast<std::size_t>(
+                        gsl_ran_flat(r.get(), 0, N));
+                    while (std::find(random_dips.begin(), random_dips.end(), x)
+                           != random_dips.end())
+                        {
+                            x = static_cast<std::size_t>(
+                                gsl_ran_flat(r.get(), 0, N));
+                        }
+                }
+            auto dm = fwdpp::sample_individuals(pop, random_dips, true, false,
+                                                true);
 // Write the sample date a to libsequence's Sequence::SimData and
 // print to screen
 #ifdef HAVE_LIBSEQUENCE
-            Sequence::SimData sdata;
-            if (!mslike.empty())
-                {
-                    sdata.assign(mslike.begin(), mslike.end());
-                    std::cout << sdata << '\n';
-                }
-            else
-                {
-                    std::cout << "//\nsegsites: 0\n";
-                }
+
 #endif
         }
     return 0;

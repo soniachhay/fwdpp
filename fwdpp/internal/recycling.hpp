@@ -1,9 +1,8 @@
 #ifndef FWDPP_INTERNAL_RECYCLING
 #define FWDPP_INTERNAL_RECYCLING
 
-#include <cassert>
 #include <queue>
-#include <cassert>
+#include <stdexcept>
 #include <type_traits>
 
 namespace fwdpp
@@ -11,11 +10,17 @@ namespace fwdpp
     namespace fwdpp_internal
     {
 
-		template <class T> using recycling_bin_t = typename std::conditional<std::is_unsigned<T>::value,std::queue<T>,void>::type;
+        template <class T>
+        using recycling_bin_t =
+            typename std::conditional<std::is_unsigned<T>::value,
+                                      std::queue<T>, void>::type;
 
         template <typename mcount_vec>
         recycling_bin_t<typename mcount_vec::size_type>
         make_mut_queue(const mcount_vec &mcounts)
+		/// \brief Make a FIFO recycling queue for mutations
+		///
+		/// \note Simulations with tree sequences should use fwdpp::ts::make_mut_queue
         {
             recycling_bin_t<typename mcount_vec::size_type> rv;
             const auto msize = mcounts.size();
@@ -53,7 +58,14 @@ namespace fwdpp
                 {
                     auto idx = gamete_recycling_bin.front();
                     gamete_recycling_bin.pop();
-                    assert(!gametes[idx].n);
+#ifndef NDEBUG
+                    if (gametes[idx].n)
+                        {
+                            throw std::runtime_error(
+                                "FWDPP DEBUG: attempting to recycle an extant "
+                                "gamete");
+                        }
+#endif
                     gametes[idx].mutations.swap(neutral);
                     gametes[idx].smutations.swap(selected);
                     return idx;
@@ -84,13 +96,14 @@ namespace fwdpp
                 {
                     auto rv = mutation_recycling_bin.front();
                     mutation_recycling_bin.pop();
-                    mutations[rv] = typename mcont_t::value_type(std::forward<Args>(args)...);
+                    mutations[rv] = typename mcont_t::value_type(
+                        std::forward<Args>(args)...);
                     return rv;
                 }
             mutations.emplace_back(std::forward<Args>(args)...);
             return mutations.size() - 1;
         }
-    }
-}
+    } // namespace fwdpp_internal
+} // namespace fwdpp
 
 #endif

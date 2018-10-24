@@ -4,8 +4,8 @@
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
 #include <fwdpp/type_traits.hpp>
+#include <cmath>
 #include <stdexcept>
-#include <cassert>
 #include <type_traits>
 #include <algorithm>
 #include <functional>
@@ -186,22 +186,19 @@ namespace fwdpp
                 }
             for (; first1 != last1; ++first1)
                 {
-                    for (;
-                         first2 != last2 && *first1 != *first2
-                         && !(mutations[*first2].pos > mutations[*first1].pos);
+                    for (; first2 != last2 && *first1 != *first2
+                           && mutations[*first2].pos < mutations[*first1].pos;
                          ++first2)
                         // All mutations in this range are Aa
                         {
-                            assert(mutations[*first2].pos
-                                   < mutations[*first1].pos);
                             fpol_het(w, mutations[*first2]);
                         }
-                    if (first2 < last2 && *first1 == *first2) // mutation with
-                        // index first1
-                        // is homozygous
+                    if (first2 < last2
+                        && (*first1 == *first2
+                            || mutations[*first1].pos
+                                   == mutations[*first2].pos))
+                        // mutation with index first1 is homozygous
                         {
-                            assert(mutations[*first2].pos
-                                   == mutations[*first1].pos);
                             fpol_hom(w, mutations[*first1]);
                             ++first2; // increment so that we don't re-process
                             // this site as a het next time 'round
@@ -422,6 +419,11 @@ namespace fwdpp
         /// gss_multiplicative_trait in siteDepFitnessTest.cc, which is
         /// part of fwdpp's testing suite.
         {
+            if (!std::isfinite(scaling))
+                {
+                    throw std::invalid_argument(
+                        "scaling parameter must be finite");
+                }
         }
 
         template <typename iterator_t, typename mcont_t>
@@ -535,6 +537,11 @@ namespace fwdpp
         /// fwdpp::additive_diploid::policy::aw for details (which involving
         /// adding 1.0).
         {
+            if (!std::isfinite(scaling))
+                {
+                    throw std::invalid_argument(
+                        "scaling parameter must be finite");
+                }
         }
 
         template <typename iterator_t, typename mcont_t>
@@ -588,5 +595,5 @@ namespace fwdpp
                                     mutations);
         }
     };
-}
+} // namespace fwdpp
 #endif /* _FITNESS_MODELS_HPP_ */

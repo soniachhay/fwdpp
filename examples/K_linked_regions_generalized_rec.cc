@@ -7,14 +7,12 @@
 #include <fwdpp/diploid.hh>
 #include <fwdpp/recbinder.hpp>
 #ifdef HAVE_LIBSEQUENCE
-#include <Sequence/SimData.hpp>
 #endif
 #include <vector>
 #include <list>
 #include <sstream>
 // Use mutation model from sugar layer
 #include <fwdpp/sugar/popgenmut.hpp>
-#include <fwdpp/sugar/sampling.hpp>
 using mtype = fwdpp::popgenmut;
 #define SINGLEPOP_SIM
 #include <common_ind.hpp>
@@ -84,11 +82,11 @@ main(int argc, char **argv)
     auto recmap = fwdpp::recbinder(recvar, r.get());
 
     const auto mmodel
-        = [&pop, &r, &generation](std::queue<std::size_t> &recbin,
-                                  singlepop_t::mcont_t &mutations) {
+        = [&pop, &r, &generation, K](std::queue<std::size_t> &recbin,
+                                     singlepop_t::mcont_t &mutations) {
               return fwdpp::infsites_popgenmut(
                   recbin, mutations, r.get(), pop.mut_lookup, generation, 0.0,
-                  [&r]() { return gsl_rng_uniform(r.get()); },
+                  [&r, K]() { return gsl_ran_flat(r.get(), 0, K); },
                   []() { return 0.0; }, []() { return 0.0; });
           };
 
@@ -99,15 +97,12 @@ main(int argc, char **argv)
                                   pop.mutations, pop.mcounts, N, mu, mmodel,
                                   recmap, fwdpp::multiplicative_diploid(),
                                   pop.neutral, pop.selected);
-            assert(check_sum(pop.gametes, K * twoN));
             fwdpp::update_mutations(pop.mutations, pop.fixations,
                                     pop.fixation_times, pop.mut_lookup,
                                     pop.mcounts, generation, 2 * N);
+            fwdpp::debug::validate_sum_gamete_counts(pop.gametes,2*N);
+            fwdpp::debug::validate_pop_data(pop);
         }
-    auto x = fwdpp::ms_sample(r.get(), pop.mutations, pop.gametes,
-                              pop.diploids, 10, true);
 #ifdef HAVE_LIBSEQUENCE
-    Sequence::SimData a(x.begin(), x.end());
-    std::cout << a << '\n';
 #endif
 }

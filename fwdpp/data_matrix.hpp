@@ -1,7 +1,6 @@
-#ifndef FWDPP_MATRIX_HPP_
-#define FWDPP_MATRIX_HPP_
+#ifndef FWDPP_DATA_MATRIX_HPP_
+#define FWDPP_DATA_MATRIX_HPP_
 
-#include <cassert>
 #include <numeric>
 #include <utility>
 #include <vector>
@@ -18,18 +17,16 @@
 
 namespace fwdpp
 {
-    struct data_matrix
-    /*!
-     * \brief Genotype or haplotype matrix.
-     *
+    struct state_matrix
+    /*! \brief Simplistic matrix representation of mutations
      * This type uses std::vector<std::int8_t> to hold a matrix
      * representing the genotypes for a set of diploids.
      *
      * For a haplotype matrix of n individuals, the data represent
-     * 2n rows with a 0/1 encoding representing ancestral/derived.
+     * 2n columns with a 0/1 encoding representing ancestral/derived.
      *
      * For a genotype matrix of n individuals, the data represent
-     * n rows with a 0/1/2 encoding for the number of copies of the
+     * n columns with a 0/1/2 encoding for the number of copies of the
      * derived mutation.
      *
      * The data layout is row-major (aka "C-style") ordering,
@@ -45,50 +42,69 @@ namespace fwdpp
      *
      * \note This type is not constructed directly, but rather returned
      * by other functions.
+     *
+     * \ingroup samplingPops
      */
     {
-        //! Data for neutral mutations.
-        std::vector<std::int8_t> neutral;
-        //! Data for selected mutations.
-        std::vector<std::int8_t> selected;
-        //! Positions of neutral mutations.  Same order as matrix column order
-        std::vector<double> neutral_positions;
-        //! Positions of selected mutations.  Same order as matrix column order
-        std::vector<double> selected_positions;
-        //! Frequencies of neutral mutations in entire population.  Same order
-        //! as matrix column order
-        std::vector<double> neutral_popfreq;
-        //! Frequencies of selected mutations in entire population.  Same order
-        //! as matrix column order
-        std::vector<double> selected_popfreq;
-        //! Number of rows in the matrix
-        std::size_t nrow;
-        data_matrix(const std::size_t nrow_ = 0)
-            /*!
-             * Constructor
-             *
-             * \param nrow_ Number of rows in the matrix
-             *
-             * The default value of nrow_ = 0 is so that instances of this
-             * type can be easily stack-allocated.  Intended use cases are
-             * Cython,
-             * Rcpp, or other systems for "wrapping" C++.  This type will
-             * rely on compiler-generated copy/move constructors, and therefore
-             * such
-             * systems should rely on copy elision to make sure that
-             * data_matrix::nrow
-             * is set correctly.
-             */
-            : neutral{}, selected{}, neutral_positions{}, selected_positions{},
-              neutral_popfreq{}, selected_popfreq{}, nrow{ nrow_ }
+        //! The state data
+        std::vector<std::int8_t> data;
+        //! Positions of variable sites
+        std::vector<double> positions;
+        //! Construct an empty object
+        state_matrix() : data(), positions() {}
+        //! Perfect-forwarding constructor
+        template <typename T, typename P>
+        state_matrix(T &&t, P &&p)
+            : data(std::forward<T>(t)), positions(std::forward<P>(p))
         {
         }
     };
-}
+
+    struct data_matrix
+    /*!
+     * \brief Genotype or haplotype matrix.
+     *
+     * Data for neutral and selected variants,
+     * respectively are stored as state_matrix objects.
+     *
+     * \ingroup samplingPops
+     */
+    {
+        //! Data for neutral mutations.
+        state_matrix neutral;
+        //! Data for selected mutations.
+        state_matrix selected;
+        //! Locations of neutral mutations from mutation vector.  Same order
+        //! as matrix row order
+        std::vector<std::size_t> neutral_keys;
+        //! Locations of selected mutations from mutation vector.  Same order
+        //! as matrix row order
+        std::vector<std::size_t> selected_keys;
+        //! Number of columns in the matrix
+        std::size_t ncol;
+        data_matrix(const std::size_t ncol_)
+            /*!
+             * Constructor
+             *
+             * \param ncol_ Number of columns in the matrix
+             *
+             * \version 0.7.0 
+             * Changed from rows are sites to rows are individuals. Removed
+             * default value of zero from constructor.
+             */
+            : neutral{},
+              selected{},
+              neutral_keys{},
+              selected_keys{},
+              ncol{ ncol_ }
+        {
+        }
+    };
+} // namespace fwdpp
 
 // This header contains code re-used for
 // implementing functions defined below.
-#include "matrix_details.hpp"
+#include "internal/data_matrix_details.hpp"
 
 namespace fwdpp
 {
@@ -126,12 +142,52 @@ namespace fwdpp
      * 3. Keys from multiple samples can be merged to form new vectors where
      * the key elements are unique and
      * the frequencies are summed, all using standard C++.
+     *
+     * \ingroup samplingPops
      */
     {
         return data_matrix_details::mutation_keys(
             pop.diploids, individuals, pop.gametes, pop.mcounts,
-            include_neutral, include_selected,
-            typename poptype::popmodel_t());
+            include_neutral, include_selected, typename poptype::popmodel_t());
+    }
+
+    template <typename mcont_t>
+    inline void
+    sort_keys(const mcont_t &mutations,
+              std::vector<std::pair<std::size_t, uint_t>> &keys)
+    /*! \brief Sort keys by position
+     *
+     * Takes the data returned from mutation_keys and sorts
+     * it by increasing mutation positions.
+     *
+     * \param mutations A mutation container
+     * \param keys Returned from mutation_keys
+     *
+     * \ingroup samplingPops
+     */
+    {
+        const auto comp
+            = [&mutations](const std::pair<std::size_t, uint_t> &a,
+                           const std::pair<std::size_t, uint_t> &b) {
+                  return mutations[a.first].pos < mutations[b.first].pos;
+              };
+        std::sort(keys.begin(), keys.end(), comp);
+    }
+
+    template <typename F>
+    inline void
+    filter_keys(std::vector<std::pair<std::size_t, uint_t>> &keys, F f)
+    /*! \brief Apply a filter to the keys
+     *
+     * Takes the data returned from mutation_keys and applies a 
+     * filtering function.  The implementation is simply a wrapper
+     * around the erase/remove idiom.
+     *
+     * \param keys 
+     * \param f A function taking the value_type in \a keys and returning true if item should be removed
+     */
+    {
+        keys.erase(std::remove_if(keys.begin(), keys.end(), f), keys.end());
     }
 
     template <typename poptype>
@@ -151,6 +207,8 @@ namespace fwdpp
      * \param selected_keys See documentation of fwdpp::mutation_keys
      *
      * \return fwdpp::data_matrix
+     *
+     * \ingroup samplingPops
      */
     {
         return data_matrix_details::fill_matrix(
@@ -175,6 +233,8 @@ namespace fwdpp
      * \param selected_keys See documentation of fwdpp::mutation_keys
      *
      * \return fwdpp::data_matrix
+     *
+     * \ingroup samplingPops
      */
     {
         return data_matrix_details::fill_matrix(
@@ -189,13 +249,15 @@ namespace fwdpp
      *
      * \return A pair of vectors of unsigned integers representing row sums
      * for neutral and selected sites in the matrix, respectively.
+     *
+     * \ingroup samplingPops
      */
     {
         return std::make_pair(
             data_matrix_details::row_col_sums_details(
-                m.neutral, m.nrow, m.neutral_positions.size(), true),
+                m.neutral.data, m.neutral.positions.size(), m.ncol, true),
             data_matrix_details::row_col_sums_details(
-                m.selected, m.nrow, m.selected_positions.size(), true));
+                m.selected.data, m.selected.positions.size(), m.ncol, true));
     }
 
     inline std::pair<std::vector<std::uint32_t>, std::vector<std::uint32_t>>
@@ -206,14 +268,16 @@ namespace fwdpp
      * \return A pair of vectors of unsigned integers representing column
      * sums
      * for neutral and selected sites in the matrix, respectively.
+     *
+     * \ingroup samplingPops
      */
     {
         return std::make_pair(
             data_matrix_details::row_col_sums_details(
-                m.neutral, m.nrow, m.neutral_positions.size(), false),
+                m.neutral.data, m.neutral.positions.size(), m.ncol, false),
             data_matrix_details::row_col_sums_details(
-                m.selected, m.nrow, m.selected_positions.size(), false));
+                m.selected.data, m.selected.positions.size(), m.ncol, false));
     }
-}
+} // namespace fwdpp
 
 #endif
