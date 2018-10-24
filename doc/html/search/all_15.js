@@ -1,13 +1,11 @@
 var searchData=
 [
-  ['uint_5ft',['uint_t',['../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3',1,'fwdpp']]],
-  ['uniform',['uniform',['../dc/df9/structfwdpp_1_1extensions_1_1uniform.html',1,'fwdpp::extensions::uniform'],['../dc/df9/structfwdpp_1_1extensions_1_1uniform.html#a7f511ba12418025b1911a69d14d497d9',1,'fwdpp::extensions::uniform::uniform()']]],
-  ['update_5fmutation_5fkeys',['update_mutation_keys',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a798077c43caec79746f4fdadc96921fe',1,'fwdpp::data_matrix_details']]],
-  ['update_5fmutations',['update_mutations',['../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06',1,'fwdpp::update_mutations(mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)'],['../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b',1,'fwdpp::update_mutations(const mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)'],['../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d',1,'fwdpp::update_mutations(mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)']]],
-  ['update_5fmutations_5fn',['update_mutations_n',['../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42',1,'fwdpp']]],
-  ['update_5frow',['update_row',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a8c742eb63299412fedf8b7bf620e9ded',1,'fwdpp::data_matrix_details']]],
-  ['update_5frow_5fcommon',['update_row_common',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#afa68ccdc266450c5e0a1c576ad6d30e8',1,'fwdpp::data_matrix_details']]],
-  ['update_5fsample_5fblock',['update_sample_block',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a934ac352ea5da91395e77ec0be5d8735',1,'fwdpp::fwdpp_internal']]],
-  ['util_2ehpp',['util.hpp',['../d0/d3f/util_8hpp.html',1,'']]],
-  ['utiltest_2ecc',['utilTest.cc',['../d4/d92/utilTest_8cc.html',1,'']]]
+  ['validate_5fgamete_5fcounts',['validate_gamete_counts',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a41447a15cff028dfa01a3b092c087bd1',1,'fwdpp::sugar::popbase']]],
+  ['validate_5findividual_5fkeys',['validate_individual_keys',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#aa3c0a6868039b7b1aba91bef2faf0458',1,'fwdpp::sugar::popbase']]],
+  ['validate_5fmutation_5fkey_5franges',['validate_mutation_key_ranges',['../d0/d70/namespacefwdpp_1_1debug.html#a6ecaf182efa8db74f6624ed931f38306',1,'fwdpp::debug']]],
+  ['validate_5fpop_5fdata',['validate_pop_data',['../d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e',1,'fwdpp::debug']]],
+  ['validate_5fsum_5fgamete_5fcounts',['validate_sum_gamete_counts',['../d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857',1,'fwdpp::debug']]],
+  ['vdmm',['vdmm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a44d3ddcd4c7e307828b517e6b6cc595e',1,'mlocuspop_popgenmut_fixture']]],
+  ['vdrm',['vdrm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a657154c8bf033f40e3244010521a073f',1,'mlocuspop_popgenmut_fixture']]],
+  ['version_2ehpp',['version.hpp',['../d7/dad/version_8hpp.html',1,'']]]
 ];

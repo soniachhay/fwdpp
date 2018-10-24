@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -70,7 +70,7 @@ $(function() {
 <p>A minimal diploid contains two integers representing the locations of the diploid's gametes. These types should be the same as the size_type corresponding to the gamete container. Typically, std::size_t suffices, and thus a minimal diploid may be defined as:</p>
 <div class="fragment"><div class="line"><span class="keyword">using</span> <a class="code" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a> = std::pair&lt;std::size_t,std::size_t&gt;;</div></div><!-- fragment --><p>It is often desirable to have diploid types with additional data, and <b>fwdpp</b> easily supports this in the form of "custom" diploid types. At a minimum, a custom diploid must have the same public API as <a href="http://en.cppreference.com/w/cpp/utility/pair">std::pair</a>. In other words, it must look like this at a minimum:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>my_custom_diploid</div><div class="line">{</div><div class="line">    <span class="keyword">using</span> first_type = std::size_t;</div><div class="line">    <span class="keyword">using</span> second_type = std::size_t;</div><div class="line">    first_type first;</div><div class="line">    second_type second;</div><div class="line">};</div></div><!-- fragment --><p>To check that a custom diploid type is acceptable, you can use fwdpp's type traits library:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;fwdpp/traits.hpp&gt;</span></div><div class="line"></div><div class="line">static_assert(<a class="code" href="../../d8/d26/structfwdpp_1_1traits_1_1internal_1_1is__diploid.html">fwdpp::traits::is_diploid&lt;my_custom_diploid&gt;::value</a>,<span class="stringliteral">&quot;Oops!&quot;</span>);</div></div><!-- fragment --><p>An additional type trait function exists to detect custom diploids (<a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a02ed10fc5994e08857db56c790c834fa" title="Wraps a static constant allowing a test that T is a custom diploid. ">fwdpp::traits::is_custom_diploid</a>). It checks that the minimum API requirements are met, but that the type is not identical to a std::pair.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;fwdpp/traits.hpp&gt;</span></div><div class="line"></div><div class="line">static_assert(<a class="code" href="../../d3/d74/namespacefwdpp_1_1traits.html#a902b4555d36bb88c23982679fbd5de3e">fwdpp::traits::is_diploid&lt;my_custom_diploid&gt;::value</a>,<span class="stringliteral">&quot;Oops!&quot;</span>);</div></div><!-- fragment --><p>An additional type trait function exists to detect custom diploids (<a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a02ed10fc5994e08857db56c790c834fa" title="Wraps a static constant allowing a test that T is a custom diploid. ">fwdpp::traits::is_custom_diploid</a>). It checks that the minimum API requirements are met, but that the type is not identical to a std::pair.</p>
 <p>For a fully worked-out example, see <a class="el" href="../../d0/dfa/custom_diploid_8cc-example.html">custom_diploid.cc</a> </p>
 </div></div><!-- contents -->
 <!-- start footer part -->

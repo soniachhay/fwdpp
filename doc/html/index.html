@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -175,6 +175,8 @@ $(function() {
 <ol type="1">
 <li><a href="http://github.com/molpopgen/libsequence">libsequence</a>.</li>
 </ol>
+<p>As of fwdpp 0.7.0, some example programs require the <code>program_options</code> library from <a href="http://www.boost.org">boost</a>. This is one of boost's runtime libraries, meaning that you need a "full" boost installation. Conda provides such a thing, and Linux variants like Ubuntu provide the different runtime libraries as separate packages.</p>
+<p>The configure script checks for these optional dependencies and will skip compilation of various example programs if they are missing.</p>
 <p>In order to compile the unit tests, you also need:</p>
 <ol type="1">
 <li><a href="http://www.boost.org">boost</a>.</li>

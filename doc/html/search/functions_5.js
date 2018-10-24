@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['fill_5fmatrix',['fill_matrix',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a51741dd0ec12c2d42f3723a5461c4a5b',1,'fwdpp::data_matrix_details::fill_matrix(const poptype &amp;pop, data_matrix &amp;m, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; std::size_t, uint_t &gt;&gt; &amp;neutral_keys, const std::vector&lt; std::pair&lt; std::size_t, uint_t &gt;&gt; &amp;selected_keys, sugar::SINGLELOC_TAG, matrix_type mtype)'],['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#ae58c3925ff634f6ba0783a579d512acb',1,'fwdpp::data_matrix_details::fill_matrix(const poptype &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; std::size_t, uint_t &gt;&gt; &amp;neutral_keys, const std::vector&lt; std::pair&lt; std::size_t, uint_t &gt;&gt; &amp;selected_keys, const matrix_type mtype)']]],
-  ['fill_5fmatrix_5fwith_5frows',['fill_matrix_with_rows',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a39236e9a0c21925a2f0b307ac46afedf',1,'fwdpp::data_matrix_details']]],
+  ['filter_5fkeys',['filter_keys',['../dd/d84/namespacefwdpp.html#abcdff90b499894ab44d94b57fd9e809e',1,'fwdpp']]],
   ['first100',['first100',['../d5/daa/sugar__add__mutationTest_8cc.html#aa1dc069de70a0ae4d224fa84407060dc',1,'sugar_add_mutationTest.cc']]],
-  ['fixation_5ffinder_5fsearch_5fall',['fixation_finder_search_all',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a8bafcd7b13347490ef760b33ceda7b57',1,'fwdpp::fwdpp_internal']]],
   ['fixture',['fixture',['../d8/dbe/structfixture.html#a2795a43194cf7837d758d0be009fb1ef',1,'fixture']]],
-  ['for',['for',['../d5/daa/sugar__add__mutationTest_8cc.html#a4dacb05ba79f39392f734bfe778afe5f',1,'for(auto i :{ 0, 2 }):&#160;sugar_add_mutationTest.cc'],['../d5/daa/sugar__add__mutationTest_8cc.html#a953efac79ce7a8fdc5e97e5675f1ab3f',1,'for(auto i :{ 9, 10, 23 }):&#160;sugar_add_mutationTest.cc']]]
+  ['flag_5fmutations_5ffor_5frecycling',['flag_mutations_for_recycling',['../d8/d31/namespacefwdpp_1_1ts.html#afb9e57688b0bfd74c39f19fb515837ca',1,'fwdpp::ts']]],
+  ['for',['for',['../d9/dc6/gamete__cleanerTest_8cc.html#a7193e95ebdf75d7afb1a823d5ded18f9',1,'for(auto &amp;g :gametes):&#160;gamete_cleanerTest.cc'],['../d5/daa/sugar__add__mutationTest_8cc.html#a4dacb05ba79f39392f734bfe778afe5f',1,'for(auto i :{ 0, 2 }):&#160;sugar_add_mutationTest.cc'],['../d5/daa/sugar__add__mutationTest_8cc.html#a953efac79ce7a8fdc5e97e5675f1ab3f',1,'for(auto i :{ 9, 10, 23 }):&#160;sugar_add_mutationTest.cc']]]
 ];

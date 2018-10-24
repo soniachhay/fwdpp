@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.7.0</h2>
+<p>This is a major release, introducing namespace <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html" title="Tree sequence  support. ">fwdpp::ts</a> with support for tree sequence recording during simulations. I owe Jerome Kelleher a big thanks for guiding me through some of the details related to several of the finer points of the simplification algorithm as well as the tree traversal schemes from his 2016 paper describing msprime.</p>
+<ul>
+<li>Support for tree sequences added <a href="https://github.com/molpopgen/fwdpp/pull/151">PR 151</a> <a href="https://github.com/molpopgen/fwdpp/pull/152">PR 152</a></li>
+<li><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> is moved into the main library. <a href="https://github.com/molpopgen/fwdpp/pull/118">PR 118</a></li>
+<li><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> is refactored so that the contiguous dimension corresponds to variable sites.<a href="https://github.com/molpopgen/fwdpp/pull/142">PR 142</a></li>
+<li>Fitness models do a better job of validating input parameters.<a href="https://github.com/molpopgen/fwdpp/pull/140">PR 140</a></li>
+<li>Types in <a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html">fwdpp::extensions</a> now make their weight vectors viewable. <a href="https://github.com/molpopgen/fwdpp/pull/141">PR 141</a></li>
+<li>Various pull with some example programs were fixed <a href="https://github.com/molpopgen/fwdpp/pull/149">PR 149</a></li>
+<li>A debug namespace was added to the library. <a href="https://github.com/molpopgen/fwdpp/pull/148">PR 150</a></li>
+</ul>
 <h2>0.6.1</h2>
 <p>Maintenance release fixing the following two bugs:</p>
 <ul>
@@ -116,9 +127,9 @@ $(function() {
 <li>Recombination callbacks taking no arguments are supported. <a href="https://github.com/molpopgen/fwdpp/pull/75">PR75</a></li>
 <li><a class="el" href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html#affb96e93aacd9ce97466b4bedef4a21a">fwdpp::mlocuspop::locus_boundaries</a> is no longer populated with default values, which was dangerous!! <a href="https://github.com/molpopgen/fwdpp/pull/69">PR69</a></li>
 <li>fwdpp::generalmut and fwdpp::generalmut_vec now take less memory. <a href="https://github.com/molpopgen/fwdpp/pull/67">PR67</a></li>
-<li>Sampling routines in <a class="el" href="../../dc/dbd/sampling_8hpp.html">fwdpp/sugar/sampling.hpp</a> now guard against the possibility of having fixations repeated in samples. For example, this change will affect simulations where selected fixations are retained because they affect trait values. <a href="https://github.com/molpopgen/fwdpp/pull/71">PR71</a></li>
+<li>Sampling routines in fwdpp/sugar/sampling.hpp now guard against the possibility of having fixations repeated in samples. For example, this change will affect simulations where selected fixations are retained because they affect trait values. <a href="https://github.com/molpopgen/fwdpp/pull/71">PR71</a></li>
 <li>Issue <a href="https://github.com/molpopgen/fwdpp/issues/69">PR69</a> <a href="https://github.com/molpopgen/fwdpp/pull/70">PR70</a></li>
-<li>Fixed template errors when sampling from multilocus populations using functions in <a class="el" href="../../dc/dbd/sampling_8hpp.html">fwdpp/sugar/sampling.hpp</a>. These errors resulted in failure to compile and thus did not affect anyone's results. <a href="https://github.com/molpopgen/fwdpp/pull/70">PR70</a></li>
+<li>Fixed template errors when sampling from multilocus populations using functions in fwdpp/sugar/sampling.hpp. These errors resulted in failure to compile and thus did not affect anyone's results. <a href="https://github.com/molpopgen/fwdpp/pull/70">PR70</a></li>
 </ul>
 <h2>0.5.7</h2>
 <ul>
@@ -148,7 +159,7 @@ $(function() {
 </ul>
 <h2>0.5.5</h2>
 <ul>
-<li>Added KTfwd::sugar::multiloc::locus_boundaries and simplified API in <a class="el" href="../../dc/dbd/sampling_8hpp.html">fwdpp/sugar/sampling.hpp</a>, resolving #47.</li>
+<li>Added KTfwd::sugar::multiloc::locus_boundaries and simplified API in fwdpp/sugar/sampling.hpp, resolving #47.</li>
 <li>Refactor namespace KTfwd::traits, resolving #46.</li>
 <li>Streamline API for fitness functions, resolving #45.</li>
 <li>Resolving #45 allows us to simplify how custom diploid types are defined. See <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a></li>
@@ -156,13 +167,13 @@ $(function() {
 <li>All source files reformatted using clang-format</li>
 <li>Build system generation of package version numbers improved</li>
 <li><a class="el" href="../../d7/dad/version_8hpp.html" title="fwdpp version information ">fwdpp/version.hpp</a> added and is auto-generated by build system</li>
-<li><a class="el" href="../../df/dce/matrix_8hpp.html">fwdpp/sugar/matrix.hpp</a> now included by <a class="el" href="../../d0/d95/sugar_2sugar_8hpp.html" title="Lazy header for fwdpp/sugar features. ">fwdpp/sugar/sugar.hpp</a></li>
+<li>fwdpp/sugar/matrix.hpp now included by <a class="el" href="../../d0/d95/sugar_2sugar_8hpp.html" title="Lazy header for fwdpp/sugar features. ">fwdpp/sugar/sugar.hpp</a></li>
 <li>Fix forwarding of constructor arguments during mutation recycling.</li>
 <li>python_examples/fwdpp_pybind11.cc was updated to account for population type class hierarchy added in 0.5.3.</li>
 </ul>
 <h2>0.5.4</h2>
 <ul>
-<li><a class="el" href="../../df/dce/matrix_8hpp.html">fwdpp/sugar/matrix.hpp</a> was added, providing functions for returning diploid haplotype/genotype data as a 1-d array.</li>
+<li>fwdpp/sugar/matrix.hpp was added, providing functions for returning diploid haplotype/genotype data as a 1-d array.</li>
 <li>Functions in fwdpy/sugar/sampling.hpp are now more flexible with the integral types used to specify specific sets of diploids.</li>
 <li>Fixed API bugs in KTfwd::sample_separate for the case of multi-locus/region simulations. These errors resulted in compilation failure, and therefore it was impossible for results to have been affected.</li>
 </ul>
@@ -227,7 +238,7 @@ $(function() {
 <h2>0.4.7</h2>
 <p>Thanks to Alexander Nater for pointing out issue #36, which lead to #37 being discovered, too.</p>
 <ul>
-<li>remove include&lt;iostream&gt; from <a class="el" href="../../df/d26/recombination__common_8hpp.html">fwdpp/internal/recombination_common.hpp</a></li>
+<li>remove include&lt;iostream&gt; from fwdpp/internal/recombination_common.hpp</li>
 <li>Isssue #36 fixed</li>
 <li>Issue #37 fixed</li>
 <li>KTfwd::GSLrng_t has improved copy constructor and is now move-constructible.</li>
@@ -271,7 +282,7 @@ $(function() {
 </li>
 <li>Mutation type data members (objects inheriting from KTfwd::mutation_base) are no longer const. This is required in order to enable the "recycling".</li>
 <li>In order to take advantage of this feature, extinct mutations must not be removed each generation. The function KTfwd::update_mutations should be removed instead of KTfwd::remove_lost, KTfwd::remove_fixed_lost, etc. The latter functions are marked as deprecated.</li>
-<li>The details of recycling are handled by KTfwd::fwdpp_internal::make_mut_queue, KTfwd::fwdpp_internal::make_gamete_queue, KTfwd::fwdpp_internal::recycle_gamete, and the very cool variadic template function KTfwd::fwdpp_internal::recycle_mutation_helper. These types/functions are found in <a class="el" href="../../d6/d3f/recycling_8hpp.html">fwdpp/internal/recycling.hpp</a>.</li>
+<li>The details of recycling are handled by KTfwd::fwdpp_internal::make_mut_queue, KTfwd::fwdpp_internal::make_gamete_queue, KTfwd::fwdpp_internal::recycle_gamete, and the very cool variadic template function KTfwd::fwdpp_internal::recycle_mutation_helper. These types/functions are found in fwdpp/internal/recycling.hpp.</li>
 </ul>
 </li>
 <li>Improved memory managament:<ul>
@@ -322,7 +333,7 @@ $(function() {
 </ul>
 <h2>0.4.0</h2>
 <ul>
-<li><a class="el" href="../../dc/dbd/sampling_8hpp.html">fwdpp/sugar/sampling.hpp</a> added. This streamlines taking samples from populations</li>
+<li>fwdpp/sugar/sampling.hpp added. This streamlines taking samples from populations</li>
 <li>Unit test unit/sugar_sampling.cc added</li>
 <li>New test added to unit/crossoverTest.cc</li>
 <li>libsequence is no longer an installation dependency</li>
@@ -410,7 +421,7 @@ $(function() {
 <ul>
 <li>Multilocus, single-population version of KTfwd::sample_diploid now allows for inbreeding coefficient of 0 by default.</li>
 <li>Warnings from KTfwd::infsites suppressed w/compiler trick</li>
-<li>Extraneous gsl_rng free removed from <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a></li>
+<li>Extraneous gsl_rng free removed from diploid_ind.cc</li>
 <li>Issue #12 in <a class="el" href="../../df/d10/common__ind_8hpp.html">examples/common_ind.hpp</a> fixed</li>
 <li>Issue #13 appears to be fixed, too. This was tricky, as it was not reproducible on my systems, but is now fixed on the system of the person who reported it.</li>
 <li>The library no longer requires that std::pair&lt; T,T &gt; are the types used for a diploid genotype (where the "T" are iterator types derived from gametes lists). Now, custom diploid genotypes may be used, as long as the follow certain constraints (see <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a> for documentation). Thanks to Jeremy Van Cleve for motivating this change, which should allow models involving space and social interactions, once some experimental features are worked out and become part of the main library (see below).</li>
@@ -427,7 +438,7 @@ $(function() {
 <li>A new document describing preprocessor symbols and their effect on fwdpp has been added (md_md_preproc)</li>
 <li>All occurrences of NULL in the library have been replaced with the C++11 <a href="http://www.cplusplus.com/reference/cstddef/nullptr_t/">nullptr</a>. The latter is safer in templates because the former can evaluate to 0 in some cases.</li>
 <li>All gamete-based code has been removed from the library. If you need it for any reason, you're stuck with with 0.3.0 and earlier.</li>
-<li>Mutation models may now have various function signatures. See <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a> and the example programs for details. The file fwdpp/tags/mutation_tags.hpp has been removed. This was introduced in 0.3.0, and defined KTfwd::tags::gamete_dependent, which has been replaced with a newer, much more flexible method of policy dispatching. See <a class="el" href="../../d3/d80/mutation__internal_8hpp.html">fwdpp/internal/mutation_internal.hpp</a> for the details of how this was done.</li>
+<li>Mutation models may now have various function signatures. See <a class="el" href="../../d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a> and the example programs for details. The file fwdpp/tags/mutation_tags.hpp has been removed. This was introduced in 0.3.0, and defined KTfwd::tags::gamete_dependent, which has been replaced with a newer, much more flexible method of policy dispatching. See fwdpp/internal/mutation_internal.hpp for the details of how this was done.</li>
 <li><a class="el" href="../../dc/d54/type__traits_8hpp.html">fwdpp/type_traits.hpp</a> was added to the library, proving namespace KTfwd::traits.</li>
 <li>KTfwd::infsites no longer requires that a pointer to a mutation list be passed to the call operator</li>
 <li>KTfwd::mutation_writer and KTfwd::mutation_reader now support gzFiles.</li>
@@ -473,7 +484,7 @@ $(function() {
 <li>Added tutorial for multilocus simulation implmentation</li>
 <li>Minor cleanups to the build system</li>
 <li>Reorganization of fwdpp/IO.hpp and fwdpp/IO.tcc to reduce code duplication and provide output routines for multilocus simulations. There are no longer separate read functions for gzFiles. The necessary operations are handled automatically by overloads of template functions in namespace KTfwd::fwdpp_internal.</li>
-<li>Reorganization of <a class="el" href="../../d1/d07/sampling__functions_8tcc.html">fwdpp/sampling_functions.tcc</a>: overloads of ms_sample are now implemented via calls to ms_sample_separate. The results from the latter function are then merged using C++11 move semantics. This reduces code redundancy, reduces the possible locations of bugs, and should keep efficiency about the same.</li>
+<li>Reorganization of fwdpp/sampling_functions.tcc: overloads of ms_sample are now implemented via calls to ms_sample_separate. The results from the latter function are then merged using C++11 move semantics. This reduces code redundancy, reduces the possible locations of bugs, and should keep efficiency about the same.</li>
 </ul>
 <h2>0.2.5</h2>
 <p>The following changes:</p>

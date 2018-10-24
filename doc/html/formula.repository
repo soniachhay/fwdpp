@@ -1,15 +1,11 @@
-\form#0:$n \ll 2N$
-\form#1:$n$
-\form#2:$n = N$
-\form#3:$2N$
-\form#4:$s$
-\form#5:$h$
-\form#6:$1$
-\form#7:$1+hs$
-\form#8:$1+xs$
-\form#9:$x = 1$
-\form#10:$AA$
-\form#11:$Aa$
-\form#12:$aa$
-\form#13:$a$
-\form#14:$g$
+\form#0:$s$
+\form#1:$h$
+\form#2:$1$
+\form#3:$1+hs$
+\form#4:$1+xs$
+\form#5:$x = 1$
+\form#6:$AA$
+\form#7:$Aa$
+\form#8:$aa$
+\form#9:$a$
+\form#10:$g$

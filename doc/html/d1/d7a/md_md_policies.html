@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -90,7 +90,7 @@ Policies in fwdpp</h1>
 Mutation policies</h2>
 <p>A mutation model has one of the following function signatures. Either</p>
 <div class="fragment"><div class="line">std::size_t mutmodel(queue_t &amp;,mcont_t &amp;);</div></div><!-- fragment --><p>or</p>
-<div class="fragment"><div class="line">std::size_t mutmodel(gamete_t &amp;,mcont_t &amp;, queue_t &amp;);</div></div><!-- fragment --><p>The former is used when the current state of a gamete doesn't matter. The infinitely-many sites model is an example. The latter is used whn the current state of a gamete does matter. A finite-sites model would be an example. Internally, the library detects which type is being used. The return value is the index in the mutation container where the new mutation was placed. This location may have been generated via recycling, and the library provides <a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#af87d0d71c34aa25aee2fff7cc2ccae0a" title="Helper function for mutation policies. ">fwdpp::fwdpp_internal::recycle_mutation_helper</a> to facilitate this operation.</p>
+<div class="fragment"><div class="line">std::size_t mutmodel(gamete_t &amp;,mcont_t &amp;, queue_t &amp;);</div></div><!-- fragment --><p>The former is used when the current state of a gamete doesn't matter. The infinitely-many sites model is an example. The latter is used whn the current state of a gamete does matter. A finite-sites model would be an example. Internally, the library detects which type is being used. The return value is the index in the mutation container where the new mutation was placed. This location may have been generated via recycling, and the library provides fwdpp::fwdpp_internal::recycle_mutation_helper to facilitate this operation.</p>
 <p>Additional model parameters are possible via the usual mechanisms: class members, std::bind, etc.</p>
 <p>A valid mutation policy passes a static assertion involving fwdpp::traits::valid_mutation_model at compile time. See <a class="el" href="../../d9/dfd/type__traitsTest_8cc.html" title="Testing fwdpp/type_traits.hpp. ">type_traitsTest.cc</a> for an example of this assertion.</p>
 <p>For an example of how to compose a mutation policy, see <a class="el" href="../../d4/d99/custom_mutation_8cc-example.html">custom_mutation.cc</a>.</p>

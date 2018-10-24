@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_5f_5ffwdpp_5fsample_5fdiploid_5ftcc_5f_5f',['__FWDPP_SAMPLE_DIPLOID_TCC__',['../dd/d91/sample__diploid_8tcc.html#a9bedb47ee6e7ca93e37c4651f21f86df',1,'sample_diploid.tcc']]],
-  ['_5f_5ffwdpp_5fsampling_5ffunctions_5ftcc_5f_5f',['__FWDPP_SAMPLING_FUNCTIONS_TCC__',['../d1/d07/sampling__functions_8tcc.html#ad0c995fbce4f5ea45408410aaef2ccf5',1,'sampling_functions.tcc']]]
+  ['boost_5ftest_5fmodule',['BOOST_TEST_MODULE',['../d5/d41/extensions__unit__test_8cc.html#a6b2a3852db8bb19ab6909bac01859985',1,'BOOST_TEST_MODULE():&#160;extensions_unit_test.cc'],['../da/d45/fwdpp__unit__tests_8cc.html#a6b2a3852db8bb19ab6909bac01859985',1,'BOOST_TEST_MODULE():&#160;fwdpp_unit_tests.cc'],['../d6/dd1/sugar__unit__tests_8cc.html#a6b2a3852db8bb19ab6909bac01859985',1,'BOOST_TEST_MODULE():&#160;sugar_unit_tests.cc'],['../d5/d9f/extensions__integration__tests_8cc.html#a6b2a3852db8bb19ab6909bac01859985',1,'BOOST_TEST_MODULE():&#160;extensions_integration_tests.cc'],['../d4/d14/sugar__integration__tests_8cc.html#a6b2a3852db8bb19ab6909bac01859985',1,'BOOST_TEST_MODULE():&#160;sugar_integration_tests.cc']]]
 ];

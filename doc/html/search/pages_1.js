@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['example_20programs',['Example programs',['../df/dcb/md_md_examples.html',1,'']]]
+  ['bibliography',['Bibliography',['../d0/de3/citelist.html',1,'']]]
 ];

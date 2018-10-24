@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /home/molpopgen/src/fwdpp/fwdpp/sample_diploid.tcc File Reference</title>
+<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/sample_diploid.tcc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -74,13 +74,14 @@ $(function() {
 
 <p>Definitions of functions for evolving populations of diploids.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">fwdpp/mutate_recombine.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d6/d3f/recycling_8hpp_source.html">fwdpp/internal/recycling.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d5/dba/gsl__discrete_8hpp_source.html">fwdpp/internal/gsl_discrete.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../de/d15/gamete__cleaner_8hpp_source.html">fwdpp/internal/gamete_cleaner.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d7/d48/multilocus__rec_8hpp_source.html">fwdpp/internal/multilocus_rec.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d3/d69/sample__diploid__helpers_8hpp_source.html">fwdpp/internal/sample_diploid_helpers.hpp</a>&gt;</code><br />
+<code>#include &lt;fwdpp/internal/recycling.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/gsl_discrete.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/gamete_cleaner.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/multilocus_rec.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/sample_diploid_helpers.hpp&gt;</code><br />
 </div>
 <p><a href="../../dd/d91/sample__diploid_8tcc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -92,8 +93,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a9bedb47ee6e7ca93e37c4651f21f86df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/sample__diploid_8tcc.html#a9bedb47ee6e7ca93e37c4651f21f86df">__FWDPP_SAMPLE_DIPLOID_TCC__</a></td></tr>
-<tr class="separator:a9bedb47ee6e7ca93e37c4651f21f86df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba589dc34675e9e5b6f317e80c26eed3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d91/sample__diploid_8tcc.html#aba589dc34675e9e5b6f317e80c26eed3">FWDPP_SAMPLE_DIPLOID_TCC</a></td></tr>
+<tr class="separator:aba589dc34675e9e5b6f317e80c26eed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -117,14 +118,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="../../dd/d91/sample__diploid_8tcc_source.html">sample_diploid.tcc</a>.</p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a9bedb47ee6e7ca93e37c4651f21f86df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bedb47ee6e7ca93e37c4651f21f86df">&#9670;&nbsp;</a></span>__FWDPP_SAMPLE_DIPLOID_TCC__</h2>
+<a id="aba589dc34675e9e5b6f317e80c26eed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba589dc34675e9e5b6f317e80c26eed3">&#9670;&nbsp;</a></span>FWDPP_SAMPLE_DIPLOID_TCC</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __FWDPP_SAMPLE_DIPLOID_TCC__</td>
+          <td class="memname">#define FWDPP_SAMPLE_DIPLOID_TCC</td>
         </tr>
       </table>
 </div><div class="memdoc">

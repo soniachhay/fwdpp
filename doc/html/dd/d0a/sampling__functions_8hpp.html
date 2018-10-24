@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /home/molpopgen/src/fwdpp/fwdpp/sampling_functions.hpp File Reference</title>
+<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/sampling_functions.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -65,7 +65,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">sampling_functions.hpp File Reference</div>  </div>
@@ -77,12 +76,12 @@ $(function() {
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
 <code>#include &lt;string&gt;</code><br />
-<code>#include &lt;cassert&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
 <code>#include &lt;gsl/gsl_rng.h&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d1/d07/sampling__functions_8tcc_source.html">fwdpp/sampling_functions.tcc</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">fwdpp/data_matrix.hpp</a>&gt;</code><br />
+<code>#include &quot;internal/sampling_functions_details.hpp&quot;</code><br />
 </div>
 <p><a href="../../dd/d0a/sampling__functions_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -92,33 +91,16 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:dd/d84/namespacefwdpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a0cf878e26c2ca5036fc8b7237ffe1634"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a0cf878e26c2ca5036fc8b7237ffe1634">fwdpp::sample_site_t</a> = std::pair&lt; double, std::string &gt;</td></tr>
-<tr class="separator:a0cf878e26c2ca5036fc8b7237ffe1634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b334d2fb58a364cb24e359462c27a0a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a7b334d2fb58a364cb24e359462c27a0a">fwdpp::sample_t</a> = std::vector&lt; sample_site_t &gt;</td></tr>
-<tr class="separator:a7b334d2fb58a364cb24e359462c27a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85484d007b17eb59130a8dbe70d28c3d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a85484d007b17eb59130a8dbe70d28c3d">fwdpp::sep_sample_t</a> = std::pair&lt; sample_t, sample_t &gt;</td></tr>
-<tr class="separator:a85484d007b17eb59130a8dbe70d28c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaf8ce2c5a3637301d230a523c1fa9aa1e"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename allocator , typename diploid_geno_t , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:gaf8ce2c5a3637301d230a523c1fa9aa1e"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; traits::is_diploid&lt; diploid_geno_t &gt;::value, sample_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf8ce2c5a3637301d230a523c1fa9aa1e">fwdpp::ms_sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const vector_type&lt; diploid_geno_t, allocator &gt; &amp;diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
-<tr class="memdesc:gaf8ce2c5a3637301d230a523c1fa9aa1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#gaf8ce2c5a3637301d230a523c1fa9aa1e">More...</a><br /></td></tr>
-<tr class="separator:gaf8ce2c5a3637301d230a523c1fa9aa1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga68a7113edb43faee9b72c44a67945037"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename allocator , typename diploid_geno_t , template&lt; typename, typename &gt; class vector_type&gt; </td></tr>
-<tr class="memitem:ga68a7113edb43faee9b72c44a67945037"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; traits::is_diploid&lt; diploid_geno_t &gt;::value, sep_sample_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga68a7113edb43faee9b72c44a67945037">fwdpp::ms_sample_separate</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const vector_type&lt; diploid_geno_t, allocator &gt; &amp;diploids, const unsigned &amp;n, const bool &amp;remove_fixed=true)</td></tr>
-<tr class="memdesc:ga68a7113edb43faee9b72c44a67945037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling from a population in an individual-based simulation. Selected and neutral mutations returned separately.  <a href="../../d7/de2/group__samplingPopsInd.html#ga68a7113edb43faee9b72c44a67945037">More...</a><br /></td></tr>
-<tr class="separator:ga68a7113edb43faee9b72c44a67945037"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0d2cfdcb7ca085afc912439b87c4d921"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename dcont_t &gt; </td></tr>
-<tr class="memitem:ga0d2cfdcb7ca085afc912439b87c4d921"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; traits::is_diploid&lt; typename dcont_t::value_type::value_type &gt;::value, std::vector&lt; sample_t &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga0d2cfdcb7ca085afc912439b87c4d921">fwdpp::ms_sample</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const dcont_t &amp;diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="memdesc:ga0d2cfdcb7ca085afc912439b87c4d921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#ga0d2cfdcb7ca085afc912439b87c4d921">More...</a><br /></td></tr>
-<tr class="separator:ga0d2cfdcb7ca085afc912439b87c4d921"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga321ab75dfc1e1028d0e4e0e433ddc882"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t , typename dcont_t &gt; </td></tr>
-<tr class="memitem:ga321ab75dfc1e1028d0e4e0e433ddc882"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; traits::is_diploid&lt; typename dcont_t::value_type::value_type &gt;::value, std::vector&lt; sep_sample_t &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga321ab75dfc1e1028d0e4e0e433ddc882">fwdpp::ms_sample_separate</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const dcont_t &amp;diploids, const unsigned &amp;n, const bool &amp;remove_fixed)</td></tr>
-<tr class="memdesc:ga321ab75dfc1e1028d0e4e0e433ddc882"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample from an individual-based, multi-locus simulation.  <a href="../../d7/de2/group__samplingPopsInd.html#ga321ab75dfc1e1028d0e4e0e433ddc882">More...</a><br /></td></tr>
-<tr class="separator:ga321ab75dfc1e1028d0e4e0e433ddc882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca5d7963215a3623a4e43324a0030714"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gaca5d7963215a3623a4e43324a0030714"><td class="memTemplItemLeft" align="right" valign="top">data_matrix&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gaca5d7963215a3623a4e43324a0030714">fwdpp::sample_individuals</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const bool include_neutral, const bool include_selected, const bool remove_fixed)</td></tr>
+<tr class="memdesc:gaca5d7963215a3623a4e43324a0030714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals.  <a href="../../df/d2f/group__samplingPops.html#gaca5d7963215a3623a4e43324a0030714">More...</a><br /></td></tr>
+<tr class="separator:gaca5d7963215a3623a4e43324a0030714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1baf8c9f5430715ff983add5ac92e75"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gac1baf8c9f5430715ff983add5ac92e75"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; data_matrix &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gac1baf8c9f5430715ff983add5ac92e75">fwdpp::sample_individuals_by_window</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; double, double &gt;&gt; window_boundaries, const bool include_neutral, const bool include_selected, const bool remove_fixed)</td></tr>
+<tr class="memdesc:gac1baf8c9f5430715ff983add5ac92e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a vector <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals.  <a href="../../df/d2f/group__samplingPops.html#gac1baf8c9f5430715ff983add5ac92e75">More...</a><br /></td></tr>
+<tr class="separator:gac1baf8c9f5430715ff983add5ac92e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

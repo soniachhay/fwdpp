@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -67,55 +67,44 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">fwdpp::data_matrix Struct Reference</div>  </div>
+<div class="title">fwdpp::data_matrix Struct Reference<div class="ingroups"><a class="el" href="../../df/d2f/group__samplingPops.html">Functions related to taking samples from simulated</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>Genotype or haplotype matrix.  
  <a href="../../dd/d3a/structfwdpp_1_1data__matrix.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c2b73a9c5716b591ca1d549b72e506b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a2c2b73a9c5716b591ca1d549b72e506b">data_matrix</a> (const std::size_t nrow_=0)</td></tr>
-<tr class="separator:a2c2b73a9c5716b591ca1d549b72e506b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a7dcca48bf8ea4f5616e0fbd346de42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a6a7dcca48bf8ea4f5616e0fbd346de42">data_matrix</a> (const std::size_t ncol_)</td></tr>
+<tr class="separator:a6a7dcca48bf8ea4f5616e0fbd346de42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a581892d78c5cc71c14bf788d1513d16c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a581892d78c5cc71c14bf788d1513d16c">neutral</a></td></tr>
-<tr class="memdesc:a581892d78c5cc71c14bf788d1513d16c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#a581892d78c5cc71c14bf788d1513d16c">More...</a><br /></td></tr>
-<tr class="separator:a581892d78c5cc71c14bf788d1513d16c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf414b04b8945bffb44da2faf29ed35b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::int8_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#aaf414b04b8945bffb44da2faf29ed35b">selected</a></td></tr>
-<tr class="memdesc:aaf414b04b8945bffb44da2faf29ed35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#aaf414b04b8945bffb44da2faf29ed35b">More...</a><br /></td></tr>
-<tr class="separator:aaf414b04b8945bffb44da2faf29ed35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd8931c43bf70097e1291673161a2e2e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#acd8931c43bf70097e1291673161a2e2e">neutral_positions</a></td></tr>
-<tr class="memdesc:acd8931c43bf70097e1291673161a2e2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of neutral mutations. Same order as matrix column order.  <a href="#acd8931c43bf70097e1291673161a2e2e">More...</a><br /></td></tr>
-<tr class="separator:acd8931c43bf70097e1291673161a2e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20c19ac1001759549e8c2399656a4784"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a20c19ac1001759549e8c2399656a4784">selected_positions</a></td></tr>
-<tr class="memdesc:a20c19ac1001759549e8c2399656a4784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Positions of selected mutations. Same order as matrix column order.  <a href="#a20c19ac1001759549e8c2399656a4784">More...</a><br /></td></tr>
-<tr class="separator:a20c19ac1001759549e8c2399656a4784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ae6a7c50a4ed3f6ad01eb21330f37ca"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a5ae6a7c50a4ed3f6ad01eb21330f37ca">neutral_popfreq</a></td></tr>
-<tr class="separator:a5ae6a7c50a4ed3f6ad01eb21330f37ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3224f294d6222845214e0eca11e8b4a8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a3224f294d6222845214e0eca11e8b4a8">selected_popfreq</a></td></tr>
-<tr class="separator:a3224f294d6222845214e0eca11e8b4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac933b7a6444b7d1d4bf7d5ed8add69a2"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#ac933b7a6444b7d1d4bf7d5ed8add69a2">nrow</a></td></tr>
-<tr class="memdesc:ac933b7a6444b7d1d4bf7d5ed8add69a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rows in the matrix.  <a href="#ac933b7a6444b7d1d4bf7d5ed8add69a2">More...</a><br /></td></tr>
-<tr class="separator:ac933b7a6444b7d1d4bf7d5ed8add69a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bfd198391a6d20c0556216e6e1db602"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html">state_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a4bfd198391a6d20c0556216e6e1db602">neutral</a></td></tr>
+<tr class="memdesc:a4bfd198391a6d20c0556216e6e1db602"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for neutral mutations.  <a href="#a4bfd198391a6d20c0556216e6e1db602">More...</a><br /></td></tr>
+<tr class="separator:a4bfd198391a6d20c0556216e6e1db602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f74751b035eb702bf6447c219a20eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html">state_matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a43f74751b035eb702bf6447c219a20eb">selected</a></td></tr>
+<tr class="memdesc:a43f74751b035eb702bf6447c219a20eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data for selected mutations.  <a href="#a43f74751b035eb702bf6447c219a20eb">More...</a><br /></td></tr>
+<tr class="separator:a43f74751b035eb702bf6447c219a20eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df387dc1fd63e825dc043b870992cbe"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a2df387dc1fd63e825dc043b870992cbe">neutral_keys</a></td></tr>
+<tr class="separator:a2df387dc1fd63e825dc043b870992cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2bf3cd900b96e442fc789763a7b721"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#aee2bf3cd900b96e442fc789763a7b721">selected_keys</a></td></tr>
+<tr class="separator:aee2bf3cd900b96e442fc789763a7b721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4faa08df8fdaf8cca441dc86f3448661"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a4faa08df8fdaf8cca441dc86f3448661">ncol</a></td></tr>
+<tr class="memdesc:a4faa08df8fdaf8cca441dc86f3448661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of columns in the matrix.  <a href="#a4faa08df8fdaf8cca441dc86f3448661">More...</a><br /></td></tr>
+<tr class="separator:a4faa08df8fdaf8cca441dc86f3448661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Genotype or haplotype matrix. </p>
-<p>This type uses std::vector&lt;std::int8_t&gt; to hold a matrix representing the genotypes for a set of diploids.</p>
-<p>For a haplotype matrix of n individuals, the data represent 2n rows with a 0/1 encoding representing ancestral/derived.</p>
-<p>For a genotype matrix of n individuals, the data represent n rows with a 0/1/2 encoding for the number of copies of the derived mutation.</p>
-<p>The data layout is row-major (aka "C-style") ordering, facilitating compatibility with GSL matrix types, NumPy 2D arrays, etc. Note that GSL matrices may be constructed using gsl_matrix_view_array or gsl_matrix_const_view_array for cases where a matrix of only neutral or only selected mutations is needed.</p>
-<p>We use the 8-bit integer type to save space. In practice, one may convert (via copy) to other types for operations like regression.</p>
-<dl class="section note"><dt>Note</dt><dd>This type is not constructed directly, but rather returned by other functions. </dd></dl>
+<p>Data for neutral and selected variants, respectively are stored as <a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html" title="Simplistic matrix representation of mutations This type uses std::vector&lt;std::int8_t&gt; to hold a matri...">state_matrix</a> objects. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2c2b73a9c5716b591ca1d549b72e506b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c2b73a9c5716b591ca1d549b72e506b">&#9670;&nbsp;</a></span>data_matrix()</h2>
+<a id="a6a7dcca48bf8ea4f5616e0fbd346de42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a7dcca48bf8ea4f5616e0fbd346de42">&#9670;&nbsp;</a></span>data_matrix()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +116,7 @@ Data Fields</h2></td></tr>
           <td class="memname">fwdpp::data_matrix::data_matrix </td>
           <td>(</td>
           <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>nrow_</em> = <code>0</code></td><td>)</td>
+          <td class="paramname"><em>ncol_</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -140,143 +129,107 @@ Data Fields</h2></td></tr>
 <p>Constructor</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">nrow_</td><td>Number of rows in the matrix</td></tr>
+    <tr><td class="paramname">ncol_</td><td>Number of columns in the matrix</td></tr>
   </table>
   </dd>
 </dl>
-<p>The default value of nrow_ = 0 is so that instances of this type can be easily stack-allocated. Intended use cases are Cython, Rcpp, or other systems for "wrapping" C++. This type will rely on compiler-generated copy/move constructors, and therefore such systems should rely on copy elision to make sure that <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#ac933b7a6444b7d1d4bf7d5ed8add69a2" title="Number of rows in the matrix. ">data_matrix::nrow</a> is set correctly. </p>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Changed from rows are sites to rows are individuals. Removed default value of zero from constructor. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Field Documentation</h2>
-<a id="a581892d78c5cc71c14bf788d1513d16c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a581892d78c5cc71c14bf788d1513d16c">&#9670;&nbsp;</a></span>neutral</h2>
+<a id="a4faa08df8fdaf8cca441dc86f3448661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4faa08df8fdaf8cca441dc86f3448661">&#9670;&nbsp;</a></span>ncol</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::int8_t&gt; fwdpp::data_matrix::neutral</td>
+          <td class="memname">std::size_t fwdpp::data_matrix::ncol</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of columns in the matrix. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a4bfd198391a6d20c0556216e6e1db602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bfd198391a6d20c0556216e6e1db602">&#9670;&nbsp;</a></span>neutral</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html">state_matrix</a> fwdpp::data_matrix::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Data for neutral mutations. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00051">51</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00074">74</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a5ae6a7c50a4ed3f6ad01eb21330f37ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ae6a7c50a4ed3f6ad01eb21330f37ca">&#9670;&nbsp;</a></span>neutral_popfreq</h2>
+<a id="a2df387dc1fd63e825dc043b870992cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df387dc1fd63e825dc043b870992cbe">&#9670;&nbsp;</a></span>neutral_keys</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; fwdpp::data_matrix::neutral_popfreq</td>
+          <td class="memname">std::vector&lt;std::size_t&gt; fwdpp::data_matrix::neutral_keys</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frequencies of neutral mutations in entire population. Same order as matrix column order </p>
+<p>Locations of neutral mutations from mutation vector. Same order as matrix row order </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00079">79</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a id="acd8931c43bf70097e1291673161a2e2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd8931c43bf70097e1291673161a2e2e">&#9670;&nbsp;</a></span>neutral_positions</h2>
+<a id="a43f74751b035eb702bf6447c219a20eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f74751b035eb702bf6447c219a20eb">&#9670;&nbsp;</a></span>selected</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; fwdpp::data_matrix::neutral_positions</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Positions of neutral mutations. Same order as matrix column order. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac933b7a6444b7d1d4bf7d5ed8add69a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac933b7a6444b7d1d4bf7d5ed8add69a2">&#9670;&nbsp;</a></span>nrow</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::size_t fwdpp::data_matrix::nrow</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Number of rows in the matrix. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aaf414b04b8945bffb44da2faf29ed35b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf414b04b8945bffb44da2faf29ed35b">&#9670;&nbsp;</a></span>selected</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::int8_t&gt; fwdpp::data_matrix::selected</td>
+          <td class="memname"><a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html">state_matrix</a> fwdpp::data_matrix::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Data for selected mutations. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00053">53</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a3224f294d6222845214e0eca11e8b4a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3224f294d6222845214e0eca11e8b4a8">&#9670;&nbsp;</a></span>selected_popfreq</h2>
+<a id="aee2bf3cd900b96e442fc789763a7b721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee2bf3cd900b96e442fc789763a7b721">&#9670;&nbsp;</a></span>selected_keys</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;double&gt; fwdpp::data_matrix::selected_popfreq</td>
+          <td class="memname">std::vector&lt;std::size_t&gt; fwdpp::data_matrix::selected_keys</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Frequencies of selected mutations in entire population. Same order as matrix column order </p>
+<p>Locations of selected mutations from mutation vector. Same order as matrix row order </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a20c19ac1001759549e8c2399656a4784"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20c19ac1001759549e8c2399656a4784">&#9670;&nbsp;</a></span>selected_positions</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; fwdpp::data_matrix::selected_positions</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Positions of selected mutations. Same order as matrix column order. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/dce/matrix_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/home/molpopgen/src/fwdpp/fwdpp/sugar/<a class="el" href="../../df/dce/matrix_8hpp_source.html">matrix.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/<a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

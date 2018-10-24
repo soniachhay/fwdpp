@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['uniform',['uniform',['../dc/df9/structfwdpp_1_1extensions_1_1uniform.html#a7f511ba12418025b1911a69d14d497d9',1,'fwdpp::extensions::uniform']]],
-  ['update_5fmutation_5fkeys',['update_mutation_keys',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a798077c43caec79746f4fdadc96921fe',1,'fwdpp::data_matrix_details']]],
-  ['update_5fmutations',['update_mutations',['../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06',1,'fwdpp::update_mutations(mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)'],['../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b',1,'fwdpp::update_mutations(const mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)'],['../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d',1,'fwdpp::update_mutations(mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)']]],
-  ['update_5fmutations_5fn',['update_mutations_n',['../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42',1,'fwdpp']]],
-  ['update_5frow',['update_row',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a8c742eb63299412fedf8b7bf620e9ded',1,'fwdpp::data_matrix_details']]],
-  ['update_5frow_5fcommon',['update_row_common',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#afa68ccdc266450c5e0a1c576ad6d30e8',1,'fwdpp::data_matrix_details']]],
-  ['update_5fsample_5fblock',['update_sample_block',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a934ac352ea5da91395e77ec0be5d8735',1,'fwdpp::fwdpp_internal']]]
+  ['table_5fcollection',['table_collection',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a152118f088c5d7af158365d18b37d049',1,'fwdpp::ts::table_collection::table_collection(const double maxpos)'],['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ac105401b40632cc29c300aca3b74c0d2',1,'fwdpp::ts::table_collection::table_collection(const TS_NODE_INT num_initial_nodes, const double initial_time, TS_NODE_INT pop, const double maxpos)']]],
+  ['table_5fsimplifier',['table_simplifier',['../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#ab5ef5ee87604536c22c1cdc4e88ac599',1,'fwdpp::ts::table_simplifier']]],
+  ['test_5fserialization',['test_serialization',['../d9/d59/wfts_8cc.html#a5c53d9ec12646d4eeb4f7dcc58241767',1,'wfts.cc']]],
+  ['tree',['tree',['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a2a1c7057b801201c420df7cffab363a3',1,'fwdpp::ts::tree_visitor']]],
+  ['tree_5fvisitor',['tree_visitor',['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a5f32fee5eb8a00c2a593dea3472a7be1',1,'fwdpp::ts::tree_visitor::tree_visitor(const table_collection &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples)'],['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a91cd83a3271ab24013c4b6269cec27d7',1,'fwdpp::ts::tree_visitor::tree_visitor(const table_collection &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const std::vector&lt; TS_NODE_INT &gt; &amp;preserved_nodes)']]],
+  ['twodmutation',['TwoDmutation',['../d9/de2/structTwoDmutation.html#a2344176ec7f710b6f3f7129a81c68412',1,'TwoDmutation']]]
 ];

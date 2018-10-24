@@ -1,6 +1,7 @@
 var searchData=
 [
   ['if',['if',['../d4/d11/extensions__regionsIntegrationTest_8cc.html#ad5854fd5b975dcd33f1bec3af999b56f',1,'extensions_regionsIntegrationTest.cc']]],
+  ['indexed_5fedge',['indexed_edge',['../d6/d1b/structfwdpp_1_1ts_1_1indexed__edge.html#a30a54e386de02a515fb96052c5194a62',1,'fwdpp::ts::indexed_edge']]],
   ['infsites_5fpopgenmut',['infsites_popgenmut',['../dd/d84/namespacefwdpp.html#a1c6084401e5c608a70d7ad543837b4b0',1,'fwdpp']]],
   ['infsites_5ftwodmutation_5fadditive',['infsites_TwoDmutation_additive',['../d8/de0/custom__mutation_8cc.html#afa5d0549d95178fafcf7778b62c44d8b',1,'custom_mutation.cc']]],
   ['insert_5fnew_5fmutation',['insert_new_mutation',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a5bcd2818563fab16b4a6ce4803fe51a4',1,'fwdpp::fwdpp_internal']]],

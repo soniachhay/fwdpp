@@ -1,17 +1,12 @@
 var searchData=
 [
-  ['read_5fdiploids',['read_diploids',['../dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661',1,'fwdpp::io']]],
-  ['read_5fgametes',['read_gametes',['../dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e',1,'fwdpp::io']]],
-  ['read_5fmutations',['read_mutations',['../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c',1,'fwdpp::io']]],
-  ['rec_5fgam_5fupdater',['rec_gam_updater',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a652b0898d1de4da052bee36b7c70e4b3',1,'fwdpp::fwdpp_internal']]],
-  ['rec_5fupdate_5fitr',['rec_update_itr',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#aa8edec141323d869fef88d0d1a4730ee',1,'fwdpp::fwdpp_internal']]],
-  ['recbinder',['recbinder',['../dd/d84/namespacefwdpp.html#a4a660f56b5c6843e7732042757a650ee',1,'fwdpp']]],
-  ['recombine_5fgametes',['recombine_gametes',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a061d3081a365d6d2b4689193b5c18f39',1,'fwdpp::fwdpp_internal']]],
-  ['recycle_5fgamete',['recycle_gamete',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a966d2a159a694104bb9f6be399759c19',1,'fwdpp::fwdpp_internal']]],
-  ['recycle_5fmutation_5fhelper',['recycle_mutation_helper',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#af87d0d71c34aa25aee2fff7cc2ccae0a',1,'fwdpp::fwdpp_internal']]],
-  ['remove_5ffixed_5fvariants_5ffrom_5fsample',['remove_fixed_variants_from_sample',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a60d1739735ecda3ebf065220effaf772',1,'fwdpp::fwdpp_internal']]],
-  ['remove_5fno_5fderived',['remove_no_derived',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a602f19111b427456c91fdd574385ca67',1,'fwdpp::fwdpp_internal']]],
-  ['resize',['resize',['../d5/daa/sugar__add__mutationTest_8cc.html#af58831344930bf5f80af1aab3f884499',1,'sugar_add_mutationTest.cc']]],
-  ['row_5fcol_5fsums_5fdetails',['row_col_sums_details',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a07822e07c4e3a7d1ebc3ee78974e390f',1,'fwdpp::data_matrix_details']]],
-  ['row_5fsums',['row_sums',['../dd/d84/namespacefwdpp.html#a695173b205d784cddd350b2110000dfe',1,'fwdpp']]]
+  ['poisson_5finterval',['poisson_interval',['../d1/d21/structfwdpp_1_1poisson__interval.html#a0c4cc5b07f1cd9ceedcd3be1d527dd94',1,'fwdpp::poisson_interval']]],
+  ['poisson_5fxover',['poisson_xover',['../d5/d24/structfwdpp_1_1poisson__xover.html#a3177caa183f3029709d5e4e114a3cb41',1,'fwdpp::poisson_xover::poisson_xover(const double recrate_, const double minpos_, const double maxpos_)'],['../d5/d24/structfwdpp_1_1poisson__xover.html#a86be5bc1fb761ad85c09ee0a5c863b8b',1,'fwdpp::poisson_xover::poisson_xover(const poisson_xover &amp;)=default'],['../d5/d24/structfwdpp_1_1poisson__xover.html#a376a59f7c8e3586eb0e1ce8e80dcab5a',1,'fwdpp::poisson_xover::poisson_xover(poisson_xover &amp;&amp;)=default']]],
+  ['popbase',['popbase',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a182a219c763be5d10df215d5a1eaeb4b',1,'fwdpp::sugar::popbase::popbase(popbase &amp;&amp;)=default'],['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a81eaa94abccaf13b5b2183523c16ef93',1,'fwdpp::sugar::popbase::popbase(const popbase &amp;)=default'],['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a8c83b07e18af076e82d559349f00f549',1,'fwdpp::sugar::popbase::popbase(const uint_t &amp;initial_gamete_count, typename gamete_t::mutation_container::size_type reserve_size=100)'],['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#af8398b3423ec9926bf05596568f0bc98',1,'fwdpp::sugar::popbase::popbase(gametes_input &amp;&amp;g, mutations_input &amp;&amp;m, typename gamete_t::mutation_container::size_type reserve_size)']]],
+  ['popgenmut',['popgenmut',['../d9/df7/structfwdpp_1_1popgenmut.html#aae65cb04145b5f5232de17dd4c98b73d',1,'fwdpp::popgenmut::popgenmut(const double &amp;__pos, const double &amp;__s, const double &amp;__h, const unsigned &amp;__g, const std::uint16_t x=0) noexcept'],['../d9/df7/structfwdpp_1_1popgenmut.html#abe972f8146672d3c5df289af7922b9d0',1,'fwdpp::popgenmut::popgenmut(constructor_tuple t) noexcept']]],
+  ['popgenmut_5ftuple_5fwrapper',['popgenmut_tuple_wrapper',['../d1/de1/structpopgenmut__tuple__wrapper.html#a4ffdfcd175f616449fec6377d01b690f',1,'popgenmut_tuple_wrapper']]],
+  ['prep_5ftemporary_5fcontainers',['prep_temporary_containers',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#ae70b0d3964135d37b6717be094dd3a35',1,'fwdpp::fwdpp_internal']]],
+  ['push_5fback',['push_back',['../d9/dc6/gamete__cleanerTest_8cc.html#ad7495745110991b3007a1f0f6119e016',1,'push_back(0):&#160;gamete_cleanerTest.cc'],['../d9/dc6/gamete__cleanerTest_8cc.html#a70a2dc4938ebdbec7e78fb467aee3dc9',1,'push_back(gcont_t::value_type(1)):&#160;gamete_cleanerTest.cc'],['../d9/dc6/gamete__cleanerTest_8cc.html#a74cdb6faef08d9b4acb66ec8e83af534',1,'push_back(1):&#160;gamete_cleanerTest.cc']]],
+  ['push_5fback_5fedge',['push_back_edge',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a3b6d784909cc59a4b8805c4d7c5feea6',1,'fwdpp::ts::table_collection']]],
+  ['push_5fback_5fnode',['push_back_node',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ae4c727212884f0eb4d3ad07da0b48cd3',1,'fwdpp::ts::table_collection']]]
 ];

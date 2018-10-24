@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['haplotype',['haplotype',['../d1/d63/namespacefwdpp_1_1data__matrix__details.html#a88b4c3183ffd63f0648140abbbbded2ea7e729578d9dbac58ef94d2d877088995',1,'fwdpp::data_matrix_details']]]
+  ['singleloc',['SINGLELOC',['../de/d6e/group__sugar.html#gga8b67d365ea318f1011a5881c21453ef2a0d11f1cd8320d792049f863027f04524',1,'fwdpp::sugar']]]
 ];

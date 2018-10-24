@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -60,44 +60,473 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Modules</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Functions related to taking samples from simulated</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
-Modules</h2></td></tr>
-<tr class="memitem:d7/d86/group__samplingPopsGamete"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d86/group__samplingPopsGamete.html">Randomly-sampling individual gametes.</a></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d87/structfwdpp_1_1state__matrix.html">fwdpp::state_matrix</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simplistic matrix representation of mutations This type uses std::vector&lt;std::int8_t&gt; to hold a matrix representing the genotypes for a set of diploids.  <a href="../../db/d87/structfwdpp_1_1state__matrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/de2/group__samplingPopsInd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de2/group__samplingPopsInd.html">Randomly-sampling diploids.</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">fwdpp::data_matrix</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genotype or haplotype matrix.  <a href="../../dd/d3a/structfwdpp_1_1data__matrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gada6775a8330e88ac53542e737d4f3d32"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gada6775a8330e88ac53542e737d4f3d32"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &gt;, std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp::mutation_keys</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const bool include_neutral, const bool include_selected)</td></tr>
+<tr class="separator:gada6775a8330e88ac53542e737d4f3d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1271c848ef49675264f1bf136a7a860b"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
+<tr class="memitem:ga1271c848ef49675264f1bf136a7a860b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#ga1271c848ef49675264f1bf136a7a860b">fwdpp::sort_keys</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;keys)</td></tr>
+<tr class="memdesc:ga1271c848ef49675264f1bf136a7a860b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort keys by position.  <a href="../../df/d2f/group__samplingPops.html#ga1271c848ef49675264f1bf136a7a860b">More...</a><br /></td></tr>
+<tr class="separator:ga1271c848ef49675264f1bf136a7a860b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16aa28b2881f5393e6ef3c8a6513ede5"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:ga16aa28b2881f5393e6ef3c8a6513ede5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#ga16aa28b2881f5393e6ef3c8a6513ede5">fwdpp::genotype_matrix</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;neutral_keys, const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;selected_keys)</td></tr>
+<tr class="separator:ga16aa28b2881f5393e6ef3c8a6513ede5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab51dfff82a620b51eb1c8ae49f4891ef"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gab51dfff82a620b51eb1c8ae49f4891ef"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gab51dfff82a620b51eb1c8ae49f4891ef">fwdpp::haplotype_matrix</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;neutral_keys, const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;selected_keys)</td></tr>
+<tr class="separator:gab51dfff82a620b51eb1c8ae49f4891ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga695173b205d784cddd350b2110000dfe"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::uint32_t &gt;, std::vector&lt; std::uint32_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#ga695173b205d784cddd350b2110000dfe">fwdpp::row_sums</a> (const <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> &amp;m)</td></tr>
+<tr class="separator:ga695173b205d784cddd350b2110000dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5baf96ec9e341367fedd2cc01e1fae80"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; std::uint32_t &gt;, std::vector&lt; std::uint32_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#ga5baf96ec9e341367fedd2cc01e1fae80">fwdpp::col_sums</a> (const <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> &amp;m)</td></tr>
+<tr class="separator:ga5baf96ec9e341367fedd2cc01e1fae80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca5d7963215a3623a4e43324a0030714"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gaca5d7963215a3623a4e43324a0030714"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gaca5d7963215a3623a4e43324a0030714">fwdpp::sample_individuals</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const bool include_neutral, const bool include_selected, const bool remove_fixed)</td></tr>
+<tr class="memdesc:gaca5d7963215a3623a4e43324a0030714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals.  <a href="../../df/d2f/group__samplingPops.html#gaca5d7963215a3623a4e43324a0030714">More...</a><br /></td></tr>
+<tr class="separator:gaca5d7963215a3623a4e43324a0030714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1baf8c9f5430715ff983add5ac92e75"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:gac1baf8c9f5430715ff983add5ac92e75"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__samplingPops.html#gac1baf8c9f5430715ff983add5ac92e75">fwdpp::sample_individuals_by_window</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const std::vector&lt; std::size_t &gt; &amp;individuals, const std::vector&lt; std::pair&lt; double, double &gt;&gt; window_boundaries, const bool include_neutral, const bool include_selected, const bool remove_fixed)</td></tr>
+<tr class="memdesc:gac1baf8c9f5430715ff983add5ac92e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a vector <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals.  <a href="../../df/d2f/group__samplingPops.html#gac1baf8c9f5430715ff983add5ac92e75">More...</a><br /></td></tr>
+<tr class="separator:gac1baf8c9f5430715ff983add5ac92e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>populations</p>
-<p>This collection of functions allows a user to draw a sample of size <img class="formulaInl" alt="$n \ll 2N$" src="../../form_0.png"/> from a simulated population.</p>
-<p>The library provides several overloads of the functions <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf8ce2c5a3637301d230a523c1fa9aa1e" title="Sampling from a population in an individual-based simulation. ">fwdpp::ms_sample</a> and <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga68a7113edb43faee9b72c44a67945037" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">fwdpp::ms_sample_separate</a>.</p>
-<p>The following features are in common to all versions of these functions:</p>
+<p>populations </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga5baf96ec9e341367fedd2cc01e1fae80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5baf96ec9e341367fedd2cc01e1fae80">&#9670;&nbsp;</a></span>col_sums()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::vector&lt;std::uint32_t&gt;, std::vector&lt;std::uint32_t&gt; &gt; fwdpp::col_sums </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calculate the column sums of a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a></p>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors of unsigned integers representing column sums for neutral and selected sites in the matrix, respectively. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00264">264</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga16aa28b2881f5393e6ef3c8a6513ede5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16aa28b2881f5393e6ef3c8a6513ede5">&#9670;&nbsp;</a></span>genotype_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> fwdpp::genotype_matrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>neutral_keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>selected_keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> representing genotypes encoded as 0,1, or 2 copies of the derived mutation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pop</td><td>The population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of individuals in <em>pop</em> forming the sample. </td></tr>
+    <tr><td class="paramname">neutral_keys</td><td>See documentation of <a class="el" href="../../df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp::mutation_keys</a> </td></tr>
+    <tr><td class="paramname">selected_keys</td><td>See documentation of <a class="el" href="../../df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp::mutation_keys</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00195">195</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gab51dfff82a620b51eb1c8ae49f4891ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab51dfff82a620b51eb1c8ae49f4891ef">&#9670;&nbsp;</a></span>haplotype_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> fwdpp::haplotype_matrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>neutral_keys</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>selected_keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculate a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> representing haplotypes encoded as 0 or 1 copies of the derived mutation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pop</td><td>The population </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of individuals in <em>pop</em> forming the sample. </td></tr>
+    <tr><td class="paramname">neutral_keys</td><td>See documentation of <a class="el" href="../../df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp::mutation_keys</a> </td></tr>
+    <tr><td class="paramname">selected_keys</td><td>See documentation of <a class="el" href="../../df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp::mutation_keys</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00221">221</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gada6775a8330e88ac53542e737d4f3d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada6775a8330e88ac53542e737d4f3d32">&#9670;&nbsp;</a></span>mutation_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::vector&lt;std::pair&lt;std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&gt; &gt;, std::vector&lt;std::pair&lt;std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&gt; &gt; &gt; fwdpp::mutation_keys </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_selected</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>For a sample defined by a set of diploids, obtain the keys corresponding to all mutations in that sample.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pop</td><td>The population object </td></tr>
+    <tr><td class="paramname">individuals</td><td>The indexes of individuals in the sample </td></tr>
+    <tr><td class="paramname">include_neutral</td><td>If true, obtain keys for neutral sites </td></tr>
+    <tr><td class="paramname">include_selected</td><td>If true, obtain keys for selected sites</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors representing neutral and selected keys, respectively. The value type of each vector is std::pair&lt;std::size_t,fwdpp::uint_t&gt;. The first value is the mutation key, and the second is its frequency in the sample.</dd></dl>
+<p>Several comments are required:</p>
 <ol type="1">
-<li>They only supp]ort bi-allelic mutation positions.</li>
-<li>All functions return some number of objects of type std::vector&lt; std::pair&lt;double, std::string&gt; &gt;. Each element in the vector corresponds to a mutation. The double corresponds to the mutation position, and the string corresponds to the character states in each of the <img class="formulaInl" alt="$n$" src="../../form_1.png"/> samples. The strings contain the character '0' when a sample has the ancestral state or '1' for the derived (mutant) state. This type may be used to populate a polymorphism table from the <a href="http://molpopgen.github.io/libsequence/">libsequence</a> library: <div class="fragment"><div class="line"><span class="keyword">auto</span> x = <a class="code" href="../../d7/de2/group__samplingPopsInd.html#gaf8ce2c5a3637301d230a523c1fa9aa1e">fwdpp::ms_sample</a>( appropriate arguments );</div><div class="line">Sequence::SimData xx(x.begin(),x.end());</div></div><!-- fragment --> When a SimData object is written to a stream, its output format is the same as that used by Dick Hudson's coalescent simulation program <a href="http://home.uchicago.edu/~rhudson1/source/mksamples.html">ms</a></li>
-<li>All versions of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#gaf8ce2c5a3637301d230a523c1fa9aa1e" title="Sampling from a population in an individual-based simulation. ">fwdpp::ms_sample</a> return vectors where the mutations affecting fitness and those not affecting fitness are intermingled.</li>
-<li>All versions of <a class="el" href="../../d7/de2/group__samplingPopsInd.html#ga68a7113edb43faee9b72c44a67945037" title="Sampling from a population in an individual-based simulation. Selected and neutral mutations returned...">fwdpp::ms_sample_separate</a> return pairs of vectors separating the mutations not affecting fitness from those that do. The first member of each pair is a vector of "neutral" mutations, and the second member is the vector of "selected" mutations.</li>
-<li>The functions are all implemented using sampling with replacement from the population. Thus, setting <img class="formulaInl" alt="$n = N$" src="../../form_2.png"/> (or <img class="formulaInl" alt="$2N$" src="../../form_3.png"/>) will NOT return all the variable sites in the entire population!!!</li>
+<li>Return values are unsorted with respect to anything meaningful. If you wish to sort on position, etc., do so yourself.</li>
+<li>In general, any manipulation of the keys is possible. For example, removing mutations that are fixed in the sample, or whose frequency is or is not within some desired range, is easily doable via the "erase/remove" idiom.</li>
+<li>Keys from multiple samples can be merged to form new vectors where the key elements are unique and the frequencies are summed, all using standard C++. </li>
 </ol>
-<p>A vector may contain data looking like the following: </p><pre class="fragment">0.0760 "10000"
-0.6805 "00010"
-</pre><p>The two rows are the two different positions (0.076 and 0.6805). The first haplotype is "10", the second is "00", and the fourth is "01".</p>
-<p>If you converted the data to a Sequence::SimData object and printed it to screen or a file, the output would be:</p>
-<pre class="fragment">//
-segsites: 2
-positions: 0.0760 0.6805
-10
-00
-00
-01
-00
-</pre> </div><!-- contents -->
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00114">114</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga695173b205d784cddd350b2110000dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga695173b205d784cddd350b2110000dfe">&#9670;&nbsp;</a></span>row_sums()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;std::vector&lt;std::uint32_t&gt;, std::vector&lt;std::uint32_t&gt; &gt; fwdpp::row_sums </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> &amp;&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Calculate the row sums of a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a></p>
+<dl class="section return"><dt>Returns</dt><dd>A pair of vectors of unsigned integers representing row sums for neutral and selected sites in the matrix, respectively. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a18">wfts.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00246">246</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaca5d7963215a3623a4e43324a0030714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca5d7963215a3623a4e43324a0030714">&#9670;&nbsp;</a></span>sample_individuals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> fwdpp::sample_individuals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>remove_fixed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pop</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>indexes of individuals in <em>pop</em> </td></tr>
+    <tr><td class="paramname">include_neutral</td><td>If true, populate <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a4bfd198391a6d20c0556216e6e1db602" title="Data for neutral mutations. ">fwdpp::data_matrix::neutral</a> </td></tr>
+    <tr><td class="paramname">include_selected</td><td>If true, populate <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a43f74751b035eb702bf6447c219a20eb" title="Data for selected mutations. ">fwdpp::data_matrix::selected</a> </td></tr>
+    <tr><td class="paramname">remove_fixed</td><td>If true, remove variants that are fixed in the sample.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The return value is a haplotype matrix. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a18">diploid_fixed_sh_ind.cc</a>, and <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a18">diploid_ind.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../dd/d0a/sampling__functions_8hpp_source.html#l00025">25</a> of file <a class="el" href="../../dd/d0a/sampling__functions_8hpp_source.html">sampling_functions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gac1baf8c9f5430715ff983add5ac92e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac1baf8c9f5430715ff983add5ac92e75">&#9670;&nbsp;</a></span>sample_individuals_by_window()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&gt; fwdpp::sample_individuals_by_window </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>individuals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, double &gt;&gt;&#160;</td>
+          <td class="paramname"><em>window_boundaries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>include_selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>remove_fixed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a vector <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> for a set of individuals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pop</td><td>A population </td></tr>
+    <tr><td class="paramname">individuals</td><td>indexes of individuals in <em>pop</em> </td></tr>
+    <tr><td class="paramname">window_boundaries</td><td>[start,stop) positions of each window. </td></tr>
+    <tr><td class="paramname">include_neutral</td><td>If true, populate <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a4bfd198391a6d20c0556216e6e1db602" title="Data for neutral mutations. ">fwdpp::data_matrix::neutral</a> </td></tr>
+    <tr><td class="paramname">include_selected</td><td>If true, populate <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html#a43f74751b035eb702bf6447c219a20eb" title="Data for selected mutations. ">fwdpp::data_matrix::selected</a> </td></tr>
+    <tr><td class="paramname">remove_fixed</td><td>If true, remove variants that are fixed in the sample.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>vector of <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Each <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">fwdpp::data_matrix</a> is in haplotype matrix layout.</dd></dl>
+<p>This function differs from sample_individuals in that a separate <a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html" title="Genotype or haplotype matrix. ">data_matrix</a> is returned for each window. The main use case envisioned is for sampling from multilocus populations, where <a class="el" href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html#affb96e93aacd9ce97466b4bedef4a21a">mlocuspop::locus_boundaries</a> is passed in as <em>window_boundaries</em>. Other applications are possible, however. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../dd/d0a/sampling__functions_8hpp_source.html#l00052">52</a> of file <a class="el" href="../../dd/d0a/sampling__functions_8hpp_source.html">sampling_functions.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1271c848ef49675264f1bf136a7a860b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1271c848ef49675264f1bf136a7a860b">&#9670;&nbsp;</a></span>sort_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mcont_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fwdpp::sort_keys </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; std::size_t, <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>keys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sort keys by position. </p>
+<p>Takes the data returned from mutation_keys and sorts it by increasing mutation positions.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutations</td><td>A mutation container </td></tr>
+    <tr><td class="paramname">keys</td><td>Returned from mutation_keys </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html#l00156">156</a> of file <a class="el" href="../../d1/d80/data__matrix_8hpp_source.html">data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

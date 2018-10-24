@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /home/molpopgen/src/fwdpp/testsuite/unit/gamete_cleanerTest.cc File Reference</title>
+<title>fwdpp: /home/kevin/src/fwdpp/testsuite/unit/gamete_cleanerTest.cc File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -64,77 +64,70 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">gamete_cleanerTest.cc File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Testing <a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a805c34ffcd7913aaf8a16d71a18225bd" title="Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same...">fwdpp::fwdpp_internal::gamete_cleaner</a>.  
+<p>Testing fwdpp::fwdpp_internal::gamete_cleaner.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;config.h&gt;</code><br />
 <code>#include &lt;boost/test/unit_test.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/df8/diploid_8hh_source.html">fwdpp/diploid.hh</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp_source.html">../fixtures/fwdpp_fixtures.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1891807342f8de42e1e9f6b2f3c900e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a1891807342f8de42e1e9f6b2f3c900e8">BOOST_FIXTURE_TEST_SUITE</a> (gamete_cleanerTest, <a class="el" href="../../d4/d55/structstandard__empty__single__deme__fixture.html">standard_empty_single_deme_fixture</a>) <a class="el" href="../../db/d67/sugar__singlepopTest_8cc.html#add2fae7e0540e815d4f597ab0a426bbd">BOOST_AUTO_TEST_CASE</a>(test_remove_all)</td></tr>
-<tr class="separator:a1891807342f8de42e1e9f6b2f3c900e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaea17cf9e1c5dab6e6732082890fa2d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#aaea17cf9e1c5dab6e6732082890fa2d1">BOOST_AUTO_TEST_CASE</a> (test_remove_nothing)</td></tr>
-<tr class="separator:aaea17cf9e1c5dab6e6732082890fa2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f350e19db03136767140cf0e86dd7e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a8f350e19db03136767140cf0e86dd7e2">BOOST_AUTO_TEST_CASE</a> (test_remove_neutral)</td></tr>
-<tr class="separator:a8f350e19db03136767140cf0e86dd7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8834dad61e4227aafb8ae406beaed2b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a8834dad61e4227aafb8ae406beaed2b9">BOOST_FIXTURE_TEST_SUITE</a> (gamete_cleanerTest, <a class="el" href="../../d4/d55/structstandard__empty__single__deme__fixture.html">standard_empty_single_deme_fixture</a>)</td></tr>
+<tr class="separator:a8834dad61e4227aafb8ae406beaed2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea31af7aeb7219e4ffe1e4cf943a10a5"><td class="memItemLeft" align="right" valign="top">mutations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#aea31af7aeb7219e4ffe1e4cf943a10a5">emplace_back</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(0, 0, 0))</td></tr>
+<tr class="separator:aea31af7aeb7219e4ffe1e4cf943a10a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb59cdd13f459a5190bf10eda07bd62"><td class="memItemLeft" align="right" valign="top">mutations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a9fb59cdd13f459a5190bf10eda07bd62">emplace_back</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(1, 0, 0))</td></tr>
+<tr class="separator:a9fb59cdd13f459a5190bf10eda07bd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a445f09634d141821b9bf98644caeaec5"><td class="memItemLeft" align="right" valign="top">mcounts&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a445f09634d141821b9bf98644caeaec5">emplace_back</a> (2000)</td></tr>
+<tr class="separator:a445f09634d141821b9bf98644caeaec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78122b4509232a40164c3d59dd5a242c"><td class="memItemLeft" align="right" valign="top">mcounts&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a78122b4509232a40164c3d59dd5a242c">emplace_back</a> (1)</td></tr>
+<tr class="separator:a78122b4509232a40164c3d59dd5a242c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee2befd9d30478fbd1a8f5d47829b5c"><td class="memItemLeft" align="right" valign="top">gametes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a5ee2befd9d30478fbd1a8f5d47829b5c">emplace_back</a> (gcont_t::value_type(0))</td></tr>
+<tr class="separator:a5ee2befd9d30478fbd1a8f5d47829b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7495745110991b3007a1f0f6119e016"><td class="memItemLeft" align="right" valign="top">gametes [0] mutations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#ad7495745110991b3007a1f0f6119e016">push_back</a> (0)</td></tr>
+<tr class="separator:ad7495745110991b3007a1f0f6119e016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a2dc4938ebdbec7e78fb467aee3dc9"><td class="memItemLeft" align="right" valign="top">gametes&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a70a2dc4938ebdbec7e78fb467aee3dc9">push_back</a> (gcont_t::value_type(1))</td></tr>
+<tr class="separator:a70a2dc4938ebdbec7e78fb467aee3dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cdb6faef08d9b4acb66ec8e83af534"><td class="memItemLeft" align="right" valign="top">gametes [1] mutations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a74cdb6faef08d9b4acb66ec8e83af534">push_back</a> (1)</td></tr>
+<tr class="separator:a74cdb6faef08d9b4acb66ec8e83af534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7193e95ebdf75d7afb1a823d5ded18f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a7193e95ebdf75d7afb1a823d5ded18f9">for</a> (auto &amp;g :gametes)</td></tr>
+<tr class="separator:a7193e95ebdf75d7afb1a823d5ded18f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d080f5da39315fdae2a5dddb33e1cb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a3d080f5da39315fdae2a5dddb33e1cb5">BOOST_REQUIRE_EQUAL</a> (<a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a339d22b3e442946380f98ed19e320db2">s</a>, 2000)</td></tr>
+<tr class="separator:a3d080f5da39315fdae2a5dddb33e1cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9e1a8a32a8a7682315d56e84690fcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a3c9e1a8a32a8a7682315d56e84690fcf">BOOST_REQUIRE_EQUAL</a> (gametes[0].mutations.size(), 1)</td></tr>
+<tr class="separator:a3c9e1a8a32a8a7682315d56e84690fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ddd9536a9266ac0f694dbee6fd8a55e"><td class="memItemLeft" align="right" valign="top">mutations&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a3ddd9536a9266ac0f694dbee6fd8a55e">emplace_back</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(1, -0.1, 0))</td></tr>
+<tr class="separator:a3ddd9536a9266ac0f694dbee6fd8a55e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac32bfc022d9785b66f48d2a9c0ba5faf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#ac32bfc022d9785b66f48d2a9c0ba5faf">BOOST_REQUIRE_EQUAL</a> (gametes[0].smutations.size(), 1)</td></tr>
+<tr class="separator:ac32bfc022d9785b66f48d2a9c0ba5faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d35077f568ec6f8c8969d41571b9bc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a1d35077f568ec6f8c8969d41571b9bc3">BOOST_REQUIRE_EQUAL</a> (gametes[0].mutations.size(), 0)</td></tr>
+<tr class="separator:a1d35077f568ec6f8c8969d41571b9bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a45e189124b91a4bec0bfe1dc5c01ed13"><td class="memItemLeft" align="right" valign="top">gametes [0]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a45e189124b91a4bec0bfe1dc5c01ed13">n</a> = 1999</td></tr>
+<tr class="separator:a45e189124b91a4bec0bfe1dc5c01ed13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339d22b3e442946380f98ed19e320db2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a339d22b3e442946380f98ed19e320db2">s</a> = 0</td></tr>
+<tr class="separator:a339d22b3e442946380f98ed19e320db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Testing <a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a805c34ffcd7913aaf8a16d71a18225bd" title="Handles removal of indexes to mutations from gametes after sampling Intended use is when std::is_same...">fwdpp::fwdpp_internal::gamete_cleaner</a>. </p>
+<div class="textblock"><p>Testing fwdpp::fwdpp_internal::gamete_cleaner. </p>
 
 <p class="definition">Definition in file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aaea17cf9e1c5dab6e6732082890fa2d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaea17cf9e1c5dab6e6732082890fa2d1">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">test_remove_nothing&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00034">34</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a8f350e19db03136767140cf0e86dd7e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f350e19db03136767140cf0e86dd7e2">&#9670;&nbsp;</a></span>BOOST_AUTO_TEST_CASE() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">BOOST_AUTO_TEST_CASE </td>
-          <td>(</td>
-          <td class="paramtype">test_remove_neutral&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00054">54</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
-
-</div>
-</div>
-<a id="a1891807342f8de42e1e9f6b2f3c900e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1891807342f8de42e1e9f6b2f3c900e8">&#9670;&nbsp;</a></span>BOOST_FIXTURE_TEST_SUITE()</h2>
+<a id="a8834dad61e4227aafb8ae406beaed2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8834dad61e4227aafb8ae406beaed2b9">&#9670;&nbsp;</a></span>BOOST_FIXTURE_TEST_SUITE()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +152,336 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00011">11</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00012">12</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a3d080f5da39315fdae2a5dddb33e1cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d080f5da39315fdae2a5dddb33e1cb5">&#9670;&nbsp;</a></span>BOOST_REQUIRE_EQUAL() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_REQUIRE_EQUAL </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a339d22b3e442946380f98ed19e320db2">s</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">2000&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c9e1a8a32a8a7682315d56e84690fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c9e1a8a32a8a7682315d56e84690fcf">&#9670;&nbsp;</a></span>BOOST_REQUIRE_EQUAL() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_REQUIRE_EQUAL </td>
+          <td>(</td>
+          <td class="paramtype">gametes.mutations.&#160;</td>
+          <td class="paramname"><em>size</em>()[0], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac32bfc022d9785b66f48d2a9c0ba5faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac32bfc022d9785b66f48d2a9c0ba5faf">&#9670;&nbsp;</a></span>BOOST_REQUIRE_EQUAL() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_REQUIRE_EQUAL </td>
+          <td>(</td>
+          <td class="paramtype">gametes.smutations.&#160;</td>
+          <td class="paramname"><em>size</em>()[0], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d35077f568ec6f8c8969d41571b9bc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d35077f568ec6f8c8969d41571b9bc3">&#9670;&nbsp;</a></span>BOOST_REQUIRE_EQUAL() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOST_REQUIRE_EQUAL </td>
+          <td>(</td>
+          <td class="paramtype">gametes.mutations.&#160;</td>
+          <td class="paramname"><em>size</em>()[0], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">0&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea31af7aeb7219e4ffe1e4cf943a10a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea31af7aeb7219e4ffe1e4cf943a10a5">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mutations emplace_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(0, 0, 0)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div><div class="line">    diploids.resize(1000, std::make_pair(0, 0))</div></div><!-- fragment -->
+</div>
+</div>
+<a id="a9fb59cdd13f459a5190bf10eda07bd62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb59cdd13f459a5190bf10eda07bd62">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mutations emplace_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(1, 0, 0)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a445f09634d141821b9bf98644caeaec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a445f09634d141821b9bf98644caeaec5">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mcounts emplace_back </td>
+          <td>(</td>
+          <td class="paramtype">2000&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78122b4509232a40164c3d59dd5a242c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78122b4509232a40164c3d59dd5a242c">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mcounts emplace_back </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ee2befd9d30478fbd1a8f5d47829b5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee2befd9d30478fbd1a8f5d47829b5c">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gametes emplace_back </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t::value_type(0)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ddd9536a9266ac0f694dbee6fd8a55e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ddd9536a9266ac0f694dbee6fd8a55e">&#9670;&nbsp;</a></span>emplace_back() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mutations emplace_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a>(1, -0.1, 0)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7193e95ebdf75d7afb1a823d5ded18f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7193e95ebdf75d7afb1a823d5ded18f9">&#9670;&nbsp;</a></span>for()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">for </td>
+          <td>(</td>
+          <td class="paramtype">auto &amp;g :gametes&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00053">53</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="ad7495745110991b3007a1f0f6119e016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7495745110991b3007a1f0f6119e016">&#9670;&nbsp;</a></span>push_back() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gametes [0] mutations push_back </td>
+          <td>(</td>
+          <td class="paramtype">0&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70a2dc4938ebdbec7e78fb467aee3dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a2dc4938ebdbec7e78fb467aee3dc9">&#9670;&nbsp;</a></span>push_back() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gametes push_back </td>
+          <td>(</td>
+          <td class="paramtype">gcont_t::value_type(1)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74cdb6faef08d9b4acb66ec8e83af534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cdb6faef08d9b4acb66ec8e83af534">&#9670;&nbsp;</a></span>push_back() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gametes [1] mutations push_back </td>
+          <td>(</td>
+          <td class="paramtype">1&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a45e189124b91a4bec0bfe1dc5c01ed13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e189124b91a4bec0bfe1dc5c01ed13">&#9670;&nbsp;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">gametes [0] n = 1999</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a27">wfts.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00049">49</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
+
+</div>
+</div>
+<a id="a339d22b3e442946380f98ed19e320db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339d22b3e442946380f98ed19e320db2">&#9670;&nbsp;</a></span>s</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int s = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d0/dfa/custom_diploid_8cc-example.html#a7">custom_diploid.cc</a>, <a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a3">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a17">juvenile_migration.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a38">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a54">wfts.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html#l00052">52</a> of file <a class="el" href="../../d9/dc6/gamete__cleanerTest_8cc_source.html">gamete_cleanerTest.cc</a>.</p>
 
 </div>
 </div>

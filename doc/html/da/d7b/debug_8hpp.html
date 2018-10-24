@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>fwdpp: /home/molpopgen/src/fwdpp/fwdpp/debug.hpp File Reference</title>
+<title>fwdpp: /home/kevin/src/fwdpp/fwdpp/debug.hpp File Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -74,42 +74,45 @@ $(function() {
 <code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
+<code>#include &quot;internal/debug_details.hpp&quot;</code><br />
 </div>
 <p><a href="../../da/d7b/debug_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:d0/d70/namespacefwdpp_1_1debug"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html">fwdpp::debug</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:dd/d84/namespacefwdpp"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html">fwdpp</a></td></tr>
 <tr class="memdesc:dd/d84/namespacefwdpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary namespace defined by this library. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2892ff14a56e9ae394ccc381dfbd48a9"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
-<tr class="memitem:a2892ff14a56e9ae394ccc381dfbd48a9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a2892ff14a56e9ae394ccc381dfbd48a9">fwdpp::check_sum</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const unsigned twoN)</td></tr>
-<tr class="memdesc:a2892ff14a56e9ae394ccc381dfbd48a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="../../dd/d84/namespacefwdpp.html#a2892ff14a56e9ae394ccc381dfbd48a9">More...</a><br /></td></tr>
-<tr class="separator:a2892ff14a56e9ae394ccc381dfbd48a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa19caa152c4b1e661a590055171e4066"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
-<tr class="memitem:aa19caa152c4b1e661a590055171e4066"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#aa19caa152c4b1e661a590055171e4066">fwdpp::check_sum</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> *gametes, const unsigned twoN)</td></tr>
-<tr class="memdesc:aa19caa152c4b1e661a590055171e4066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the sum of counts in gametes equals twoN, false otherwise Returns true if the sum of counts in gametes equals twoN, false otherwise.  <a href="../../dd/d84/namespacefwdpp.html#aa19caa152c4b1e661a590055171e4066">More...</a><br /></td></tr>
-<tr class="separator:aa19caa152c4b1e661a590055171e4066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa36cafdd29a57b43288bfd33fbc8b7c7"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:aa36cafdd29a57b43288bfd33fbc8b7c7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#aa36cafdd29a57b43288bfd33fbc8b7c7">fwdpp::gamete_is_sorted_n</a> (const gamete_t &amp;g, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;m)</td></tr>
-<tr class="memdesc:aa36cafdd29a57b43288bfd33fbc8b7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that neutral mutation keys are sorted according to mutation position.  <a href="../../dd/d84/namespacefwdpp.html#aa36cafdd29a57b43288bfd33fbc8b7c7">More...</a><br /></td></tr>
-<tr class="separator:aa36cafdd29a57b43288bfd33fbc8b7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace6872dfd15079a47bc674f945e41afc"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:ace6872dfd15079a47bc674f945e41afc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#ace6872dfd15079a47bc674f945e41afc">fwdpp::gamete_is_sorted_s</a> (const gamete_t &amp;g, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;m)</td></tr>
-<tr class="memdesc:ace6872dfd15079a47bc674f945e41afc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that selected mutation keys are sorted according to mutation position.  <a href="../../dd/d84/namespacefwdpp.html#ace6872dfd15079a47bc674f945e41afc">More...</a><br /></td></tr>
-<tr class="separator:ace6872dfd15079a47bc674f945e41afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6720f142731c42f55a937d626f5b0879"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a6720f142731c42f55a937d626f5b0879"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a6720f142731c42f55a937d626f5b0879">fwdpp::gamete_data_sane</a> (const gamete_t &amp;g, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
-<tr class="separator:a6720f142731c42f55a937d626f5b0879"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02e42eaff8cd1827e60698c0c095b6c4"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a02e42eaff8cd1827e60698c0c095b6c4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a02e42eaff8cd1827e60698c0c095b6c4">fwdpp::popdata_sane</a> (const dipcont_t &amp;diploids, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
-<tr class="separator:a02e42eaff8cd1827e60698c0c095b6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f33e5051b270bae15e2881b27c0411e"><td class="memTemplParams" colspan="2">template&lt;typename dipcont_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a7f33e5051b270bae15e2881b27c0411e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a7f33e5051b270bae15e2881b27c0411e">fwdpp::popdata_sane_multilocus</a> (const dipcont_t &amp;diploids, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
-<tr class="separator:a7f33e5051b270bae15e2881b27c0411e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac09e15d20d447337e22a850b3b542857"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:ac09e15d20d447337e22a850b3b542857"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857">fwdpp::debug::validate_sum_gamete_counts</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const uint_t expected_sum)</td></tr>
+<tr class="memdesc:ac09e15d20d447337e22a850b3b542857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception if sum of all gamete counts != <em>expected_sum</em>.  <a href="../../d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857">More...</a><br /></td></tr>
+<tr class="separator:ac09e15d20d447337e22a850b3b542857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ecaf182efa8db74f6624ed931f38306"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename iterator &gt; </td></tr>
+<tr class="memitem:a6ecaf182efa8db74f6624ed931f38306"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a6ecaf182efa8db74f6624ed931f38306">fwdpp::debug::validate_mutation_key_ranges</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const iterator beg, const iterator end)</td></tr>
+<tr class="separator:a6ecaf182efa8db74f6624ed931f38306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56f44a22f16969cd93521ae1e501106"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t &gt; </td></tr>
+<tr class="memitem:aa56f44a22f16969cd93521ae1e501106"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#aa56f44a22f16969cd93521ae1e501106">fwdpp::debug::gamete_is_extant</a> (const gamete_t &amp;gamete)</td></tr>
+<tr class="memdesc:aa56f44a22f16969cd93521ae1e501106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception of <a class="el" href="../../d5/dd3/structfwdpp_1_1gamete__base.html#acfa4da6a6968893e41388f342d0d6084" title="Count in population. ">gamete.n</a> == 0.  <a href="../../d0/d70/namespacefwdpp_1_1debug.html#aa56f44a22f16969cd93521ae1e501106">More...</a><br /></td></tr>
+<tr class="separator:aa56f44a22f16969cd93521ae1e501106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a2d321aa5d4ecd44a86587eaff11a5bf5">fwdpp::debug::gamete_is_sorted</a> (const gamete_t &amp;g, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations)</td></tr>
+<tr class="memdesc:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that neutral mutation keys are sorted according to mutation position.  <a href="../../d0/d70/namespacefwdpp_1_1debug.html#a2d321aa5d4ecd44a86587eaff11a5bf5">More...</a><br /></td></tr>
+<tr class="separator:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ad7102a362ae959c52fd2cfbb91295b0e">fwdpp::debug::gamete_data_valid</a> (const gamete_t &amp;g, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; uint_t &gt; &amp;mutcounts)</td></tr>
+<tr class="separator:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e">fwdpp::debug::validate_pop_data</a> (const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop)</td></tr>
+<tr class="separator:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fe459a07e08d3fb6f200d261c40ede"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type &gt; </td></tr>
+<tr class="memitem:a93fe459a07e08d3fb6f200d261c40ede"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a93fe459a07e08d3fb6f200d261c40ede">fwdpp::debug::check_mutation_neutrality</a> (const mutation_type &amp;mutation, const bool expected_neutrality)</td></tr>
+<tr class="memdesc:a93fe459a07e08d3fb6f200d261c40ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception if <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation.neutral</a> != <em>expected_neutrality</em>.  <a href="../../d0/d70/namespacefwdpp_1_1debug.html#a93fe459a07e08d3fb6f200d261c40ede">More...</a><br /></td></tr>
+<tr class="separator:a93fe459a07e08d3fb6f200d261c40ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

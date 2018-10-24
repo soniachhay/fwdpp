@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -76,7 +76,7 @@ $(function() {
 <li>seed = a random number seed. I will use $RANDOM as a seed, referring to the bash shell method to return a random integer.</li>
 </ul>
 <p>Note: familiarity with Hudson's "[ms](http://home.uchicago.edu/~rhudson1)" program is helpful for some of what comes below.</p>
-<h4>diploid_ind (<a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a>)</h4>
+<h4>diploid_ind (diploid_ind.cc)</h4>
 <p>The first program, diploid, simulates a Wright-Fisher population with mutation, recombination, and drift. To run it:</p>
 <div class="fragment"><div class="line">./diploid_ind N theta rho g n nreps seed | gzip &gt; outfile.gz</div></div><!-- fragment --><p>The data in outfile.gz will be in the same format as Dick Hudson's "ms" coalescent simulator.</p>
 <p>Example:</p>

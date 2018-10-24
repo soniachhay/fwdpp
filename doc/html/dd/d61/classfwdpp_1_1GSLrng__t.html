@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.6.1</span>
+   &#160;<span id="projectnumber">0.7.0</span>
    </div>
   </td>
  </tr>
@@ -87,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f933df1e9ef32f231b90ac73daa540f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a5f933df1e9ef32f231b90ac73daa540f">GSLrng_t</a> (const unsigned long seed) noexcept</td></tr>
 <tr class="memdesc:a5f933df1e9ef32f231b90ac73daa540f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a seed.  <a href="#a5f933df1e9ef32f231b90ac73daa540f">More...</a><br /></td></tr>
 <tr class="separator:a5f933df1e9ef32f231b90ac73daa540f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11384e2d81ba0412cefe8e7aabbf6f8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a11384e2d81ba0412cefe8e7aabbf6f8b">GSLrng_t</a> (const <a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;<a class="el" href="../../dd/de3/sugar__samplingTest_8cc.html#a2c6d213b9da1e671027325d8e9052c47">rng</a>)=delete</td></tr>
+<tr class="memitem:a11384e2d81ba0412cefe8e7aabbf6f8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a11384e2d81ba0412cefe8e7aabbf6f8b">GSLrng_t</a> (const <a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;rng)=delete</td></tr>
 <tr class="separator:a11384e2d81ba0412cefe8e7aabbf6f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23373045b5fbea54ddf87fd9a84e101b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a23373045b5fbea54ddf87fd9a84e101b">GSLrng_t</a> (<a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a23373045b5fbea54ddf87fd9a84e101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,9 +103,9 @@ class fwdpp::GSLrng_t&lt; T &gt;</h3>
 
 <p>A wrapper around gsl_rng * objects. </p>
 <p>The template instantiation type must be a model of <a class="el" href="../../d5/d27/structfwdpp_1_1sugar_1_1GSL__RNG__TYPE__TAG.html" title="Dispatch tag for gsl_rng * types. ">fwdpp::sugar::GSL_RNG_TYPE_TAG</a>, which specifies the gsl_rng type. This type holds an object of type <a class="el" href="../../de/d6e/group__sugar.html#ga121a2772fd5be9179b4397759d8b1e18" title="Smart pointer wrapper to gsl_rng *. ">fwdpp::sugar::gsl_rng_ptr_t</a>, which is a smart pointer that manages freeing the gsl_rng * upon destruction. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a3">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a20">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a7">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a3">K_linked_regions_generalized_rec.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a4">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a18">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a7">K_linked_regions_extensions.cc</a>, <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a3">K_linked_regions_generalized_rec.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a2">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a2">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00035">35</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="abb16b92892db759a696e468e90fa4a9b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb16b92892db759a696e468e90fa4a9b">&#9670;&nbsp;</a></span>rngtype</h2>
@@ -123,7 +123,7 @@ template&lt;typename T&gt; </div>
 
 <p>Typedef for RNG type, if needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 
 </div>
 </div>
@@ -156,7 +156,7 @@ template&lt;typename T&gt; </div>
 
 <p>Construct with a seed. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00065">65</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 
 </div>
 </div>
@@ -243,9 +243,9 @@ template&lt;typename T&gt; </div>
 </div><div class="memdoc">
 
 <p>Return underlying pointer. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a7">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a7">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a23">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a12">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#a11">K_linked_regions_generalized_rec.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a8">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a7">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a21">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a12">K_linked_regions_extensions.cc</a>, <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#a11">K_linked_regions_generalized_rec.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a11">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a36">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 
 </div>
 </div>
@@ -278,7 +278,7 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/molpopgen/src/fwdpp/fwdpp/sugar/<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a></li>
+<li>/home/kevin/src/fwdpp/fwdpp/sugar/<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
