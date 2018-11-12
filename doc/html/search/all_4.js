@@ -10,6 +10,7 @@ var searchData=
   ['emplace_5fback_5fedge',['emplace_back_edge',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a2e8b50ab10379bd16c34afc391f36810',1,'fwdpp::ts::table_collection']]],
   ['emplace_5fback_5fnode',['emplace_back_node',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a32927805497755b5f69fae2ed077359b',1,'fwdpp::ts::table_collection']]],
   ['equal_5feps',['equal_eps',['../d1/df9/structfwdpp_1_1equal__eps.html',1,'fwdpp']]],
+  ['equal_5frange_5fcomparison',['equal_range_comparison',['../d5/dbf/structfwdpp_1_1ts_1_1detail_1_1equal__range__comparison.html',1,'fwdpp::ts::detail']]],
   ['evolve_5fgeneration',['evolve_generation',['../d7/dcb/evolve__generation__ts_8hpp.html#a1ffb04b71e78efdc999fba85b097fd3d',1,'evolve_generation_ts.hpp']]],
   ['evolve_5fgeneration_5fts_2ehpp',['evolve_generation_ts.hpp',['../d7/dcb/evolve__generation__ts_8hpp.html',1,'']]],
   ['evolve_5ftwo_5fdemes',['evolve_two_demes',['../d8/dd2/juvenile__migration_8cc.html#a9a97a9e77f106946b37b491c93b12695',1,'juvenile_migration.cc']]],

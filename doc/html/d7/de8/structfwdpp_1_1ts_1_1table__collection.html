@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.0</span>
+   &#160;<span id="projectnumber">0.7.1</span>
    </div>
   </td>
  </tr>
@@ -116,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a688df7762623df0cf190c3207bc89868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad616e2b54e2b976665332a57cff8c450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ad616e2b54e2b976665332a57cff8c450">update_offset</a> ()</td></tr>
 <tr class="separator:ad616e2b54e2b976665332a57cff8c450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1a202120b4034bf122de5758a0ccc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a5f1a202120b4034bf122de5758a0ccc2">genome_length</a> () const</td></tr>
+<tr class="separator:a5f1a202120b4034bf122de5758a0ccc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -136,9 +138,6 @@ Data Fields</h2></td></tr>
 <tr class="separator:a271f7e782d141aedf06d61b538fa74b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1659ad3ae334a44c84ff1b6707e7ab40"><td class="memItemLeft" align="right" valign="top">std::ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a1659ad3ae334a44c84ff1b6707e7ab40">edge_offset</a></td></tr>
 <tr class="separator:a1659ad3ae334a44c84ff1b6707e7ab40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af90bcabb932a3184f80739d6ea341ab5"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#af90bcabb932a3184f80739d6ea341ab5">L</a></td></tr>
-<tr class="memdesc:af90bcabb932a3184f80739d6ea341ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the genomic region.  <a href="#af90bcabb932a3184f80739d6ea341ab5">More...</a><br /></td></tr>
-<tr class="separator:af90bcabb932a3184f80739d6ea341ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac24c1a7e57265cd9dbaa6dbcf0981802"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ac24c1a7e57265cd9dbaa6dbcf0981802">preserved_nodes</a></td></tr>
 <tr class="memdesc:ac24c1a7e57265cd9dbaa6dbcf0981802"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of dead/ancient sample nodes.  <a href="#ac24c1a7e57265cd9dbaa6dbcf0981802">More...</a><br /></td></tr>
 <tr class="separator:ac24c1a7e57265cd9dbaa6dbcf0981802"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -491,6 +490,34 @@ template&lt;typename... args&gt; </div>
 
 </div>
 </div>
+<a id="a5f1a202120b4034bf122de5758a0ccc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1a202120b4034bf122de5758a0ccc2">&#9670;&nbsp;</a></span>genome_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fwdpp::ts::table_collection::genome_length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a22">wfts.cc</a>.</dd>
+</dl>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00394">394</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+
+</div>
+</div>
 <a id="a688df7762623df0cf190c3207bc89868"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a688df7762623df0cf190c3207bc89868">&#9670;&nbsp;</a></span>num_nodes()</h2>
 
@@ -513,7 +540,7 @@ template&lt;typename... args&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a26">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a44">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a26">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a43">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00383">383</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
@@ -768,7 +795,7 @@ template&lt;typename mutation_container &gt; </div>
 <p>This reflects the length of tables.edge_table after last simplification. It can be used to make sure we only sort newly-added nodes. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a23">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00142">142</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00144">144</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -787,7 +814,7 @@ template&lt;typename mutation_container &gt; </div>
 <p>Edge table for this simulation. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a36">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a24">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00131">131</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00133">133</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -804,28 +831,9 @@ template&lt;typename mutation_container &gt; </div>
 </div><div class="memdoc">
 
 <p>The input edge vector. "I" in <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2016-cb">[1]</a>, page 13. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a35">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a52">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a35">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a51">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00135">135</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
-
-</div>
-</div>
-<a id="af90bcabb932a3184f80739d6ea341ab5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af90bcabb932a3184f80739d6ea341ab5">&#9670;&nbsp;</a></span>L</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double fwdpp::ts::table_collection::L</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Length of the genomic region. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a22">wfts.cc</a>.</dd>
-</dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00144">144</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -844,7 +852,7 @@ template&lt;typename mutation_container &gt; </div>
 <p>Mutation table for this simulation;. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a40">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a26">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00133">133</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00135">135</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -863,7 +871,7 @@ template&lt;typename mutation_container &gt; </div>
 <p>Node table for this simulation. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a33">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a25">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00129">129</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00131">131</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -880,9 +888,9 @@ template&lt;typename mutation_container &gt; </div>
 </div><div class="memdoc">
 
 <p>The input edge vector. "O" in <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2016-cb">[1]</a>, page 13. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a37">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a53">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a37">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a52">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00139">139</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -899,7 +907,7 @@ template&lt;typename mutation_container &gt; </div>
 </div><div class="memdoc">
 
 <p>A vector of dead/ancient sample nodes. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a34">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a51">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a34">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a50">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00146">146</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 

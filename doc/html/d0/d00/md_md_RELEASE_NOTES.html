@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.0</span>
+   &#160;<span id="projectnumber">0.7.1</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,14 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.7.1</h2>
+<p>Point release fixing some API and UI issues with tree sequence recording. Several documentation updates for these functions, too.</p>
+<ul>
+<li><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> is now equality-comparable. <a href="https://github.com/molpopgen/fwdpp/pull/153">PR 153</a></li>
+<li>Stricter checking of sample list validity during simplification and tree traversal. <a href="https://github.com/molpopgen/fwdpp/pull/159">PR 159</a></li>
+<li><a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html" title="A non-recombining tree. ">fwdpp::ts::marginal_tree</a> now tracks number of samples. <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a99feef5497c00899adff882d6d7a2a04">fwdpp::ts::generate_data_matrix</a> no longer adds fixed variants to the output. <a href="https://github.com/molpopgen/fwdpp/pull/160">PR 160</a></li>
+<li><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a> has been refactored to allow for preserving selected fixations and limited fixation recording. <a href="https://github.com/molpopgen/fwdpp/pull/162">PR 162</a></li>
+</ul>
 <h2>0.7.0</h2>
 <p>This is a major release, introducing namespace <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html" title="Tree sequence  support. ">fwdpp::ts</a> with support for tree sequence recording during simulations. I owe Jerome Kelleher a big thanks for guiding me through some of the details related to several of the finer points of the simplification algorithm as well as the tree traversal schemes from his 2016 paper describing msprime.</p>
 <ul>

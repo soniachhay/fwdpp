@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['marginal_5ftree',['marginal_tree',['../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html',1,'fwdpp::ts']]],
+  ['marginal_5ftree',['marginal_tree',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html',1,'fwdpp::ts']]],
   ['mlocuspop',['mlocuspop',['../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html',1,'fwdpp::sugar']]],
   ['mlocuspop_3c_20fwdpp_3a_3apopgenmut_20_3e',['mlocuspop&lt; fwdpp::popgenmut &gt;',['../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html',1,'fwdpp::sugar']]],
   ['mlocuspop_5fobjects',['mlocuspop_objects',['../de/d0c/structmlocuspop__objects.html',1,'']]],

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.0</span>
+   &#160;<span id="projectnumber">0.7.1</span>
    </div>
   </td>
  </tr>
@@ -89,15 +89,15 @@ $(function() {
 <li>The default storage format is a custom format. Once a standalone tskit C library is available, we will likely provide direct access to storage in that tree file format as well. The current binary format is required for things like MPI, Python pickling, etc., though, so it'll stick around.</li>
 </ol>
 <h2>Iterating over trees</h2>
-<p><a class="el" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html" title="Class that iterates over marginal trees. ">fwdpp::ts::tree_visitor</a> iterates over the non-recombining segments ("marginal trees") in the pedigree. This type defines a call operator that handles the iteration, updating an internal variable of type <a class="el" href="../../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html" title="A non-recombining tree. ">fwdpp::ts::marginal_tree</a>.</p>
+<p><a class="el" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html" title="Class that iterates over marginal trees. ">fwdpp::ts::tree_visitor</a> iterates over the non-recombining segments ("marginal trees") in the pedigree. This type defines a call operator that handles the iteration, updating an internal variable of type <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html" title="A non-recombining tree. ">fwdpp::ts::marginal_tree</a>.</p>
 <div class="image">
 <img src="../../tree.png" alt="tree.png"/>
 <div class="caption">
 A simplified, fully-coalesced marginal tree</div></div>
-<p> Consider the tree shown above. It has 7 nodes. The parent list of the tree is represented as a linear vector (<a class="el" href="../../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#a3abc571e358a94afafafe8c8af7b2ebe">fwdpp::ts::marginal_tree::parents</a>), and would contain the following values:</p>
+<p> Consider the tree shown above. It has 7 nodes. The parent list of the tree is represented as a linear vector (<a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a4e8a7ee32191ef5b8d32731d9b71143b">fwdpp::ts::marginal_tree::parents</a>), and would contain the following values:</p>
 <div class="fragment"><div class="line">4 4 5 5 6 6 fwdpp::ts::TS_NULL_NODE</div></div><!-- fragment --><p>The final value, which is the parent of the node labelled <b>6</b>, is <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a3b6e884129b83242fc56f14784a2a3d8" title="Index value of a NULL node. ">fwdpp::ts::TS_NULL_NODE</a>, which signifies that there is no parent.</p>
 <p>Iteration over parents is trivial:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> visit_parents(<span class="keyword">const</span> <a class="code" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> n, <span class="keyword">const</span> <a class="code" href="../../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html">fwdpp::ts::marginal_tree</a> &amp; m)</div><div class="line">{</div><div class="line"> <span class="keyword">auto</span> p = <a class="code" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a45e189124b91a4bec0bfe1dc5c01ed13">n</a>;</div><div class="line"> <span class="keywordflow">while</span>(p != <a class="code" href="../../d8/d31/namespacefwdpp_1_1ts.html#a3b6e884129b83242fc56f14784a2a3d8">fwdpp::ts::TS_NULL_NODE</a>)</div><div class="line"> {</div><div class="line">    p = m.<a class="code" href="../../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#a3abc571e358a94afafafe8c8af7b2ebe">parents</a>[p];</div><div class="line"> }</div><div class="line">}</div></div><!-- fragment --><p>Of course, a real-world application would have to provide bounds-checking, and would probably actually <em>do</em> something with <code>p</code> at each iteration. </p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> visit_parents(<span class="keyword">const</span> <a class="code" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> n, <span class="keyword">const</span> <a class="code" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html">fwdpp::ts::marginal_tree</a> &amp; m)</div><div class="line">{</div><div class="line"> <span class="keyword">auto</span> p = <a class="code" href="../../d9/dc6/gamete__cleanerTest_8cc.html#a45e189124b91a4bec0bfe1dc5c01ed13">n</a>;</div><div class="line"> <span class="keywordflow">while</span>(p != <a class="code" href="../../d8/d31/namespacefwdpp_1_1ts.html#a3b6e884129b83242fc56f14784a2a3d8">fwdpp::ts::TS_NULL_NODE</a>)</div><div class="line"> {</div><div class="line">    p = m.<a class="code" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a4e8a7ee32191ef5b8d32731d9b71143b">parents</a>[p];</div><div class="line"> }</div><div class="line">}</div></div><!-- fragment --><p>Of course, a real-world application would have to provide bounds-checking, and would probably actually <em>do</em> something with <code>p</code> at each iteration. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

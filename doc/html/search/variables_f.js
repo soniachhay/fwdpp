@@ -7,9 +7,9 @@ var searchData=
   ['recmodels',['recmodels',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a422e90d373c3c1313f8f5dec61e5e037',1,'mlocuspop_popgenmut_fixture']]],
   ['recrate',['recrate',['../d5/d24/structfwdpp_1_1poisson__xover.html#a03f0b795c0c95e0adec1c303697f7f12',1,'fwdpp::poisson_xover']]],
   ['recvar',['recvar',['../d8/dbe/structfixture.html#a80cf3c9ea25f9c1f51227043c16cd1ac',1,'fixture']]],
-  ['right',['right',['../d3/d25/structfwdpp_1_1ts_1_1edge.html#aa38da791b99637d0bc7fcd408ea49b9c',1,'fwdpp::ts::edge::right()'],['../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#acce912c958c77fee9c69dc52091e140b',1,'fwdpp::ts::marginal_tree::right()']]],
-  ['right_5fchild',['right_child',['../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#a02b86cdf08db7e028bb7ff7ffe809d3f',1,'fwdpp::ts::marginal_tree']]],
-  ['right_5fsample',['right_sample',['../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#a19f9baa73b999e9db00e6add0616d88d',1,'fwdpp::ts::marginal_tree']]],
-  ['right_5fsib',['right_sib',['../d3/d3d/structfwdpp_1_1ts_1_1marginal__tree.html#a6c34c68290a2093fd2ef11f39b977b3a',1,'fwdpp::ts::marginal_tree']]],
+  ['right',['right',['../d3/d25/structfwdpp_1_1ts_1_1edge.html#aa38da791b99637d0bc7fcd408ea49b9c',1,'fwdpp::ts::edge::right()'],['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#acce912c958c77fee9c69dc52091e140b',1,'fwdpp::ts::marginal_tree::right()']]],
+  ['right_5fchild',['right_child',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a703b42a6efe5a3e981a41bc6b9d8dbfc',1,'fwdpp::ts::marginal_tree']]],
+  ['right_5fsample',['right_sample',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a96d8476518ca3c0a4a6861ca443ad705',1,'fwdpp::ts::marginal_tree']]],
+  ['right_5fsib',['right_sib',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a568e219c38829e412198f68b2c84cbe0',1,'fwdpp::ts::marginal_tree']]],
   ['rng',['rng',['../d3/dee/structslocuspop__popgenmut__fixture.html#a628e40ee3d9bea5d727af395ca7862c1',1,'slocuspop_popgenmut_fixture::rng()'],['../d3/d2f/structslocuspop__popgenmut__custom__fixture.html#a508075b21de311d0dcfab3e1542ccc98',1,'slocuspop_popgenmut_custom_fixture::rng()'],['../d1/d88/classmlocuspop__popgenmut__fixture.html#aac866ef76f026d9952e31aa9aa69b9e4',1,'mlocuspop_popgenmut_fixture::rng()']]]
 ];

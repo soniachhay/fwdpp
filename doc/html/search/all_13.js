@@ -20,6 +20,7 @@ var searchData=
   ['test_5fsampling_2ecc',['test_sampling.cc',['../de/d37/test__sampling_8cc.html',1,'']]],
   ['test_5fserialization',['test_serialization',['../d9/d59/wfts_8cc.html#a5c53d9ec12646d4eeb4f7dcc58241767',1,'wfts.cc']]],
   ['time',['time',['../d6/d1b/structfwdpp_1_1ts_1_1indexed__edge.html#a25b6b5924ea1ce12bfe549399a4647c8',1,'fwdpp::ts::indexed_edge::time()'],['../d5/d4f/structfwdpp_1_1ts_1_1node.html#af33e54bafaa19bc698a68d863c0b5ad0',1,'fwdpp::ts::node::time()'],['../d9/dde/structdiploid__metadata.html#a55feb6d06760884ea60d1dcf9493da4b',1,'diploid_metadata::time()']]],
+  ['todo_20list',['Todo List',['../dd/da0/todo.html',1,'']]],
   ['todo_2emd',['todo.md',['../d9/df4/todo_8md.html',1,'']]],
   ['tree',['tree',['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a2a1c7057b801201c420df7cffab363a3',1,'fwdpp::ts::tree_visitor']]],
   ['tree_5fvisitor',['tree_visitor',['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html',1,'fwdpp::ts::tree_visitor'],['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a5f32fee5eb8a00c2a593dea3472a7be1',1,'fwdpp::ts::tree_visitor::tree_visitor(const table_collection &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples)'],['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a91cd83a3271ab24013c4b6269cec27d7',1,'fwdpp::ts::tree_visitor::tree_visitor(const table_collection &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const std::vector&lt; TS_NODE_INT &gt; &amp;preserved_nodes)']]],
