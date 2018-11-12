@@ -196,7 +196,8 @@ namespace fwdpp
                 o << "fwdppts";
                 fwdpp::io::scalar_writer sw;
                 sw(o, &TS_TABLES_VERSION);
-                sw(o, &tables.L);
+                auto L = tables.genome_length();
+                sw(o, &L);
                 sw(o, &tables.edge_offset);
                 std::size_t num_edges = tables.edge_table.size(),
                             num_nodes = tables.num_nodes(),
@@ -225,7 +226,7 @@ namespace fwdpp
             template <typename istreamtype>
             table_collection
             deserialize_tables(istreamtype& i)
-			/*! \brief Read a fwdpp::ts::table_collection in from a binary stream
+            /*! \brief Read a fwdpp::ts::table_collection in from a binary stream
 			 *
 			 *  \param i A model of std::istream
 			 *
@@ -238,7 +239,7 @@ namespace fwdpp
                 //Reading data back in has to manage versions
                 char fwdppts[7];
                 i.read(fwdppts, 7);
-                if (std::string(fwdppts) != "fwdppts")
+                if (std::string(fwdppts, fwdppts + 7) != "fwdppts")
                     {
                         throw std::runtime_error(
                             "input stream is not at the beginning of "
@@ -280,7 +281,7 @@ namespace fwdpp
                         tables.mutation_table.emplace_back(
                             mutation_record_reader(i));
                     }
-				tables.build_indexes();
+                tables.build_indexes();
                 return tables;
             }
         } // namespace io

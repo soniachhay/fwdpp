@@ -135,48 +135,32 @@ test_serialization(const fwdpp::ts::table_collection &tables,
     std::ifstream i(filename.c_str());
     auto tables2 = fwdpp::ts::io::deserialize_tables(i);
 
-    if (tables.L != tables2.L)
+    if (tables.genome_length() != tables2.genome_length())
         {
-            throw std::runtime_error("L does not match");
+            throw std::runtime_error("genome_length does not match");
         }
     if (tables.edge_offset != tables2.edge_offset)
         {
             throw std::runtime_error("edge_offset does not match");
         }
-    for (std::size_t i = 0; i < tables.edge_table.size(); ++i)
+
+    if (tables.edge_table != tables2.edge_table)
         {
-            auto e1 = tables.edge_table[i];
-            auto e2 = tables2.edge_table[i];
-            bool l = (e1.left == e2.left);
-            bool r = (e1.right == e2.right);
-            bool p = (e1.parent == e2.parent);
-            bool c = (e1.child == e2.child);
-            if (!l || !r || !p || !c)
-                {
-                    throw std::runtime_error("edge tables do not match");
-                }
+            throw std::runtime_error("edge tables do not match");
         }
-    for (std::size_t i = 0; i < tables.node_table.size(); ++i)
+
+    if (tables.node_table != tables2.node_table)
         {
-            auto n1 = tables.node_table[i];
-            auto n2 = tables2.node_table[i];
-            bool p = (n1.population == n2.population);
-            bool t = (n1.time == n2.time);
-            if (!p || !t)
-                {
-                    throw std::runtime_error("node tables do not match");
-                }
+            throw std::runtime_error("node tables do not match");
         }
-    for (std::size_t i = 0; i < tables.mutation_table.size(); ++i)
+
+    if (tables.mutation_table != tables2.mutation_table)
         {
-            auto mr1 = tables.mutation_table[i];
-            auto mr2 = tables2.mutation_table[i];
-            bool n = (mr1.node == mr2.node);
-            bool k = (mr1.key == mr2.key);
-            if (!n || !k)
-                {
-                    throw std::runtime_error("mutation tables do not match");
-                }
+            throw std::runtime_error("mutation tables do not match");
+        }
+    if (tables != tables2)
+        {
+            throw std::runtime_error("tables failed equality check");
         }
 }
 
@@ -349,8 +333,8 @@ main(int argc, char **argv)
             if (generation % gcint == 0.0)
                 {
                     auto idmap = simplify_tables(
-                        pop, mcounts_from_preserved_nodes, tables, simplifier,
-                        tables.num_nodes() - 2 * N, 2 * N);
+                        pop, generation, mcounts_from_preserved_nodes, tables,
+                        simplifier, tables.num_nodes() - 2 * N, 2 * N);
                     mutation_recycling_bin = fwdpp::ts::make_mut_queue(
                         pop.mcounts, mcounts_from_preserved_nodes);
                     simplified = true;
@@ -451,9 +435,9 @@ main(int argc, char **argv)
         }
     if (!simplified)
         {
-            auto idmap = simplify_tables(
-                pop, mcounts_from_preserved_nodes, tables, simplifier,
-                tables.num_nodes() - 2 * N, 2 * N);
+            auto idmap = simplify_tables(pop, generation, mcounts_from_preserved_nodes,
+                                         tables, simplifier,
+                                         tables.num_nodes() - 2 * N, 2 * N);
             confirm_mutation_counts(pop, tables);
             // When tracking ancient samples, the node ids of those samples change.
             // Thus, we need to remap our metadata upon simplification
@@ -550,6 +534,23 @@ main(int argc, char **argv)
                                  "+ preserved nodes...";
                     matrix_runtime_test(tables, sc, pop.mutations, mc);
                     std::cout << "passed.\n";
+                    std::cout << "Matrix test with respect to most recent "
+                                 "ancient sampling time point...";
+                    sc.clear();
+                    std::copy_if(
+                        tables.preserved_nodes.begin(),
+                        tables.preserved_nodes.end(), std::back_inserter(sc),
+                        [&tables](const fwdpp::ts::TS_NODE_INT n) {
+                            return tables.node_table[n].time
+                                   == tables
+                                          .node_table[tables.preserved_nodes
+                                                          .back()]
+                                          .time;
+                        });
+                    mc.clear();
+                    fwdpp::ts::count_mutations(tables, pop.mutations, sc, mc);
+                    matrix_runtime_test(tables, sc, pop.mutations, mc);
+                    std::cout << "passed\n";
                 }
         }
     if (!filename.empty())
