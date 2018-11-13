@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.1</span>
+   &#160;<span id="projectnumber">0.7.2</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.7.2</h2>
+<ul>
+<li>Resolve a serialization and comparison issue with <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> <a href="https://github.com/molpopgen/fwdpp/pull/165">PR 165</a>.</li>
+<li><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a> now returns immediately if the mutation rate is not positive.</li>
+</ul>
 <h2>0.7.1</h2>
 <p>Point release fixing some API and UI issues with tree sequence recording. Several documentation updates for these functions, too.</p>
 <ul>
@@ -429,7 +434,7 @@ $(function() {
 <ul>
 <li>Multilocus, single-population version of KTfwd::sample_diploid now allows for inbreeding coefficient of 0 by default.</li>
 <li>Warnings from KTfwd::infsites suppressed w/compiler trick</li>
-<li>Extraneous gsl_rng free removed from diploid_ind.cc</li>
+<li>Extraneous gsl_rng free removed from <a class="el" href="../../d9/de8/diploid__ind_8cc.html">diploid_ind.cc</a></li>
 <li>Issue #12 in <a class="el" href="../../df/d10/common__ind_8hpp.html">examples/common_ind.hpp</a> fixed</li>
 <li>Issue #13 appears to be fixed, too. This was tricky, as it was not reproducible on my systems, but is now fixed on the system of the person who reported it.</li>
 <li>The library no longer requires that std::pair&lt; T,T &gt; are the types used for a diploid genotype (where the "T" are iterator types derived from gametes lists). Now, custom diploid genotypes may be used, as long as the follow certain constraints (see <a class="el" href="../../d2/dcd/md_md_customdip.html">Advanced topics: custom diploid genotypes</a> for documentation). Thanks to Jeremy Van Cleve for motivating this change, which should allow models involving space and social interactions, once some experimental features are worked out and become part of the main library (see below).</li>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.1</span>
+   &#160;<span id="projectnumber">0.7.2</span>
    </div>
   </td>
  </tr>
@@ -675,7 +675,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd>
+<dd>
+0.7.2 Return immediately if mutation rate is not &gt; 0</dd></dl>
 <p>This function uses the edge_table to apply mutations to all parent/child connections. The mutations should be neutral, although that requirement is not enforced. (It simply makes little sense to apply selected mutations to the entire edge table post-hoc.)</p>
 <p>The result of this function is to populate .mutation_table with neutral variants.</p>
 <p>The parameter <em>make_mutation</em> is a function that must conform to std::function&lt;std::size_t(double, double, fwdpp::uint_t)&gt;. The three arguments are interpreted as "left", "right", and "time". The function's return value corresponds to the index of the new mutation in the simulation's mutation container. The new mutation must have a position on the half-open interval [left, right). The "time" parameger represents the generation when the mutation arose and will be uniformly assigned between the parental birth time and that of the child. This mutation's origin time will be on the half-open interval (parental birth time, child birth time].</p>
@@ -688,7 +690,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 </ol>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a39">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a54">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html#l00018">18</a> of file <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html">mutate_tables.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html">mutate_tables.hpp</a>.</p>
 
 </div>
 </div>
@@ -718,7 +720,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00410">410</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00411">411</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>

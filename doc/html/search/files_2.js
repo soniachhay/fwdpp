@@ -10,5 +10,5 @@ var searchData=
   ['diploid_2ehh',['diploid.hh',['../df/df8/diploid_8hh.html',1,'']]],
   ['diploid_2ehpp',['diploid.hpp',['../de/d0a/diploid_8hpp.html',1,'']]],
   ['diploid_5ffixed_5fsh_5find_2ecc',['diploid_fixed_sh_ind.cc',['../d8/d7e/diploid__fixed__sh__ind_8cc.html',1,'']]],
-  ['diploid_5find_2ecc',['diploid_ind.cc',['../d4/d10/fwdpp_2diploid__ind_8cc.html',1,'(Global Namespace)'],['../df/dc0/examples_2diploid__ind_8cc.html',1,'(Global Namespace)']]]
+  ['diploid_5find_2ecc',['diploid_ind.cc',['../d9/de8/diploid__ind_8cc.html',1,'']]]
 ];
