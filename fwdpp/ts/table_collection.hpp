@@ -135,7 +135,7 @@ namespace fwdpp
             mutation_key_vector mutation_table;
             /// The input edge vector. "I" in \cite Kelleher2016-cb, page 13
             indexed_edge_container input_left;
-            /// The input edge vector. "O" in \cite Kelleher2016-cb, page 13
+            /// The output edge vector. "O" in \cite Kelleher2016-cb, page 13
             indexed_edge_container output_right;
             /// This reflects the length of
             /// tables.edge_table after last simplification.
@@ -403,9 +403,10 @@ namespace fwdpp
             return a.genome_length() == b.genome_length()
                    && a.edge_table == b.edge_table
                    && a.node_table == b.node_table
-                   && a.mutation_table == b.mutation_table;
+                   && a.mutation_table == b.mutation_table
+                   && a.preserved_nodes == b.preserved_nodes;
         }
-        
+
         bool
         operator!=(const table_collection& a, const table_collection& b)
         {
