@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.2</span>
+   &#160;<span id="projectnumber">0.7.3</span>
    </div>
   </td>
  </tr>
@@ -72,10 +72,12 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
 <code>#include &lt;queue&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 </div>
@@ -102,6 +104,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8979c71e69e9bcebbbf3b3ea7edc0439">fwdpp::ts::make_mut_queue</a> (const std::vector&lt; std::uint32_t &gt; &amp;mcounts, const std::vector&lt; std::uint32_t &gt; &amp;counts_from_preserved_nodes)</td></tr>
 <tr class="memdesc:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#a8979c71e69e9bcebbbf3b3ea7edc0439">More...</a><br /></td></tr>
 <tr class="separator:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#ad7d5e8e910a56067c3e912e4bd7f2a42">fwdpp::ts::make_mut_queue</a> (std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
+<tr class="memdesc:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#ad7d5e8e910a56067c3e912e4bd7f2a42">More...</a><br /></td></tr>
+<tr class="separator:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f4f1004711734af2f96ba31ff4cddf"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_table &gt; </td></tr>
 <tr class="memitem:a76f4f1004711734af2f96ba31ff4cddf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a76f4f1004711734af2f96ba31ff4cddf">fwdpp::ts::detail::process_mutation_index</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, lookup_table &amp;lookup, const std::size_t <a class="el" href="../../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</td></tr>
 <tr class="memdesc:a76f4f1004711734af2f96ba31ff4cddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation detail for flag_mutations_for_recycling.  <a href="../../d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a76f4f1004711734af2f96ba31ff4cddf">More...</a><br /></td></tr>

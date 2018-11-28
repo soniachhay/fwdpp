@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.2</span>
+   &#160;<span id="projectnumber">0.7.3</span>
    </div>
   </td>
  </tr>
@@ -152,6 +152,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8979c71e69e9bcebbbf3b3ea7edc0439">make_mut_queue</a> (const std::vector&lt; std::uint32_t &gt; &amp;mcounts, const std::vector&lt; std::uint32_t &gt; &amp;counts_from_preserved_nodes)</td></tr>
 <tr class="memdesc:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#a8979c71e69e9bcebbbf3b3ea7edc0439">More...</a><br /></td></tr>
 <tr class="separator:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#ad7d5e8e910a56067c3e912e4bd7f2a42">make_mut_queue</a> (std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
+<tr class="memdesc:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#ad7d5e8e910a56067c3e912e4bd7f2a42">More...</a><br /></td></tr>
+<tr class="separator:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename mutation_count_container , typename preserve_selected_fixations , typename record_fixations &gt; </td></tr>
 <tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">flag_mutations_for_recycling</a> (<a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> twoN, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> generation, const preserve_selected_fixations preserve, const record_fixations record)</td></tr>
 <tr class="separator:af31b6eea1568ee4866fc66bae4be31ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -254,7 +257,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Integer type for node indexes. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a59">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a61">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d1/dc9/definitions_8hpp_source.html#l00013">13</a> of file <a class="el" href="../../d1/dc9/definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
@@ -300,7 +303,7 @@ template&lt;typename mcont_t &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a43">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a57">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a44">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a52">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../dd/d23/count__mutations_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../dd/d23/count__mutations_8hpp_source.html">count_mutations.hpp</a>.</p>
 
@@ -438,7 +441,7 @@ template&lt;typename poptype , typename mutation_count_container , typename pres
 <p class="enddd">Return a recycling queue? </p>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00190">190</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00234">234</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -538,14 +541,14 @@ template&lt;typename mcont_t &gt; </div>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function is trivial in implementation and is easily replaced if a more complex set of rules are needed </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a32">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a49">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a33">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a50">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html">get_parent_ids.hpp</a>.</p>
 
 </div>
 </div>
 <a id="a8979c71e69e9bcebbbf3b3ea7edc0439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8979c71e69e9bcebbbf3b3ea7edc0439">&#9670;&nbsp;</a></span>make_mut_queue()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8979c71e69e9bcebbbf3b3ea7edc0439">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,10 +581,60 @@ template&lt;typename mcont_t &gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>std::queue&lt;std::size_t&gt; </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a23">custom_mutation.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a12">juvenile_migration.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a27">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a44">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a23">custom_mutation.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a12">juvenile_migration.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a28">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a45">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad7d5e8e910a56067c3e912e4bd7f2a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7d5e8e910a56067c3e912e4bd7f2a42">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::queue&lt;std::size_t&gt; fwdpp::ts::make_mut_queue </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>preserved_mutation_indexes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::size_t&#160;</td>
+          <td class="paramname"><em>num_mutations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Make a mutation recycling queue for simulations with tree sequences. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preserved_mutation_indexes</td><td>Vector of preserved mutation indexes returned by simplification </td></tr>
+    <tr><td class="paramname">num_mutations</td><td>The total number of mutations currently allocated in the population</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::queue&lt;std::size_t&gt;</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.3 Added to fwdpp</dd></dl>
+<p>This overload may be preferable to the other when the following conditions apply:</p><ol type="1">
+<li>Mutation counts in the entire simulation are not of interest during the simulation.</li>
+<li>There is no need/wish to remove fixations from the gametes/tables during the simulation.</li>
+<li>There are large numbers of ancient samples being recorded.</li>
+</ol>
+<p>The first two conditions are required for correct results. The third condition is optional, but big speedups will be seen for that case.</p>
+<p>This function generates a recycling queue by taking the set difference of <em>preserved_mutation_indexes</em> and all possible mutation indexes, <img class="formulaInl" alt="$[0,num\_mutations)$" src="../../form_0.png"/>. The algorithm is a fast Nlog(N) method, and it will outperform the other overload based on tree traversal when the number of trees is very large, as is the case when large numbers of ancestral samples are registered during a simulation.</p>
+<dl class="section note"><dt>Note</dt><dd>A side-effect is that <em>preserved_mutation_indexes</em> is sorted. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +741,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 <li>Simulate for longer. For example, CDF of TMRCA under Wright-Fisher is quite close to 1 at ~20N generations. Thus, simulating longer means that fewer and fewer marginal trees will be forests.</li>
 <li>Start the simulation with an existing, completely-coalesced, tree sequence. As far as fwdpp is concerned, this is left as an "exercise for the reader" at the moment. </li>
 </ol>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a39">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a54">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a40">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a57">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html">mutate_tables.hpp</a>.</p>
 
@@ -699,6 +752,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool fwdpp::ts::operator!= </td>
@@ -718,6 +774,11 @@ template&lt;typename rng , typename mfunction &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00411">411</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
@@ -729,6 +790,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool fwdpp::ts::operator== </td>
@@ -748,6 +812,11 @@ template&lt;typename rng , typename mfunction &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00024">24</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
@@ -759,6 +828,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool fwdpp::ts::operator== </td>
@@ -778,6 +850,11 @@ template&lt;typename rng , typename mfunction &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d09/node_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../d3/d09/node_8hpp_source.html">node.hpp</a>.</p>
@@ -789,6 +866,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool fwdpp::ts::operator== </td>
@@ -808,6 +888,11 @@ template&lt;typename rng , typename mfunction &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d4/ddf/edge_8hpp_source.html#l00027">27</a> of file <a class="el" href="../../d4/ddf/edge_8hpp_source.html">edge.hpp</a>.</p>
@@ -819,6 +904,9 @@ template&lt;typename rng , typename mfunction &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool fwdpp::ts::operator== </td>
@@ -838,6 +926,11 @@ template&lt;typename rng , typename mfunction &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00401">401</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
@@ -936,7 +1029,7 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_count_contai
 </div><div class="memdoc">
 
 <p>Index value of a NULL node. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a30">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a47">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a31">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a48">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d1/dc9/definitions_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d1/dc9/definitions_8hpp_source.html">definitions.hpp</a>.</p>
 

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.2</span>
+   &#160;<span id="projectnumber">0.7.3</span>
    </div>
   </td>
  </tr>
@@ -80,9 +80,9 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5ef5ee87604536c22c1cdc4e88ac599"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#ab5ef5ee87604536c22c1cdc4e88ac599">table_simplifier</a> (const double maxpos)</td></tr>
 <tr class="separator:ab5ef5ee87604536c22c1cdc4e88ac599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bc14b1784df30ff165239f8defe21e2"><td class="memTemplParams" colspan="2">template&lt;typename mutation_container &gt; </td></tr>
-<tr class="memitem:a1bc14b1784df30ff165239f8defe21e2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a1bc14b1784df30ff165239f8defe21e2">simplify</a> (<a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> &amp;mutations)</td></tr>
-<tr class="separator:a1bc14b1784df30ff165239f8defe21e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memTemplParams" colspan="2">template&lt;typename mutation_container &gt; </td></tr>
+<tr class="memitem:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;, std::vector&lt; std::size_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a4742014b28cff4cc1a63c21a4647f6ea">simplify</a> (<a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> &amp;mutations)</td></tr>
+<tr class="separator:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the simplification algorithm of <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2018-fu">[2]</a>. </p>
@@ -117,13 +117,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00493">493</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00502">502</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1bc14b1784df30ff165239f8defe21e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bc14b1784df30ff165239f8defe21e2">&#9670;&nbsp;</a></span>simplify()</h2>
+<a id="a4742014b28cff4cc1a63c21a4647f6ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4742014b28cff4cc1a63c21a4647f6ea">&#9670;&nbsp;</a></span>simplify()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,7 +134,7 @@ template&lt;typename mutation_container &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>&gt; fwdpp::ts::table_simplifier::simplify </td>
+          <td class="memname">std::pair&lt;std::vector&lt;<a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>&gt;, std::vector&lt;std::size_t&gt; &gt; fwdpp::ts::table_simplifier::simplify </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;&#160;</td>
           <td class="paramname"><em>tables</em>, </td>
@@ -172,9 +172,11 @@ template&lt;typename mutation_container &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section version"><dt>Version</dt><dd>0.7.1 Throw exception if a sample is recorded twice </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.1 Throw exception if a sample is recorded twice </dd>
+<dd>
+0.7.3 Return value is now a pair containing the node ID map and a vector of keys to mutations preserved in mutation tables </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00506">506</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00515">515</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 
 </div>
 </div>
