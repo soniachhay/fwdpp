@@ -281,7 +281,7 @@ namespace fwdpp
             {
                 for (auto i : node_ids)
                     {
-                        if (i >= node_table.size())
+                        if (static_cast<std::size_t>(i) >= node_table.size())
                             {
                                 throw std::invalid_argument(
                                     "node id larger than node table size");
@@ -397,7 +397,7 @@ namespace fwdpp
             }
         };
 
-        bool
+        inline bool
         operator==(const table_collection& a, const table_collection& b)
         {
             return a.genome_length() == b.genome_length()
@@ -407,7 +407,7 @@ namespace fwdpp
                    && a.preserved_nodes == b.preserved_nodes;
         }
 
-        bool
+        inline bool
         operator!=(const table_collection& a, const table_collection& b)
         {
             return !(a == b);
