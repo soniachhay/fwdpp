@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -64,19 +64,21 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_todo000005"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a>  (poptype &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const uint_t twoN, const uint_t generation, const preserve_selected_fixations preserve, const record_fixations record)</dt>
+<dt><a class="anchor" id="_todo000001"></a>Global <a class="el" href="../../dd/d84/namespacefwdpp.html#a635801bc8ea29e30cce2e4cf7694bf46">fwdpp::mutate_recombine</a>  (const new_mutations_type &amp;new_mutations, const breakpoints_type &amp;breakpoints, const std::size_t g1, const std::size_t g2, gcont_t &amp;gametes, mcont_t &amp;mutations, queue_type &amp;gamete_recycling_bin, typename gcont_t::value_type::mutation_container &amp;neutral, typename gcont_t::value_type::mutation_container &amp;selected)</dt>
+<dd>Need a unit test on what happens if <em>mutation_keys</em> is not a sorted range </dd>
+<dt><a class="anchor" id="_todo000006"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a>  (poptype &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const uint_t twoN, const uint_t generation, const preserve_selected_fixations preserve, const record_fixations record)</dt>
 <dd><p class="startdd">Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be flagged. </p>
 <p class="enddd">Return a recycling queue?  </p>
 </dd>
-<dt><a class="anchor" id="_todo000001"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a99feef5497c00899adff882d6d7a2a04">fwdpp::ts::generate_data_matrix</a>  (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">table_collection</a> &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const mcont_t &amp;mutations, const bool record_neutral, const bool record_selected)</dt>
+<dt><a class="anchor" id="_todo000002"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8596f5ad2ff4c7674476e802c285de25">fwdpp::ts::generate_data_matrix</a>  (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">table_collection</a> &amp;tables, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const mcont_t &amp;mutations, const bool record_neutral, const bool record_selected, const bool skip_fixed, const double start, const double stop)</dt>
 <dd>Document  </dd>
-<dt><a class="anchor" id="_todo000002"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a695f505e5547fd08cc4fd790e841938f">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes, const std::vector&lt; TS_NODE_INT &gt; &amp;samples)</dt>
+<dt><a class="anchor" id="_todo000003"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a695f505e5547fd08cc4fd790e841938f">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes, const std::vector&lt; TS_NODE_INT &gt; &amp;samples)</dt>
 <dd>Document  </dd>
-<dt><a class="anchor" id="_todo000003"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a8ae57abd5f221f0d11c36d9d2f4a6759">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const std::vector&lt; TS_NODE_INT &gt; &amp;preserved_nodes)</dt>
+<dt><a class="anchor" id="_todo000004"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a8ae57abd5f221f0d11c36d9d2f4a6759">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes, const std::vector&lt; TS_NODE_INT &gt; &amp;samples, const std::vector&lt; TS_NODE_INT &gt; &amp;preserved_nodes)</dt>
 <dd>Document  </dd>
-<dt><a class="anchor" id="_todo000004"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a4d84939c6caf15809160a5f5faf7d031">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes)</dt>
+<dt><a class="anchor" id="_todo000005"></a>Global <a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a4d84939c6caf15809160a5f5faf7d031">fwdpp::ts::marginal_tree::marginal_tree</a>  (TS_NODE_INT nnodes)</dt>
 <dd>Document  </dd>
-<dt><a class="anchor" id="_todo000006"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a98cfaa436a43ae3e8f4ddaee5fac395e">fwdpp::ts::remove_fixations_from_gametes</a>  (gcont_t &amp;gametes, const mcont_t &amp;mutations, const mutation_count_container &amp;mcounts, const mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3" title="The unsigned integer type is 32 bits. ">fwdpp::uint_t</a> twoN, const bool preserve_selected_fixations)</dt>
+<dt><a class="anchor" id="_todo000007"></a>Global <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a98cfaa436a43ae3e8f4ddaee5fac395e">fwdpp::ts::remove_fixations_from_gametes</a>  (gcont_t &amp;gametes, const mcont_t &amp;mutations, const mutation_count_container &amp;mcounts, const mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3" title="The unsigned integer type is 32 bits. ">fwdpp::uint_t</a> twoN, const bool preserve_selected_fixations)</dt>
 <dd>Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be detected. </dd>
 </dl>
 </div></div><!-- contents -->

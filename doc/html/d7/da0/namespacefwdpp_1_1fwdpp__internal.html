@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -76,10 +76,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5bcd2818563fab16b4a6ce4803fe51a4"><td class="memTemplParams" colspan="2">template&lt;typename container , typename integer_type , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a5bcd2818563fab16b4a6ce4803fe51a4"><td class="memTemplItemLeft" align="right" valign="top">container::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a5bcd2818563fab16b4a6ce4803fe51a4">insert_new_mutation</a> (const typename container::iterator beg, const typename container::iterator end, const integer_type mut_key, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, container &amp;c)</td></tr>
+<tr class="memitem:a5bcd2818563fab16b4a6ce4803fe51a4"><td class="memTemplItemLeft" align="right" valign="top">container::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a5bcd2818563fab16b4a6ce4803fe51a4">insert_new_mutation</a> (const typename container::iterator beg, const typename container::iterator <a class="el" href="../../dd/d84/namespacefwdpp.html#a164c663683a6258a82badcfb90671b73">end</a>, const integer_type mut_key, const mcont_t &amp;mutations, container &amp;c)</td></tr>
 <tr class="separator:a5bcd2818563fab16b4a6ce4803fe51a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae70b0d3964135d37b6717be094dd3a35"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename container &gt; </td></tr>
-<tr class="memitem:ae70b0d3964135d37b6717be094dd3a35"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#ae70b0d3964135d37b6717be094dd3a35">prep_temporary_containers</a> (const std::size_t g1, const std::size_t g2, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, container &amp;neutral, container &amp;selected)</td></tr>
+<tr class="memitem:ae70b0d3964135d37b6717be094dd3a35"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/da0/namespacefwdpp_1_1fwdpp__internal.html#ae70b0d3964135d37b6717be094dd3a35">prep_temporary_containers</a> (const std::size_t g1, const std::size_t g2, const gcont_t &amp;gametes, container &amp;neutral, container &amp;selected)</td></tr>
 <tr class="separator:ae70b0d3964135d37b6717be094dd3a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -114,7 +114,7 @@ template&lt;typename container , typename integer_type , typename mcont_t &gt; <
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -131,7 +131,7 @@ template&lt;typename container , typename integer_type , typename mcont_t &gt; <
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html#l00138">138</a> of file <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">mutate_recombine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html#l00140">140</a> of file <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">mutate_recombine.hpp</a>.</p>
 
 </div>
 </div>
@@ -158,7 +158,7 @@ template&lt;typename gcont_t , typename container &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
@@ -181,7 +181,7 @@ template&lt;typename gcont_t , typename container &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html#l00156">156</a> of file <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">mutate_recombine.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html#l00158">158</a> of file <a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">mutate_recombine.hpp</a>.</p>
 
 </div>
 </div>

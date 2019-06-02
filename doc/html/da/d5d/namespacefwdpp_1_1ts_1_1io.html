@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -109,13 +109,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:acf0e4431a79183360c365de4db91b427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> to a binary format.  <a href="#acf0e4431a79183360c365de4db91b427">More...</a><br /></td></tr>
 <tr class="separator:acf0e4431a79183360c365de4db91b427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0264447fb86786deec0d6c31048368"><td class="memTemplParams" colspan="2">template&lt;typename istreamtype &gt; </td></tr>
-<tr class="memitem:acd0264447fb86786deec0d6c31048368"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#acd0264447fb86786deec0d6c31048368">deserialize_tables</a> (istreamtype &amp;<a class="el" href="../../d5/daa/sugar__add__mutationTest_8cc.html#a904ff4f9ee77665963d354fe4c6a86e0">i</a>)</td></tr>
+<tr class="memitem:acd0264447fb86786deec0d6c31048368"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#acd0264447fb86786deec0d6c31048368">deserialize_tables</a> (istreamtype &amp;i)</td></tr>
 <tr class="memdesc:acd0264447fb86786deec0d6c31048368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> in from a binary stream.  <a href="#acd0264447fb86786deec0d6c31048368">More...</a><br /></td></tr>
 <tr class="separator:acd0264447fb86786deec0d6c31048368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a2c686aca7f06d9e0618fe32b8a1384df"><td class="memItemLeft" align="right" valign="top">constexpr const std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#a2c686aca7f06d9e0618fe32b8a1384df">TS_TABLES_VERSION</a> = 1</td></tr>
+<tr class="memitem:a2c686aca7f06d9e0618fe32b8a1384df"><td class="memItemLeft" align="right" valign="top">constexpr const std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#a2c686aca7f06d9e0618fe32b8a1384df">TS_TABLES_VERSION</a> = 2</td></tr>
 <tr class="memdesc:a2c686aca7f06d9e0618fe32b8a1384df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current version number of binary formats.  <a href="#a2c686aca7f06d9e0618fe32b8a1384df">More...</a><br /></td></tr>
 <tr class="separator:a2c686aca7f06d9e0618fe32b8a1384df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -154,10 +154,10 @@ template&lt;typename istreamtype &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a></dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The return value has its index vectors populated. See <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a1839e0e4cc8f9afeed5f8613e3931e16">fwdpp::ts::table_collection::build_indexes</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a21">wfts.cc</a>.</dd>
-</dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/d21/serialization_8hpp_source.html#l00236">236</a> of file <a class="el" href="../../d8/d21/serialization_8hpp_source.html">serialization.hpp</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The return value has its index vectors populated. See <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a1839e0e4cc8f9afeed5f8613e3931e16">fwdpp::ts::table_collection::build_indexes</a></dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.4 Tables are read in a single call </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d21/serialization_8hpp_source.html#l00241">241</a> of file <a class="el" href="../../d8/d21/serialization_8hpp_source.html">serialization.hpp</a>.</p>
 
 </div>
 </div>
@@ -192,15 +192,15 @@ template&lt;typename ostreamtype &gt; </div>
 <p>Write a <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> to a binary format. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ostreamtype</td><td>A model of std::ostream </td></tr>
+    <tr><td class="paramname">o</td><td>A model of std::ostream </td></tr>
     <tr><td class="paramname">tables</td><td>A <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a></td></tr>
   </table>
   </dd>
 </dl>
 <p>The result is that the data in <em>tables</em> are written in a machine-readable format to <em>o</em>.</p>
-<p>This function always outputs to the format version specified by <a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#a2c686aca7f06d9e0618fe32b8a1384df" title="Current version number of binary formats. ">fwdpp::ts::io::TS_TABLES_VERSION</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a20">wfts.cc</a>.</dd>
-</dl>
+<p>This function always outputs to the format version specified by <a class="el" href="../../da/d5d/namespacefwdpp_1_1ts_1_1io.html#a2c686aca7f06d9e0618fe32b8a1384df" title="Current version number of binary formats. ">fwdpp::ts::io::TS_TABLES_VERSION</a>.</p>
+<dl class="section version"><dt>Version</dt><dd>0.7.4 Tables are written in a single call </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d8/d21/serialization_8hpp_source.html#l00183">183</a> of file <a class="el" href="../../d8/d21/serialization_8hpp_source.html">serialization.hpp</a>.</p>
 
 </div>
@@ -213,15 +213,17 @@ template&lt;typename ostreamtype &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr const std::uint32_t fwdpp::ts::io::TS_TABLES_VERSION = 1</td>
+          <td class="memname">constexpr const std::uint32_t fwdpp::ts::io::TS_TABLES_VERSION = 2</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Current version number of binary formats. </p>
-<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd>
+<dd>
+0.7.4 Updated value to 2 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/dce/serialization__version_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d5/dce/serialization__version_8hpp_source.html">serialization_version.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/dce/serialization__version_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d5/dce/serialization__version_8hpp_source.html">serialization_version.hpp</a>.</p>
 
 </div>
 </div>

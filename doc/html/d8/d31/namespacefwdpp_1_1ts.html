@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -87,6 +87,8 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d48/structfwdpp_1_1ts_1_1all__mutations.html">all_mutations</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d25/structfwdpp_1_1ts_1_1edge.html">edge</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An edge in a tree sequence.  <a href="../../d3/d25/structfwdpp_1_1ts_1_1edge.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -95,9 +97,13 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html">marginal_tree</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A non-recombining tree.  <a href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html">mutation_record</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4f/structfwdpp_1_1ts_1_1node.html">node</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/de4/structfwdpp_1_1ts_1_1selected__variants__only.html">selected_variants_only</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A collection of tables for a single simulation.  <a href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#details">More...</a><br /></td></tr>
@@ -126,40 +132,47 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a22d368f93651e5db0700a824bc76f902"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
-<tr class="memitem:a22d368f93651e5db0700a824bc76f902"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a22d368f93651e5db0700a824bc76f902">count_mutations</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;mcounts)</td></tr>
+<tr class="memitem:a22d368f93651e5db0700a824bc76f902"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a22d368f93651e5db0700a824bc76f902">count_mutations</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;mcounts)</td></tr>
 <tr class="separator:a22d368f93651e5db0700a824bc76f902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2dbef728e90e485682815dc59ce08b5"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
-<tr class="memitem:af2dbef728e90e485682815dc59ce08b5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af2dbef728e90e485682815dc59ce08b5">count_mutations</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;mcounts, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;acounts)</td></tr>
+<tr class="memitem:af2dbef728e90e485682815dc59ce08b5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af2dbef728e90e485682815dc59ce08b5">count_mutations</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;mcounts, std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &gt; &amp;acounts)</td></tr>
 <tr class="separator:af2dbef728e90e485682815dc59ce08b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1df8628a86608fa402ff6430fc387408"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1df8628a86608fa402ff6430fc387408">operator==</a> (const <a class="el" href="../../d3/d25/structfwdpp_1_1ts_1_1edge.html">edge</a> &amp;a, const <a class="el" href="../../d3/d25/structfwdpp_1_1ts_1_1edge.html">edge</a> &amp;b)</td></tr>
 <tr class="separator:a1df8628a86608fa402ff6430fc387408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99feef5497c00899adff882d6d7a2a04"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
-<tr class="memitem:a99feef5497c00899adff882d6d7a2a04"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a99feef5497c00899adff882d6d7a2a04">generate_data_matrix</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const bool record_neutral, const bool record_selected)</td></tr>
-<tr class="separator:a99feef5497c00899adff882d6d7a2a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8596f5ad2ff4c7674476e802c285de25"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
+<tr class="memitem:a8596f5ad2ff4c7674476e802c285de25"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8596f5ad2ff4c7674476e802c285de25">generate_data_matrix</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const mcont_t &amp;mutations, const bool record_neutral, const bool record_selected, const bool skip_fixed, const double start, const double stop)</td></tr>
+<tr class="separator:a8596f5ad2ff4c7674476e802c285de25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23bc26c40b07c456d114a8ebaa0008ff"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
+<tr class="memitem:a23bc26c40b07c456d114a8ebaa0008ff"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a23bc26c40b07c456d114a8ebaa0008ff">generate_data_matrix</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const mcont_t &amp;mutations, const bool record_neutral, const bool record_selected, const bool skip_fixed)</td></tr>
+<tr class="separator:a23bc26c40b07c456d114a8ebaa0008ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8acb8ff641b41bc320a54cbcf9aa29a3"><td class="memTemplParams" colspan="2">template&lt;typename genetic_param_holder , typename mutation_handling_policy , typename poptype &gt; </td></tr>
+<tr class="memitem:a8acb8ff641b41bc320a54cbcf9aa29a3"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3">generate_offspring</a> (const gsl_rng *r, const std::pair&lt; std::size_t, std::size_t &gt; parents, const mutation_handling_policy &amp;mutation_policy, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, genetic_param_holder &amp;genetics, typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;offspring)</td></tr>
+<tr class="memdesc:a8acb8ff641b41bc320a54cbcf9aa29a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate offspring gametes and return breakpoints plus mutation keys.  <a href="#a8acb8ff641b41bc320a54cbcf9aa29a3">More...</a><br /></td></tr>
+<tr class="separator:a8acb8ff641b41bc320a54cbcf9aa29a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a116196377f3b3675bd12951dca7241f3"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>, <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a116196377f3b3675bd12951dca7241f3">get_parent_ids</a> (const <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> first_parental_index, const <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> parent, const int did_swap)</td></tr>
 <tr class="separator:a116196377f3b3675bd12951dca7241f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e1a2cf7567e8754360c59943adbe18b"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>, std::vector&lt; std::pair&lt; double, double &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a0e1a2cf7567e8754360c59943adbe18b">mark_multiple_roots</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples)</td></tr>
 <tr class="memdesc:a0e1a2cf7567e8754360c59943adbe18b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identify root nodes in "marginal forests".  <a href="#a0e1a2cf7567e8754360c59943adbe18b">More...</a><br /></td></tr>
 <tr class="separator:a0e1a2cf7567e8754360c59943adbe18b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1016e433a6b6390ae0b705cf61dfb1cc"><td class="memTemplParams" colspan="2">template&lt;typename rng , typename mfunction &gt; </td></tr>
-<tr class="memitem:a1016e433a6b6390ae0b705cf61dfb1cc"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc">mutate_tables</a> (const rng &amp;<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const mfunction &amp;make_mutation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const double mu)</td></tr>
+<tr class="memitem:a1016e433a6b6390ae0b705cf61dfb1cc"><td class="memTemplItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc">mutate_tables</a> (const rng &amp;r, const mfunction &amp;make_mutation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const double mu)</td></tr>
 <tr class="memdesc:a1016e433a6b6390ae0b705cf61dfb1cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a mutation scheme to add neutral mutations to a <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a>.  <a href="#a1016e433a6b6390ae0b705cf61dfb1cc">More...</a><br /></td></tr>
 <tr class="separator:a1016e433a6b6390ae0b705cf61dfb1cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f05170560f56c1ac6316db842127ba6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a5f05170560f56c1ac6316db842127ba6">operator==</a> (const <a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html">mutation_record</a> &amp;a, const <a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html">mutation_record</a> &amp;b)</td></tr>
 <tr class="separator:a5f05170560f56c1ac6316db842127ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96dd878eb29e8e1b1fb09e0471f603f4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a96dd878eb29e8e1b1fb09e0471f603f4">operator==</a> (const <a class="el" href="../../d5/d4f/structfwdpp_1_1ts_1_1node.html">node</a> &amp;a, const <a class="el" href="../../d5/d4f/structfwdpp_1_1ts_1_1node.html">node</a> &amp;b)</td></tr>
 <tr class="separator:a96dd878eb29e8e1b1fb09e0471f603f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8979c71e69e9bcebbbf3b3ea7edc0439">make_mut_queue</a> (const std::vector&lt; std::uint32_t &gt; &amp;mcounts, const std::vector&lt; std::uint32_t &gt; &amp;counts_from_preserved_nodes)</td></tr>
-<tr class="memdesc:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#a8979c71e69e9bcebbbf3b3ea7edc0439">More...</a><br /></td></tr>
-<tr class="separator:a8979c71e69e9bcebbbf3b3ea7edc0439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memItemLeft" align="right" valign="top">std::queue&lt; std::size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#ad7d5e8e910a56067c3e912e4bd7f2a42">make_mut_queue</a> (std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
-<tr class="memdesc:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#ad7d5e8e910a56067c3e912e4bd7f2a42">More...</a><br /></td></tr>
-<tr class="separator:ad7d5e8e910a56067c3e912e4bd7f2a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="memItemLeft" align="right" valign="top">flagged_mutation_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e">make_mut_queue</a> (const std::vector&lt; std::uint32_t &gt; &amp;mcounts, const std::vector&lt; std::uint32_t &gt; &amp;counts_from_preserved_nodes)</td></tr>
+<tr class="memdesc:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#a4e7bf711e7bba2ce46c4cc64c313309e">More...</a><br /></td></tr>
+<tr class="separator:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ee3318265e92ca462eb292a91d883a"><td class="memItemLeft" align="right" valign="top">flagged_mutation_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a90ee3318265e92ca462eb292a91d883a">make_mut_queue</a> (std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
+<tr class="memdesc:a90ee3318265e92ca462eb292a91d883a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="#a90ee3318265e92ca462eb292a91d883a">More...</a><br /></td></tr>
+<tr class="separator:a90ee3318265e92ca462eb292a91d883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename mutation_count_container , typename preserve_selected_fixations , typename record_fixations &gt; </td></tr>
-<tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">flag_mutations_for_recycling</a> (<a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> twoN, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> generation, const preserve_selected_fixations preserve, const record_fixations record)</td></tr>
+<tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">flag_mutations_for_recycling</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> twoN, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> generation, const preserve_selected_fixations preserve, const record_fixations record)</td></tr>
 <tr class="separator:af31b6eea1568ee4866fc66bae4be31ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98cfaa436a43ae3e8f4ddaee5fac395e"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename mcont_t , typename mutation_count_container &gt; </td></tr>
-<tr class="memitem:a98cfaa436a43ae3e8f4ddaee5fac395e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a98cfaa436a43ae3e8f4ddaee5fac395e">remove_fixations_from_gametes</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const mutation_count_container &amp;mcounts, const mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> twoN, const bool preserve_selected_fixations)</td></tr>
+<tr class="memitem:a98cfaa436a43ae3e8f4ddaee5fac395e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a98cfaa436a43ae3e8f4ddaee5fac395e">remove_fixations_from_gametes</a> (gcont_t &amp;gametes, const mcont_t &amp;mutations, const mutation_count_container &amp;mcounts, const mutation_count_container &amp;mcounts_from_preserved_nodes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> twoN, const bool preserve_selected_fixations)</td></tr>
 <tr class="memdesc:a98cfaa436a43ae3e8f4ddaee5fac395e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removed fixed variants from gametes.  <a href="#a98cfaa436a43ae3e8f4ddaee5fac395e">More...</a><br /></td></tr>
 <tr class="separator:a98cfaa436a43ae3e8f4ddaee5fac395e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e79321c58c8dec2eabbb073b689bf4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e79321c58c8dec2eabbb073b689bf4e">operator==</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;a, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;b)</td></tr>
@@ -257,8 +270,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Integer type for node indexes. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a61">wfts.cc</a>.</dd>
-</dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d1/dc9/definitions_8hpp_source.html#l00013">13</a> of file <a class="el" href="../../d1/dc9/definitions_8hpp_source.html">definitions.hpp</a>.</p>
 
 </div>
@@ -281,7 +293,7 @@ template&lt;typename mcont_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -303,7 +315,7 @@ template&lt;typename mcont_t &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a44">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a52">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a44">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a45">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../dd/d23/count__mutations_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../dd/d23/count__mutations_8hpp_source.html">count_mutations.hpp</a>.</p>
 
@@ -326,7 +338,7 @@ template&lt;typename mcont_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -370,7 +382,7 @@ template&lt;typename poptype , typename mutation_count_container , typename pres
         <tr>
           <td class="memname">void fwdpp::ts::flag_mutations_for_recycling </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
@@ -437,16 +449,16 @@ template&lt;typename poptype , typename mutation_count_container , typename pres
 <dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd>
 <dd>
 0.7.1 Updated to change recycled mutation positions to max value of a double. Refactor API to take compile-time policies for fixation handling.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000005">Todo:</a></b></dt><dd><p class="startdd">Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be flagged. </p>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd><p class="startdd">Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be flagged. </p>
 <p class="enddd">Return a recycling queue? </p>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00234">234</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00235">235</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a99feef5497c00899adff882d6d7a2a04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99feef5497c00899adff882d6d7a2a04">&#9670;&nbsp;</a></span>generate_data_matrix()</h2>
+<a id="a8596f5ad2ff4c7674476e802c285de25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8596f5ad2ff4c7674476e802c285de25">&#9670;&nbsp;</a></span>generate_data_matrix() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -468,7 +480,7 @@ template&lt;typename mcont_t &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -481,7 +493,25 @@ template&lt;typename mcont_t &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const bool&#160;</td>
-          <td class="paramname"><em>record_selected</em>&#160;</td>
+          <td class="paramname"><em>record_selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>skip_fixed</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>stop</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -490,13 +520,145 @@ template&lt;typename mcont_t &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd>Document </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>Document </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd>
 <dd>
-0.7.1 Change behavior to skip sites fixed in the sample </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a17">wfts.cc</a>.</dd>
-</dl>
+0.7.1 Change behavior to skip sites fixed in the sample </dd>
+<dd>
+0.7.4 Add [start, stop) arguments. Add option to skip fixed variants. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="../../df/d24/generate__data__matrix_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../df/d24/generate__data__matrix_8hpp_source.html">generate_data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a23bc26c40b07c456d114a8ebaa0008ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23bc26c40b07c456d114a8ebaa0008ff">&#9670;&nbsp;</a></span>generate_data_matrix() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mcont_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d3a/structfwdpp_1_1data__matrix.html">data_matrix</a> fwdpp::ts::generate_data_matrix </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>tables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
+          <td class="paramname"><em>mutations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>record_neutral</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>record_selected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>skip_fixed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../df/d24/generate__data__matrix_8hpp_source.html#l00110">110</a> of file <a class="el" href="../../df/d24/generate__data__matrix_8hpp_source.html">generate_data_matrix.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a8acb8ff641b41bc320a54cbcf9aa29a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8acb8ff641b41bc320a54cbcf9aa29a3">&#9670;&nbsp;</a></span>generate_offspring()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename genetic_param_holder , typename mutation_handling_policy , typename poptype &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt;<a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a>&gt; fwdpp::ts::generate_offspring </td>
+          <td>(</td>
+          <td class="paramtype">const gsl_rng *&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::pair&lt; std::size_t, std::size_t &gt;&#160;</td>
+          <td class="paramname"><em>parents</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const mutation_handling_policy &amp;&#160;</td>
+          <td class="paramname"><em>mutation_policy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">genetic_param_holder &amp;&#160;</td>
+          <td class="paramname"><em>genetics</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>offspring</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate offspring gametes and return breakpoints plus mutation keys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>Random number generator </td></tr>
+    <tr><td class="paramname">parents</td><td>Indexes of the offspring parents in <em>pop</em> </td></tr>
+    <tr><td class="paramname">mutation_policy</td><td>Either <a class="el" href="../../d8/d48/structfwdpp_1_1ts_1_1all__mutations.html">all_mutations</a> or <a class="el" href="../../de/de4/structfwdpp_1_1ts_1_1selected__variants__only.html">selected_variants_only</a>. See below. </td></tr>
+    <tr><td class="paramname">pop</td><td>Either <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html" title="Abstraction of what is needed to simulate a single-locus population. ">fwdpp::poptypes::slocuspop</a> or <a class="el" href="../../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f...">fwdpp::poptypes::mlocuspop</a>. </td></tr>
+    <tr><td class="paramname">genetics</td><td>A duck type of <a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html" title="Hold types for genetic operations. ">fwdpp::genetic_parameters</a>. </td></tr>
+    <tr><td class="paramname">offspring</td><td>The offspring for which we will generate gametes.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The final three parameters will be modified.</p>
+<dl class="section return"><dt>Returns</dt><dd>A pair of <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">mut_rec_intermediates</a>, corresponding to what is passed on from each parent.</dd></dl>
+<p>The operations are dispatched out to functions based on the population type. These functions make calls to <a class="el" href="../../dd/d84/namespacefwdpp.html#a635801bc8ea29e30cce2e4cf7694bf46">fwdpp::mutate_recombine</a>.</p>
+<p>The parameter <em>mutation_policy</em> governs what types of mutations are entered into the gametes of <em>offspring</em>. If the policy is <a class="el" href="../../d8/d48/structfwdpp_1_1ts_1_1all__mutations.html">fwdpp::ts::all_mutations</a>, then neutral and selected variants are placed in an offspring's gametes. If the policy is <a class="el" href="../../de/de4/structfwdpp_1_1ts_1_1selected__variants__only.html">fwdpp::ts::selected_variants_only</a>, then only selected mutations are placed into the gametes. Regardless of the policy, ALL mutations are contained in the return value, with the idea that the caller will record them into a <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The function type genetic_param_holder::generate_mutations must return std::vector&lt;fwdpp::uint_t&gt;, with the values reflecting the locations of new mutations on <em>pop.mutations</em>. Further, this function must already bind any relevant mutation rates (as this generate_offspring does not accept them as arguments).</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.4 Added to <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html" title="Tree sequence  support. ">fwdpp::ts</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d9c/generate__offspring_8hpp_source.html#l00331">331</a> of file <a class="el" href="../../df/d9c/generate__offspring_8hpp_source.html">generate_offspring.hpp</a>.</p>
 
 </div>
 </div>
@@ -505,6 +667,9 @@ template&lt;typename mcont_t &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::pair&lt;<a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>, <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>&gt; fwdpp::ts::get_parent_ids </td>
@@ -530,31 +695,39 @@ template&lt;typename mcont_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Convert the index of a parent into the two node IDs.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">first_parental_index</td><td>First index of possible parents for offspring </td></tr>
-    <tr><td class="paramname">Index</td><td>of parent in the population </td></tr>
+    <tr><td class="paramname">parent</td><td>Index of parent in the population </td></tr>
     <tr><td class="paramname">did_swap</td><td>This is the "Mendel" step.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>This function is trivial in implementation and is easily replaced if a more complex set of rules are needed </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a33">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a50">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a34">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a42">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html">get_parent_ids.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a8979c71e69e9bcebbbf3b3ea7edc0439"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8979c71e69e9bcebbbf3b3ea7edc0439">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[1/2]</span></h2>
+<a id="a4e7bf711e7bba2ce46c4cc64c313309e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7bf711e7bba2ce46c4cc64c313309e">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::queue&lt;std::size_t&gt; fwdpp::ts::make_mut_queue </td>
+          <td class="memname">flagged_mutation_queue fwdpp::ts::make_mut_queue </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::uint32_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>mcounts</em>, </td>
@@ -571,6 +744,11 @@ template&lt;typename mcont_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Make a mutation recycling queue for simulations with tree sequences. </p>
@@ -583,20 +761,23 @@ template&lt;typename mcont_t &gt; </div>
 </dl>
 <dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>std::queue&lt;std::size_t&gt; </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a23">custom_mutation.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a12">juvenile_migration.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a28">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a45">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a20">custom_mutation.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a12">juvenile_migration.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a30">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a38">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad7d5e8e910a56067c3e912e4bd7f2a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7d5e8e910a56067c3e912e4bd7f2a42">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[2/2]</span></h2>
+<a id="a90ee3318265e92ca462eb292a91d883a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ee3318265e92ca462eb292a91d883a">&#9670;&nbsp;</a></span>make_mut_queue() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::queue&lt;std::size_t&gt; fwdpp::ts::make_mut_queue </td>
+          <td class="memname">flagged_mutation_queue fwdpp::ts::make_mut_queue </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::size_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>preserved_mutation_indexes</em>, </td>
@@ -613,6 +794,11 @@ template&lt;typename mcont_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Make a mutation recycling queue for simulations with tree sequences. </p>
@@ -634,7 +820,7 @@ template&lt;typename mcont_t &gt; </div>
 <p>This function generates a recycling queue by taking the set difference of <em>preserved_mutation_indexes</em> and all possible mutation indexes, <img class="formulaInl" alt="$[0,num\_mutations)$" src="../../form_0.png"/>. The algorithm is a fast Nlog(N) method, and it will outperform the other overload based on tree traversal when the number of trees is very large, as is the case when large numbers of ancestral samples are registered during a simulation.</p>
 <dl class="section note"><dt>Note</dt><dd>A side-effect is that <em>preserved_mutation_indexes</em> is sorted. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d6/d3f/recycling_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../d6/d3f/recycling_8hpp_source.html">recycling.hpp</a>.</p>
 
 </div>
 </div>
@@ -643,6 +829,9 @@ template&lt;typename mcont_t &gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::map&lt;<a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a>, std::vector&lt;std::pair&lt;double, double&gt; &gt; &gt; fwdpp::ts::mark_multiple_roots </td>
@@ -662,10 +851,17 @@ template&lt;typename mcont_t &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Identify root nodes in "marginal forests". </p>
-<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to library </dd>
+<dd>
+0.7.4 Refactored to use root tracking method</dd></dl>
 <p>See <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a> for discussion. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d57/mark__multiple__roots_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../dc/d57/mark__multiple__roots_8hpp_source.html">mark_multiple_roots.hpp</a>.</p>
@@ -723,6 +919,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
   <table class="params">
     <tr><td class="paramname">r</td><td><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html" title="A wrapper around gsl_rng * objects. ">fwdpp::GSLrng_t</a> </td></tr>
     <tr><td class="paramname">make_mutation</td><td>A mutation function. See below. </td></tr>
+    <tr><td class="paramname">tables</td><td>A <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> </td></tr>
     <tr><td class="paramname">samples</td><td>A list of sample nodes corresponding to "currently-alive" nodes </td></tr>
     <tr><td class="paramname">mu</td><td>Mutation rate (per gamete, per generation)</td></tr>
   </table>
@@ -732,7 +929,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 <dd>
 0.7.2 Return immediately if mutation rate is not &gt; 0</dd></dl>
 <p>This function uses the edge_table to apply mutations to all parent/child connections. The mutations should be neutral, although that requirement is not enforced. (It simply makes little sense to apply selected mutations to the entire edge table post-hoc.)</p>
-<p>The result of this function is to populate .mutation_table with neutral variants.</p>
+<p>The result of this function is to populate <em>tables.mutation_table</em> with neutral variants.</p>
 <p>The parameter <em>make_mutation</em> is a function that must conform to std::function&lt;std::size_t(double, double, fwdpp::uint_t)&gt;. The three arguments are interpreted as "left", "right", and "time". The function's return value corresponds to the index of the new mutation in the simulation's mutation container. The new mutation must have a position on the half-open interval [left, right). The "time" parameger represents the generation when the mutation arose and will be uniformly assigned between the parental birth time and that of the child. This mutation's origin time will be on the half-open interval (parental birth time, child birth time].</p>
 <p>The preceding paragraph implies that <em>make_mutation</em> is repsonsible for required operations related to mutation recycling, etc.. The lambda "neutral_variant_maker" in the example program <a class="el" href="../../d9/d59/wfts_8cc.html">wfts.cc</a> will probably be of help here.</p>
 <p>It is common that, at the end of a forward-time simulation, that not all trees are completely coalesced. This happens because the distribution on the time to MRCA has very high variance and, due to recombination, some fraction of trees will not be coalesced after, say, 10N generations of evolving a single Wright-Fisher deme. Further, the simlification algorithm will "push" the most ancient nodes on these "marginal forests" forwards in time to the most recent ancestral node of each tree in the forest. Thus, naively mutating the edge table will place too few mutations on these parts of the genome. This function corrects for the presence of marginal forests, as described below.</p>
@@ -741,7 +938,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 <li>Simulate for longer. For example, CDF of TMRCA under Wright-Fisher is quite close to 1 at ~20N generations. Thus, simulating longer means that fewer and fewer marginal trees will be forests.</li>
 <li>Start the simulation with an existing, completely-coalesced, tree sequence. As far as fwdpp is concerned, this is left as an "exercise for the reader" at the moment. </li>
 </ol>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a40">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a57">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a40">spatialts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../db/d16/mutate__tables_8hpp_source.html">mutate_tables.hpp</a>.</p>
 
@@ -781,7 +978,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00411">411</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00417">417</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -933,7 +1130,7 @@ template&lt;typename rng , typename mfunction &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00401">401</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d3/d70/table__collection_8hpp_source.html#l00407">407</a> of file <a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>.</p>
 
 </div>
 </div>
@@ -948,13 +1145,13 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_count_contai
         <tr>
           <td class="memname">void fwdpp::ts::remove_fixations_from_gametes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -1009,7 +1206,7 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_count_contai
 <p>When <em>preserve_selected_fixations</em> is true, selected fixations are retained in the population. We do this because simulations of phenotypes (as opposed to relative fitness) require tracking the contribution of fixation to trait values.</p>
 <dl class="section note"><dt>Note</dt><dd>When simulating a trait and never simulating neutral mutations, the most efficient thing is to skip calling this function entirely.</dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The value passed to <em>preserve_selected_fixations</em> needs to be coordinated with the <em>preserve</em> argument of flag_mutations_for_recycling.</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000006">Todo:</a></b></dt><dd>Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be detected. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000007">Todo:</a></b></dt><dd>Improve treatment of fixations by allowing for variants fixed in alive AND ancient samples to be detected. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dc7/remove__fixations__from__gametes_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../da/dc7/remove__fixations__from__gametes_8hpp_source.html">remove_fixations_from_gametes.hpp</a>.</p>
 
@@ -1029,7 +1226,7 @@ template&lt;typename gcont_t , typename mcont_t , typename mutation_count_contai
 </div><div class="memdoc">
 
 <p>Index value of a NULL node. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a31">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a48">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a33">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a41">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d1/dc9/definitions_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d1/dc9/definitions_8hpp_source.html">definitions.hpp</a>.</p>
 

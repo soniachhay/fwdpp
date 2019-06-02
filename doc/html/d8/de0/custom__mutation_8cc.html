@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -85,7 +85,7 @@ $(function() {
 <code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d2f/scalar__serialization_8hpp_source.html">fwdpp/io/scalar_serialization.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d84/mutation_8hpp_source.html">fwdpp/io/mutation.hpp</a>&gt;</code><br />
-<code>#include &lt;fwdpp/internal/recycling.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/simfunctions/recycling.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&quot;</code><br />
 </div>
@@ -123,9 +123,9 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa5d0549d95178fafcf7778b62c44d8b"><td class="memTemplParams" colspan="2">template&lt;typename queue_t , typename mcont_t , typename lookup_table_t , typename position_function &gt; </td></tr>
-<tr class="memitem:afa5d0549d95178fafcf7778b62c44d8b"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/de0/custom__mutation_8cc.html#afa5d0549d95178fafcf7778b62c44d8b">infsites_TwoDmutation_additive</a> (queue_t &amp;recycling_bin, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#ac3b7bf5e6499f51048db25804246cafb">lookup_table_t</a> &amp;lookup, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &amp;generation, const double pselected, const position_function &amp;posmaker, const double sigma_x, const double sigma_y, const double rho, const decltype(<a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#a0c27b16a7acbbb004e3402c21dc52d19">TwoDmutation::xtra</a>) x=0)</td></tr>
-<tr class="separator:afa5d0549d95178fafcf7778b62c44d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab296afe605cabc97fdfd27c2d266f757"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_table_t , typename position_function &gt; </td></tr>
+<tr class="memitem:ab296afe605cabc97fdfd27c2d266f757"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/de0/custom__mutation_8cc.html#ab296afe605cabc97fdfd27c2d266f757">infsites_TwoDmutation_additive</a> (fwdpp::flagged_mutation_queue &amp;recycling_bin, mcont_t &amp;mutations, const gsl_rng *r, lookup_table_t &amp;lookup, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> &amp;generation, const double pselected, const position_function &amp;posmaker, const double sigma_x, const double sigma_y, const double rho, const decltype(<a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#a0c27b16a7acbbb004e3402c21dc52d19">TwoDmutation::xtra</a>) x=0)</td></tr>
+<tr class="separator:ab296afe605cabc97fdfd27c2d266f757"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/de0/custom__mutation_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -142,7 +142,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00134">134</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00132">132</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
 
 </div>
 </div>
@@ -154,34 +154,34 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a899a2d0f33746e15194327d9cf910d55">mtype</a> =  <a class="el" href="../../d9/de2/structTwoDmutation.html">TwoDmutation</a></td>
+          <td class="memname">using <a class="el" href="../../d8/de0/custom__mutation_8cc.html#af93c97876e851f60a92058c28c69f7b9">mtype</a> =  <a class="el" href="../../d9/de2/structTwoDmutation.html">TwoDmutation</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00133">133</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00131">131</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afa5d0549d95178fafcf7778b62c44d8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa5d0549d95178fafcf7778b62c44d8b">&#9670;&nbsp;</a></span>infsites_TwoDmutation_additive()</h2>
+<a id="ab296afe605cabc97fdfd27c2d266f757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab296afe605cabc97fdfd27c2d266f757">&#9670;&nbsp;</a></span>infsites_TwoDmutation_additive()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename queue_t , typename mcont_t , typename lookup_table_t , typename position_function &gt; </div>
+template&lt;typename mcont_t , typename lookup_table_t , typename position_function &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::size_t infsites_TwoDmutation_additive </td>
           <td>(</td>
-          <td class="paramtype">queue_t &amp;&#160;</td>
+          <td class="paramtype">fwdpp::flagged_mutation_queue &amp;&#160;</td>
           <td class="paramname"><em>recycling_bin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -193,7 +193,7 @@ template&lt;typename queue_t , typename mcont_t , typename lookup_table_t , type
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#ac3b7bf5e6499f51048db25804246cafb">lookup_table_t</a> &amp;&#160;</td>
+          <td class="paramtype">lookup_table_t &amp;&#160;</td>
           <td class="paramname"><em>lookup</em>, </td>
         </tr>
         <tr>
@@ -276,9 +276,9 @@ template&lt;typename queue_t , typename mcont_t , typename lookup_table_t , type
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a18">custom_mutation.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d4/d99/custom_mutation_8cc-example.html#a16">custom_mutation.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00138">138</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html#l00136">136</a> of file <a class="el" href="../../d8/de0/custom__mutation_8cc_source.html">custom_mutation.cc</a>.</p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -89,7 +89,7 @@ Public Member Functions</h2></td></tr>
 <p>Keeping a persistent simplifier around during a simplification avoids many repeated large memory allocations. On a single-core machine, the more often you simplify, the more this matters. When running many simulations on a many-core machine, keeping a persistent object reduces competition between threads for big memory chunks, which should also lead to a performance boost.</p>
 <p>Many of the implementation details are private functions, which are subject to change without notice.</p>
 <dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a14">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a31">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a13">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a14">wfts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

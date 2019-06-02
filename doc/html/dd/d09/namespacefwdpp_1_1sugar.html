@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -64,9 +64,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fwdpp::sugar Namespace Reference</div>  </div>
@@ -76,67 +73,25 @@ $(function() {
 <p>Nested namespace for sugar layer.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/da9/structfwdpp_1_1sugar_1_1FWDPP__SUGAR__POPTAG.html">FWDPP_SUGAR_POPTAG</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d27/structfwdpp_1_1sugar_1_1GSL__RNG__TYPE__TAG.html">GSL_RNG_TYPE_TAG</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispatch tag for gsl_rng * types.  <a href="../../d5/d27/structfwdpp_1_1sugar_1_1GSL__RNG__TYPE__TAG.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html">mlocuspop</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler from fwdpp.  <a href="../../d7/d47/classfwdpp_1_1sugar_1_1mlocuspop.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html">popbase</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for population objects.  <a href="../../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d4e/classfwdpp_1_1sugar_1_1slocuspop.html">slocuspop</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstraction of what is needed to simulate a single-locus population.  <a href="../../d2/d4e/classfwdpp_1_1sugar_1_1slocuspop.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:ga121a2772fd5be9179b4397759d8b1e18"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga121a2772fd5be9179b4397759d8b1e18">gsl_rng_ptr_t</a> = std::unique_ptr&lt; gsl_rng, void(*)(gsl_rng *)&gt;</td></tr>
-<tr class="memdesc:ga121a2772fd5be9179b4397759d8b1e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smart pointer wrapper to gsl_rng *.  <a href="../../de/d6e/group__sugar.html#ga121a2772fd5be9179b4397759d8b1e18">More...</a><br /></td></tr>
-<tr class="separator:ga121a2772fd5be9179b4397759d8b1e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabb99e8bce874037b936e91130ad11fb3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gabb99e8bce874037b936e91130ad11fb3">SINGLELOC_TAG</a> = <a class="el" href="../../d8/da9/structfwdpp_1_1sugar_1_1FWDPP__SUGAR__POPTAG.html">FWDPP_SUGAR_POPTAG</a>&lt; <a class="el" href="../../de/d6e/group__sugar.html#gga8b67d365ea318f1011a5881c21453ef2a0d11f1cd8320d792049f863027f04524">FWDPP_SUGAR_POPTYPE::SINGLELOC</a> &gt;</td></tr>
-<tr class="memdesc:gabb99e8bce874037b936e91130ad11fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single-locus simulations.  <a href="../../de/d6e/group__sugar.html#gabb99e8bce874037b936e91130ad11fb3">More...</a><br /></td></tr>
-<tr class="separator:gabb99e8bce874037b936e91130ad11fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9c90be8de36e5aaa51736a1175cc6a13"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga9c90be8de36e5aaa51736a1175cc6a13">MULTILOC_TAG</a> = <a class="el" href="../../d8/da9/structfwdpp_1_1sugar_1_1FWDPP__SUGAR__POPTAG.html">FWDPP_SUGAR_POPTAG</a>&lt; <a class="el" href="../../de/d6e/group__sugar.html#gga8b67d365ea318f1011a5881c21453ef2acb4eaa80f71ab986f42364e89d58684d">FWDPP_SUGAR_POPTYPE::MULTILOC</a> &gt;</td></tr>
-<tr class="memdesc:ga9c90be8de36e5aaa51736a1175cc6a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-locus simulations.  <a href="../../de/d6e/group__sugar.html#ga9c90be8de36e5aaa51736a1175cc6a13">More...</a><br /></td></tr>
-<tr class="separator:ga9c90be8de36e5aaa51736a1175cc6a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga262e136268bfcfb76f8b615708848d13"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga262e136268bfcfb76f8b615708848d13">GSL_RNG_TYPE</a> { <a class="el" href="../../de/d6e/group__sugar.html#gga262e136268bfcfb76f8b615708848d13a9628b10562b643bff5d84e6dbf17d866">GSL_RNG_TYPE::MT19937</a>, 
-<a class="el" href="../../de/d6e/group__sugar.html#gga262e136268bfcfb76f8b615708848d13a1c61b3e6e6203fecfb58277795ad23e0">GSL_RNG_TYPE::TAUS2</a>
- }<tr class="memdesc:ga262e136268bfcfb76f8b615708848d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">gsl_rng * types supported by fwdpp's sugar layer  <a href="../../de/d6e/group__sugar.html#ga262e136268bfcfb76f8b615708848d13">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:ga262e136268bfcfb76f8b615708848d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8b67d365ea318f1011a5881c21453ef2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga8b67d365ea318f1011a5881c21453ef2">FWDPP_SUGAR_POPTYPE</a> { <a class="el" href="../../de/d6e/group__sugar.html#gga8b67d365ea318f1011a5881c21453ef2a0d11f1cd8320d792049f863027f04524">FWDPP_SUGAR_POPTYPE::SINGLELOC</a>, 
-<a class="el" href="../../de/d6e/group__sugar.html#gga8b67d365ea318f1011a5881c21453ef2acb4eaa80f71ab986f42364e89d58684d">FWDPP_SUGAR_POPTYPE::MULTILOC</a>
- }<tr class="memdesc:ga8b67d365ea318f1011a5881c21453ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of populations supported by sugar layer.  <a href="../../de/d6e/group__sugar.html#ga8b67d365ea318f1011a5881c21453ef2">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:ga8b67d365ea318f1011a5881c21453ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mcounts_t &gt; </td></tr>
-<tr class="memitem:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">get_mut_index</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0489fb61d024445a5f15b6bdb67bd540">mcounts_t</a> &amp;mcounts, typename mcont_t::value_type &amp;new_mutation)</td></tr>
+<tr class="memitem:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">get_mut_index</a> (mcont_t &amp;mutations, mcounts_t &amp;mcounts, typename mcont_t::value_type &amp;new_mutation)</td></tr>
 <tr class="memdesc:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for implementing <a class="el" href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51" title="Add a mutation into a population at a given frequency. ">fwdpp::add_mutation</a>.  <a href="../../de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">More...</a><br /></td></tr>
 <tr class="separator:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename map_t &gt; </td></tr>
-<tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#abf7a30e004c0699c1348ba3ff2f946bc">add_mutation_details</a> (<a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;mindexes, const map_t &amp;gams)</td></tr>
+<tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#abf7a30e004c0699c1348ba3ff2f946bc">add_mutation_details</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;mindexes, const map_t &amp;gams)</td></tr>
 <tr class="separator:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd21a5dfa86b42c020845b4e73f9a77b"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::sugar::SINGLELOC_TAG&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:abd21a5dfa86b42c020845b4e73f9a77b"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#abd21a5dfa86b42c020845b4e73f9a77b">collect_gametes</a> (<a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
-<tr class="memdesc:abd21a5dfa86b42c020845b4e73f9a77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#abd21a5dfa86b42c020845b4e73f9a77b">More...</a><br /></td></tr>
-<tr class="separator:abd21a5dfa86b42c020845b4e73f9a77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb78d6cf0b5d8fa5e319350c5cf4b786"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::sugar::MULTILOC_TAG&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:adb78d6cf0b5d8fa5e319350c5cf4b786"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::value_type::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#adb78d6cf0b5d8fa5e319350c5cf4b786">collect_gametes</a> (<a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
-<tr class="memdesc:adb78d6cf0b5d8fa5e319350c5cf4b786"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#adb78d6cf0b5d8fa5e319350c5cf4b786">More...</a><br /></td></tr>
-<tr class="separator:adb78d6cf0b5d8fa5e319350c5cf4b786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2edf4022999c21537572b62829bc02e9"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;                      std::is_same&lt;typename poptype::popmodel_t,                                   fwdpp::poptypes::SINGLELOC_TAG&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a2edf4022999c21537572b62829bc02e9"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a2edf4022999c21537572b62829bc02e9">collect_gametes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
+<tr class="memdesc:a2edf4022999c21537572b62829bc02e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#a2edf4022999c21537572b62829bc02e9">More...</a><br /></td></tr>
+<tr class="separator:a2edf4022999c21537572b62829bc02e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78c51745d8ea922c404f7671cf2f16f1"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::MULTILOC_TAG&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:a78c51745d8ea922c404f7671cf2f16f1"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::value_type::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a78c51745d8ea922c404f7671cf2f16f1">collect_gametes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
+<tr class="memdesc:a78c51745d8ea922c404f7671cf2f16f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#a78c51745d8ea922c404f7671cf2f16f1">More...</a><br /></td></tr>
+<tr class="separator:a78c51745d8ea922c404f7671cf2f16f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mut_key_cont_t &gt; </td></tr>
-<tr class="memitem:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a9299acd3ac5b0f6fcd2d8c80410e57fd">change_neutral_details</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, const double pos, const std::size_t mindex, mut_key_cont_t &amp;a, mut_key_cont_t &amp;b)</td></tr>
+<tr class="memitem:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a9299acd3ac5b0f6fcd2d8c80410e57fd">change_neutral_details</a> (const mcont_t &amp;mutations, const double pos, const std::size_t mindex, mut_key_cont_t &amp;a, mut_key_cont_t &amp;b)</td></tr>
 <tr class="separator:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -155,7 +110,7 @@ template&lt;typename poptype , typename map_t &gt; </div>
         <tr>
           <td class="memname">void fwdpp::sugar::add_mutation_details </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -193,7 +148,7 @@ template&lt;typename mcont_t , typename mut_key_cont_t &gt; </div>
         <tr>
           <td class="memname">void fwdpp::sugar::change_neutral_details </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>, </td>
         </tr>
         <tr>
@@ -234,18 +189,18 @@ template&lt;typename mcont_t , typename mut_key_cont_t &gt; </div>
 
 </div>
 </div>
-<a id="abd21a5dfa86b42c020845b4e73f9a77b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd21a5dfa86b42c020845b4e73f9a77b">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[1/2]</span></h2>
+<a id="a2edf4022999c21537572b62829bc02e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2edf4022999c21537572b62829bc02e9">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::sugar::SINGLELOC_TAG&gt;::value&gt;&gt; </div>
+template&lt;typename poptype , typename  = std::enable_if&lt;                      std::is_same&lt;typename poptype::popmodel_t,                                   fwdpp::poptypes::SINGLELOC_TAG&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::size_t, std::vector&lt; typename poptype::diploid_t::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
+          <td class="memname">std::unordered_map&lt; std::size_t, std::vector&lt;typename poptype::diploid_t::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -275,18 +230,18 @@ template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;   
 
 </div>
 </div>
-<a id="adb78d6cf0b5d8fa5e319350c5cf4b786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb78d6cf0b5d8fa5e319350c5cf4b786">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[2/2]</span></h2>
+<a id="a78c51745d8ea922c404f7671cf2f16f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78c51745d8ea922c404f7671cf2f16f1">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::sugar::MULTILOC_TAG&gt;::value&gt;&gt; </div>
+template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::MULTILOC_TAG&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;std::size_t, std::vector&lt;typename poptype::diploid_t:: value_type::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
+          <td class="memname">std::unordered_map&lt; std::size_t, std::vector&lt;typename poptype::diploid_t::value_type::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>

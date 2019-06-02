@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -74,14 +74,15 @@ $(function() {
 
 <p>!  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;limits&gt;</code><br />
+<div class="textblock"><code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
 <code>#include &lt;fwdpp/internal/gsl_discrete.hpp&gt;</code><br />
-<code>#include &lt;fwdpp/internal/recycling.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/simfunctions/recycling.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/da7/callbacks_8hpp_source.html">fwdpp/extensions/callbacks.hpp</a>&gt;</code><br />
 </div>
 <p><a href="../../d0/de1/regions_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -98,28 +99,26 @@ Namespaces</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:af01465f3d5f009563009dfca1af43784"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">function_type</a> = mutation_model_signature</td></tr>
 <tr class="separator:af01465f3d5f009563009dfca1af43784"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71350655a014a01b97f759a414b88337"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> = <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a></td></tr>
+<tr class="memitem:a71350655a014a01b97f759a414b88337"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> = mcont_t</td></tr>
 <tr class="separator:a71350655a014a01b97f759a414b88337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac847a8e6a8acb1720091373ca6be2d9f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#ac847a8e6a8acb1720091373ca6be2d9f">gamete_container</a> = <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a></td></tr>
+<tr class="memitem:ac847a8e6a8acb1720091373ca6be2d9f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#ac847a8e6a8acb1720091373ca6be2d9f">gamete_container</a> = gcont_t</td></tr>
 <tr class="separator:ac847a8e6a8acb1720091373ca6be2d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec4c3773c676f0637229d9188131f6b7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#aec4c3773c676f0637229d9188131f6b7">recycling_bin_type</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#abeabb2736133c498b9231384046f0ce7">fwdpp::traits::recycling_bin_t</a>&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;</td></tr>
-<tr class="separator:aec4c3773c676f0637229d9188131f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a890bba37dc2d7d8279652691d329e8a1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/de1/regions_8hpp.html#a890bba37dc2d7d8279652691d329e8a1">result_type</a> = std::vector&lt; double &gt;</td></tr>
 <tr class="separator:a890bba37dc2d7d8279652691d329e8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1dc590e4e57d82230fd1f93f515e7b0b"><td class="memTemplParams" colspan="2">template&lt;typename dmm_type &gt; </td></tr>
-<tr class="memitem:a1dc590e4e57d82230fd1f93f515e7b0b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a1dc590e4e57d82230fd1f93f515e7b0b">fwdpp::extensions::bind_dmm_wrapper</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const dmm_type &amp;dmm, std::true_type)</td></tr>
+<tr class="memitem:a1dc590e4e57d82230fd1f93f515e7b0b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a1dc590e4e57d82230fd1f93f515e7b0b">fwdpp::extensions::bind_dmm_wrapper</a> (const gsl_rng *r, const dmm_type &amp;dmm, std::true_type)</td></tr>
 <tr class="separator:a1dc590e4e57d82230fd1f93f515e7b0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34603b4df4941e41b7f84421e98d564d"><td class="memTemplParams" colspan="2">template&lt;typename dmm_type &gt; </td></tr>
-<tr class="memitem:a34603b4df4941e41b7f84421e98d564d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a34603b4df4941e41b7f84421e98d564d">fwdpp::extensions::bind_dmm_wrapper</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const dmm_type &amp;dmm, std::false_type)</td></tr>
+<tr class="memitem:a34603b4df4941e41b7f84421e98d564d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a34603b4df4941e41b7f84421e98d564d">fwdpp::extensions::bind_dmm_wrapper</a> (const gsl_rng *r, const dmm_type &amp;dmm, std::false_type)</td></tr>
 <tr class="separator:a34603b4df4941e41b7f84421e98d564d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab94d121068aaaf38404df46897b3684a"><td class="memTemplParams" colspan="2">template&lt;typename dmm_type &gt; </td></tr>
-<tr class="memitem:ab94d121068aaaf38404df46897b3684a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#ab94d121068aaaf38404df46897b3684a">fwdpp::extensions::bind_dmm</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const dmm_type &amp;dmm)</td></tr>
+<tr class="memitem:ab94d121068aaaf38404df46897b3684a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#ab94d121068aaaf38404df46897b3684a">fwdpp::extensions::bind_dmm</a> (const gsl_rng *r, const dmm_type &amp;dmm)</td></tr>
 <tr class="separator:ab94d121068aaaf38404df46897b3684a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e79b0e6471f57f395d2c1275b900baa"><td class="memTemplParams" colspan="2">template&lt;typename dmm_type &gt; </td></tr>
-<tr class="memitem:a3e79b0e6471f57f395d2c1275b900baa"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename <a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a3e79b0e6471f57f395d2c1275b900baa">fwdpp::extensions::bind_vec_dmm</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, const std::vector&lt; dmm_type &gt; &amp;vdm)</td></tr>
+<tr class="memitem:a3e79b0e6471f57f395d2c1275b900baa"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename <a class="el" href="../../d0/de1/regions_8hpp.html#af01465f3d5f009563009dfca1af43784">dmm_type::function_type</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../da/d69/namespacefwdpp_1_1extensions.html#a3e79b0e6471f57f395d2c1275b900baa">fwdpp::extensions::bind_vec_dmm</a> (const gsl_rng *r, const std::vector&lt; dmm_type &gt; &amp;vdm)</td></tr>
 <tr class="separator:a3e79b0e6471f57f395d2c1275b900baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -139,7 +138,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>
@@ -150,12 +149,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/de1/regions_8hpp.html#ac847a8e6a8acb1720091373ca6be2d9f">gamete_container</a> =  <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a></td>
+          <td class="memname">using <a class="el" href="../../d0/de1/regions_8hpp.html#ac847a8e6a8acb1720091373ca6be2d9f">gamete_container</a> =  gcont_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>
@@ -166,28 +165,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> =  <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a></td>
+          <td class="memname">using <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> =  mcont_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
-
-</div>
-</div>
-<a id="aec4c3773c676f0637229d9188131f6b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec4c3773c676f0637229d9188131f6b7">&#9670;&nbsp;</a></span>recycling_bin_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d0/de1/regions_8hpp.html#aec4c3773c676f0637229d9188131f6b7">recycling_bin_type</a> =  typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#abeabb2736133c498b9231384046f0ce7">fwdpp::traits::recycling_bin_t</a>&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00057">57</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +186,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00190">190</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/de1/regions_8hpp_source.html#l00189">189</a> of file <a class="el" href="../../d0/de1/regions_8hpp_source.html">regions.hpp</a>.</p>
 
 </div>
 </div>

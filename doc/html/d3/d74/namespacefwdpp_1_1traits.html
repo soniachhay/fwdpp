@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -91,9 +91,6 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d04/structfwdpp_1_1traits_1_1is__mutation.html">is_mutation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps a static constant allowing a test that T is a mutation.  <a href="../../db/d04/structfwdpp_1_1traits_1_1is__mutation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da7/structfwdpp_1_1traits_1_1recycling__bin__type.html">recycling_bin_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives the "recycling bin" type corresponding to cont_t.  <a href="../../db/da7/structfwdpp_1_1traits_1_1recycling__bin__type.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -105,9 +102,6 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a8a93964ee429efaa2c3abbc3e85377ca"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a8a93964ee429efaa2c3abbc3e85377ca">is_mutation_t</a> = typename <a class="el" href="../../db/d04/structfwdpp_1_1traits_1_1is__mutation.html">is_mutation</a>&lt; T &gt;::type</td></tr>
 <tr class="memdesc:a8a93964ee429efaa2c3abbc3e85377ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper for fwdpp::traits::is_mutation&lt;T&gt;::Type.  <a href="#a8a93964ee429efaa2c3abbc3e85377ca">More...</a><br /></td></tr>
 <tr class="separator:a8a93964ee429efaa2c3abbc3e85377ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeabb2736133c498b9231384046f0ce7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abeabb2736133c498b9231384046f0ce7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#abeabb2736133c498b9231384046f0ce7">recycling_bin_t</a> = typename <a class="el" href="../../db/da7/structfwdpp_1_1traits_1_1recycling__bin__type.html">recycling_bin_type</a>&lt; T &gt;::type</td></tr>
-<tr class="separator:abeabb2736133c498b9231384046f0ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a902b4555d36bb88c23982679fbd5de3e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a902b4555d36bb88c23982679fbd5de3e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a902b4555d36bb88c23982679fbd5de3e">is_diploid</a> = traits::internal::is_diploid&lt; T &gt;</td></tr>
 <tr class="memdesc:a902b4555d36bb88c23982679fbd5de3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps a static constant allowing a test that T is a diploid.  <a href="#a902b4555d36bb88c23982679fbd5de3e">More...</a><br /></td></tr>
@@ -131,37 +125,37 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:a81f94b3aca7f4a73b5ef187c865399f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience wrapper for fwdpp::traits::is_custom_diploid&lt;T&gt;::type.  <a href="#a81f94b3aca7f4a73b5ef187c865399f3">More...</a><br /></td></tr>
 <tr class="separator:a81f94b3aca7f4a73b5ef187c865399f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a3074dc2a0392498ef36194896885ba"><td class="memTemplParams" colspan="2">template&lt;typename mmodel_t , typename mcont_t , typename gcont_t &gt; </td></tr>
-<tr class="memitem:a9a3074dc2a0392498ef36194896885ba"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a> = traits::internal::is_mutation_model&lt; mmodel_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &gt;</td></tr>
+<tr class="memitem:a9a3074dc2a0392498ef36194896885ba"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a> = traits::internal::is_mutation_model&lt; mmodel_t, mcont_t, gcont_t &gt;</td></tr>
 <tr class="separator:a9a3074dc2a0392498ef36194896885ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d6ed643df76cda17144a57648d14a22"><td class="memTemplParams" colspan="2">template&lt;typename mmodel_t , typename mcont_t , typename gcont_t &gt; </td></tr>
-<tr class="memitem:a3d6ed643df76cda17144a57648d14a22"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3d6ed643df76cda17144a57648d14a22">is_mutation_model_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a>&lt; mmodel_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a3d6ed643df76cda17144a57648d14a22"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3d6ed643df76cda17144a57648d14a22">is_mutation_model_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a>&lt; mmodel_t, mcont_t, gcont_t &gt;::type</td></tr>
 <tr class="separator:a3d6ed643df76cda17144a57648d14a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ec6658f740ec0db19cc87ae8ccbb88"><td class="memTemplParams" colspan="2">template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a88ec6658f740ec0db19cc87ae8ccbb88"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a> = traits::internal::is_rec_model&lt; recmodel_t, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, gamete_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;</td></tr>
+<tr class="memitem:a88ec6658f740ec0db19cc87ae8ccbb88"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a> = traits::internal::is_rec_model&lt; recmodel_t, diploid_t, gamete_t, mcont_t &gt;</td></tr>
 <tr class="separator:a88ec6658f740ec0db19cc87ae8ccbb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9070fb21805935f1726765e275fa86b5"><td class="memTemplParams" colspan="2">template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a9070fb21805935f1726765e275fa86b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9070fb21805935f1726765e275fa86b5">is_rec_model_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a>&lt; recmodel_t, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, gamete_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a9070fb21805935f1726765e275fa86b5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9070fb21805935f1726765e275fa86b5">is_rec_model_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a>&lt; recmodel_t, diploid_t, gamete_t, mcont_t &gt;::type</td></tr>
 <tr class="separator:a9070fb21805935f1726765e275fa86b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a429df4c12ac27d0a6c651bee55dd2fdc"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a429df4c12ac27d0a6c651bee55dd2fdc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a> = traits::internal::fitness_fxn&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;</td></tr>
+<tr class="memitem:a429df4c12ac27d0a6c651bee55dd2fdc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a> = traits::internal::fitness_fxn&lt; dipvector_t, gcont_t, mcont_t &gt;</td></tr>
 <tr class="separator:a429df4c12ac27d0a6c651bee55dd2fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45ff3ded014fd31df1d8783123586f30"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a45ff3ded014fd31df1d8783123586f30"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30">fitness_fxn_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a>&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a45ff3ded014fd31df1d8783123586f30"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30">fitness_fxn_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a>&lt; dipvector_t, gcont_t, mcont_t &gt;::type</td></tr>
 <tr class="separator:a45ff3ded014fd31df1d8783123586f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b4caae8d5b818deea45315bad22d9f4"><td class="memTemplParams" colspan="2">template&lt;typename ff , typename dipvector_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a3b4caae8d5b818deea45315bad22d9f4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a> = traits::internal::is_fitness_fxn&lt; <a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;</td></tr>
+<tr class="memitem:a3b4caae8d5b818deea45315bad22d9f4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a> = traits::internal::is_fitness_fxn&lt; ff, dipvector_t, gcont_t, mcont_t &gt;</td></tr>
 <tr class="separator:a3b4caae8d5b818deea45315bad22d9f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7201e81c4cc89d42a16c344f6e0568b7"><td class="memTemplParams" colspan="2">template&lt;typename ff , typename dipvector_t , typename gcont_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a7201e81c4cc89d42a16c344f6e0568b7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a7201e81c4cc89d42a16c344f6e0568b7">is_fitness_fxn_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a>&lt; <a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a7201e81c4cc89d42a16c344f6e0568b7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a7201e81c4cc89d42a16c344f6e0568b7">is_fitness_fxn_t</a> = typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a>&lt; ff, dipvector_t, gcont_t, mcont_t &gt;::type</td></tr>
 <tr class="separator:a7201e81c4cc89d42a16c344f6e0568b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc9953a698e67fa452628e309f6d2edd"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
-<tr class="memitem:adc9953a698e67fa452628e309f6d2edd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#adc9953a698e67fa452628e309f6d2edd">mutation_model</a> = typename traits::internal::mutation_model&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:adc9953a698e67fa452628e309f6d2edd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#adc9953a698e67fa452628e309f6d2edd">mutation_model</a> = typename traits::internal::mutation_model&lt; mcont_t &gt;::type</td></tr>
 <tr class="separator:adc9953a698e67fa452628e309f6d2edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e677690abd28a8bd023c3465e9eb8a7"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename gcont_t &gt; </td></tr>
-<tr class="memitem:a5e677690abd28a8bd023c3465e9eb8a7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a5e677690abd28a8bd023c3465e9eb8a7">mutation_model_gamete</a> = typename traits::internal::mutation_model_gamete&lt; <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a5e677690abd28a8bd023c3465e9eb8a7"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a5e677690abd28a8bd023c3465e9eb8a7">mutation_model_gamete</a> = typename traits::internal::mutation_model_gamete&lt; mcont_t, gcont_t &gt;::type</td></tr>
 <tr class="separator:a5e677690abd28a8bd023c3465e9eb8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a743a9dab7bd5fff7683f7ec36fb38c64"><td class="memTemplParams" colspan="2">template&lt;typename diploid_t , typename mcont_t , typename gcont_t &gt; </td></tr>
-<tr class="memitem:a743a9dab7bd5fff7683f7ec36fb38c64"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">mutation_model_diploid</a> = typename traits::internal::mutation_model_diploid&lt; <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &gt;::type</td></tr>
+<tr class="memitem:a743a9dab7bd5fff7683f7ec36fb38c64"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">mutation_model_diploid</a> = typename traits::internal::mutation_model_diploid&lt; diploid_t, mcont_t, gcont_t &gt;::type</td></tr>
 <tr class="separator:a743a9dab7bd5fff7683f7ec36fb38c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -176,14 +170,14 @@ Typedefs</h2></td></tr>
 template&lt;typename dipvector_t , typename gcont_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fwdpp::traits::fitness_fxn</a> = typedef traits::internal::fitness_fxn&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fwdpp::traits::fitness_fxn</a> = typedef traits::internal::fitness_fxn&lt;dipvector_t, gcont_t, mcont_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Defines a struct with a single member typedef called type. If type is void, then one or more of dipvector_t, gcont_t, and/or mcont_t are not valid input types for a fitness function. Otherwise, type will evaluate to std::function&lt;void(const dipvector_t::value_type,const gcont_t,const mcont_t)&gt; </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a5">juvenile_migration.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a4">juvenile_migration.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00137">137</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00126">126</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -196,13 +190,13 @@ template&lt;typename dipvector_t , typename gcont_t , typename mcont_t &gt; </di
 template&lt;typename dipvector_t , typename gcont_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30">fwdpp::traits::fitness_fxn_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a>&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30">fwdpp::traits::fitness_fxn_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc">fitness_fxn</a>&lt;dipvector_t, gcont_t, mcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Convenience wrapper for fitness_fxn&lt;dipvector_t,gcont_t,mcont_t&gt;::type </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00143">143</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00132">132</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -222,7 +216,7 @@ template&lt;typename T &gt; </div>
 
 <p>Wraps a static constant allowing a test that T is a custom diploid. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -242,7 +236,7 @@ template&lt;typename T &gt; </div>
 
 <p>Convenience wrapper for fwdpp::traits::is_custom_diploid&lt;T&gt;::type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00079">79</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -262,7 +256,7 @@ template&lt;typename T &gt; </div>
 
 <p>Wraps a static constant allowing a test that T is a diploid. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -282,7 +276,7 @@ template&lt;typename T &gt; </div>
 
 <p>Convenience wrapper for fwdpp::traits::is_diploid&lt;T&gt;::type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00075">75</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -295,13 +289,13 @@ template&lt;typename T &gt; </div>
 template&lt;typename ff , typename dipvector_t , typename gcont_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">fwdpp::traits::is_fitness_fxn</a> = typedef traits::internal::is_fitness_fxn&lt;<a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">fwdpp::traits::is_fitness_fxn</a> = typedef traits::internal::is_fitness_fxn&lt;ff, dipvector_t, gcont_t, mcont_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Wrap a static constant if ff is a valid fitness function whose argument types are const references to the other three template parameters </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00154">154</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00143">143</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -314,13 +308,13 @@ template&lt;typename ff , typename dipvector_t , typename gcont_t , typename mco
 template&lt;typename ff , typename dipvector_t , typename gcont_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a7201e81c4cc89d42a16c344f6e0568b7">fwdpp::traits::is_fitness_fxn_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a>&lt;<a class="el" href="../../d9/dfd/type__traitsTest_8cc.html#ac05394f79184190857207bd5b4b7b4a7">ff</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a7201e81c4cc89d42a16c344f6e0568b7">fwdpp::traits::is_fitness_fxn_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3b4caae8d5b818deea45315bad22d9f4">is_fitness_fxn</a>&lt;ff, dipvector_t, gcont_t, mcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Conveneince wrapper for fwdpp::traits::is_fitness_fxn&lt;ff,dipvector_t,gcont_t,mcont_t&gt;::type </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00163">163</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00152">152</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +353,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Wraps a static constant allowing a test that T is a multi-locus diploid. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00072">72</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -378,7 +372,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 <p>Convenience wrapper for fwdpp::traits::is_multilocus_diploid&lt;T&gt;::type </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -391,13 +385,13 @@ template&lt;typename T &gt; </div>
 template&lt;typename mmodel_t , typename mcont_t , typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">fwdpp::traits::is_mutation_model</a> = typedef traits::internal::is_mutation_model&lt;mmodel_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">fwdpp::traits::is_mutation_model</a> = typedef traits::internal::is_mutation_model&lt;mmodel_t, mcont_t, gcont_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Wraps a static constant to test that mmodel_t is a valid mutation policy </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -410,13 +404,13 @@ template&lt;typename mmodel_t , typename mcont_t , typename gcont_t &gt; </div>
 template&lt;typename mmodel_t , typename mcont_t , typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3d6ed643df76cda17144a57648d14a22">fwdpp::traits::is_mutation_model_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a>&lt;mmodel_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a3d6ed643df76cda17144a57648d14a22">fwdpp::traits::is_mutation_model_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9a3074dc2a0392498ef36194896885ba">is_mutation_model</a>&lt;mmodel_t, mcont_t, gcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Convenience wrapper for fwdpp::traits::is_mutation_model&lt;mmodel_t,mcont_t,gcont_t&gt;::type </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -449,13 +443,13 @@ template&lt;typename T &gt; </div>
 template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">fwdpp::traits::is_rec_model</a> = typedef traits::internal::is_rec_model&lt;recmodel_t, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, gamete_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">fwdpp::traits::is_rec_model</a> = typedef traits::internal::is_rec_model&lt;recmodel_t, diploid_t, gamete_t, mcont_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Wraps a static constant to test that recmodel_t is a valid recombination function/policy </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00116">116</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -468,13 +462,13 @@ template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typen
 template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9070fb21805935f1726765e275fa86b5">fwdpp::traits::is_rec_model_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a>&lt;recmodel_t, <a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, gamete_t, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a9070fb21805935f1726765e275fa86b5">fwdpp::traits::is_rec_model_t</a> = typedef typename <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a88ec6658f740ec0db19cc87ae8ccbb88">is_rec_model</a>&lt;recmodel_t, diploid_t, gamete_t, mcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Convenience wrapper for fwdpp::traits::is_rec_model&lt;recmodel_t,gamete_c,mcont_t&gt;::type </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00125">125</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00114">114</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +481,7 @@ template&lt;typename recmodel_t , typename diploid_t , typename gamete_t , typen
 template&lt;typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#adc9953a698e67fa452628e309f6d2edd">fwdpp::traits::mutation_model</a> = typedef typename traits::internal::mutation_model&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#adc9953a698e67fa452628e309f6d2edd">fwdpp::traits::mutation_model</a> = typedef typename traits::internal::mutation_model&lt;mcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -495,7 +489,7 @@ template&lt;typename mcont_t &gt; </div>
 <p>If mcont_t is not a container of mutations, then mmodel_t will evaulate to void.</p>
 <p>Otherwise, it will evaluate to std::function&lt;std::size_t(recycling_bin_t&lt;mcont_t&gt; &amp;,mcont_t &amp;)&gt;; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00183">183</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00172">172</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -508,14 +502,14 @@ template&lt;typename mcont_t &gt; </div>
 template&lt;typename diploid_t , typename mcont_t , typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">fwdpp::traits::mutation_model_diploid</a> = typedef typename traits::internal:: <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">mutation_model_diploid</a>&lt;<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#aa7388cd467a0f48495631ec2b149fa3d">diploid_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">fwdpp::traits::mutation_model_diploid</a> = typedef typename traits::internal:: <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a743a9dab7bd5fff7683f7ec36fb38c64">mutation_model_diploid</a>&lt;diploid_t, mcont_t, gcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Gives mutation model function signature for models requiring diploids as arguments. If mcont_t is not a container of mutations and/or gcont_t is not a container of gametes, them mmodel_gamete_t will evaluate to void.</p>
 <p>Otherwise, it will evaluate to std::function&lt;std::size_t(recycling_bin_t&lt;mcont_t&gt; &amp;, const diploid_t &amp;,const typename gcont_t::value_type &amp;, mcont_t &amp;)&gt;; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00224">224</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00213">213</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>
@@ -528,32 +522,14 @@ template&lt;typename diploid_t , typename mcont_t , typename gcont_t &gt; </div>
 template&lt;typename mcont_t , typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a5e677690abd28a8bd023c3465e9eb8a7">fwdpp::traits::mutation_model_gamete</a> = typedef typename traits::internal::mutation_model_gamete&lt;<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a>, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a>&gt;::type</td>
+          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#a5e677690abd28a8bd023c3465e9eb8a7">fwdpp::traits::mutation_model_gamete</a> = typedef typename traits::internal::mutation_model_gamete&lt;mcont_t, gcont_t&gt;::type</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Gives mutation model function signature for models requiring gametes as arguments. If mcont_t is not a container of mutations and/or gcont_t is not a container of gametes, them mmodel_gamete_t will evaluate to void.</p>
 <p>Otherwise, it will evaluate to std::function&lt;std::size_t(recycling_bin_t&lt;mcont_t&gt; &amp;, const typename gcont_t::value_type &amp;, mcont_t &amp;)&gt;; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00204">204</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abeabb2736133c498b9231384046f0ce7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeabb2736133c498b9231384046f0ce7">&#9670;&nbsp;</a></span>recycling_bin_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d3/d74/namespacefwdpp_1_1traits.html#abeabb2736133c498b9231384046f0ce7">fwdpp::traits::recycling_bin_t</a> = typedef typename <a class="el" href="../../db/da7/structfwdpp_1_1traits_1_1recycling__bin__type.html">recycling_bin_type</a>&lt;T&gt;::type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00054">54</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d54/type__traits_8hpp_source.html#l00193">193</a> of file <a class="el" href="../../dc/d54/type__traits_8hpp_source.html">type_traits.hpp</a>.</p>
 
 </div>
 </div>

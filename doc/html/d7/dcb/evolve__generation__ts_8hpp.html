@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -74,32 +74,34 @@ $(function() {
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;tuple&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d0/d51/wrapped__range_8hpp_source.html">fwdpp/wrapped_range.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d0/d3f/util_8hpp_source.html">fwdpp/util.hpp</a>&gt;</code><br />
 <code>#include &lt;fwdpp/internal/gamete_cleaner.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">fwdpp/mutate_recombine.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html">fwdpp/ts/get_parent_ids.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d70/table__collection_8hpp_source.html">fwdpp/ts/table_collection.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">fwdpp/ts/table_simplifier.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../df/d9c/generate__offspring_8hpp_source.html">fwdpp/ts/generate_offspring.hpp</a>&gt;</code><br />
 </div>
 <p><a href="../../d7/dcb/evolve__generation__ts_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2a4e405576eebfeb36b6d2384bc35e03"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename rng_t , typename breakpoint_function , typename mutation_model , typename mrecbin , typename grecbin &gt; </td></tr>
-<tr class="memitem:a2a4e405576eebfeb36b6d2384bc35e03"><td class="memTemplItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#a2a4e405576eebfeb36b6d2384bc35e03">generate_offspring</a> (const rng_t &amp;rng, const breakpoint_function &amp;recmodel, const mutation_model &amp;mmodel, const double mu, const std::size_t parent, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> parent_g1, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> parent_g2, const std::tuple&lt; std::int32_t, std::int32_t &gt; &amp;parent_nodes, const std::int32_t generation, const std::int32_t next_index, <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, std::size_t &amp;offspring_gamete, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, mrecbin &amp;mutation_recycling_bin, grecbin &amp;gamete_recycling_bin)</td></tr>
-<tr class="separator:a2a4e405576eebfeb36b6d2384bc35e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ffb04b71e78efdc999fba85b097fd3d"><td class="memTemplParams" colspan="2">template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , typename pick_parent2_fxn , typename offspring_metadata_fxn , typename breakpoint_function , typename mutation_model &gt; </td></tr>
-<tr class="memitem:a1ffb04b71e78efdc999fba85b097fd3d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#a1ffb04b71e78efdc999fba85b097fd3d">evolve_generation</a> (const rng_t &amp;rng, <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N_next, const double mu, const pick_parent1_fxn &amp;pick1, const pick_parent2_fxn &amp;pick2, const offspring_metadata_fxn &amp;update_offspring, const mutation_model &amp;mmodel, std::queue&lt; std::size_t &gt; &amp;mutation_recycling_bin, const breakpoint_function &amp;recmodel, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> generation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, std::int32_t first_parental_index, std::int32_t next_index)</td></tr>
-<tr class="separator:a1ffb04b71e78efdc999fba85b097fd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a80a080e926218c378d4147cd746d11"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename rng_t , typename genetic_param_holder &gt; </td></tr>
+<tr class="memitem:a6a80a080e926218c378d4147cd746d11"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#a6a80a080e926218c378d4147cd746d11">generate_offspring</a> (const rng_t &amp;rng, const std::pair&lt; std::size_t, std::size_t &gt; parent_indexes, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;offspring, genetic_param_holder &amp;genetics)</td></tr>
+<tr class="separator:a6a80a080e926218c378d4147cd746d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memTemplParams" colspan="2">template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , typename pick_parent2_fxn , typename offspring_metadata_fxn , typename genetic_param_holder &gt; </td></tr>
+<tr class="memitem:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#aed1873b98b1e34c69a2d1a1cce4cc905">evolve_generation</a> (const rng_t &amp;rng, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, genetic_param_holder &amp;genetics, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N_next, const pick_parent1_fxn &amp;pick1, const pick_parent2_fxn &amp;pick2, const offspring_metadata_fxn &amp;update_offspring, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> generation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, std::int32_t first_parental_index, std::int32_t next_index)</td></tr>
+<tr class="separator:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1ffb04b71e78efdc999fba85b097fd3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ffb04b71e78efdc999fba85b097fd3d">&#9670;&nbsp;</a></span>evolve_generation()</h2>
+<a id="aed1873b98b1e34c69a2d1a1cce4cc905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1873b98b1e34c69a2d1a1cce4cc905">&#9670;&nbsp;</a></span>evolve_generation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , typename pick_parent2_fxn , typename offspring_metadata_fxn , typename breakpoint_function , typename mutation_model &gt; </div>
+template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , typename pick_parent2_fxn , typename offspring_metadata_fxn , typename genetic_param_holder &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void evolve_generation </td>
@@ -110,20 +112,20 @@ template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , type
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">genetic_param_holder &amp;&#160;</td>
+          <td class="paramname"><em>genetics</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
           <td class="paramname"><em>N_next</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>mu</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -142,24 +144,6 @@ template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , type
           <td></td>
           <td class="paramtype">const offspring_metadata_fxn &amp;&#160;</td>
           <td class="paramname"><em>update_offspring</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const mutation_model &amp;&#160;</td>
-          <td class="paramname"><em>mmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::queue&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mutation_recycling_bin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const breakpoint_function &amp;&#160;</td>
-          <td class="paramname"><em>recmodel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -192,22 +176,22 @@ template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , type
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a24">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a41">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a26">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a33">wfts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html">evolve_generation_ts.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html">evolve_generation_ts.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2a4e405576eebfeb36b6d2384bc35e03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a4e405576eebfeb36b6d2384bc35e03">&#9670;&nbsp;</a></span>generate_offspring()</h2>
+<a id="a6a80a080e926218c378d4147cd746d11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a80a080e926218c378d4147cd746d11">&#9670;&nbsp;</a></span>generate_offspring()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename poptype , typename rng_t , typename breakpoint_function , typename mutation_model , typename mrecbin , typename grecbin &gt; </div>
+template&lt;typename poptype , typename rng_t , typename genetic_param_holder &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::int32_t generate_offspring </td>
+          <td class="memname">std::pair&lt;<a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a>&gt; generate_offspring </td>
           <td>(</td>
           <td class="paramtype">const rng_t &amp;&#160;</td>
           <td class="paramname"><em>rng</em>, </td>
@@ -215,86 +199,26 @@ template&lt;typename poptype , typename rng_t , typename breakpoint_function , t
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const breakpoint_function &amp;&#160;</td>
-          <td class="paramname"><em>recmodel</em>, </td>
+          <td class="paramtype">const std::pair&lt; std::size_t, std::size_t &gt;&#160;</td>
+          <td class="paramname"><em>parent_indexes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const mutation_model &amp;&#160;</td>
-          <td class="paramname"><em>mmodel</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>mu</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>parent</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
-          <td class="paramname"><em>parent_g1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
-          <td class="paramname"><em>parent_g2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::tuple&lt; std::int32_t, std::int32_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>parent_nodes</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::int32_t&#160;</td>
-          <td class="paramname"><em>generation</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::int32_t&#160;</td>
-          <td class="paramname"><em>next_index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::size_t &amp;&#160;</td>
-          <td class="paramname"><em>offspring_gamete</em>, </td>
+          <td class="paramtype">typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>offspring</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>tables</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">mrecbin &amp;&#160;</td>
-          <td class="paramname"><em>mutation_recycling_bin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">grecbin &amp;&#160;</td>
-          <td class="paramname"><em>gamete_recycling_bin</em>&#160;</td>
+          <td class="paramtype">genetic_param_holder &amp;&#160;</td>
+          <td class="paramname"><em>genetics</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

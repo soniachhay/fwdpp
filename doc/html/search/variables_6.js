@@ -1,6 +1,15 @@
 var searchData=
 [
-  ['g',['g',['../d9/df7/structfwdpp_1_1popgenmut.html#a759b617edd18ff727f91f4deac761a9b',1,'fwdpp::popgenmut::g()'],['../d8/dbe/structfixture.html#a8261036b31bfd2d23182cdb9225d1779',1,'fixture::g()'],['../d9/de2/structTwoDmutation.html#ac060731d5247c667962611fb14f661fe',1,'TwoDmutation::g()']]],
-  ['gametes',['gametes',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#af60d33e6305cc4f83014d363c8dacf06',1,'fwdpp::sugar::popbase::gametes()'],['../d4/d55/structstandard__empty__single__deme__fixture.html#ac3316bfaa6f4218f2c09f54d3c4f2f62',1,'standard_empty_single_deme_fixture::gametes()'],['../d7/dbe/structstandard__empty__multiloc__fixture.html#a0dc1600aa4908adb8565d8cd93e5865e',1,'standard_empty_multiloc_fixture::gametes()'],['../d6/dde/structslocuspop__objects.html#ac424cf6e326bcf8aea7ede57fcabef7a',1,'slocuspop_objects::gametes()'],['../de/d0c/structmlocuspop__objects.html#a83cb1d199bb3e28cefc28f3bf3fffd97',1,'mlocuspop_objects::gametes()']]],
-  ['generation',['generation',['../d3/dee/structslocuspop__popgenmut__fixture.html#a3cb82fe8e640fd28a68df4d85998102e',1,'slocuspop_popgenmut_fixture::generation()'],['../d3/d2f/structslocuspop__popgenmut__custom__fixture.html#a62cb6af68b02c7b69e9a9aad935128d1',1,'slocuspop_popgenmut_custom_fixture::generation()'],['../d1/d88/classmlocuspop__popgenmut__fixture.html#a855b141f7f991fda01b4159ed61c3d5f',1,'mlocuspop_popgenmut_fixture::generation()']]]
+  ['g',['g',['../d9/df7/structfwdpp_1_1popgenmut.html#a759b617edd18ff727f91f4deac761a9b',1,'fwdpp::popgenmut::g()'],['../d9/de2/structTwoDmutation.html#ac060731d5247c667962611fb14f661fe',1,'TwoDmutation::g()']]],
+  ['gamete1',['gamete1',['../db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#a5d19a39faf1d1102804690cae6d866d1',1,'fwdpp::ts::detail::parental_data']]],
+  ['gamete2',['gamete2',['../db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#af43f838d3a21a82ab1d8ff40c78f214b',1,'fwdpp::ts::detail::parental_data']]],
+  ['gamete_5frecycling_5fbin',['gamete_recycling_bin',['../da/db0/structfwdpp_1_1genetic__parameters.html#ad66e732f1883a5a72379afe5c9a6d29e',1,'fwdpp::genetic_parameters']]],
+  ['gamete_5fswapper',['gamete_swapper',['../da/db0/structfwdpp_1_1genetic__parameters.html#a9e07b715b5b7649fdfe301858f55384d',1,'fwdpp::genetic_parameters']]],
+  ['gametes',['gametes',['../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a2242ef0468f9254e87e51970c6b335d3',1,'fwdpp::poptypes::popbase']]],
+  ['gcint',['gcint',['../d1/d38/structoptions.html#add24a8f29a23875d5ea9edb127d12ca3',1,'options']]],
+  ['generate_5fbreakpoints',['generate_breakpoints',['../da/db0/structfwdpp_1_1genetic__parameters.html#a13ce50e5e549dd7fe9762ecc115f1f6e',1,'fwdpp::genetic_parameters']]],
+  ['generate_5fmutations',['generate_mutations',['../da/db0/structfwdpp_1_1genetic__parameters.html#ad64ec9b35878ba2a1212268d84d54e5d',1,'fwdpp::genetic_parameters']]],
+  ['gvalue',['gvalue',['../da/db0/structfwdpp_1_1genetic__parameters.html#a951b5daf3bc6cca18435cb1df7ae4fe7',1,'fwdpp::genetic_parameters']]],
+  ['gvalue_5fis_5ffitness',['gvalue_is_fitness',['../d7/de7/structfwdpp_1_1multiplicative__diploid.html#a70832af8e49ea4df714ade20588de7b7',1,'fwdpp::multiplicative_diploid::gvalue_is_fitness()'],['../de/db8/structfwdpp_1_1additive__diploid.html#a976e7c4d92f6004bf0ed871b838070e5',1,'fwdpp::additive_diploid::gvalue_is_fitness()']]],
+  ['gvalue_5fis_5ftrait',['gvalue_is_trait',['../d7/de7/structfwdpp_1_1multiplicative__diploid.html#a6167ec063ac80b4ca04900867afc29ee',1,'fwdpp::multiplicative_diploid::gvalue_is_trait()'],['../de/db8/structfwdpp_1_1additive__diploid.html#a56fbfe8630c95a0534d5b5e2f33c88aa',1,'fwdpp::additive_diploid::gvalue_is_trait()']]]
 ];

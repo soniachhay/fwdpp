@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -66,7 +66,8 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fitness_models.hpp File Reference</div>  </div>
 </div><!--header-->
@@ -74,6 +75,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="../../d0/d40/named__type_8hpp_source.html">fwdpp/named_type.hpp</a>&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
@@ -92,6 +94,10 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html">fwdpp::haplotype_dependent_trait_value</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function object for fitness/trait value as a function of the two haplotypes in a diploid.  <a href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d8e/structfwdpp_1_1genetic__value__is__trait.html">fwdpp::genetic_value_is_trait</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d1c/structfwdpp_1_1genetic__value__is__fitness.html">fwdpp::genetic_value_is_fitness</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/de7/structfwdpp_1_1multiplicative__diploid.html">fwdpp::multiplicative_diploid</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplicative fitness or trait value across sites This function object calculate the genetic value of a diploid according to an multiplicative model with dominance effects per mutation.  <a href="../../d7/de7/structfwdpp_1_1multiplicative__diploid.html#details">More...</a><br /></td></tr>
@@ -114,6 +120,25 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a7a7c45d536f07547c3e34981fe72c893"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a7a7c45d536f07547c3e34981fe72c893">fwdpp::haplotype_dependent_fitness</a> = haplotype_dependent_trait_value</td></tr>
 <tr class="memdesc:a7a7c45d536f07547c3e34981fe72c893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Typedef for backwards API compatibility.  <a href="../../dd/d84/namespacefwdpp.html#a7a7c45d536f07547c3e34981fe72c893">More...</a><br /></td></tr>
 <tr class="separator:a7a7c45d536f07547c3e34981fe72c893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58d59d3f0a9a88fcfc823d38e9663752"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a58d59d3f0a9a88fcfc823d38e9663752">fwdpp::trait</a> = strong_types::named_type&lt; double, genetic_value_is_trait &gt;</td></tr>
+<tr class="separator:a58d59d3f0a9a88fcfc823d38e9663752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39d37a458099e396cd8e005169d1e92"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#aa39d37a458099e396cd8e005169d1e92">fwdpp::fitness</a> = strong_types::named_type&lt; double, genetic_value_is_fitness &gt;</td></tr>
+<tr class="separator:aa39d37a458099e396cd8e005169d1e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a74301e3cb6891c603a3af95ecad44a2a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a74301e3cb6891c603a3af95ecad44a2a">fwdpp::assign_is_trait_value</a> (const trait &amp;)</td></tr>
+<tr class="memdesc:a74301e3cb6891c603a3af95ecad44a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for genetic value object constructors.  <a href="../../dd/d84/namespacefwdpp.html#a74301e3cb6891c603a3af95ecad44a2a">More...</a><br /></td></tr>
+<tr class="separator:a74301e3cb6891c603a3af95ecad44a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6134865ecfb7f6db42d73d6617004b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#aa6134865ecfb7f6db42d73d6617004b5">fwdpp::assign_is_trait_value</a> (const fitness &amp;)</td></tr>
+<tr class="memdesc:aa6134865ecfb7f6db42d73d6617004b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for genetic value object constructors.  <a href="../../dd/d84/namespacefwdpp.html#aa6134865ecfb7f6db42d73d6617004b5">More...</a><br /></td></tr>
+<tr class="separator:aa6134865ecfb7f6db42d73d6617004b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec84adaa43392d50feee1d2c6cc9800"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a8ec84adaa43392d50feee1d2c6cc9800">fwdpp::assign_is_fitness_value</a> (const trait &amp;)</td></tr>
+<tr class="memdesc:a8ec84adaa43392d50feee1d2c6cc9800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for genetic value object constructors.  <a href="../../dd/d84/namespacefwdpp.html#a8ec84adaa43392d50feee1d2c6cc9800">More...</a><br /></td></tr>
+<tr class="separator:a8ec84adaa43392d50feee1d2c6cc9800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af719bafb9caade126553a9360fc43207"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#af719bafb9caade126553a9360fc43207">fwdpp::assign_is_fitness_value</a> (const fitness &amp;)</td></tr>
+<tr class="memdesc:af719bafb9caade126553a9360fc43207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for genetic value object constructors.  <a href="../../dd/d84/namespacefwdpp.html#af719bafb9caade126553a9360fc43207">More...</a><br /></td></tr>
+<tr class="separator:af719bafb9caade126553a9360fc43207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

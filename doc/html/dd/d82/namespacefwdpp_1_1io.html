@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -76,8 +76,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/def/structfwdpp_1_1io_1_1deserialize__diploid_3_01custom__diploid__testing__t_01_4.html">deserialize_diploid&lt; custom_diploid_testing_t &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dcb/structfwdpp_1_1io_1_1deserialize__diploid_3_01dip__with__deme_01_4.html">deserialize_diploid&lt; dip_with_deme &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d1a/structfwdpp_1_1io_1_1deserialize__diploid_3_01std_1_1pair_3_01std_1_1size__t_00_01std_1_1size__t_01_4_01_4.html">deserialize_diploid&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;</a></td></tr>
@@ -106,8 +104,6 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd4/structfwdpp_1_1io_1_1scalar__writer.html">scalar_writer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize POD and contiguous arrays of POD.  <a href="../../d1/dd4/structfwdpp_1_1io_1_1scalar__writer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da8/structfwdpp_1_1io_1_1serialize__diploid_3_01custom__diploid__testing__t_01_4.html">serialize_diploid&lt; custom_diploid_testing_t &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc6/structfwdpp_1_1io_1_1serialize__diploid_3_01dip__with__deme_01_4.html">serialize_diploid&lt; dip_with_deme &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/de7/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1size__t_00_01std_1_1size__t_01_4_01_4.html">serialize_diploid&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;</a></td></tr>
@@ -134,34 +130,34 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4dc2927eacb1ce7ad8c429db5839c287"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t , typename ostreamtype &gt; </td></tr>
-<tr class="memitem:a4dc2927eacb1ce7ad8c429db5839c287"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a4dc2927eacb1ce7ad8c429db5839c287">write_diploids</a> (ostreamtype &amp;buffer, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> &amp;diploids)</td></tr>
+<tr class="memitem:a4dc2927eacb1ce7ad8c429db5839c287"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a4dc2927eacb1ce7ad8c429db5839c287">write_diploids</a> (ostreamtype &amp;buffer, const dipvector_t &amp;diploids)</td></tr>
 <tr class="memdesc:a4dc2927eacb1ce7ad8c429db5839c287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a container of diploids.  <a href="#a4dc2927eacb1ce7ad8c429db5839c287">More...</a><br /></td></tr>
 <tr class="separator:a4dc2927eacb1ce7ad8c429db5839c287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5e9d093cf3bbc13cfffef3d209c661"><td class="memTemplParams" colspan="2">template&lt;typename dipvector_t , typename istreamtype &gt; </td></tr>
-<tr class="memitem:a0a5e9d093cf3bbc13cfffef3d209c661"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661">read_diploids</a> (istreamtype &amp;buffer, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> &amp;diploids)</td></tr>
+<tr class="memitem:a0a5e9d093cf3bbc13cfffef3d209c661"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661">read_diploids</a> (istreamtype &amp;buffer, dipvector_t &amp;diploids)</td></tr>
 <tr class="memdesc:a0a5e9d093cf3bbc13cfffef3d209c661"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a container of diploids.  <a href="#a0a5e9d093cf3bbc13cfffef3d209c661">More...</a><br /></td></tr>
 <tr class="separator:a0a5e9d093cf3bbc13cfffef3d209c661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2657c88a649e18b756cc889998480733"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename ostreamtype &gt; </td></tr>
-<tr class="memitem:a2657c88a649e18b756cc889998480733"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a2657c88a649e18b756cc889998480733">write_gametes</a> (ostreamtype &amp;buffer, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes)</td></tr>
+<tr class="memitem:a2657c88a649e18b756cc889998480733"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a2657c88a649e18b756cc889998480733">write_gametes</a> (ostreamtype &amp;buffer, const gcont_t &amp;gametes)</td></tr>
 <tr class="memdesc:a2657c88a649e18b756cc889998480733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a container of gametes.  <a href="#a2657c88a649e18b756cc889998480733">More...</a><br /></td></tr>
 <tr class="separator:a2657c88a649e18b756cc889998480733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e04783a265232db3ca36dcfe291d71e"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t , typename istreamtype &gt; </td></tr>
-<tr class="memitem:a0e04783a265232db3ca36dcfe291d71e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e">read_gametes</a> (istreamtype &amp;buffer, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;gametes)</td></tr>
+<tr class="memitem:a0e04783a265232db3ca36dcfe291d71e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e">read_gametes</a> (istreamtype &amp;buffer, gcont_t &amp;gametes)</td></tr>
 <tr class="memdesc:a0e04783a265232db3ca36dcfe291d71e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a container of gametes.  <a href="#a0e04783a265232db3ca36dcfe291d71e">More...</a><br /></td></tr>
 <tr class="separator:a0e04783a265232db3ca36dcfe291d71e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a741cfcdc33d62551a2b74d15c4979546"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename ostreamtype &gt; </td></tr>
-<tr class="memitem:a741cfcdc33d62551a2b74d15c4979546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546">write_mutations</a> (ostreamtype &amp;buffer, const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations)</td></tr>
+<tr class="memitem:a741cfcdc33d62551a2b74d15c4979546"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546">write_mutations</a> (ostreamtype &amp;buffer, const mcont_t &amp;mutations)</td></tr>
 <tr class="memdesc:a741cfcdc33d62551a2b74d15c4979546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a container of mutations.  <a href="#a741cfcdc33d62551a2b74d15c4979546">More...</a><br /></td></tr>
 <tr class="separator:a741cfcdc33d62551a2b74d15c4979546"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename istreamtype &gt; </td></tr>
-<tr class="memitem:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c">read_mutations</a> (istreamtype &amp;in, <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations)</td></tr>
+<tr class="memitem:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c">read_mutations</a> (istreamtype &amp;in, mcont_t &amp;mutations)</td></tr>
 <tr class="memdesc:af2a3faa34d92ae3f10147f519cc7d84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a container of mutations.  <a href="#af2a3faa34d92ae3f10147f519cc7d84c">More...</a><br /></td></tr>
 <tr class="separator:af2a3faa34d92ae3f10147f519cc7d84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0581c380c40106198c8754e597d64a1e"><td class="memTemplParams" colspan="2">template&lt;typename streamtype , typename poptype &gt; </td></tr>
-<tr class="memitem:a0581c380c40106198c8754e597d64a1e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">serialize_population</a> (streamtype &amp;buffer, const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop)</td></tr>
+<tr class="memitem:a0581c380c40106198c8754e597d64a1e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">serialize_population</a> (streamtype &amp;buffer, const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop)</td></tr>
 <tr class="separator:a0581c380c40106198c8754e597d64a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8a7a2259367c45fe1d23ffbfcc89c02"><td class="memTemplParams" colspan="2">template&lt;typename streamtype , typename poptype &gt; </td></tr>
-<tr class="memitem:af8a7a2259367c45fe1d23ffbfcc89c02"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">deserialize_population</a> (streamtype &amp;buffer, <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;pop)</td></tr>
+<tr class="memitem:af8a7a2259367c45fe1d23ffbfcc89c02"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">deserialize_population</a> (streamtype &amp;buffer, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop)</td></tr>
 <tr class="separator:af8a7a2259367c45fe1d23ffbfcc89c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -189,7 +185,7 @@ template&lt;typename streamtype , typename poptype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>&#160;</td>
         </tr>
         <tr>
@@ -234,7 +230,7 @@ template&lt;typename dipvector_t , typename istreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> &amp;&#160;</td>
+          <td class="paramtype">dipvector_t &amp;&#160;</td>
           <td class="paramname"><em>diploids</em>&#160;</td>
         </tr>
         <tr>
@@ -269,7 +265,7 @@ template&lt;typename gcont_t , typename istreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">gcont_t &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>&#160;</td>
         </tr>
         <tr>
@@ -304,7 +300,7 @@ template&lt;typename mcont_t , typename istreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>&#160;</td>
         </tr>
         <tr>
@@ -342,7 +338,7 @@ template&lt;typename streamtype , typename poptype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d5/d38/sugar__multilocusTest_8cc.html#ae1f53f0b3e62323cfb5289c704a1c4db">poptype</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>&#160;</td>
         </tr>
         <tr>
@@ -387,7 +383,7 @@ template&lt;typename dipvector_t , typename ostreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a5bed25155904fc07d1d8d01173d69f7e">dipvector_t</a> &amp;&#160;</td>
+          <td class="paramtype">const dipvector_t &amp;&#160;</td>
           <td class="paramname"><em>diploids</em>&#160;</td>
         </tr>
         <tr>
@@ -422,7 +418,7 @@ template&lt;typename gcont_t , typename ostreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a0697ce8b91c4a0d949cef09d927d34b0">gcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const gcont_t &amp;&#160;</td>
           <td class="paramname"><em>gametes</em>&#160;</td>
         </tr>
         <tr>
@@ -457,7 +453,7 @@ template&lt;typename mcont_t , typename ostreamtype &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;&#160;</td>
+          <td class="paramtype">const mcont_t &amp;&#160;</td>
           <td class="paramname"><em>mutations</em>&#160;</td>
         </tr>
         <tr>

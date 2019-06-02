@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -78,7 +78,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3c49d272e52d701d46008455b85aaeb1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de2/structfwdpp_1_1crossover__point.html#a3c49d272e52d701d46008455b85aaeb1">crossover_point</a> (const double rate, const double pos_, const double poisson=true)</td></tr>
 <tr class="separator:a3c49d272e52d701d46008455b85aaeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab41f7926e1f750a235ce372d7e448f37"><td class="memTemplParams" colspan="2">template&lt;typename... args&gt; </td></tr>
-<tr class="memitem:ab41f7926e1f750a235ce372d7e448f37"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/de2/structfwdpp_1_1crossover__point.html#ab41f7926e1f750a235ce372d7e448f37">operator()</a> (const gsl_rng *<a class="el" href="../../d9/d1d/mlocusCrossoverTest_8cc.html#a53b3e4bb1bd287d2150b9c128e15a316">r</a>, std::vector&lt; double &gt; &amp;breakpoints, args &amp;&amp;...) const</td></tr>
+<tr class="memitem:ab41f7926e1f750a235ce372d7e448f37"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d2/de2/structfwdpp_1_1crossover__point.html#ab41f7926e1f750a235ce372d7e448f37">operator()</a> (const gsl_rng *r, std::vector&lt; double &gt; &amp;breakpoints, args &amp;&amp;...) const</td></tr>
 <tr class="separator:ab41f7926e1f750a235ce372d7e448f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -90,7 +90,7 @@ Data Fields</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A callable object that returns a recombination breakpoint at a specific position with a given probability </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a8">K_linked_regions_generalized_rec.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a5">K_linked_regions_generalized_rec.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html#l00062">62</a> of file <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html">general_rec_variation.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -135,7 +135,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">r_</td><td>A gsl_rng that must be initialized. </td></tr>
     <tr><td class="paramname">rate</td><td>The crossover rate. See note below. </td></tr>
     <tr><td class="paramname">pos_</td><td>The crossover position to return. </td></tr>
     <tr><td class="paramname">poisson</td><td>Whether <em>rate</em> represents a Poisson process (true) or a binomial process (false).</td></tr>
@@ -192,7 +191,7 @@ template&lt;typename... args&gt; </div>
 </div><div class="memdoc">
 <p>Variadic to be combatible with richer recombination policy requirements </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html">general_rec_variation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d7/d87/general__rec__variation_8hpp_source.html">general_rec_variation.hpp</a>.</p>
 
 </div>
 </div>

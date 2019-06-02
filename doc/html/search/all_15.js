@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['validate_5fgamete_5fcounts',['validate_gamete_counts',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a41447a15cff028dfa01a3b092c087bd1',1,'fwdpp::sugar::popbase']]],
-  ['validate_5findividual_5fkeys',['validate_individual_keys',['../dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#aa3c0a6868039b7b1aba91bef2faf0458',1,'fwdpp::sugar::popbase']]],
-  ['validate_5fmutation_5fkey_5franges',['validate_mutation_key_ranges',['../d0/d70/namespacefwdpp_1_1debug.html#a6ecaf182efa8db74f6624ed931f38306',1,'fwdpp::debug']]],
-  ['validate_5fpop_5fdata',['validate_pop_data',['../d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e',1,'fwdpp::debug']]],
-  ['validate_5fsum_5fgamete_5fcounts',['validate_sum_gamete_counts',['../d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857',1,'fwdpp::debug']]],
-  ['vdmm',['vdmm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a44d3ddcd4c7e307828b517e6b6cc595e',1,'mlocuspop_popgenmut_fixture']]],
-  ['vdrm',['vdrm',['../d1/d88/classmlocuspop__popgenmut__fixture.html#a657154c8bf033f40e3244010521a073f',1,'mlocuspop_popgenmut_fixture']]],
-  ['version_2ehpp',['version.hpp',['../d7/dad/version_8hpp.html',1,'']]]
+  ['writing_20data_20to_20binary_20formats',['Writing data to binary formats',['../d5/d9d/md_md_serialization.html',1,'']]],
+  ['wfmlts_2ecc',['wfmlts.cc',['../d3/d34/wfmlts_8cc.html',1,'']]],
+  ['wfts_2ecc',['wfts.cc',['../d9/d59/wfts_8cc.html',1,'']]],
+  ['wrapped_5frange',['wrapped_range',['../d2/d46/structfwdpp_1_1wrapped__range.html',1,'fwdpp::wrapped_range&lt; T &gt;'],['../d2/d46/structfwdpp_1_1wrapped__range.html#ac60bf035ae9e887b716a4c238364c94f',1,'fwdpp::wrapped_range::wrapped_range()']]],
+  ['wrapped_5frange_2ehpp',['wrapped_range.hpp',['../d0/d51/wrapped__range_8hpp.html',1,'']]],
+  ['write_5fdiploids',['write_diploids',['../dd/d82/namespacefwdpp_1_1io.html#a4dc2927eacb1ce7ad8c429db5839c287',1,'fwdpp::io']]],
+  ['write_5fgametes',['write_gametes',['../dd/d82/namespacefwdpp_1_1io.html#a2657c88a649e18b756cc889998480733',1,'fwdpp::io']]],
+  ['write_5fmutations',['write_mutations',['../dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546',1,'fwdpp::io']]],
+  ['write_5fsfs',['write_sfs',['../de/d9b/tree__sequence__examples__common_8cc.html#aae82eb8746bfcebe2611653e9b9cfebc',1,'write_sfs(const options &amp;o, const fwdpp::GSLrng_mt &amp;rng, const fwdpp::ts::table_collection &amp;tables, const std::vector&lt; fwdpp::ts::TS_NODE_INT &gt; &amp;samples, const std::vector&lt; fwdpp::popgenmut &gt; &amp;mutations):&#160;tree_sequence_examples_common.cc'],['../d4/db1/tree__sequence__examples__common_8hpp.html#aae82eb8746bfcebe2611653e9b9cfebc',1,'write_sfs(const options &amp;o, const fwdpp::GSLrng_mt &amp;rng, const fwdpp::ts::table_collection &amp;tables, const std::vector&lt; fwdpp::ts::TS_NODE_INT &gt; &amp;samples, const std::vector&lt; fwdpp::popgenmut &gt; &amp;mutations):&#160;tree_sequence_examples_common.cc']]],
+  ['writer',['writer',['../de/d85/structfwdpp_1_1io_1_1serialize__mutation_3_01popgenmut_01_4.html#a00bcfa57eb9748eedf52b8646e520db6',1,'fwdpp::io::serialize_mutation&lt; popgenmut &gt;::writer()'],['../d9/de3/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1uint32__t_00_01std_1_1uint32__t_01_4_01_4.html#a1064118d5d7ea1b32b232254e40f49d3',1,'fwdpp::io::serialize_diploid&lt; std::pair&lt; std::uint32_t, std::uint32_t &gt; &gt;::writer()'],['../d1/de7/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1size__t_00_01std_1_1size__t_01_4_01_4.html#aedb86e3e7cf4d56d0fa64824be64378a',1,'fwdpp::io::serialize_diploid&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;::writer()'],['../d2/d82/structfwdpp_1_1io_1_1serialize__mutation_3_01TwoDmutation_01_4.html#a8559fcc1ecffeed31cb37bca10a4c1c8',1,'fwdpp::io::serialize_mutation&lt; TwoDmutation &gt;::writer()']]]
 ];

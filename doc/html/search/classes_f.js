@@ -1,9 +1,25 @@
 var searchData=
 [
-  ['table_5fcollection',['table_collection',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html',1,'fwdpp::ts']]],
-  ['table_5fsimplifier',['table_simplifier',['../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html',1,'fwdpp::ts']]],
-  ['tree_5fvisitor',['tree_visitor',['../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html',1,'fwdpp::ts']]],
-  ['trivial_5fcustom_5fdiploid_5finvalid',['trivial_custom_diploid_invalid',['../df/dfe/structtrivial__custom__diploid__invalid.html',1,'']]],
-  ['trivial_5fcustom_5fdiploid_5fvalid',['trivial_custom_diploid_valid',['../d3/ddf/structtrivial__custom__diploid__valid.html',1,'']]],
-  ['twodmutation',['TwoDmutation',['../d9/de2/structTwoDmutation.html',1,'']]]
+  ['scalar_5freader',['scalar_reader',['../dc/d20/structfwdpp_1_1io_1_1scalar__reader.html',1,'fwdpp::io']]],
+  ['scalar_5fwriter',['scalar_writer',['../d1/dd4/structfwdpp_1_1io_1_1scalar__writer.html',1,'fwdpp::io']]],
+  ['selected_5fvariants_5fonly',['selected_variants_only',['../de/de4/structfwdpp_1_1ts_1_1selected__variants__only.html',1,'fwdpp::ts']]],
+  ['serialize_5fdiploid_3c_20dip_5fwith_5fdeme_20_3e',['serialize_diploid&lt; dip_with_deme &gt;',['../d4/dc6/structfwdpp_1_1io_1_1serialize__diploid_3_01dip__with__deme_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fdiploid_3c_20std_3a_3apair_3c_20std_3a_3asize_5ft_2c_20std_3a_3asize_5ft_20_3e_20_3e',['serialize_diploid&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;',['../d1/de7/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1size__t_00_01std_1_1size__t_01_4_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fdiploid_3c_20std_3a_3apair_3c_20std_3a_3auint32_5ft_2c_20std_3a_3auint32_5ft_20_3e_20_3e',['serialize_diploid&lt; std::pair&lt; std::uint32_t, std::uint32_t &gt; &gt;',['../d9/de3/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1uint32__t_00_01std_1_1uint32__t_01_4_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fedge',['serialize_edge',['../d5/d1a/structfwdpp_1_1ts_1_1io_1_1serialize__edge.html',1,'fwdpp::ts::io']]],
+  ['serialize_5fedge_3c_20ts_5ftables_5fversion_20_3e',['serialize_edge&lt; TS_TABLES_VERSION &gt;',['../d9/d3f/structfwdpp_1_1ts_1_1io_1_1serialize__edge_3_01TS__TABLES__VERSION_01_4.html',1,'fwdpp::ts::io']]],
+  ['serialize_5fgamete',['serialize_gamete',['../d1/dcf/structfwdpp_1_1io_1_1serialize__gamete.html',1,'fwdpp::io']]],
+  ['serialize_5fgamete_3c_20gamete_20_3e',['serialize_gamete&lt; gamete &gt;',['../db/d21/structfwdpp_1_1io_1_1serialize__gamete_3_01gamete_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fmutation_3c_20mutation_20_3e',['serialize_mutation&lt; mutation &gt;',['../da/d95/structfwdpp_1_1io_1_1serialize__mutation_3_01mutation_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fmutation_3c_20popgenmut_20_3e',['serialize_mutation&lt; popgenmut &gt;',['../de/d85/structfwdpp_1_1io_1_1serialize__mutation_3_01popgenmut_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fmutation_3c_20twodmutation_20_3e',['serialize_mutation&lt; TwoDmutation &gt;',['../d2/d82/structfwdpp_1_1io_1_1serialize__mutation_3_01TwoDmutation_01_4.html',1,'fwdpp::io']]],
+  ['serialize_5fmutation_5frecord',['serialize_mutation_record',['../d0/ddb/structfwdpp_1_1ts_1_1io_1_1serialize__mutation__record.html',1,'fwdpp::ts::io']]],
+  ['serialize_5fmutation_5frecord_3c_20ts_5ftables_5fversion_20_3e',['serialize_mutation_record&lt; TS_TABLES_VERSION &gt;',['../d4/d95/structfwdpp_1_1ts_1_1io_1_1serialize__mutation__record_3_01TS__TABLES__VERSION_01_4.html',1,'fwdpp::ts::io']]],
+  ['serialize_5fnode',['serialize_node',['../d6/d1a/structfwdpp_1_1ts_1_1io_1_1serialize__node.html',1,'fwdpp::ts::io']]],
+  ['serialize_5fnode_3c_20ts_5ftables_5fversion_20_3e',['serialize_node&lt; TS_TABLES_VERSION &gt;',['../d8/da3/structfwdpp_1_1ts_1_1io_1_1serialize__node_3_01TS__TABLES__VERSION_01_4.html',1,'fwdpp::ts::io']]],
+  ['shmodel',['shmodel',['../db/d90/structfwdpp_1_1extensions_1_1shmodel.html',1,'fwdpp::extensions']]],
+  ['site_5fdependent_5fgenetic_5fvalue',['site_dependent_genetic_value',['../d9/d75/structfwdpp_1_1site__dependent__genetic__value.html',1,'fwdpp']]],
+  ['slocuspop',['slocuspop',['../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html',1,'fwdpp::poptypes']]],
+  ['standard_5fgamete',['standard_gamete',['../d9/d71/structfwdpp_1_1tags_1_1standard__gamete.html',1,'fwdpp::tags']]],
+  ['state_5fmatrix',['state_matrix',['../db/d87/structfwdpp_1_1state__matrix.html',1,'fwdpp']]]
 ];

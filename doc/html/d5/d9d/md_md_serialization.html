@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -80,7 +80,7 @@ $(function() {
 <ul>
 <li>fwdpp::io::serialize_mutation and fwdpp::io::deserialize_mutation throw an exception. Therefore, you <em>must</em> specialize them for your mutation type. The built-in mutation types already have such specializations, which you may study if you develop your own mutation type. See fwdpp::io::serialize_mutation&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>&gt; and fwdpp::io::deserialize_mutation&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>&gt; for examples.</li>
 <li>The gamete serialization objects assume the gamete type is <a class="el" href="../../dd/d84/namespacefwdpp.html#a6778d8e78d8f7fbb77356e5fdb7fb832" title="Default gamete type. ">fwdpp::gamete</a>. If this is not true, code may fail to compile and you need a specialization.</li>
-<li>The diploid serialization code only deals with the <code>first</code> and <code>second</code> data fields. If your diploid type requires additional meta-data, then you need a specialization. See fwdpp::io::serialize_diploid&lt;<a class="el" href="../../d9/d88/structcustom__diploid__testing__t.html">custom_diploid_testing_t</a>&gt; and fwdpp::io::deserialize_diploid&lt;<a class="el" href="../../d9/d88/structcustom__diploid__testing__t.html">custom_diploid_testing_t</a>&gt;, which are part of the fwdpp unit test suite.</li>
+<li>The diploid serialization code only deals with the <code>first</code> and <code>second</code> data fields. If your diploid type requires additional meta-data, then you need a specialization. See fwdpp::io::serialize_diploid&lt;custom_diploid_testing_t&gt; and fwdpp::io::deserialize_diploid&lt;custom_diploid_testing_t&gt;, which are part of the fwdpp unit test suite.</li>
 </ul>
 <h2>Low-level functions</h2>
 <p>The functions <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">fwdpp::io::serialize_population</a> and <a class="el" href="../../dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">fwdpp::io::deserialize_population</a> discussed above are implemented in terms of the following low-level functions:</p>

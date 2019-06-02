@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -63,25 +63,32 @@ $(function() {
 
 <h3><a id="index_g"></a>- g -</h3><ul>
 <li>g
-: <a class="el" href="d8/dbe/structfixture.html#a8261036b31bfd2d23182cdb9225d1779">fixture</a>
-, <a class="el" href="d9/df7/structfwdpp_1_1popgenmut.html#a759b617edd18ff727f91f4deac761a9b">fwdpp::popgenmut</a>
+: <a class="el" href="d9/df7/structfwdpp_1_1popgenmut.html#a759b617edd18ff727f91f4deac761a9b">fwdpp::popgenmut</a>
 , <a class="el" href="d9/de2/structTwoDmutation.html#ac060731d5247c667962611fb14f661fe">TwoDmutation</a>
 </li>
+<li>gamete1
+: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#a5d19a39faf1d1102804690cae6d866d1">fwdpp::ts::detail::parental_data</a>
+</li>
+<li>gamete2
+: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#af43f838d3a21a82ab1d8ff40c78f214b">fwdpp::ts::detail::parental_data</a>
+</li>
 <li>gamete_base()
-: <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#a0e887f2e18872242642b44fac89e8064">fwdpp::gamete_base&lt; TAG &gt;</a>
+: <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#a1c2de32752c49e04b8a1bb092dcd064e">fwdpp::gamete_base&lt; TAG &gt;</a>
+</li>
+<li>gamete_recycling_bin
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#ad66e732f1883a5a72379afe5c9a6d29e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+</li>
+<li>gamete_swapper
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a9e07b715b5b7649fdfe301858f55384d">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
 </li>
 <li>gamete_t
-: <a class="el" href="dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#adbac4ad7d573d876011efbbff2fb028d">fwdpp::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+: <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a09c154876da38efc81a5b81d5e883232">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
 <li>gamete_tag
 : <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#a36677396284dc6afdccc05743ff08290">fwdpp::gamete_base&lt; TAG &gt;</a>
 </li>
 <li>gametes
-: <a class="el" href="dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#af60d33e6305cc4f83014d363c8dacf06">fwdpp::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
-, <a class="el" href="de/d0c/structmlocuspop__objects.html#a83cb1d199bb3e28cefc28f3bf3fffd97">mlocuspop_objects</a>
-, <a class="el" href="d6/dde/structslocuspop__objects.html#ac424cf6e326bcf8aea7ede57fcabef7a">slocuspop_objects</a>
-, <a class="el" href="d7/dbe/structstandard__empty__multiloc__fixture.html#a0dc1600aa4908adb8565d8cd93e5865e">standard_empty_multiloc_fixture</a>
-, <a class="el" href="d4/d55/structstandard__empty__single__deme__fixture.html#ac3316bfaa6f4218f2c09f54d3c4f2f62">standard_empty_single_deme_fixture</a>
+: <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a2242ef0468f9254e87e51970c6b335d3">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
 <li>gamma()
 : <a class="el" href="d3/d8f/structfwdpp_1_1extensions_1_1gamma.html#a3dde82f26c23c9a83e2561da587e9340">fwdpp::extensions::gamma</a>
@@ -89,22 +96,41 @@ $(function() {
 <li>gaussian()
 : <a class="el" href="d4/d67/structfwdpp_1_1extensions_1_1gaussian.html#a871882db4a58a5c233827abbd84ead12">fwdpp::extensions::gaussian</a>
 </li>
-<li>gcont_t
-: <a class="el" href="dc/dcf/classfwdpp_1_1sugar_1_1popbase.html#a8391730f0af83443430ab32b2d1ad226">fwdpp::sugar::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+<li>gcint
+: <a class="el" href="d1/d38/structoptions.html#add24a8f29a23875d5ea9edb127d12ca3">options</a>
 </li>
-<li>generation
-: <a class="el" href="d1/d88/classmlocuspop__popgenmut__fixture.html#a855b141f7f991fda01b4159ed61c3d5f">mlocuspop_popgenmut_fixture</a>
-, <a class="el" href="d3/d2f/structslocuspop__popgenmut__custom__fixture.html#a62cb6af68b02c7b69e9a9aad935128d1">slocuspop_popgenmut_custom_fixture</a>
-, <a class="el" href="d3/dee/structslocuspop__popgenmut__fixture.html#a3cb82fe8e640fd28a68df4d85998102e">slocuspop_popgenmut_fixture</a>
+<li>gcont_t
+: <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a2f734f78caa25ff1f84e724e2820a932">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+</li>
+<li>generate_breakpoints
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a13ce50e5e549dd7fe9762ecc115f1f6e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+</li>
+<li>generate_mutations
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#ad64ec9b35878ba2a1212268d84d54e5d">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+</li>
+<li>genetic_parameters()
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a3e6f5b9ff09072211b70c488cfd6fd10">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
 </li>
 <li>genome_length()
 : <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a5f1a202120b4034bf122de5758a0ccc2">fwdpp::ts::table_collection</a>
 </li>
 <li>get()
 : <a class="el" href="dd/d61/classfwdpp_1_1GSLrng__t.html#a9beef21d3ddafca31bbca923ac85b734">fwdpp::GSLrng_t&lt; T &gt;</a>
+, <a class="el" href="dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#af1e133b297ee3f76bfc658a50b8ea127">fwdpp::strong_types::named_type&lt; T, parameter_name &gt;</a>
 </li>
 <li>GSLrng_t()
 : <a class="el" href="dd/d61/classfwdpp_1_1GSLrng__t.html#a11384e2d81ba0412cefe8e7aabbf6f8b">fwdpp::GSLrng_t&lt; T &gt;</a>
+</li>
+<li>gvalue
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a951b5daf3bc6cca18435cb1df7ae4fe7">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+</li>
+<li>gvalue_is_fitness
+: <a class="el" href="de/db8/structfwdpp_1_1additive__diploid.html#a976e7c4d92f6004bf0ed871b838070e5">fwdpp::additive_diploid</a>
+, <a class="el" href="d7/de7/structfwdpp_1_1multiplicative__diploid.html#a70832af8e49ea4df714ade20588de7b7">fwdpp::multiplicative_diploid</a>
+</li>
+<li>gvalue_is_trait
+: <a class="el" href="de/db8/structfwdpp_1_1additive__diploid.html#a56fbfe8630c95a0534d5b5e2f33c88aa">fwdpp::additive_diploid</a>
+, <a class="el" href="d7/de7/structfwdpp_1_1multiplicative__diploid.html#a6167ec063ac80b4ca04900867afc29ee">fwdpp::multiplicative_diploid</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -74,6 +74,7 @@ $(function() {
 <code>#include &lt;<a class="el" href="../../d4/d62/fwd__functional_8hpp_source.html">fwdpp/fwd_functional.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../dc/d54/type__traits_8hpp_source.html">fwdpp/type_traits.hpp</a>&gt;</code><br />
 <code>#include &lt;fwdpp/internal/gsl_discrete.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/util.hpp&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;type_traits&gt;</code><br />
@@ -93,17 +94,20 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ae74b0423ff11fea6ef5d24bccca8b5ff"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:ae74b0423ff11fea6ef5d24bccca8b5ff"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#ae74b0423ff11fea6ef5d24bccca8b5ff">fwdpp::zero_out_gametes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop)</td></tr>
+<tr class="separator:ae74b0423ff11fea6ef5d24bccca8b5ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a352d11e92d583a54b2fc7559a6611e06"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:a352d11e92d583a54b2fc7559a6611e06"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06">fwdpp::update_mutations</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)</td></tr>
+<tr class="memitem:a352d11e92d583a54b2fc7559a6611e06"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06">fwdpp::update_mutations</a> (mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)</td></tr>
 <tr class="separator:a352d11e92d583a54b2fc7559a6611e06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c1d4e8e5f6f81e14a76c148357c1e7b"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:a6c1d4e8e5f6f81e14a76c148357c1e7b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b">fwdpp::update_mutations</a> (const <a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)</td></tr>
+<tr class="memitem:a6c1d4e8e5f6f81e14a76c148357c1e7b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b">fwdpp::update_mutations</a> (const mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)</td></tr>
 <tr class="separator:a6c1d4e8e5f6f81e14a76c148357c1e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aff36dc680cdc313f9e6d556454252d"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename fixation_container_t , typename fixation_time_container_t , typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:a4aff36dc680cdc313f9e6d556454252d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d">fwdpp::update_mutations</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
+<tr class="memitem:a4aff36dc680cdc313f9e6d556454252d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d">fwdpp::update_mutations</a> (mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
 <tr class="separator:a4aff36dc680cdc313f9e6d556454252d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7975e420a9780bd0b75c10b89dcd4a42"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename fixation_container_t , typename fixation_time_container_t , typename mutation_lookup_table &gt; </td></tr>
-<tr class="memitem:a7975e420a9780bd0b75c10b89dcd4a42"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42">fwdpp::update_mutations_n</a> (<a class="el" href="../../de/d44/fwdpp__fixtures_8hpp.html#a496ff751482685dbd64271e2939f92ac">mcont_t</a> &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
+<tr class="memitem:a7975e420a9780bd0b75c10b89dcd4a42"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42">fwdpp::update_mutations_n</a> (mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)</td></tr>
 <tr class="separator:a7975e420a9780bd0b75c10b89dcd4a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

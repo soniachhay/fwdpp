@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.3</span>
+   &#160;<span id="projectnumber">0.7.4</span>
    </div>
   </td>
  </tr>
@@ -91,9 +91,10 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that iterates over marginal trees. </p>
 <dl class="section note"><dt>Note</dt><dd>This class declares private data whose integrity are tied to the lifetime of the <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">table_collection</a> used to construct a tree_visitor!</dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#_a13">wfts.cc</a>.</dd>
-</dl>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp </dd>
+<dd>
+0.7.4 Updates tree roots during traversal. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5f32fee5eb8a00c2a593dea3472a7be1"></a>
@@ -130,7 +131,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00191">191</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
 
 </div>
 </div>
@@ -174,7 +175,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00217">217</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +216,7 @@ template&lt;typename leaf_policy , typename sample_list_policy &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00230">230</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
 
 </div>
 </div>
@@ -244,9 +245,8 @@ template&lt;typename leaf_policy , typename sample_list_policy &gt; </div>
 
 <p>Returns a handle to the current tree. </p>
 <dl class="section return"><dt>Returns</dt><dd>const reference to the current tree.</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// Copy-free &quot;view&quot; of</span></div><div class="line"><span class="comment">// the stored fwdpp::ts::marginal_tree</span></div><div class="line"><span class="keyword">auto</span> &amp; <a class="code" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a2a1c7057b801201c420df7cffab363a3">tree</a> = tv.tree();</div></div><!-- fragment --> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a14">wfts.cc</a>.</dd>
-</dl>
-<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00040">40</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// Copy-free &quot;view&quot; of</span></div><div class="line"><span class="comment">// the stored fwdpp::ts::marginal_tree</span></div><div class="line"><span class="keyword">auto</span> &amp; <a class="code" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#a2a1c7057b801201c420df7cffab363a3">tree</a> = tv.tree();</div></div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html#l00202">202</a> of file <a class="el" href="../../d4/d55/tree__visitor_8hpp_source.html">tree_visitor.hpp</a>.</p>
 
 </div>
 </div>
