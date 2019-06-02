@@ -7,6 +7,7 @@
 #include <fwdpp/tags/tags.hpp>
 #include <fwdpp/io/scalar_serialization.hpp>
 #include <fwdpp/io/mutation.hpp>
+#include <fwdpp/simfunctions/recycling.hpp>
 #include <limits>
 #include <tuple>
 
@@ -37,7 +38,7 @@ namespace fwdpp
           \param __s Selection coefficient
           \param __h Dominance coefficient
           \param __g Generation when mutation arose
-          \param __x Value to assign to mutation_base::xtra
+          \param x Value to assign to mutation_base::xtra
         */
         popgenmut(const double &__pos, const double &__s, const double &__h,
                   const unsigned &__g, const std::uint16_t x = 0) noexcept
@@ -70,23 +71,24 @@ namespace fwdpp
         }
     };
 
-    template <typename queue_t, typename mcont_t, typename lookup_table_t,
+    template < typename mcont_t, typename lookup_table_t,
               typename position_function, typename effect_size_function,
               typename dominance_function>
     std::size_t
-    infsites_popgenmut(queue_t &recycling_bin, mcont_t &mutations,
+    infsites_popgenmut(flagged_mutation_queue &recycling_bin, mcont_t &mutations,
                        const gsl_rng *r, lookup_table_t &lookup,
                        const uint_t &generation, const double pselected,
                        const position_function &posmaker,
                        const effect_size_function &esize_maker,
-                       const dominance_function &hmaker, const decltype(popgenmut::xtra) x = 0)
-	/*!
+                       const dominance_function &hmaker,
+                       const decltype(popgenmut::xtra) x = 0)
+    /*!
 	 * Mutation function to add a fwdpp::popgenmut to a population.
 	 *
 	 * In order to use this function, it must be bound to a callable
 	 * that is a valid mutation function.  See examples for details.
 	 *
-	 * \param recycling_bin Recycling queue for mutations.
+	 * \param recycling_bin Recycling queue for mutations (fwdpp::flagged_mutation_queue).
 	 * \param mutations Container of mutations
 	 * \param r A random-number generator
 	 * \param lookup Lookup table for mutation positions
@@ -95,6 +97,7 @@ namespace fwdpp
 	 * \param posmaker A function generating a mutation position.  Must be convertible to std::function<double()>.
 	 * \param esize_maker A function to generate an effect size, given that a mutation affects fitness. Must be convertible to std::function<double()>.
 	 * \param hmaker A function to generate a dominance value, given that a mutation affects fitness. Must be convertible to std::function<double()>.
+     * \param x Value to pass as popgenmut::xtra
 	 *
 	 * \note "Neutral" mutations get assigned a dominance of zero.  The xtra field is not written to.
 	 *
@@ -108,11 +111,11 @@ namespace fwdpp
                 pos = posmaker();
             }
         bool selected = (gsl_rng_uniform(r) < pselected);
-        auto idx =  fwdpp_internal::recycle_mutation_helper(
+        auto idx = recycle_mutation_helper(
             recycling_bin, mutations, pos, (selected) ? esize_maker() : 0.,
             (selected) ? hmaker() : 0., generation, x);
-		lookup.emplace(pos,idx);
-		return idx;
+        lookup.emplace(pos, idx);
+        return idx;
     }
 
     namespace io
@@ -156,6 +159,6 @@ namespace fwdpp
                 return popgenmut(pos, s, h, g, xtra);
             }
         };
-    }
-}
+    } // namespace io
+} // namespace fwdpp
 #endif

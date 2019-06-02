@@ -2,7 +2,7 @@ AC_PREREQ(2.59)
 
 m4_define([FWDPP_MAJOR],0)
 m4_define([FWDPP_MINOR],7)
-m4_define([FWDPP_REVISION],3)
+m4_define([FWDPP_REVISION],4)
 AC_INIT([fwdpp], [FWDPP_MAJOR.FWDPP_MINOR.FWDPP_REVISION], [https://github.com/molpopgen/fwdpp])
 AC_DEFINE(FWDPP_MAJOR_VERSION,FWDPP_MAJOR,[Define major version number.])
 AC_DEFINE(FWDPP_MINOR_VERSION,FWDPP_MINOR,[Define major version number.])
@@ -30,8 +30,9 @@ AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
 
 AC_LANG(C++)
 AC_CONFIG_FILES([Makefile fwdpp/version.hpp fwdpp/Makefile fwdpp/io/Makefile fwdpp/algorithm/Makefile fwdpp/io/detail/Makefile
-                 fwdpp/internal/Makefile fwdpp/tags/Makefile fwdpp/sugar/Makefile fwdpp/sugar/poptypes/Makefile
-                 fwdpp/sugar/gsl/Makefile fwdpp/extensions/Makefile fwdpp/meta/Makefile
+                 fwdpp/internal/Makefile fwdpp/tags/Makefile fwdpp/sugar/Makefile fwdpp/poptypes/Makefile
+                 fwdpp/gsl/Makefile fwdpp/extensions/Makefile fwdpp/meta/Makefile
+				 fwdpp/simfunctions/Makefile
                  fwdpp/ts/Makefile fwdpp/ts/detail/Makefile examples/Makefile testsuite/Makefile src/Makefile doc/fwdpp.doxygen]) 
 
 AC_ARG_ENABLE([debug],AS_HELP_STRING([--enable-debug],[Compile examples with run-time assert macro enabled.]))

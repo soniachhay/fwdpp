@@ -5,7 +5,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include <fwdpp/forward_types.hpp>
-#include <fwdpp/sugar/poptypes/tags.hpp>
+#include <fwdpp/poptypes/tags.hpp>
 
 /* We ignore unused variable warnings in this 
  * file.  In release mode, the functions are empty,
@@ -18,7 +18,6 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #endif
-
 
 namespace fwdpp
 {
@@ -169,7 +168,7 @@ namespace fwdpp
 
             template <typename poptype>
             void
-            validate_pop_data(const poptype &pop, sugar::SINGLELOC_TAG)
+            validate_pop_data(const poptype &pop, poptypes::SINGLELOC_TAG)
             {
 #ifndef NDEBUG
                 for (const auto &d : pop.diploids)
@@ -182,7 +181,7 @@ namespace fwdpp
 
             template <typename poptype>
             void
-            validate_pop_data(const poptype &pop, sugar::MULTILOC_TAG)
+            validate_pop_data(const poptype &pop, poptypes::MULTILOC_TAG)
             {
 #ifndef NDEBUG
                 for (const auto &d : pop.diploids)
@@ -217,6 +216,47 @@ namespace fwdpp
                         throw std::runtime_error(
                             "FWDPP DEBUG: mutation neutrality field "
                             "incorrect");
+                    }
+#endif
+            }
+
+            template <typename poptype>
+            void
+            all_gametes_extant(const poptype &pop,
+                               const fwdpp::poptypes::SINGLELOC_TAG)
+            {
+#ifndef NEBUG
+                for (auto &dip : pop.diploids)
+                    {
+                        if (pop.gametes[dip.first].n == 0
+                            || pop.gametes[dip.second].n == 0)
+                            {
+                                throw std::runtime_error(
+                                    "FWDPP DEBUG: diploid refers to "
+                                    "extinct gamete");
+                            }
+                    }
+#endif
+            }
+
+            template <typename poptype>
+            void
+            all_gametes_extant(const poptype &pop,
+                               const fwdpp::poptypes::MULTILOC_TAG)
+            {
+#ifndef NEBUG
+                for (auto &dip : pop.diploids)
+                    {
+                        for (auto &locus : dip)
+                            {
+                                if (pop.gametes[locus.first].n == 0
+                                    || pop.gametes[locus.second].n == 0)
+                                    {
+                                        throw std::runtime_error(
+                                            "FWDPP DEBUG: diploid refers to "
+                                            "extinct gamete");
+                                    }
+                            }
                     }
 #endif
             }

@@ -8,14 +8,14 @@ namespace fwdpp
 {
     namespace ts
     {
-        std::pair<TS_NODE_INT, TS_NODE_INT>
+        inline std::pair<TS_NODE_INT, TS_NODE_INT>
         get_parent_ids(const TS_NODE_INT first_parental_index,
                        const TS_NODE_INT parent, const int did_swap)
         /*! 
          * Convert the index of a parent into the two node IDs.
          *
          * \param first_parental_index First index of possible parents for offspring
-         * \param Index of parent in the population
+         * \param parent Index of parent in the population
          * \param did_swap This is the "Mendel" step.
          *
          * \note This function is trivial in implementation and is easily replaced

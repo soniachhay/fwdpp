@@ -3,6 +3,55 @@ For a list of planned features, etc., see the issues list on [GitHub](https://gi
 Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put
 milestones (target version numbers for these features to go live) because that is not realistic given how I work.
 
+## 0.7.4
+
+This release has a lot of big changes.
+
+GitHub [Issue 186](https://github.com/molpopgen/fwdpp/issues/186) was fixed.
+The "genome length" was not correctly accounted for in fwdpp::ts::mutate_tables.  The
+problem was fixed in [this commit](https://github.com/molpopgen/fwdpp/commit/4443c40638c2f2a2e309e842be213469e1f680d1).
+
+[PR 187](https://github.com/molpopgen/fwdpp/pull/187) Improves the performance of serializing
+fwdpp::ts::table_collection objects.  The output files are slightly bigger, but the IO is faster. This changes the 
+value of fwdpp::ts::TS_TABLES_VERSION from 1 to 2, and we retain the ability to read in "version 1" files. 
+
+[PR 178](https://github.com/molpopgen/fwdpp/pull/178) introduced several improvements related to tree sequence
+recording, as well as cleaning up a variety of other, smaller, issues:
+
+* Added fwdpp::ts::generate_offspring, which is implemented in terms of fwdpp::mutate_recombine, and returns the 
+data structures needed for edge recording after creating an offspring individual.  This new function streamlines
+the API for "meiosis", with the same function applicable to fwdpp::slocuspop and fwdpp::mlocuspop objects.
+* The constructor for fwdpp::poptypes::mlocuspop is changed to require the locus boundaries.  **This change breaks
+  API**.  The result is a much safer type.
+* Added fwdpp::GSLrng_mt as a typedef for a mersenne twister
+* Added fwdpp::zero_out_gametes, which is a convenience functions for a routine step needed each generation
+* Added fwdpp::mendel, which is a convenience function for a routine step needed each generation
+* Made updates to fwdpp::make_genetic_parameters, fixing the perfect forwarding and adding the ability to have
+custom replacements for the functionality of fwdpp::mendel.
+* The constructor of fwdpp::gamete_base taking an unsigned int is now marked explicit.  (Having it non-expicit was a
+  bone-headed error that made an initial bug in fwdpp::zero_out_gametes very difficult to track down. See [this
+  commit](https://github.com/molpopgen/fwdpp/pull/178/commits/6af6a101db08a688ea030509c27f0acea41dab1f).
+* Adds example program wfmlts.cc
+* wfts.cc and wfmlts.cc now share a lot of common code, showing the power of a generic API.
+* Fixed a bug in lambda captures affecting some test suite fixtures. [commit](https://github.com/molpopgen/fwdpp/pull/178/commits/7ace1fb9f4efa0c963c13150ddfd023786f31d28)
+* Added a new test suite module that stress-tests fwdpp::ts::generate_offspring for the multi-locus case.  The new test
+  suite fixtures are also used as more/better unit tests of fwdpp::fwdpp_internal::multilocus_rec_mut.
+
+Other changes:
+
+* fwdpp::multiplicative_diploid and fwdpp::additive_diploid constructors have been refactored to use strong types
+to distinguish trait from fitness calculations. **Breaks API** [PR 175](https://github.com/molpopgen/fwdpp/pull/175)
+* Many types have been moved into the main library. **Breaks API due to change of header names** [PR 176](https://github.com/molpopgen/fwdpp/pull/176), [PR 180](https://github.com/molpopgen/fwdpp/pull/180)
+* Added fwdpp::genetic_parameters. [PR 177](https://github.com/molpopgen/fwdpp/pull/177)
+* Fixed [issue 182](https://github.com/molpopgen/fwdpp/issues/182)
+* Fixed [issue 181](https://github.com/molpopgen/fwdpp/issues/181)
+* Constructors for fwdpp::ts::table_simplifier and fwdpp::ts::table_collection marked explicit where appropriate.
+* Fixed error in return value of fwdpp::general_rec_variation::operator(), and fwdpp::mutate_recombine now explicitly
+  tests for correct use of sentinel values. [PR 184](https://github.com/molpopgen/fwdpp/pull/184)
+* The recycling machinery was moved from an internal namespace to the main namespace.  The API was refactored in terms 
+of strong types fwdpp::flagged_mutation_queue and fwdpp::flagged_gamete_queue. [PR 185](https://github.com/molpopgen/fwdpp/pull/185)
+* Fixed bug in mutating tables where the genome length is not 1.0.  [Issue 186](https://github.com/molpopgen/fwdpp/issues/186).
+
 ## 0.7.3
 
 * The return value of fwdpp::ts::table_simplifier::simplify has been changed to include a list of indexes to mutations

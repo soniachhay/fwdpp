@@ -21,6 +21,7 @@ namespace fwdpp
         ///
         /// \param r fwdpp::GSLrng_t
         /// \param make_mutation A mutation function.  See below.
+        /// \param tables A fwdpp::ts::table_collection
         /// \param samples A list of sample nodes corresponding to "currently-alive" nodes
         /// \param mu Mutation rate (per gamete, per generation)
         ///
@@ -31,7 +32,7 @@ namespace fwdpp
         /// The mutations should be neutral, although that requirement is not enforced. (It simply
         /// makes little sense to apply selected mutations to the entire edge table post-hoc.)
         ///
-        /// The result of this function is to populate @tables.mutation_table with neutral variants.
+        /// The result of this function is to populate \a tables.mutation_table with neutral variants.
         ///
         /// The parameter \a make_mutation is a function that must conform to
         /// std::function<std::size_t(double, double, fwdpp::uint_t)>.  The three arguments
@@ -74,12 +75,13 @@ namespace fwdpp
                     return nmuts;
                 }
             auto mr = mark_multiple_roots(tables, samples);
+            const double L = tables.genome_length();
             for (auto &i : mr)
                 {
                     auto dt = tables.node_table[i.first].time;
                     for (auto j : i.second)
                         {
-                            double mean = dt * (j.second - j.first) * mu;
+                            double mean = dt * (j.second - j.first) * mu / L;
                             auto nm = gsl_ran_poisson(r.get(), mean);
                             nmuts += nm;
                             for (unsigned m = 0; m < nm; ++m)
@@ -98,7 +100,7 @@ namespace fwdpp
                     auto ct = tables.node_table[e.child].time;
                     auto pt = tables.node_table[e.parent].time;
                     auto dt = ct - pt;
-                    double mean = dt * (e.right - e.left) * mu;
+                    double mean = dt * (e.right - e.left) * mu / L;
                     auto nm = gsl_ran_poisson(r.get(), mean);
                     for (unsigned m = 0; m < nm; ++m)
                         {

@@ -17,7 +17,7 @@
 #endif
 #include <fwdpp/diploid.hh>
 #include <fwdpp/recbinder.hpp>
-#include <fwdpp/sugar/popgenmut.hpp>
+#include <fwdpp/popgenmut.hpp>
 #include <fwdpp/algorithm/compact_mutations.hpp>
 // typedef mutation_with_age mtype;
 using mtype = fwdpp::popgenmut;
@@ -80,7 +80,7 @@ main(int argc, char **argv)
             double wbar;
 
             const auto mmodel =
-                [&pop, &r, &generation](std::queue<std::size_t> &recbin,
+                [&pop, &r, &generation](fwdpp::flagged_mutation_queue &recbin,
                                         singlepop_t::mcont_t &mutations) {
                     return fwdpp::infsites_popgenmut(
                         recbin, mutations, r.get(), pop.mut_lookup, generation,
@@ -131,8 +131,8 @@ main(int argc, char **argv)
                           multiplicative
                           models are very common in population genetics
                         */
-                        fwdpp::multiplicative_diploid(), pop.neutral,
-                        pop.selected);
+                        fwdpp::multiplicative_diploid(fwdpp::fitness(2.)),
+                        pop.neutral, pop.selected);
                     fwdpp::update_mutations(pop.mutations, pop.fixations,
                                             pop.fixation_times, pop.mut_lookup,
                                             pop.mcounts, generation, twoN);

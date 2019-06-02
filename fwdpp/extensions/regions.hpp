@@ -2,6 +2,7 @@
 #ifndef __FWDPP_EXTENSIONS_REGIONS_HPP__
 #define __FWDPP_EXTENSIONS_REGIONS_HPP__
 
+#include <cassert>
 #include <limits>
 #include <stdexcept>
 #include <algorithm>
@@ -9,7 +10,7 @@
 #include <gsl/gsl_randist.h>
 #include <fwdpp/type_traits.hpp>
 #include <fwdpp/internal/gsl_discrete.hpp>
-#include <fwdpp/internal/recycling.hpp>
+#include <fwdpp/simfunctions/recycling.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
 
 namespace fwdpp
@@ -55,8 +56,6 @@ namespace fwdpp
             using function_type = mutation_model_signature;
             using mutation_container = mcont_t;
             using gamete_container = gcont_t;
-            using recycling_bin_type =
-                typename fwdpp::traits::recycling_bin_t<mcont_t>;
 
             template <typename function_container, typename weight_container>
             discrete_mut_model(function_container &&functions_,
@@ -118,7 +117,7 @@ namespace fwdpp
         bind_dmm_wrapper(const gsl_rng *r, const dmm_type &dmm, std::true_type)
         {
             return
-                [r, &dmm](typename dmm_type::recycling_bin_type &recycling_bin,
+                [r, &dmm](flagged_mutation_queue &recycling_bin,
                           typename dmm_type::mutation_container &mutations) {
                     return dmm(r, recycling_bin, mutations);
                 };
@@ -130,7 +129,7 @@ namespace fwdpp
                          std::false_type)
         {
             return
-                [r, &dmm](typename dmm_type::recycling_bin_type &recycling_bin,
+                [r, &dmm](flagged_mutation_queue &recycling_bin,
                           const typename dmm_type::gamete_container::value_type
                               &gamete,
                           typename dmm_type::mutation_container &mutations) {
@@ -243,6 +242,7 @@ namespace fwdpp
                 for (unsigned i = 0; i < nbreaks; ++i)
                     {
                         auto region = gsl_ran_discrete(r, lookup.get());
+                        assert(region < functions.size());
                         functions.at(region)(rv);
                     }
                 std::sort(rv.begin(), rv.end());

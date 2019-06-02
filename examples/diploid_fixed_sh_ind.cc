@@ -14,7 +14,7 @@
 #include <cassert>
 #include <iomanip>
 #include <fwdpp/debug.hpp>
-#include <fwdpp/sugar/popgenmut.hpp>
+#include <fwdpp/popgenmut.hpp>
 #include <fwdpp/algorithm/compact_mutations.hpp>
 #define SINGLEPOP_SIM
 // the type of mutation
@@ -70,7 +70,7 @@ main(int argc, char **argv)
                                  + 0.667 * (theta_neutral + theta_del))));
             unsigned generation = 0;
             const auto mmodel = [&pop, &r, &generation, s, h,
-                                 pselected](std::queue<std::size_t> &recbin,
+                                 pselected](fwdpp::flagged_mutation_queue &recbin,
                                             singlepop_t::mcont_t &mutations) {
                 return fwdpp::infsites_popgenmut(
                     recbin, mutations, r.get(), pop.mut_lookup, generation,
@@ -85,8 +85,8 @@ main(int argc, char **argv)
                         r.get(), pop.gametes, pop.diploids, pop.mutations,
                         pop.mcounts, N, mu_neutral + mu_del, mmodel,
                         // The function to generation recombination positions:
-                        rec, fwdpp::multiplicative_diploid(1.), pop.neutral,
-                        pop.selected);
+                        rec, fwdpp::multiplicative_diploid(fwdpp::fitness(1.)),
+                        pop.neutral, pop.selected);
                     fwdpp::update_mutations(pop.mutations, pop.fixations,
                                             pop.fixation_times, pop.mut_lookup,
                                             pop.mcounts, generation, 2 * N);
@@ -97,14 +97,14 @@ main(int argc, char **argv)
                     fwdpp::debug::validate_sum_gamete_counts(pop.gametes,
                                                              2 * N);
                 }
-            for(std::size_t i=0;i<pop.mcounts.size();++i)
-            {
-                if(pop.mcounts[i])
+            for (std::size_t i = 0; i < pop.mcounts.size(); ++i)
                 {
-                    std::cout<<pop.mutations[i].s<<' ' << pop.mcounts[i]<<'\n';
-
+                    if (pop.mcounts[i])
+                        {
+                            std::cout << pop.mutations[i].s << ' '
+                                      << pop.mcounts[i] << '\n';
+                        }
                 }
-            }
             // Take a sample of size samplesize1.  Two data blocks are
             // returned, one for neutral mutations, and one for selected
             std::vector<std::size_t> random_dips;

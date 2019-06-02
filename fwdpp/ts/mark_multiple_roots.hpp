@@ -13,12 +13,13 @@ namespace fwdpp
     namespace ts
     {
         // TODO: consider flattening the return value to a vector
-        std::map<TS_NODE_INT, std::vector<std::pair<double, double>>>
+        inline std::map<TS_NODE_INT, std::vector<std::pair<double, double>>>
         mark_multiple_roots(const table_collection &tables,
                             const std::vector<TS_NODE_INT> &samples)
         /// \brief Identify root nodes in "marginal forests".
         ///
         /// \version 0.7.0 Added to library
+        /// \version 0.7.4 Refactored to use root tracking method
         ///
         /// See fwdpp::ts::mutate_tables for discussion.
         {
@@ -26,46 +27,14 @@ namespace fwdpp
             tree_visitor mti(tables, samples);
             while (mti(std::true_type(), std::false_type()))
                 {
-                    bool single_root = false;
                     auto &tree = mti.tree();
-                    for (auto &s : samples)
+                    if (tree.num_roots() > 1)
                         {
-                            auto p = s;
-                            auto lp = p;
-                            while (p != -1)
+                            auto lr = tree.left_root;
+                            while (lr != TS_NULL_NODE)
                                 {
-                                    lp = p;
-                                    p = tree.parents[p];
-                                }
-                            if (static_cast<std::size_t>(tree.leaf_counts[lp])
-                                == samples.size())
-                                {
-                                    single_root = true;
-                                }
-                            else
-                                {
-                                    auto itr = rv.find(lp);
-                                    auto w = std::make_pair(tree.left,
-                                                            tree.right);
-                                    if (itr == rv.end())
-                                        {
-                                            rv[lp].emplace_back(std::move(w));
-                                        }
-                                    else
-                                        {
-                                            assert(!itr->second.empty());
-                                            if (std::find(itr->second.begin(),
-                                                          itr->second.end(), w)
-                                                == itr->second.end())
-                                                {
-                                                    itr->second.emplace_back(
-                                                        std::move(w));
-                                                }
-                                        }
-                                }
-                            if (single_root)
-                                {
-                                    break;
+                                    rv[lr].emplace_back(tree.left, tree.right);
+                                    lr = tree.right_sib[lr];
                                 }
                         }
                 }

@@ -10,7 +10,7 @@
 #include <sstream>
 #include <fwdpp/debug.hpp>
 // Use mutation model from sugar layer
-#include <fwdpp/sugar/popgenmut.hpp>
+#include <fwdpp/popgenmut.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
 #include <fwdpp/extensions/regions.hpp>
 
@@ -66,8 +66,8 @@ struct additive_over_loci
                         return mutations[i].pos < val;
                     });
 
-                rv += fwdpp::multiplicative_diploid(2.0)(start1, stop1, start2,
-                                                         stop2, mutations)
+                rv += fwdpp::multiplicative_diploid(fwdpp::fitness(2.0))(
+                          start1, stop1, start2, stop2, mutations)
                       - 1.0;
             }
         return std::max(1.0 + rv, 0.0);
@@ -137,7 +137,7 @@ main(int argc, char **argv)
         {
             locus_weights.push_back(1.0);
             functions.push_back([&pop, &r, &generation, pselected,
-                                 i](std::queue<std::size_t> &recbin,
+                                 i](fwdpp::flagged_mutation_queue &recbin,
                                     singlepop_t::mcont_t &mutations) {
                 return fwdpp::infsites_popgenmut(
                     recbin, mutations, r.get(), pop.mut_lookup, generation,

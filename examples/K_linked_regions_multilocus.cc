@@ -13,7 +13,7 @@
 #include <sstream>
 #include <fwdpp/debug.hpp>
 // Use mutation model from sugar layer
-#include <fwdpp/sugar/popgenmut.hpp>
+#include <fwdpp/popgenmut.hpp>
 #include <fwdpp/sampling_functions.hpp>
 using mtype = fwdpp::popgenmut;
 #define MULTILOCUS_SIM
@@ -77,13 +77,18 @@ main(int argc, char **argv)
     // Initiate random number generation system
     GSLrng r(seed);
 
-    multiloc_t pop(N, K);
+    std::vector<std::pair<double, double>> boundaries;
+    for (int i = 0; i < K; ++i)
+        {
+            boundaries.emplace_back(i, i + 1);
+        }
+    multiloc_t pop(N, boundaries);
     pop.mutations.reserve(
         size_t(2 * std::ceil(std::log(2 * N) * (theta) + 0.667 * (theta))));
     unsigned generation = 0;
 
     std::vector<std::function<std::vector<double>()>> recpols;
-    std::vector<std::function<std::size_t(std::queue<std::size_t> &,
+    std::vector<std::function<std::size_t(fwdpp::flagged_mutation_queue &,
                                           multiloc_t::mcont_t &)>>
         mmodels;
     for (unsigned i = 0; i < K; ++i)
@@ -92,7 +97,7 @@ main(int argc, char **argv)
             recpols.emplace_back(fwdpp::recbinder(
                 fwdpp::poisson_xover(littler, i, i + 1), r.get()));
             mmodels.push_back([&pop, &r, &generation,
-                               i](std::queue<std::size_t> &recbin,
+                               i](fwdpp::flagged_mutation_queue &recbin,
                                   multiloc_t::mcont_t &mutations) {
                 return fwdpp::infsites_popgenmut(
                     recbin, mutations, r.get(), pop.mut_lookup, generation,

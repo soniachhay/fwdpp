@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/type_traits.hpp>
-#include <fwdpp/sugar/poptypes/tags.hpp>
+#include <fwdpp/poptypes/tags.hpp>
 #include <gsl/gsl_matrix_char.h>
 
 namespace fwdpp
@@ -82,7 +82,7 @@ namespace fwdpp
         std::vector<std::size_t> selected_keys;
         //! Number of columns in the matrix
         std::size_t ncol;
-        data_matrix(const std::size_t ncol_)
+        explicit data_matrix(const std::size_t ncol_)
             /*!
              * Constructor
              *
@@ -92,11 +92,9 @@ namespace fwdpp
              * Changed from rows are sites to rows are individuals. Removed
              * default value of zero from constructor.
              */
-            : neutral{},
-              selected{},
-              neutral_keys{},
-              selected_keys{},
-              ncol{ ncol_ }
+            : neutral{}, selected{}, neutral_keys{}, selected_keys{}, ncol{
+                  ncol_
+              }
         {
         }
     };

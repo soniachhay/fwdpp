@@ -12,7 +12,7 @@
 #include <list>
 #include <sstream>
 // Use mutation model from sugar layer
-#include <fwdpp/sugar/popgenmut.hpp>
+#include <fwdpp/popgenmut.hpp>
 using mtype = fwdpp::popgenmut;
 #define SINGLEPOP_SIM
 #include <common_ind.hpp>
@@ -82,7 +82,7 @@ main(int argc, char **argv)
     auto recmap = fwdpp::recbinder(recvar, r.get());
 
     const auto mmodel
-        = [&pop, &r, &generation, K](std::queue<std::size_t> &recbin,
+        = [&pop, &r, &generation, K](fwdpp::flagged_mutation_queue &recbin,
                                      singlepop_t::mcont_t &mutations) {
               return fwdpp::infsites_popgenmut(
                   recbin, mutations, r.get(), pop.mut_lookup, generation, 0.0,
@@ -93,14 +93,15 @@ main(int argc, char **argv)
     for (generation = 0; generation < ngens; ++generation)
         {
             // Iterate the population through 1 generation
-            fwdpp::sample_diploid(r.get(), pop.gametes, pop.diploids,
-                                  pop.mutations, pop.mcounts, N, mu, mmodel,
-                                  recmap, fwdpp::multiplicative_diploid(),
-                                  pop.neutral, pop.selected);
+            fwdpp::sample_diploid(
+                r.get(), pop.gametes, pop.diploids, pop.mutations, pop.mcounts,
+                N, mu, mmodel, recmap,
+                fwdpp::multiplicative_diploid(fwdpp::fitness(2.)), pop.neutral,
+                pop.selected);
             fwdpp::update_mutations(pop.mutations, pop.fixations,
                                     pop.fixation_times, pop.mut_lookup,
                                     pop.mcounts, generation, 2 * N);
-            fwdpp::debug::validate_sum_gamete_counts(pop.gametes,2*N);
+            fwdpp::debug::validate_sum_gamete_counts(pop.gametes, 2 * N);
             fwdpp::debug::validate_pop_data(pop);
         }
 #ifdef HAVE_LIBSEQUENCE

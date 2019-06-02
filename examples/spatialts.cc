@@ -24,14 +24,15 @@
 #include <fwdpp/ts/generate_data_matrix.hpp>
 #include <fwdpp/ts/remove_fixations_from_gametes.hpp>
 #include <fwdpp/ts/serialization.hpp>
-#include <fwdpp/sugar/GSLrng_t.hpp>
-#include <fwdpp/sugar/popgenmut.hpp>
-#include <fwdpp/sugar/slocuspop.hpp>
+#include <fwdpp/GSLrng_t.hpp>
+#include <fwdpp/popgenmut.hpp>
+#include <fwdpp/slocuspop.hpp>
 #include <fwdpp/util.hpp>
 #include <fwdpp/fitness_models.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
 #include <fwdpp/poisson_xover.hpp>
 #include <fwdpp/recbinder.hpp>
+#include <fwdpp/simparams.hpp>
 #include <boost/program_options.hpp>
 
 #include "simplify_tables.hpp"
@@ -177,22 +178,38 @@ main(int argc, char **argv)
     const auto generate_mutation_position
         = [&rng]() { return gsl_rng_uniform(rng.get()); };
     const auto generate_h = []() { return 1.0; };
-    const auto mmodel = [&pop, &rng, &generation, generate_mutation_position,
-                         get_selection_coefficient,
-                         generate_h](std::queue<std::size_t> &recbin,
-                                     poptype::mcont_t &mutations) {
-        return fwdpp::infsites_popgenmut(
-            recbin, mutations, rng.get(), pop.mut_lookup, generation,
-            // 1.0 signifies 100% of mutations will be selected
-            1.0, generate_mutation_position, get_selection_coefficient,
-            generate_h);
+    const auto make_mutation
+        = [&pop, &rng, &generation, generate_mutation_position,
+           get_selection_coefficient,
+           generate_h](fwdpp::flagged_mutation_queue &recbin,
+                       poptype::mcont_t &mutations) {
+              return fwdpp::infsites_popgenmut(
+                  recbin, mutations, rng.get(), pop.mut_lookup, generation,
+                  // 1.0 signifies 100% of mutations will be selected
+                  1.0, generate_mutation_position, get_selection_coefficient,
+                  generate_h);
+          };
+
+    const auto mmodel = [&rng, mu,
+                         &make_mutation](fwdpp::flagged_mutation_queue &recbin,
+                                         poptype::mcont_t &mutations) {
+        std::vector<fwdpp::uint_t> rv;
+        unsigned nmuts = gsl_ran_poisson(rng.get(), mu);
+        for (unsigned i = 0; i < nmuts; ++i)
+            {
+                rv.push_back(make_mutation(recbin, mutations));
+            }
+        std::sort(begin(rv), end(rv),
+                  [&mutations](const fwdpp::uint_t a, const fwdpp::uint_t b) {
+                      return mutations[a].pos < mutations[b].pos;
+                  });
+        return rv;
     };
 
     // Evolve pop for 20N generations
     fwdpp::ts::TS_NODE_INT first_parental_index = 0,
                            next_index = 2 * pop.diploids.size();
     bool simplified = false;
-    std::queue<std::size_t> mutation_recycling_bin;
     std::vector<std::size_t> individual_labels(N);
     std::iota(individual_labels.begin(), individual_labels.end(), 0);
     std::vector<std::size_t> individuals;
@@ -232,7 +249,9 @@ main(int argc, char **argv)
     std::vector<std::size_t> possible_mates;
     std::vector<double> possible_mate_fitness;
     std::vector<double> cumw;
-    auto ff = fwdpp::multiplicative_diploid(2.0);
+    auto ff = fwdpp::multiplicative_diploid(fwdpp::fitness(2.0));
+    auto genetics = fwdpp::make_genetic_parameters(
+        std::move(ff), std::move(mmodel), std::move(recmap));
     for (; generation <= 10 * N; ++generation)
         {
             //Clear out offspring coordinates
@@ -287,18 +306,18 @@ main(int argc, char **argv)
                     }
                 return possible_mates[i];
             };
-            evolve_generation(rng, pop, N, mu, pick1, pick2, update_offspring,
-                              mmodel, mutation_recycling_bin, recmap,
-                              generation, tables, first_parental_index,
-                              next_index);
+            evolve_generation(rng, pop, genetics, N, pick1, pick2,
+                              update_offspring, generation, tables,
+                              first_parental_index, next_index);
 
             if (generation % gcint == 0.0)
                 {
                     auto rv = simplify_tables(
-                        pop, generation, pop.mcounts_from_preserved_nodes, tables,
-                        simplifier, tables.num_nodes() - 2 * N, 2 * N);
-                    mutation_recycling_bin = fwdpp::ts::make_mut_queue(
-                        pop.mcounts, pop.mcounts_from_preserved_nodes);
+                        pop, generation, pop.mcounts_from_preserved_nodes,
+                        tables, simplifier, tables.num_nodes() - 2 * N, 2 * N);
+                    genetics.mutation_recycling_bin
+                        = fwdpp::ts::make_mut_queue(
+                            pop.mcounts, pop.mcounts_from_preserved_nodes);
                     simplified = true;
                     next_index = tables.num_nodes();
                     first_parental_index = 0;
@@ -371,9 +390,9 @@ main(int argc, char **argv)
         }
     if (!simplified)
         {
-            auto rv = simplify_tables(pop, generation, pop.mcounts_from_preserved_nodes,
-                                         tables, simplifier,
-                                         tables.num_nodes() - 2 * N, 2 * N);
+            auto rv = simplify_tables(
+                pop, generation, pop.mcounts_from_preserved_nodes, tables,
+                simplifier, tables.num_nodes() - 2 * N, 2 * N);
             confirm_mutation_counts(pop, tables);
             // When tracking ancient samples, the node ids of those samples change.
             // Thus, we need to remap our metadata upon simplification
@@ -402,11 +421,10 @@ main(int argc, char **argv)
     std::vector<fwdpp::ts::TS_NODE_INT> s(2 * N);
     std::iota(s.begin(), s.end(), 0);
     const auto neutral_variant_maker
-        = [&rng, &pop,
-           &mutation_recycling_bin](const double left, const double right,
-                                    const fwdpp::uint_t generation) {
+        = [&rng, &pop, &genetics](const double left, const double right,
+                                  const fwdpp::uint_t generation) {
               return fwdpp::infsites_popgenmut(
-                  mutation_recycling_bin, pop.mutations, rng.get(),
+                  genetics.mutation_recycling_bin, pop.mutations, rng.get(),
                   pop.mut_lookup, generation, 0.0,
                   [left, right, &rng] {
                       return gsl_ran_flat(rng.get(), left, right);
@@ -427,7 +445,8 @@ main(int argc, char **argv)
         {
             if (pop.mutations[i].neutral)
                 {
-                    if (!pop.mcounts[i] && !pop.mcounts_from_preserved_nodes[i])
+                    if (!pop.mcounts[i]
+                        && !pop.mcounts_from_preserved_nodes[i])
                         {
                             throw std::runtime_error(
                                 "invalid final mutation count");

@@ -13,8 +13,8 @@
 #include <stdexcept>
 #include <vector>
 #include <unordered_map>
-#include <fwdpp/internal/recycling.hpp>
-#include <fwdpp/sugar/poptypes/tags.hpp>
+#include <fwdpp/simfunctions/recycling.hpp>
+#include <fwdpp/poptypes/tags.hpp>
 #include <fwdpp/debug.hpp>
 
 namespace fwdpp
@@ -94,8 +94,7 @@ namespace fwdpp
                              const std::vector<std::size_t> &mindexes,
                              const map_t &gams)
         {
-            auto gam_recycling_bin
-                = fwdpp_internal::make_gamete_queue(p.gametes);
+            auto gam_recycling_bin = make_gamete_queue(p.gametes);
             // Function object for calls to upper bound
             auto inserter
                 = [&p](const double &__value, const std::size_t __mut) noexcept
@@ -135,8 +134,8 @@ namespace fwdpp
                                     gi.second.size());
                         }
                     // get new gamete
-                    auto new_gamete_key = fwdpp_internal::recycle_gamete(
-                        p.gametes, gam_recycling_bin, n, s);
+                    auto new_gamete_key
+                        = recycle_gamete(p.gametes, gam_recycling_bin, n, s);
                     // update gamete count
                     p.gametes[gi.first].n
                         -= decltype(p.gametes[gi.first].n)(gi.second.size());
@@ -152,12 +151,13 @@ namespace fwdpp
                 }
         }
 
-        template <typename poptype, typename = std::enable_if<std::is_same<
-                                        typename poptype::popmodel_t,
-                                        fwdpp::sugar::SINGLELOC_TAG>::value>>
-        std::unordered_map<std::size_t,
-                           std::vector<
-                               typename poptype::diploid_t::first_type *>>
+        template <typename poptype,
+                  typename = std::enable_if<
+                      std::is_same<typename poptype::popmodel_t,
+                                   fwdpp::poptypes::SINGLELOC_TAG>::value>>
+        std::unordered_map<
+            std::size_t,
+            std::vector<typename poptype::diploid_t::first_type *>>
         collect_gametes(poptype &p, const std::vector<std::size_t> &indlist,
                         const std::vector<short> &clist)
         /*!
@@ -168,9 +168,9 @@ namespace fwdpp
           new gametes created.
         */
         {
-            std::unordered_map<std::size_t,
-                               std::vector<
-                                   typename poptype::diploid_t::first_type *>>
+            std::unordered_map<
+                std::size_t,
+                std::vector<typename poptype::diploid_t::first_type *>>
                 gams;
             for (std::size_t i = 0; i < indlist.size(); ++i)
                 {
@@ -190,10 +190,10 @@ namespace fwdpp
 
         template <typename poptype, typename = std::enable_if<std::is_same<
                                         typename poptype::popmodel_t,
-                                        fwdpp::sugar::MULTILOC_TAG>::value>>
-        std::unordered_map<std::size_t,
-                           std::vector<typename poptype::diploid_t::
-                                           value_type::first_type *>>
+                                        fwdpp::poptypes::MULTILOC_TAG>::value>>
+        std::unordered_map<
+            std::size_t,
+            std::vector<typename poptype::diploid_t::value_type::first_type *>>
         collect_gametes(poptype &p, const std::size_t locus,
                         const std::vector<std::size_t> &indlist,
                         const std::vector<short> &clist)
@@ -205,9 +205,10 @@ namespace fwdpp
           new gametes created.
         */
         {
-            std::unordered_map<std::size_t,
-                               std::vector<typename poptype::diploid_t::
-                                               value_type::first_type *>>
+            std::unordered_map<
+                std::size_t,
+                std::vector<
+                    typename poptype::diploid_t::value_type::first_type *>>
                 gams;
             for (std::size_t ind = 0; ind < indlist.size(); ++ind)
                 {
@@ -267,7 +268,7 @@ namespace fwdpp
     */
     {
         static_assert(std::is_same<typename poptype::popmodel_t,
-                                   fwdpp::sugar::SINGLELOC_TAG>::value,
+                                   fwdpp::poptypes::SINGLELOC_TAG>::value,
                       "poptype must be a single-locus object type");
 
         // Before we go deep into creating objects, let's do some checks
@@ -291,7 +292,7 @@ namespace fwdpp
         typename poptype::mcont_t::value_type new_mutant(
             std::forward<Args>(args)...);
         auto mindex = sugar::get_mut_index(p.mutations, p.mcounts, new_mutant);
-        auto gams = collect_gametes(p, indlist, clist);
+        auto gams = sugar::collect_gametes(p, indlist, clist);
         sugar::add_mutation_details(p, { mindex }, gams);
         return mindex;
     }
@@ -406,7 +407,7 @@ namespace fwdpp
     */
     {
         static_assert(std::is_same<typename poptype::popmodel_t,
-                                   fwdpp::sugar::SINGLELOC_TAG>::value,
+                                   fwdpp::poptypes::SINGLELOC_TAG>::value,
                       "poptype must be a single-locus object type");
 
         // Before we go deep into creating objects, let's do some checks
