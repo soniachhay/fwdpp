@@ -4,10 +4,10 @@
 #include <cstdint>
 #include <vector>
 #include <fwdpp/fitness_models.hpp>
-#include <fwdpp/internal/gsl_discrete.hpp>
+#include <fwdpp/gsl_discrete.hpp>
 
 template <typename poptype, typename fitness_function>
-inline fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr
+inline fwdpp::gsl_ran_discrete_t_ptr
 calculate_fitnesses(poptype &pop, std::vector<double> &fitnesses,
                     const fitness_function &ff)
 {
@@ -15,9 +15,10 @@ calculate_fitnesses(poptype &pop, std::vector<double> &fitnesses,
     fitnesses.resize(N_curr);
     for (std::size_t i = 0; i < N_curr; ++i)
         {
-            fitnesses[i] = ff(pop.diploids[i], pop.gametes, pop.mutations);
+            fitnesses[i]
+                = ff(pop.diploids[i], pop.haploid_genomes, pop.mutations);
         }
-    auto lookup = fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr(
+    auto lookup = fwdpp::gsl_ran_discrete_t_ptr(
         gsl_ran_discrete_preproc(N_curr, &fitnesses[0]));
     return lookup;
 }

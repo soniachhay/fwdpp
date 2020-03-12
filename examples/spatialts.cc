@@ -24,13 +24,15 @@
 #include <fwdpp/ts/generate_data_matrix.hpp>
 #include <fwdpp/ts/remove_fixations_from_gametes.hpp>
 #include <fwdpp/ts/serialization.hpp>
+#include <fwdpp/ts/mutation_tools.hpp>
 #include <fwdpp/GSLrng_t.hpp>
 #include <fwdpp/popgenmut.hpp>
-#include <fwdpp/slocuspop.hpp>
+#include <fwdpp/diploid_population.hpp>
 #include <fwdpp/util.hpp>
 #include <fwdpp/fitness_models.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
-#include <fwdpp/poisson_xover.hpp>
+#include <fwdpp/genetic_map/genetic_map.hpp>
+#include <fwdpp/genetic_map/poisson_interval.hpp>
 #include <fwdpp/recbinder.hpp>
 #include <fwdpp/simparams.hpp>
 #include <boost/program_options.hpp>
@@ -40,7 +42,7 @@
 #include "calculate_fitnesses.hpp"
 
 namespace po = boost::program_options;
-using poptype = fwdpp::slocuspop<fwdpp::popgenmut>;
+using poptype = fwdpp::diploid_population<fwdpp::popgenmut>;
 using GSLrng = fwdpp::GSLrng_t<fwdpp::GSL_RNG_MT19937>;
 
 struct location
@@ -168,8 +170,10 @@ main(int argc, char **argv)
     fwdpp::ts::table_simplifier simplifier(1.0);
     unsigned generation = 1;
     double recrate = rho / static_cast<double>(4 * N);
-    const auto recmap
-        = fwdpp::recbinder(fwdpp::poisson_xover(recrate, 0., 1.), rng.get());
+    // recombination map is uniform[0,1)
+    fwdpp::genetic_map gmap;
+    gmap.add_callback(fwdpp::poisson_interval(0, 1, recrate));
+    const auto recmap = fwdpp::recbinder(std::cref(gmap), rng.get());
 
     const fwdpp::extensions::gamma dfe(mean, shape);
     const auto get_selection_coefficient = [&rng, dfe, N]() {
@@ -420,25 +424,22 @@ main(int argc, char **argv)
     assert(tables.output_right.size() == tables.edge_table.size());
     std::vector<fwdpp::ts::TS_NODE_INT> s(2 * N);
     std::iota(s.begin(), s.end(), 0);
-    const auto neutral_variant_maker
-        = [&rng, &pop, &genetics](const double left, const double right,
-                                  const fwdpp::uint_t generation) {
-              return fwdpp::infsites_popgenmut(
-                  genetics.mutation_recycling_bin, pop.mutations, rng.get(),
-                  pop.mut_lookup, generation, 0.0,
-                  [left, right, &rng] {
-                      return gsl_ran_flat(rng.get(), left, right);
-                  },
-                  []() { return 0.0; }, []() { return 0.0; });
-          };
+    const auto neutral_variant_maker =
+        [&rng, &pop, &genetics](const double left, const double right,
+                                const fwdpp::uint_t generation) {
+            auto key = fwdpp::infsites_popgenmut(
+                genetics.mutation_recycling_bin, pop.mutations, rng.get(),
+                pop.mut_lookup, generation, 0.0,
+                [left, right, &rng] {
+                    return gsl_ran_flat(rng.get(), left, right);
+                },
+                []() { return 0.0; }, []() { return 0.0; });
+            return fwdpp::ts::new_variant_record(
+                pop.mutations[key].pos, 0, key, pop.mutations[key].neutral, 1);
+        };
     auto neutral_muts
         = fwdpp::ts::mutate_tables(rng, neutral_variant_maker, tables, s,
                                    theta / static_cast<double>(4 * N));
-    std::sort(tables.mutation_table.begin(), tables.mutation_table.end(),
-              [&pop](const fwdpp::ts::mutation_record &a,
-                     const fwdpp::ts::mutation_record &b) {
-                  return pop.mutations[a.key].pos < pop.mutations[b.key].pos;
-              });
     fwdpp::ts::count_mutations(tables, pop.mutations, s, pop.mcounts,
                                pop.mcounts_from_preserved_nodes);
     for (std::size_t i = 0; i < pop.mutations.size(); ++i)

@@ -1,8 +1,11 @@
 pkgincludedir=$(prefix)/include/fwdpp/ts
 
+SUBDIRS=simplification
+
 pkginclude_HEADERS= definitions.hpp \
 			node.hpp \
 			edge.hpp \
+			site.hpp \
 			table_collection.hpp \
 			table_simplifier.hpp \
 			get_parent_ids.hpp \
@@ -17,6 +20,13 @@ pkginclude_HEADERS= definitions.hpp \
 			remove_fixations_from_gametes.hpp \
 			recycling.hpp \
 			serialization_version.hpp \
-			serialization.hpp
+			serialization.hpp \
+			marginal_tree_functions.hpp \
+			decapitate.hpp \
+			exceptions.hpp \
+			mutation_tools.hpp \
+			table_types.hpp \
+			visit_sites.hpp \
+			site_visitor.hpp
 
 

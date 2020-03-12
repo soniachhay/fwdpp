@@ -1,6 +1,6 @@
 pkgincludedir=$(prefix)/include/fwdpp
 
-SUBDIRS=internal tags sugar gsl extensions io meta algorithm ts poptypes simfunctions
+SUBDIRS=internal tags sugar gsl extensions io meta algorithm ts poptypes simfunctions genetic_map
 pkginclude_HEADERS=debug.hpp \
 	diploid.hh \
 	fitness_models.hpp \
@@ -8,8 +8,6 @@ pkginclude_HEADERS=debug.hpp \
 	forward_types_serialization.hpp \
 	fwd_functional.hpp \
 	insertion_policies.hpp \
-	poisson_xover.hpp \
-	general_rec_variation.hpp \
 	sample_diploid.hpp \
 	sample_diploid.tcc \
 	sampling_functions.hpp \
@@ -20,11 +18,12 @@ pkginclude_HEADERS=debug.hpp \
 	data_matrix.hpp \
 	recbinder.hpp \
 	named_type.hpp \
-	slocuspop.hpp \
-	mlocuspop.hpp \
+	diploid_population.hpp \
 	popgenmut.hpp \
 	simparams.hpp \
-	wrapped_range.hpp
+	wrapped_range.hpp \
+	GSLrng_t.hpp \
+	gsl_discrete.hpp
 
 
 

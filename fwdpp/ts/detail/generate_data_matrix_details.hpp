@@ -6,6 +6,9 @@
 #include <algorithm>
 #include <fwdpp/data_matrix.hpp>
 #include "../marginal_tree.hpp"
+#include "../site_visitor.hpp"
+#include "../marginal_tree_functions/samples.hpp"
+#include "../table_types.hpp"
 
 namespace fwdpp
 {
@@ -13,48 +16,77 @@ namespace fwdpp
     {
         namespace detail
         {
+            template<typename SITE_CONST_ITER, typename MUT_CONST_ITR>
             inline void
-            process_samples(const marginal_tree& marginal,
-                            const TS_NODE_INT node, TS_NODE_INT index,
-                            std::vector<std::int8_t>& genotypes)
+            process_site_range(const marginal_tree & tree,
+                               const SITE_CONST_ITER current_site,
+                               const std::pair<MUT_CONST_ITR,MUT_CONST_ITR> & muts,
+                               bool record_neutral, bool record_selected,
+                               bool skip_fixed,
+                               std::vector<std::int8_t>& genotypes,
+                               data_matrix& dm)
             {
-                auto right = marginal.right_sample[node];
-                // Set all genotypes to ancestral state
-                std::fill(genotypes.begin(), genotypes.end(), 0);
-                while (true)
+                int neutral = -1, selected = -1;
+                std::fill(begin(genotypes), end(genotypes),
+                          current_site->ancestral_state);
+                int nsamples = 0;
+                convert_sample_index_to_nodes convert(false);
+                for (auto mut = muts.first; mut < muts.second; ++mut)
                     {
-                        if (genotypes[index] == 1)
+                        neutral += (mut->neutral == true);
+                        selected += (mut->neutral == false);
+                        std::size_t lc = tree.leaf_counts[mut->node];
+
+                        if ((mut->neutral && record_neutral)
+                            || (!mut->neutral && record_selected))
                             {
-                                throw std::runtime_error("inconsist"
-                                                         "ent "
-                                                         "samples "
-                                                         "list");
+                                if (lc > 0
+                                    && (!skip_fixed
+                                        || (lc < genotypes.size())))
+                                    {
+                                        const auto f
+                                            = [mut, &nsamples, &genotypes](
+                                                  fwdpp::ts::TS_NODE_INT u) {
+                                                  ++nsamples;
+                                                  genotypes[u]
+                                                      = mut->derived_state;
+                                              };
+                                        process_samples(tree, convert,
+                                                        mut->node, f);
+                                    }
                             }
-                        genotypes[index] = 1;
-                        if (index == right)
+                    }
+                if (neutral != -1 && selected != -1)
+                    {
+                        throw tables_error("inconsistent neutral flags in "
+                                           "mutation table");
+                    }
+                if (nsamples)
+                    {
+                        if (neutral != -1)
                             {
-                                break;
+                                dm.neutral.positions.push_back(
+                                    current_site->position);
+                                dm.neutral_keys.push_back(
+                                    (muts.second - 1)->key);
+                                dm.neutral.data.insert(end(dm.neutral.data),
+                                                       begin(genotypes),
+                                                       end(genotypes));
                             }
-                        index = marginal.next_sample[index];
+                        else
+                            {
+                                dm.selected.positions.push_back(
+                                    current_site->position);
+                                dm.selected_keys.push_back(
+                                    (muts.second - 1)->key);
+                                dm.selected.data.insert(end(dm.selected.data),
+                                                        begin(genotypes),
+                                                        end(genotypes));
+                            }
                     }
             }
-
-            template <typename mcont_t>
-            inline void
-            update_data_matrix(const mcont_t& mutations, const std::size_t key,
-                               const std::vector<std::int8_t>& genotypes,
-                               data_matrix& rv)
-            {
-                auto n = mutations[key].neutral;
-                auto& sm = (n) ? rv.neutral : rv.selected;
-                auto& k = (n) ? rv.neutral_keys : rv.selected_keys;
-                sm.positions.push_back(mutations[key].pos);
-                sm.data.insert(sm.data.end(), genotypes.begin(),
-                               genotypes.end());
-                k.push_back(key);
-            }
         } // namespace detail
-    } // namespace ts
+    }     // namespace ts
 } // namespace fwdpp
 
 #endif

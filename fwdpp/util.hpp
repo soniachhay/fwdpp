@@ -5,7 +5,7 @@
 #include <fwdpp/forward_types.hpp>
 #include <fwdpp/fwd_functional.hpp>
 #include <fwdpp/type_traits.hpp>
-#include <fwdpp/internal/gsl_discrete.hpp>
+#include <fwdpp/gsl_discrete.hpp>
 #include <fwdpp/internal/util.hpp>
 #include <set>
 #include <map>
@@ -20,11 +20,12 @@ namespace fwdpp
 {
     template <typename poptype>
     void
-    zero_out_gametes(poptype &pop)
-    /// Set gamete counts in all diploids to zero
+    zero_out_haploid_genomes(poptype &pop)
+    /// Set haploid_genome counts in all diploids to zero
     /// \version 0.7.4 Added to fwdpp
     {
-        fwdpp_internal::zero_out_gametes(pop, typename poptype::popmodel_t());
+        fwdpp_internal::zero_out_haploid_genomes(
+            pop, typename poptype::popmodel_t());
     }
 
     /*!

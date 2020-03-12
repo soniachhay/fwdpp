@@ -15,13 +15,14 @@
 #include <iomanip>
 #include <fwdpp/debug.hpp>
 #include <fwdpp/popgenmut.hpp>
+#include <fwdpp/genetic_map/genetic_map.hpp>
+#include <fwdpp/genetic_map/poisson_interval.hpp>
 #include <fwdpp/algorithm/compact_mutations.hpp>
-#define SINGLEPOP_SIM
+#define DIPLOID_POPULATION_SIM
 // the type of mutation
 using mtype = fwdpp::popgenmut;
 #include <common_ind.hpp>
 #include <gsl/gsl_randist.h>
-using namespace fwdpp;
 
 int
 main(int argc, char **argv)
@@ -57,21 +58,21 @@ main(int argc, char **argv)
     GSLrng r(seed);
 
     // recombination map is uniform[0,1)
-    const auto rec
-        = fwdpp::recbinder(fwdpp::poisson_xover(littler, 0., 1.), r.get());
-
+    fwdpp::genetic_map gmap;
+    gmap.add_callback(fwdpp::poisson_interval(0, 1, littler));
+    const auto rec = fwdpp::recbinder(std::cref(gmap), r.get());
     const double pselected = mu_del / (mu_del + mu_neutral);
 
     while (nreps--)
         {
-            singlepop_t pop(N);
+            diploid_population pop(N);
             pop.mutations.reserve(
                 size_t(std::ceil(std::log(2 * N) * (theta_neutral + theta_del)
                                  + 0.667 * (theta_neutral + theta_del))));
             unsigned generation = 0;
-            const auto mmodel = [&pop, &r, &generation, s, h,
-                                 pselected](fwdpp::flagged_mutation_queue &recbin,
-                                            singlepop_t::mcont_t &mutations) {
+            const auto mmodel = [&pop, &r, &generation, s, h, pselected](
+                                    fwdpp::flagged_mutation_queue &recbin,
+                                    diploid_population::mcont_t &mutations) {
                 return fwdpp::infsites_popgenmut(
                     recbin, mutations, r.get(), pop.mut_lookup, generation,
                     pselected, [&r]() { return gsl_rng_uniform(r.get()); },
@@ -82,8 +83,9 @@ main(int argc, char **argv)
             for (generation = 0; generation < ngens; ++generation)
                 {
                     wbar = fwdpp::sample_diploid(
-                        r.get(), pop.gametes, pop.diploids, pop.mutations,
-                        pop.mcounts, N, mu_neutral + mu_del, mmodel,
+                        r.get(), pop.haploid_genomes, pop.diploids,
+                        pop.mutations, pop.mcounts, N, mu_neutral + mu_del,
+                        mmodel,
                         // The function to generation recombination positions:
                         rec, fwdpp::multiplicative_diploid(fwdpp::fitness(1.)),
                         pop.neutral, pop.selected);
@@ -94,8 +96,8 @@ main(int argc, char **argv)
                         {
                             fwdpp::compact_mutations(pop);
                         }
-                    fwdpp::debug::validate_sum_gamete_counts(pop.gametes,
-                                                             2 * N);
+                    fwdpp::debug::validate_sum_haploid_genome_counts(
+                        pop.haploid_genomes, 2 * N);
                 }
             for (std::size_t i = 0; i < pop.mcounts.size(); ++i)
                 {

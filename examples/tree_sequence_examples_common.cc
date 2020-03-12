@@ -7,6 +7,9 @@
 #include <fwdpp/ts/generate_data_matrix.hpp>
 #include <fwdpp/ts/serialization.hpp>
 #include <fwdpp/ts/mutate_tables.hpp>
+#include <fwdpp/ts/mutation_tools.hpp>
+#include <fwdpp/ts/marginal_tree_functions/samples.hpp>
+#include <fwdpp/ts/visit_sites.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
 #include "tree_sequence_examples_common.hpp"
 
@@ -15,50 +18,37 @@ namespace po = boost::program_options;
 template <typename poptype>
 int
 apply_neutral_mutations_details(
-    const options &o, const fwdpp::GSLrng_mt &rng,
+    const options &o, const GSLrng &rng,
     fwdpp::ts::table_collection &tables, poptype &pop,
     fwdpp::flagged_mutation_queue &mutation_recycling_bin)
 {
     std::vector<fwdpp::ts::TS_NODE_INT> s(2 * o.N);
 
     std::iota(s.begin(), s.end(), 0);
-    const auto neutral_variant_maker
-        = [&rng, &pop,
-           &mutation_recycling_bin](const double left, const double right,
-                                    const fwdpp::uint_t generation) {
-              return fwdpp::infsites_popgenmut(
-                  mutation_recycling_bin, pop.mutations, rng.get(),
-                  pop.mut_lookup, generation, 0.0,
-                  [left, right, &rng] {
-                      return gsl_ran_flat(rng.get(), left, right);
-                  },
-                  []() { return 0.0; }, []() { return 0.0; });
-          };
+    const auto neutral_variant_maker = [&rng, &pop, &mutation_recycling_bin](
+                                           const double left,
+                                           const double right,
+                                           const fwdpp::uint_t generation) {
+        auto key = fwdpp::infsites_popgenmut(
+            mutation_recycling_bin, pop.mutations, rng.get(), pop.mut_lookup,
+            generation, 0.0,
+            [left, right, &rng] {
+                return gsl_ran_flat(rng.get(), left, right);
+            },
+            []() { return 0.0; }, []() { return 0.0; });
+        return fwdpp::ts::new_variant_record(pop.mutations[key].pos, 0, key,
+                                             pop.mutations[key].neutral, 1);
+    };
     auto neutral_muts
         = fwdpp::ts::mutate_tables(rng, neutral_variant_maker, tables, s,
                                    o.theta / static_cast<double>(4 * o.N));
-    std::sort(tables.mutation_table.begin(), tables.mutation_table.end(),
-              [&pop](const fwdpp::ts::mutation_record &a,
-                     const fwdpp::ts::mutation_record &b) {
-                  return pop.mutations[a.key].pos < pop.mutations[b.key].pos;
-              });
     return neutral_muts;
 }
 
 int
-apply_neutral_mutations(const options &o, const fwdpp::GSLrng_mt &rng,
+apply_neutral_mutations(const options &o, const GSLrng &rng,
                         fwdpp::ts::table_collection &tables,
-                        single_locus_poptype &pop,
-                        fwdpp::flagged_mutation_queue &mutation_recycling_bin)
-{
-    return apply_neutral_mutations_details(o, rng, tables, pop,
-                                           mutation_recycling_bin);
-}
-
-int
-apply_neutral_mutations(const options &o, const fwdpp::GSLrng_mt &rng,
-                        fwdpp::ts::table_collection &tables,
-                        multi_locus_poptype &pop,
+                        ts_examples_poptype &pop,
                         fwdpp::flagged_mutation_queue &mutation_recycling_bin)
 {
     return apply_neutral_mutations_details(o, rng, tables, pop,
@@ -67,10 +57,11 @@ apply_neutral_mutations(const options &o, const fwdpp::GSLrng_mt &rng,
 
 options::options()
     : N{}, gcint(100), theta(), rho(), mean(0.), shape(1.), mu(),
-      scoeff(std::numeric_limits<double>::max()), dominance(1.), scaling(2.),
-      seed(42), ancient_sampling_interval(-1), ancient_sample_size(-1),
-      nsam(0), leaf_test(false), matrix_test(false),
-      preserve_fixations(false), filename(), sfsfilename()
+      scoeff(std::numeric_limits<double>::quiet_NaN()), dominance(1.),
+      scaling(2.), seed(42), ancient_sampling_interval(-1),
+      ancient_sample_size(-1), nsam(0), leaf_test(false), matrix_test(false),
+      visit_sites_test(false), preserve_fixations(false), filename(),
+      sfsfilename()
 {
 }
 
@@ -120,7 +111,8 @@ generate_testing_options(options &o)
     // clang-format off
     testing.add_options()("leaf_test",po::bool_switch(&o.leaf_test),"Perform very expensive checking on sample list ranges vs. leaf counts")
         ("matrix_test",po::bool_switch(&o.matrix_test),"Perform run-time test on generating fwdpp::data_matrix objects and validating the row sums")
-		("serialization_test",po::value<std::string>(&o.filename),"Test round-trip to/from a file");
+		("serialization_test",po::value<std::string>(&o.filename),"Test round-trip to/from a file")
+		("visit_sites_tests",po::bool_switch(&o.visit_sites_test),"Test correctness of ts::visit_sites");
     // clang-format on
     return testing;
 }
@@ -162,7 +154,7 @@ validate_primary_options(const options &o)
 }
 
 std::function<double()>
-make_dfe(const fwdpp::uint_t N, const fwdpp::GSLrng_mt &r, const double mean,
+make_dfe(const fwdpp::uint_t N, const GSLrng &r, const double mean,
          const double shape, const double scoeff)
 {
     if (std::isfinite(scoeff))
@@ -177,11 +169,10 @@ make_dfe(const fwdpp::uint_t N, const fwdpp::GSLrng_mt &r, const double mean,
 void
 matrix_runtime_test(const fwdpp::ts::table_collection &tables,
                     const std::vector<fwdpp::ts::TS_NODE_INT> &samples,
-                    const std::vector<fwdpp::popgenmut> &mutations,
                     const std::vector<fwdpp::uint_t> &mcounts)
 {
-    auto dm = fwdpp::ts::generate_data_matrix(tables, samples, mutations, true,
-                                              true, false);
+    auto dm
+        = fwdpp::ts::generate_data_matrix(tables, samples, true, true, false);
     auto rs = fwdpp::row_sums(dm);
     for (std::size_t i = 0; i < rs.first.size(); ++i)
         {
@@ -203,8 +194,9 @@ void
 expensive_leaf_test(const fwdpp::ts::table_collection &tables,
                     const std::vector<fwdpp::ts::TS_NODE_INT> &sample_list)
 {
-    fwdpp::ts::tree_visitor mti(tables, sample_list);
-    while (mti(std::true_type(), std::true_type()))
+    fwdpp::ts::tree_visitor mti(tables, sample_list,
+                                fwdpp::ts::update_samples_list(true));
+    while (mti())
         {
             auto &tree = mti.tree();
             for (auto i : sample_list)
@@ -278,6 +270,10 @@ test_serialization(const fwdpp::ts::table_collection &tables,
         {
             throw std::runtime_error("mutation tables do not match");
         }
+    if (tables.site_table != tables2.site_table)
+        {
+            throw std::runtime_error("site tables do no match");
+        }
     if (tables != tables2)
         {
             throw std::runtime_error("tables failed equality check");
@@ -309,14 +305,13 @@ execute_matrix_test_detail(const options &o, const poptype &pop,
     if (o.matrix_test)
         {
             std::cerr << "Matrix test with respect to last generation...";
-            matrix_runtime_test(tables, samples, pop.mutations, pop.mcounts);
+            matrix_runtime_test(tables, samples, pop.mcounts);
             std::cerr << "passed\n";
             if (!tables.preserved_nodes.empty())
                 {
                     std::cout << "Matrix test with respect to preserved "
                                  "samples...";
                     matrix_runtime_test(tables, tables.preserved_nodes,
-                                        pop.mutations,
                                         pop.mcounts_from_preserved_nodes);
                     std::cerr << "passed\n";
                     auto sc = samples;
@@ -328,7 +323,7 @@ execute_matrix_test_detail(const options &o, const poptype &pop,
                                    mc.begin(), std::plus<fwdpp::uint_t>());
                     std::cout << "Matrix test with respect to last generation "
                                  "+ preserved nodes...";
-                    matrix_runtime_test(tables, sc, pop.mutations, mc);
+                    matrix_runtime_test(tables, sc, mc);
                     std::cout << "passed.\n";
                     std::cout << "Matrix test with respect to most recent "
                                  "ancient sampling time point...";
@@ -345,22 +340,50 @@ execute_matrix_test_detail(const options &o, const poptype &pop,
                         });
                     mc.clear();
                     fwdpp::ts::count_mutations(tables, pop.mutations, sc, mc);
-                    matrix_runtime_test(tables, sc, pop.mutations, mc);
+                    matrix_runtime_test(tables, sc, mc);
                     std::cout << "passed\n";
                 }
         }
 }
 
 void
-execute_matrix_test(const options &o, const single_locus_poptype &pop,
-                    const fwdpp::ts::table_collection &tables,
-                    const std::vector<fwdpp::ts::TS_NODE_INT> &samples)
+visit_sites_test(const options &o, const ts_examples_poptype &pop,
+                 const fwdpp::ts::table_collection &tables,
+                 const std::vector<fwdpp::ts::TS_NODE_INT> &samples)
 {
-    execute_matrix_test_detail(o, pop, tables, samples);
+    if (o.visit_sites_test)
+        {
+            auto mc(pop.mcounts);
+            mc.clear();
+            auto s(samples);
+            s.insert(end(s), begin(tables.preserved_nodes),
+                     end(tables.preserved_nodes));
+            fwdpp::ts::count_mutations(tables, pop.mutations, samples, mc);
+            auto mc2(mc);
+            std::fill(begin(mc2), end(mc2), 0);
+            auto f
+                = [&mc2](
+                      const fwdpp::ts::marginal_tree &m,
+                      const fwdpp::ts::site & /*s*/,
+                      fwdpp::ts::mutation_key_vector::const_iterator b,
+                      const fwdpp::ts::mutation_key_vector::const_iterator e) {
+                      for (; b < e; ++b)
+                          {
+                              mc2[b->key] = fwdpp::ts::num_samples(m, b->node);
+                          }
+                  };
+            fwdpp::ts::visit_sites(tables, samples, f, 0.,
+                                   tables.genome_length());
+            if (mc != mc2)
+                {
+                    throw std::runtime_error("visit_sites_test failed to "
+                                             "correctly traverse all sites");
+                }
+            std::cout << "visit_sites_test passed\n";
+        }
 }
-
 void
-execute_matrix_test(const options &o, const multi_locus_poptype &pop,
+execute_matrix_test(const options &o, const ts_examples_poptype &pop,
                     const fwdpp::ts::table_collection &tables,
                     const std::vector<fwdpp::ts::TS_NODE_INT> &samples)
 {
@@ -378,10 +401,9 @@ execute_serialization_test(const options &o,
 }
 
 void
-write_sfs(const options &o, const fwdpp::GSLrng_mt &rng,
+write_sfs(const options &o, const GSLrng &rng,
           const fwdpp::ts::table_collection &tables,
-          const std::vector<fwdpp::ts::TS_NODE_INT> &samples,
-          const std::vector<fwdpp::popgenmut> &mutations)
+          const std::vector<fwdpp::ts::TS_NODE_INT> &samples)
 {
     if (!o.sfsfilename.empty())
         {
@@ -398,7 +420,7 @@ write_sfs(const options &o, const fwdpp::GSLrng_mt &rng,
                            s.data(), s.size(), sizeof(fwdpp::ts::TS_NODE_INT));
             std::iota(small_sample.begin(), small_sample.end(), 0);
             auto dm = fwdpp::ts::generate_data_matrix(tables, small_sample,
-                                                      mutations, true, false, true);
+                                                      true, false, true);
             auto rs = fwdpp::row_sums(dm);
             std::vector<int> sfs(small_sample.size() - 1);
             for (auto i : rs.first)

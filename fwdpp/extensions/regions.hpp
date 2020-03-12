@@ -9,7 +9,7 @@
 #include <memory>
 #include <gsl/gsl_randist.h>
 #include <fwdpp/type_traits.hpp>
-#include <fwdpp/internal/gsl_discrete.hpp>
+#include <fwdpp/gsl_discrete.hpp>
 #include <fwdpp/simfunctions/recycling.hpp>
 #include <fwdpp/extensions/callbacks.hpp>
 
@@ -17,13 +17,13 @@ namespace fwdpp
 {
     namespace extensions
     {
-        template <
-            typename mcont_t, typename gcont_t = void,
-            typename mutation_model_signature = typename std::conditional<
-                std::is_void<gcont_t>::value,
-                typename fwdpp::traits::mutation_model<mcont_t>,
-                typename fwdpp::traits::mutation_model_gamete<mcont_t,
-                                                              gcont_t>>::type>
+        template <typename mcont_t, typename gcont_t = void,
+                  typename mutation_model_signature
+                  = typename std::conditional<
+                      std::is_void<gcont_t>::value,
+                      typename fwdpp::traits::mutation_model<mcont_t>,
+                      typename fwdpp::traits::mutation_model_haploid_genome<
+                          mcont_t, gcont_t>>::type>
         class discrete_mut_model
         /*!
          *  A container of mutation models + weights.
@@ -50,12 +50,12 @@ namespace fwdpp
           private:
             std::vector<mutation_model_signature> functions;
             std::vector<double> weights;
-            fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr lookup;
+            fwdpp::gsl_ran_discrete_t_ptr lookup;
 
           public:
             using function_type = mutation_model_signature;
             using mutation_container = mcont_t;
-            using gamete_container = gcont_t;
+            using haploid_genome_container = gcont_t;
 
             template <typename function_container, typename weight_container>
             discrete_mut_model(function_container &&functions_,
@@ -72,7 +72,7 @@ namespace fwdpp
                     }
                 if (!weights.empty())
                     {
-                        lookup = fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr(
+                        lookup = fwdpp::gsl_ran_discrete_t_ptr(
                             gsl_ran_discrete_preproc(weights.size(),
                                                      weights.data()));
                     }
@@ -89,7 +89,7 @@ namespace fwdpp
             {
                 if (!weights.empty())
                     {
-                        lookup = fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr(
+                        lookup = fwdpp::gsl_ran_discrete_t_ptr(
                             gsl_ran_discrete_preproc(weights.size(),
                                                      weights.data()));
                     }
@@ -130,10 +130,10 @@ namespace fwdpp
         {
             return
                 [r, &dmm](flagged_mutation_queue &recycling_bin,
-                          const typename dmm_type::gamete_container::value_type
-                              &gamete,
+                          const typename dmm_type::haploid_genome_container::
+                              value_type &haploid_genome,
                           typename dmm_type::mutation_container &mutations) {
-                    return dmm(r, recycling_bin, gamete, mutations);
+                    return dmm(r, recycling_bin, haploid_genome, mutations);
                 };
         }
 
@@ -151,7 +151,7 @@ namespace fwdpp
             return bind_dmm_wrapper(
                 r, dmm,
                 typename std::is_void<
-                    typename dmm_type::gamete_container>::type());
+                    typename dmm_type::haploid_genome_container>::type());
         }
 
         /*! Return a vector of callables bound
@@ -183,7 +183,7 @@ namespace fwdpp
             double recrate;
             std::vector<std::function<void(std::vector<double> &)>> functions;
             std::vector<double> weights;
-            fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr lookup;
+            fwdpp::gsl_ran_discrete_t_ptr lookup;
 
           public:
             using result_type = std::vector<double>;
@@ -206,7 +206,7 @@ namespace fwdpp
                     }
                 if (!weights.empty())
                     {
-                        lookup = fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr(
+                        lookup = fwdpp::gsl_ran_discrete_t_ptr(
                             gsl_ran_discrete_preproc(weights.size(),
                                                      weights.data()));
                     }
@@ -223,7 +223,7 @@ namespace fwdpp
             {
                 if (!weights.empty())
                     {
-                        lookup = fwdpp::fwdpp_internal::gsl_ran_discrete_t_ptr(
+                        lookup = fwdpp::gsl_ran_discrete_t_ptr(
                             gsl_ran_discrete_preproc(weights.size(),
                                                      weights.data()));
                     }

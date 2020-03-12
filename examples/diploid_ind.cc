@@ -18,10 +18,12 @@
 #include <fwdpp/diploid.hh>
 #include <fwdpp/recbinder.hpp>
 #include <fwdpp/popgenmut.hpp>
+#include <fwdpp/genetic_map/genetic_map.hpp>
+#include <fwdpp/genetic_map/poisson_interval.hpp>
 #include <fwdpp/algorithm/compact_mutations.hpp>
 // typedef mutation_with_age mtype;
 using mtype = fwdpp::popgenmut;
-#define SINGLEPOP_SIM
+#define DIPLOID_POPULATION_SIM
 #include <common_ind.hpp>
 
 int
@@ -50,7 +52,8 @@ main(int argc, char **argv)
     const unsigned seed
         = unsigned(atoi(argv[argument++])); // Random number seed
 
-    const double mu = theta / double(4 * N); // per-gamete mutation rate
+    const double mu
+        = theta / double(4 * N); // per-haploid_genome mutation rate
 
     /*
       littler r is the recombination rate per region per generation.
@@ -68,40 +71,41 @@ main(int argc, char **argv)
     unsigned twoN = 2 * N;
 
     // recombination map is uniform[0,1)
-    const auto rec
-        = fwdpp::recbinder(fwdpp::poisson_xover(littler, 0., 1.), r.get());
+    fwdpp::genetic_map gmap;
+    gmap.add_callback(fwdpp::poisson_interval(0, 1, littler));
+    const auto rec = fwdpp::recbinder(std::cref(gmap), r.get());
 
     while (nreps--)
         {
-            singlepop_t pop(N);
+            diploid_population pop(N);
             pop.mutations.reserve(
                 size_t(std::ceil(std::log(2 * N) * theta + 0.667 * theta)));
             unsigned generation = 0;
             double wbar;
 
-            const auto mmodel =
-                [&pop, &r, &generation](fwdpp::flagged_mutation_queue &recbin,
-                                        singlepop_t::mcont_t &mutations) {
-                    return fwdpp::infsites_popgenmut(
-                        recbin, mutations, r.get(), pop.mut_lookup, generation,
-                        0.0, [&r]() { return gsl_rng_uniform(r.get()); },
-                        []() { return 0.0; }, []() { return 0.0; });
-                };
+            const auto mmodel = [&pop, &r, &generation](
+                                    fwdpp::flagged_mutation_queue &recbin,
+                                    diploid_population::mcont_t &mutations) {
+                return fwdpp::infsites_popgenmut(
+                    recbin, mutations, r.get(), pop.mut_lookup, generation,
+                    0.0, [&r]() { return gsl_rng_uniform(r.get()); },
+                    []() { return 0.0; }, []() { return 0.0; });
+            };
             for (generation = 0; generation < ngens; ++generation)
                 {
                     // Iterate the population through 1 generation
                     wbar = fwdpp::sample_diploid(
                         r.get(),
-                        pop.gametes,   // non-const reference to gametes
-                        pop.diploids,  // non-const reference to diploids
+                        pop.haploid_genomes, // non-const reference to haploid_genomes
+                        pop.diploids,        // non-const reference to diploids
                         pop.mutations, // non-const reference to mutations
                         pop.mcounts,
                         N,  // current pop size, remains constant
-                        mu, // mutation rate per gamete
+                        mu, // mutation rate per haploid_genome
                         /*
                           The mutation model will be applied
                           by
-                          sample_diploid in order to add mutations to gametes
+                          sample_diploid in order to add mutations to haploid_genomes
                           each generation.
                         */
                         mmodel,
@@ -110,12 +114,12 @@ main(int argc, char **argv)
                         /*
                           Fitness is multiplicative over sites.
 
-                          The fitness model takes two gametes and a
+                          The fitness model takes two haploid_genomes and a
                           vector of mutations as arguments.
-                          The gametes are passed to this function by
+                          The haploid_genomes are passed to this function by
                           fwdpp::sample_diploid, and the _1 and _2 are
                           placeholders for
-                          those gametes (see documentation for boost/bind.hpp
+                          those haploid_genomes (see documentation for boost/bind.hpp
                           for details).
                           The mutation container is passed in as _3.
                           The 2. means that fitnesses are 1, 1+sh, and 1+2s for
@@ -141,8 +145,8 @@ main(int argc, char **argv)
                             fwdpp::compact_mutations(pop);
                         }
                     fwdpp::debug::validate_pop_data(pop);
-                    fwdpp::debug::validate_sum_gamete_counts(pop.gametes,
-                                                             twoN);
+                    fwdpp::debug::validate_sum_haploid_genome_counts(
+                        pop.haploid_genomes, twoN);
                     //for(std::size_t i=0;i<pop.mcounts.size();++i)
                     //{
                     //	if(pop.mcounts[i])
