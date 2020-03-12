@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -76,7 +76,7 @@ $(function() {
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d0/d51/wrapped__range_8hpp_source.html">fwdpp/wrapped_range.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d0/d3f/util_8hpp_source.html">fwdpp/util.hpp</a>&gt;</code><br />
-<code>#include &lt;fwdpp/internal/gamete_cleaner.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/internal/haploid_genome_cleaner.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/d37/mutate__recombine_8hpp_source.html">fwdpp/mutate_recombine.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d9/dbe/get__parent__ids_8hpp_source.html">fwdpp/ts/get_parent_ids.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d70/table__collection_8hpp_source.html">fwdpp/ts/table_collection.hpp</a>&gt;</code><br />
@@ -88,10 +88,10 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6a80a080e926218c378d4147cd746d11"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename rng_t , typename genetic_param_holder &gt; </td></tr>
-<tr class="memitem:a6a80a080e926218c378d4147cd746d11"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#a6a80a080e926218c378d4147cd746d11">generate_offspring</a> (const rng_t &amp;rng, const std::pair&lt; std::size_t, std::size_t &gt; parent_indexes, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;offspring, genetic_param_holder &amp;genetics)</td></tr>
+<tr class="memitem:a6a80a080e926218c378d4147cd746d11"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a>, <a class="el" href="../../d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html">fwdpp::ts::mut_rec_intermediates</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#a6a80a080e926218c378d4147cd746d11">generate_offspring</a> (const rng_t &amp;rng, const std::pair&lt; std::size_t, std::size_t &gt; parent_indexes, <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;pop, typename <a class="el" href="../../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#a052c14db58db50aa14eaf931171f5e66">poptype::diploid_t</a> &amp;offspring, genetic_param_holder &amp;genetics)</td></tr>
 <tr class="separator:a6a80a080e926218c378d4147cd746d11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memTemplParams" colspan="2">template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , typename pick_parent2_fxn , typename offspring_metadata_fxn , typename genetic_param_holder &gt; </td></tr>
-<tr class="memitem:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#aed1873b98b1e34c69a2d1a1cce4cc905">evolve_generation</a> (const rng_t &amp;rng, <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, genetic_param_holder &amp;genetics, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N_next, const pick_parent1_fxn &amp;pick1, const pick_parent2_fxn &amp;pick2, const offspring_metadata_fxn &amp;update_offspring, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> generation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, std::int32_t first_parental_index, std::int32_t next_index)</td></tr>
+<tr class="memitem:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp.html#aed1873b98b1e34c69a2d1a1cce4cc905">evolve_generation</a> (const rng_t &amp;rng, <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;pop, genetic_param_holder &amp;genetics, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N_next, const pick_parent1_fxn &amp;pick1, const pick_parent2_fxn &amp;pick2, const offspring_metadata_fxn &amp;update_offspring, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> generation, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, std::int32_t first_parental_index, std::int32_t next_index)</td></tr>
 <tr class="separator:aed1873b98b1e34c69a2d1a1cce4cc905"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -112,7 +112,7 @@ template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , type
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
@@ -176,7 +176,7 @@ template&lt;typename rng_t , typename poptype , typename pick_parent1_fxn , type
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a26">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a33">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a24">spatialts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d7/dcb/evolve__generation__ts_8hpp_source.html">evolve_generation_ts.hpp</a>.</p>
 
@@ -205,13 +205,13 @@ template&lt;typename poptype , typename rng_t , typename genetic_param_holder &g
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename <a class="el" href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6">poptype::diploid_t</a> &amp;&#160;</td>
+          <td class="paramtype">typename <a class="el" href="../../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#a052c14db58db50aa14eaf931171f5e66">poptype::diploid_t</a> &amp;&#160;</td>
           <td class="paramname"><em>offspring</em>, </td>
         </tr>
         <tr>

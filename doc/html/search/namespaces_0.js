@@ -1,7 +1,8 @@
 var searchData=
 [
+  ['backwards_5fcompat',['backwards_compat',['../dd/d7f/namespacefwdpp_1_1ts_1_1io_1_1backwards__compat.html',1,'fwdpp::ts::io']]],
   ['debug',['debug',['../d0/d70/namespacefwdpp_1_1debug.html',1,'fwdpp']]],
-  ['detail',['detail',['../d0/d89/namespacefwdpp_1_1ts_1_1detail.html',1,'fwdpp::ts']]],
+  ['detail',['detail',['../d1/d88/namespacefwdpp_1_1detail.html',1,'fwdpp::detail'],['../d0/d89/namespacefwdpp_1_1ts_1_1detail.html',1,'fwdpp::ts::detail']]],
   ['extensions',['extensions',['../da/d69/namespacefwdpp_1_1extensions.html',1,'fwdpp']]],
   ['fwdpp',['fwdpp',['../dd/d84/namespacefwdpp.html',1,'']]],
   ['fwdpp_5finternal',['fwdpp_internal',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html',1,'fwdpp']]],

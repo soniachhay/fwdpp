@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -65,21 +65,26 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">tree_visitor.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d49/exceptions_8hpp_source.html">exceptions.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d92/marginal__tree_8hpp_source.html">marginal_tree.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/d70/table__collection_8hpp_source.html">table_collection.hpp</a>&quot;</code><br />
 <code>#include &quot;detail/advance_marginal_tree_policies.hpp&quot;</code><br />
+<code>#include &lt;<a class="el" href="../../d0/d40/named__type_8hpp_source.html">fwdpp/named_type.hpp</a>&gt;</code><br />
 </div>
 <p><a href="../../d4/d55/tree__visitor_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dfc/structfwdpp_1_1ts_1_1update__samples__list__t.html">fwdpp::ts::update_samples_list_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html">fwdpp::ts::tree_visitor</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that iterates over marginal trees.  <a href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,6 +97,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:d8/d31/namespacefwdpp_1_1ts"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html">fwdpp::ts</a></td></tr>
 <tr class="memdesc:d8/d31/namespacefwdpp_1_1ts"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree sequence <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2018-fu">[2]</a> support. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a032633feb419313c220ff0fd18d3a594"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a032633feb419313c220ff0fd18d3a594">fwdpp::ts::update_samples_list</a> = strong_types::named_type&lt; bool, update_samples_list_t &gt;</td></tr>
+<tr class="memdesc:a032633feb419313c220ff0fd18d3a594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Policy dictating if a <a class="el" href="../../df/d8f/classfwdpp_1_1ts_1_1tree__visitor.html" title="Class that iterates over marginal trees. ">tree_visitor</a> updates sample lists.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#a032633feb419313c220ff0fd18d3a594">More...</a><br /></td></tr>
+<tr class="separator:a032633feb419313c220ff0fd18d3a594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

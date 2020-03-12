@@ -1,4 +1,8 @@
 var searchData=
 [
+  ['haploid_5fgenome_5fbase',['haploid_genome_base',['../dd/d40/structfwdpp_1_1haploid__genome__base.html#a61a0ff73af587c54f97575e4709b41db',1,'fwdpp::haploid_genome_base::haploid_genome_base(const uint_t &amp;icount) noexcept'],['../dd/d40/structfwdpp_1_1haploid__genome__base.html#af1b8f44abe6c4edc05cb40b96936cff1',1,'fwdpp::haploid_genome_base::haploid_genome_base(const uint_t &amp;icount, T &amp;&amp;n, T &amp;&amp;s) noexcept'],['../dd/d40/structfwdpp_1_1haploid__genome__base.html#a05d2fd7e979a2fc8e579a306f9ba741a',1,'fwdpp::haploid_genome_base::haploid_genome_base(constructor_tuple t)'],['../dd/d40/structfwdpp_1_1haploid__genome__base.html#afce9e3745d5444f10ffbffbcdb109747',1,'fwdpp::haploid_genome_base::haploid_genome_base(haploid_genome_base const &amp;)=default'],['../dd/d40/structfwdpp_1_1haploid__genome__base.html#aff8b82e722d8aa2973d7e460f17a33e7',1,'fwdpp::haploid_genome_base::haploid_genome_base(haploid_genome_base &amp;&amp;)=default']]],
+  ['haploid_5fgenome_5fdata_5fvalid',['haploid_genome_data_valid',['../d0/d70/namespacefwdpp_1_1debug.html#ac9299f1e78ba911c59531b1858ce36df',1,'fwdpp::debug']]],
+  ['haploid_5fgenome_5fis_5fextant',['haploid_genome_is_extant',['../d0/d70/namespacefwdpp_1_1debug.html#a60f2b53f88912f4ddec35c5f64252281',1,'fwdpp::debug']]],
+  ['haploid_5fgenome_5fis_5fsorted',['haploid_genome_is_sorted',['../d0/d70/namespacefwdpp_1_1debug.html#a0b5b9b5bae9300425aa3bdc9a5a35e65',1,'fwdpp::debug']]],
   ['haplotype_5fmatrix',['haplotype_matrix',['../df/d2f/group__samplingPops.html#gab51dfff82a620b51eb1c8ae49f4891ef',1,'fwdpp']]]
 ];

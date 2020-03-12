@@ -1,7 +1,8 @@
 var searchData=
 [
+  ['backwards_5fcompat',['backwards_compat',['../dd/d7f/namespacefwdpp_1_1ts_1_1io_1_1backwards__compat.html',1,'fwdpp::ts::io']]],
   ['debug',['debug',['../d0/d70/namespacefwdpp_1_1debug.html',1,'fwdpp']]],
-  ['detail',['detail',['../d0/d89/namespacefwdpp_1_1ts_1_1detail.html',1,'fwdpp::ts']]],
+  ['detail',['detail',['../d1/d88/namespacefwdpp_1_1detail.html',1,'fwdpp::detail'],['../d0/d89/namespacefwdpp_1_1ts_1_1detail.html',1,'fwdpp::ts::detail']]],
   ['extensions',['extensions',['../da/d69/namespacefwdpp_1_1extensions.html',1,'fwdpp']]],
   ['factor',['factor',['../de/dad/structfwdpp_1_1extensions_1_1beta.html#acc01c6a4156317ab06af4ec570f445dc',1,'fwdpp::extensions::beta']]],
   ['filename',['filename',['../d1/d38/structoptions.html#a6c4d0499fc318c860ad64ead2f7b8933',1,'options']]],
@@ -12,7 +13,8 @@ var searchData=
   ['fitness_5ffxn',['fitness_fxn',['../d3/d74/namespacefwdpp_1_1traits.html#a429df4c12ac27d0a6c651bee55dd2fdc',1,'fwdpp::traits']]],
   ['fitness_5ffxn_5ft',['fitness_fxn_t',['../d3/d74/namespacefwdpp_1_1traits.html#a45ff3ded014fd31df1d8783123586f30',1,'fwdpp::traits']]],
   ['fitness_5fmodels_2ehpp',['fitness_models.hpp',['../db/dd7/fitness__models_8hpp.html',1,'']]],
-  ['fitness_5ft',['fitness_t',['../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a26a366ac0e81e2edac7507ed5504db91',1,'fwdpp::poptypes::slocuspop']]],
+  ['fitness_5ft',['fitness_t',['../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#ab2f7e0eebdb26f951a31e30a29b2a30f',1,'fwdpp::poptypes::diploid_population']]],
+  ['fix_5fmutation_5ftable_5frepopulate_5fsite_5ftable',['fix_mutation_table_repopulate_site_table',['../da/d5d/namespacefwdpp_1_1ts_1_1io.html#a8100a837f803d1254a9190eccb431f5a',1,'fwdpp::ts::io']]],
   ['fixation_5ftimes',['fixation_times',['../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aa0d26b88674170e7949380b65c597019',1,'fwdpp::poptypes::popbase']]],
   ['fixations',['fixations',['../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a1292a3c0581dd6b77b0a065003b2e212',1,'fwdpp::poptypes::popbase']]],
   ['flag_5fmutations_5ffor_5frecycling',['flag_mutations_for_recycling',['../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef',1,'fwdpp::ts']]],
@@ -24,7 +26,7 @@ var searchData=
   ['fwdpp',['fwdpp',['../dd/d84/namespacefwdpp.html',1,'']]],
   ['fwdpp_5finternal',['fwdpp_internal',['../d7/da0/namespacefwdpp_1_1fwdpp__internal.html',1,'fwdpp']]],
   ['fwdpp_5fpoptag',['FWDPP_POPTAG',['../d4/d10/structfwdpp_1_1poptypes_1_1FWDPP__POPTAG.html',1,'fwdpp::poptypes']]],
-  ['fwdpp_5fpoptype',['FWDPP_POPTYPE',['../de/d6e/group__sugar.html#ga1d6503ae92e610b15644d84ee5379fed',1,'fwdpp::poptypes']]],
+  ['fwdpp_5fpoptype',['FWDPP_POPTYPE',['../d0/dfa/namespacefwdpp_1_1poptypes.html#a1d6503ae92e610b15644d84ee5379fed',1,'fwdpp::poptypes']]],
   ['fwdpp_5fsample_5fdiploid_5ftcc',['FWDPP_SAMPLE_DIPLOID_TCC',['../dd/d91/sample__diploid_8tcc.html#aba589dc34675e9e5b6f317e80c26eed3',1,'sample_diploid.tcc']]],
   ['fwdpp_5fversion_5fmajor',['FWDPP_VERSION_MAJOR',['../d7/dad/version_8hpp.html#a95ac2e5756848a6114f4bfd1eb6a067e',1,'version.hpp']]],
   ['fwdpp_5fversion_5fminor',['FWDPP_VERSION_MINOR',['../d7/dad/version_8hpp.html#a86b1d82358d9b61d2ba53a5d7e3690dd',1,'version.hpp']]],

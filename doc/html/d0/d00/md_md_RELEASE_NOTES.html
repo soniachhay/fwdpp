@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -64,23 +64,43 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>For a list of planned features, etc., see the issues list on <a href="https://github.com/molpopgen/fwdpp/issues">GitHub</a>. Issues that are tagged 'performance' or 'enhancement' reflect future plans for the library. I will probably not put milestones (target version numbers for these features to go live) because that is not realistic given how I work.</p>
+<h2>0.8.0</h2>
+<p>Big set of changes. See the 0.8.0 milestone on GitHub for the gory details.</p>
+<ul>
+<li>Move gsl_ran_discrete wrapper into main namespace <a href="https://github.com/molpopgen/fwdpp/pull/200">PR 200</a></li>
+<li>Remove concept of a "multi-locus" population. <a href="https://github.com/molpopgen/fwdpp/pull/201">PR 201</a></li>
+<li>Rename "gamete" "haploid_genome". <a href="https://github.com/molpopgen/fwdpp/pull/202">PR 202</a></li>
+<li>Back-port "genetic map" concepts from fwdpy11. <a href="https://github.com/molpopgen/fwdpp/pull/204">PR 204</a></li>
+<li>Add preorder node traversal. <a href="https://github.com/molpopgen/fwdpp/pull/200">PR 205</a></li>
+<li>Add "sample groups" to marginal trees, which is an experimental feature. <a href="https://github.com/molpopgen/fwdpp/pull/207">PR 207</a> and <a href="https://github.com/molpopgen/fwdpp/pull/209">PR 209</a></li>
+<li>Add <a class="el" href="../../d7/d13/classfwdpp_1_1ts_1_1samples__iterator.html" title="Faciliate traversal of the samples descending from a node. ">fwdpp::ts::samples_iterator</a>. <a href="https://github.com/molpopgen/fwdpp/pull/208">PR 208</a></li>
+<li>Testing improvements. <a href="https://github.com/molpopgen/fwdpp/pull/210">PR 210</a></li>
+<li>Add "site" and "mutation" tables. <a href="https://github.com/molpopgen/fwdpp/pull/211">PR 211</a></li>
+<li>Add <a class="el" href="../../da/dfd/classfwdpp_1_1ts_1_1site__visitor.html" title="Facilitae iteration over ts::site objects one at a time For example use, see implementation of ts::ge...">fwdpp::ts::site_visitor</a>. <a href="https://github.com/molpopgen/fwdpp/pull/216">PR 216</a></li>
+<li>Tree sequence example programs updated. <a href="https://github.com/molpopgen/fwdpp/pull/236">PR 236</a></li>
+<li>Improvements to <a class="el" href="../../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html" title="Implementation of &quot;strong types&quot;. ">fwdpp::strong_types::named_type</a>. <a href="https://github.com/molpopgen/fwdpp/pull/239">PR 239</a></li>
+<li>Rename "population" field of <a class="el" href="../../d5/d4f/structfwdpp_1_1ts_1_1node.html">fwdpp::ts::node</a> to "deme". <a href="https://github.com/molpopgen/fwdpp/pull/241">PR 241</a></li>
+<li>Big reduction in memory requirement during tree sequence simplification. <a href="https://github.com/molpopgen/fwdpp/pull/242">PR 242</a></li>
+<li>Redundant type names removed. See <a href="https://github.com/molpopgen/fwdpp/issues/246">Issue 246</a>.</li>
+<li>Several minor issues addressed in <a href="https://github.com/molpopgen/fwdpp/pull/245">PR 245</a></li>
+</ul>
 <h2>0.7.4</h2>
 <p>This release has a lot of big changes.</p>
-<p>GitHub <a href="https://github.com/molpopgen/fwdpp/issues/186">Issue 186</a> was fixed. The "genome length" was not correctly accounted for in <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a>. The problem was fixed in <a href="https://github.com/molpopgen/fwdpp/commit/4443c40638c2f2a2e309e842be213469e1f680d1">this commit</a>.</p>
+<p>GitHub <a href="https://github.com/molpopgen/fwdpp/issues/186">Issue 186</a> was fixed. The "genome length" was not correctly accounted for in <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8af38d30f718a90af2ea98e81358c2c5" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a>. The problem was fixed in <a href="https://github.com/molpopgen/fwdpp/commit/4443c40638c2f2a2e309e842be213469e1f680d1">this commit</a>.</p>
 <p><a href="https://github.com/molpopgen/fwdpp/pull/187">PR 187</a> Improves the performance of serializing <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> objects. The output files are slightly bigger, but the IO is faster. This changes the value of fwdpp::ts::TS_TABLES_VERSION from 1 to 2, and we retain the ability to read in "version 1" files.</p>
 <p><a href="https://github.com/molpopgen/fwdpp/pull/178">PR 178</a> introduced several improvements related to tree sequence recording, as well as cleaning up a variety of other, smaller, issues:</p>
 <ul>
-<li>Added <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3" title="Generate offspring gametes and return breakpoints plus mutation keys. ">fwdpp::ts::generate_offspring</a>, which is implemented in terms of <a class="el" href="../../dd/d84/namespacefwdpp.html#a635801bc8ea29e30cce2e4cf7694bf46">fwdpp::mutate_recombine</a>, and returns the data structures needed for edge recording after creating an offspring individual. This new function streamlines the API for "meiosis", with the same function applicable to <a class="el" href="../../dd/d84/namespacefwdpp.html#a0b8afeea0c8c54a7e0f55cbe1b508cb1">fwdpp::slocuspop</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#a32b2b32ae5eb92bedd370d74cf9bed39" title="Multilocus simulation. ">fwdpp::mlocuspop</a> objects.</li>
-<li>The constructor for <a class="el" href="../../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f...">fwdpp::poptypes::mlocuspop</a> is changed to require the locus boundaries. <b>This change breaks API</b>. The result is a much safer type.</li>
+<li>Added <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3" title="Generate offspring haploid_genomes and return breakpoints plus mutation keys. ">fwdpp::ts::generate_offspring</a>, which is implemented in terms of <a class="el" href="../../dd/d84/namespacefwdpp.html#a305775e119176134316d95cf9bddc818">fwdpp::mutate_recombine</a>, and returns the data structures needed for edge recording after creating an offspring individual. This new function streamlines the API for "meiosis", with the same function applicable to fwdpp::slocuspop and fwdpp::mlocuspop objects.</li>
+<li>The constructor for fwdpp::poptypes::mlocuspop is changed to require the locus boundaries. <b>This change breaks API</b>. The result is a much safer type.</li>
 <li>Added <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> as a typedef for a mersenne twister</li>
-<li>Added <a class="el" href="../../dd/d84/namespacefwdpp.html#ae74b0423ff11fea6ef5d24bccca8b5ff">fwdpp::zero_out_gametes</a>, which is a convenience functions for a routine step needed each generation</li>
+<li>Added fwdpp::zero_out_gametes, which is a convenience functions for a routine step needed each generation</li>
 <li>Added <a class="el" href="../../d0/dcc/structfwdpp_1_1mendel.html">fwdpp::mendel</a>, which is a convenience function for a routine step needed each generation</li>
 <li>Made updates to <a class="el" href="../../dd/d84/namespacefwdpp.html#a4a3a68e9a07ca2517f64a352b54b15ff" title="Create a fwdpp::genetic_parameters for a single-locus simulation. ">fwdpp::make_genetic_parameters</a>, fixing the perfect forwarding and adding the ability to have custom replacements for the functionality of <a class="el" href="../../d0/dcc/structfwdpp_1_1mendel.html">fwdpp::mendel</a>.</li>
-<li>The constructor of <a class="el" href="../../d5/dd3/structfwdpp_1_1gamete__base.html" title="Base class for gametes. ">fwdpp::gamete_base</a> taking an unsigned int is now marked explicit. (Having it non-expicit was a bone-headed error that made an initial bug in <a class="el" href="../../dd/d84/namespacefwdpp.html#ae74b0423ff11fea6ef5d24bccca8b5ff">fwdpp::zero_out_gametes</a> very difficult to track down. See <a href="https://github.com/molpopgen/fwdpp/pull/178/commits/6af6a101db08a688ea030509c27f0acea41dab1f">this commit</a>.</li>
-<li>Adds example program <a class="el" href="../../d3/d34/wfmlts_8cc.html">wfmlts.cc</a></li>
-<li><a class="el" href="../../d9/d59/wfts_8cc.html">wfts.cc</a> and <a class="el" href="../../d3/d34/wfmlts_8cc.html">wfmlts.cc</a> now share a lot of common code, showing the power of a generic API.</li>
+<li>The constructor of fwdpp::gamete_base taking an unsigned int is now marked explicit. (Having it non-expicit was a bone-headed error that made an initial bug in fwdpp::zero_out_gametes very difficult to track down. See <a href="https://github.com/molpopgen/fwdpp/pull/178/commits/6af6a101db08a688ea030509c27f0acea41dab1f">this commit</a>.</li>
+<li>Adds example program wfmlts.cc</li>
+<li>wfts.cc and wfmlts.cc now share a lot of common code, showing the power of a generic API.</li>
 <li>Fixed a bug in lambda captures affecting some test suite fixtures. <a href="https://github.com/molpopgen/fwdpp/pull/178/commits/7ace1fb9f4efa0c963c13150ddfd023786f31d28">commit</a></li>
-<li>Added a new test suite module that stress-tests <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3" title="Generate offspring gametes and return breakpoints plus mutation keys. ">fwdpp::ts::generate_offspring</a> for the multi-locus case. The new test suite fixtures are also used as more/better unit tests of fwdpp::fwdpp_internal::multilocus_rec_mut.</li>
+<li>Added a new test suite module that stress-tests <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3" title="Generate offspring haploid_genomes and return breakpoints plus mutation keys. ">fwdpp::ts::generate_offspring</a> for the multi-locus case. The new test suite fixtures are also used as more/better unit tests of fwdpp::fwdpp_internal::multilocus_rec_mut.</li>
 </ul>
 <p>Other changes:</p>
 <ul>
@@ -90,27 +110,27 @@ $(function() {
 <li>Fixed <a href="https://github.com/molpopgen/fwdpp/issues/182">issue 182</a></li>
 <li>Fixed <a href="https://github.com/molpopgen/fwdpp/issues/181">issue 181</a></li>
 <li>Constructors for <a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html" title="Implements the simplification algorithm of . ">fwdpp::ts::table_simplifier</a> and <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> marked explicit where appropriate.</li>
-<li>Fixed error in return value of fwdpp::general_rec_variation::operator(), and <a class="el" href="../../dd/d84/namespacefwdpp.html#a635801bc8ea29e30cce2e4cf7694bf46">fwdpp::mutate_recombine</a> now explicitly tests for correct use of sentinel values. <a href="https://github.com/molpopgen/fwdpp/pull/184">PR 184</a></li>
+<li>Fixed error in return value of fwdpp::general_rec_variation::operator(), and <a class="el" href="../../dd/d84/namespacefwdpp.html#a305775e119176134316d95cf9bddc818">fwdpp::mutate_recombine</a> now explicitly tests for correct use of sentinel values. <a href="https://github.com/molpopgen/fwdpp/pull/184">PR 184</a></li>
 <li>The recycling machinery was moved from an internal namespace to the main namespace. The API was refactored in terms of strong types fwdpp::flagged_mutation_queue and fwdpp::flagged_gamete_queue. <a href="https://github.com/molpopgen/fwdpp/pull/185">PR 185</a></li>
 <li>Fixed bug in mutating tables where the genome length is not 1.0. <a href="https://github.com/molpopgen/fwdpp/issues/186">Issue 186</a>.</li>
 </ul>
 <h2>0.7.3</h2>
 <ul>
-<li>The return value of <a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a4742014b28cff4cc1a63c21a4647f6ea">fwdpp::ts::table_simplifier::simplify</a> has been changed to include a list of indexes to mutations that are preserved by simplification. This return value may be passed to a new overload of <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e" title="Make a mutation recycling queue for simulations with tree sequences. ">fwdpp::ts::make_mut_queue</a> that avoids tree traversal entirely. This new overload can result in big speedups for simulations where ancestral samples are being recorded. However, it only applies for simulations where it is "ok" to keep fixations around. <a href="https://github.com/molpopgen/fwdpp/pull/167">PR 167</a></li>
+<li>The return value of <a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a22b0bcd13249647ecca682ecee79425d">fwdpp::ts::table_simplifier::simplify</a> has been changed to include a list of indexes to mutations that are preserved by simplification. This return value may be passed to a new overload of <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e" title="Make a mutation recycling queue for simulations with tree sequences. ">fwdpp::ts::make_mut_queue</a> that avoids tree traversal entirely. This new overload can result in big speedups for simulations where ancestral samples are being recorded. However, it only applies for simulations where it is "ok" to keep fixations around. <a href="https://github.com/molpopgen/fwdpp/pull/167">PR 167</a></li>
 <li>fwdpp::sugar::popbase::mcounts_from_preserved_nodes added, mostly out of convenience, so that simulations doing tree sequence recording don't have to remember to create the extra variable.</li>
 <li>operator==/!= are now inline for <a class="el" href="../../d3/d25/structfwdpp_1_1ts_1_1edge.html" title="An edge in a tree sequence. ">fwdpp::ts::edge</a>, <a class="el" href="../../d5/d4f/structfwdpp_1_1ts_1_1node.html">fwdpp::ts::node</a>, <a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html">fwdpp::ts::mutation_record</a>, and <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a></li>
 </ul>
 <h2>0.7.2</h2>
 <ul>
 <li>Resolve a serialization and comparison issue with <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> <a href="https://github.com/molpopgen/fwdpp/pull/165">PR 165</a>.</li>
-<li><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a> now returns immediately if the mutation rate is not positive.</li>
+<li><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8af38d30f718a90af2ea98e81358c2c5" title="Apply a mutation scheme to add neutral mutations to a fwdpp::ts::table_collection. ">fwdpp::ts::mutate_tables</a> now returns immediately if the mutation rate is not positive.</li>
 </ul>
 <h2>0.7.1</h2>
 <p>Point release fixing some API and UI issues with tree sequence recording. Several documentation updates for these functions, too.</p>
 <ul>
 <li><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">fwdpp::ts::table_collection</a> is now equality-comparable. <a href="https://github.com/molpopgen/fwdpp/pull/153">PR 153</a></li>
 <li>Stricter checking of sample list validity during simplification and tree traversal. <a href="https://github.com/molpopgen/fwdpp/pull/159">PR 159</a></li>
-<li><a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html" title="A non-recombining tree. ">fwdpp::ts::marginal_tree</a> now tracks number of samples. <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a8596f5ad2ff4c7674476e802c285de25">fwdpp::ts::generate_data_matrix</a> no longer adds fixed variants to the output. <a href="https://github.com/molpopgen/fwdpp/pull/160">PR 160</a></li>
+<li><a class="el" href="../../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html" title="A non-recombining tree. ">fwdpp::ts::marginal_tree</a> now tracks number of samples. <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a0de7adfaff962a474c591150487bd909">fwdpp::ts::generate_data_matrix</a> no longer adds fixed variants to the output. <a href="https://github.com/molpopgen/fwdpp/pull/160">PR 160</a></li>
 <li><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a> has been refactored to allow for preserving selected fixations and limited fixation recording. <a href="https://github.com/molpopgen/fwdpp/pull/162">PR 162</a></li>
 </ul>
 <h2>0.7.0</h2>
@@ -163,10 +183,10 @@ $(function() {
 <li>The namespace has been changed from KTfwd to fwdpp. <a href="https://github.com/molpopgen/fwdpp/pull/88">PR88</a></li>
 <li>Serialization code has been generalized to depend on template specializations. <a href="https://github.com/molpopgen/fwdpp/pull/90">PR90</a> and <a href="https://github.com/molpopgen/fwdpp/pull/108">PR108</a></li>
 <li>The struct KTfwd::infsites was removed. For the mutation type <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html" title="Mutations with selection, dominance, and tracking age of origin The &quot;standard&quot; mutation type for popu...">fwdpp::popgenmut</a>, <a class="el" href="../../dd/d84/namespacefwdpp.html#a4232f287e886b0a43774bf2af10dfa3f">fwdpp::infsites_popgenmut</a> was added as a mutation function. <a href="https://github.com/molpopgen/fwdpp/pull/120">PR120</a></li>
-<li>The storage of a gsl_rng pointer in <a class="el" href="../../d5/d24/structfwdpp_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">fwdpp::poisson_xover</a> and fwdpp::general_rec_variation was refactored out. <a href="https://github.com/molpopgen/fwdpp/pull/118">PR118</a></li>
+<li>The storage of a gsl_rng pointer in fwdpp::poisson_xover and fwdpp::general_rec_variation was refactored out. <a href="https://github.com/molpopgen/fwdpp/pull/118">PR118</a></li>
 <li>The types fwdpp::extensions::discrete_rec_model and fwdpp::extensions::discrete_mut_model were refactored to be much more general, and independent of a particular mutation type. <a href="https://github.com/molpopgen/fwdpp/pull/116">PR116</a> and <a href="https://github.com/molpopgen/fwdpp/pull/113">PR113</a></li>
-<li>Metapopulation objects were removed, and single-/multi- locus population types are renamed <a class="el" href="../../dd/d84/namespacefwdpp.html#a0b8afeea0c8c54a7e0f55cbe1b508cb1">fwdpp::slocuspop</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#a32b2b32ae5eb92bedd370d74cf9bed39" title="Multilocus simulation. ">fwdpp::mlocuspop</a>, respectively. Code for demographic operations was also removed, as it is not needed. <a href="https://github.com/molpopgen/fwdpp/pull/110">PR110</a></li>
-<li>The class fwdpp::popbase is no longer dependent on a particular ploidy. The diploid-ness was pushed into <a class="el" href="../../dd/d84/namespacefwdpp.html#a0b8afeea0c8c54a7e0f55cbe1b508cb1">fwdpp::slocuspop</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#a32b2b32ae5eb92bedd370d74cf9bed39" title="Multilocus simulation. ">fwdpp::mlocuspop</a> (as well as the more complex template classes fwdpp::sugar::slocuspop and fwdpp::sugar::mlocuspop). <a href="https://github.com/molpopgen/fwdpp/pull/114">PR114</a></li>
+<li>Metapopulation objects were removed, and single-/multi- locus population types are renamed fwdpp::slocuspop and fwdpp::mlocuspop, respectively. Code for demographic operations was also removed, as it is not needed. <a href="https://github.com/molpopgen/fwdpp/pull/110">PR110</a></li>
+<li>The class fwdpp::popbase is no longer dependent on a particular ploidy. The diploid-ness was pushed into fwdpp::slocuspop and fwdpp::mlocuspop (as well as the more complex template classes fwdpp::sugar::slocuspop and fwdpp::sugar::mlocuspop). <a href="https://github.com/molpopgen/fwdpp/pull/114">PR114</a></li>
 <li>Namespace KTfwd::experimental was removed. <a href="https://github.com/molpopgen/fwdpp/pull/86">PR86</a></li>
 <li>Diploid-dependent mutation models are now supported. <a href="https://github.com/molpopgen/fwdpp/pull/84">PR84</a></li>
 <li>Removed API features deprecated in 0.5.7. <a href="https://github.com/molpopgen/fwdpp/pull/83">PR83</a></li>
@@ -174,7 +194,7 @@ $(function() {
 <li>The "scaling" parameter of <a class="el" href="../../de/db8/structfwdpp_1_1additive__diploid.html" title="Additive fitness or trait value across sites This function object calculate the genetic value of a di...">fwdpp::additive_diploid</a> and <a class="el" href="../../d7/de7/structfwdpp_1_1multiplicative__diploid.html" title="Multiplicative fitness or trait value across sites This function object calculate the genetic value o...">fwdpp::multiplicative_diploid</a> are now class data instead of bound parameters. <a href="https://github.com/molpopgen/fwdpp/pull/79">PR79</a></li>
 <li>fwdpp::general_rec_variation added. <a href="https://github.com/molpopgen/fwdpp/pull/77">PR77</a></li>
 <li>Recombination callbacks taking no arguments are supported. <a href="https://github.com/molpopgen/fwdpp/pull/75">PR75</a></li>
-<li><a class="el" href="../../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a997a0e295c8b1d7b7ec765f8a5f5df55">fwdpp::mlocuspop::locus_boundaries</a> is no longer populated with default values, which was dangerous!! <a href="https://github.com/molpopgen/fwdpp/pull/69">PR69</a></li>
+<li>fwdpp::mlocuspop::locus_boundaries is no longer populated with default values, which was dangerous!! <a href="https://github.com/molpopgen/fwdpp/pull/69">PR69</a></li>
 <li>fwdpp::generalmut and fwdpp::generalmut_vec now take less memory. <a href="https://github.com/molpopgen/fwdpp/pull/67">PR67</a></li>
 <li>Sampling routines in fwdpp/sugar/sampling.hpp now guard against the possibility of having fixations repeated in samples. For example, this change will affect simulations where selected fixations are retained because they affect trait values. <a href="https://github.com/molpopgen/fwdpp/pull/71">PR71</a></li>
 <li>Issue <a href="https://github.com/molpopgen/fwdpp/issues/69">PR69</a> <a href="https://github.com/molpopgen/fwdpp/pull/70">PR70</a></li>
@@ -257,7 +277,7 @@ $(function() {
 </ul>
 <h2>0.5.0</h2>
 <ul>
-<li>Example file <a class="el" href="../../d6/d42/K__linked__regions__multilocus_8cc.html">examples/K_linked_regions_multilocus.cc</a> added</li>
+<li>Example file examples/K_linked_regions_multilocus.cc added</li>
 <li>Streamlined KTfwd::fwdpp_internal::multilocus_rec_mut</li>
 <li>The sugar types KTfwd::singlepop, KTfwd::metapop, and KTfwd::multiloc were refactored to inerit from KTfwd::sugar::popbase.</li>
 <li>Fixed error in KTfwd::multiloc where gametes were initialized with the incorrect count</li>
@@ -482,7 +502,7 @@ $(function() {
 <li>Example programs based on experimental features are in experimental_examples. These examples are "bleeding edge", and are not guaranteed to compile on all systems, especially those without complete working boost installations (including the compiled run-time libraries).</li>
 <li>experimental_examples/sex_limited_ind.cc is an example of using experimental library features to simulate separate sexes, sex-specific fitness effects, etc.</li>
 <li>Sugar typedefs in fwdpp/sugar/singlepop.hpp, fwdpp/sugar/metapop.hpp, and in fwdpp/sugar/multiloc.hpp are now compatible with custom diploid types. The template alias now defaults to a pair of iterators pointing to gametes, which you may over-ride with your own type.</li>
-<li>The devtools setup script had some bugs fixed. (<a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a>)</li>
+<li>The devtools setup script had some bugs fixed. (md_md_devtools)</li>
 <li>KTfwd::sample_diploid has been modified to make fewer calls to random number generators for the common use case of no selfing. This change results in N*generations fewer RNG calls, and can speed simulations by as much as ten percent. A side-effect is that results will differ from simulations compiled against earlier versions of the library. A preprocessor macro/symbol (FWDPP_COMPAT_0_3_0) has been introduced. Compilling programs with -DFWDPP_COMPAT_0_3_0 will result in the older/slower algorithm being used.</li>
 <li>A new document describing preprocessor symbols and their effect on fwdpp has been added (md_md_preproc)</li>
 <li>All occurrences of NULL in the library have been replaced with the C++11 <a href="http://www.cplusplus.com/reference/cstddef/nullptr_t/">nullptr</a>. The latter is safer in templates because the former can evaluate to 0 in some cases.</li>
@@ -520,7 +540,7 @@ $(function() {
 <h2>0.2.7</h2>
 <ul>
 <li>Versions ms_sample and ms_sample_separate that took containers of gametes as arguments are now compatible with individual-based simulations.</li>
-<li>The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: <a class="el" href="../../d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a></li>
+<li>The "devtools" stuff is greatly improved, and a new tutorial added on how to use it: md_md_devtools</li>
 </ul>
 <h2>0.2.6</h2>
 <ul>

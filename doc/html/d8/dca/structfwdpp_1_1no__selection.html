@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -84,9 +84,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a57bb45072f5ef37d1fa4e9e41444d808"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a57bb45072f5ef37d1fa4e9e41444d808"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a64c634965545f7fec4103d599f970484">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a57bb45072f5ef37d1fa4e9e41444d808">operator()</a> (const gamete_type &amp;, const gamete_type &amp;, const mcont_t &amp;) const noexcept</td></tr>
-<tr class="separator:a57bb45072f5ef37d1fa4e9e41444d808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f23cea2a64676b5f5c81874c696c3af"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genome_type , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a0f23cea2a64676b5f5c81874c696c3af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a64c634965545f7fec4103d599f970484">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a0f23cea2a64676b5f5c81874c696c3af">operator()</a> (const haploid_genome_type &amp;, const haploid_genome_type &amp;, const mcont_t &amp;) const noexcept</td></tr>
+<tr class="separator:a0f23cea2a64676b5f5c81874c696c3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3511cc27ca79227afc8fecd1490a7f1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae3511cc27ca79227afc8fecd1490a7f1"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a64c634965545f7fec4103d599f970484">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#ae3511cc27ca79227afc8fecd1490a7f1">operator()</a> (const T &amp;) const noexcept</td></tr>
 <tr class="memdesc:ae3511cc27ca79227afc8fecd1490a7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naive implementation for non-standard cases.  <a href="#ae3511cc27ca79227afc8fecd1490a7f1">More...</a><br /></td></tr>
@@ -97,12 +97,12 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A fitness of 1 </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>A gamete</td></tr>
+    <tr><td class="paramname">g1</td><td>A haploid_genome </td></tr>
+    <tr><td class="paramname">g2</td><td>A haploid_genome</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>g1 and g2 must be part of the <a class="el" href="../../d5/dd3/structfwdpp_1_1gamete__base.html" title="Base class for gametes. ">gamete_base</a> hierarchy </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>g1 and g2 must be part of the <a class="el" href="../../dd/d40/structfwdpp_1_1haploid__genome__base.html" title="Base class for genomes. ">haploid_genome_base</a> hierarchy </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00078">78</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -125,13 +125,13 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a57bb45072f5ef37d1fa4e9e41444d808"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57bb45072f5ef37d1fa4e9e41444d808">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="a0f23cea2a64676b5f5c81874c696c3af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f23cea2a64676b5f5c81874c696c3af">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_type , typename mcont_t &gt; </div>
+template&lt;typename haploid_genome_type , typename mcont_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -139,13 +139,13 @@ template&lt;typename gamete_type , typename mcont_t &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="../../d8/dca/structfwdpp_1_1no__selection.html#a64c634965545f7fec4103d599f970484">result_type</a> fwdpp::no_selection::operator() </td>
           <td>(</td>
-          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_type &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_type &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -199,7 +199,7 @@ template&lt;typename T &gt; </div>
 
 <p>Naive implementation for non-standard cases. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00099">99</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>

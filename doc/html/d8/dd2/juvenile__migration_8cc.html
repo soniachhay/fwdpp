@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -80,6 +80,8 @@ $(function() {
 <code>#include &lt;unordered_set&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d96/popgenmut_8hpp_source.html">fwdpp/popgenmut.hpp</a>&gt;</code><br />
+<code>#include &lt;fwdpp/genetic_map/genetic_map.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/genetic_map/poisson_interval.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
 </div>
@@ -92,8 +94,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a31e3d5523df86ceef258de9a3e0ca01e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#a31e3d5523df86ceef258de9a3e0ca01e">SINGLEPOP_SIM</a></td></tr>
-<tr class="separator:a31e3d5523df86ceef258de9a3e0ca01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e6c2474be1626f058fdbf4b7eaad56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#ab7e6c2474be1626f058fdbf4b7eaad56">DIPLOID_POPULATION_SIM</a></td></tr>
+<tr class="separator:ab7e6c2474be1626f058fdbf4b7eaad56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -102,29 +104,29 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a85d7f0dcac0aa14a9f03fb767f94c01b"><td class="memTemplParams" colspan="2">template&lt;typename fitness_fxn &gt; </td></tr>
-<tr class="memitem:a85d7f0dcac0aa14a9f03fb767f94c01b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/db7/structparent__lookup__tables.html">parent_lookup_tables</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#a85d7f0dcac0aa14a9f03fb767f94c01b">migrate_and_calc_fitness</a> (const gsl_rng *r, singlepop_t &amp;pop, const fitness_fxn &amp;wfxn, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> N1, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> N2, const double m12, const double m21)</td></tr>
-<tr class="separator:a85d7f0dcac0aa14a9f03fb767f94c01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a97a9e77f106946b37b491c93b12695"><td class="memTemplParams" colspan="2">template&lt;typename fitness_fxn , typename rec_fxn , typename mut_fxn &gt; </td></tr>
-<tr class="memitem:a9a97a9e77f106946b37b491c93b12695"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#a9a97a9e77f106946b37b491c93b12695">evolve_two_demes</a> (const gsl_rng *r, singlepop_t &amp;pop, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> N1, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> N2, const double m12, const double m21, const double mu, const fitness_fxn &amp;wfxn, const rec_fxn &amp;recfxn, const mut_fxn &amp;mutfxn)</td></tr>
-<tr class="separator:a9a97a9e77f106946b37b491c93b12695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6353e55fef33e6613d211e12e270c89"><td class="memTemplParams" colspan="2">template&lt;typename fitness_fxn &gt; </td></tr>
+<tr class="memitem:ae6353e55fef33e6613d211e12e270c89"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/db7/structparent__lookup__tables.html">parent_lookup_tables</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#ae6353e55fef33e6613d211e12e270c89">migrate_and_calc_fitness</a> (const gsl_rng *r, diploid_population &amp;pop, const fitness_fxn &amp;wfxn, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N1, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N2, const double m12, const double m21)</td></tr>
+<tr class="separator:ae6353e55fef33e6613d211e12e270c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab63799f9991797627ad651d35645608"><td class="memTemplParams" colspan="2">template&lt;typename fitness_fxn , typename rec_fxn , typename mut_fxn &gt; </td></tr>
+<tr class="memitem:aab63799f9991797627ad651d35645608"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#aab63799f9991797627ad651d35645608">evolve_two_demes</a> (const gsl_rng *r, diploid_population &amp;pop, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N1, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N2, const double m12, const double m21, const double mu, const fitness_fxn &amp;wfxn, const rec_fxn &amp;recfxn, const mut_fxn &amp;mutfxn)</td></tr>
+<tr class="separator:aab63799f9991797627ad651d35645608"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd2/juvenile__migration_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a31e3d5523df86ceef258de9a3e0ca01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e3d5523df86ceef258de9a3e0ca01e">&#9670;&nbsp;</a></span>SINGLEPOP_SIM</h2>
+<a id="ab7e6c2474be1626f058fdbf4b7eaad56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e6c2474be1626f058fdbf4b7eaad56">&#9670;&nbsp;</a></span>DIPLOID_POPULATION_SIM</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SINGLEPOP_SIM</td>
+          <td class="memname">#define DIPLOID_POPULATION_SIM</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00075">75</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00077">77</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
 
 </div>
 </div>
@@ -141,13 +143,13 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00077">77</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00079">79</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9a97a9e77f106946b37b491c93b12695"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a97a9e77f106946b37b491c93b12695">&#9670;&nbsp;</a></span>evolve_two_demes()</h2>
+<a id="aab63799f9991797627ad651d35645608"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab63799f9991797627ad651d35645608">&#9670;&nbsp;</a></span>evolve_two_demes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,19 +165,19 @@ template&lt;typename fitness_fxn , typename rec_fxn , typename mut_fxn &gt; </di
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">singlepop_t &amp;&#160;</td>
+          <td class="paramtype">diploid_population &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
           <td class="paramname"><em>N1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
           <td class="paramname"><em>N2</em>, </td>
         </tr>
         <tr>
@@ -221,9 +223,9 @@ template&lt;typename fitness_fxn , typename rec_fxn , typename mut_fxn &gt; </di
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a11">juvenile_migration.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a12">juvenile_migration.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00179">179</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00181">181</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
 
 </div>
 </div>
@@ -252,14 +254,14 @@ template&lt;typename fitness_fxn , typename rec_fxn , typename mut_fxn &gt; </di
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a16">juvenile_migration.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a17">juvenile_migration.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00273">273</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00278">278</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
 
 </div>
 </div>
-<a id="a85d7f0dcac0aa14a9f03fb767f94c01b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85d7f0dcac0aa14a9f03fb767f94c01b">&#9670;&nbsp;</a></span>migrate_and_calc_fitness()</h2>
+<a id="ae6353e55fef33e6613d211e12e270c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6353e55fef33e6613d211e12e270c89">&#9670;&nbsp;</a></span>migrate_and_calc_fitness()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +277,7 @@ template&lt;typename fitness_fxn &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">singlepop_t &amp;&#160;</td>
+          <td class="paramtype">diploid_population &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
@@ -287,13 +289,13 @@ template&lt;typename fitness_fxn &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
           <td class="paramname"><em>N1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a>&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a>&#160;</td>
           <td class="paramname"><em>N2</em>, </td>
         </tr>
         <tr>
@@ -315,9 +317,9 @@ template&lt;typename fitness_fxn &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a3">juvenile_migration.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a7">juvenile_migration.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00097">97</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html#l00098">98</a> of file <a class="el" href="../../d8/dd2/juvenile__migration_8cc_source.html">juvenile_migration.cc</a>.</p>
 
 </div>
 </div>

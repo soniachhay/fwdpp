@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -78,13 +78,39 @@ Data Fields</h2></td></tr>
 <tr class="separator:a1ea7232f94cc2ad0ca2bf4cc384b5b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5ccd45dd486c966864a4c7f0d19c1b8"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ab5ccd45dd486c966864a4c7f0d19c1b8">key</a></td></tr>
 <tr class="separator:ab5ccd45dd486c966864a4c7f0d19c1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47adba732ad222020665b32044723d17"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#a47adba732ad222020665b32044723d17">site</a></td></tr>
+<tr class="memdesc:a47adba732ad222020665b32044723d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Row in the site table.  <a href="#a47adba732ad222020665b32044723d17">More...</a><br /></td></tr>
+<tr class="separator:a47adba732ad222020665b32044723d17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9eb01245ddb283039a24a432375676b"><td class="memItemLeft" align="right" valign="top">std::int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ad9eb01245ddb283039a24a432375676b">derived_state</a></td></tr>
+<tr class="memdesc:ad9eb01245ddb283039a24a432375676b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character state of the mutation.  <a href="#ad9eb01245ddb283039a24a432375676b">More...</a><br /></td></tr>
+<tr class="separator:ad9eb01245ddb283039a24a432375676b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a01a62a4c345ce2b120dfaf875ea19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ad0a01a62a4c345ce2b120dfaf875ea19">neutral</a></td></tr>
+<tr class="memdesc:ad0a01a62a4c345ce2b120dfaf875ea19"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if mutation affects fitness, otherwise false.  <a href="#ad0a01a62a4c345ce2b120dfaf875ea19">More...</a><br /></td></tr>
+<tr class="separator:ad0a01a62a4c345ce2b120dfaf875ea19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Tracks mutations on tree sequences. </p><dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a42">spatialts.cc</a>.</dd>
-</dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00011">11</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="ad9eb01245ddb283039a24a432375676b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9eb01245ddb283039a24a432375676b">&#9670;&nbsp;</a></span>derived_state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::int8_t fwdpp::ts::mutation_record::derived_state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Character state of the mutation. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00024">24</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
+
+</div>
+</div>
 <a id="ab5ccd45dd486c966864a4c7f0d19c1b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5ccd45dd486c966864a4c7f0d19c1b8">&#9670;&nbsp;</a></span>key</h2>
 
@@ -97,9 +123,26 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>The index of the mutation in the population's mutation container </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a43">spatialts.cc</a>.</dd>
-</dl>
+
 <p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad0a01a62a4c345ce2b120dfaf875ea19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a01a62a4c345ce2b120dfaf875ea19">&#9670;&nbsp;</a></span>neutral</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool fwdpp::ts::mutation_record::neutral</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>True if mutation affects fitness, otherwise false. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00026">26</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
 
 </div>
 </div>
@@ -117,6 +160,24 @@ Data Fields</h2></td></tr>
 <p>The node to which the mutation is currently simplified </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a47adba732ad222020665b32044723d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47adba732ad222020665b32044723d17">&#9670;&nbsp;</a></span>site</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t fwdpp::ts::mutation_record::site</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Row in the site table. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>.</p>
 
 </div>
 </div>

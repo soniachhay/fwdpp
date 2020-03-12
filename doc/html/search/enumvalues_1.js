@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singleloc',['SINGLELOC',['../de/d6e/group__sugar.html#gga1d6503ae92e610b15644d84ee5379feda0d11f1cd8320d792049f863027f04524',1,'fwdpp::poptypes']]]
+  ['mt19937',['MT19937',['../d4/d17/namespacefwdpp_1_1gsl.html#a707a6f861ac587612e20d20f8a447b76a9628b10562b643bff5d84e6dbf17d866',1,'fwdpp::gsl']]]
 ];

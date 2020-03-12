@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -68,6 +68,9 @@ $(function() {
 <li>above_sample
 : <a class="el" href="d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#ac868646087078cef570b92408f12f8af">fwdpp::ts::marginal_tree</a>
 </li>
+<li>ancestral_state
+: <a class="el" href="d2/d6e/structfwdpp_1_1ts_1_1site.html#a0f72ead57c3c353a780d5718a810bb7a">fwdpp::ts::site</a>
+</li>
 <li>ancient_sample_size
 : <a class="el" href="d1/d38/structoptions.html#ab2483828f71c73f70d840a210100a3b9">options</a>
 </li>
@@ -104,10 +107,14 @@ $(function() {
 </li>
 <li>deme
 : <a class="el" href="d0/d57/structdip__with__deme.html#a8975b7d3d97ebe3090d31e7cc14ed4f0">dip_with_deme</a>
+, <a class="el" href="d5/d4f/structfwdpp_1_1ts_1_1node.html#a472f0ffc48a356dbdbf4f638d556d494">fwdpp::ts::node</a>
+</li>
+<li>derived_state
+: <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ad9eb01245ddb283039a24a432375676b">fwdpp::ts::mutation_record</a>
+, <a class="el" href="db/d6a/structfwdpp_1_1ts_1_1new__variant__record.html#a5116cb17c727838ac75e075873e27e60">fwdpp::ts::new_variant_record</a>
 </li>
 <li>diploids
-: <a class="el" href="d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a1fb3a091d87468acf5a491ab17cb87ea">fwdpp::poptypes::mlocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
-, <a class="el" href="d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a21eb6233de1087dfef4fca9585387eca">fwdpp::poptypes::slocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
+: <a class="el" href="df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#af96844973888479d37697c1f3660af24">fwdpp::poptypes::diploid_population&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
 <li>dominance
 : <a class="el" href="d1/d38/structoptions.html#a8bff73eabca7d182b91a7064e128680e">options</a>
@@ -155,32 +162,20 @@ $(function() {
 : <a class="el" href="d9/df7/structfwdpp_1_1popgenmut.html#a759b617edd18ff727f91f4deac761a9b">fwdpp::popgenmut</a>
 , <a class="el" href="d9/de2/structTwoDmutation.html#ac060731d5247c667962611fb14f661fe">TwoDmutation</a>
 </li>
-<li>gamete1
-: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#a5d19a39faf1d1102804690cae6d866d1">fwdpp::ts::detail::parental_data</a>
-</li>
-<li>gamete2
-: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#af43f838d3a21a82ab1d8ff40c78f214b">fwdpp::ts::detail::parental_data</a>
-</li>
-<li>gamete_recycling_bin
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#ad66e732f1883a5a72379afe5c9a6d29e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
-</li>
-<li>gamete_swapper
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a9e07b715b5b7649fdfe301858f55384d">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
-</li>
-<li>gametes
-: <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a2242ef0468f9254e87e51970c6b335d3">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
-</li>
 <li>gcint
 : <a class="el" href="d1/d38/structoptions.html#add24a8f29a23875d5ea9edb127d12ca3">options</a>
 </li>
 <li>generate_breakpoints
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a13ce50e5e549dd7fe9762ecc115f1f6e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a1481983b55138ce34e1b18b2459aa28b">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
 </li>
 <li>generate_mutations
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#ad64ec9b35878ba2a1212268d84d54e5d">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a78ea8891804549e24241f499b0c3c300">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
+</li>
+<li>group
+: <a class="el" href="dd/d22/structfwdpp_1_1ts_1_1sample__group__map.html#add76a56d84ddef97661402d2d1c2399b">fwdpp::ts::sample_group_map</a>
 </li>
 <li>gvalue
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a951b5daf3bc6cca18435cb1df7ae4fe7">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#aa304d0cb94887d2aef3b143fde552e15">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
 </li>
 <li>gvalue_is_fitness
 : <a class="el" href="de/db8/structfwdpp_1_1additive__diploid.html#a976e7c4d92f6004bf0ed871b838070e5">fwdpp::additive_diploid</a>
@@ -200,6 +195,21 @@ $(function() {
 , <a class="el" href="d9/df7/structfwdpp_1_1popgenmut.html#aaedfb3de6443eca2e141c22a650888fa">fwdpp::popgenmut</a>
 , <a class="el" href="d9/de2/structTwoDmutation.html#a678c00d97084334c743840e5390bcd5d">TwoDmutation</a>
 </li>
+<li>haploid_genome1
+: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#a87159ce9101a3f2ebaacf79f18629632">fwdpp::ts::detail::parental_data</a>
+</li>
+<li>haploid_genome2
+: <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#afd916966d54f86d4a19118769c5717a1">fwdpp::ts::detail::parental_data</a>
+</li>
+<li>haploid_genome_recycling_bin
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a40a9016cc69b3042e1a1fd9725ea078d">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
+</li>
+<li>haploid_genome_swapper
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#ae6a1cc913dcc900e979299a655c7e5bc">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
+</li>
+<li>haploid_genomes
+: <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a12e3b485a56c4599854ba65fdc8b4606">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+</li>
 </ul>
 
 
@@ -215,14 +225,16 @@ $(function() {
 : <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a68c74af73224d6a22abe72386d129c18">fwdpp::ts::table_collection</a>
 </li>
 <li>interlocus_recombination
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a669d3038e72a72931574e97108f707f3">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#af2af9136ab3be7a42c39f2bf18fcfd5c">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_k"></a>- k -</h3><ul>
 <li>key
-: <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ab5ccd45dd486c966864a4c7f0d19c1b8">fwdpp::ts::mutation_record</a>
+: <a class="el" href="d4/d58/structfwdpp_1_1ts_1_1io_1_1backwards__compat_1_1mutation__record__V2.html#a36332cc0eb1f8a9f80a2cd9e7d8baa5d">fwdpp::ts::io::backwards_compat::mutation_record_V2</a>
+, <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ab5ccd45dd486c966864a4c7f0d19c1b8">fwdpp::ts::mutation_record</a>
+, <a class="el" href="db/d6a/structfwdpp_1_1ts_1_1new__variant__record.html#a49f5d96b5ed265fe21ee74b792745588">fwdpp::ts::new_variant_record</a>
 </li>
 </ul>
 
@@ -250,14 +262,11 @@ $(function() {
 <li>left_sib
 : <a class="el" href="d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a57bb1bbb19ddf905d67347dc14c0cb96">fwdpp::ts::marginal_tree</a>
 </li>
-<li>locus_boundaries
-: <a class="el" href="d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a997a0e295c8b1d7b7ec765f8a5f5df55">fwdpp::poptypes::mlocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
-</li>
 <li>lookup1
-: <a class="el" href="d5/db7/structparent__lookup__tables.html#ade0253bccef0157a415847aec569238e">parent_lookup_tables</a>
+: <a class="el" href="d5/db7/structparent__lookup__tables.html#ab8f72ce94dea40c2937f415577d8b4fc">parent_lookup_tables</a>
 </li>
 <li>lookup2
-: <a class="el" href="d5/db7/structparent__lookup__tables.html#aaab04a4613768bbddc33a1279bda44e8">parent_lookup_tables</a>
+: <a class="el" href="d5/db7/structparent__lookup__tables.html#ac78e164b1fa50d198073d1de6c2c151c">parent_lookup_tables</a>
 </li>
 </ul>
 
@@ -270,10 +279,6 @@ $(function() {
 <li>matrix_test
 : <a class="el" href="d1/d38/structoptions.html#ac300408a89c1acce45d9b325a33136d7">options</a>
 </li>
-<li>maxpos
-: <a class="el" href="d1/d21/structfwdpp_1_1poisson__interval.html#a8363f48f273acfb4e6aff2a2d4e94f61">fwdpp::poisson_interval</a>
-, <a class="el" href="d5/d24/structfwdpp_1_1poisson__xover.html#af1302b213f304bf0e409684ff5539c10">fwdpp::poisson_xover</a>
-</li>
 <li>mcounts
 : <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#acb5ac38bc15a099d03e572d8283d2cc3">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
@@ -283,12 +288,7 @@ $(function() {
 <li>mean
 : <a class="el" href="db/d67/structfwdpp_1_1extensions_1_1exponential.html#a20a3ee12441df71038288ad8a5ff04b4">fwdpp::extensions::exponential</a>
 , <a class="el" href="d3/d8f/structfwdpp_1_1extensions_1_1gamma.html#a06186ab040ef6224c48e20dec9b0d40e">fwdpp::extensions::gamma</a>
-, <a class="el" href="d1/d21/structfwdpp_1_1poisson__interval.html#add285baf7ad0dec6f31dbcbede9ff8fd">fwdpp::poisson_interval</a>
 , <a class="el" href="d1/d38/structoptions.html#a33633a6a59c80511461ff621b204c58c">options</a>
-</li>
-<li>minpos
-: <a class="el" href="d1/d21/structfwdpp_1_1poisson__interval.html#abe2f3ad486b6f53c1a0b22b1e5c9b1e4">fwdpp::poisson_interval</a>
-, <a class="el" href="d5/d24/structfwdpp_1_1poisson__xover.html#aa2f4ed677e039d29939a6b8f14d8da3c">fwdpp::poisson_xover</a>
 </li>
 <li>mn
 : <a class="el" href="dc/df9/structfwdpp_1_1extensions_1_1uniform.html#aec86e7d722d01ed3a21e6e8829236825">fwdpp::extensions::uniform</a>
@@ -303,13 +303,13 @@ $(function() {
 : <a class="el" href="d2/d54/structfwdpp_1_1ts_1_1mut__rec__intermediates.html#a49730eda7df9faa464dba423474b4d43">fwdpp::ts::mut_rec_intermediates</a>
 </li>
 <li>mutation_recycling_bin
-: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a8302c47147a8711048272597734b253b">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+: <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#abb00d2dbff1e9437a746504a857c3d4e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
 </li>
 <li>mutation_table
 : <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a373e2d2f46e65f3ff568c9cdf5c4423b">fwdpp::ts::table_collection</a>
 </li>
 <li>mutations
-: <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#ab310eb49826a542afa8ad54715d78ef7">fwdpp::gamete_base&lt; TAG &gt;</a>
+: <a class="el" href="dd/d40/structfwdpp_1_1haploid__genome__base.html#a066c9417455855cb0f04f0540d97f3bb">fwdpp::haploid_genome_base&lt; TAG &gt;</a>
 , <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a93ce99c942032d46f9d4efc5d913ddc5">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
 <li>mx
@@ -320,11 +320,10 @@ $(function() {
 
 <h3><a id="index_n"></a>- n -</h3><ul>
 <li>n
-: <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#acfa4da6a6968893e41388f342d0d6084">fwdpp::gamete_base&lt; TAG &gt;</a>
+: <a class="el" href="dd/d40/structfwdpp_1_1haploid__genome__base.html#a736c696c2aa73d4328b3c364e200d61d">fwdpp::haploid_genome_base&lt; TAG &gt;</a>
 </li>
 <li>N
-: <a class="el" href="d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a1b9842806a760c06bc9e48c9837fda8e">fwdpp::poptypes::mlocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
-, <a class="el" href="d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#aee80c14b11e8e49b92274f250ee1ced3">fwdpp::poptypes::slocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
+: <a class="el" href="df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#a869e81dd7821f4274356ae10c7d30bea">fwdpp::poptypes::diploid_population&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;</a>
 , <a class="el" href="d1/d38/structoptions.html#a193e541b88f504b494a604d25107f77f">options</a>
 </li>
 <li>n1
@@ -338,9 +337,11 @@ $(function() {
 </li>
 <li>neutral
 : <a class="el" href="dd/d3a/structfwdpp_1_1data__matrix.html#a4bfd198391a6d20c0556216e6e1db602">fwdpp::data_matrix</a>
-, <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a963a70c828076e97be2f79699de4af5e">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
+, <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#af90ffa1932c61c8f7aee09d450ef6d74">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
 , <a class="el" href="da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a">fwdpp::mutation_base</a>
-, <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a94017106151aa2b9553fb836fcd17035">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+, <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#acb0a30e072ab247d4d5f453781c8ed73">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+, <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#ad0a01a62a4c345ce2b120dfaf875ea19">fwdpp::ts::mutation_record</a>
+, <a class="el" href="db/d6a/structfwdpp_1_1ts_1_1new__variant__record.html#aa7d0d18aeabbf1d6d7fd48d32a67f119">fwdpp::ts::new_variant_record</a>
 </li>
 <li>neutral_keys
 : <a class="el" href="dd/d3a/structfwdpp_1_1data__matrix.html#a2df387dc1fd63e825dc043b870992cbe">fwdpp::data_matrix</a>
@@ -349,7 +350,11 @@ $(function() {
 : <a class="el" href="d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a85af616636aa3d107fdea9eaab751e18">fwdpp::ts::marginal_tree</a>
 </li>
 <li>node
-: <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#a1ea7232f94cc2ad0ca2bf4cc384b5b8b">fwdpp::ts::mutation_record</a>
+: <a class="el" href="d4/d58/structfwdpp_1_1ts_1_1io_1_1backwards__compat_1_1mutation__record__V2.html#aa520e7a5dbeb03f4b17aaeddba3087b6">fwdpp::ts::io::backwards_compat::mutation_record_V2</a>
+, <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#a1ea7232f94cc2ad0ca2bf4cc384b5b8b">fwdpp::ts::mutation_record</a>
+</li>
+<li>node_id
+: <a class="el" href="dd/d22/structfwdpp_1_1ts_1_1sample__group__map.html#aa0e9d2c44ad894948f06cb628c953882">fwdpp::ts::sample_group_map</a>
 </li>
 <li>node_table
 : <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a7fda2b421c6a9d12960d3ef9d19e8960">fwdpp::ts::table_collection</a>
@@ -381,13 +386,12 @@ $(function() {
 <li>parents2
 : <a class="el" href="d5/db7/structparent__lookup__tables.html#a169ac3802d6644f721353bd0b86e883f">parent_lookup_tables</a>
 </li>
-<li>population
-: <a class="el" href="d5/d4f/structfwdpp_1_1ts_1_1node.html#afce4e6ae33d6213d88823a61628a7460">fwdpp::ts::node</a>
-</li>
 <li>pos
-: <a class="el" href="d2/de2/structfwdpp_1_1crossover__point.html#a6ed918f2401b9238ac9bfd00fbe52361">fwdpp::crossover_point</a>
-, <a class="el" href="da/dca/structfwdpp_1_1mutation__base.html#a131113b98f746b23d090f23ebd3ca215">fwdpp::mutation_base</a>
+: <a class="el" href="da/dca/structfwdpp_1_1mutation__base.html#a131113b98f746b23d090f23ebd3ca215">fwdpp::mutation_base</a>
 , <a class="el" href="d6/d1b/structfwdpp_1_1ts_1_1indexed__edge.html#ab387b41e621f83e55dd3e043299380fb">fwdpp::ts::indexed_edge</a>
+</li>
+<li>position
+: <a class="el" href="d2/d6e/structfwdpp_1_1ts_1_1site.html#acd2723135d2602c69d76ccb2928c4639">fwdpp::ts::site</a>
 </li>
 <li>positions
 : <a class="el" href="db/d87/structfwdpp_1_1state__matrix.html#a3759c48a34b2b133e9462f16f667fda5">fwdpp::state_matrix</a>
@@ -401,9 +405,6 @@ $(function() {
 <li>preserved_nodes
 : <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ac24c1a7e57265cd9dbaa6dbcf0981802">fwdpp::ts::table_collection</a>
 </li>
-<li>prob
-: <a class="el" href="d2/de2/structfwdpp_1_1crossover__point.html#afb52611dfddd6217e9a1c21ae41bb0c8">fwdpp::crossover_point</a>
-</li>
 </ul>
 
 
@@ -411,9 +412,6 @@ $(function() {
 <li>reader
 : <a class="el" href="de/df6/structfwdpp_1_1io_1_1deserialize__mutation_3_01popgenmut_01_4.html#aa1005317957b956c3b1ca3064d967b0a">fwdpp::io::deserialize_mutation&lt; popgenmut &gt;</a>
 , <a class="el" href="d6/d2f/structfwdpp_1_1io_1_1deserialize__mutation_3_01TwoDmutation_01_4.html#a591a543856e631fc084bf0d283d33d29">fwdpp::io::deserialize_mutation&lt; TwoDmutation &gt;</a>
-</li>
-<li>recrate
-: <a class="el" href="d5/d24/structfwdpp_1_1poisson__xover.html#a03f0b795c0c95e0adec1c303697f7f12">fwdpp::poisson_xover</a>
 </li>
 <li>rho
 : <a class="el" href="d1/d38/structoptions.html#a7212a932885e21e35d86c836b5d4734a">options</a>
@@ -439,13 +437,11 @@ $(function() {
 : <a class="el" href="db/d90/structfwdpp_1_1extensions_1_1shmodel.html#ada2f6c80bdd91edfbc8120848f09edef">fwdpp::extensions::shmodel</a>
 , <a class="el" href="d6/d8e/structfwdpp_1_1mutation.html#a8560bee176a1fee2f5023b5ff3d087c7">fwdpp::mutation</a>
 , <a class="el" href="d9/df7/structfwdpp_1_1popgenmut.html#ae5689b774f75287cbce1dad57ade5d73">fwdpp::popgenmut</a>
+, <a class="el" href="db/d6a/structfwdpp_1_1ts_1_1new__variant__record.html#aaffdd3cdc5ec2c790a9c26b562df3a88">fwdpp::ts::new_variant_record</a>
 , <a class="el" href="d9/de2/structTwoDmutation.html#a8ee28f6baa9645bf7156f51a613a0246">TwoDmutation</a>
 </li>
 <li>sample_index_map
 : <a class="el" href="d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a9b0c90754b3de98ab567e282384775ca">fwdpp::ts::marginal_tree</a>
-</li>
-<li>sample_size
-: <a class="el" href="d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#ab874dd52bfda473cde81387943c118e7">fwdpp::ts::marginal_tree</a>
 </li>
 <li>scaling
 : <a class="el" href="de/db8/structfwdpp_1_1additive__diploid.html#a39474c4c6dc24e41f0c0024e0dacedc6">fwdpp::additive_diploid</a>
@@ -466,8 +462,8 @@ $(function() {
 </li>
 <li>selected
 : <a class="el" href="dd/d3a/structfwdpp_1_1data__matrix.html#a43f74751b035eb702bf6447c219a20eb">fwdpp::data_matrix</a>
-, <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a925f3dbee13c145d87fdbdbaa2df56f1">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a>
-, <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aff3657aaabefad0a6d6bec986c3713d2">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
+, <a class="el" href="da/db0/structfwdpp_1_1genetic__parameters.html#a134bea9e5deb6a57dc038ee1cacd6c64">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a>
+, <a class="el" href="df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aed1d294e53c771a5372c1e8f45679216">fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;</a>
 </li>
 <li>selected_keys
 : <a class="el" href="dd/d3a/structfwdpp_1_1data__matrix.html#aee2bf3cd900b96e442fc789763a7b721">fwdpp::data_matrix</a>
@@ -479,8 +475,14 @@ $(function() {
 : <a class="el" href="d3/d8f/structfwdpp_1_1extensions_1_1gamma.html#a86121d9a8f8fde48904a2682f66ab68e">fwdpp::extensions::gamma</a>
 , <a class="el" href="d1/d38/structoptions.html#aa16a8f141878c6697f73a1661d6472e3">options</a>
 </li>
+<li>site
+: <a class="el" href="d4/d5e/structfwdpp_1_1ts_1_1mutation__record.html#a47adba732ad222020665b32044723d17">fwdpp::ts::mutation_record</a>
+</li>
+<li>site_table
+: <a class="el" href="d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ab57cb4bd25ba76000bc6971a3ee9c705">fwdpp::ts::table_collection</a>
+</li>
 <li>smutations
-: <a class="el" href="d5/dd3/structfwdpp_1_1gamete__base.html#ac3454ab1882a545b49cc6990ca8852ec">fwdpp::gamete_base&lt; TAG &gt;</a>
+: <a class="el" href="dd/d40/structfwdpp_1_1haploid__genome__base.html#ae4ec6fcdf87672f149f472f09d827800">fwdpp::haploid_genome_base&lt; TAG &gt;</a>
 </li>
 <li>swapped
 : <a class="el" href="db/ded/structfwdpp_1_1ts_1_1detail_1_1parental__data.html#ae1a47f1369ab57b7a74c1bdd4fe6e7f3">fwdpp::ts::detail::parental_data</a>
@@ -497,6 +499,13 @@ $(function() {
 : <a class="el" href="d9/dde/structdiploid__metadata.html#a55feb6d06760884ea60d1dcf9493da4b">diploid_metadata</a>
 , <a class="el" href="d6/d1b/structfwdpp_1_1ts_1_1indexed__edge.html#a25b6b5924ea1ce12bfe549399a4647c8">fwdpp::ts::indexed_edge</a>
 , <a class="el" href="d5/d4f/structfwdpp_1_1ts_1_1node.html#af33e54bafaa19bc698a68d863c0b5ad0">fwdpp::ts::node</a>
+</li>
+</ul>
+
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>visit_sites_test
+: <a class="el" href="d1/d38/structoptions.html#a4b7799da14fb612a04d6b78f164d5014">options</a>
 </li>
 </ul>
 

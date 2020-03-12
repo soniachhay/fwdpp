@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -72,34 +72,34 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac09e15d20d447337e22a850b3b542857"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
-<tr class="memitem:ac09e15d20d447337e22a850b3b542857"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857">validate_sum_gamete_counts</a> (const gcont_t &amp;gametes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> expected_sum)</td></tr>
-<tr class="memdesc:ac09e15d20d447337e22a850b3b542857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception if sum of all gamete counts != <em>expected_sum</em>.  <a href="#ac09e15d20d447337e22a850b3b542857">More...</a><br /></td></tr>
-<tr class="separator:ac09e15d20d447337e22a850b3b542857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769791e300ff38a0715a58d27c736f20"><td class="memTemplParams" colspan="2">template&lt;typename gcont_t &gt; </td></tr>
+<tr class="memitem:a769791e300ff38a0715a58d27c736f20"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a769791e300ff38a0715a58d27c736f20">validate_sum_haploid_genome_counts</a> (const gcont_t &amp;haploid_genomes, const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> expected_sum)</td></tr>
+<tr class="memdesc:a769791e300ff38a0715a58d27c736f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception if sum of all haploid_genome counts != <em>expected_sum</em>.  <a href="#a769791e300ff38a0715a58d27c736f20">More...</a><br /></td></tr>
+<tr class="separator:a769791e300ff38a0715a58d27c736f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ecaf182efa8db74f6624ed931f38306"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename iterator &gt; </td></tr>
 <tr class="memitem:a6ecaf182efa8db74f6624ed931f38306"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a6ecaf182efa8db74f6624ed931f38306">validate_mutation_key_ranges</a> (const mcont_t &amp;mutations, const iterator beg, const iterator <a class="el" href="../../dd/d84/namespacefwdpp.html#a164c663683a6258a82badcfb90671b73">end</a>)</td></tr>
 <tr class="separator:a6ecaf182efa8db74f6624ed931f38306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa56f44a22f16969cd93521ae1e501106"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t &gt; </td></tr>
-<tr class="memitem:aa56f44a22f16969cd93521ae1e501106"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#aa56f44a22f16969cd93521ae1e501106">gamete_is_extant</a> (const gamete_t &amp;<a class="el" href="../../dd/d84/namespacefwdpp.html#a6778d8e78d8f7fbb77356e5fdb7fb832">gamete</a>)</td></tr>
-<tr class="memdesc:aa56f44a22f16969cd93521ae1e501106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception of <a class="el" href="../../d5/dd3/structfwdpp_1_1gamete__base.html#acfa4da6a6968893e41388f342d0d6084" title="Count in population. ">gamete.n</a> == 0.  <a href="#aa56f44a22f16969cd93521ae1e501106">More...</a><br /></td></tr>
-<tr class="separator:aa56f44a22f16969cd93521ae1e501106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a2d321aa5d4ecd44a86587eaff11a5bf5">gamete_is_sorted</a> (const gamete_t &amp;g, const mcont_t &amp;mutations)</td></tr>
-<tr class="memdesc:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that neutral mutation keys are sorted according to mutation position.  <a href="#a2d321aa5d4ecd44a86587eaff11a5bf5">More...</a><br /></td></tr>
-<tr class="separator:a2d321aa5d4ecd44a86587eaff11a5bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memTemplParams" colspan="2">template&lt;typename gamete_t , typename mcont_t &gt; </td></tr>
-<tr class="memitem:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ad7102a362ae959c52fd2cfbb91295b0e">gamete_data_valid</a> (const gamete_t &amp;g, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &amp;mutcounts)</td></tr>
-<tr class="separator:ad7102a362ae959c52fd2cfbb91295b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f2b53f88912f4ddec35c5f64252281"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genome_t &gt; </td></tr>
+<tr class="memitem:a60f2b53f88912f4ddec35c5f64252281"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a60f2b53f88912f4ddec35c5f64252281">haploid_genome_is_extant</a> (const haploid_genome_t &amp;<a class="el" href="../../dd/d84/namespacefwdpp.html#a4734dca3a8f9d8fb611200b883bbbe15">haploid_genome</a>)</td></tr>
+<tr class="memdesc:a60f2b53f88912f4ddec35c5f64252281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception of <a class="el" href="../../dd/d40/structfwdpp_1_1haploid__genome__base.html#a736c696c2aa73d4328b3c364e200d61d" title="Count in population. ">haploid_genome.n</a> == 0.  <a href="#a60f2b53f88912f4ddec35c5f64252281">More...</a><br /></td></tr>
+<tr class="separator:a60f2b53f88912f4ddec35c5f64252281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5b9b5bae9300425aa3bdc9a5a35e65"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genome_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:a0b5b9b5bae9300425aa3bdc9a5a35e65"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a0b5b9b5bae9300425aa3bdc9a5a35e65">haploid_genome_is_sorted</a> (const haploid_genome_t &amp;g, const mcont_t &amp;mutations)</td></tr>
+<tr class="memdesc:a0b5b9b5bae9300425aa3bdc9a5a35e65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that neutral mutation keys are sorted according to mutation position.  <a href="#a0b5b9b5bae9300425aa3bdc9a5a35e65">More...</a><br /></td></tr>
+<tr class="separator:a0b5b9b5bae9300425aa3bdc9a5a35e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9299f1e78ba911c59531b1858ce36df"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genome_t , typename mcont_t &gt; </td></tr>
+<tr class="memitem:ac9299f1e78ba911c59531b1858ce36df"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ac9299f1e78ba911c59531b1858ce36df">haploid_genome_data_valid</a> (const haploid_genome_t &amp;g, const mcont_t &amp;mutations, const std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &amp;mutcounts)</td></tr>
+<tr class="separator:ac9299f1e78ba911c59531b1858ce36df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e">validate_pop_data</a> (const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop)</td></tr>
+<tr class="memitem:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e">validate_pop_data</a> (const <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;pop)</td></tr>
 <tr class="separator:ab64d2889e2f8eeb62d6b399885b1ed3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93fe459a07e08d3fb6f200d261c40ede"><td class="memTemplParams" colspan="2">template&lt;typename mutation_type &gt; </td></tr>
 <tr class="memitem:a93fe459a07e08d3fb6f200d261c40ede"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a93fe459a07e08d3fb6f200d261c40ede">check_mutation_neutrality</a> (const mutation_type &amp;<a class="el" href="../../d6/d8e/structfwdpp_1_1mutation.html">mutation</a>, const bool expected_neutrality)</td></tr>
 <tr class="memdesc:a93fe459a07e08d3fb6f200d261c40ede"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throw exception if <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation.neutral</a> != <em>expected_neutrality</em>.  <a href="#a93fe459a07e08d3fb6f200d261c40ede">More...</a><br /></td></tr>
 <tr class="separator:a93fe459a07e08d3fb6f200d261c40ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8bd40d0c898eb8868d5444f68981ea2"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:ac8bd40d0c898eb8868d5444f68981ea2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#ac8bd40d0c898eb8868d5444f68981ea2">all_gametes_extant</a> (const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop)</td></tr>
-<tr class="separator:ac8bd40d0c898eb8868d5444f68981ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ce2eaed6833329408badd7fb0dbb5f"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
+<tr class="memitem:a91ce2eaed6833329408badd7fb0dbb5f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html#a91ce2eaed6833329408badd7fb0dbb5f">all_haploid_genomes_extant</a> (const <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;pop)</td></tr>
+<tr class="separator:a91ce2eaed6833329408badd7fb0dbb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Debugging routines In general, the library does not throw exceptions during the execution of simulation-related algorithms. Rather, exception handling is limited to sanity-checking parameters inputs, etc., for object construction and other routines.</p>
@@ -108,8 +108,8 @@ Functions</h2></td></tr>
 <p>If that symbol is not defined, then various runtime checks are enabled, and any failed checks with throw std::runtime_error. The message field of the error will begin with "FWDPP DEBUG:".</p>
 <p>Functions in namespace <a class="el" href="../../d0/d70/namespacefwdpp_1_1debug.html">fwdpp::debug</a> will be optimized out when code is compiled with -DNDEBUG, as they evaluate to empty functions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac8bd40d0c898eb8868d5444f68981ea2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8bd40d0c898eb8868d5444f68981ea2">&#9670;&nbsp;</a></span>all_gametes_extant()</h2>
+<a id="a91ce2eaed6833329408badd7fb0dbb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ce2eaed6833329408badd7fb0dbb5f">&#9670;&nbsp;</a></span>all_haploid_genomes_extant()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,17 +117,17 @@ Functions</h2></td></tr>
 template&lt;typename poptype &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void fwdpp::debug::all_gametes_extant </td>
+          <td class="memname">void fwdpp::debug::all_haploid_genomes_extant </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Throw exception if gametes contain keys to extinct gametes </p><dl class="section version"><dt>Version</dt><dd>0.7.4 Added to fwdpp </dd></dl>
+<p>Throw exception if haploid_genomes contain keys to extinct haploid_genomes </p><dl class="section version"><dt>Version</dt><dd>0.7.4 Added to fwdpp </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00109">109</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00112">112</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -161,22 +161,22 @@ template&lt;typename mutation_type &gt; </div>
 
 <p>Throw exception if <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation.neutral</a> != <em>expected_neutrality</em>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ad7102a362ae959c52fd2cfbb91295b0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7102a362ae959c52fd2cfbb91295b0e">&#9670;&nbsp;</a></span>gamete_data_valid()</h2>
+<a id="ac9299f1e78ba911c59531b1858ce36df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9299f1e78ba911c59531b1858ce36df">&#9670;&nbsp;</a></span>haploid_genome_data_valid()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_t , typename mcont_t &gt; </div>
+template&lt;typename haploid_genome_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void fwdpp::debug::gamete_data_valid </td>
+          <td class="memname">void fwdpp::debug::haploid_genome_data_valid </td>
           <td>(</td>
-          <td class="paramtype">const gamete_t &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_t &amp;&#160;</td>
           <td class="paramname"><em>g</em>, </td>
         </tr>
         <tr>
@@ -198,48 +198,48 @@ template&lt;typename gamete_t , typename mcont_t &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Throw exception if gamete data are unsorted or if mutation key storage is invalid. </p><dl class="section note"><dt>Note</dt><dd>Only call this if the gamete is extant!!!! </dd></dl>
+<p>Throw exception if haploid_genome data are unsorted or if mutation key storage is invalid. </p><dl class="section note"><dt>Note</dt><dd>Only call this if the haploid_genome is extant!!!! </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00079">79</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aa56f44a22f16969cd93521ae1e501106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa56f44a22f16969cd93521ae1e501106">&#9670;&nbsp;</a></span>gamete_is_extant()</h2>
+<a id="a60f2b53f88912f4ddec35c5f64252281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f2b53f88912f4ddec35c5f64252281">&#9670;&nbsp;</a></span>haploid_genome_is_extant()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_t &gt; </div>
+template&lt;typename haploid_genome_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void fwdpp::debug::gamete_is_extant </td>
+          <td class="memname">void fwdpp::debug::haploid_genome_is_extant </td>
           <td>(</td>
-          <td class="paramtype">const gamete_t &amp;&#160;</td>
-          <td class="paramname"><em>gamete</em></td><td>)</td>
+          <td class="paramtype">const haploid_genome_t &amp;&#160;</td>
+          <td class="paramname"><em>haploid_genome</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Throw exception of <a class="el" href="../../d5/dd3/structfwdpp_1_1gamete__base.html#acfa4da6a6968893e41388f342d0d6084" title="Count in population. ">gamete.n</a> == 0. </p>
+<p>Throw exception of <a class="el" href="../../dd/d40/structfwdpp_1_1haploid__genome__base.html#a736c696c2aa73d4328b3c364e200d61d" title="Count in population. ">haploid_genome.n</a> == 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00059">59</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2d321aa5d4ecd44a86587eaff11a5bf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d321aa5d4ecd44a86587eaff11a5bf5">&#9670;&nbsp;</a></span>gamete_is_sorted()</h2>
+<a id="a0b5b9b5bae9300425aa3bdc9a5a35e65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b5b9b5bae9300425aa3bdc9a5a35e65">&#9670;&nbsp;</a></span>haploid_genome_is_sorted()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_t , typename mcont_t &gt; </div>
+template&lt;typename haploid_genome_t , typename mcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void fwdpp::debug::gamete_is_sorted </td>
+          <td class="memname">void fwdpp::debug::haploid_genome_is_sorted </td>
           <td>(</td>
-          <td class="paramtype">const gamete_t &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_t &amp;&#160;</td>
           <td class="paramname"><em>g</em>, </td>
         </tr>
         <tr>
@@ -258,7 +258,7 @@ template&lt;typename gamete_t , typename mcont_t &gt; </div>
 
 <p>Check that neutral mutation keys are sorted according to mutation position. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00067">67</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +297,7 @@ template&lt;typename mcont_t , typename iterator &gt; </div>
 </div><div class="memdoc">
 <p>Throw an exception if any mutation keys are &gt;= mutations.size() </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
@@ -312,21 +312,21 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td class="memname">void fwdpp::debug::validate_pop_data </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Throw exception if any in a series of checks on the internal state of <em>pop</em> fail. </p><dl class="section note"><dt>Note</dt><dd>This is an expensive function! </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a13">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a15">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a15">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#a15">K_linked_regions_generalized_rec.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a13">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a16">juvenile_migration.cc</a>, and <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a15">K_linked_regions_extensions.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 
 </div>
 </div>
-<a id="ac09e15d20d447337e22a850b3b542857"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac09e15d20d447337e22a850b3b542857">&#9670;&nbsp;</a></span>validate_sum_gamete_counts()</h2>
+<a id="a769791e300ff38a0715a58d27c736f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769791e300ff38a0715a58d27c736f20">&#9670;&nbsp;</a></span>validate_sum_haploid_genome_counts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,10 +334,10 @@ template&lt;typename poptype &gt; </div>
 template&lt;typename gcont_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void fwdpp::debug::validate_sum_gamete_counts </td>
+          <td class="memname">void fwdpp::debug::validate_sum_haploid_genome_counts </td>
           <td>(</td>
           <td class="paramtype">const gcont_t &amp;&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
+          <td class="paramname"><em>haploid_genomes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -353,8 +353,8 @@ template&lt;typename gcont_t &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Throw exception if sum of all gamete counts != <em>expected_sum</em>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a13">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a14">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a14">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a14">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#a14">K_linked_regions_generalized_rec.cc</a>.</dd>
+<p>Throw exception if sum of all haploid_genome counts != <em>expected_sum</em>. </p>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a13">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a14">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a15">juvenile_migration.cc</a>, and <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a14">K_linked_regions_extensions.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../da/d7b/debug_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../da/d7b/debug_8hpp_source.html">debug.hpp</a>.</p>
 

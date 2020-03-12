@@ -5,5 +5,7 @@ var searchData=
   ['update_5fmutations',['update_mutations',['../dd/d84/namespacefwdpp.html#a352d11e92d583a54b2fc7559a6611e06',1,'fwdpp::update_mutations(mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned twoN)'],['../dd/d84/namespacefwdpp.html#a6c1d4e8e5f6f81e14a76c148357c1e7b',1,'fwdpp::update_mutations(const mcont_t &amp;mutations, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts)'],['../dd/d84/namespacefwdpp.html#a4aff36dc680cdc313f9e6d556454252d',1,'fwdpp::update_mutations(mcont_t &amp;mutations, fixation_container_t &amp;fixations, fixation_time_container_t &amp;fixation_times, mutation_lookup_table &amp;lookup, std::vector&lt; uint_t &gt; &amp;mcounts, const unsigned &amp;generation, const unsigned &amp;twoN)']]],
   ['update_5fmutations_5fn',['update_mutations_n',['../dd/d84/namespacefwdpp.html#a7975e420a9780bd0b75c10b89dcd4a42',1,'fwdpp']]],
   ['update_5foffset',['update_offset',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#ad616e2b54e2b976665332a57cff8c450',1,'fwdpp::ts::table_collection']]],
+  ['update_5fsamples_5flist',['update_samples_list',['../d8/d31/namespacefwdpp_1_1ts.html#a032633feb419313c220ff0fd18d3a594',1,'fwdpp::ts']]],
+  ['update_5fsamples_5flist_5ft',['update_samples_list_t',['../d1/dfc/structfwdpp_1_1ts_1_1update__samples__list__t.html',1,'fwdpp::ts']]],
   ['util_2ehpp',['util.hpp',['../d0/d3f/util_8hpp.html',1,'']]]
 ];

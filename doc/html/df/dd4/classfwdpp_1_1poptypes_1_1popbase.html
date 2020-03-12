@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -83,8 +83,7 @@ Inheritance diagram for fwdpp::poptypes::popbase&lt; mutation_type, mcont, gcont
  <div class="center">
   <img src="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.png" usemap="#fwdpp::poptypes::popbase_3C_20mutation_5Ftype_2C_20mcont_2C_20gcont_2C_20mvector_2C_20ftvector_2C_20lookup_5Ftable_5Ftype_20_3E_map" alt=""/>
   <map id="fwdpp::poptypes::popbase_3C_20mutation_5Ftype_2C_20mcont_2C_20gcont_2C_20mvector_2C_20ftvector_2C_20lookup_5Ftable_5Ftype_20_3E_map" name="fwdpp::poptypes::popbase_3C_20mutation_5Ftype_2C_20mcont_2C_20gcont_2C_20mvector_2C_20ftvector_2C_20lookup_5Ftable_5Ftype_20_3E_map">
-<area href="../../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html" title="Abstraction of what is needed to simulate a multilocus simulation using an individual-based sampler f..." alt="fwdpp::poptypes::mlocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="0,56,631,80"/>
-<area href="../../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html" title="Abstraction of what is needed to simulate a single-locus population. " alt="fwdpp::poptypes::slocuspop&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="641,56,1272,80"/>
+<area href="../../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html" title="Abstraction of what is needed to simulate a single-locus population. " alt="fwdpp::poptypes::diploid_population&lt; mutation_type, mcont, gcont, dipvector, mvector, ftvector, lookup_table_type &gt;" shape="rect" coords="0,56,673,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -93,9 +92,9 @@ Public Types</h2></td></tr>
 <tr class="memitem:aaafbbb56fa2348d916543bc7f605211e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aaafbbb56fa2348d916543bc7f605211e">mutation_t</a> = mutation_type</td></tr>
 <tr class="memdesc:aaafbbb56fa2348d916543bc7f605211e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation type.  <a href="#aaafbbb56fa2348d916543bc7f605211e">More...</a><br /></td></tr>
 <tr class="separator:aaafbbb56fa2348d916543bc7f605211e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09c154876da38efc81a5b81d5e883232"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a09c154876da38efc81a5b81d5e883232">gamete_t</a> = typename gcont::value_type</td></tr>
-<tr class="memdesc:a09c154876da38efc81a5b81d5e883232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#a09c154876da38efc81a5b81d5e883232">More...</a><br /></td></tr>
-<tr class="separator:a09c154876da38efc81a5b81d5e883232"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5269b0880f5896b33709760f4995ea2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#af5269b0880f5896b33709760f4995ea2">haploid_genome_t</a> = typename gcont::value_type</td></tr>
+<tr class="memdesc:af5269b0880f5896b33709760f4995ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gamete type.  <a href="#af5269b0880f5896b33709760f4995ea2">More...</a><br /></td></tr>
+<tr class="separator:af5269b0880f5896b33709760f4995ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a306f384f3deb489efc73d3105814161d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a306f384f3deb489efc73d3105814161d">mcont_t</a> = mcont</td></tr>
 <tr class="memdesc:a306f384f3deb489efc73d3105814161d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutation vec type.  <a href="#a306f384f3deb489efc73d3105814161d">More...</a><br /></td></tr>
 <tr class="separator:a306f384f3deb489efc73d3105814161d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,12 +126,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1c73a40cac64a5816810e2524b2e0375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae32a1f5901e3f99b3d5d92288ab4131d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">popbase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#ae32a1f5901e3f99b3d5d92288ab4131d">operator=</a> (const <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">popbase</a> &amp;)=default</td></tr>
 <tr class="separator:ae32a1f5901e3f99b3d5d92288ab4131d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86376905a7f60e2c505309c753bf6659"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a86376905a7f60e2c505309c753bf6659">popbase</a> (const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &amp;initial_gamete_count, typename gamete_t::mutation_container::size_type reserve_size=100)</td></tr>
-<tr class="memdesc:a86376905a7f60e2c505309c753bf6659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a86376905a7f60e2c505309c753bf6659">More...</a><br /></td></tr>
-<tr class="separator:a86376905a7f60e2c505309c753bf6659"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9443c1aa675b2c7ddfb4557a4671a75a"><td class="memTemplParams" colspan="2">template&lt;typename gametes_input , typename mutations_input &gt; </td></tr>
-<tr class="memitem:a9443c1aa675b2c7ddfb4557a4671a75a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a9443c1aa675b2c7ddfb4557a4671a75a">popbase</a> (gametes_input &amp;&amp;g, mutations_input &amp;&amp;m, typename gamete_t::mutation_container::size_type reserve_size)</td></tr>
-<tr class="separator:a9443c1aa675b2c7ddfb4557a4671a75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6234ba5f5b4e8294a10ae9b7107f220f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a6234ba5f5b4e8294a10ae9b7107f220f">popbase</a> (const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &amp;initial_haploid_genome_count, typename haploid_genome_t::mutation_container::size_type reserve_size=100)</td></tr>
+<tr class="memdesc:a6234ba5f5b4e8294a10ae9b7107f220f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a6234ba5f5b4e8294a10ae9b7107f220f">More...</a><br /></td></tr>
+<tr class="separator:a6234ba5f5b4e8294a10ae9b7107f220f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826fef2cccf6071bda9da42ccdda304f"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genomes_input , typename mutations_input &gt; </td></tr>
+<tr class="memitem:a826fef2cccf6071bda9da42ccdda304f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a826fef2cccf6071bda9da42ccdda304f">popbase</a> (haploid_genomes_input &amp;&amp;g, mutations_input &amp;&amp;m, typename haploid_genome_t::mutation_container::size_type reserve_size)</td></tr>
+<tr class="separator:a826fef2cccf6071bda9da42ccdda304f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c74229f3c3258958dc5b33f04039f77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a5c74229f3c3258958dc5b33f04039f77">is_equal</a> (const <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">popbase</a> &amp;rhs) const</td></tr>
 <tr class="separator:a5c74229f3c3258958dc5b33f04039f77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dd59d200d0127fea88094e3ff508e52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a7dd59d200d0127fea88094e3ff508e52">clear_containers</a> ()</td></tr>
@@ -148,13 +147,13 @@ Data Fields</h2></td></tr>
 <tr class="separator:acb5ac38bc15a099d03e572d8283d2cc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92e6bde6ba68760ad082fb2be82ce249"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a745a3344ec24216e4862327aa2151359">mcount_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a92e6bde6ba68760ad082fb2be82ce249">mcounts_from_preserved_nodes</a></td></tr>
 <tr class="separator:a92e6bde6ba68760ad082fb2be82ce249"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2242ef0468f9254e87e51970c6b335d3"><td class="memItemLeft" align="right" valign="top">gcont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a2242ef0468f9254e87e51970c6b335d3">gametes</a></td></tr>
-<tr class="memdesc:a2242ef0468f9254e87e51970c6b335d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of gametes.  <a href="#a2242ef0468f9254e87e51970c6b335d3">More...</a><br /></td></tr>
-<tr class="separator:a2242ef0468f9254e87e51970c6b335d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94017106151aa2b9553fb836fcd17035"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">gamete_t::mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a94017106151aa2b9553fb836fcd17035">neutral</a></td></tr>
-<tr class="separator:a94017106151aa2b9553fb836fcd17035"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff3657aaabefad0a6d6bec986c3713d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">gamete_t::mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aff3657aaabefad0a6d6bec986c3713d2">selected</a></td></tr>
-<tr class="separator:aff3657aaabefad0a6d6bec986c3713d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e3b485a56c4599854ba65fdc8b4606"><td class="memItemLeft" align="right" valign="top">gcont&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a12e3b485a56c4599854ba65fdc8b4606">haploid_genomes</a></td></tr>
+<tr class="memdesc:a12e3b485a56c4599854ba65fdc8b4606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Container of haploid_genomes.  <a href="#a12e3b485a56c4599854ba65fdc8b4606">More...</a><br /></td></tr>
+<tr class="separator:a12e3b485a56c4599854ba65fdc8b4606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb0a30e072ab247d4d5f453781c8ed73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">haploid_genome_t::mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#acb0a30e072ab247d4d5f453781c8ed73">neutral</a></td></tr>
+<tr class="separator:acb0a30e072ab247d4d5f453781c8ed73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1d294e53c771a5372c1e8f45679216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">haploid_genome_t::mutation_container</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aed1d294e53c771a5372c1e8f45679216">selected</a></td></tr>
+<tr class="separator:aed1d294e53c771a5372c1e8f45679216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a718701e40dac1a81ccc614e82be81593"><td class="memItemLeft" align="right" valign="top">lookup_table_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a718701e40dac1a81ccc614e82be81593">mut_lookup</a></td></tr>
 <tr class="memdesc:a718701e40dac1a81ccc614e82be81593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used to track positions of segregating mutations.  <a href="#a718701e40dac1a81ccc614e82be81593">More...</a><br /></td></tr>
 <tr class="separator:a718701e40dac1a81ccc614e82be81593"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,8 +168,8 @@ Data Fields</h2></td></tr>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8931fae22695fd88d573650f9a999de1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a8931fae22695fd88d573650f9a999de1">validate_individual_keys</a> (const std::size_t key)</td></tr>
 <tr class="separator:a8931fae22695fd88d573650f9a999de1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4eb0813e0d8a764e99b3e619a2f4f83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#aa4eb0813e0d8a764e99b3e619a2f4f83">validate_gamete_counts</a> (const std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &amp;gcounts)</td></tr>
-<tr class="separator:aa4eb0813e0d8a764e99b3e619a2f4f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3662d26e2f5b0ec570cb55eb3661c251"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a3662d26e2f5b0ec570cb55eb3661c251">validate_haploid_genome_counts</a> (const std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &amp;gcounts)</td></tr>
+<tr class="separator:a3662d26e2f5b0ec570cb55eb3661c251"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename mutation_type, typename mcont, typename gcont, typename mvector, typename ftvector, typename lookup_table_type&gt;<br />
@@ -197,27 +196,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>container type for fixation times </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00095">95</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a09c154876da38efc81a5b81d5e883232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09c154876da38efc81a5b81d5e883232">&#9670;&nbsp;</a></span>gamete_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#a09c154876da38efc81a5b81d5e883232">gamete_t</a> =  typename gcont::value_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gamete type. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +216,27 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Gamete vec type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00089">89</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+</div>
+</div>
+<a id="af5269b0880f5896b33709760f4995ea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5269b0880f5896b33709760f4995ea2">&#9670;&nbsp;</a></span>haploid_genome_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html#af5269b0880f5896b33709760f4995ea2">haploid_genome_t</a> =  typename gcont::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gamete type. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -257,7 +256,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Lookup table type for recording mutation positions, etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00092">92</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +276,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Mutation vec type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -297,7 +296,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Mutation count vector type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00087">87</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +316,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Mutation type. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -337,7 +336,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>container type for fixations </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00094">94</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -425,8 +424,8 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 </div>
 </div>
-<a id="a86376905a7f60e2c505309c753bf6659"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86376905a7f60e2c505309c753bf6659">&#9670;&nbsp;</a></span>popbase() <span class="overload">[3/4]</span></h2>
+<a id="a6234ba5f5b4e8294a10ae9b7107f220f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6234ba5f5b4e8294a10ae9b7107f220f">&#9670;&nbsp;</a></span>popbase() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -440,12 +439,12 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
           <td class="memname"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">popbase</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &amp;&#160;</td>
-          <td class="paramname"><em>initial_gamete_count</em>, </td>
+          <td class="paramname"><em>initial_haploid_genome_count</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename gamete_t::mutation_container::size_type&#160;</td>
+          <td class="paramtype">typename haploid_genome_t::mutation_container::size_type&#160;</td>
           <td class="paramname"><em>reserve_size</em> = <code>100</code>&#160;</td>
         </tr>
         <tr>
@@ -463,19 +462,19 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Constructor. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00161">161</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00162">162</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9443c1aa675b2c7ddfb4557a4671a75a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9443c1aa675b2c7ddfb4557a4671a75a">&#9670;&nbsp;</a></span>popbase() <span class="overload">[4/4]</span></h2>
+<a id="a826fef2cccf6071bda9da42ccdda304f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826fef2cccf6071bda9da42ccdda304f">&#9670;&nbsp;</a></span>popbase() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
 <div class="memtemplate">
-template&lt;typename gametes_input , typename mutations_input &gt; </div>
+template&lt;typename haploid_genomes_input , typename mutations_input &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -483,7 +482,7 @@ template&lt;typename gametes_input , typename mutations_input &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::<a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">popbase</a> </td>
           <td>(</td>
-          <td class="paramtype">gametes_input &amp;&amp;&#160;</td>
+          <td class="paramtype">haploid_genomes_input &amp;&amp;&#160;</td>
           <td class="paramname"><em>g</em>, </td>
         </tr>
         <tr>
@@ -495,7 +494,7 @@ template&lt;typename gametes_input , typename mutations_input &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">typename gamete_t::mutation_container::size_type&#160;</td>
+          <td class="paramtype">typename haploid_genome_t::mutation_container::size_type&#160;</td>
           <td class="paramname"><em>reserve_size</em>&#160;</td>
         </tr>
         <tr>
@@ -511,7 +510,7 @@ template&lt;typename gametes_input , typename mutations_input &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00184">184</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -543,7 +542,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Empty all the containers. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00211">211</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00216">216</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -573,7 +572,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00198">198</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00203">203</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -633,8 +632,8 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 </div>
 </div>
-<a id="aa4eb0813e0d8a764e99b3e619a2f4f83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4eb0813e0d8a764e99b3e619a2f4f83">&#9670;&nbsp;</a></span>validate_gamete_counts()</h2>
+<a id="a3662d26e2f5b0ec570cb55eb3661c251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3662d26e2f5b0ec570cb55eb3661c251">&#9670;&nbsp;</a></span>validate_haploid_genome_counts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,7 +644,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::validate_gamete_counts </td>
+          <td class="memname">void <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::validate_haploid_genome_counts </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">uint_t</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>gcounts</em></td><td>)</td>
@@ -710,7 +709,7 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>vector&lt;uint_t&gt; records times when mutation_ts were added to mut_lookup </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00158">158</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00159">159</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -730,12 +729,12 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Vector of mutation_t to track fixations. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00154">154</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00155">155</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a2242ef0468f9254e87e51970c6b335d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2242ef0468f9254e87e51970c6b335d3">&#9670;&nbsp;</a></span>gametes</h2>
+<a id="a12e3b485a56c4599854ba65fdc8b4606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e3b485a56c4599854ba65fdc8b4606">&#9670;&nbsp;</a></span>haploid_genomes</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -743,14 +742,14 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">gcont <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::gametes</td>
+          <td class="memname">gcont <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::haploid_genomes</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Container of gametes. </p>
+<p>Container of haploid_genomes. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00122">122</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00123">123</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -771,9 +770,9 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 <p>Contains number of times each mutation exists. </p>
 <p>Used to keep track of mutation frequencies.</p>
 <p>Should have memory reserved externally, based on some good guess. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a31">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a39">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a29">spatialts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00107">107</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -790,10 +789,10 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Contains the contribution of ancient samples to mutation counts. This is place within population classes out of convienience. Be aware of the following issue regarding serialization: mcounts/mcounts_from_preserved_nodes are NOT serialized in fwdpp::serialize_population. Further, when pops are deserialized, mcounts is filled by a call to fwdpp_internal::process_gametes. This behavior is generally incorrect for simulations involving tree sequence recording, and a call to <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a22d368f93651e5db0700a824bc76f902">fwdpp::ts::count_mutations</a> will be needed upon deserialization. </p><dl class="section version"><dt>Version</dt><dd>0.7.3 Added to library </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a28">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a36">wfts.cc</a>.</dd>
+<p>Contains the contribution of ancient samples to mutation counts. This is place within population classes out of convienience. Be aware of the following issue regarding serialization: mcounts/mcounts_from_preserved_nodes are NOT serialized in fwdpp::serialize_population. Further, when pops are deserialized, mcounts is filled by a call to fwdpp_internal::process_haploid_genomes. This behavior is generally incorrect for simulations involving tree sequence recording, and a call to <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#aae61878d866a30350e082ce879e8a1a4">fwdpp::ts::count_mutations</a> will be needed upon deserialization. </p><dl class="section version"><dt>Version</dt><dd>0.7.3 Added to library </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a26">spatialts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00120">120</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00121">121</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -813,9 +812,9 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 
 <p>Can be used to track positions of segregating mutations. </p>
 <dl class="section note"><dt>Note</dt><dd>Must have interface like std::map or std::unordered_set </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a19">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a26">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a17">spatialts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00152">152</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00153">153</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
@@ -832,14 +831,13 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
         </tr>
       </table>
 </div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a40">wfts.cc</a>.</dd>
-</dl>
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00097">97</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a94017106151aa2b9553fb836fcd17035"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94017106151aa2b9553fb836fcd17035">&#9670;&nbsp;</a></span>neutral</h2>
+<a id="acb0a30e072ab247d4d5f453781c8ed73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb0a30e072ab247d4d5f453781c8ed73">&#9670;&nbsp;</a></span>neutral</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -847,22 +845,22 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">gamete_t::mutation_container</a> <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::neutral</td>
+          <td class="memname"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">haploid_genome_t::mutation_container</a> <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::neutral</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Containers that can be used as intermediates during the generation of new gametes.</p>
+<p>Containers that can be used as intermediates during the generation of new haploid_genomes.</p>
 <p>The requirement to declare these was introduced in fwdpp 0.3.3.</p>
 <p>In previous versions of the library, vectors like this had to be allocated for every crossover event for every generation. The result was an excessive number of requests for memory allocation.</p>
 <p>Now, we create the vector once per replicate. Further, we will reserve memory here, to minimize reallocs, etc., within fwdpp.</p>
 <p>Internally, fwdpp's job is to make sure that this vector is appropriately and efficiently cleared, but only when needed. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00146">146</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00147">147</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>
-<a id="aff3657aaabefad0a6d6bec986c3713d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff3657aaabefad0a6d6bec986c3713d2">&#9670;&nbsp;</a></span>selected</h2>
+<a id="aed1d294e53c771a5372c1e8f45679216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1d294e53c771a5372c1e8f45679216">&#9670;&nbsp;</a></span>selected</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -870,12 +868,12 @@ template&lt;typename mutation_type , typename mcont , typename gcont , typename 
 template&lt;typename mutation_type , typename mcont , typename gcont , typename mvector , typename ftvector , typename lookup_table_type &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">gamete_t::mutation_container</a> <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::selected</td>
+          <td class="memname"><a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">haploid_genome_t::mutation_container</a> <a class="el" href="../../df/dd4/classfwdpp_1_1poptypes_1_1popbase.html">fwdpp::poptypes::popbase</a>&lt; mutation_type, mcont, gcont, mvector, ftvector, lookup_table_type &gt;::selected</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00146">146</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d83/popbase_8hpp_source.html#l00147">147</a> of file <a class="el" href="../../da/d83/popbase_8hpp_source.html">popbase.hpp</a>.</p>
 
 </div>
 </div>

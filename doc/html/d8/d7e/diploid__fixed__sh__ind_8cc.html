@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -79,6 +79,8 @@ $(function() {
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../da/d7b/debug_8hpp_source.html">fwdpp/debug.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d6/d96/popgenmut_8hpp_source.html">fwdpp/popgenmut.hpp</a>&gt;</code><br />
+<code>#include &lt;fwdpp/genetic_map/genetic_map.hpp&gt;</code><br />
+<code>#include &lt;fwdpp/genetic_map/poisson_interval.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d8/d2e/compact__mutations_8hpp_source.html">fwdpp/algorithm/compact_mutations.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../df/d10/common__ind_8hpp_source.html">common_ind.hpp</a>&gt;</code><br />
 <code>#include &lt;gsl/gsl_randist.h&gt;</code><br />
@@ -87,8 +89,8 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a31e3d5523df86ceef258de9a3e0ca01e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc.html#a31e3d5523df86ceef258de9a3e0ca01e">SINGLEPOP_SIM</a></td></tr>
-<tr class="separator:a31e3d5523df86ceef258de9a3e0ca01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e6c2474be1626f058fdbf4b7eaad56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc.html#ab7e6c2474be1626f058fdbf4b7eaad56">DIPLOID_POPULATION_SIM</a></td></tr>
+<tr class="separator:ab7e6c2474be1626f058fdbf4b7eaad56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -101,19 +103,19 @@ Functions</h2></td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a31e3d5523df86ceef258de9a3e0ca01e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31e3d5523df86ceef258de9a3e0ca01e">&#9670;&nbsp;</a></span>SINGLEPOP_SIM</h2>
+<a id="ab7e6c2474be1626f058fdbf4b7eaad56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e6c2474be1626f058fdbf4b7eaad56">&#9670;&nbsp;</a></span>DIPLOID_POPULATION_SIM</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SINGLEPOP_SIM</td>
+          <td class="memname">#define DIPLOID_POPULATION_SIM</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00019">19</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00021">21</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>
@@ -130,7 +132,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00021">21</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00023">23</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>
@@ -162,7 +164,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a2">diploid_fixed_sh_ind.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00027">27</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html#l00028">28</a> of file <a class="el" href="../../d8/d7e/diploid__fixed__sh__ind_8cc_source.html">diploid_fixed_sh_ind.cc</a>.</p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -64,6 +64,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">fwdpp::strong_types::named_type&lt; T, parameter_name &gt; Struct Template Reference</div>  </div>
@@ -75,6 +76,11 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a1356ff848e4f35e6130cd2e4269394af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#a1356ff848e4f35e6130cd2e4269394af">value_type</a> = T</td></tr>
+<tr class="separator:a1356ff848e4f35e6130cd2e4269394af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad6b8697cf8c5ba53b07b6ee5d4c8ac94"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#ad6b8697cf8c5ba53b07b6ee5d4c8ac94">named_type</a> (const T &amp;value)</td></tr>
@@ -96,10 +102,29 @@ struct fwdpp::strong_types::named_type&lt; T, parameter_name &gt;</h3>
 <p>At optimization levels like -O2 and higher, access via get will be completely optimized out.</p>
 <p>Example use includes <a class="el" href="../../dd/d84/namespacefwdpp.html#a58d59d3f0a9a88fcfc823d38e9663752">fwdpp::trait</a> and <a class="el" href="../../dd/d84/namespacefwdpp.html#aa39d37a458099e396cd8e005169d1e92">fwdpp::fitness</a> as arguments to <a class="el" href="../../de/db8/structfwdpp_1_1additive__diploid.html" title="Additive fitness or trait value across sites This function object calculate the genetic value of a di...">fwdpp::additive_diploid</a> and <a class="el" href="../../d7/de7/structfwdpp_1_1multiplicative__diploid.html" title="Multiplicative fitness or trait value across sites This function object calculate the genetic value o...">fwdpp::multiplicative_diploid</a>.</p>
 <dl class="section version"><dt>Version</dt><dd>0.7.4 Added to fwdpp </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a10">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a10">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a22">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a5">K_linked_regions_extensions.cc</a>, <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a12">K_linked_regions_generalized_rec.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a23">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a30">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a10">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a10">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a22">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a5">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a21">spatialts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00011">11</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1356ff848e4f35e6130cd2e4269394af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1356ff848e4f35e6130cd2e4269394af">&#9670;&nbsp;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , typename parameter_name &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html">fwdpp::strong_types::named_type</a>&lt; T, parameter_name &gt;::<a class="el" href="../../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#a1356ff848e4f35e6130cd2e4269394af">value_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad6b8697cf8c5ba53b07b6ee5d4c8ac94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6b8697cf8c5ba53b07b6ee5d4c8ac94">&#9670;&nbsp;</a></span>named_type() <span class="overload">[1/2]</span></h2>
 
@@ -126,7 +151,7 @@ template&lt;typename T , typename parameter_name &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00031">31</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00032">32</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
 
 </div>
 </div>
@@ -168,7 +193,7 @@ template&lt;typename T_ &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
 
 </div>
 </div>
@@ -198,7 +223,7 @@ template&lt;typename T , typename parameter_name &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00041">41</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00042">42</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
 
 </div>
 </div>
@@ -227,7 +252,7 @@ template&lt;typename T , typename parameter_name &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00047">47</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/d40/named__type_8hpp_source.html#l00048">48</a> of file <a class="el" href="../../d0/d40/named__type_8hpp_source.html">named_type.hpp</a>.</p>
 
 </div>
 </div>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -65,7 +65,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">tree_sequence_examples_common.hpp File Reference</div>  </div>
@@ -76,34 +75,20 @@ $(function() {
 <code>#include &lt;functional&gt;</code><br />
 <code>#include &lt;boost/program_options.hpp&gt;</code><br />
 <code>#include &lt;fwdpp/simfunctions/recycling.hpp&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d2/de6/slocuspop_8hpp_source.html">fwdpp/slocuspop.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d1/db2/mlocuspop_8hpp_source.html">fwdpp/mlocuspop.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../d6/d96/popgenmut_8hpp_source.html">fwdpp/popgenmut.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">fwdpp/GSLrng_t.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d3/d70/table__collection_8hpp_source.html">fwdpp/ts/table_collection.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp_source.html">tree_sequence_examples_types.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d4/db1/tree__sequence__examples__common_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dde/structdiploid__metadata.html">diploid_metadata</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d38/structoptions.html">options</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:abcd301c73e682c2e9afaf97724a8c859"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> = <a class="el" href="../../dd/d84/namespacefwdpp.html#a0b8afeea0c8c54a7e0f55cbe1b508cb1">fwdpp::slocuspop</a>&lt; <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a> &gt;</td></tr>
-<tr class="separator:abcd301c73e682c2e9afaf97724a8c859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25a72f437a2b3b23667f0082fa438e0b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> = <a class="el" href="../../dd/d84/namespacefwdpp.html#a32b2b32ae5eb92bedd370d74cf9bed39">fwdpp::mlocuspop</a>&lt; <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a> &gt;</td></tr>
-<tr class="separator:a25a72f437a2b3b23667f0082fa438e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab03c314f9a1fd854b185d6971cb93354"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#ab03c314f9a1fd854b185d6971cb93354">apply_neutral_mutations</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;rng, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> &amp;pop, fwdpp::flagged_mutation_queue &amp;mutation_recycling_bin)</td></tr>
-<tr class="separator:ab03c314f9a1fd854b185d6971cb93354"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67abefdcc6f868fc8cf19aaa8c016451"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a67abefdcc6f868fc8cf19aaa8c016451">apply_neutral_mutations</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;rng, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> &amp;pop, fwdpp::flagged_mutation_queue &amp;mutation_recycling_bin)</td></tr>
-<tr class="separator:a67abefdcc6f868fc8cf19aaa8c016451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3e4eef2e51b25860b4a523be4962cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#aaa3e4eef2e51b25860b4a523be4962cb">apply_neutral_mutations</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;rng, <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, <a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;pop, fwdpp::flagged_mutation_queue &amp;mutation_recycling_bin)</td></tr>
+<tr class="separator:aaa3e4eef2e51b25860b4a523be4962cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add3b266a91230ec24738ada85f4e8cec"><td class="memItemLeft" align="right" valign="top">boost::program_options::options_description&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#add3b266a91230ec24738ada85f4e8cec">generate_main_options</a> (<a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o)</td></tr>
 <tr class="separator:add3b266a91230ec24738ada85f4e8cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3926fd4284d3eb7e232f54f4c42d8b"><td class="memItemLeft" align="right" valign="top">boost::program_options::options_description&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#afe3926fd4284d3eb7e232f54f4c42d8b">generate_dfe_options</a> (<a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o)</td></tr>
@@ -112,58 +97,24 @@ Functions</h2></td></tr>
 <tr class="separator:afcc2324147fd9444a2ec1946ac132ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a402ed81dad35a7f5952277933445ee7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a402ed81dad35a7f5952277933445ee7e">validate_primary_options</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;)</td></tr>
 <tr class="separator:a402ed81dad35a7f5952277933445ee7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3124deae27249eec9456787d190192f4"><td class="memItemLeft" align="right" valign="top">std::function&lt; double()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a3124deae27249eec9456787d190192f4">make_dfe</a> (const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N, const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;r, const double mean, const double shape, const double scoeff)</td></tr>
-<tr class="separator:a3124deae27249eec9456787d190192f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab70e4ea4595eec9b1b7321b0702f3175"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#ab70e4ea4595eec9b1b7321b0702f3175">execute_matrix_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;, const <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> &amp;, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;)</td></tr>
-<tr class="separator:ab70e4ea4595eec9b1b7321b0702f3175"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68388d160c3636e2fdb1fd69b8244723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a68388d160c3636e2fdb1fd69b8244723">execute_matrix_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;, const <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> &amp;, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;)</td></tr>
-<tr class="separator:a68388d160c3636e2fdb1fd69b8244723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa84da7ee99779ad8f9fecf35f929af0"><td class="memItemLeft" align="right" valign="top">std::function&lt; double()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#afa84da7ee99779ad8f9fecf35f929af0">make_dfe</a> (const <a class="el" href="../../dd/d84/namespacefwdpp.html#acfb5fc93f157a212587caec37cee25e3">fwdpp::uint_t</a> N, const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;r, const double mean, const double shape, const double scoeff)</td></tr>
+<tr class="separator:afa84da7ee99779ad8f9fecf35f929af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff21eb5ae47687f25ac42162ee0348e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#adff21eb5ae47687f25ac42162ee0348e">execute_matrix_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;, const <a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;)</td></tr>
+<tr class="separator:adff21eb5ae47687f25ac42162ee0348e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a057aa186b1a028cf1fcf5f31befd1917"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a057aa186b1a028cf1fcf5f31befd1917">execute_expensive_leaf_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;samples)</td></tr>
 <tr class="separator:a057aa186b1a028cf1fcf5f31befd1917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7ffab1d3def627eecb9f1b10e596abf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#ab7ffab1d3def627eecb9f1b10e596abf">execute_serialization_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;)</td></tr>
 <tr class="separator:ab7ffab1d3def627eecb9f1b10e596abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c53d9ec12646d4eeb4f7dcc58241767"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a5c53d9ec12646d4eeb4f7dcc58241767">test_serialization</a> (const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, const std::string &amp;filename)</td></tr>
 <tr class="separator:a5c53d9ec12646d4eeb4f7dcc58241767"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae82eb8746bfcebe2611653e9b9cfebc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#aae82eb8746bfcebe2611653e9b9cfebc">write_sfs</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;rng, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;samples, const std::vector&lt; <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a> &gt; &amp;mutations)</td></tr>
-<tr class="separator:aae82eb8746bfcebe2611653e9b9cfebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ea7d018e03be8595d1079c55ec2c5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a15ea7d018e03be8595d1079c55ec2c5d">visit_sites_test</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;pop, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;samples)</td></tr>
+<tr class="separator:a15ea7d018e03be8595d1079c55ec2c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603e10899f9269c627aa9af5760a64ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a603e10899f9269c627aa9af5760a64ed">write_sfs</a> (const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;o, const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;rng, const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;samples)</td></tr>
+<tr class="separator:a603e10899f9269c627aa9af5760a64ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a25a72f437a2b3b23667f0082fa438e0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25a72f437a2b3b23667f0082fa438e0b">&#9670;&nbsp;</a></span>multi_locus_poptype</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> =  <a class="el" href="../../dd/d84/namespacefwdpp.html#a32b2b32ae5eb92bedd370d74cf9bed39">fwdpp::mlocuspop</a>&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp_source.html">tree_sequence_examples_common.hpp</a>.</p>
-
-</div>
-</div>
-<a id="abcd301c73e682c2e9afaf97724a8c859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcd301c73e682c2e9afaf97724a8c859">&#9670;&nbsp;</a></span>single_locus_poptype</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> =  <a class="el" href="../../dd/d84/namespacefwdpp.html#a0b8afeea0c8c54a7e0f55cbe1b508cb1">fwdpp::slocuspop</a>&lt;<a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a>&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../db/ddb/wfts_8cc-example.html#a1">wfts.cc</a>.</dd>
-</dl>
-<p class="definition">Definition at line <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp_source.html#l00015">15</a> of file <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp_source.html">tree_sequence_examples_common.hpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab03c314f9a1fd854b185d6971cb93354"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab03c314f9a1fd854b185d6971cb93354">&#9670;&nbsp;</a></span>apply_neutral_mutations() <span class="overload">[1/2]</span></h2>
+<a id="aaa3e4eef2e51b25860b4a523be4962cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3e4eef2e51b25860b4a523be4962cb">&#9670;&nbsp;</a></span>apply_neutral_mutations()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +128,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;&#160;</td>
           <td class="paramname"><em>rng</em>, </td>
         </tr>
         <tr>
@@ -189,7 +140,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>pop</em>, </td>
         </tr>
         <tr>
@@ -207,54 +158,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00049">49</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
-
-</div>
-</div>
-<a id="a67abefdcc6f868fc8cf19aaa8c016451"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67abefdcc6f868fc8cf19aaa8c016451">&#9670;&nbsp;</a></span>apply_neutral_mutations() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int apply_neutral_mutations </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;&#160;</td>
-          <td class="paramname"><em>o</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;&#160;</td>
-          <td class="paramname"><em>rng</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;&#160;</td>
-          <td class="paramname"><em>tables</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> &amp;&#160;</td>
-          <td class="paramname"><em>pop</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">fwdpp::flagged_mutation_queue &amp;&#160;</td>
-          <td class="paramname"><em>mutation_recycling_bin</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00059">59</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -290,12 +193,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00288">288</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00284">284</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
-<a id="ab70e4ea4595eec9b1b7321b0702f3175"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab70e4ea4595eec9b1b7321b0702f3175">&#9670;&nbsp;</a></span>execute_matrix_test() <span class="overload">[1/2]</span></h2>
+<a id="adff21eb5ae47687f25ac42162ee0348e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff21eb5ae47687f25ac42162ee0348e">&#9670;&nbsp;</a></span>execute_matrix_test()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -309,7 +212,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#abcd301c73e682c2e9afaf97724a8c859">single_locus_poptype</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;&#160;</td>
           <td class="paramname">, </td>
         </tr>
         <tr>
@@ -332,49 +235,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00355">355</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
-
-</div>
-</div>
-<a id="a68388d160c3636e2fdb1fd69b8244723"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68388d160c3636e2fdb1fd69b8244723">&#9670;&nbsp;</a></span>execute_matrix_test() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void execute_matrix_test </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d4/db1/tree__sequence__examples__common_8hpp.html#a25a72f437a2b3b23667f0082fa438e0b">multi_locus_poptype</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00363">363</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00386">386</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -404,7 +265,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00371">371</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00394">394</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -424,7 +285,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00102">102</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00093">93</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -444,7 +305,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00078">78</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00069">69</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -464,12 +325,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00117">117</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00108">108</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
-<a id="a3124deae27249eec9456787d190192f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3124deae27249eec9456787d190192f4">&#9670;&nbsp;</a></span>make_dfe()</h2>
+<a id="afa84da7ee99779ad8f9fecf35f929af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa84da7ee99779ad8f9fecf35f929af0">&#9670;&nbsp;</a></span>make_dfe()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -483,7 +344,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;&#160;</td>
           <td class="paramname"><em>r</em>, </td>
         </tr>
         <tr>
@@ -512,7 +373,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00165">165</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00157">157</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -542,7 +403,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00249">249</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00241">241</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
@@ -562,12 +423,54 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00129">129</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00121">121</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>
-<a id="aae82eb8746bfcebe2611653e9b9cfebc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae82eb8746bfcebe2611653e9b9cfebc">&#9670;&nbsp;</a></span>write_sfs()</h2>
+<a id="a15ea7d018e03be8595d1079c55ec2c5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15ea7d018e03be8595d1079c55ec2c5d">&#9670;&nbsp;</a></span>visit_sites_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void visit_sites_test </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/d38/structoptions.html">options</a> &amp;&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/tree__sequence__examples__types_8hpp.html#abf3a897081fef9daf8ed4acfba7d0798">ts_examples_poptype</a> &amp;&#160;</td>
+          <td class="paramname"><em>pop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">fwdpp::ts::table_collection</a> &amp;&#160;</td>
+          <td class="paramname"><em>tables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samples</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00350">350</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+
+</div>
+</div>
+<a id="a603e10899f9269c627aa9af5760a64ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603e10899f9269c627aa9af5760a64ed">&#9670;&nbsp;</a></span>write_sfs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -581,7 +484,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/d84/namespacefwdpp.html#a93fcf8a3184bbc0892c95e036c24f694">fwdpp::GSLrng_mt</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="../../df/d10/common__ind_8hpp.html#ab481c10768c0e85d5d759709971cf443">GSLrng</a> &amp;&#160;</td>
           <td class="paramname"><em>rng</em>, </td>
         </tr>
         <tr>
@@ -594,13 +497,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">fwdpp::ts::TS_NODE_INT</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>samples</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="../../d9/df7/structfwdpp_1_1popgenmut.html">fwdpp::popgenmut</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mutations</em>&#160;</td>
+          <td class="paramname"><em>samples</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -610,7 +507,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00381">381</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html#l00404">404</a> of file <a class="el" href="../../de/d9b/tree__sequence__examples__common_8cc_source.html">tree_sequence_examples_common.cc</a>.</p>
 
 </div>
 </div>

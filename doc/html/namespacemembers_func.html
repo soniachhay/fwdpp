@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -71,8 +71,8 @@ $(function() {
 <li>add_mutations()
 : <a class="el" href="de/d6e/group__sugar.html#gaab05d410c9eb46a7832e073a0582c982">fwdpp</a>
 </li>
-<li>all_gametes_extant()
-: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#ac8bd40d0c898eb8868d5444f68981ea2">fwdpp::debug</a>
+<li>all_haploid_genomes_extant()
+: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#a91ce2eaed6833329408badd7fb0dbb5f">fwdpp::debug</a>
 </li>
 <li>assign_is_fitness_value()
 : <a class="el" href="dd/d84/namespacefwdpp.html#a8ec84adaa43392d50feee1d2c6cc9800">fwdpp</a>
@@ -112,19 +112,22 @@ $(function() {
 <li>col_sums()
 : <a class="el" href="df/d2f/group__samplingPops.html#ga5baf96ec9e341367fedd2cc01e1fae80">fwdpp</a>
 </li>
-<li>collect_gametes()
-: <a class="el" href="dd/d09/namespacefwdpp_1_1sugar.html#a2edf4022999c21537572b62829bc02e9">fwdpp::sugar</a>
+<li>collect_haploid_genomes()
+: <a class="el" href="dd/d09/namespacefwdpp_1_1sugar.html#ae353ef0ee4cc12913d97b53c121d4364">fwdpp::sugar</a>
 </li>
 <li>compact_mutations()
 : <a class="el" href="dd/d84/namespacefwdpp.html#afa738cb18b48fc1f5a2589d202aac3d2">fwdpp</a>
 </li>
 <li>count_mutations()
-: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a22d368f93651e5db0700a824bc76f902">fwdpp::ts</a>
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#aae61878d866a30350e082ce879e8a1a4">fwdpp::ts</a>
 </li>
 </ul>
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>decapitate()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a89d891ec4b65d5c1dbf028dcc14637bb">fwdpp::ts</a>
+</li>
 <li>deserialize_population()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#af8a7a2259367c45fe1d23ffbfcc89c02">fwdpp::io</a>
 </li>
@@ -132,7 +135,7 @@ $(function() {
 : <a class="el" href="da/d5d/namespacefwdpp_1_1ts_1_1io.html#acd0264447fb86786deec0d6c31048368">fwdpp::ts::io</a>
 </li>
 <li>dispatch_recombination_policy()
-: <a class="el" href="dd/d84/namespacefwdpp.html#a53a6c0441394b71aae2ce7e2b7ee9dcb">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#a4ca7eb8f268abbc45e158240de86f451">fwdpp</a>
 </li>
 </ul>
 
@@ -140,6 +143,7 @@ $(function() {
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>end()
 : <a class="el" href="dd/d84/namespacefwdpp.html#a164c663683a6258a82badcfb90671b73">fwdpp</a>
+, <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a2101ddcc665e0077f8dc298425ac2d0f">fwdpp::ts</a>
 </li>
 </ul>
 
@@ -148,6 +152,9 @@ $(function() {
 <li>filter_keys()
 : <a class="el" href="dd/d84/namespacefwdpp.html#abcdff90b499894ab44d94b57fd9e809e">fwdpp</a>
 </li>
+<li>fix_mutation_table_repopulate_site_table()
+: <a class="el" href="da/d5d/namespacefwdpp_1_1ts_1_1io.html#a8100a837f803d1254a9190eccb431f5a">fwdpp::ts::io</a>
+</li>
 <li>flag_mutations_for_recycling()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts</a>
 </li>
@@ -155,49 +162,61 @@ $(function() {
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
-<li>gamete_data_valid()
-: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#ad7102a362ae959c52fd2cfbb91295b0e">fwdpp::debug</a>
-</li>
-<li>gamete_is_extant()
-: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#aa56f44a22f16969cd93521ae1e501106">fwdpp::debug</a>
-</li>
-<li>gamete_is_sorted()
-: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#a2d321aa5d4ecd44a86587eaff11a5bf5">fwdpp::debug</a>
-</li>
 <li>generate_breakpoints()
-: <a class="el" href="dd/d84/namespacefwdpp.html#a85b589b04b8c54846e2fbb6f2eee8aa8">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#a0661f15b3c9e786229c25dbad97738c7">fwdpp</a>
 </li>
 <li>generate_data_matrix()
-: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a8596f5ad2ff4c7674476e802c285de25">fwdpp::ts</a>
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a0de7adfaff962a474c591150487bd909">fwdpp::ts</a>
 </li>
 <li>generate_mutations_and_breakpoints()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a7bef106ff7bc9fdd52a48e25b9887224">fwdpp::ts::detail</a>
+: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a342a41076d2dada0847699465c93ab67">fwdpp::ts::detail</a>
 </li>
 <li>generate_new_mutations()
-: <a class="el" href="dd/d84/namespacefwdpp.html#a3d55e61895db98aa00c47a2f27628dbc">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#aac1b506c34956735ed8bec7aabd17914">fwdpp</a>
 </li>
 <li>generate_offspring()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a8acb8ff641b41bc320a54cbcf9aa29a3">fwdpp::ts</a>
 </li>
 <li>generate_offspring_details()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a867c61e0da1a2a65b30a72237fc1b679">fwdpp::ts::detail</a>
+: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a59a1c0fe18cabd5ae7c5078c685bdd2b">fwdpp::ts::detail</a>
 </li>
-<li>generate_offspring_gamete()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#afa7ce1f5e5bc7f899944a191f30f4bfc">fwdpp::ts::detail</a>
+<li>generate_offspring_haploid_genome()
+: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a28292b816a3d74ad5e2405577a126a46">fwdpp::ts::detail</a>
 </li>
 <li>genotype_matrix()
 : <a class="el" href="df/d2f/group__samplingPops.html#ga16aa28b2881f5393e6ef3c8a6513ede5">fwdpp</a>
 </li>
+<li>get_children()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#ab503ae0e38aeb913c55266665feb3152">fwdpp::ts</a>
+</li>
 <li>get_mut_index()
 : <a class="el" href="de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">fwdpp::sugar</a>
 </li>
+<li>get_nodes()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#affae775bd3654b36f17383b587526af1">fwdpp::ts</a>
+</li>
 <li>get_parent_ids()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a116196377f3b3675bd12951dca7241f3">fwdpp::ts</a>
+</li>
+<li>get_roots()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a9ba9096050c56e50c5216e50baf0520a">fwdpp::ts</a>
+</li>
+<li>get_samples()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a6aff21079382c8c2a200b678eb24a6c5">fwdpp::ts</a>
 </li>
 </ul>
 
 
 <h3><a id="index_h"></a>- h -</h3><ul>
+<li>haploid_genome_data_valid()
+: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#ac9299f1e78ba911c59531b1858ce36df">fwdpp::debug</a>
+</li>
+<li>haploid_genome_is_extant()
+: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#a60f2b53f88912f4ddec35c5f64252281">fwdpp::debug</a>
+</li>
+<li>haploid_genome_is_sorted()
+: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#a0b5b9b5bae9300425aa3bdc9a5a35e65">fwdpp::debug</a>
+</li>
 <li>haplotype_matrix()
 : <a class="el" href="df/d2f/group__samplingPops.html#gab51dfff82a620b51eb1c8ae49f4891ef">fwdpp</a>
 </li>
@@ -215,9 +234,6 @@ $(function() {
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
-<li>make_binomial_interlocus_rec()
-: <a class="el" href="d0/d69/group__mlocus.html#gac0a51c3a8256ab5cd5722f3f7d00a3d8">fwdpp</a>
-</li>
 <li>make_genetic_parameters()
 : <a class="el" href="dd/d84/namespacefwdpp.html#a4a3a68e9a07ca2517f64a352b54b15ff">fwdpp</a>
 </li>
@@ -227,26 +243,20 @@ $(function() {
 <li>make_mut_queue()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e">fwdpp::ts</a>
 </li>
-<li>make_poisson_interlocus_rec()
-: <a class="el" href="d0/d69/group__mlocus.html#ga3d41069b77102e395e8035e9c48fc8a8">fwdpp</a>
-</li>
 <li>make_wrapped_range()
 : <a class="el" href="dd/d84/namespacefwdpp.html#a88225728acd1e02d2b1acfe33a2464bd">fwdpp</a>
 </li>
 <li>mark_multiple_roots()
-: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a0e1a2cf7567e8754360c59943adbe18b">fwdpp::ts</a>
-</li>
-<li>multilocus_update()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a83509123f6a183bfc1f14dc7d00d2ac7">fwdpp::ts::detail</a>
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a37b95423c33fe838baeff2a99b184fcc">fwdpp::ts</a>
 </li>
 <li>mutate_recombine()
-: <a class="el" href="dd/d84/namespacefwdpp.html#a635801bc8ea29e30cce2e4cf7694bf46">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#a305775e119176134316d95cf9bddc818">fwdpp</a>
 </li>
 <li>mutate_recombine_update()
-: <a class="el" href="dd/d84/namespacefwdpp.html#a7f1675db95f008a7f72656e352ced72a">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#a31c2c0f1955d880c41f4972380b603b0">fwdpp</a>
 </li>
 <li>mutate_tables()
-: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a1016e433a6b6390ae0b705cf61dfb1cc">fwdpp::ts</a>
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a8af38d30f718a90af2ea98e81358c2c5">fwdpp::ts</a>
 </li>
 <li>mutation_keys()
 : <a class="el" href="df/d2f/group__samplingPops.html#gada6775a8330e88ac53542e737d4f3d32">fwdpp</a>
@@ -254,9 +264,31 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>node_traversal_dispatch()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a071367c1dd58b17e5d2c50c87b52f4e0">fwdpp::ts</a>
+</li>
+<li>num_children()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a08036aaea8b364c31930ad309a6cc56b">fwdpp::ts</a>
+</li>
+<li>num_nodes()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#ac470f837dfaf69300aae5a677edf47c9">fwdpp::ts</a>
+</li>
+<li>num_roots()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a08d54fd20651e657d980cc9aa908a22e">fwdpp::ts</a>
+</li>
+<li>num_samples()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a280159065b7fd75ac05bbbb1a4ef5ec8">fwdpp::ts</a>
+</li>
+</ul>
+
+
 <h3><a id="index_o"></a>- o -</h3><ul>
 <li>operator!=()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#ab382753de993cedb4e1d14c152868446">fwdpp::ts</a>
+</li>
+<li>operator&lt;()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#ac2d915f7ae2ec362433d7ba793c72270">fwdpp::ts</a>
 </li>
 <li>operator==()
 : <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a1df8628a86608fa402ff6430fc387408">fwdpp::ts</a>
@@ -266,16 +298,28 @@ $(function() {
 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>prep_temporary_containers()
-: <a class="el" href="d7/da0/namespacefwdpp_1_1fwdpp__internal.html#ae70b0d3964135d37b6717be094dd3a35">fwdpp::fwdpp_internal</a>
+: <a class="el" href="d7/da0/namespacefwdpp_1_1fwdpp__internal.html#a3ca1f335935e4e51934210c5e5d471da">fwdpp::fwdpp_internal</a>
+</li>
+<li>process_children()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a99b7ce7325002612b10ddc46b831203b">fwdpp::ts</a>
 </li>
 <li>process_fixations()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a99787a2262d5c7596473839eb238705a">fwdpp::ts::detail</a>
+: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a3589a829fc2de737a8af7d660c822465">fwdpp::ts::detail</a>
 </li>
 <li>process_mutation_index()
 : <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a76f4f1004711734af2f96ba31ff4cddf">fwdpp::ts::detail</a>
 </li>
 <li>process_new_mutations()
-: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a2d0045cd44bdcea67acf9cf49896e115">fwdpp::ts::detail</a>
+: <a class="el" href="d0/d89/namespacefwdpp_1_1ts_1_1detail.html#abcc48a84121bc43a2a1bd2f0a97c72fd">fwdpp::ts::detail</a>
+</li>
+<li>process_nodes()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a4f7ef15ad73a3fae551eab0b7ade304c">fwdpp::ts</a>
+</li>
+<li>process_roots()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a32ca473e8d52b278e20a4edbbc711cf5">fwdpp::ts</a>
+</li>
+<li>process_samples()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a5ee9ab5b43e22baf42a72eab0fa8919a">fwdpp::ts</a>
 </li>
 </ul>
 
@@ -284,8 +328,8 @@ $(function() {
 <li>read_diploids()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a0a5e9d093cf3bbc13cfffef3d209c661">fwdpp::io</a>
 </li>
-<li>read_gametes()
-: <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a0e04783a265232db3ca36dcfe291d71e">fwdpp::io</a>
+<li>read_haploid_genomes()
+: <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a825f371e26fc8104c742afcac49c995e">fwdpp::io</a>
 </li>
 <li>read_mutations()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#af2a3faa34d92ae3f10147f519cc7d84c">fwdpp::io</a>
@@ -293,8 +337,11 @@ $(function() {
 <li>recbinder()
 : <a class="el" href="dd/d84/namespacefwdpp.html#a4a660f56b5c6843e7732042757a650ee">fwdpp</a>
 </li>
-<li>remove_fixations_from_gametes()
-: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a98cfaa436a43ae3e8f4ddaee5fac395e">fwdpp::ts</a>
+<li>record_mutations_infinite_sites()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#aa9d2e4ac41b0a71f39def87a0067409b">fwdpp::ts</a>
+</li>
+<li>remove_fixations_from_haploid_genomes()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#ad5d8e70dbb7d9569b6eaaec8898a8e84">fwdpp::ts</a>
 </li>
 <li>row_sums()
 : <a class="el" href="df/d2f/group__samplingPops.html#ga695173b205d784cddd350b2110000dfe">fwdpp</a>
@@ -304,13 +351,10 @@ $(function() {
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>sample_diploid()
-: <a class="el" href="dd/d84/namespacefwdpp.html#ab4197908734e2e302817107feaaf86b9">fwdpp</a>
+: <a class="el" href="dd/d84/namespacefwdpp.html#aceda5d4070606706887d0e32d2ad843b">fwdpp</a>
 </li>
 <li>sample_individuals()
 : <a class="el" href="df/d2f/group__samplingPops.html#gaca5d7963215a3623a4e43324a0030714">fwdpp</a>
-</li>
-<li>sample_individuals_by_window()
-: <a class="el" href="df/d2f/group__samplingPops.html#gac1baf8c9f5430715ff983add5ac92e75">fwdpp</a>
 </li>
 <li>serialize_population()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a0581c380c40106198c8754e597d64a1e">fwdpp::io</a>
@@ -320,6 +364,13 @@ $(function() {
 </li>
 <li>sort_keys()
 : <a class="el" href="df/d2f/group__samplingPops.html#ga1271c848ef49675264f1bf136a7a860b">fwdpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>total_time()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a2426971517ba2ab54606a229827d35ee">fwdpp::ts</a>
 </li>
 </ul>
 
@@ -341,8 +392,11 @@ $(function() {
 <li>validate_pop_data()
 : <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#ab64d2889e2f8eeb62d6b399885b1ed3e">fwdpp::debug</a>
 </li>
-<li>validate_sum_gamete_counts()
-: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#ac09e15d20d447337e22a850b3b542857">fwdpp::debug</a>
+<li>validate_sum_haploid_genome_counts()
+: <a class="el" href="d0/d70/namespacefwdpp_1_1debug.html#a769791e300ff38a0715a58d27c736f20">fwdpp::debug</a>
+</li>
+<li>visit_sites()
+: <a class="el" href="d8/d31/namespacefwdpp_1_1ts.html#a8ae056fadd81d2cbdeb96a417843db09">fwdpp::ts</a>
 </li>
 </ul>
 
@@ -351,8 +405,8 @@ $(function() {
 <li>write_diploids()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a4dc2927eacb1ce7ad8c429db5839c287">fwdpp::io</a>
 </li>
-<li>write_gametes()
-: <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a2657c88a649e18b756cc889998480733">fwdpp::io</a>
+<li>write_haploid_genomes()
+: <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a31ac18794d75a1cad8ff4f6525007e39">fwdpp::io</a>
 </li>
 <li>write_mutations()
 : <a class="el" href="dd/d82/namespacefwdpp_1_1io.html#a741cfcdc33d62551a2b74d15c4979546">fwdpp::io</a>
@@ -361,8 +415,8 @@ $(function() {
 
 
 <h3><a id="index_z"></a>- z -</h3><ul>
-<li>zero_out_gametes()
-: <a class="el" href="dd/d84/namespacefwdpp.html#ae74b0423ff11fea6ef5d24bccca8b5ff">fwdpp</a>
+<li>zero_out_haploid_genomes()
+: <a class="el" href="dd/d84/namespacefwdpp.html#a96df748a638fdddc6513f8eded763f7e">fwdpp</a>
 </li>
 </ul>
 </div><!-- contents -->

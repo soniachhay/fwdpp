@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -80,18 +80,21 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5ef5ee87604536c22c1cdc4e88ac599"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#ab5ef5ee87604536c22c1cdc4e88ac599">table_simplifier</a> (const double maxpos)</td></tr>
 <tr class="separator:ab5ef5ee87604536c22c1cdc4e88ac599"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memTemplParams" colspan="2">template&lt;typename mutation_container &gt; </td></tr>
-<tr class="memitem:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;, std::vector&lt; std::size_t &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a4742014b28cff4cc1a63c21a4647f6ea">simplify</a> (<a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples, const <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> &amp;mutations)</td></tr>
-<tr class="separator:a4742014b28cff4cc1a63c21a4647f6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22b0bcd13249647ecca682ecee79425d"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt;, std::vector&lt; std::size_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0a/classfwdpp_1_1ts_1_1table__simplifier.html#a22b0bcd13249647ecca682ecee79425d">simplify</a> (<a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html">table_collection</a> &amp;tables, const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;samples)</td></tr>
+<tr class="separator:a22b0bcd13249647ecca682ecee79425d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements the simplification algorithm of <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2018-fu">[2]</a>. </p>
 <p>Keeping a persistent simplifier around during a simplification avoids many repeated large memory allocations. On a single-core machine, the more often you simplify, the more this matters. When running many simulations on a many-core machine, keeping a persistent object reduces competition between threads for big memory chunks, which should also lead to a performance boost.</p>
 <p>Many of the implementation details are private functions, which are subject to change without notice.</p>
-<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a13">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a14">wfts.cc</a>.</dd>
+<dl class="section version"><dt>Version</dt><dd>0.7.0 Added to fwdpp. </dd>
+<dd>
+0.8.0 Added ancestry_list, which greatly reduces memory overhead. </dd>
+<dd>
+0.8.0 Remove need for temporary output edge table. </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a13">spatialts.cc</a>.</dd>
 </dl>
-<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab5ef5ee87604536c22c1cdc4e88ac599"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5ef5ee87604536c22c1cdc4e88ac599">&#9670;&nbsp;</a></span>table_simplifier()</h2>
@@ -117,18 +120,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00502">502</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00509">509</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4742014b28cff4cc1a63c21a4647f6ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4742014b28cff4cc1a63c21a4647f6ea">&#9670;&nbsp;</a></span>simplify()</h2>
+<a id="a22b0bcd13249647ecca682ecee79425d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22b0bcd13249647ecca682ecee79425d">&#9670;&nbsp;</a></span>simplify()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;typename mutation_container &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -143,13 +144,7 @@ template&lt;typename mutation_container &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af35a0875d0656933d78cc7840a662aa5">TS_NODE_INT</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>samples</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../d0/de1/regions_8hpp.html#a71350655a014a01b97f759a414b88337">mutation_container</a> &amp;&#160;</td>
-          <td class="paramname"><em>mutations</em>&#160;</td>
+          <td class="paramname"><em>samples</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -168,7 +163,6 @@ template&lt;typename mutation_container &gt; </div>
   <table class="params">
     <tr><td class="paramname">tables</td><td>A <a class="el" href="../../d7/de8/structfwdpp_1_1ts_1_1table__collection.html" title="A collection of tables for a single simulation. ">table_collection</a> </td></tr>
     <tr><td class="paramname">samples</td><td>A list of sample (node) ids. </td></tr>
-    <tr><td class="paramname">mutations</td><td>A container of mutations </td></tr>
   </table>
   </dd>
 </dl>
@@ -176,7 +170,7 @@ template&lt;typename mutation_container &gt; </div>
 <dd>
 0.7.3 Return value is now a pair containing the node ID map and a vector of keys to mutations preserved in mutation tables </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00515">515</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html#l00522">522</a> of file <a class="el" href="../../d8/df8/table__simplifier_8hpp_source.html">table_simplifier.hpp</a>.</p>
 
 </div>
 </div>

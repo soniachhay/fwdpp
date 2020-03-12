@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -69,9 +69,6 @@ $(function() {
 <div class="title">fwdpp::sugar Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Nested namespace for sugar layer.  
-<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -80,25 +77,17 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for implementing <a class="el" href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51" title="Add a mutation into a population at a given frequency. ">fwdpp::add_mutation</a>.  <a href="../../de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">More...</a><br /></td></tr>
 <tr class="separator:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename map_t &gt; </td></tr>
-<tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#abf7a30e004c0699c1348ba3ff2f946bc">add_mutation_details</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;mindexes, const map_t &amp;gams)</td></tr>
+<tr class="memitem:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#abf7a30e004c0699c1348ba3ff2f946bc">add_mutation_details</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;mindexes, const map_t &amp;gams)</td></tr>
 <tr class="separator:abf7a30e004c0699c1348ba3ff2f946bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2edf4022999c21537572b62829bc02e9"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;                      std::is_same&lt;typename poptype::popmodel_t,                                   fwdpp::poptypes::SINGLELOC_TAG&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a2edf4022999c21537572b62829bc02e9"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a2edf4022999c21537572b62829bc02e9">collect_gametes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
-<tr class="memdesc:a2edf4022999c21537572b62829bc02e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#a2edf4022999c21537572b62829bc02e9">More...</a><br /></td></tr>
-<tr class="separator:a2edf4022999c21537572b62829bc02e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78c51745d8ea922c404f7671cf2f16f1"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::MULTILOC_TAG&gt;::value&gt;&gt; </td></tr>
-<tr class="memitem:a78c51745d8ea922c404f7671cf2f16f1"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::value_type::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a78c51745d8ea922c404f7671cf2f16f1">collect_gametes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
-<tr class="memdesc:a78c51745d8ea922c404f7671cf2f16f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#a78c51745d8ea922c404f7671cf2f16f1">More...</a><br /></td></tr>
-<tr class="separator:a78c51745d8ea922c404f7671cf2f16f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae353ef0ee4cc12913d97b53c121d4364"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::DIPLOID_TAG&gt;::value&gt;&gt; </td></tr>
+<tr class="memitem:ae353ef0ee4cc12913d97b53c121d4364"><td class="memTemplItemLeft" align="right" valign="top">std::unordered_map&lt; std::size_t, std::vector&lt; typename poptype::diploid_t::first_type * &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#ae353ef0ee4cc12913d97b53c121d4364">collect_haploid_genomes</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist)</td></tr>
+<tr class="memdesc:ae353ef0ee4cc12913d97b53c121d4364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for add_mutation and add_mutations.  <a href="#ae353ef0ee4cc12913d97b53c121d4364">More...</a><br /></td></tr>
+<tr class="separator:ae353ef0ee4cc12913d97b53c121d4364"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mut_key_cont_t &gt; </td></tr>
 <tr class="memitem:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d09/namespacefwdpp_1_1sugar.html#a9299acd3ac5b0f6fcd2d8c80410e57fd">change_neutral_details</a> (const mcont_t &amp;mutations, const double pos, const std::size_t mindex, mut_key_cont_t &amp;a, mut_key_cont_t &amp;b)</td></tr>
 <tr class="separator:a9299acd3ac5b0f6fcd2d8c80410e57fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Nested namespace for sugar layer. </p>
-<p>This namespace provides the implementation details for <a class="el" href="../../de/d6e/group__sugar.html">Syntactic sugar layer</a>.</p>
-<p>See <a class="el" href="../../db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a> for a full description of the features that fwdpp's sugar layer provides. </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+<h2 class="groupheader">Function Documentation</h2>
 <a id="abf7a30e004c0699c1348ba3ff2f946bc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf7a30e004c0699c1348ba3ff2f946bc">&#9670;&nbsp;</a></span>add_mutation_details()</h2>
 
@@ -110,7 +99,7 @@ template&lt;typename poptype , typename map_t &gt; </div>
         <tr>
           <td class="memname">void fwdpp::sugar::add_mutation_details </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -189,18 +178,18 @@ template&lt;typename mcont_t , typename mut_key_cont_t &gt; </div>
 
 </div>
 </div>
-<a id="a2edf4022999c21537572b62829bc02e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2edf4022999c21537572b62829bc02e9">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[1/2]</span></h2>
+<a id="ae353ef0ee4cc12913d97b53c121d4364"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae353ef0ee4cc12913d97b53c121d4364">&#9670;&nbsp;</a></span>collect_haploid_genomes()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename poptype , typename  = std::enable_if&lt;                      std::is_same&lt;typename poptype::popmodel_t,                                   fwdpp::poptypes::SINGLELOC_TAG&gt;::value&gt;&gt; </div>
+template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::DIPLOID_TAG&gt;::value&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt; std::size_t, std::vector&lt;typename poptype::diploid_t::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
+          <td class="memname">std::unordered_map&lt; std::size_t, std::vector&lt;typename poptype::diploid_t::first_type *&gt; &gt; fwdpp::sugar::collect_haploid_genomes </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -224,56 +213,9 @@ template&lt;typename poptype , typename  = std::enable_if&lt;                   
 </div><div class="memdoc">
 
 <p>Helper function for add_mutation and add_mutations. </p>
-<p>Collects together all the gametes that will be updated, to minimize the number of new gametes created. </p>
+<p>Collects together all the haploid_genomes that will be updated, to minimize the number of new haploid_genomes created. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00161">161</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
-
-</div>
-</div>
-<a id="a78c51745d8ea922c404f7671cf2f16f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78c51745d8ea922c404f7671cf2f16f1">&#9670;&nbsp;</a></span>collect_gametes() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename poptype , typename  = std::enable_if&lt;std::is_same&lt;                                        typename poptype::popmodel_t,                                        fwdpp::poptypes::MULTILOC_TAG&gt;::value&gt;&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; std::size_t, std::vector&lt;typename poptype::diploid_t::value_type::first_type *&gt; &gt; fwdpp::sugar::collect_gametes </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>locus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; short &gt; &amp;&#160;</td>
-          <td class="paramname"><em>clist</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Helper function for add_mutation and add_mutations. </p>
-<p>Collects together all the gametes that will be updated, to minimize the number of new gametes created. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00197">197</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00160">160</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
 
 </div>
 </div>

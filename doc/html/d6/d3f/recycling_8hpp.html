@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -105,9 +105,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="memItemLeft" align="right" valign="top">flagged_mutation_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e">fwdpp::ts::make_mut_queue</a> (const std::vector&lt; std::uint32_t &gt; &amp;mcounts, const std::vector&lt; std::uint32_t &gt; &amp;counts_from_preserved_nodes)</td></tr>
 <tr class="memdesc:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e7bf711e7bba2ce46c4cc64c313309e">More...</a><br /></td></tr>
 <tr class="separator:a4e7bf711e7bba2ce46c4cc64c313309e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90ee3318265e92ca462eb292a91d883a"><td class="memItemLeft" align="right" valign="top">flagged_mutation_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a90ee3318265e92ca462eb292a91d883a">fwdpp::ts::make_mut_queue</a> (std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
-<tr class="memdesc:a90ee3318265e92ca462eb292a91d883a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#a90ee3318265e92ca462eb292a91d883a">More...</a><br /></td></tr>
-<tr class="separator:a90ee3318265e92ca462eb292a91d883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdac1cf69f783fd99ccd77b5ab998bb7"><td class="memItemLeft" align="right" valign="top">flagged_mutation_queue&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#abdac1cf69f783fd99ccd77b5ab998bb7">fwdpp::ts::make_mut_queue</a> (const std::vector&lt; std::size_t &gt; &amp;preserved_mutation_indexes, const std::size_t num_mutations)</td></tr>
+<tr class="memdesc:abdac1cf69f783fd99ccd77b5ab998bb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a mutation recycling queue for simulations with tree sequences.  <a href="../../d8/d31/namespacefwdpp_1_1ts.html#abdac1cf69f783fd99ccd77b5ab998bb7">More...</a><br /></td></tr>
+<tr class="separator:abdac1cf69f783fd99ccd77b5ab998bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f4f1004711734af2f96ba31ff4cddf"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename lookup_table &gt; </td></tr>
 <tr class="memitem:a76f4f1004711734af2f96ba31ff4cddf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a76f4f1004711734af2f96ba31ff4cddf">fwdpp::ts::detail::process_mutation_index</a> (mcont_t &amp;mutations, lookup_table &amp;lookup, const std::size_t i)</td></tr>
 <tr class="memdesc:a76f4f1004711734af2f96ba31ff4cddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementation detail for flag_mutations_for_recycling.  <a href="../../d0/d89/namespacefwdpp_1_1ts_1_1detail.html#a76f4f1004711734af2f96ba31ff4cddf">More...</a><br /></td></tr>
@@ -125,7 +125,7 @@ Functions</h2></td></tr>
 <tr class="memitem:aae59e17cfc61c45a84546f63f5431c9c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d0/d89/namespacefwdpp_1_1ts_1_1detail.html#aae59e17cfc61c45a84546f63f5431c9c">fwdpp::ts::detail::process_fixations</a> (mcont_t &amp;mutations, mutation_count_container &amp;mcounts, mcont_t &amp;fixations, std::vector&lt; uint_t &gt; &amp;fixation_times, lookup_table &amp;mut_lookup, const uint_t generation, const std::size_t i, std::true_type, std::true_type)</td></tr>
 <tr class="separator:aae59e17cfc61c45a84546f63f5431c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplParams" colspan="2">template&lt;typename poptype , typename mutation_count_container , typename preserve_selected_fixations , typename record_fixations &gt; </td></tr>
-<tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const uint_t twoN, const uint_t generation, const preserve_selected_fixations preserve, const record_fixations record)</td></tr>
+<tr class="memitem:af31b6eea1568ee4866fc66bae4be31ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#af31b6eea1568ee4866fc66bae4be31ef">fwdpp::ts::flag_mutations_for_recycling</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;pop, mutation_count_container &amp;mcounts_from_preserved_nodes, const uint_t twoN, const uint_t generation, const preserve_selected_fixations preserve, const record_fixations record)</td></tr>
 <tr class="separator:af31b6eea1568ee4866fc66bae4be31ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -78,8 +78,8 @@ $(function() {
 <p>There is a <a href="https://groups.google.com/forum/#!forum/fwdpp-users">Google Group</a> for fwdpp users. It is called fwdpp-users. I prefer that questions, etc., are raised there. Questions on that list that are determined to be real issues will result in issue tickets on the GitHub repo for this site. The group is also a good place for installation help, use questions, etc.</p>
 <h1>Build status</h1>
 <ul>
-<li>Status of master branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a></li>
-<li>Status of dev branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a></li>
+<li>Status of master branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a> <a href="https://circleci.com/gh/molpopgen/fwdpp/tree/master"></a></li>
+<li>Status of dev branch: <a href="https://travis-ci.org/molpopgen/fwdpp"></a> <a href="https://circleci.com/gh/molpopgen/fwdpp/tree/dev"></a></li>
 </ul>
 <h1>Introduction</h1>
 <p>fwdpp is a C++ template library that abstracts the basic operations required to implement forward-time simulations of population- and quantitative-genetic models. The library allows the simulation of single populations or metapopulations evolving under the standard evolutionary forces of drift, recombination, migration, and natural selection. Arbitrary population size changes are also allowed. Different populations in a metapopulation may evolve under different fitness schemes.</p>
@@ -104,12 +104,12 @@ $(function() {
 <h3>Where fwdpp is now (compared to the publication).</h3>
 <p>The published version of fwdpp described a library with the following features:</p>
 <ul>
-<li>Objects (mutations and gametes) are stored only once in <em>doubly-linked lists</em>.</li>
-<li>Diploids are pairs of pointers to gametes (technically, pairs of iterators derived from the list of gametes).</li>
+<li>Objects (mutations and haploid genomes) are stored only once in <em>doubly-linked lists</em>.</li>
+<li>Diploids are pairs of pointers to haploid genomes (technically, pairs of iterators derived from the list of haploid genomes).</li>
 <li>Gametes contain vectors of pointers (again, C++ iterators) to mutations.</li>
-<li>Each generation, extinct mutations and gametes are removed from the population. This removal is a constant-time operation due to the use of linked lists.</li>
+<li>Each generation, extinct mutations and haploid genomes are removed from the population. This removal is a constant-time operation due to the use of linked lists.</li>
 </ul>
-<p>This design had a certain elegance to it. A pointer to a diploid gave you immediate access to the mutations by means of the pointer structure. It was also compact in memory, because iterators are only 8 bytes (on a 64-bit system) while gametes and mutations are 64 and <em>at least</em> 48 bytes, respectively.</p>
+<p>This design had a certain elegance to it. A pointer to a diploid gave you immediate access to the mutations by means of the pointer structure. It was also compact in memory, because iterators are only 8 bytes (on a 64-bit system) while haploid genomes and mutations are 64 and <em>at least</em> 48 bytes, respectively.</p>
 <p>The fwdpp publication showed that the library performs well in terms of speed compared to other tools out there. However, the original design had the following problems:</p>
 <ul>
 <li>Several lookup operations were implemented using expensive linear-time searches.</li>
@@ -126,8 +126,8 @@ $(function() {
 <li>Thus, we can replace doubly-linked lists with vectors.</li>
 <li>Further, we can replace iterators with integers.</li>
 </ul>
-<p>All of these changes were introduced in one fell swoop in 0.4.4, along with a set of other API changes that I'd wanted to make for a while. The current design is conceptually the same as the published version, with 8 byte keys representing where mutations and gametes are, thus ensuring that an object is only represented once in memory.</p>
-<p>However, the new design is also less elegant. Now, the vectors of gametes and mutations have to be passed along with the diploids.</p>
+<p>All of these changes were introduced in one fell swoop in 0.4.4, along with a set of other API changes that I'd wanted to make for a while. The current design is conceptually the same as the published version, with 8 byte keys representing where mutations and haploid genomes are, thus ensuring that an object is only represented once in memory.</p>
+<p>However, the new design is also less elegant. Now, the vectors of haploid genomes and mutations have to be passed along with the diploids.</p>
 <p>So, why do this? <b>It is a lot faster!</b> Simulations of large genomic regions in large populations can be up to 80% faster! In fact, tcmalloc isn't necessary to get really good performance any more. Using it still improves run-times by about 10% (on Intel systems at least...), but that isn't a lot compared to the 50% improvement that it gave to previous versions of the library.</p>
 <h1>Documentation</h1>
 <h2>Online</h2>
@@ -139,9 +139,7 @@ $(function() {
 <ul>
 <li><a class="el" href="d5/d00/md_md_datatypes.html">Tutorial 0: Data types in fwdpp</a></li>
 <li><a class="el" href="d1/d7a/md_md_policies.html">Tutorial 1: Policies in fwdpp</a></li>
-<li><a class="el" href="de/dbc/md_md_multiloc.html">Tutorial 2: Implementing multilocus simulations</a></li>
 <li><a class="el" href="d5/d9d/md_md_serialization.html">Writing data to binary formats</a></li>
-<li><a class="el" href="d9/d5d/md_md_devtools.html">Tutorial 4: Starting projects based on fwdpp</a></li>
 <li><a class="el" href="db/dd8/md_md_sugar.html">Tutorial 5: the "sugar" layer on top of fwdpp</a></li>
 </ul>
 <h2>Built from source</h2>

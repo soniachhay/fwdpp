@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -87,12 +87,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5f933df1e9ef32f231b90ac73daa540f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a5f933df1e9ef32f231b90ac73daa540f">GSLrng_t</a> (const unsigned long seed) noexcept</td></tr>
 <tr class="memdesc:a5f933df1e9ef32f231b90ac73daa540f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct with a seed.  <a href="#a5f933df1e9ef32f231b90ac73daa540f">More...</a><br /></td></tr>
 <tr class="separator:a5f933df1e9ef32f231b90ac73daa540f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085a879149867941b80fccff2ec59642"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a085a879149867941b80fccff2ec59642">~GSLrng_t</a> ()=default</td></tr>
+<tr class="separator:a085a879149867941b80fccff2ec59642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11384e2d81ba0412cefe8e7aabbf6f8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a11384e2d81ba0412cefe8e7aabbf6f8b">GSLrng_t</a> (const <a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;rng)=delete</td></tr>
 <tr class="separator:a11384e2d81ba0412cefe8e7aabbf6f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23373045b5fbea54ddf87fd9a84e101b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a23373045b5fbea54ddf87fd9a84e101b">GSLrng_t</a> (<a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a23373045b5fbea54ddf87fd9a84e101b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54d1b009e2826b02358f87f7200c5a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#aa54d1b009e2826b02358f87f7200c5a8">operator=</a> (<a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;)=delete</td></tr>
 <tr class="separator:aa54d1b009e2826b02358f87f7200c5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31b7a33c997b7a3f2872f724ae3a2b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#af31b7a33c997b7a3f2872f724ae3a2b9">operator=</a> (<a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:af31b7a33c997b7a3f2872f724ae3a2b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9beef21d3ddafca31bbca923ac85b734"><td class="memItemLeft" align="right" valign="top">const gsl_rng *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html#a9beef21d3ddafca31bbca923ac85b734">get</a> () const</td></tr>
 <tr class="memdesc:a9beef21d3ddafca31bbca923ac85b734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return underlying pointer.  <a href="#a9beef21d3ddafca31bbca923ac85b734">More...</a><br /></td></tr>
 <tr class="separator:a9beef21d3ddafca31bbca923ac85b734"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,7 +107,7 @@ class fwdpp::GSLrng_t&lt; T &gt;</h3>
 
 <p>A wrapper around gsl_rng * objects. </p>
 <p>The template instantiation type must be a model of <a class="el" href="../../da/daa/structfwdpp_1_1gsl_1_1GSL__RNG__TYPE__TAG.html" title="Dispatch tag for gsl_rng * types. ">fwdpp::gsl::GSL_RNG_TYPE_TAG</a>, which specifies the gsl_rng type. This type holds an object of type <a class="el" href="../../de/d6e/group__sugar.html#ga628c1455363b18bbe2cbfdfb71f68457" title="Smart pointer wrapper to gsl_rng *. ">fwdpp::gsl::gsl_rng_ptr_t</a>, which is a smart pointer that manages freeing the gsl_rng * upon destruction. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a3">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a17">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a7">K_linked_regions_extensions.cc</a>, <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#_a3">K_linked_regions_generalized_rec.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a1">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#_a2">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#_a3">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#_a3">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#_a18">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#_a7">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#_a1">spatialts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
@@ -157,6 +161,33 @@ template&lt;typename T &gt; </div>
 <p>Construct with a seed. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a085a879149867941b80fccff2ec59642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085a879149867941b80fccff2ec59642">&#9670;&nbsp;</a></span>~GSLrng_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">fwdpp::GSLrng_t</a>&lt; T &gt;::~<a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -243,14 +274,14 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Return underlying pointer. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a6">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a6">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a20">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a9">K_linked_regions_extensions.cc</a>, <a class="el" href="../../da/d1b/K_linked_regions_generalized_rec_8cc-example.html#a8">K_linked_regions_generalized_rec.cc</a>, <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a10">spatialts.cc</a>, and <a class="el" href="../../db/ddb/wfts_8cc-example.html#a19">wfts.cc</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="../../df/df6/diploid_fixed_sh_ind_8cc-example.html#a5">diploid_fixed_sh_ind.cc</a>, <a class="el" href="../../db/de9/diploid_ind_8cc-example.html#a5">diploid_ind.cc</a>, <a class="el" href="../../da/db8/juvenile_migration_8cc-example.html#a20">juvenile_migration.cc</a>, <a class="el" href="../../d6/df7/K_linked_regions_extensions_8cc-example.html#a10">K_linked_regions_extensions.cc</a>, and <a class="el" href="../../d6/d0a/spatialts_8cc-example.html#a10">spatialts.cc</a>.</dd>
 </dl>
 <p class="definition">Definition at line <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../da/dd8/GSLrng__t_8hpp_source.html">GSLrng_t.hpp</a>.</p>
 
 </div>
 </div>
 <a id="aa54d1b009e2826b02358f87f7200c5a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa54d1b009e2826b02358f87f7200c5a8">&#9670;&nbsp;</a></span>operator=()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54d1b009e2826b02358f87f7200c5a8">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -271,6 +302,34 @@ template&lt;typename T &gt; </div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af31b7a33c997b7a3f2872f724ae3a2b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31b7a33c997b7a3f2872f724ae3a2b9">&#9670;&nbsp;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a>&amp; <a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">fwdpp::GSLrng_t</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/d61/classfwdpp_1_1GSLrng__t.html">GSLrng_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

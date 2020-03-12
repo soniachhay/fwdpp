@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -87,7 +87,7 @@ $(function() {
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dcc/structfwdpp_1_1mendel.html">fwdpp::mendel</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_gamete_swapping_function &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html">fwdpp::genetic_parameters&lt; genetic_value, mutation_function, recombination_function, interlocus_recombination_function, parent_haploid_genome_swapping_function &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hold types for genetic operations.  <a href="../../da/db0/structfwdpp_1_1genetic__parameters.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -107,14 +107,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a220cd138602897574bfccc64aa82b3f6"><td class="memTemplItemLeft" align="right" valign="top">genetic_parameters&lt; typename std::remove_reference&lt; genetic_value &gt;::type, typename std::remove_reference&lt; mutation_function &gt;::type, typename std::remove_reference&lt; recombination_function &gt;::type, std::nullptr_t, typename std::remove_reference&lt; swapper &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a220cd138602897574bfccc64aa82b3f6">fwdpp::make_genetic_parameters_with_swapper</a> (genetic_value &amp;&amp;gvalue_param, mutation_function &amp;&amp;generate_mutations_param, recombination_function &amp;&amp;generate_breakpoints_param, swapper &amp;&amp;swapper_param)</td></tr>
 <tr class="memdesc:a220cd138602897574bfccc64aa82b3f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html" title="Hold types for genetic operations. ">fwdpp::genetic_parameters</a> for a single-locus simulation.  <a href="../../dd/d84/namespacefwdpp.html#a220cd138602897574bfccc64aa82b3f6">More...</a><br /></td></tr>
 <tr class="separator:a220cd138602897574bfccc64aa82b3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0282936eb0933034c3ba69e63fd0a1d4"><td class="memTemplParams" colspan="2">template&lt;typename genetic_value , typename mutation_function , typename recombination_function , typename interlocus_recombination &gt; </td></tr>
-<tr class="memitem:a0282936eb0933034c3ba69e63fd0a1d4"><td class="memTemplItemLeft" align="right" valign="top">genetic_parameters&lt; typename std::remove_reference&lt; genetic_value &gt;::type, typename std::remove_reference&lt; mutation_function &gt;::type, typename std::remove_reference&lt; recombination_function &gt;::type, typename std::remove_reference&lt; interlocus_recombination &gt;::type, mendel &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#a0282936eb0933034c3ba69e63fd0a1d4">fwdpp::make_genetic_parameters</a> (genetic_value &amp;&amp;gvalue_param, mutation_function &amp;&amp;generate_mutations_param, recombination_function &amp;&amp;generate_breakpoints_param, interlocus_recombination &amp;&amp;interlocus_rec)</td></tr>
-<tr class="memdesc:a0282936eb0933034c3ba69e63fd0a1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html" title="Hold types for genetic operations. ">fwdpp::genetic_parameters</a> for a multi-locus simulation.  <a href="../../dd/d84/namespacefwdpp.html#a0282936eb0933034c3ba69e63fd0a1d4">More...</a><br /></td></tr>
-<tr class="separator:a0282936eb0933034c3ba69e63fd0a1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4de258d8950b6f4fce5095153d4a55c"><td class="memTemplParams" colspan="2">template&lt;typename genetic_value , typename mutation_function , typename recombination_function , typename interlocus_recombination , typename swapper &gt; </td></tr>
-<tr class="memitem:af4de258d8950b6f4fce5095153d4a55c"><td class="memTemplItemLeft" align="right" valign="top">genetic_parameters&lt; typename std::remove_reference&lt; genetic_value &gt;::type, typename std::remove_reference&lt; mutation_function &gt;::type, typename std::remove_reference&lt; recombination_function &gt;::type, typename std::remove_reference&lt; interlocus_recombination &gt;::type, typename std::remove_reference&lt; swapper &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d84/namespacefwdpp.html#af4de258d8950b6f4fce5095153d4a55c">fwdpp::make_genetic_parameters_with_swapper</a> (genetic_value &amp;&amp;gvalue_param, mutation_function &amp;&amp;generate_mutations_param, recombination_function &amp;&amp;generate_breakpoints_param, interlocus_recombination &amp;&amp;interlocus_rec, swapper &amp;&amp;swapper_param)</td></tr>
-<tr class="memdesc:af4de258d8950b6f4fce5095153d4a55c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="../../da/db0/structfwdpp_1_1genetic__parameters.html" title="Hold types for genetic operations. ">fwdpp::genetic_parameters</a> for a multi-locus simulation.  <a href="../../dd/d84/namespacefwdpp.html#af4de258d8950b6f4fce5095153d4a55c">More...</a><br /></td></tr>
-<tr class="separator:af4de258d8950b6f4fce5095153d4a55c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

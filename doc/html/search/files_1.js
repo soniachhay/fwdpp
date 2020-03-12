@@ -3,6 +3,7 @@ var searchData=
   ['calculate_5ffitnesses_2ehpp',['calculate_fitnesses.hpp',['../d1/dc4/calculate__fitnesses_8hpp.html',1,'']]],
   ['callbacks_2ehpp',['callbacks.hpp',['../d3/da7/callbacks_8hpp.html',1,'']]],
   ['change_5fneutral_2ehpp',['change_neutral.hpp',['../dd/dcb/change__neutral_8hpp.html',1,'']]],
+  ['children_2ehpp',['children.hpp',['../d4/d27/children_8hpp.html',1,'']]],
   ['common_5find_2ehpp',['common_ind.hpp',['../df/d10/common__ind_8hpp.html',1,'']]],
   ['compact_5fmutations_2ehpp',['compact_mutations.hpp',['../d8/d2e/compact__mutations_8hpp.html',1,'']]],
   ['confirm_5fmutation_5fcounts_2ehpp',['confirm_mutation_counts.hpp',['../d0/d52/confirm__mutation__counts_8hpp.html',1,'']]],

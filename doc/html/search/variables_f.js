@@ -1,8 +1,6 @@
 var searchData=
 [
   ['reader',['reader',['../de/df6/structfwdpp_1_1io_1_1deserialize__mutation_3_01popgenmut_01_4.html#aa1005317957b956c3b1ca3064d967b0a',1,'fwdpp::io::deserialize_mutation&lt; popgenmut &gt;::reader()'],['../d6/d2f/structfwdpp_1_1io_1_1deserialize__mutation_3_01TwoDmutation_01_4.html#a591a543856e631fc084bf0d283d33d29',1,'fwdpp::io::deserialize_mutation&lt; TwoDmutation &gt;::reader()']]],
-  ['recmap',['recmap',['../d7/d87/general__rec__variation_8hpp.html#a1300512c4a8e387155babda59a9c5e9a',1,'general_rec_variation.hpp']]],
-  ['recrate',['recrate',['../d5/d24/structfwdpp_1_1poisson__xover.html#a03f0b795c0c95e0adec1c303697f7f12',1,'fwdpp::poisson_xover']]],
   ['rho',['rho',['../d1/d38/structoptions.html#a7212a932885e21e35d86c836b5d4734a',1,'options']]],
   ['right',['right',['../d3/d25/structfwdpp_1_1ts_1_1edge.html#aa38da791b99637d0bc7fcd408ea49b9c',1,'fwdpp::ts::edge::right()'],['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#acce912c958c77fee9c69dc52091e140b',1,'fwdpp::ts::marginal_tree::right()']]],
   ['right_5fchild',['right_child',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a703b42a6efe5a3e981a41bc6b9d8dbfc',1,'fwdpp::ts::marginal_tree']]],

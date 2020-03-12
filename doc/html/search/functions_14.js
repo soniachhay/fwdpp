@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_5fout_5fgametes',['zero_out_gametes',['../dd/d84/namespacefwdpp.html#ae74b0423ff11fea6ef5d24bccca8b5ff',1,'fwdpp']]]
+  ['zero_5fout_5fhaploid_5fgenomes',['zero_out_haploid_genomes',['../dd/d84/namespacefwdpp.html#a96df748a638fdddc6513f8eded763f7e',1,'fwdpp']]]
 ];

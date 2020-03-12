@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['diploid_5ft',['diploid_t',['../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#aa66b68407eee93c63eaf0ef2533d0ba9',1,'fwdpp::poptypes::mlocuspop::diploid_t()'],['../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#a77c390c6b7f108b758f9169d9c6664a6',1,'fwdpp::poptypes::slocuspop::diploid_t()']]],
-  ['dipvector_5ft',['dipvector_t',['../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a799f27d0cb83bc9ff78b2bd1db7a42d5',1,'fwdpp::poptypes::mlocuspop::dipvector_t()'],['../d5/d60/classfwdpp_1_1poptypes_1_1slocuspop.html#ada45a79684ac124e7ee4c9d33593463d',1,'fwdpp::poptypes::slocuspop::dipvector_t()']]]
+  ['diploid_5fpopulation',['diploid_population',['../dd/d84/namespacefwdpp.html#a927953d0f8476643576a4f45001e4abf',1,'fwdpp']]],
+  ['diploid_5ft',['diploid_t',['../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#a052c14db58db50aa14eaf931171f5e66',1,'fwdpp::poptypes::diploid_population']]],
+  ['diploid_5ftag',['DIPLOID_TAG',['../d0/dfa/namespacefwdpp_1_1poptypes.html#a1f9e5cc5ce8a80a2148b1528aa2c9a64',1,'fwdpp::poptypes']]],
+  ['dipvector_5ft',['dipvector_t',['../df/d2f/classfwdpp_1_1poptypes_1_1diploid__population.html#a44c21964f58c9993d21e375276e758dd',1,'fwdpp::poptypes::diploid_population']]]
 ];

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -83,18 +83,18 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aab8ff3f55b272dba8351c28f25f86e87"><td class="memTemplParams" colspan="2">template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
-<tr class="memitem:aab8ff3f55b272dba8351c28f25f86e87"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1dd4f7269489779fa3061551444fae5f">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#aab8ff3f55b272dba8351c28f25f86e87">operator()</a> (const gamete_type &amp;g1, const gamete_type &amp;g2, const mcont_t &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
-<tr class="separator:aab8ff3f55b272dba8351c28f25f86e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92e5d5bea69d6dfd04e4fe759b6e4089"><td class="memTemplParams" colspan="2">template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
-<tr class="memitem:a92e5d5bea69d6dfd04e4fe759b6e4089"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1dd4f7269489779fa3061551444fae5f">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a92e5d5bea69d6dfd04e4fe759b6e4089">operator()</a> (const diploid_t &amp;diploid, const gcont_t &amp;gametes, const mcont_t &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
-<tr class="separator:a92e5d5bea69d6dfd04e4fe759b6e4089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de428a65e4ad678b35bce4de2cd98c3"><td class="memTemplParams" colspan="2">template&lt;typename haploid_genome_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
+<tr class="memitem:a1de428a65e4ad678b35bce4de2cd98c3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1dd4f7269489779fa3061551444fae5f">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1de428a65e4ad678b35bce4de2cd98c3">operator()</a> (const haploid_genome_type &amp;g1, const haploid_genome_type &amp;g2, const mcont_t &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
+<tr class="separator:a1de428a65e4ad678b35bce4de2cd98c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df097f2b58c1a5467ce55843590b468"><td class="memTemplParams" colspan="2">template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </td></tr>
+<tr class="memitem:a2df097f2b58c1a5467ce55843590b468"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1dd4f7269489779fa3061551444fae5f">result_type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a2df097f2b58c1a5467ce55843590b468">operator()</a> (const diploid_t &amp;diploid, const gcont_t &amp;haploid_genomes, const mcont_t &amp;mutations, const haplotype_policy &amp;hpol, const diploid_policy &amp;dpol) const noexcept</td></tr>
+<tr class="separator:a2df097f2b58c1a5467ce55843590b468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Function object for fitness/trait value as a function of the two haplotypes in a diploid. </p>
 <dl class="section note"><dt>Note</dt><dd>This really is just a convenience function. Depending on the specifics of the model, this function may be totally unnecessary. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00290">290</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00294">294</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a1dd4f7269489779fa3061551444fae5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1dd4f7269489779fa3061551444fae5f">&#9670;&nbsp;</a></span>result_type</h2>
@@ -108,18 +108,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00292">292</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00296">296</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aab8ff3f55b272dba8351c28f25f86e87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab8ff3f55b272dba8351c28f25f86e87">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
+<a id="a1de428a65e4ad678b35bce4de2cd98c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de428a65e4ad678b35bce4de2cd98c3">&#9670;&nbsp;</a></span>operator()() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </div>
+template&lt;typename haploid_genome_type , typename mcont_t , typename haplotype_policy , typename diploid_policy &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -127,13 +127,13 @@ template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy 
         <tr>
           <td class="memname"><a class="el" href="../../d1/d7f/structfwdpp_1_1haplotype__dependent__trait__value.html#a1dd4f7269489779fa3061551444fae5f">result_type</a> fwdpp::haplotype_dependent_trait_value::operator() </td>
           <td>(</td>
-          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_type &amp;&#160;</td>
           <td class="paramname"><em>g1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const gamete_type &amp;&#160;</td>
+          <td class="paramtype">const haploid_genome_type &amp;&#160;</td>
           <td class="paramname"><em>g2</em>, </td>
         </tr>
         <tr>
@@ -168,22 +168,22 @@ template&lt;typename gamete_type , typename mcont_t , typename haplotype_policy 
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g1</td><td>A gamete </td></tr>
-    <tr><td class="paramname">g2</td><td>A gamete </td></tr>
+    <tr><td class="paramname">g1</td><td>A haploid_genome </td></tr>
+    <tr><td class="paramname">g2</td><td>A haploid_genome </td></tr>
     <tr><td class="paramname">mutations</td><td>Container of mutations </td></tr>
-    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
+    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a haploid_genome. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
     <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the genetic value of a diploid genotype g1/g2 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>dpol( hpol(g1,mutations), hpol(g2,mutations) ) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00296">296</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00300">300</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a92e5d5bea69d6dfd04e4fe759b6e4089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92e5d5bea69d6dfd04e4fe759b6e4089">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
+<a id="a2df097f2b58c1a5467ce55843590b468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df097f2b58c1a5467ce55843590b468">&#9670;&nbsp;</a></span>operator()() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +203,7 @@ template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const gcont_t &amp;&#160;</td>
-          <td class="paramname"><em>gametes</em>, </td>
+          <td class="paramname"><em>haploid_genomes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -238,16 +238,16 @@ template&lt;typename diploid_t , typename gcont_t , typename mcont_t , typename 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">diploid</td><td>a diploid </td></tr>
-    <tr><td class="paramname">gametes</td><td>Container of gametes </td></tr>
+    <tr><td class="paramname">haploid_genomes</td><td>Container of haploid_genomes </td></tr>
     <tr><td class="paramname">mutations</td><td>Container of mutations </td></tr>
-    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a gamete. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
+    <tr><td class="paramname">hpol</td><td>A policy whose first argument is an iterator to a haploid_genome. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the effect of this haplotype on genetic value </td></tr>
     <tr><td class="paramname">dpol</td><td>A policy whose first two arguments are doubles, each of which represents the effect of g1 and g2, respectively. Remaining arguments may be bound via std::bind or the equivalent. The policy returns a double representing the genetic value of a diploid genotype g1/g2 </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>dpol( hpol(g1,mutations), hpol(g2,mutations) ) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00330">330</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html#l00336">336</a> of file <a class="el" href="../../db/dd7/fitness__models_8hpp_source.html">fitness_models.hpp</a>.</p>
 
 </div>
 </div>

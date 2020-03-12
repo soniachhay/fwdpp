@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -62,7 +62,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Syntactic sugar layer</div>  </div>
@@ -84,14 +83,6 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:ga628c1455363b18bbe2cbfdfb71f68457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Smart pointer wrapper to gsl_rng *.  <a href="../../de/d6e/group__sugar.html#ga628c1455363b18bbe2cbfdfb71f68457">More...</a><br /></td></tr>
 <tr class="separator:ga628c1455363b18bbe2cbfdfb71f68457"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:ga1d6503ae92e610b15644d84ee5379fed"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga1d6503ae92e610b15644d84ee5379fed">fwdpp::poptypes::FWDPP_POPTYPE</a> { <a class="el" href="../../de/d6e/group__sugar.html#gga1d6503ae92e610b15644d84ee5379feda0d11f1cd8320d792049f863027f04524">fwdpp::poptypes::FWDPP_POPTYPE::SINGLELOC</a>, 
-<a class="el" href="../../de/d6e/group__sugar.html#gga1d6503ae92e610b15644d84ee5379fedacb4eaa80f71ab986f42364e89d58684d">fwdpp::poptypes::FWDPP_POPTYPE::MULTILOC</a>
- }<tr class="memdesc:ga1d6503ae92e610b15644d84ee5379fed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types of populations supported by sugar layer.  <a href="../../de/d6e/group__sugar.html#ga1d6503ae92e610b15644d84ee5379fed">More...</a><br /></td></tr>
-</td></tr>
-<tr class="separator:ga1d6503ae92e610b15644d84ee5379fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t , typename mcounts_t &gt; </td></tr>
@@ -99,23 +90,15 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for implementing <a class="el" href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51" title="Add a mutation into a population at a given frequency. ">fwdpp::add_mutation</a>.  <a href="../../de/d6e/group__sugar.html#ga9ad80c1a4bb0468a7e4de05f3126458c">More...</a><br /></td></tr>
 <tr class="separator:ga9ad80c1a4bb0468a7e4de05f3126458c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3f5ed6b83bb2814905e08054587a7e51"><td class="memTemplParams" colspan="2">template&lt;typename poptype , class... Args&gt; </td></tr>
-<tr class="memitem:ga3f5ed6b83bb2814905e08054587a7e51"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51">fwdpp::add_mutation</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, Args &amp;&amp;... args)</td></tr>
+<tr class="memitem:ga3f5ed6b83bb2814905e08054587a7e51"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51">fwdpp::add_mutation</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, Args &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga3f5ed6b83bb2814905e08054587a7e51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a mutation into a population at a given frequency.  <a href="../../de/d6e/group__sugar.html#ga3f5ed6b83bb2814905e08054587a7e51">More...</a><br /></td></tr>
 <tr class="separator:ga3f5ed6b83bb2814905e08054587a7e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga494fbf09f69a900bc4c98ac9da5bfa8f"><td class="memTemplParams" colspan="2">template&lt;typename multiloc_poptype , class... Args&gt; </td></tr>
-<tr class="memitem:ga494fbf09f69a900bc4c98ac9da5bfa8f"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga494fbf09f69a900bc4c98ac9da5bfa8f">fwdpp::add_mutation</a> (multiloc_poptype &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:ga494fbf09f69a900bc4c98ac9da5bfa8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a mutation into a population at a given frequency at in a specific locus.  <a href="../../de/d6e/group__sugar.html#ga494fbf09f69a900bc4c98ac9da5bfa8f">More...</a><br /></td></tr>
-<tr class="separator:ga494fbf09f69a900bc4c98ac9da5bfa8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaab05d410c9eb46a7832e073a0582c982"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:gaab05d410c9eb46a7832e073a0582c982"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gaab05d410c9eb46a7832e073a0582c982">fwdpp::add_mutations</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, const std::vector&lt; std::size_t &gt; &amp;mutation_indexes)</td></tr>
+<tr class="memitem:gaab05d410c9eb46a7832e073a0582c982"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gaab05d410c9eb46a7832e073a0582c982">fwdpp::add_mutations</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;p, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, const std::vector&lt; std::size_t &gt; &amp;mutation_indexes)</td></tr>
 <tr class="memdesc:gaab05d410c9eb46a7832e073a0582c982"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a set of mutations into a set of individuals in a population.  <a href="../../de/d6e/group__sugar.html#gaab05d410c9eb46a7832e073a0582c982">More...</a><br /></td></tr>
 <tr class="separator:gaab05d410c9eb46a7832e073a0582c982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6f7985aa0049f7d8bdcf9d9b98cfefb7"><td class="memTemplParams" colspan="2">template&lt;typename multiloc_poptype &gt; </td></tr>
-<tr class="memitem:ga6f7985aa0049f7d8bdcf9d9b98cfefb7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#ga6f7985aa0049f7d8bdcf9d9b98cfefb7">fwdpp::add_mutations</a> (multiloc_poptype &amp;p, const std::size_t locus, const std::vector&lt; std::size_t &gt; &amp;indlist, const std::vector&lt; short &gt; &amp;clist, const std::vector&lt; std::size_t &gt; &amp;mutation_indexes)</td></tr>
-<tr class="memdesc:ga6f7985aa0049f7d8bdcf9d9b98cfefb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a set of mutations into a given locus of a multi-locus simulation.  <a href="../../de/d6e/group__sugar.html#ga6f7985aa0049f7d8bdcf9d9b98cfefb7">More...</a><br /></td></tr>
-<tr class="separator:ga6f7985aa0049f7d8bdcf9d9b98cfefb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa221492829e317e96c485621115c9361"><td class="memTemplParams" colspan="2">template&lt;typename poptype &gt; </td></tr>
-<tr class="memitem:gaa221492829e317e96c485621115c9361"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gaa221492829e317e96c485621115c9361">fwdpp::change_neutral</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;p, const std::size_t mindex)</td></tr>
+<tr class="memitem:gaa221492829e317e96c485621115c9361"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/d6e/group__sugar.html#gaa221492829e317e96c485621115c9361">fwdpp::change_neutral</a> (<a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;p, const std::size_t mindex)</td></tr>
 <tr class="memdesc:gaa221492829e317e96c485621115c9361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the value of <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation_base::neutral</a>.  <a href="../../de/d6e/group__sugar.html#gaa221492829e317e96c485621115c9361">More...</a><br /></td></tr>
 <tr class="separator:gaa221492829e317e96c485621115c9361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -141,40 +124,9 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ga1d6503ae92e610b15644d84ee5379fed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1d6503ae92e610b15644d84ee5379fed">&#9670;&nbsp;</a></span>FWDPP_POPTYPE</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../de/d6e/group__sugar.html#ga1d6503ae92e610b15644d84ee5379fed">fwdpp::poptypes::FWDPP_POPTYPE</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Types of populations supported by sugar layer. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga1d6503ae92e610b15644d84ee5379feda0d11f1cd8320d792049f863027f04524"></a>SINGLELOC&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga1d6503ae92e610b15644d84ee5379fedacb4eaa80f71ab986f42364e89d58684d"></a>MULTILOC&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="../../d5/d9b/poptypes_2tags_8hpp_source.html#l00011">11</a> of file <a class="el" href="../../d5/d9b/poptypes_2tags_8hpp_source.html">tags.hpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ga3f5ed6b83bb2814905e08054587a7e51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga3f5ed6b83bb2814905e08054587a7e51">&#9670;&nbsp;</a></span>add_mutation() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f5ed6b83bb2814905e08054587a7e51">&#9670;&nbsp;</a></span>add_mutation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +136,7 @@ template&lt;typename poptype , class... Args&gt; </div>
         <tr>
           <td class="memname">std::size_t fwdpp::add_mutation </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -218,7 +170,7 @@ template&lt;typename poptype , class... Args&gt; </div>
   <table class="params">
     <tr><td class="paramname">p</td><td>A single locus population object. </td></tr>
     <tr><td class="paramname">indlist</td><td>A list of indexes of diploids into which to add the new mutations. </td></tr>
-    <tr><td class="paramname">clist</td><td>A list of gametes. See below. </td></tr>
+    <tr><td class="paramname">clist</td><td>A list of haploid_genomes. See below. </td></tr>
     <tr><td class="paramname">args</td><td>Values required to cosnstruct a new mutation. See below.</td></tr>
   </table>
   </dd>
@@ -226,86 +178,16 @@ template&lt;typename poptype , class... Args&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The key referring to the location of the new mutation in the population</dd></dl>
 <p>Some notes:</p>
 <p>clist.size() must equal indlist.size()</p>
-<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both gametes, resepectively, of each diploid in <em>indlist</em>.</p>
+<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both haploid_genomes, resepectively, of each diploid in <em>indlist</em>.</p>
 <p>Note that <em>args</em> can take on a few different forms. First, it can be a raw set of values used to construct a new mutation. Or, it can be an object of correct mutation type. Or, it can be any type from which the correct mutation type can be constructed. The last two cases require that the mutation type have the appropriate constructors defined.</p>
 <p>See the unit test file unit/test_sugar_add_mutation.cc for example of use. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00234">234</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga494fbf09f69a900bc4c98ac9da5bfa8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga494fbf09f69a900bc4c98ac9da5bfa8f">&#9670;&nbsp;</a></span>add_mutation() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename multiloc_poptype , class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">std::size_t fwdpp::add_mutation </td>
-          <td>(</td>
-          <td class="paramtype">multiloc_poptype &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>locus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; short &gt; &amp;&#160;</td>
-          <td class="paramname"><em>clist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Args &amp;&amp;...&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add a mutation into a population at a given frequency at in a specific locus. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>A multi-locus population object. </td></tr>
-    <tr><td class="paramname">locus</td><td>Index of the locus in which to add mutation. </td></tr>
-    <tr><td class="paramname">indlist</td><td>A list of indexes of diploids into which to add the new mutations. </td></tr>
-    <tr><td class="paramname">clist</td><td>A list of gametes. See below. </td></tr>
-    <tr><td class="paramname">args</td><td>Values required to cosnstruct a new mutation. See below.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Nothing (void) </dd>
-<dd>
-The key referring to the location of the new mutation in the population</dd></dl>
-<p>Some notes:</p>
-<p>clist.size() must equal indlist.size()</p>
-<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both gametes, resepectively, of each diploid in <em>indlist</em>.</p>
-<p>Note that <em>args</em> can take on a few different forms. First, it can be a raw set of values used to construct a new mutation. Or, it can be an object of correct mutation type. Or, it can be any type from which the correct mutation type can be constructed. The last two cases require that the mutation type have the appropriate constructors defined.</p>
-<p>See the unit test file unit/test_sugar_add_mutation.cc for example of use. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00302">302</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00193">193</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
 
 </div>
 </div>
 <a id="gaab05d410c9eb46a7832e073a0582c982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaab05d410c9eb46a7832e073a0582c982">&#9670;&nbsp;</a></span>add_mutations() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#gaab05d410c9eb46a7832e073a0582c982">&#9670;&nbsp;</a></span>add_mutations()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +197,7 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td class="memname">void fwdpp::add_mutations </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -347,9 +229,9 @@ template&lt;typename poptype &gt; </div>
 <p>Add a set of mutations into a set of individuals in a population. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td>A multi-locus population object. </td></tr>
+    <tr><td class="paramname">p</td><td>A diploid population object. </td></tr>
     <tr><td class="paramname">indlist</td><td>A list of indexes of diploids into which to add the new mutations. </td></tr>
-    <tr><td class="paramname">clist</td><td>A list of gametes. See below. </td></tr>
+    <tr><td class="paramname">clist</td><td>A list of haploid_genomes. See below. </td></tr>
     <tr><td class="paramname">mutation_indexes</td><td>The set of mutations to add. See below.</td></tr>
   </table>
   </dd>
@@ -357,7 +239,7 @@ template&lt;typename poptype &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Nothing (void)</dd></dl>
 <p>Some notes:</p>
 <p>clist.size() must equal indlist.size()</p>
-<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both gametes, resepectively, of each diploid in <em>indlist</em>.</p>
+<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both haploid_genomes, resepectively, of each diploid in <em>indlist</em>.</p>
 <dl class="section note"><dt>Note</dt><dd><em>mutation_indexes</em> refers to the locations of mutations found in <em>p.mutations</em>.</dd>
 <dd>
 For each element, i, in <em>mutation_indexes</em>, <em>p.mcounts</em>[i] should be zero before entering this function.</dd>
@@ -365,79 +247,7 @@ For each element, i, in <em>mutation_indexes</em>, <em>p.mcounts</em>[i] should 
 <em>p.mut_lookup</em> is NOT updated by this function.</dd></dl>
 <p>See the unit test file unit/test_sugar_add_mutation.cc for example of use. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00372">372</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga6f7985aa0049f7d8bdcf9d9b98cfefb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6f7985aa0049f7d8bdcf9d9b98cfefb7">&#9670;&nbsp;</a></span>add_mutations() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename multiloc_poptype &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void fwdpp::add_mutations </td>
-          <td>(</td>
-          <td class="paramtype">multiloc_poptype &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::size_t&#160;</td>
-          <td class="paramname"><em>locus</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>indlist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; short &gt; &amp;&#160;</td>
-          <td class="paramname"><em>clist</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>mutation_indexes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Add a set of mutations into a given locus of a multi-locus simulation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p</td><td>A multi-locus population object. </td></tr>
-    <tr><td class="paramname">locus</td><td>Index of the locus in which to add mutation. </td></tr>
-    <tr><td class="paramname">indlist</td><td>A list of indexes of diploids into which to add the new mutations. </td></tr>
-    <tr><td class="paramname">clist</td><td>A list of gametes. See below. </td></tr>
-    <tr><td class="paramname">mutation_indexes</td><td>Keys to mutations in p.mutations.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Nothing (void)</dd></dl>
-<p>Some notes:</p>
-<p>clist.size() must equal indlist.size()</p>
-<p>Values in <em>clist</em> must be 0, 1, or 2. These values mean to add the mutation to the first, second, or both gametes, resepectively, of each diploid in <em>indlist</em>.</p>
-<dl class="section note"><dt>Note</dt><dd><em>mutation_indexes</em> refers to the locations of mutations found in <em>p.mutations</em>.</dd>
-<dd>
-For each element, i, in <em>mutation_indexes</em>, <em>p.mcounts</em>[i] should be zero before entering this function.</dd>
-<dd>
-<em>p.mut_lookup</em> is NOT updated by this function.</dd></dl>
-<p>See the unit test file unit/test_sugar_add_mutation.cc for example of use. </p>
-
-<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00443">443</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html#l00261">261</a> of file <a class="el" href="../../d1/d87/add__mutation_8hpp_source.html">add_mutation.hpp</a>.</p>
 
 </div>
 </div>
@@ -452,7 +262,7 @@ template&lt;typename poptype &gt; </div>
         <tr>
           <td class="memname">void fwdpp::change_neutral </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#a7772591e7f617e52a048394158fd7302">poptype</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="../../d2/df8/spatialts_8cc.html#af42af3a583005f9b1db56c61a5bdd18a">poptype</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em>, </td>
         </tr>
         <tr>
@@ -477,7 +287,7 @@ template&lt;typename poptype &gt; </div>
   </table>
   </dd>
 </dl>
-<p>This function negates <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation_base::neutral</a> at position mindex and updates the storage of this mutation in all gametes.</p>
+<p>This function negates <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation_base::neutral</a> at position mindex and updates the storage of this mutation in all haploid_genomes.</p>
 <dl class="section note"><dt>Note</dt><dd>This function does not change any other member data at p.mutations[mindex]!! Thus, if you change a mutation from "neutral" to "selected", you must manually change the relevant member data to reflect its new effect size. For the simplest use case of making a mutation no longer subject to selection, no additional changes are needed. Rather, it is sufficient that <a class="el" href="../../da/dca/structfwdpp_1_1mutation__base.html#ab816e51903e630e17539cd766d1e259a" title="Is the mutation neutral or not? ">mutation_base::neutral</a> == true.</dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">

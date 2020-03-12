@@ -1,12 +1,11 @@
-\form#0:$[0,num\_mutations)$
-\form#1:$s$
-\form#2:$h$
-\form#3:$1$
-\form#4:$1+hs$
-\form#5:$1+xs$
-\form#6:$x = 1$
-\form#7:$AA$
-\form#8:$Aa$
-\form#9:$aa$
-\form#10:$a$
-\form#11:$g$
+\form#0:$s$
+\form#1:$h$
+\form#2:$1$
+\form#3:$1+hs$
+\form#4:$1+xs$
+\form#5:$x = 1$
+\form#6:$AA$
+\form#7:$Aa$
+\form#8:$aa$
+\form#9:$a$
+\form#10:$g$

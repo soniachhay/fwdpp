@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writer',['writer',['../de/d85/structfwdpp_1_1io_1_1serialize__mutation_3_01popgenmut_01_4.html#a00bcfa57eb9748eedf52b8646e520db6',1,'fwdpp::io::serialize_mutation&lt; popgenmut &gt;::writer()'],['../d9/de3/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1uint32__t_00_01std_1_1uint32__t_01_4_01_4.html#a1064118d5d7ea1b32b232254e40f49d3',1,'fwdpp::io::serialize_diploid&lt; std::pair&lt; std::uint32_t, std::uint32_t &gt; &gt;::writer()'],['../d1/de7/structfwdpp_1_1io_1_1serialize__diploid_3_01std_1_1pair_3_01std_1_1size__t_00_01std_1_1size__t_01_4_01_4.html#aedb86e3e7cf4d56d0fa64824be64378a',1,'fwdpp::io::serialize_diploid&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt;::writer()'],['../d2/d82/structfwdpp_1_1io_1_1serialize__mutation_3_01TwoDmutation_01_4.html#a8559fcc1ecffeed31cb37bca10a4c1c8',1,'fwdpp::io::serialize_mutation&lt; TwoDmutation &gt;::writer()']]]
+  ['visit_5fsites_5ftest',['visit_sites_test',['../d1/d38/structoptions.html#a4b7799da14fb612a04d6b78f164d5014',1,'options']]]
 ];

@@ -1,6 +1,13 @@
 var searchData=
 [
   ['named_5ftype',['named_type',['../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#ad6b8697cf8c5ba53b07b6ee5d4c8ac94',1,'fwdpp::strong_types::named_type::named_type(const T &amp;value)'],['../dd/d53/structfwdpp_1_1strong__types_1_1named__type.html#adc296cb5b5658f29bf44f1ec92cfecca',1,'fwdpp::strong_types::named_type::named_type(T_ &amp;&amp;value, typename std::enable_if&lt;!std::is_reference&lt; T_ &gt;::value &gt;::value)']]],
-  ['num_5fnodes',['num_nodes',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a688df7762623df0cf190c3207bc89868',1,'fwdpp::ts::table_collection']]],
-  ['num_5froots',['num_roots',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#afe486083a045612adb8f1e59b5aedde2',1,'fwdpp::ts::marginal_tree']]]
+  ['new_5fvariant_5frecord',['new_variant_record',['../db/d6a/structfwdpp_1_1ts_1_1new__variant__record.html#a0e1b7ec74f83d0a5321f400a6a7cf1e5',1,'fwdpp::ts::new_variant_record']]],
+  ['node_5fiterator',['node_iterator',['../d2/d43/classfwdpp_1_1ts_1_1node__iterator.html#a03d982cc0ce062a314538338d0bfd109',1,'fwdpp::ts::node_iterator::node_iterator(const marginal_tree &amp;m, ORDER order_policy)'],['../d2/d43/classfwdpp_1_1ts_1_1node__iterator.html#a6635c38e415d32732ae6b28ddab119d8',1,'fwdpp::ts::node_iterator::node_iterator(const marginal_tree &amp;m, TS_NODE_INT u, ORDER order_policy)']]],
+  ['node_5ftraversal_5fdispatch',['node_traversal_dispatch',['../d8/d31/namespacefwdpp_1_1ts.html#a071367c1dd58b17e5d2c50c87b52f4e0',1,'fwdpp::ts']]],
+  ['node_5ftraversal_5forder',['node_traversal_order',['../d6/dd0/structfwdpp_1_1ts_1_1node__traversal__order.html#ae2a02bb122e1c0accfc8718febd8149e',1,'fwdpp::ts::node_traversal_order::node_traversal_order()=default'],['../d6/dd0/structfwdpp_1_1ts_1_1node__traversal__order.html#aa5f81fe3c31cedc2d5cf5f983c3b743c',1,'fwdpp::ts::node_traversal_order::node_traversal_order(const node_traversal_order &amp;)=default'],['../d6/dd0/structfwdpp_1_1ts_1_1node__traversal__order.html#a25fbf2d9d651918ad2ff927af8af8727',1,'fwdpp::ts::node_traversal_order::node_traversal_order(node_traversal_order &amp;&amp;)=default']]],
+  ['node_5ftraversal_5fpreorder',['node_traversal_preorder',['../dc/dcd/classfwdpp_1_1ts_1_1node__traversal__preorder.html#a334a4c015204a46accc22619753c1daa',1,'fwdpp::ts::node_traversal_preorder']]],
+  ['num_5fchildren',['num_children',['../d8/d31/namespacefwdpp_1_1ts.html#a08036aaea8b364c31930ad309a6cc56b',1,'fwdpp::ts']]],
+  ['num_5fnodes',['num_nodes',['../d7/de8/structfwdpp_1_1ts_1_1table__collection.html#a688df7762623df0cf190c3207bc89868',1,'fwdpp::ts::table_collection::num_nodes()'],['../d8/d31/namespacefwdpp_1_1ts.html#ac470f837dfaf69300aae5a677edf47c9',1,'fwdpp::ts::num_nodes()']]],
+  ['num_5froots',['num_roots',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#afe486083a045612adb8f1e59b5aedde2',1,'fwdpp::ts::marginal_tree::num_roots()'],['../d8/d31/namespacefwdpp_1_1ts.html#a08d54fd20651e657d980cc9aa908a22e',1,'fwdpp::ts::num_roots()']]],
+  ['num_5fsamples',['num_samples',['../d8/d31/namespacefwdpp_1_1ts.html#a280159065b7fd75ac05bbbb1a4ef5ec8',1,'fwdpp::ts']]]
 ];

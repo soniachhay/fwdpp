@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -85,7 +85,7 @@ Policies in C++</h1>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; x{5,4,3,2,1};</div><div class="line">std::sort(x.begin(),x.end()); <span class="comment">//x will now contain 1,2,3,4,5</span></div></div><!-- fragment --><p>This default behavior may be modified by passing a custom function ("policy") as an additional argument. In C++, this function can take on several different forms, including function objects, lambda expression, and instances of std::function. Here is an <em>incomplete</em> list of the various ways you could sort in ascending order:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;algorithm&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;functional&gt;</span></div><div class="line"></div><div class="line"><span class="keyword">using namespace </span>std;</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> <a class="code" href="../../db/d46/custom__diploid_8cc.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> ** argv) {</div><div class="line">        vector&lt;int&gt; x{5,4,3,2,1};</div><div class="line"></div><div class="line">        sort(x.begin(),x.end()); <span class="comment">//x is now 1,2,3,4,5</span></div><div class="line"></div><div class="line">        <span class="comment">//sort x in ascending order via std::greater...</span></div><div class="line">        sort(x.begin(),x.end(),bind(greater&lt;int&gt;(),placeholders::_1,placeholders::_2));</div><div class="line"></div><div class="line">        <span class="comment">//...or a lambda function...</span></div><div class="line">        sort(x.begin(),x.end(),[](<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> b) { <span class="keywordflow">return</span> a&gt;b; });</div><div class="line"></div><div class="line">        <span class="comment">//...or a std::function wrapping a lambda...</span></div><div class="line">        std::function&lt;bool(int,int)&gt; sorter = [](<span class="keywordtype">int</span> a,<span class="keywordtype">int</span> b){<span class="keywordflow">return</span> a&gt;b;};</div><div class="line">        sort(x.begin(),x.end(),sorter);</div><div class="line"></div><div class="line">        <span class="comment">//...or a std::function wrapping bind/greater...</span></div><div class="line">        sorter = std::bind(greater&lt;int&gt;(),placeholders::_1,placeholders::_2);</div><div class="line">        sort(x.begin(),x.end(),sorter);</div><div class="line">}</div></div><!-- fragment --><h1><a class="anchor" id="fwdppPolicies"></a>
 Policies in fwdpp</h1>
-<p>Just like the STL, custom functions modify the behavior of simulations. These policies affect how mutation, recombination, and selection all work. Additionally, policies may affect how mutations are removed from gametes and/or the entire population at the end of each generation. For example, consider a neutral mutation that fixed in the most recent generation. There is really no point in keeping a key to it in every gamete. Rather, we may prefer to remove it from each gamete and store it in a vector of fixations. Doing so requires a policy passed to <a class="el" href="../../dd/d84/namespacefwdpp.html#ab4197908734e2e302817107feaaf86b9">fwdpp::sample_diploid</a> telling it to remove neutral mutations. In the case of selected mutations, we may or may not want to remove such fixed variants from gametes, depending on the context of our simulation (standard pop-gen where fixed selective mutations no longer affect relative fitness vs quantitative trait simulations where they do contribute to trait values, and thus affect distance to optimium, etc.).</p>
+<p>Just like the STL, custom functions modify the behavior of simulations. These policies affect how mutation, recombination, and selection all work. Additionally, policies may affect how mutations are removed from gametes and/or the entire population at the end of each generation. For example, consider a neutral mutation that fixed in the most recent generation. There is really no point in keeping a key to it in every gamete. Rather, we may prefer to remove it from each gamete and store it in a vector of fixations. Doing so requires a policy passed to <a class="el" href="../../dd/d84/namespacefwdpp.html#aceda5d4070606706887d0e32d2ad843b">fwdpp::sample_diploid</a> telling it to remove neutral mutations. In the case of selected mutations, we may or may not want to remove such fixed variants from gametes, depending on the context of our simulation (standard pop-gen where fixed selective mutations no longer affect relative fitness vs quantitative trait simulations where they do contribute to trait values, and thus affect distance to optimium, etc.).</p>
 <h2><a class="anchor" id="TutMut"></a>
 Mutation policies</h2>
 <p>A mutation model has one of the following function signatures. Either</p>
@@ -99,7 +99,7 @@ Recombination policies</h2>
 <p>The function signature of a recombination policy must be equivalent to fwdpp::traits::recmodel_t. If so, then a static assertion involving fwdpp::traits::valid_rec_model will pass at compile time. See type_traitsTest.cc for an example of this assertion.</p>
 <p>Additional model parameters are possible via the usual mechanisms: class members, std::bind, etc.</p>
 <ul>
-<li><a class="el" href="../../d5/d24/structfwdpp_1_1poisson__xover.html" title="Simple model of crossing-over. Generates a Poisson-distributed number of recombination breakpoints wi...">fwdpp::poisson_xover</a></li>
+<li>fwdpp::poisson_xover</li>
 </ul>
 <h2><a class="anchor" id="TutFitness"></a>
 Genetic value policies</h2>
@@ -113,7 +113,7 @@ Genetic value policies</h2>
 <p>The default is std::true_type, which means that all fixations are removed from gametes.</p>
 <ul>
 <li><a class="el" href="../../db/dac/structfwdpp_1_1remove__nothing.html">fwdpp::remove_nothing</a></li>
-<li><a class="el" href="../../d3/d73/structfwdpp_1_1remove__neutral.html" title="Policy telling library to remove neutral mutations from gametes after sampling. ">fwdpp::remove_neutral</a> </li>
+<li><a class="el" href="../../d3/d73/structfwdpp_1_1remove__neutral.html" title="Policy telling library to remove neutral mutations from haploid_genomes after sampling. ">fwdpp::remove_neutral</a> </li>
 </ul>
 </div></div><!-- contents -->
 <!-- start footer part -->

@@ -7,7 +7,6 @@ var searchData=
   ['left_5froot',['left_root',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#ab40dfb8a3eec8aec86435dce1edd3b45',1,'fwdpp::ts::marginal_tree']]],
   ['left_5fsample',['left_sample',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#adcfa90ca74588c646b6ab3319fe46bee',1,'fwdpp::ts::marginal_tree']]],
   ['left_5fsib',['left_sib',['../d2/d6a/classfwdpp_1_1ts_1_1marginal__tree.html#a57bb1bbb19ddf905d67347dc14c0cb96',1,'fwdpp::ts::marginal_tree']]],
-  ['locus_5fboundaries',['locus_boundaries',['../d3/d57/classfwdpp_1_1poptypes_1_1mlocuspop.html#a997a0e295c8b1d7b7ec765f8a5f5df55',1,'fwdpp::poptypes::mlocuspop']]],
-  ['lookup1',['lookup1',['../d5/db7/structparent__lookup__tables.html#ade0253bccef0157a415847aec569238e',1,'parent_lookup_tables']]],
-  ['lookup2',['lookup2',['../d5/db7/structparent__lookup__tables.html#aaab04a4613768bbddc33a1279bda44e8',1,'parent_lookup_tables']]]
+  ['lookup1',['lookup1',['../d5/db7/structparent__lookup__tables.html#ab8f72ce94dea40c2937f415577d8b4fc',1,'parent_lookup_tables']]],
+  ['lookup2',['lookup2',['../d5/db7/structparent__lookup__tables.html#ac78e164b1fa50d198073d1de6c2c151c',1,'parent_lookup_tables']]]
 ];

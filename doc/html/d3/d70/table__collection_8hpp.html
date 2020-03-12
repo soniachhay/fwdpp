@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">fwdpp
-   &#160;<span id="projectnumber">0.7.4</span>
+   &#160;<span id="projectnumber">0.8.0</span>
    </div>
   </td>
  </tr>
@@ -66,7 +66,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">table_collection.hpp File Reference</div>  </div>
@@ -82,9 +81,8 @@ $(function() {
 <code>#include &lt;cstddef&gt;</code><br />
 <code>#include &lt;stdexcept&gt;</code><br />
 <code>#include &lt;<a class="el" href="../../d5/d1d/forward__types_8hpp_source.html">fwdpp/forward_types.hpp</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="../../d3/d09/node_8hpp_source.html">node.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d4/ddf/edge_8hpp_source.html">edge.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d1/d31/mutation__record_8hpp_source.html">mutation_record.hpp</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="../../da/d49/exceptions_8hpp_source.html">fwdpp/ts/exceptions.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/dfa/table__types_8hpp_source.html">table_types.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d8/db6/indexed__edge_8hpp_source.html">indexed_edge.hpp</a>&quot;</code><br />
 </div>
 <p><a href="../../d3/d70/table__collection_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -104,21 +102,15 @@ Namespaces</h2></td></tr>
 <tr class="memdesc:d8/d31/namespacefwdpp_1_1ts"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tree sequence <a class="el" href="../../d0/de3/citelist.html#CITEREF_Kelleher2018-fu">[2]</a> support. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:aff3b5522130bcd6ca8feeb86276b0807"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#aff3b5522130bcd6ca8feeb86276b0807">fwdpp::ts::edge_vector</a> = std::vector&lt; edge &gt;</td></tr>
-<tr class="separator:aff3b5522130bcd6ca8feeb86276b0807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c51e69b27f3e160eb62ea06591a2bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a60c51e69b27f3e160eb62ea06591a2bb">fwdpp::ts::node_vector</a> = std::vector&lt; node &gt;</td></tr>
-<tr class="separator:a60c51e69b27f3e160eb62ea06591a2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37fa9d4b0f7f967c76a8d550102a7405"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a37fa9d4b0f7f967c76a8d550102a7405">fwdpp::ts::mutation_key_vector</a> = std::vector&lt; mutation_record &gt;</td></tr>
-<tr class="separator:a37fa9d4b0f7f967c76a8d550102a7405"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4e79321c58c8dec2eabbb073b689bf4e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#a4e79321c58c8dec2eabbb073b689bf4e">fwdpp::ts::operator==</a> (const table_collection &amp;a, const table_collection &amp;b)</td></tr>
 <tr class="separator:a4e79321c58c8dec2eabbb073b689bf4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab382753de993cedb4e1d14c152868446"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#ab382753de993cedb4e1d14c152868446">fwdpp::ts::operator!=</a> (const table_collection &amp;a, const table_collection &amp;b)</td></tr>
 <tr class="separator:ab382753de993cedb4e1d14c152868446"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d2e4ac41b0a71f39def87a0067409b"><td class="memTemplParams" colspan="2">template&lt;typename mcont_t &gt; </td></tr>
+<tr class="memitem:aa9d2e4ac41b0a71f39def87a0067409b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d8/d31/namespacefwdpp_1_1ts.html#aa9d2e4ac41b0a71f39def87a0067409b">fwdpp::ts::record_mutations_infinite_sites</a> (const TS_NODE_INT u, const mcont_t &amp;mutations, const std::vector&lt; std::uint32_t &gt; &amp;new_mutation_keys, table_collection &amp;tables)</td></tr>
+<tr class="separator:aa9d2e4ac41b0a71f39def87a0067409b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
