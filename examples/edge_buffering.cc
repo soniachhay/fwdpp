@@ -353,7 +353,7 @@ simulate(const command_line_options& options)
     for (unsigned step = 1; step <= options.nsteps; ++step)
         {
             deaths_and_parents(rng, parents, options.psurvival, births);
-            generate_births(rng, births, littler, breakpoints, options.nsteps - step,
+            generate_births(rng, births, littler, breakpoints, step,
                             options.buffer_new_edges, buffer, parents, tables);
             if (step % options.simplification_interval == 0.)
                 {
@@ -377,7 +377,7 @@ simulate(const command_line_options& options)
                                                     edge_liftover, tables);
                         }
                     simplified = true;
-                    last_time_simplified = options.nsteps - step;
+                    last_time_simplified = step;
                     //remap parent nodes
                     for (auto& p : parents)
                         {
