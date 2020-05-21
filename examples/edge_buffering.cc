@@ -296,6 +296,25 @@ sort_n_simplify(double last_time_simplified,
                 std::vector<fwdpp::ts::TS_NODE_INT>& node_map,
                 fwdpp::ts::std_table_collection& tables)
 {
+    using edge_t = fwdpp::ts::std_table_collection::edge_t;
+    std::sort(begin(tables.edges), end(tables.edges),
+              [&tables](const edge_t& a, const edge_t& b) {
+                  auto ga = tables.nodes[a.parent].time;
+                  auto gb = tables.nodes[b.parent].time;
+                  if (ga == gb)
+                      {
+                          if (a.parent == b.parent)
+                              {
+                                  if (a.child == b.child)
+                                      {
+                                          return a.left < b.left;
+                                      }
+                                  return a.child < b.child;
+                              }
+                          return a.parent < b.parent;
+                      }
+                  return ga > gb;
+              });
 }
 
 static void
@@ -324,7 +343,7 @@ simulate(const command_line_options& options)
     fwdpp::ts::std_table_collection tables(1.0);
     fwdpp::ts::edge_buffer buffer;
     fwdpp::ts::std_table_collection::edge_table edge_liftover;
-	auto simplifier_state = fwdpp::ts::make_simplifier_state(tables);
+    auto simplifier_state = fwdpp::ts::make_simplifier_state(tables);
     std::vector<parent> parents;
     for (unsigned i = 0; i < options.N; ++i)
         {
