@@ -150,13 +150,12 @@ namespace fwdpp
                         == std::numeric_limits<std::size_t>::max())
                         {
                             starts[tables.edges[i].parent] = i;
-                            stops[tables.edges[i].parent]
-                                = i; // FIXME: idiomatically, this should be i+1
+                            // FIXME: idiomatically, this should be i+1
+                            stops[tables.edges[i].parent] = i;
                         }
                     else
-                        {
-                            stops[tables.edges[i].parent]
-                                = i; // FIXME: idiomatically, this should be i+1
+                        { // FIXME: idiomatically, this should be i+1
+                            stops[tables.edges[i].parent] = i;
                         }
                 }
 
@@ -169,11 +168,11 @@ namespace fwdpp
             // Our only sort!!
             std::sort(begin(existing_edges), end(existing_edges),
                       [&tables](const parent_location& lhs, const parent_location& rhs) {
-                          // lexical comparison of tuple elements just like in Python
-                          return std::tie(tables.nodes[lhs.parent].time, lhs.start,
-                                          lhs.parent)
-                                 < std::tie(tables.nodes[rhs.parent].time, rhs.start,
-                                            rhs.parent);
+                          // NOTE: have to take -time so that tuple sorting works
+                          auto t0 = -tables.nodes[lhs.parent].time;
+                          auto t1 = -tables.nodes[rhs.parent].time;
+                          return std::tie(t0, lhs.start, lhs.parent)
+                                 < std::tie(t1, rhs.start, rhs.parent);
                       });
 
             // FIXME: this should be debug only
@@ -181,7 +180,7 @@ namespace fwdpp
                 {
                     auto t0 = tables.nodes[existing_edges[i - 1].parent].time;
                     auto t1 = tables.nodes[existing_edges[i].parent].time;
-                    if (t0 > t1)
+                    if (t0 < t1)
                         {
                             throw std::runtime_error(
                                 "existing edges not properly sorted by time");
@@ -205,35 +204,24 @@ namespace fwdpp
                     // ranges
                     while (offset < tables.num_edges()
                            && tables.nodes[tables.edges[offset].parent].time
-                                  < tables.nodes[ex.parent].time)
+                                  > tables.nodes[ex.parent].time)
                         {
                             edge_liftover.emplace_back(tables.edges[offset]);
-                            //edge_liftover.add_edge(tables.edges.left[offset],
-                            //                       tables.edges.right[offset],
-                            //                       tables.edges.parent[offset],
-                            //                       tables.edges.child[offset]);
                             ++offset;
                         }
                     if (ex.start != std::numeric_limits<std::size_t>::max())
                         {
                             while (offset < ex.start
                                    && tables.nodes[tables.edges[offset].parent].time
-                                          <= tables.nodes[ex.parent].time)
+                                          >= tables.nodes[ex.parent].time)
                                 {
                                     edge_liftover.emplace_back(tables.edges[offset]);
-                                    //edge_liftover.add_edge(tables.edges[offset].left,
-                                    //                       tables.edges[offset].right,
-                                    //                       tables.edges[offset].parent,
-                                    //                       tables.edges[offset].child);
                                     ++offset;
                                 }
                             // FIXME: stop condition isn't idiomatic
                             for (decltype(ex.start) i = ex.start; i < ex.stop + 1; ++i)
                                 {
                                     edge_liftover.emplace_back(tables.edges[i]);
-                                    //edge_liftover.add_edge(
-                                    //    tables.edges.left[i], tables.edges.right[i],
-                                    //    tables.edges.parent[i], tables.edges.child[i]);
                                 }
                             offset = ex.stop + 1;
                         }
@@ -269,7 +257,7 @@ namespace fwdpp
                     auto d = std::distance(new_edges.head.rbegin(), b);
                     auto parent = new_edges.head.size() - d - 1;
                     auto ptime = tables.nodes[parent].time;
-                    if (*b != EDGE_BUFFER_NULL && ptime < max_time)
+                    if (*b != EDGE_BUFFER_NULL && ptime > max_time)
                         {
                             auto n = *b;
                             while (n != EDGE_BUFFER_NULL)
@@ -279,14 +267,10 @@ namespace fwdpp
                                             new_edges.births[n].left,
                                             new_edges.births[n].right, parent,
                                             new_edges.births[n].child});
-                                    //edge_liftover.add_edge(new_edges.births[n].left,
-                                    //                       new_edges.births[n].right,
-                                    //                       parent,
-                                    //                       new_edges.births[n].child);
                                     n = new_edges.births[n].next;
                                 }
                         }
-                    else if (*b != EDGE_BUFFER_NULL && ptime >= max_time)
+                    else if (*b != EDGE_BUFFER_NULL && ptime <= max_time)
                         {
                             break;
                         }
@@ -310,8 +294,6 @@ namespace fwdpp
             for (; offset < tables.num_edges(); ++offset)
                 {
                     edge_liftover.emplace_back(tables.edges[offset]);
-                    //tables.edges.left[offset], tables.edges.right[offset],
-                    //tables.edges.parent[offset], tables.edges.child[offset]);
                 }
             tables.edges.assign(begin(edge_liftover), end(edge_liftover));
             // This resets sizes to 0, but keeps the memory allocated.

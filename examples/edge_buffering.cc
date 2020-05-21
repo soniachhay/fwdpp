@@ -269,7 +269,7 @@ generate_births(const fwdpp::GSLrng_mt& rng, const std::vector<birth>& births,
                 {
                     double ptime = tables.nodes[p0n0].time;
                     double ctime = tables.nodes[new_node_0].time;
-                    if (ctime >= ptime)
+                    if (ctime <= ptime)
                         {
                             throw std::runtime_error("bad parent/child time");
                         }
@@ -278,7 +278,7 @@ generate_births(const fwdpp::GSLrng_mt& rng, const std::vector<birth>& births,
                                                new_edges);
                     ptime = tables.nodes[p1n0].time;
                     ctime = tables.nodes[new_node_1].time;
-                    if (ctime >= ptime)
+                    if (ctime <= ptime)
                         {
                             throw std::runtime_error("bad parent/child time");
                         }
@@ -319,11 +319,13 @@ sort_n_simplify(const std::vector<fwdpp::ts::TS_NODE_INT>& samples,
     fwdpp::ts::simplify_tables(samples, state, tables, node_map, temp);
 }
 
+template <typename SimplificationState>
 void
 flush_buffer_n_simplify(
-    std::vector<fwdpp::ts::TS_NODE_INT>& alive_at_last_simplification,
-    std::vector<fwdpp::ts::TS_NODE_INT>& samples,
+    const std::vector<fwdpp::ts::TS_NODE_INT>& samples,
+    const std::vector<fwdpp::ts::TS_NODE_INT>& alive_at_last_simplification,
     std::vector<fwdpp::ts::TS_NODE_INT>& node_map, fwdpp::ts::edge_buffer& new_edges,
+    SimplificationState& state,
     fwdpp::ts::std_table_collection::edge_table& edge_liftover,
     fwdpp::ts::std_table_collection& tables)
 {
@@ -335,7 +337,8 @@ flush_buffer_n_simplify(
 
     stitch_together_edges(alive_at_last_simplification, max_time, new_edges,
                           edge_liftover, tables);
-    //FIXME: simplify
+    std::vector<std::size_t> temp{};
+    fwdpp::ts::simplify_tables(samples, state, tables, node_map, temp);
 }
 
 void
@@ -359,6 +362,10 @@ simulate(const command_line_options& options)
 
     if (options.buffer_new_edges)
         {
+            // TODO: move this to function
+            buffer.head.resize(tables.num_nodes());
+            std::fill(begin(buffer.head), end(buffer.head), fwdpp::ts::EDGE_BUFFER_NULL);
+            buffer.births.clear();
             if (buffer.head.size() != 2 * options.N)
                 {
                     throw std::runtime_error("bad setup of edge_buffer_ptr");
@@ -392,9 +399,9 @@ simulate(const command_line_options& options)
                         }
                     else
                         {
-                            flush_buffer_n_simplify(alive_at_last_simplification,
-                                                    samples, node_map, buffer,
-                                                    edge_liftover, tables);
+                            flush_buffer_n_simplify(
+                                samples, alive_at_last_simplification, node_map, buffer,
+                                simplifier_state, edge_liftover, tables);
                         }
                     simplified = true;
                     last_time_simplified = step;
@@ -434,10 +441,12 @@ simulate(const command_line_options& options)
                 }
             else
                 {
-                    flush_buffer_n_simplify(alive_at_last_simplification, samples,
-                                            node_map, buffer, edge_liftover, tables);
+                    flush_buffer_n_simplify(samples, alive_at_last_simplification,
+                                            node_map, buffer, simplifier_state,
+                                            edge_liftover, tables);
                 }
         }
+    std::cout << tables.nodes.size() << ' ' << tables.edges.size() << '\n';
 }
 
 int
