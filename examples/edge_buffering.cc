@@ -329,10 +329,10 @@ flush_buffer_n_simplify(
     fwdpp::ts::std_table_collection::edge_table& edge_liftover,
     fwdpp::ts::std_table_collection& tables)
 {
-    double max_time = std::numeric_limits<double>::max();
+    double max_time = -1; //-1;//std::numeric_limits<double>::max();
     for (auto a : alive_at_last_simplification)
         {
-            max_time = std::min(max_time, tables.nodes[a].time);
+            max_time = std::max(max_time, tables.nodes[a].time);
         }
 
     stitch_together_edges(alive_at_last_simplification, max_time, new_edges,
@@ -375,7 +375,7 @@ simulate(const command_line_options& options)
     std::vector<birth> births;
     std::vector<fwdpp::ts::TS_NODE_INT> samples, node_map;
     bool simplified = false;
-    double last_time_simplified = options.nsteps;
+    double last_time_simplified = 0; //options.nsteps;
     double littler = options.rho / (2. * static_cast<double>(options.N));
     std::vector<double> breakpoints;
     for (unsigned step = 1; step <= options.nsteps; ++step)
