@@ -13,6 +13,13 @@ namespace fwdpp
 {
     namespace ts
     {
+        template <typename TableCollectionType>
+        inline simplification::simplifier_internal_state<TableCollectionType>
+        make_simplifier_state(const TableCollectionType& tables)
+        {
+            return simplification::make_simplifier_internal_state(tables);
+        }
+
         template <typename TableCollectionType, typename NodeVector,
                   typename PreservedVariantIndexes>
         inline void

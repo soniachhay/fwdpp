@@ -6,6 +6,7 @@
 #include <fwdpp/GSLrng_t.hpp>
 #include <fwdpp/ts/std_table_collection.hpp>
 #include <fwdpp/ts/recording.hpp>
+#include <fwdpp/ts/simplify_tables.hpp>
 
 namespace po = boost::program_options;
 
@@ -323,6 +324,7 @@ simulate(const command_line_options& options)
     fwdpp::ts::std_table_collection tables(1.0);
     fwdpp::ts::edge_buffer buffer;
     fwdpp::ts::std_table_collection::edge_table edge_liftover;
+	auto simplifier_state = fwdpp::ts::make_simplifier_state(tables);
     std::vector<parent> parents;
     for (unsigned i = 0; i < options.N; ++i)
         {
