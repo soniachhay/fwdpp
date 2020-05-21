@@ -36,6 +36,8 @@ spatialts_LDADD=-lboost_program_options
 endif
 endif
 
+edge_buffering_LDADD=-lboost_program_options
+
 AM_CPPFLAGS=-Wall -W -I.
 
 AM_CXXFLAGS=
