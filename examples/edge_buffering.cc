@@ -9,6 +9,8 @@
 #include <fwdpp/ts/recording.hpp>
 #include <fwdpp/ts/simplify_tables.hpp>
 
+#include <tskit.h>
+
 namespace po = boost::program_options;
 
 struct command_line_options
@@ -341,6 +343,73 @@ flush_buffer_n_simplify(
     fwdpp::ts::simplify_tables(samples, state, tables, node_map, temp);
 }
 
+using table_collection_ptr
+    = std::unique_ptr<tsk_table_collection_t,
+                      std::function<void(tsk_table_collection_t*)>>;
+
+void
+handle_tskit_return_code(int code)
+{
+    if (code < 0)
+        {
+            std::ostringstream o;
+            o << tsk_strerror(code);
+            throw std::runtime_error(o.str());
+        }
+}
+
+table_collection_ptr
+make_table_collection_ptr(double sequence_length)
+{
+    table_collection_ptr rv(new tsk_table_collection_t(),
+                            [](tsk_table_collection_t* tables) {
+                                tsk_table_collection_free(tables);
+                                delete tables;
+                            });
+    int err = tsk_table_collection_init(rv.get(), 0);
+    handle_tskit_return_code(err);
+    rv->sequence_length = sequence_length;
+    if (err != 0)
+        {
+            throw std::runtime_error("could not initialize tsk_table_collection");
+        }
+    return rv;
+}
+
+void
+dump_table_collection_to_tskit(const fwdpp::ts::std_table_collection& tables,
+                               const std::string treefile, double forward_time,
+                               unsigned N)
+{
+    auto tskit_tables = make_table_collection_ptr(tables.genome_length());
+    unsigned i = 0;
+    for (auto& n : tables.nodes)
+        {
+            // Convert time from forwards to backwards
+            // and label the last generation (first 2N nodes)
+            // as samples.
+            int rv = tsk_node_table_add_row(&tskit_tables->nodes,
+                                            (i < 2 * N) ? TSK_NODE_IS_SAMPLE : 0, // flag
+                                            -1. * (n.time - forward_time),        // time
+                                            TSK_NULL, // population
+                                            TSK_NULL, // individual
+                                            nullptr,  // metadata
+                                            0);       // metadata length
+            handle_tskit_return_code(rv);
+            ++i;
+        }
+    for (auto& e : tables.edges)
+        {
+            auto rv = tsk_edge_table_add_row(&tskit_tables->edges, e.left, e.right,
+                                             e.parent, e.child, nullptr, 0);
+            handle_tskit_return_code(rv);
+        }
+    auto rv = tsk_table_collection_build_index(tskit_tables.get(), 0);
+    handle_tskit_return_code(rv);
+    rv = tsk_table_collection_dump(tskit_tables.get(), treefile.c_str(), 0);
+    handle_tskit_return_code(rv);
+}
+
 void
 simulate(const command_line_options& options)
 {
@@ -446,7 +515,7 @@ simulate(const command_line_options& options)
                                             edge_liftover, tables);
                 }
         }
-    std::cout << tables.nodes.size() << ' ' << tables.edges.size() << '\n';
+    dump_table_collection_to_tskit(tables, options.treefile, options.nsteps, options.N);
 }
 
 int

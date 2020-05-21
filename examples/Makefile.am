@@ -21,7 +21,14 @@ wfts_overlapping_generations_SOURCES=wfts_overlapping_generations.cc wfevolvets.
 wfts_overlapping_generations_dynamic_indexing_SOURCES=wfts_overlapping_generations_dynamic_indexing.cc wfevolvets.cc wfevolvets.hpp
 wfts_overlapping_generations_dynamic_indexing_with_mutation_SOURCES=wfts_overlapping_generations_dynamic_indexing_with_mutation.cc wfevolvets.cc wfevolvets.hpp
 load_table_collection_SOURCES=load_table_collection.cc
-edge_buffering_SOURCES=edge_buffering.cc
+edge_buffering_SOURCES=edge_buffering.cc ../subprojects/nongpl/tskit/c/tskit/convert.c \
+					   ../subprojects/nongpl/tskit/c/tskit/core.c \
+					   ../subprojects/nongpl/tskit/c/tskit/genotypes.c \
+					   ../subprojects/nongpl/tskit/c/tskit/haplotype_matching.c \
+					   ../subprojects/nongpl/tskit/c/tskit/stats.c \
+					   ../subprojects/nongpl/tskit/c/tskit/tables.c \
+					   ../subprojects/nongpl/tskit/c/tskit/trees.c \
+					   ../subprojects/nongpl/tskit/c/subprojects/kastore/kastore.c
 
 # examples based on tree sequences that need boost program options
 if BPO_PRESENT
@@ -38,7 +45,7 @@ endif
 
 edge_buffering_LDADD=-lboost_program_options
 
-AM_CPPFLAGS=-Wall -W -I.
+AM_CPPFLAGS=-Wall -W -I. -I../subprojects/nongpl/tskit/c -I../subprojects/nongpl/tskit/c/subprojects/kastore
 
 AM_CXXFLAGS=
 if HAVE_SIMDATA_HPP
