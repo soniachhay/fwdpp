@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <unordered_set>
 #include <boost/program_options.hpp>
 #include <boost/program_options/value_semantic.hpp>
 #include <gsl/gsl_randist.h>
@@ -235,7 +236,7 @@ recombine_and_buffer_edges(const fwdpp::GSLrng_mt& rng, double littler,
         }
 }
 
-static void
+void
 generate_births(const fwdpp::GSLrng_mt& rng, const std::vector<birth>& births,
                 double littler, std::vector<double>& breakpoints, double birth_time,
                 bool buffer_new_edges, fwdpp::ts::edge_buffer& new_edges,
@@ -288,13 +289,12 @@ generate_births(const fwdpp::GSLrng_mt& rng, const std::vector<birth>& births,
             parents[b.index] = parent(b.index, new_node_0, new_node_1);
         }
 }
-//
-// NOTE: seems like samples could/should be const?
-static void
-sort_n_simplify(double last_time_simplified,
-                std::vector<fwdpp::ts::TS_NODE_INT>& samples,
-                std::vector<fwdpp::ts::TS_NODE_INT>& node_map,
-                fwdpp::ts::std_table_collection& tables)
+
+template <typename SimplificationState>
+void
+sort_n_simplify(const std::vector<fwdpp::ts::TS_NODE_INT>& samples,
+                SimplificationState& state, fwdpp::ts::std_table_collection& tables,
+                std::vector<fwdpp::ts::TS_NODE_INT>& node_map)
 {
     using edge_t = fwdpp::ts::std_table_collection::edge_t;
     std::sort(begin(tables.edges), end(tables.edges),
@@ -315,9 +315,11 @@ sort_n_simplify(double last_time_simplified,
                       }
                   return ga > gb;
               });
+    std::vector<std::size_t> temp{};
+    fwdpp::ts::simplify_tables(samples, state, tables, node_map, temp);
 }
 
-static void
+void
 flush_buffer_n_simplify(
     std::vector<fwdpp::ts::TS_NODE_INT>& alive_at_last_simplification,
     std::vector<fwdpp::ts::TS_NODE_INT>& samples,
@@ -386,8 +388,7 @@ simulate(const command_line_options& options)
 
                     if (options.buffer_new_edges == false)
                         {
-                            sort_n_simplify(last_time_simplified, samples, node_map,
-                                            tables);
+                            sort_n_simplify(samples, simplifier_state, tables, node_map);
                         }
                     else
                         {
@@ -429,7 +430,7 @@ simulate(const command_line_options& options)
             node_map.resize(tables.num_nodes());
             if (options.buffer_new_edges == false)
                 {
-                    sort_n_simplify(last_time_simplified, samples, node_map, tables);
+                    sort_n_simplify(samples, simplifier_state, tables, node_map);
                 }
             else
                 {
