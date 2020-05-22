@@ -445,7 +445,7 @@ simulate(const command_line_options& options)
     std::vector<fwdpp::ts::TS_NODE_INT> samples, node_map;
     bool simplified = false;
     double last_time_simplified = 0; //options.nsteps;
-    double littler = options.rho / (2. * static_cast<double>(options.N));
+    double littler = options.rho / (4. * static_cast<double>(options.N));
     std::vector<double> breakpoints;
     for (unsigned step = 1; step <= options.nsteps; ++step)
         {
