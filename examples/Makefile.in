@@ -136,8 +136,7 @@ diploid_ind_OBJECTS = $(am_diploid_ind_OBJECTS)
 diploid_ind_LDADD = $(LDADD)
 diploid_ind_DEPENDENCIES =
 am__dirstamp = $(am__leading_dot)dirstamp
-am_edge_buffering_OBJECTS = edge_buffering.$(OBJEXT) \
-	../subprojects/nongpl/tskit/c/tskit/convert.$(OBJEXT) \
+am__objects_1 = ../subprojects/nongpl/tskit/c/tskit/convert.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/tskit/core.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/tskit/genotypes.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/tskit/haplotype_matching.$(OBJEXT) \
@@ -145,6 +144,7 @@ am_edge_buffering_OBJECTS = edge_buffering.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/tskit/tables.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/tskit/trees.$(OBJEXT) \
 	../subprojects/nongpl/tskit/c/subprojects/kastore/kastore.$(OBJEXT)
+am_edge_buffering_OBJECTS = edge_buffering.$(OBJEXT) $(am__objects_1)
 edge_buffering_OBJECTS = $(am_edge_buffering_OBJECTS)
 edge_buffering_DEPENDENCIES =
 am_juvenile_migration_OBJECTS = juvenile_migration.$(OBJEXT)
@@ -397,14 +397,17 @@ wfts_overlapping_generations_SOURCES = wfts_overlapping_generations.cc wfevolvet
 wfts_overlapping_generations_dynamic_indexing_SOURCES = wfts_overlapping_generations_dynamic_indexing.cc wfevolvets.cc wfevolvets.hpp
 wfts_overlapping_generations_dynamic_indexing_with_mutation_SOURCES = wfts_overlapping_generations_dynamic_indexing_with_mutation.cc wfevolvets.cc wfevolvets.hpp
 load_table_collection_SOURCES = load_table_collection.cc
-edge_buffering_SOURCES = edge_buffering.cc ../subprojects/nongpl/tskit/c/tskit/convert.c \
-					   ../subprojects/nongpl/tskit/c/tskit/core.c \
-					   ../subprojects/nongpl/tskit/c/tskit/genotypes.c \
-					   ../subprojects/nongpl/tskit/c/tskit/haplotype_matching.c \
-					   ../subprojects/nongpl/tskit/c/tskit/stats.c \
-					   ../subprojects/nongpl/tskit/c/tskit/tables.c \
-					   ../subprojects/nongpl/tskit/c/tskit/trees.c \
-					   ../subprojects/nongpl/tskit/c/subprojects/kastore/kastore.c
+tskit_SOURCES = ../subprojects/nongpl/tskit/c/tskit/convert.c \
+			  ../subprojects/nongpl/tskit/c/tskit/core.c \
+			  ../subprojects/nongpl/tskit/c/tskit/genotypes.c \
+			  ../subprojects/nongpl/tskit/c/tskit/haplotype_matching.c \
+			  ../subprojects/nongpl/tskit/c/tskit/stats.c \
+			  ../subprojects/nongpl/tskit/c/tskit/tables.c \
+			  ../subprojects/nongpl/tskit/c/tskit/trees.c \
+			  ../subprojects/nongpl/tskit/c/subprojects/kastore/kastore.c
+
+edge_buffering_SOURCES = edge_buffering.cc \
+					   $(tskit_SOURCES)
 
 @BPO_PRESENT_TRUE@wfts_integration_test_SOURCES = wfts_integration_test.cc tree_sequence_examples_common.cc
 @BPO_PRESENT_TRUE@wfts_integration_test_LDADD = -lboost_program_options
