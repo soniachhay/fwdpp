@@ -32,6 +32,7 @@ tskit_SOURCES=../subprojects/nongpl/tskit/c/tskit/convert.c \
 edge_buffering_SOURCES=edge_buffering.cc \
 					   $(tskit_SOURCES)
 
+edge_buffering_CFLAGS=-std=c99
 # examples based on tree sequences that need boost program options
 if BPO_PRESENT
 if BPO_PRESENT
