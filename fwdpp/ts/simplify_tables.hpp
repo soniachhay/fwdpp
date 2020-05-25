@@ -34,7 +34,7 @@ namespace fwdpp
             static_assert(std::is_signed<typename NodeVector::value_type>::value,
                           "NodeVector::value type must be a signed type");
             state.clear();
-            state.ancestry.init(input_tables.nodes.size());
+            state.ancestry.reset(input_tables.nodes.size());
             idmap.resize(input_tables.nodes.size());
             std::fill(begin(idmap), end(idmap), TS_NULL_NODE);
 
