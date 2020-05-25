@@ -287,14 +287,14 @@ namespace fwdpp
             add_ancestry(TS_NODE_INT input_id, double left, double right,
                          TS_NODE_INT node, ancestry_list& ancestry)
             {
-                if (ancestry.head(input_id) == -1)
+                if (ancestry.head(input_id) == ancestry_list::null)
                     {
                         ancestry.extend(input_id, left, right, node);
                     }
                 else
                     {
                         auto last_idx = ancestry.tail(input_id);
-                        if (last_idx == -1)
+                        if (last_idx == ancestry_list::null)
                             {
                                 throw std::runtime_error("ancestry_list data invalid");
                             }
@@ -405,7 +405,7 @@ namespace fwdpp
                         // If the two segments overlap, we add the
                         // minimal overlap to our queue.
                         auto idx = state.ancestry.head(edge_ptr->child);
-                        while (idx != -1)
+                        while (idx != ancestry_list::null)
                             {
                                 auto& seg = state.ancestry.fetch(idx);
                                 if (seg.right > edge_ptr->left
@@ -520,12 +520,12 @@ namespace fwdpp
                         auto seg_idx = state.ancestry.head(n);
                         for (; map_itr < map_end && map_itr->node == n;)
                             {
-                                if (seg_idx == -1)
+                                if (seg_idx == ancestry_list::null)
                                     {
                                         ++map_itr;
                                         break;
                                     }
-                                while (seg_idx != -1 && map_itr < map_end
+                                while (seg_idx != ancestry_list::null && map_itr < map_end
                                        && map_itr->node == n)
                                     {
                                         auto& seg = state.ancestry.fetch(seg_idx);
