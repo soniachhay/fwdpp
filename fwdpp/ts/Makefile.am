@@ -29,6 +29,7 @@ pkginclude_HEADERS= definitions.hpp \
 			mutation_tools.hpp \
 			visit_sites.hpp \
 			site_visitor.hpp \
-			recording.hpp
+			recording.hpp \
+			nested_forward_lists.hpp
 
 
