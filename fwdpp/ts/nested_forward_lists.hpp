@@ -230,7 +230,7 @@ namespace fwdpp
             }
 
             Index
-            convert_to_head_index(const_reverse_iterator i)
+            convert_to_head_index(const_reverse_iterator i) const
             {
                 return convert_to_head_index(i.base() - 1);
             }
