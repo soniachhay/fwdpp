@@ -202,40 +202,14 @@ recombine_and_buffer_edges(const fwdpp::GSLrng_mt& rng, double littler,
     std::size_t breakpoint = 1;
     auto pnode0 = parental_node0;
     auto pnode1 = parental_node1;
-    auto end = fwdpp::ts::EDGE_BUFFER_NULL, other_end = fwdpp::ts::EDGE_BUFFER_NULL;
-    if (pnode0 < new_edges.head.size())
-        {
-            end = get_buffer_end(new_edges, pnode0);
-        }
-    if (pnode1 < new_edges.head.size())
-        {
-            other_end = get_buffer_end(new_edges, pnode1);
-        }
 
     for (; breakpoint < breakpoints.size(); ++breakpoint)
         {
-            if (end == -1)
-                {
-                    end = buffer_new_edge(pnode0, left, breakpoints[breakpoint], child,
-                                          new_edges);
-                }
-            else
-                {
-                    end = buffer_new_edge_at(end, left, breakpoints[breakpoint], child,
-                                             new_edges);
-                }
+            new_edges.extend(pnode0, left, breakpoints[breakpoint], child);
             std::swap(pnode0, pnode1);
-            std::swap(end, other_end);
             left = breakpoints[breakpoint];
         }
-    if (end == -1)
-        {
-            end = buffer_new_edge(pnode0, left, maxlen, child, new_edges);
-        }
-    else
-        {
-            end = buffer_new_edge_at(end, left, maxlen, child, new_edges);
-        }
+    new_edges.extend(pnode0, left, maxlen, child);
 }
 
 void
@@ -341,6 +315,7 @@ flush_buffer_n_simplify(
                           edge_liftover, tables);
     std::vector<std::size_t> temp{};
     fwdpp::ts::simplify_tables(samples, state, tables, node_map, temp);
+    new_edges.reset(tables.num_nodes());
 }
 
 using table_collection_ptr
@@ -428,18 +403,6 @@ simulate(const command_line_options& options)
 
     // The next bits are all for buffering
     std::vector<fwdpp::ts::TS_NODE_INT> alive_at_last_simplification;
-
-    if (options.buffer_new_edges)
-        {
-            // TODO: move this to function
-            buffer.head.resize(tables.num_nodes());
-            std::fill(begin(buffer.head), end(buffer.head), fwdpp::ts::EDGE_BUFFER_NULL);
-            buffer.births.clear();
-            if (buffer.head.size() != 2 * options.N)
-                {
-                    throw std::runtime_error("bad setup of edge_buffer_ptr");
-                }
-        }
 
     std::vector<birth> births;
     std::vector<fwdpp::ts::TS_NODE_INT> samples, node_map;

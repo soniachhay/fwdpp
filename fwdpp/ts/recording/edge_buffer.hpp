@@ -9,34 +9,30 @@
 #include <cstdint>
 #include <vector>
 #include "../definitions.hpp"
+#include "../nested_forward_lists.hpp"
 
 namespace fwdpp
 {
     namespace ts
     {
-        constexpr std::int64_t EDGE_BUFFER_NULL = -1;
+        //constexpr std::int64_t EDGE_BUFFER_NULL = -1;
 
         struct birth_data
         {
             double left, right;
             TS_NODE_INT child;
-            std::int64_t next;
+            //std::int64_t next;
 
             birth_data(double l, double r, TS_NODE_INT c)
-                : left{l}, right{r}, child{c}, next{EDGE_BUFFER_NULL}
+                : left{l}, right{r}, child{c}//, next{EDGE_BUFFER_NULL}
             {
             }
         };
 
-        struct edge_buffer
-        {
-            std::vector<std::int64_t> head;
-            std::vector<birth_data> births;
+        using edge_buffer = nested_forward_lists<birth_data, std::int64_t, -1>;
 
-            edge_buffer() : head{}, births{}
-            {
-            }
-        };
+        // Below are functions for liftover of an edge buffer
+        // to a table collection
 
         struct parent_location
         {
@@ -47,76 +43,6 @@ namespace fwdpp
             {
             }
         };
-
-        inline std::int64_t
-        get_buffer_end(const edge_buffer& new_edges, std::size_t i)
-        {
-            if (i >= new_edges.head.size())
-                {
-                    throw std::runtime_error("invalid parent index");
-                }
-            auto f = new_edges.head[i];
-            while (f != EDGE_BUFFER_NULL && new_edges.births[f].next != EDGE_BUFFER_NULL)
-                {
-                    f = new_edges.births[f].next;
-                    if (f != EDGE_BUFFER_NULL && f >= new_edges.births.size())
-                        {
-                            throw std::runtime_error("invalid next value");
-                        }
-                }
-            return f;
-        }
-
-        inline std::int64_t
-        buffer_new_edge(TS_NODE_INT parent, double left, double right, TS_NODE_INT child,
-                        edge_buffer& new_edges)
-        {
-            if (parent == TS_NULL_NODE || child == TS_NULL_NODE)
-                {
-                    throw std::runtime_error("bad node IDs passed to buffer_new_edge");
-                }
-            if (parent >= new_edges.head.size())
-                {
-                    new_edges.head.resize(parent + 1, EDGE_BUFFER_NULL);
-                }
-            new_edges.births.emplace_back(left, right, child);
-            if (new_edges.head[parent] == EDGE_BUFFER_NULL)
-                {
-                    new_edges.head[parent] = new_edges.births.size() - 1;
-                    if (new_edges.births[new_edges.head[parent]].next
-                        != EDGE_BUFFER_NULL)
-                        {
-                            std::ostringstream o;
-                            o << "invalid next entry for head birth: " << parent << ' '
-                              << new_edges.head[parent] << ' '
-                              << new_edges.births[new_edges.head[parent]].next << ' '
-                              << new_edges.head.size() << ' ' << new_edges.births.size();
-                            throw std::runtime_error(o.str());
-                        }
-                }
-            else
-                {
-                    auto l = get_buffer_end(new_edges, parent);
-                    new_edges.births[l].next = new_edges.births.size() - 1;
-                }
-            return new_edges.births.size() - 1;
-        }
-
-        inline std::int64_t
-        buffer_new_edge_at(std::int64_t loc, double left, double right,
-                           TS_NODE_INT child, edge_buffer& new_edges)
-        {
-            if (loc >= new_edges.births.size())
-                {
-                    throw std::runtime_error("bad location");
-                }
-            new_edges.births.emplace_back(left, right, child);
-            new_edges.births[loc].next = new_edges.births.size() - 1;
-            return new_edges.births.size() - 1;
-        }
-
-        // Below are functions for liftover of an edge buffer
-        // to a table collection
 
         template <typename TableCollectionType>
         inline std::vector<parent_location>
@@ -130,7 +56,7 @@ namespace fwdpp
             std::vector<TS_NODE_INT> alive_with_new_edges;
             for (auto a : alive_at_last_simplification)
                 {
-                    if (new_edges.head[a] != EDGE_BUFFER_NULL)
+                    if (new_edges.head(a) != edge_buffer::null)
                         {
                             alive_with_new_edges.push_back(a);
                         }
@@ -225,14 +151,15 @@ namespace fwdpp
                                 }
                             offset = ex.stop + 1;
                         }
-                    auto n = new_edges.head[ex.parent];
-                    while (n != EDGE_BUFFER_NULL)
+                    auto n = new_edges.head(ex.parent);
+                    while (n != edge_buffer::null)
                         {
+                            const auto & birth = new_edges.fetch(n);
                             edge_liftover.emplace_back(
                                 typename TableCollectionType::edge_t{
-                                    new_edges.births[n].left, new_edges.births[n].right,
-                                    ex.parent, new_edges.births[n].child});
-                            n = new_edges.births[n].next;
+                                    birth.left, birth.right,
+                                    ex.parent, birth.child});
+                            n = new_edges.next(n);
                         }
                 }
             return offset;
@@ -252,25 +179,25 @@ namespace fwdpp
             // to our temporary edge table if they are newer
             // than the last simplification time
 
-            for (auto b = new_edges.head.rbegin(); b < new_edges.head.rend(); ++b)
+            for (auto b = new_edges.rbegin(); b < new_edges.rend(); ++b)
                 {
-                    auto d = std::distance(new_edges.head.rbegin(), b);
-                    auto parent = new_edges.head.size() - d - 1;
+                    auto parent = new_edges.convert_to_head_index(b);
                     auto ptime = tables.nodes[parent].time;
-                    if (*b != EDGE_BUFFER_NULL && ptime > max_time)
+                    if (*b != edge_buffer::null && ptime > max_time)
                         {
                             auto n = *b;
-                            while (n != EDGE_BUFFER_NULL)
+                            while (n != edge_buffer::null)
                                 {
+                                    const auto & birth = new_edges.fetch(n);
                                     edge_liftover.emplace_back(
                                         typename TableCollectionType::edge_t{
-                                            new_edges.births[n].left,
-                                            new_edges.births[n].right, parent,
-                                            new_edges.births[n].child});
-                                    n = new_edges.births[n].next;
+                                            birth.left,
+                                            birth.right, parent,
+                                            birth.child});
+                                    n = new_edges.next(n);
                                 }
                         }
-                    else if (*b != EDGE_BUFFER_NULL && ptime <= max_time)
+                    else if (*b != edge_buffer::null && ptime <= max_time)
                         {
                             break;
                         }
@@ -298,10 +225,7 @@ namespace fwdpp
             tables.edges.assign(begin(edge_liftover), end(edge_liftover));
             // This resets sizes to 0, but keeps the memory allocated.
             edge_liftover.clear();
-            // TODO: move this cleanup to function
-            new_edges.head.resize(tables.num_nodes());
-            std::fill(begin(new_edges.head), end(new_edges.head), EDGE_BUFFER_NULL);
-            new_edges.births.clear();
+            new_edges.reset(tables.num_nodes());
         }
     }
 }
